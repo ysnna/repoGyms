@@ -138,7 +138,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.homeUC.BackColor = System.Drawing.Color.LightCoral;
-            this.homeUC.Location = new System.Drawing.Point(574, 0);
+            this.homeUC.Location = new System.Drawing.Point(306, 0);
             this.homeUC.Name = "homeUC";
             this.homeUC.Size = new System.Drawing.Size(1518, 814);
             this.homeUC.TabIndex = 14;
@@ -149,11 +149,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(1868, 816);
-            this.Controls.Add(this.homeUC);
             this.Controls.Add(this.panelView);
             this.Controls.Add(this.btSignIn);
             this.Controls.Add(this.btSignUp);
             this.Controls.Add(this.loginUC);
+            this.Controls.Add(this.homeUC);
             this.Name = "Form1";
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
