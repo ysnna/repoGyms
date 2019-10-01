@@ -5,6 +5,17 @@ create database GYMManager;
 go 
 use GYMManager;
 go
+
+--Tài khoản
+create table ACCOUNT(
+username varchar(15) not null,
+passw varchar(15) not null,
+userID int not null,
+--Primarykey--
+constraint pk_username primary key (username)
+);
+go
+
 --Nhóm nhân viên
 create table GROUPEMPLOYEE(
 groupID varchar(20) not null,
@@ -34,7 +45,6 @@ foreign key(groupID) references GROUPEMPLOYEE on delete set null
 );
 go
 
-
 --Nhóm công việc
 create table GROUPWORK
 (
@@ -57,6 +67,7 @@ constraint pk_workID primary key (workID),
 foreign key (groupWorkID) references GROUPWORK on delete set null	
 );
 go
+
 --Khách hàng
 create table MEMBERS
 (
@@ -144,7 +155,8 @@ value int not null,
 contractID varchar(20) null,
 );
 go
---Chi tiet Hoa Don
+
+--Chi tiết hóa đơn
 create table DETAILSREPCEPIT
 (
 receptID varchar(20) not null,
@@ -156,12 +168,21 @@ foreign key (productID) references PRODUCTS on delete set null
 
 go
 
---Thống kê doanh thu
-create table STATISTIC
+--Thống kê doanh thu theo ngày
+create table DAYSTATISTIC
 (
-dayAverage int null,
-monthAverage int null,
-yearAverage int null,
-total int null,
-note varchar(20),
+day datetime not null,
+dayAverage float null,
+type nvarchar null,
+note varchar(20) null,
+);
+go
+
+--Thống kê doanh thu theo tháng
+create table MONTHSTATISTIC
+(
+month nvarchar not null,
+monthAverage float null,
+type nvarchar(20) null,
+note varchar(20) null,
 );
