@@ -51,5 +51,10 @@ namespace slnGym
             btSignIn.BringToFront();
             btSignUp.BringToFront();
         }
+
+        private void BtSignIn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
