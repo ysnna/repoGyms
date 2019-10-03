@@ -92,7 +92,8 @@ create table ABILITIES
 employeeID varchar(20) not null,
 workID varchar(20) not null,
 --FK & PK--
-constraint pk_ANILITIES primary key (employeeID,workID)
+foreign key (employeeID) references EMPLOYEE on delete set null,
+foreign key (workID) references WORK on delete set null
 );
 go 
 
@@ -101,8 +102,9 @@ create table CLASSROOM
 (
 classID nvarchar(20) not null,
 roomNum nvarchar(20) not null,
-teacher nvarchar(20) not null, -- ID Work
-constraint pk_classID primary key (classID)
+teacher varchar(20) not null, -- ID Work
+constraint pk_classID primary key (classID),
+foreign key (teacher) references EMPLOYEE on delete set null
 );
 go
 
@@ -110,15 +112,25 @@ go
 create table CONTRACTS
 (
 contractID varchar(20) not null,
+cusID varchar(20) not null,
+servicePACK varchar(20) not null,
 dateSigned Datetime not null,
 dateLiquidation Datetime not null,
 conStatus nvarchar(20) null,
 --PK--
-constraint pk_contractID primary key (contractID)
-
+constraint pk_contractID primary key (contractID),
+foreign key (cusID) references MEMBERS on delete set null,
+foreign key (servicePACK) references SERVICEPACK on delete set null,
 );
 go
-
+create table SERVICEPACK
+(
+serviceID varchar(20) not null,
+serviceNAME nvarchar(20) not null,
+cost int null,
+note nvarchar(20) null,
+);
+go
 --Chi tiết hợp đồng
 create table DETAILSCONTRACT 
 (
@@ -134,7 +146,7 @@ foreign key (workID) references WORK on delete set null
 );
 go
 
---Gói dịch vụ
+--Sản phẩm
 create table PRODUCTS
 (
 productID varchar(20) not null,
@@ -147,22 +159,25 @@ go
 --Hóa đơn
 create table RECEIPT
 (
-receptID varchar(20) not null,
-repceptDate Datetime not null,
-repceptTime Time not null,
+receiptID varchar(20) not null,
+repceiptDate Datetime not null,
+repceiptTime Time not null,
 employeeID varchar(20) not null,
 value int not null,
-contractID varchar(20) null,
+
+--PK FK--
+constraint pk_receipt primary key (receiptID),
+
 );
 go
 
 --Chi tiết hóa đơn
 create table DETAILSREPCEPIT
 (
-receptID varchar(20) not null,
+receiptID varchar(20)  null,
 productID varchar(20) null,
 --PK & FK--
-constraint pk_recept primary key (receptID),
+foreign key (receiptID) references RECEIPT on delete set null,
 foreign key (productID) references PRODUCTS on delete set null
 );
 
