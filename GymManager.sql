@@ -89,8 +89,8 @@ go
 --Khả năng
 create table ABILITIES
 (
-employeeID varchar(20) not null,
-workID varchar(20) not null,
+employeeID varchar(20) null,
+workID varchar(20) null,
 --FK & PK--
 foreign key (employeeID) references EMPLOYEE on delete set null,
 foreign key (workID) references WORK on delete set null
@@ -102,18 +102,26 @@ create table CLASSROOM
 (
 classID nvarchar(20) not null,
 roomNum nvarchar(20) not null,
-teacher varchar(20) not null, -- ID Work
+teacher varchar(20) null, -- ID Work
 constraint pk_classID primary key (classID),
 foreign key (teacher) references EMPLOYEE on delete set null
 );
 go
-
+create table SERVICEPACK
+(
+serviceID varchar(20) not null,
+serviceNAME nvarchar(20) not null,
+cost int null,
+note nvarchar(20) null,
+constraint pk_serviceID primary key (serviceID)
+);
+go
 --Hợp đồng
 create table CONTRACTS
 (
 contractID varchar(20) not null,
-cusID varchar(20) not null,
-servicePACK varchar(20) not null,
+cusID varchar(20) null,
+servicePACK varchar(20) null,
 dateSigned Datetime not null,
 dateLiquidation Datetime not null,
 conStatus nvarchar(20) null,
@@ -123,14 +131,7 @@ foreign key (cusID) references MEMBERS on delete set null,
 foreign key (servicePACK) references SERVICEPACK on delete set null,
 );
 go
-create table SERVICEPACK
-(
-serviceID varchar(20) not null,
-serviceNAME nvarchar(20) not null,
-cost int null,
-note nvarchar(20) null,
-);
-go
+
 --Chi tiết hợp đồng
 create table DETAILSCONTRACT 
 (
