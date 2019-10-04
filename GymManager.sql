@@ -1,6 +1,11 @@
 ﻿use master;
-drop database if exists GYMManager;
 go
+ 
+ --drop database if already exists
+ if DB_ID('GYMManager') is not null
+ drop database GYMManager;
+ go
+
 create database GYMManager;
 go 
 use GYMManager;
@@ -8,11 +13,11 @@ go
 
 --Tài khoản
 create table ACCOUNT(
-username varchar(15) not null,
+username varchar(10) not null,
 passw varchar(15) not null,
 userID int not null,
 --Primarykey--
-constraint pk_username primary key (username)
+constraint pk_username primary key (username),
 );
 go
 
@@ -23,7 +28,7 @@ groupName nvarchar(30) not null,
 leaderFName nvarchar(30) null,
 leaderLName nvarchar(30) null,
 --Primarykey--
-constraint pk_groupID primary key (groupID)
+constraint pk_groupID primary key (groupID),
 );
 go
 
@@ -36,12 +41,13 @@ employeeLName nvarchar(30) null,
 employeeBDate datetime not null,
 employeeAddress nvarchar(30) not null,
 gender bit not null,
-phone int not null,
+phone varchar(10) not null,
 salary int not null,
 employeeIDCard int not null,
 --Primarykey and FK--
 constraint pk_employee primary key (employeeID),
-foreign key(groupID) references GROUPEMPLOYEE on delete set null
+foreign key(groupID) references GROUPEMPLOYEE on delete set null,
+foreign key(phone) references ACCOUNT
 );
 go
 
@@ -77,12 +83,13 @@ memFName nvarchar(20)  null,
 memBDate Datetime not null,
 memAddress nvarchar(30) not null,
 memGender bit not null,
-memPhone int not null,
+memPhone varchar(10) not null,
 cardID int not null,
 note nvarchar(30) null,
 --FK & PK --
 constraint pk_MEMBERS primary key (memID),
-constraint ck_cardID unique (cardID)
+constraint ck_cardID unique (cardID),
+foreign key (memPhone) references ACCOUNT
 );
 go
 
@@ -107,21 +114,24 @@ constraint pk_classID primary key (classID),
 foreign key (teacher) references EMPLOYEE on delete set null
 );
 go
+
+--Gói dịch vụ
 create table SERVICEPACK
 (
 serviceID varchar(20) not null,
 serviceNAME nvarchar(20) not null,
 cost int null,
 note nvarchar(20) null,
-constraint pk_serviceID primary key (serviceID)
+constraint pk_serviceID primary key (serviceID),
 );
 go
+
 --Hợp đồng
 create table CONTRACTS
 (
 contractID varchar(20) not null,
-cusID varchar(20) null,
-servicePACK varchar(20) null,
+cusID varchar(20)  null,
+servicePACK varchar(20)  null,
 dateSigned Datetime not null,
 dateLiquidation Datetime not null,
 conStatus nvarchar(20) null,
@@ -139,9 +149,8 @@ contractID varchar(20) not null,
 employeeID varchar(20) null,
 workID varchar(20) null,
 value int not null,
-
 --PK & FK --
-constraint pk_detailscontract primary key (contractID),
+foreign key (contractID) references CONTRACTS,
 foreign key (employeeID) references EMPLOYEE on delete set null,
 foreign key (workID) references WORK on delete set null
 );
@@ -161,14 +170,14 @@ go
 create table RECEIPT
 (
 receiptID varchar(20) not null,
+memID varchar(20) not null,
 repceiptDate Datetime not null,
 repceiptTime Time not null,
 employeeID varchar(20) not null,
 value int not null,
-
 --PK FK--
 constraint pk_receipt primary key (receiptID),
-
+foreign key (memID) references MEMBERS,
 );
 go
 
