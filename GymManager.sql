@@ -114,38 +114,24 @@ constraint pk_classID primary key (classID),
 foreign key (teacher) references EMPLOYEE on delete set null
 );
 go
-<<<<<<< HEAD
 
 --Gói dịch vụ
-=======
->>>>>>> 9b0fd84b37c5cad195223515468534a1555066cf
 create table SERVICEPACK
 (
 serviceID varchar(20) not null,
 serviceNAME nvarchar(20) not null,
 cost int null,
 note nvarchar(20) null,
-<<<<<<< HEAD
 constraint pk_serviceID primary key (serviceID),
 );
 go
 
-=======
-constraint pk_serviceID primary key (serviceID)
-);
-go
->>>>>>> 9b0fd84b37c5cad195223515468534a1555066cf
 --Hợp đồng
 create table CONTRACTS
 (
 contractID varchar(20) not null,
-<<<<<<< HEAD
 cusID varchar(20)  null,
 servicePACK varchar(20)  null,
-=======
-cusID varchar(20) null,
-servicePACK varchar(20) null,
->>>>>>> 9b0fd84b37c5cad195223515468534a1555066cf
 dateSigned Datetime not null,
 dateLiquidation Datetime not null,
 conStatus nvarchar(20) null,
@@ -154,13 +140,8 @@ constraint pk_contractID primary key (contractID),
 foreign key (cusID) references MEMBERS on delete set null,
 foreign key (servicePACK) references SERVICEPACK on delete set null,
 );
-<<<<<<< HEAD
-
-go
-=======
 go
 
->>>>>>> 9b0fd84b37c5cad195223515468534a1555066cf
 --Chi tiết hợp đồng
 create table DETAILSCONTRACT 
 (
