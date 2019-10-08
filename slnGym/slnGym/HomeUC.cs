@@ -16,5 +16,29 @@ namespace slnGym
         {
             InitializeComponent();
         }
+
+        private void btMachine_Click(object sender, EventArgs e)
+        {
+            pictureBoxClass.SendToBack();
+            pictureBoxProduct.SendToBack();
+        }
+
+        private void HomeUC_Load(object sender, EventArgs e)
+        {
+            pictureBoxProduct.SendToBack();
+            pictureBoxClass.SendToBack();
+        }
+
+        private void btProduct_Click(object sender, EventArgs e)
+        {
+            pictureBoxClass.SendToBack();
+            pictureBoxMachine.SendToBack();
+        }
+
+        private void btClass_Click(object sender, EventArgs e)
+        {
+            pictureBoxMachine.SendToBack();
+            pictureBoxProduct.SendToBack();
+        }
     }
 }
