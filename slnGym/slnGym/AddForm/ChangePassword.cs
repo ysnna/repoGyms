@@ -1,25 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace slnGym.User_Control
+namespace slnGym.AddForm
 {
-    public partial class AccountEmployeeUC : UserControl
+    public partial class ChangePassword : Form
     {
-        public AccountEmployeeUC()
+        public ChangePassword()
         {
             InitializeComponent();
-        }
-
-        private void btChangePass_Click(object sender, EventArgs e)
-        {
-         
         }
     }
 }
