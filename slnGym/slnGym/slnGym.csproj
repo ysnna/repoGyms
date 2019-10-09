@@ -55,10 +55,19 @@
     <Compile Include="Class\ABILITIES.cs" />
     <Compile Include="Class\CLASSROOMs.cs" />
     <Compile Include="Class\CONTRACTs.cs" />
+    <Compile Include="Class\DETAILCONTRACT.cs" />
+    <Compile Include="Class\DETAILRECEIPT.cs" />
+    <Compile Include="Class\EMPLOYEEs.cs" />
     <Compile Include="Class\GLOBAL.cs" />
+    <Compile Include="Class\GROUPEMPLOYEE.cs" />
+    <Compile Include="Class\GROUPWORK.cs" />
     <Compile Include="Class\LOGIN.cs" />
     <Compile Include="Class\MEMBERs.cs" />
     <Compile Include="Class\MY_DB.cs" />
+    <Compile Include="Class\PRODUCTs.cs" />
+    <Compile Include="Class\RECEIPTs.cs" />
+    <Compile Include="Class\SERVICEPACKs.cs" />
+    <Compile Include="Class\WORKs.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

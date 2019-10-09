@@ -46,12 +46,13 @@
             this.btSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btSave.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btSave.ForeColor = System.Drawing.Color.White;
-            this.btSave.Location = new System.Drawing.Point(361, 4);
+            this.btSave.Location = new System.Drawing.Point(361, 5);
             this.btSave.Name = "btSave";
-            this.btSave.Size = new System.Drawing.Size(91, 41);
+            this.btSave.Size = new System.Drawing.Size(90, 39);
             this.btSave.TabIndex = 27;
             this.btSave.Text = "Save";
             this.btSave.UseVisualStyleBackColor = false;
+            this.btSave.Click += new System.EventHandler(this.btSave_Click);
             // 
             // pictureBoxClose
             // 
@@ -64,6 +65,7 @@
             this.pictureBoxClose.Size = new System.Drawing.Size(45, 41);
             this.pictureBoxClose.TabIndex = 26;
             this.pictureBoxClose.TabStop = false;
+            this.pictureBoxClose.Click += new System.EventHandler(this.pictureBoxClose_Click);
             // 
             // txtCheckPass
             // 

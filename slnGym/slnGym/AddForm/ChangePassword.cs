@@ -16,5 +16,15 @@ namespace slnGym.AddForm
         {
             InitializeComponent();
         }
+
+        private void pictureBoxClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btSave_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

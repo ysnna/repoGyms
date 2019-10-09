@@ -51,6 +51,8 @@
             this.lbLname = new System.Windows.Forms.Label();
             this.lbFname = new System.Windows.Forms.Label();
             this.groupBoxEdit = new System.Windows.Forms.GroupBox();
+            this.picAvaEdit = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtFname = new System.Windows.Forms.TextBox();
@@ -67,14 +69,15 @@
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtLname = new System.Windows.Forms.TextBox();
             this.txtIDCard = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.picAvaEdit = new System.Windows.Forms.PictureBox();
+            this.btChangePass = new System.Windows.Forms.Button();
+            this.txtPass = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picAva)).BeginInit();
             this.panel2.SuspendLayout();
             this.groupBoxContact.SuspendLayout();
             this.groupBoxEdit.SuspendLayout();
-            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAvaEdit)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // picAva
@@ -123,6 +126,7 @@
             this.btEdit.TabIndex = 76;
             this.btEdit.Text = "Edit";
             this.btEdit.UseVisualStyleBackColor = true;
+            this.btEdit.Click += new System.EventHandler(this.btEdit_Click);
             // 
             // btSave
             // 
@@ -232,6 +236,9 @@
             // groupBoxContact
             // 
             this.groupBoxContact.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxContact.Controls.Add(this.btChangePass);
+            this.groupBoxContact.Controls.Add(this.txtPass);
+            this.groupBoxContact.Controls.Add(this.label21);
             this.groupBoxContact.Controls.Add(this.lbAddress);
             this.groupBoxContact.Controls.Add(this.lbIDCard);
             this.groupBoxContact.Controls.Add(this.lbPhone);
@@ -249,7 +256,7 @@
             this.groupBoxContact.ForeColor = System.Drawing.Color.White;
             this.groupBoxContact.Location = new System.Drawing.Point(508, 55);
             this.groupBoxContact.Name = "groupBoxContact";
-            this.groupBoxContact.Size = new System.Drawing.Size(931, 458);
+            this.groupBoxContact.Size = new System.Drawing.Size(956, 458);
             this.groupBoxContact.TabIndex = 75;
             this.groupBoxContact.TabStop = false;
             this.groupBoxContact.Text = " Details";
@@ -358,6 +365,29 @@
             this.groupBoxEdit.TabIndex = 76;
             this.groupBoxEdit.TabStop = false;
             this.groupBoxEdit.Text = "Edit";
+            // 
+            // picAvaEdit
+            // 
+            this.picAvaEdit.BackColor = System.Drawing.Color.Transparent;
+            this.picAvaEdit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picAvaEdit.BackgroundImage")));
+            this.picAvaEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picAvaEdit.Location = new System.Drawing.Point(593, 209);
+            this.picAvaEdit.Name = "picAvaEdit";
+            this.picAvaEdit.Size = new System.Drawing.Size(306, 164);
+            this.picAvaEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picAvaEdit.TabIndex = 78;
+            this.picAvaEdit.TabStop = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(586, 170);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(102, 37);
+            this.label9.TabIndex = 78;
+            this.label9.Text = "Avatar";
             // 
             // label15
             // 
@@ -534,28 +564,42 @@
             this.txtIDCard.Size = new System.Drawing.Size(237, 44);
             this.txtIDCard.TabIndex = 72;
             // 
-            // label9
+            // btChangePass
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(586, 170);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(102, 37);
-            this.label9.TabIndex = 78;
-            this.label9.Text = "Avatar";
+            this.btChangePass.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btChangePass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btChangePass.Font = new System.Drawing.Font("Sitka Subheading", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btChangePass.ForeColor = System.Drawing.Color.White;
+            this.btChangePass.Location = new System.Drawing.Point(566, 353);
+            this.btChangePass.Name = "btChangePass";
+            this.btChangePass.Size = new System.Drawing.Size(343, 45);
+            this.btChangePass.TabIndex = 89;
+            this.btChangePass.Text = "Change your password";
+            this.btChangePass.UseVisualStyleBackColor = false;
+            this.btChangePass.Click += new System.EventHandler(this.btChangePass_Click);
             // 
-            // picAvaEdit
+            // txtPass
             // 
-            this.picAvaEdit.BackColor = System.Drawing.Color.Transparent;
-            this.picAvaEdit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picAvaEdit.BackgroundImage")));
-            this.picAvaEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picAvaEdit.Location = new System.Drawing.Point(593, 209);
-            this.picAvaEdit.Name = "picAvaEdit";
-            this.picAvaEdit.Size = new System.Drawing.Size(306, 164);
-            this.picAvaEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picAvaEdit.TabIndex = 78;
-            this.picAvaEdit.TabStop = false;
+            this.txtPass.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.txtPass.Enabled = false;
+            this.txtPass.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPass.ForeColor = System.Drawing.Color.White;
+            this.txtPass.Location = new System.Drawing.Point(714, 299);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '*';
+            this.txtPass.Size = new System.Drawing.Size(195, 44);
+            this.txtPass.TabIndex = 87;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.White;
+            this.label21.Location = new System.Drawing.Point(571, 306);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(139, 37);
+            this.label21.TabIndex = 88;
+            this.label21.Text = "Password";
             // 
             // AccountMemberUC
             // 
@@ -579,9 +623,9 @@
             this.groupBoxContact.PerformLayout();
             this.groupBoxEdit.ResumeLayout(false);
             this.groupBoxEdit.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picAvaEdit)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAvaEdit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -628,5 +672,8 @@
         private System.Windows.Forms.TextBox txtIDCard;
         private System.Windows.Forms.PictureBox picAvaEdit;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btChangePass;
+        private System.Windows.Forms.TextBox txtPass;
+        private System.Windows.Forms.Label label21;
     }
 }

@@ -19,7 +19,19 @@ namespace slnGym.User_Control
 
         private void AccountMemberUC_Load(object sender, EventArgs e)
         {
+            groupBoxEdit.Visible = false;
+            txtPass.Enabled = false;
+        }
 
+        private void btChangePass_Click(object sender, EventArgs e)
+        {
+            AddForm.ChangePassword change = new AddForm.ChangePassword();
+            change.ShowDialog();
+        }
+
+        private void btEdit_Click(object sender, EventArgs e)
+        {
+            groupBoxEdit.Visible = true;
         }
     }
 }
