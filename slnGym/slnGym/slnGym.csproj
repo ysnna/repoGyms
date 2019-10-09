@@ -49,9 +49,18 @@
     <Compile Include="Class\abilities_CLASS.cs" />
     <Compile Include="Class\classroom_CLASS.cs" />
     <Compile Include="Class\contracts_CLASS.cs" />
+    <Compile Include="Class\DETAILCONTRACT.cs" />
+    <Compile Include="Class\DETAILREPCEIPT.cs" />
+    <Compile Include="Class\EMPLOYEE.cs" />
     <Compile Include="Class\GLOBALClass.cs" />
+    <Compile Include="Class\GROUPEMPLOYEE.cs" />
+    <Compile Include="Class\GROUPWORK.cs" />
     <Compile Include="Class\LOGINClass.cs" />
     <Compile Include="Class\MEMBERS_Class.cs" />
+    <Compile Include="Class\PRODUCTS.cs" />
+    <Compile Include="Class\RECEIPT.cs" />
+    <Compile Include="Class\SERVICEPACK.cs" />
+    <Compile Include="Class\WORK.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
