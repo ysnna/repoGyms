@@ -20,6 +20,9 @@ namespace slnGym
         private void Form1_Load(object sender, EventArgs e)
         {
             displayAdminUC.Location = new Point(0, 0);
+            displayEmployeesUC.Location = new Point(0, 0);
+            displayMembersUC.Location = new Point(0, 0);
+            displayPTsUC.Location = new Point(0, 0);
             loginUC.Location = new Point(0, 0);
             loginUC.BringToFront();
             btSignIn.BringToFront();

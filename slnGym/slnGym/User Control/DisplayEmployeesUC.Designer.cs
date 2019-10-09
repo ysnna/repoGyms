@@ -33,10 +33,13 @@
             this.btReceipt = new System.Windows.Forms.Button();
             this.btContract = new System.Windows.Forms.Button();
             this.btMember = new System.Windows.Forms.Button();
-            this.btEmployee = new System.Windows.Forms.Button();
+            this.btAccount = new System.Windows.Forms.Button();
             this.btLogin = new System.Windows.Forms.Button();
             this.panelClick = new System.Windows.Forms.Panel();
             this.btHome = new System.Windows.Forms.Button();
+            this.accountEmployeeUC = new slnGym.User_Control.AccountEmployeeUC();
+            this.homeUC = new slnGym.HomeUC();
+            this.loginUC = new slnGym.LoginUC();
             this.panelEmployees.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +52,7 @@
             this.panelEmployees.Controls.Add(this.btReceipt);
             this.panelEmployees.Controls.Add(this.btContract);
             this.panelEmployees.Controls.Add(this.btMember);
-            this.panelEmployees.Controls.Add(this.btEmployee);
+            this.panelEmployees.Controls.Add(this.btAccount);
             this.panelEmployees.Controls.Add(this.btLogin);
             this.panelEmployees.Controls.Add(this.panelClick);
             this.panelEmployees.Controls.Add(this.btHome);
@@ -118,20 +121,21 @@
             this.btMember.Text = "Members";
             this.btMember.UseVisualStyleBackColor = true;
             // 
-            // btEmployee
+            // btAccount
             // 
-            this.btEmployee.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btEmployee.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.btEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btEmployee.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btEmployee.ForeColor = System.Drawing.Color.Transparent;
-            this.btEmployee.Location = new System.Drawing.Point(3, 215);
-            this.btEmployee.Name = "btEmployee";
-            this.btEmployee.Size = new System.Drawing.Size(350, 100);
-            this.btEmployee.TabIndex = 5;
-            this.btEmployee.Text = "Employees";
-            this.btEmployee.UseVisualStyleBackColor = true;
+            this.btAccount.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btAccount.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btAccount.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
+            this.btAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btAccount.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAccount.ForeColor = System.Drawing.Color.Transparent;
+            this.btAccount.Location = new System.Drawing.Point(3, 215);
+            this.btAccount.Name = "btAccount";
+            this.btAccount.Size = new System.Drawing.Size(350, 100);
+            this.btAccount.TabIndex = 5;
+            this.btAccount.Text = "Account";
+            this.btAccount.UseVisualStyleBackColor = true;
+            this.btAccount.Click += new System.EventHandler(this.btAccount_Click);
             // 
             // btLogin
             // 
@@ -147,6 +151,7 @@
             this.btLogin.TabIndex = 4;
             this.btLogin.Text = "Login";
             this.btLogin.UseVisualStyleBackColor = true;
+            this.btLogin.Click += new System.EventHandler(this.btLogin_Click);
             // 
             // panelClick
             // 
@@ -170,14 +175,48 @@
             this.btHome.TabIndex = 0;
             this.btHome.Text = "Home";
             this.btHome.UseVisualStyleBackColor = true;
+            this.btHome.Click += new System.EventHandler(this.btHome_Click);
+            // 
+            // accountEmployeeUC
+            // 
+            this.accountEmployeeUC.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.accountEmployeeUC.Location = new System.Drawing.Point(362, 3);
+            this.accountEmployeeUC.Name = "accountEmployeeUC";
+            this.accountEmployeeUC.Size = new System.Drawing.Size(1555, 1011);
+            this.accountEmployeeUC.TabIndex = 16;
+            // 
+            // homeUC
+            // 
+            this.homeUC.AutoScroll = true;
+            this.homeUC.BackColor = System.Drawing.Color.LightCoral;
+            this.homeUC.Location = new System.Drawing.Point(362, 3);
+            this.homeUC.Name = "homeUC";
+            this.homeUC.Size = new System.Drawing.Size(1555, 1011);
+            this.homeUC.TabIndex = 17;
+            // 
+            // loginUC
+            // 
+            this.loginUC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.loginUC.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.loginUC.Location = new System.Drawing.Point(362, 3);
+            this.loginUC.Name = "loginUC";
+            this.loginUC.Size = new System.Drawing.Size(1080, 800);
+            this.loginUC.TabIndex = 18;
             // 
             // DisplayEmployeesUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Silver;
+            this.Controls.Add(this.loginUC);
+            this.Controls.Add(this.homeUC);
+            this.Controls.Add(this.accountEmployeeUC);
             this.Controls.Add(this.panelEmployees);
             this.Name = "DisplayEmployeesUC";
             this.Size = new System.Drawing.Size(1920, 1017);
+            this.Load += new System.EventHandler(this.DisplayEmployeesUC_Load);
             this.panelEmployees.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -190,9 +229,12 @@
         private System.Windows.Forms.Button btReceipt;
         private System.Windows.Forms.Button btContract;
         private System.Windows.Forms.Button btMember;
-        private System.Windows.Forms.Button btEmployee;
+        private System.Windows.Forms.Button btAccount;
         private System.Windows.Forms.Button btLogin;
         private System.Windows.Forms.Panel panelClick;
         private System.Windows.Forms.Button btHome;
+        private AccountEmployeeUC accountEmployeeUC;
+        private HomeUC homeUC;
+        private LoginUC loginUC;
     }
 }

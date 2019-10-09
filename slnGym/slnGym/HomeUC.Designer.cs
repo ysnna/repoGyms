@@ -80,7 +80,7 @@
             this.groupBoxContact.Size = new System.Drawing.Size(628, 171);
             this.groupBoxContact.TabIndex = 50;
             this.groupBoxContact.TabStop = false;
-            this.groupBoxContact.Text = "About me";
+            this.groupBoxContact.Text = "About us";
             // 
             // label7
             // 
@@ -221,7 +221,7 @@
             this.btMachine.ForeColor = System.Drawing.Color.Transparent;
             this.btMachine.Location = new System.Drawing.Point(52, 156);
             this.btMachine.Name = "btMachine";
-            this.btMachine.Size = new System.Drawing.Size(209, 60);
+            this.btMachine.Size = new System.Drawing.Size(209, 59);
             this.btMachine.TabIndex = 54;
             this.btMachine.Text = "Machines";
             this.btMachine.UseVisualStyleBackColor = false;
@@ -235,9 +235,9 @@
             this.btClass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btClass.Font = new System.Drawing.Font("Sitka Subheading", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btClass.ForeColor = System.Drawing.Color.Transparent;
-            this.btClass.Location = new System.Drawing.Point(509, 156);
+            this.btClass.Location = new System.Drawing.Point(509, 157);
             this.btClass.Name = "btClass";
-            this.btClass.Size = new System.Drawing.Size(208, 59);
+            this.btClass.Size = new System.Drawing.Size(208, 58);
             this.btClass.TabIndex = 55;
             this.btClass.Text = "Class";
             this.btClass.UseVisualStyleBackColor = false;
