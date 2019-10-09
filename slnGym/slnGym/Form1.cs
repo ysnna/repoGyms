@@ -17,42 +17,26 @@ namespace slnGym
             InitializeComponent();
         }
 
-        private void menuStrip2_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
-            loginUC.Location = new Point(350, 0);
-            homeUC.Location = new Point(350, 0);
-            panelView.Location = new Point(-3, 0);
-            panelView.Size = new Size(350, 900);
-            panelClick.BringToFront();
-            panelClick.Height = btHome.Height;
-            panelClick.Top = btHome.Top;
-            homeUC.BringToFront();
-        }
-
-        private void btHome_Click(object sender, EventArgs e)
-        {
-            panelClick.BringToFront();
-            panelClick.Height = btHome.Height;
-            panelClick.Top = btHome.Top;
-            homeUC.BringToFront();
-        }
-
-        private void btLogin_Click(object sender, EventArgs e)
-        {
-            panelClick.BringToFront();
-            panelClick.Height = btLogin.Height;
-            panelClick.Top = btLogin.Top;
+            displayAdminUC.Location = new Point(0, 0);
+            loginUC.Location = new Point(0, 0);
             loginUC.BringToFront();
             btSignIn.BringToFront();
             btSignUp.BringToFront();
         }
 
-        private void BtSignIn_Click(object sender, EventArgs e)
+        private void btSignIn_Click(object sender, EventArgs e)
+        {
+            displayAdminUC.BringToFront();
+        }
+
+        private void btSignUp_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtSignUp_Click(object sender, EventArgs e)
         {
 
         }
