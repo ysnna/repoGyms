@@ -31,6 +31,8 @@ namespace slnGym
 
         private void btSignIn_Click(object sender, EventArgs e)
         {
+            LoginUC lg = new LoginUC();
+            string user = lg.txtUsername.Text.ToString();
             displayAdminUC.BringToFront();
         }
 

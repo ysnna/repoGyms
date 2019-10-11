@@ -36,6 +36,7 @@ go
 create table EMPLOYEE(
 employeeID varchar(20) not null,
 groupID  varchar(20) ,
+avatar image,
 employeeFName nvarchar(30) not null,
 employeeLName nvarchar(30) null,
 employeeBDate datetime not null,
@@ -78,6 +79,7 @@ go
 create table MEMBERS
 (
 memID varchar(20) not null,
+avatar image,
 memLname nvarchar(20) not null,
 memFName nvarchar(20)  null,
 memBDate Datetime not null,
@@ -160,6 +162,7 @@ go
 create table PRODUCTS
 (
 productID varchar(20) not null,
+picture image,
 productName nvarchar(20) not null,
 productCost int not null,
 constraint pk_product primary key (productID),

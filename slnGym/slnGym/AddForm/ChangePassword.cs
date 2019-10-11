@@ -16,5 +16,10 @@ namespace slnGym.AddForm
         {
             InitializeComponent();
         }
+
+        private void BtSave_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
