@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace slnGym.Class
 {
-    class LOGIN
+    public class LOGIN
     {
         MY_DB mydb = new MY_DB();
         //Dang ky tai khoan
@@ -62,6 +62,26 @@ namespace slnGym.Class
                 return false;
             }
 
+        }
+
+        public DataTable getUserID(string user)
+        {
+            SqlCommand cmd = new SqlCommand("select userID from ACCOUNT where username=@user", mydb.getConnection);
+            cmd.Parameters.Add("@user", SqlDbType.NChar).Value = user;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
+        public DataTable getAccount(string user,string pass)
+        {
+            SqlCommand cmd = new SqlCommand("select *from ACCOUNT where username=@user and passw=@pass", mydb.getConnection);
+            cmd.Parameters.Add("@user", SqlDbType.NChar).Value = user;
+            cmd.Parameters.Add("@pass", SqlDbType.NChar).Value = pass;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
         }
     }
 }
