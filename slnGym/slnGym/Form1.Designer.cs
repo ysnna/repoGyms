@@ -44,9 +44,10 @@
             this.btSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btSignIn.Font = new System.Drawing.Font("Sitka Subheading", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btSignIn.ForeColor = System.Drawing.Color.White;
-            this.btSignIn.Location = new System.Drawing.Point(944, 265);
+            this.btSignIn.Location = new System.Drawing.Point(1259, 326);
+            this.btSignIn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btSignIn.Name = "btSignIn";
-            this.btSignIn.Size = new System.Drawing.Size(249, 97);
+            this.btSignIn.Size = new System.Drawing.Size(332, 119);
             this.btSignIn.TabIndex = 11;
             this.btSignIn.Text = "Sign in";
             this.btSignIn.UseVisualStyleBackColor = true;
@@ -60,9 +61,10 @@
             this.btSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btSignUp.Font = new System.Drawing.Font("Sitka Subheading", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btSignUp.ForeColor = System.Drawing.Color.White;
-            this.btSignUp.Location = new System.Drawing.Point(944, 401);
+            this.btSignUp.Location = new System.Drawing.Point(1259, 494);
+            this.btSignUp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btSignUp.Name = "btSignUp";
-            this.btSignUp.Size = new System.Drawing.Size(249, 97);
+            this.btSignUp.Size = new System.Drawing.Size(332, 119);
             this.btSignUp.TabIndex = 12;
             this.btSignUp.Text = "Sign up";
             this.btSignUp.UseVisualStyleBackColor = false;
@@ -70,55 +72,62 @@
             // 
             // displayPTsUC
             // 
-            this.displayPTsUC.Location = new System.Drawing.Point(2, 3);
+            this.displayPTsUC.Location = new System.Drawing.Point(3, 4);
+            this.displayPTsUC.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.displayPTsUC.Name = "displayPTsUC";
-            this.displayPTsUC.Size = new System.Drawing.Size(1920, 1017);
+            this.displayPTsUC.Size = new System.Drawing.Size(2560, 1252);
             this.displayPTsUC.TabIndex = 16;
             // 
             // displayEmployeesUC
             // 
-            this.displayEmployeesUC.Location = new System.Drawing.Point(2, 3);
+            this.displayEmployeesUC.BackColor = System.Drawing.Color.Silver;
+            this.displayEmployeesUC.Location = new System.Drawing.Point(3, 4);
+            this.displayEmployeesUC.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.displayEmployeesUC.Name = "displayEmployeesUC";
-            this.displayEmployeesUC.Size = new System.Drawing.Size(1920, 1017);
+            this.displayEmployeesUC.Size = new System.Drawing.Size(2560, 1252);
             this.displayEmployeesUC.TabIndex = 14;
             // 
             // loginUC
             // 
             this.loginUC.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.loginUC.Location = new System.Drawing.Point(2, 3);
-            this.loginUC.Margin = new System.Windows.Forms.Padding(4);
+            this.loginUC.Location = new System.Drawing.Point(3, 4);
+            this.loginUC.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.loginUC.Name = "loginUC";
-            this.loginUC.Size = new System.Drawing.Size(1920, 1017);
+            this.loginUC.Size = new System.Drawing.Size(2560, 1252);
             this.loginUC.TabIndex = 1;
+            this.loginUC.Load += new System.EventHandler(this.LoginUC_Load);
             // 
             // displayAdminUC
             // 
             this.displayAdminUC.BackColor = System.Drawing.Color.DarkGray;
-            this.displayAdminUC.Location = new System.Drawing.Point(2, 3);
+            this.displayAdminUC.Location = new System.Drawing.Point(3, 4);
+            this.displayAdminUC.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.displayAdminUC.Name = "displayAdminUC";
-            this.displayAdminUC.Size = new System.Drawing.Size(1920, 1017);
+            this.displayAdminUC.Size = new System.Drawing.Size(2560, 1252);
             this.displayAdminUC.TabIndex = 13;
             // 
             // displayMembersUC
             // 
-            this.displayMembersUC.Location = new System.Drawing.Point(2, 3);
+            this.displayMembersUC.Location = new System.Drawing.Point(3, 4);
+            this.displayMembersUC.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.displayMembersUC.Name = "displayMembersUC";
-            this.displayMembersUC.Size = new System.Drawing.Size(1920, 1017);
+            this.displayMembersUC.Size = new System.Drawing.Size(2560, 1252);
             this.displayMembersUC.TabIndex = 15;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.ClientSize = new System.Drawing.Size(1443, 816);
+            this.ClientSize = new System.Drawing.Size(1924, 1004);
             this.Controls.Add(this.btSignIn);
             this.Controls.Add(this.btSignUp);
-            this.Controls.Add(this.displayEmployeesUC);
             this.Controls.Add(this.loginUC);
             this.Controls.Add(this.displayAdminUC);
             this.Controls.Add(this.displayMembersUC);
             this.Controls.Add(this.displayPTsUC);
+            this.Controls.Add(this.displayEmployeesUC);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
