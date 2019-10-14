@@ -43,6 +43,9 @@
             this.radioMale = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBoxContact = new System.Windows.Forms.GroupBox();
+            this.btChangePass = new System.Windows.Forms.Button();
+            this.txtPass = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
             this.lbAddress = new System.Windows.Forms.Label();
             this.lbIDCard = new System.Windows.Forms.Label();
             this.lbPhone = new System.Windows.Forms.Label();
@@ -69,9 +72,6 @@
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtLname = new System.Windows.Forms.TextBox();
             this.txtIDCard = new System.Windows.Forms.TextBox();
-            this.btChangePass = new System.Windows.Forms.Button();
-            this.txtPass = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picAva)).BeginInit();
             this.panel2.SuspendLayout();
             this.groupBoxContact.SuspendLayout();
@@ -261,6 +261,43 @@
             this.groupBoxContact.TabStop = false;
             this.groupBoxContact.Text = " Details";
             // 
+            // btChangePass
+            // 
+            this.btChangePass.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btChangePass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btChangePass.Font = new System.Drawing.Font("Sitka Subheading", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btChangePass.ForeColor = System.Drawing.Color.White;
+            this.btChangePass.Location = new System.Drawing.Point(566, 353);
+            this.btChangePass.Name = "btChangePass";
+            this.btChangePass.Size = new System.Drawing.Size(343, 45);
+            this.btChangePass.TabIndex = 89;
+            this.btChangePass.Text = "Change your password";
+            this.btChangePass.UseVisualStyleBackColor = false;
+            this.btChangePass.Click += new System.EventHandler(this.btChangePass_Click);
+            // 
+            // txtPass
+            // 
+            this.txtPass.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.txtPass.Enabled = false;
+            this.txtPass.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPass.ForeColor = System.Drawing.Color.White;
+            this.txtPass.Location = new System.Drawing.Point(714, 299);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '*';
+            this.txtPass.Size = new System.Drawing.Size(195, 44);
+            this.txtPass.TabIndex = 87;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.White;
+            this.label21.Location = new System.Drawing.Point(571, 306);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(139, 37);
+            this.label21.TabIndex = 88;
+            this.label21.Text = "Password";
+            // 
             // lbAddress
             // 
             this.lbAddress.AutoSize = true;
@@ -377,6 +414,7 @@
             this.picAvaEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picAvaEdit.TabIndex = 78;
             this.picAvaEdit.TabStop = false;
+            this.picAvaEdit.Click += new System.EventHandler(this.picAvaEdit_Click);
             // 
             // label9
             // 
@@ -563,43 +601,6 @@
             this.txtIDCard.Name = "txtIDCard";
             this.txtIDCard.Size = new System.Drawing.Size(237, 44);
             this.txtIDCard.TabIndex = 72;
-            // 
-            // btChangePass
-            // 
-            this.btChangePass.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btChangePass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btChangePass.Font = new System.Drawing.Font("Sitka Subheading", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btChangePass.ForeColor = System.Drawing.Color.White;
-            this.btChangePass.Location = new System.Drawing.Point(566, 353);
-            this.btChangePass.Name = "btChangePass";
-            this.btChangePass.Size = new System.Drawing.Size(343, 45);
-            this.btChangePass.TabIndex = 89;
-            this.btChangePass.Text = "Change your password";
-            this.btChangePass.UseVisualStyleBackColor = false;
-            this.btChangePass.Click += new System.EventHandler(this.btChangePass_Click);
-            // 
-            // txtPass
-            // 
-            this.txtPass.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.txtPass.Enabled = false;
-            this.txtPass.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPass.ForeColor = System.Drawing.Color.White;
-            this.txtPass.Location = new System.Drawing.Point(714, 299);
-            this.txtPass.Name = "txtPass";
-            this.txtPass.PasswordChar = '*';
-            this.txtPass.Size = new System.Drawing.Size(195, 44);
-            this.txtPass.TabIndex = 87;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(571, 306);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(139, 37);
-            this.label21.TabIndex = 88;
-            this.label21.Text = "Password";
             // 
             // AccountMemberUC
             // 

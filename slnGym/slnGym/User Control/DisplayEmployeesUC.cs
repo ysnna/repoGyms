@@ -33,6 +33,7 @@ namespace slnGym.User_Control
             homeUC.BringToFront();
             accountEmployeeUC.Location = new Point(362, 3);
             homeUC.Location = new Point(362, 3);
+            newMemberUC.Location = new Point(362, 3);
         }
 
         private void btAccount_Click(object sender, EventArgs e)
@@ -43,12 +44,40 @@ namespace slnGym.User_Control
             accountEmployeeUC.BringToFront();
         }
 
-        private void btLogin_Click(object sender, EventArgs e)
+        private void btNNewMember_Click(object sender, EventArgs e)
         {
             panelClick.BringToFront();
-            panelClick.Height = loginUC.Height;
-            panelClick.Top = loginUC.Top;
-            loginUC.BringToFront();
+            panelClick.Height = btNNewMember.Height;
+            panelClick.Top = btNNewMember.Top;
+            newMemberUC.BringToFront();
+        }
+
+        private void btMember_Click(object sender, EventArgs e)
+        {
+            panelClick.BringToFront();
+            panelClick.Height = btMember.Height;
+            panelClick.Top = btMember.Top;
+        }
+
+        private void btContract_Click(object sender, EventArgs e)
+        {
+            panelClick.BringToFront();
+            panelClick.Height = btContract.Height;
+            panelClick.Top = btContract.Top;
+        }
+
+        private void btReceipt_Click(object sender, EventArgs e)
+        {
+            panelClick.BringToFront();
+            panelClick.Height = btReceipt.Height;
+            panelClick.Top = btReceipt.Top;
+        }
+
+        private void btStatistic_Click(object sender, EventArgs e)
+        {
+            panelClick.BringToFront();
+            panelClick.Height = btStatistic.Height;
+            panelClick.Top = btStatistic.Top;
         }
     }
 }

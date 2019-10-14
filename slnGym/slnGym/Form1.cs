@@ -28,17 +28,13 @@ namespace slnGym
             loginUC.Location = new Point(0, 0);
             loginUC.BringToFront();
             btSignIn.BringToFront();
-            btSignUp.BringToFront();
         }
-       
-        
         private void btSignIn_Click(object sender, EventArgs e)
         {
-          
             GLOBAL.GetUsername(loginUC.txtUsername.Text);
-
-            if(LoginCheck()==true)
-                switch (DefineAccount()) {
+            if (LoginCheck() == true)
+                switch (DefineAccount())
+                {
                     case 0:
                         displayAdminUC.BringToFront();
                         break;
@@ -48,17 +44,15 @@ namespace slnGym
                     case 2:
                         displayMembersUC.BringToFront();
                         break;
+                    case 3:
+                        displayPTsUC.BringToFront();
+                        break;
                 }
             else
             {
-                MessageBox.Show("Invalid Username or Password", "Login error", MessageBoxButtons.OK, MessageBoxIcon.Error);        
-}
-        
-        }
+                MessageBox.Show("Invalid Username or Password", "Login error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
-        private void btSignUp_Click(object sender, EventArgs e)
-        {
-            
         }
         //Nhan dien nguoi dang nhap la Nhan Vien hay Member
         int DefineAccount()
@@ -79,6 +73,11 @@ namespace slnGym
         }
 
         private void LoginUC_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void displayEmployeesUC_Load(object sender, EventArgs e)
         {
 
         }

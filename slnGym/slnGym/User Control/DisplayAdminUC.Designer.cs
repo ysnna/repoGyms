@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.panelAdmin = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.btStatistic = new System.Windows.Forms.Button();
             this.btReceipt = new System.Windows.Forms.Button();
             this.btContract = new System.Windows.Forms.Button();
             this.btMember = new System.Windows.Forms.Button();
             this.btEmployee = new System.Windows.Forms.Button();
-            this.btLogin = new System.Windows.Forms.Button();
+            this.btNewMember = new System.Windows.Forms.Button();
             this.panelClick = new System.Windows.Forms.Panel();
             this.btHome = new System.Windows.Forms.Button();
             this.homeUCAdmin = new slnGym.HomeUC();
-            this.label1 = new System.Windows.Forms.Label();
             this.panelAdmin.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,13 +53,24 @@
             this.panelAdmin.Controls.Add(this.btContract);
             this.panelAdmin.Controls.Add(this.btMember);
             this.panelAdmin.Controls.Add(this.btEmployee);
-            this.panelAdmin.Controls.Add(this.btLogin);
+            this.panelAdmin.Controls.Add(this.btNewMember);
             this.panelAdmin.Controls.Add(this.panelClick);
             this.panelAdmin.Controls.Add(this.btHome);
             this.panelAdmin.Location = new System.Drawing.Point(3, 3);
             this.panelAdmin.Name = "panelAdmin";
             this.panelAdmin.Size = new System.Drawing.Size(357, 1011);
             this.panelAdmin.TabIndex = 14;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(114, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(215, 28);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Using as Administrator";
             // 
             // btStatistic
             // 
@@ -146,22 +157,22 @@
             this.btEmployee.UseVisualStyleBackColor = true;
             this.btEmployee.Click += new System.EventHandler(this.btEmployee_Click);
             // 
-            // btLogin
+            // btNewMember
             // 
-            this.btLogin.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btLogin.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.btLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btLogin.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btLogin.ForeColor = System.Drawing.Color.Transparent;
-            this.btLogin.Location = new System.Drawing.Point(3, 213);
-            this.btLogin.Name = "btLogin";
-            this.btLogin.Size = new System.Drawing.Size(350, 100);
-            this.btLogin.TabIndex = 4;
-            this.btLogin.Text = "          Login";
-            this.btLogin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btLogin.UseVisualStyleBackColor = true;
-            this.btLogin.Click += new System.EventHandler(this.btLogin_Click);
+            this.btNewMember.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btNewMember.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btNewMember.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
+            this.btNewMember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btNewMember.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btNewMember.ForeColor = System.Drawing.Color.Transparent;
+            this.btNewMember.Location = new System.Drawing.Point(3, 213);
+            this.btNewMember.Name = "btNewMember";
+            this.btNewMember.Size = new System.Drawing.Size(350, 100);
+            this.btNewMember.TabIndex = 4;
+            this.btNewMember.Text = "          New Member";
+            this.btNewMember.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btNewMember.UseVisualStyleBackColor = true;
+            this.btNewMember.Click += new System.EventHandler(this.btNewMember_Click);
             // 
             // panelClick
             // 
@@ -197,17 +208,6 @@
             this.homeUCAdmin.Size = new System.Drawing.Size(1555, 1011);
             this.homeUCAdmin.TabIndex = 15;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(114, 34);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(215, 28);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Using as Administrator";
-            // 
             // DisplayAdminUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -232,7 +232,7 @@
         private System.Windows.Forms.Button btContract;
         private System.Windows.Forms.Button btMember;
         private System.Windows.Forms.Button btEmployee;
-        private System.Windows.Forms.Button btLogin;
+        private System.Windows.Forms.Button btNewMember;
         private System.Windows.Forms.Panel panelClick;
         private System.Windows.Forms.Button btHome;
         private HomeUC homeUCAdmin;

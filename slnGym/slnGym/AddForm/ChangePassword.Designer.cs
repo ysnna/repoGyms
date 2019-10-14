@@ -146,6 +146,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ChangePassword";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ChangePassword";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).EndInit();
             this.ResumeLayout(false);
