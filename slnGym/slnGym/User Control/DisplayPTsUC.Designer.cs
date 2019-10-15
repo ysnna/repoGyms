@@ -175,6 +175,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.Controls.Add(this.panelPTs);
             this.Name = "DisplayPTsUC";
             this.Size = new System.Drawing.Size(1920, 1017);

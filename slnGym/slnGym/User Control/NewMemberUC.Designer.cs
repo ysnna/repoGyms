@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewMemberUC));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle57 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle58 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle59 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle60 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle61 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle62 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle63 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle64 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBoxEdit = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtNote = new System.Windows.Forms.TextBox();
@@ -90,7 +90,7 @@
             this.txtIDContract = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btCreateContract = new System.Windows.Forms.Button();
             this.groupBoxEdit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAvaEdit)).BeginInit();
             this.panel4.SuspendLayout();
@@ -405,30 +405,38 @@
             // 
             // btInvoice
             // 
+            this.btInvoice.BackColor = System.Drawing.Color.HotPink;
             this.btInvoice.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btInvoice.BackgroundImage")));
+            this.btInvoice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btInvoice.FlatAppearance.BorderColor = System.Drawing.Color.Navy;
+            this.btInvoice.FlatAppearance.BorderSize = 3;
             this.btInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btInvoice.Font = new System.Drawing.Font("Sitka Subheading", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btInvoice.ForeColor = System.Drawing.Color.White;
-            this.btInvoice.Location = new System.Drawing.Point(1303, 914);
+            this.btInvoice.Location = new System.Drawing.Point(1276, 914);
             this.btInvoice.Name = "btInvoice";
-            this.btInvoice.Size = new System.Drawing.Size(216, 61);
+            this.btInvoice.Size = new System.Drawing.Size(243, 61);
             this.btInvoice.TabIndex = 78;
             this.btInvoice.Text = "To Invoice";
-            this.btInvoice.UseVisualStyleBackColor = true;
+            this.btInvoice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btInvoice.UseVisualStyleBackColor = false;
             this.btInvoice.Click += new System.EventHandler(this.btInvoice_Click);
             // 
             // btResfresh
             // 
+            this.btResfresh.BackColor = System.Drawing.Color.Lavender;
             this.btResfresh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btResfresh.BackgroundImage")));
+            this.btResfresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btResfresh.FlatAppearance.BorderColor = System.Drawing.Color.Navy;
+            this.btResfresh.FlatAppearance.BorderSize = 3;
             this.btResfresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btResfresh.Font = new System.Drawing.Font("Sitka Subheading", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btResfresh.ForeColor = System.Drawing.Color.White;
-            this.btResfresh.Location = new System.Drawing.Point(1096, 914);
+            this.btResfresh.Location = new System.Drawing.Point(964, 914);
             this.btResfresh.Name = "btResfresh";
-            this.btResfresh.Size = new System.Drawing.Size(201, 61);
+            this.btResfresh.Size = new System.Drawing.Size(88, 61);
             this.btResfresh.TabIndex = 79;
-            this.btResfresh.Text = "Refresh";
-            this.btResfresh.UseVisualStyleBackColor = true;
+            this.btResfresh.UseVisualStyleBackColor = false;
             this.btResfresh.Click += new System.EventHandler(this.btResfresh_Click);
             // 
             // groupChoospackage
@@ -467,38 +475,38 @@
             this.dgvPT.AllowUserToDeleteRows = false;
             this.dgvPT.AllowUserToResizeColumns = false;
             this.dgvPT.AllowUserToResizeRows = false;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPT.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle57.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPT.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle57;
             this.dgvPT.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPT.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvPT.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Sitka Banner", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPT.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle58.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle58.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle58.Font = new System.Drawing.Font("Sitka Banner", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle58.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle58.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle58.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle58.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPT.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle58;
             this.dgvPT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPT.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvPT.Location = new System.Drawing.Point(482, 44);
             this.dgvPT.Name = "dgvPT";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Sitka Banner", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPT.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle59.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle59.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle59.Font = new System.Drawing.Font("Sitka Banner", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle59.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle59.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle59.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle59.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPT.RowHeadersDefaultCellStyle = dataGridViewCellStyle59;
             this.dgvPT.RowHeadersVisible = false;
             this.dgvPT.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPT.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle60.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle60.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPT.RowsDefaultCellStyle = dataGridViewCellStyle60;
             this.dgvPT.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPT.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvPT.Size = new System.Drawing.Size(403, 206);
@@ -521,38 +529,38 @@
             this.dgvPackage.AllowUserToDeleteRows = false;
             this.dgvPackage.AllowUserToResizeColumns = false;
             this.dgvPackage.AllowUserToResizeRows = false;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPackage.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle61.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPackage.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle61;
             this.dgvPackage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPackage.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvPackage.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Sitka Banner", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPackage.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle62.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle62.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle62.Font = new System.Drawing.Font("Sitka Banner", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle62.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle62.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle62.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle62.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPackage.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle62;
             this.dgvPackage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPackage.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvPackage.Location = new System.Drawing.Point(14, 44);
             this.dgvPackage.Name = "dgvPackage";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Sitka Banner", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPackage.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle63.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle63.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle63.Font = new System.Drawing.Font("Sitka Banner", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle63.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle63.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle63.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle63.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPackage.RowHeadersDefaultCellStyle = dataGridViewCellStyle63;
             this.dgvPackage.RowHeadersVisible = false;
             this.dgvPackage.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPackage.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle64.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle64.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPackage.RowsDefaultCellStyle = dataGridViewCellStyle64;
             this.dgvPackage.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPackage.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvPackage.Size = new System.Drawing.Size(424, 256);
@@ -654,9 +662,9 @@
             this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.label19.Location = new System.Drawing.Point(317, 395);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(172, 36);
+            this.label19.Size = new System.Drawing.Size(170, 36);
             this.label19.TabIndex = 98;
-            this.label19.Text = "Party Saller";
+            this.label19.Text = "Party Seller";
             // 
             // txtNamePartyMember
             // 
@@ -811,25 +819,30 @@
             this.label4.TabIndex = 79;
             this.label4.Text = "ID Contract";
             // 
-            // button1
+            // btCreateContract
             // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Sitka Subheading", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(964, 914);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(126, 61);
-            this.button1.TabIndex = 87;
-            this.button1.Text = "Create";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btCreateContract.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btCreateContract.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btCreateContract.BackgroundImage")));
+            this.btCreateContract.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btCreateContract.FlatAppearance.BorderColor = System.Drawing.Color.Navy;
+            this.btCreateContract.FlatAppearance.BorderSize = 3;
+            this.btCreateContract.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btCreateContract.Font = new System.Drawing.Font("Sitka Subheading", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCreateContract.ForeColor = System.Drawing.Color.White;
+            this.btCreateContract.Location = new System.Drawing.Point(1068, 914);
+            this.btCreateContract.Name = "btCreateContract";
+            this.btCreateContract.Size = new System.Drawing.Size(194, 61);
+            this.btCreateContract.TabIndex = 87;
+            this.btCreateContract.Text = "Create";
+            this.btCreateContract.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btCreateContract.UseVisualStyleBackColor = false;
             // 
             // NewMemberUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btCreateContract);
             this.Controls.Add(this.groupBoxEdit);
             this.Controls.Add(this.groupContracting);
             this.Controls.Add(this.btResfresh);
@@ -910,6 +923,6 @@
         private System.Windows.Forms.TextBox txtIDContract;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btCreateContract;
     }
 }

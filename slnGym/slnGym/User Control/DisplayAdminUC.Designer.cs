@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panelAdmin = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.btStatistic = new System.Windows.Forms.Button();
             this.btReceipt = new System.Windows.Forms.Button();
             this.btContract = new System.Windows.Forms.Button();
@@ -47,7 +46,6 @@
             this.panelAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panelAdmin.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panelAdmin.Controls.Add(this.label1);
             this.panelAdmin.Controls.Add(this.btStatistic);
             this.panelAdmin.Controls.Add(this.btReceipt);
             this.panelAdmin.Controls.Add(this.btContract);
@@ -61,17 +59,6 @@
             this.panelAdmin.Size = new System.Drawing.Size(357, 1011);
             this.panelAdmin.TabIndex = 14;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(114, 34);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(215, 28);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Using as Administrator";
-            // 
             // btStatistic
             // 
             this.btStatistic.BackColor = System.Drawing.Color.CornflowerBlue;
@@ -80,7 +67,7 @@
             this.btStatistic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btStatistic.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btStatistic.ForeColor = System.Drawing.Color.Transparent;
-            this.btStatistic.Location = new System.Drawing.Point(3, 743);
+            this.btStatistic.Location = new System.Drawing.Point(4, 639);
             this.btStatistic.Name = "btStatistic";
             this.btStatistic.Size = new System.Drawing.Size(350, 100);
             this.btStatistic.TabIndex = 9;
@@ -97,7 +84,7 @@
             this.btReceipt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btReceipt.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btReceipt.ForeColor = System.Drawing.Color.Transparent;
-            this.btReceipt.Location = new System.Drawing.Point(3, 637);
+            this.btReceipt.Location = new System.Drawing.Point(4, 533);
             this.btReceipt.Name = "btReceipt";
             this.btReceipt.Size = new System.Drawing.Size(350, 100);
             this.btReceipt.TabIndex = 8;
@@ -114,7 +101,7 @@
             this.btContract.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btContract.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btContract.ForeColor = System.Drawing.Color.Transparent;
-            this.btContract.Location = new System.Drawing.Point(3, 531);
+            this.btContract.Location = new System.Drawing.Point(4, 427);
             this.btContract.Name = "btContract";
             this.btContract.Size = new System.Drawing.Size(350, 100);
             this.btContract.TabIndex = 7;
@@ -131,7 +118,7 @@
             this.btMember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btMember.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btMember.ForeColor = System.Drawing.Color.Transparent;
-            this.btMember.Location = new System.Drawing.Point(3, 425);
+            this.btMember.Location = new System.Drawing.Point(4, 321);
             this.btMember.Name = "btMember";
             this.btMember.Size = new System.Drawing.Size(350, 100);
             this.btMember.TabIndex = 6;
@@ -148,7 +135,7 @@
             this.btEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btEmployee.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btEmployee.ForeColor = System.Drawing.Color.Transparent;
-            this.btEmployee.Location = new System.Drawing.Point(3, 319);
+            this.btEmployee.Location = new System.Drawing.Point(4, 215);
             this.btEmployee.Name = "btEmployee";
             this.btEmployee.Size = new System.Drawing.Size(350, 100);
             this.btEmployee.TabIndex = 5;
@@ -165,7 +152,7 @@
             this.btNewMember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btNewMember.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btNewMember.ForeColor = System.Drawing.Color.Transparent;
-            this.btNewMember.Location = new System.Drawing.Point(3, 213);
+            this.btNewMember.Location = new System.Drawing.Point(4, 109);
             this.btNewMember.Name = "btNewMember";
             this.btNewMember.Size = new System.Drawing.Size(350, 100);
             this.btNewMember.TabIndex = 4;
@@ -177,7 +164,7 @@
             // panelClick
             // 
             this.panelClick.BackColor = System.Drawing.Color.AliceBlue;
-            this.panelClick.Location = new System.Drawing.Point(3, 107);
+            this.panelClick.Location = new System.Drawing.Point(4, 3);
             this.panelClick.Name = "panelClick";
             this.panelClick.Size = new System.Drawing.Size(23, 100);
             this.panelClick.TabIndex = 1;
@@ -190,7 +177,7 @@
             this.btHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btHome.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btHome.ForeColor = System.Drawing.Color.Transparent;
-            this.btHome.Location = new System.Drawing.Point(3, 107);
+            this.btHome.Location = new System.Drawing.Point(4, 3);
             this.btHome.Name = "btHome";
             this.btHome.Size = new System.Drawing.Size(350, 100);
             this.btHome.TabIndex = 0;
@@ -212,14 +199,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkGray;
+            this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.Controls.Add(this.homeUCAdmin);
             this.Controls.Add(this.panelAdmin);
             this.Name = "DisplayAdminUC";
             this.Size = new System.Drawing.Size(1920, 1017);
             this.Load += new System.EventHandler(this.DisplayAdminUC_Load);
             this.panelAdmin.ResumeLayout(false);
-            this.panelAdmin.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -236,6 +222,5 @@
         private System.Windows.Forms.Panel panelClick;
         private System.Windows.Forms.Button btHome;
         private HomeUC homeUCAdmin;
-        private System.Windows.Forms.Label label1;
     }
 }

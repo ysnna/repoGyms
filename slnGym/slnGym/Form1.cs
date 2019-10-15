@@ -17,8 +17,10 @@ namespace slnGym
         {
             InitializeComponent();
         }
+
         LOGIN login = new LOGIN();
         LoginUC lg = new LoginUC();
+
         private void Form1_Load(object sender, EventArgs e)
         {
             displayAdminUC.Location = new Point(0, 0);
@@ -26,9 +28,13 @@ namespace slnGym
             displayMembersUC.Location = new Point(0, 0);
             displayPTsUC.Location = new Point(0, 0);
             loginUC.Location = new Point(0, 0);
+            menuStripKH.SendToBack();
+            menuStripKH.Location = new Point(-2, 0);
             loginUC.BringToFront();
             btSignIn.BringToFront();
+            menuStrip.BringToFront();
         }
+
         private void btSignIn_Click(object sender, EventArgs e)
         {
             GLOBAL.GetUsername(loginUC.txtUsername.Text);
@@ -37,15 +43,23 @@ namespace slnGym
                 {
                     case 0:
                         displayAdminUC.BringToFront();
+                        menuStrip.BringToFront();
+                        reLoadUserPassword();
                         break;
                     case 1:
                         displayEmployeesUC.BringToFront();
+                        menuStrip.BringToFront();
+                        reLoadUserPassword();
                         break;
                     case 2:
                         displayMembersUC.BringToFront();
+                        menuStripKH.BringToFront();
+                        reLoadUserPassword();
                         break;
                     case 3:
                         displayPTsUC.BringToFront();
+                        menuStrip.BringToFront();
+                        reLoadUserPassword();
                         break;
                 }
             else
@@ -54,6 +68,7 @@ namespace slnGym
             }
 
         }
+
         //Nhan dien nguoi dang nhap la Nhan Vien hay Member
         int DefineAccount()
         {
@@ -62,6 +77,7 @@ namespace slnGym
             int id = Convert.ToInt32(dt.Rows[0][0].ToString());
             return id;
         }
+
         //Xac nhan Account
         bool LoginCheck()
         {
@@ -72,7 +88,13 @@ namespace slnGym
             return false;
         }
 
-        private void LoginUC_Load(object sender, EventArgs e)
+        void reLoadUserPassword()
+        {
+            loginUC.txtPassword.Text = "";
+            loginUC.txtUsername.Text = "";
+        }
+
+        private void loginUC_Load(object sender, EventArgs e)
         {
 
         }
@@ -80,6 +102,20 @@ namespace slnGym
         private void displayEmployeesUC_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            loginUC.BringToFront();
+            menuStrip.BringToFront();
+            btSignIn.BringToFront();
+        }
+
+        private void KHtoolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            loginUC.BringToFront();
+            menuStrip.BringToFront();
+            btSignIn.BringToFront();
         }
     }
 }

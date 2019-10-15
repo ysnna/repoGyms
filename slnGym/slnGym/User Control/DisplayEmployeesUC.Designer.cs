@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DisplayEmployeesUC));
             this.panelEmployees = new System.Windows.Forms.Panel();
             this.btStatistic = new System.Windows.Forms.Button();
             this.btReceipt = new System.Windows.Forms.Button();
@@ -38,10 +37,11 @@
             this.btNNewMember = new System.Windows.Forms.Button();
             this.panelClick = new System.Windows.Forms.Panel();
             this.btHome = new System.Windows.Forms.Button();
-            this.accountEmployeeUC = new slnGym.User_Control.AccountEmployeeUC();
-            this.homeUC = new slnGym.HomeUC();
-            this.loginUC = new slnGym.LoginUC();
+            this.detailsConrtactUC = new slnGym.User_Control.DetailsConrtactUC();
             this.newMemberUC = new slnGym.User_Control.NewMemberUC();
+            this.loginUC = new slnGym.LoginUC();
+            this.homeUC = new slnGym.HomeUC();
+            this.accountEmployeeUC = new slnGym.User_Control.AccountEmployeeUC();
             this.panelEmployees.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,7 +60,7 @@
             this.panelEmployees.Controls.Add(this.btHome);
             this.panelEmployees.Location = new System.Drawing.Point(3, 3);
             this.panelEmployees.Name = "panelEmployees";
-            this.panelEmployees.Size = new System.Drawing.Size(357, 905);
+            this.panelEmployees.Size = new System.Drawing.Size(357, 1011);
             this.panelEmployees.TabIndex = 15;
             // 
             // btStatistic
@@ -183,22 +183,21 @@
             this.btHome.UseVisualStyleBackColor = true;
             this.btHome.Click += new System.EventHandler(this.btHome_Click);
             // 
-            // accountEmployeeUC
+            // detailsConrtactUC
             // 
-            this.accountEmployeeUC.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.accountEmployeeUC.Location = new System.Drawing.Point(362, 3);
-            this.accountEmployeeUC.Name = "accountEmployeeUC";
-            this.accountEmployeeUC.Size = new System.Drawing.Size(1555, 1011);
-            this.accountEmployeeUC.TabIndex = 16;
+            this.detailsConrtactUC.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.detailsConrtactUC.Location = new System.Drawing.Point(365, 3);
+            this.detailsConrtactUC.Name = "detailsConrtactUC";
+            this.detailsConrtactUC.Size = new System.Drawing.Size(1555, 1011);
+            this.detailsConrtactUC.TabIndex = 20;
             // 
-            // homeUC
+            // newMemberUC
             // 
-            this.homeUC.AutoScroll = true;
-            this.homeUC.BackColor = System.Drawing.Color.LightCoral;
-            this.homeUC.Location = new System.Drawing.Point(362, 3);
-            this.homeUC.Name = "homeUC";
-            this.homeUC.Size = new System.Drawing.Size(1555, 1011);
-            this.homeUC.TabIndex = 17;
+            this.newMemberUC.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.newMemberUC.Location = new System.Drawing.Point(399, 60);
+            this.newMemberUC.Name = "newMemberUC";
+            this.newMemberUC.Size = new System.Drawing.Size(1555, 1011);
+            this.newMemberUC.TabIndex = 19;
             // 
             // loginUC
             // 
@@ -211,21 +210,30 @@
             this.loginUC.Size = new System.Drawing.Size(1080, 800);
             this.loginUC.TabIndex = 18;
             // 
-            // newMemberUC
+            // homeUC
             // 
-            this.newMemberUC.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.newMemberUC.Location = new System.Drawing.Point(619, 263);
-            this.newMemberUC.Name = "newMemberUC";
-            this.newMemberUC.Size = new System.Drawing.Size(1555, 1011);
-            this.newMemberUC.TabIndex = 19;
+            this.homeUC.AutoScroll = true;
+            this.homeUC.BackColor = System.Drawing.Color.LightCoral;
+            this.homeUC.Location = new System.Drawing.Point(362, 3);
+            this.homeUC.Name = "homeUC";
+            this.homeUC.Size = new System.Drawing.Size(1555, 1011);
+            this.homeUC.TabIndex = 17;
+            // 
+            // accountEmployeeUC
+            // 
+            this.accountEmployeeUC.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.accountEmployeeUC.Location = new System.Drawing.Point(362, 3);
+            this.accountEmployeeUC.Name = "accountEmployeeUC";
+            this.accountEmployeeUC.Size = new System.Drawing.Size(1555, 1011);
+            this.accountEmployeeUC.TabIndex = 16;
             // 
             // DisplayEmployeesUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.detailsConrtactUC);
             this.Controls.Add(this.newMemberUC);
             this.Controls.Add(this.loginUC);
             this.Controls.Add(this.homeUC);
@@ -255,5 +263,6 @@
         private HomeUC homeUC;
         private LoginUC loginUC;
         private NewMemberUC newMemberUC;
+        private DetailsConrtactUC detailsConrtactUC;
     }
 }

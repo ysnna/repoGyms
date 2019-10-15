@@ -99,9 +99,9 @@
             this.groupBoxThongtin.Controls.Add(this.txtPassword);
             this.groupBoxThongtin.Font = new System.Drawing.Font("UTM Aquarelle", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxThongtin.ForeColor = System.Drawing.Color.White;
-            this.groupBoxThongtin.Location = new System.Drawing.Point(103, 69);
+            this.groupBoxThongtin.Location = new System.Drawing.Point(114, 69);
             this.groupBoxThongtin.Name = "groupBoxThongtin";
-            this.groupBoxThongtin.Size = new System.Drawing.Size(855, 671);
+            this.groupBoxThongtin.Size = new System.Drawing.Size(844, 650);
             this.groupBoxThongtin.TabIndex = 49;
             this.groupBoxThongtin.TabStop = false;
             this.groupBoxThongtin.Text = "Welcome";
@@ -124,7 +124,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(737, 616);
+            this.label4.Location = new System.Drawing.Point(726, 595);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(103, 16);
             this.label4.TabIndex = 50;
@@ -137,7 +137,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(673, 641);
+            this.label1.Location = new System.Drawing.Point(662, 620);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(167, 16);
             this.label1.TabIndex = 49;
@@ -151,6 +151,7 @@
             this.Controls.Add(this.groupBoxThongtin);
             this.Name = "LoginUC";
             this.Size = new System.Drawing.Size(1080, 800);
+            this.Load += new System.EventHandler(this.LoginUC_Load);
             this.groupBoxThongtin.ResumeLayout(false);
             this.groupBoxThongtin.PerformLayout();
             this.ResumeLayout(false);
