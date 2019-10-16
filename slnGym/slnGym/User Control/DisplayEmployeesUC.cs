@@ -35,6 +35,7 @@ namespace slnGym.User_Control
             homeUC.Location = new Point(362, 3);
             newMemberUC.Location = new Point(362, 3);
             detailsConrtactUC.Location = new Point(362, 3);
+            receiptUC.Location = new Point(362, 3);
         }
 
         private void btAccount_Click(object sender, EventArgs e)
@@ -73,6 +74,7 @@ namespace slnGym.User_Control
             panelClick.BringToFront();
             panelClick.Height = btReceipt.Height;
             panelClick.Top = btReceipt.Top;
+            receiptUC.BringToFront();
         }
 
         private void btStatistic_Click(object sender, EventArgs e)

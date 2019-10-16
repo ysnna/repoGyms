@@ -42,6 +42,7 @@
             this.loginUC = new slnGym.LoginUC();
             this.homeUC = new slnGym.HomeUC();
             this.accountEmployeeUC = new slnGym.User_Control.AccountEmployeeUC();
+            this.receiptUC = new slnGym.User_Control.ReceiptUC();
             this.panelEmployees.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -227,12 +228,21 @@
             this.accountEmployeeUC.Size = new System.Drawing.Size(1555, 1011);
             this.accountEmployeeUC.TabIndex = 16;
             // 
+            // receiptUC
+            // 
+            this.receiptUC.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.receiptUC.Location = new System.Drawing.Point(362, 3);
+            this.receiptUC.Name = "receiptUC";
+            this.receiptUC.Size = new System.Drawing.Size(1555, 1011);
+            this.receiptUC.TabIndex = 21;
+            // 
             // DisplayEmployeesUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.receiptUC);
             this.Controls.Add(this.detailsConrtactUC);
             this.Controls.Add(this.newMemberUC);
             this.Controls.Add(this.loginUC);
@@ -264,5 +274,6 @@
         private LoginUC loginUC;
         private NewMemberUC newMemberUC;
         private DetailsConrtactUC detailsConrtactUC;
+        private ReceiptUC receiptUC;
     }
 }
