@@ -25,11 +25,11 @@ namespace slnGym.User_Control
             homeUCAdmin.BringToFront();
         }
 
-        private void btLogin_Click(object sender, EventArgs e)
+        private void btNewMember_Click(object sender, EventArgs e)
         {
             panelClick.BringToFront();
-            panelClick.Height = btLogin.Height;
-            panelClick.Top = btLogin.Top;
+            panelClick.Height = btNewMember.Height;
+            panelClick.Top = btNewMember.Top;
         }
 
         private void btEmployee_Click(object sender, EventArgs e)

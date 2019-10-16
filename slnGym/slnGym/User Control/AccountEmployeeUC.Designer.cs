@@ -478,6 +478,7 @@
             this.picAvaEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picAvaEdit.TabIndex = 78;
             this.picAvaEdit.TabStop = false;
+            this.picAvaEdit.Click += new System.EventHandler(this.picAvaEdit_Click);
             // 
             // label5
             // 

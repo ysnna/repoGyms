@@ -100,6 +100,12 @@
     <Compile Include="User Control\AccountMemberUC.Designer.cs">
       <DependentUpon>AccountMemberUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="User Control\DetailsConrtactUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\DetailsConrtactUC.Designer.cs">
+      <DependentUpon>DetailsConrtactUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="User Control\DisplayAdminUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -123,6 +129,18 @@
     </Compile>
     <Compile Include="User Control\DisplayPTsUC.Designer.cs">
       <DependentUpon>DisplayPTsUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\NewMemberUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\NewMemberUC.Designer.cs">
+      <DependentUpon>NewMemberUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\ReceiptUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\ReceiptUC.Designer.cs">
+      <DependentUpon>ReceiptUC.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AddForm\ChangePassword.resx">
       <DependentUpon>ChangePassword.cs</DependentUpon>
@@ -151,6 +169,9 @@
     <EmbeddedResource Include="User Control\AccountMemberUC.resx">
       <DependentUpon>AccountMemberUC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="User Control\DetailsConrtactUC.resx">
+      <DependentUpon>DetailsConrtactUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User Control\DisplayAdminUC.resx">
       <DependentUpon>DisplayAdminUC.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,6 +183,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User Control\DisplayPTsUC.resx">
       <DependentUpon>DisplayPTsUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\NewMemberUC.resx">
+      <DependentUpon>NewMemberUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\ReceiptUC.resx">
+      <DependentUpon>ReceiptUC.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

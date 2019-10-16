@@ -31,11 +31,11 @@
             this.panelMembers = new System.Windows.Forms.Panel();
             this.btReceipt = new System.Windows.Forms.Button();
             this.btContract = new System.Windows.Forms.Button();
+            this.btNew = new System.Windows.Forms.Button();
             this.btAccount = new System.Windows.Forms.Button();
             this.panelClick = new System.Windows.Forms.Panel();
             this.btHome = new System.Windows.Forms.Button();
             this.homeUCMember = new slnGym.HomeUC();
-            this.btNew = new System.Windows.Forms.Button();
             this.accountMemberUC = new slnGym.User_Control.AccountMemberUC();
             this.panelMembers.SuspendLayout();
             this.SuspendLayout();
@@ -53,7 +53,7 @@
             this.panelMembers.Controls.Add(this.btHome);
             this.panelMembers.Location = new System.Drawing.Point(1560, 3);
             this.panelMembers.Name = "panelMembers";
-            this.panelMembers.Size = new System.Drawing.Size(357, 1011);
+            this.panelMembers.Size = new System.Drawing.Size(357, 1010);
             this.panelMembers.TabIndex = 15;
             // 
             // btReceipt
@@ -85,6 +85,21 @@
             this.btContract.TabIndex = 7;
             this.btContract.Text = "Contracts";
             this.btContract.UseVisualStyleBackColor = true;
+            // 
+            // btNew
+            // 
+            this.btNew.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btNew.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btNew.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
+            this.btNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btNew.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btNew.ForeColor = System.Drawing.Color.Transparent;
+            this.btNew.Location = new System.Drawing.Point(4, 216);
+            this.btNew.Name = "btNew";
+            this.btNew.Size = new System.Drawing.Size(350, 100);
+            this.btNew.TabIndex = 6;
+            this.btNew.Text = "News";
+            this.btNew.UseVisualStyleBackColor = true;
             // 
             // btAccount
             // 
@@ -135,21 +150,6 @@
             this.homeUCMember.Size = new System.Drawing.Size(1555, 1011);
             this.homeUCMember.TabIndex = 16;
             // 
-            // btNew
-            // 
-            this.btNew.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btNew.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btNew.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.btNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btNew.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btNew.ForeColor = System.Drawing.Color.Transparent;
-            this.btNew.Location = new System.Drawing.Point(4, 216);
-            this.btNew.Name = "btNew";
-            this.btNew.Size = new System.Drawing.Size(350, 100);
-            this.btNew.TabIndex = 6;
-            this.btNew.Text = "News";
-            this.btNew.UseVisualStyleBackColor = true;
-            // 
             // accountMemberUC
             // 
             this.accountMemberUC.BackColor = System.Drawing.Color.CornflowerBlue;
@@ -162,6 +162,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.accountMemberUC);
             this.Controls.Add(this.homeUCMember);
             this.Controls.Add(this.panelMembers);

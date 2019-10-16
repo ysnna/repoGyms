@@ -33,5 +33,13 @@ namespace slnGym.User_Control
             txtPass.Enabled = false;
             groupBoxEdit.Visible = false;
         }
+
+        private void picAvaEdit_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "select image(*.jpg;*.png;*.gif)|*.jpg;*.png;*.gif";
+            if (open.ShowDialog() == DialogResult.OK)
+                picAvaEdit.Image = Image.FromFile(open.FileName);
+        }
     }
 }

@@ -21,5 +21,11 @@ namespace slnGym
         {
             MessageBox.Show(this.txtUsername.Text.ToString());
         }
+
+        private void LoginUC_Load(object sender, EventArgs e)
+        {
+            txtUsername.Text = "";
+            txtPassword.Text = "";
+        }
     }
 }
