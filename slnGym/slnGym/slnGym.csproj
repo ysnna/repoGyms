@@ -79,6 +79,18 @@
     <Compile Include="AddForm\ChangePassword.Designer.cs">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddForm\DeleteMachines.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForm\DeleteMachines.Designer.cs">
+      <DependentUpon>DeleteMachines.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddForm\EditMachines.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForm\EditMachines.Designer.cs">
+      <DependentUpon>EditMachines.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddForm\Form2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +182,12 @@
     <Compile Include="User Control\DisplayPTsUC.Designer.cs">
       <DependentUpon>DisplayPTsUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="User Control\ListMachine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\ListMachine.Designer.cs">
+      <DependentUpon>ListMachine.cs</DependentUpon>
+    </Compile>
     <Compile Include="User Control\NewMemberUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -187,6 +205,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddForm\ChangePassword.resx">
       <DependentUpon>ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForm\DeleteMachines.resx">
+      <DependentUpon>DeleteMachines.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForm\EditMachines.resx">
+      <DependentUpon>EditMachines.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddForm\Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
@@ -233,6 +257,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User Control\DisplayPTsUC.resx">
       <DependentUpon>DisplayPTsUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\ListMachine.resx">
+      <DependentUpon>ListMachine.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Control\NewMemberUC.resx">
       <DependentUpon>NewMemberUC.cs</DependentUpon>
