@@ -39,27 +39,31 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.picMachine = new System.Windows.Forms.PictureBox();
             this.picZoomMachine = new System.Windows.Forms.PictureBox();
             this.txtInfoMachine = new System.Windows.Forms.TextBox();
             this.btMachine = new System.Windows.Forms.Button();
             this.btClass = new System.Windows.Forms.Button();
             this.btProduct = new System.Windows.Forms.Button();
             this.panelControlMachine = new System.Windows.Forms.Panel();
+            this.btRemoveAll = new System.Windows.Forms.Button();
             this.btAddMachine = new System.Windows.Forms.Button();
             this.btRemoveMachine = new System.Windows.Forms.Button();
             this.btEditMachine = new System.Windows.Forms.Button();
             this.pictureBoxMachine = new System.Windows.Forms.PictureBox();
             this.pictureBoxProduct = new System.Windows.Forms.PictureBox();
             this.pictureBoxClass = new System.Windows.Forms.PictureBox();
+            this.numericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btUpload = new System.Windows.Forms.Button();
             this.groupBoxContact.SuspendLayout();
-            this.flowLayoutPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picMachine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picZoomMachine)).BeginInit();
             this.panelControlMachine.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMachine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClass)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxContact
@@ -174,28 +178,20 @@
             // 
             this.flowLayoutPanel.AutoScroll = true;
             this.flowLayoutPanel.BackColor = System.Drawing.Color.IndianRed;
-            this.flowLayoutPanel.Controls.Add(this.picMachine);
             this.flowLayoutPanel.Location = new System.Drawing.Point(52, 235);
             this.flowLayoutPanel.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel.Name = "flowLayoutPanel";
             this.flowLayoutPanel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.flowLayoutPanel.Size = new System.Drawing.Size(701, 730);
+            this.flowLayoutPanel.Size = new System.Drawing.Size(871, 730);
             this.flowLayoutPanel.TabIndex = 51;
-            // 
-            // picMachine
-            // 
-            this.picMachine.Location = new System.Drawing.Point(3, 3);
-            this.picMachine.Name = "picMachine";
-            this.picMachine.Size = new System.Drawing.Size(163, 157);
-            this.picMachine.TabIndex = 24;
-            this.picMachine.TabStop = false;
             // 
             // picZoomMachine
             // 
             this.picZoomMachine.BackColor = System.Drawing.Color.IndianRed;
-            this.picZoomMachine.Location = new System.Drawing.Point(782, 235);
+            this.picZoomMachine.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picZoomMachine.Location = new System.Drawing.Point(938, 235);
             this.picZoomMachine.Name = "picZoomMachine";
-            this.picZoomMachine.Size = new System.Drawing.Size(718, 525);
+            this.picZoomMachine.Size = new System.Drawing.Size(562, 410);
             this.picZoomMachine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picZoomMachine.TabIndex = 52;
             this.picZoomMachine.TabStop = false;
@@ -203,12 +199,12 @@
             // txtInfoMachine
             // 
             this.txtInfoMachine.BackColor = System.Drawing.Color.LightCoral;
-            this.txtInfoMachine.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInfoMachine.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInfoMachine.ForeColor = System.Drawing.Color.White;
-            this.txtInfoMachine.Location = new System.Drawing.Point(782, 779);
+            this.txtInfoMachine.Location = new System.Drawing.Point(1109, 766);
             this.txtInfoMachine.Multiline = true;
             this.txtInfoMachine.Name = "txtInfoMachine";
-            this.txtInfoMachine.Size = new System.Drawing.Size(718, 106);
+            this.txtInfoMachine.Size = new System.Drawing.Size(391, 119);
             this.txtInfoMachine.TabIndex = 53;
             // 
             // btMachine
@@ -261,25 +257,43 @@
             // 
             // panelControlMachine
             // 
+            this.panelControlMachine.Controls.Add(this.btRemoveAll);
             this.panelControlMachine.Controls.Add(this.btAddMachine);
             this.panelControlMachine.Controls.Add(this.btRemoveMachine);
-            this.panelControlMachine.Controls.Add(this.btEditMachine);
-            this.panelControlMachine.Location = new System.Drawing.Point(767, 891);
+            this.panelControlMachine.Location = new System.Drawing.Point(938, 891);
             this.panelControlMachine.Name = "panelControlMachine";
-            this.panelControlMachine.Size = new System.Drawing.Size(733, 74);
+            this.panelControlMachine.Size = new System.Drawing.Size(562, 74);
             this.panelControlMachine.TabIndex = 60;
+            // 
+            // btRemoveAll
+            // 
+            this.btRemoveAll.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btRemoveAll.BackColor = System.Drawing.Color.Tomato;
+            this.btRemoveAll.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btRemoveAll.FlatAppearance.BorderColor = System.Drawing.Color.LightCoral;
+            this.btRemoveAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btRemoveAll.Font = new System.Drawing.Font("Sitka Subheading", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btRemoveAll.ForeColor = System.Drawing.Color.Transparent;
+            this.btRemoveAll.Location = new System.Drawing.Point(346, 14);
+            this.btRemoveAll.Name = "btRemoveAll";
+            this.btRemoveAll.Size = new System.Drawing.Size(219, 60);
+            this.btRemoveAll.TabIndex = 64;
+            this.btRemoveAll.Text = "Remove All";
+            this.btRemoveAll.UseVisualStyleBackColor = false;
+            this.btRemoveAll.Click += new System.EventHandler(this.btRemoveAll_Click);
             // 
             // btAddMachine
             // 
+            this.btAddMachine.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btAddMachine.BackColor = System.Drawing.Color.Tomato;
             this.btAddMachine.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btAddMachine.FlatAppearance.BorderColor = System.Drawing.Color.LightCoral;
             this.btAddMachine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btAddMachine.Font = new System.Drawing.Font("Sitka Subheading", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btAddMachine.ForeColor = System.Drawing.Color.Transparent;
-            this.btAddMachine.Location = new System.Drawing.Point(258, 14);
+            this.btAddMachine.Location = new System.Drawing.Point(3, 14);
             this.btAddMachine.Name = "btAddMachine";
-            this.btAddMachine.Size = new System.Drawing.Size(236, 60);
+            this.btAddMachine.Size = new System.Drawing.Size(150, 60);
             this.btAddMachine.TabIndex = 63;
             this.btAddMachine.Text = "Add";
             this.btAddMachine.UseVisualStyleBackColor = false;
@@ -287,18 +301,20 @@
             // 
             // btRemoveMachine
             // 
+            this.btRemoveMachine.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btRemoveMachine.BackColor = System.Drawing.Color.Tomato;
             this.btRemoveMachine.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btRemoveMachine.FlatAppearance.BorderColor = System.Drawing.Color.LightCoral;
             this.btRemoveMachine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btRemoveMachine.Font = new System.Drawing.Font("Sitka Subheading", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btRemoveMachine.ForeColor = System.Drawing.Color.Transparent;
-            this.btRemoveMachine.Location = new System.Drawing.Point(500, 14);
+            this.btRemoveMachine.Location = new System.Drawing.Point(159, 14);
             this.btRemoveMachine.Name = "btRemoveMachine";
-            this.btRemoveMachine.Size = new System.Drawing.Size(232, 60);
+            this.btRemoveMachine.Size = new System.Drawing.Size(181, 60);
             this.btRemoveMachine.TabIndex = 62;
             this.btRemoveMachine.Text = "Remove";
             this.btRemoveMachine.UseVisualStyleBackColor = false;
+            this.btRemoveMachine.Click += new System.EventHandler(this.btRemoveMachine_Click);
             // 
             // btEditMachine
             // 
@@ -308,12 +324,13 @@
             this.btEditMachine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btEditMachine.Font = new System.Drawing.Font("Sitka Subheading", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btEditMachine.ForeColor = System.Drawing.Color.Transparent;
-            this.btEditMachine.Location = new System.Drawing.Point(15, 14);
+            this.btEditMachine.Location = new System.Drawing.Point(938, 825);
             this.btEditMachine.Name = "btEditMachine";
-            this.btEditMachine.Size = new System.Drawing.Size(237, 60);
+            this.btEditMachine.Size = new System.Drawing.Size(150, 60);
             this.btEditMachine.TabIndex = 61;
             this.btEditMachine.Text = "Edit";
             this.btEditMachine.UseVisualStyleBackColor = false;
+            this.btEditMachine.Click += new System.EventHandler(this.btEditMachine_Click);
             // 
             // pictureBoxMachine
             // 
@@ -349,12 +366,88 @@
             this.pictureBoxClass.TabIndex = 63;
             this.pictureBoxClass.TabStop = false;
             // 
+            // numericUpDown
+            // 
+            this.numericUpDown.AutoSize = true;
+            this.numericUpDown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.numericUpDown.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown.ForeColor = System.Drawing.Color.Crimson;
+            this.numericUpDown.Location = new System.Drawing.Point(1380, 715);
+            this.numericUpDown.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown.Name = "numericUpDown";
+            this.numericUpDown.Size = new System.Drawing.Size(120, 45);
+            this.numericUpDown.TabIndex = 88;
+            this.numericUpDown.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // txtName
+            // 
+            this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.txtName.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.ForeColor = System.Drawing.Color.Crimson;
+            this.txtName.Location = new System.Drawing.Point(1036, 714);
+            this.txtName.Multiline = true;
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(338, 46);
+            this.txtName.TabIndex = 85;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Maroon;
+            this.label10.Location = new System.Drawing.Point(941, 722);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(89, 36);
+            this.label10.TabIndex = 86;
+            this.label10.Text = "Name";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Maroon;
+            this.label9.Location = new System.Drawing.Point(941, 766);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(162, 36);
+            this.label9.TabIndex = 89;
+            this.label9.Text = "Description";
+            // 
+            // btUpload
+            // 
+            this.btUpload.BackColor = System.Drawing.Color.Tomato;
+            this.btUpload.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btUpload.FlatAppearance.BorderColor = System.Drawing.Color.LightCoral;
+            this.btUpload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btUpload.Font = new System.Drawing.Font("Sitka Subheading", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btUpload.ForeColor = System.Drawing.Color.Transparent;
+            this.btUpload.Location = new System.Drawing.Point(938, 646);
+            this.btUpload.Name = "btUpload";
+            this.btUpload.Size = new System.Drawing.Size(561, 50);
+            this.btUpload.TabIndex = 91;
+            this.btUpload.Text = "Upload a new machine";
+            this.btUpload.UseVisualStyleBackColor = false;
+            this.btUpload.Click += new System.EventHandler(this.btUpload_Click);
+            // 
             // HomeUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.LightCoral;
+            this.Controls.Add(this.btUpload);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.numericUpDown);
+            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.btEditMachine);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.groupBoxContact);
             this.Controls.Add(this.btProduct);
             this.Controls.Add(this.btClass);
@@ -371,13 +464,12 @@
             this.Load += new System.EventHandler(this.HomeUC_Load);
             this.groupBoxContact.ResumeLayout(false);
             this.groupBoxContact.PerformLayout();
-            this.flowLayoutPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picMachine)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picZoomMachine)).EndInit();
             this.panelControlMachine.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMachine)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClass)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -394,7 +486,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel;
-        private System.Windows.Forms.PictureBox picMachine;
         private System.Windows.Forms.PictureBox picZoomMachine;
         private System.Windows.Forms.TextBox txtInfoMachine;
         private System.Windows.Forms.Button btMachine;
@@ -407,5 +498,11 @@
         private System.Windows.Forms.PictureBox pictureBoxMachine;
         private System.Windows.Forms.PictureBox pictureBoxProduct;
         private System.Windows.Forms.PictureBox pictureBoxClass;
+        private System.Windows.Forms.Button btRemoveAll;
+        private System.Windows.Forms.NumericUpDown numericUpDown;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btUpload;
     }
 }

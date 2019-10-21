@@ -57,7 +57,7 @@
             // 
             this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.txtName.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.ForeColor = System.Drawing.Color.White;
+            this.txtName.ForeColor = System.Drawing.Color.Crimson;
             this.txtName.Location = new System.Drawing.Point(205, 37);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(254, 44);
@@ -67,7 +67,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.ForeColor = System.Drawing.Color.Maroon;
             this.label1.Location = new System.Drawing.Point(37, 45);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 36);
@@ -78,7 +78,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.ForeColor = System.Drawing.Color.Maroon;
             this.label2.Location = new System.Drawing.Point(37, 318);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(115, 36);
@@ -89,7 +89,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.ForeColor = System.Drawing.Color.Maroon;
             this.label3.Location = new System.Drawing.Point(37, 102);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(162, 36);
@@ -100,7 +100,7 @@
             // 
             this.txtInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.txtInfo.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInfo.ForeColor = System.Drawing.Color.White;
+            this.txtInfo.ForeColor = System.Drawing.Color.Crimson;
             this.txtInfo.Location = new System.Drawing.Point(205, 102);
             this.txtInfo.Multiline = true;
             this.txtInfo.Name = "txtInfo";
@@ -110,12 +110,12 @@
             // btSave
             // 
             this.btSave.AccessibleRole = System.Windows.Forms.AccessibleRole.Clock;
-            this.btSave.BackColor = System.Drawing.Color.Tomato;
+            this.btSave.BackColor = System.Drawing.Color.LightSalmon;
             this.btSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btSave.FlatAppearance.BorderColor = System.Drawing.Color.LightCoral;
             this.btSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btSave.Font = new System.Drawing.Font("Sitka Subheading", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSave.ForeColor = System.Drawing.Color.Transparent;
+            this.btSave.ForeColor = System.Drawing.Color.Maroon;
             this.btSave.Location = new System.Drawing.Point(331, 314);
             this.btSave.Name = "btSave";
             this.btSave.Size = new System.Drawing.Size(128, 64);

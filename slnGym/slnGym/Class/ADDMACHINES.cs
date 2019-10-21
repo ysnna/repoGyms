@@ -32,5 +32,41 @@ namespace slnGym.Class
                 return false;
             }
         }
+        public bool updateMACHINE(string name, MemoryStream pic, string info, int amount)
+        {
+            SqlCommand cmd = new SqlCommand("update MACHINES set nameMachine=@name, picture=@pic, infor=@info, amount=@amt", mydb.getConnection);
+            cmd.Parameters.Add("@name", SqlDbType.NVarChar).Value = name;
+            cmd.Parameters.Add("@pic", SqlDbType.Image).Value = pic.ToArray();
+            cmd.Parameters.Add("@info", SqlDbType.NVarChar).Value = info;
+            cmd.Parameters.Add("@amt", SqlDbType.Int).Value = amount;
+
+            mydb.openConnection();
+            if (cmd.ExecuteNonQuery() == 1)
+            {
+                mydb.closeConnection();
+                return true;
+            }
+            else
+            {
+                mydb.closeConnection();
+                return false;
+            }
+        }
+        public bool deleteMACHINE(string name)
+        {
+            SqlCommand cmd = new SqlCommand("delete from MACHINES where nameMachine=@name", mydb.getConnection);
+            cmd.Parameters.Add("@name", SqlDbType.VarChar).Value = name;
+            mydb.openConnection();
+            if (cmd.ExecuteNonQuery() == 1)
+            {
+                mydb.closeConnection();
+                return true;
+            }
+            else
+            {
+                mydb.closeConnection();
+                return false;
+            }
+        }
     }
 }

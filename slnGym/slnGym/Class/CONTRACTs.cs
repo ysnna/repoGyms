@@ -50,7 +50,6 @@ namespace slnGym.Class
                 mydb.closeConnection();
                 return false;
             }
-
         }
 
         public bool updateCONTRACTS(string conID, string cusID, string packID, DateTime datesign, DateTime dateliquid, string status)
