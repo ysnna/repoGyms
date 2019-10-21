@@ -214,3 +214,11 @@ monthAverage float null,
 type nvarchar(20) null,
 note varchar(20) null,
 );
+
+create table MACHINES
+(
+nameMachine nvarchar(50) null,
+picture image,
+infor nvarchar(100) null,
+amount int null,
+);
