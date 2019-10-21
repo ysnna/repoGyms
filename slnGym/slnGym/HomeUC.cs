@@ -40,5 +40,11 @@ namespace slnGym
             pictureBoxMachine.SendToBack();
             pictureBoxProduct.SendToBack();
         }
+
+        private void btAddMachine_Click(object sender, EventArgs e)
+        {
+            AddForm.AddMachines addMachines = new AddForm.AddMachines();
+            addMachines.ShowDialog();
+        }
     }
 }

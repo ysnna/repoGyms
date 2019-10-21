@@ -283,6 +283,7 @@
             this.btAddMachine.TabIndex = 63;
             this.btAddMachine.Text = "Add";
             this.btAddMachine.UseVisualStyleBackColor = false;
+            this.btAddMachine.Click += new System.EventHandler(this.btAddMachine_Click);
             // 
             // btRemoveMachine
             // 

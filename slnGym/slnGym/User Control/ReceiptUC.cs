@@ -34,10 +34,11 @@ namespace slnGym.User_Control
 
         public bool IsNumeric(string val) => double.TryParse(val, out double result);
 
-
         private void ReceiptUC_Load(object sender, EventArgs e)
         {
             btPayment.Enabled = false;
+            btPrintInvoice.Enabled = false;
+            lbStatus.Text = "Non-payment";
             cbDiscount.Text = "VND";
         }
 
@@ -46,6 +47,24 @@ namespace slnGym.User_Control
             if (cbDiscount.Text == "%")
                 lbDiscount.Visible = false;
             else lbDiscount.Visible = true;
+        }
+
+        private void btPayment_Click(object sender, EventArgs e)
+        {
+            lbStatus.Text = "Paid";
+        }
+
+        private void lbStatus_TextChanged(object sender, EventArgs e)
+        {
+            if (lbStatus.Text == "Paid")
+                btPrintInvoice.Enabled = true;
+            else btPrintInvoice.Enabled = false;
+        }
+
+        private void btPrintInvoice_Click(object sender, EventArgs e)
+        {
+            AddForm.PrintPreview print = new AddForm.PrintPreview();
+            print.ShowDialog();
         }
     }
 }
