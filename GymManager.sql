@@ -2,8 +2,7 @@
 go
  
  --drop database if already exists
- if DB_ID('GYMManager') is not null
- drop database GYMManager;
+ drop database if exists GYMManager;
  go
 
 create database GYMManager;
@@ -20,7 +19,12 @@ userID int not null,
 constraint pk_username primary key (username),
 );
 go
-
+insert into ACCOUNT values
+('admin','admin','0'),
+('nv','nv','1'),
+('hlv','hlv','3'),
+('kh','kh','2');
+go
 --Nhóm nhân viên
 create table GROUPEMPLOYEE(
 groupID varchar(20) not null,
@@ -31,15 +35,17 @@ leaderLName nvarchar(30) null,
 constraint pk_groupID primary key (groupID),
 );
 go
-
+insert into GROUPEMPLOYEE values
+('1','Sales','Le','Anh');   --Group ID
+go
 --Nhân viên
 create table EMPLOYEE(
 employeeID varchar(20) not null,
 groupID  varchar(20),
-avatar image,
+avatar image null,
 employeeFName nvarchar(30) not null,
 employeeLName nvarchar(30) null,
-employeeBDate datetime not null,
+employeeBDate datetime null,
 employeeAddress nvarchar(30) not null,
 gender bit not null,
 phone varchar(10) not null,
@@ -48,7 +54,6 @@ employeeIDCard int not null,
 --Primarykey and FK--
 constraint pk_employee primary key (employeeID),
 foreign key(groupID) references GROUPEMPLOYEE on delete set null,
-foreign key(phone) references ACCOUNT
 );
 go
 
@@ -82,7 +87,7 @@ memID varchar(20) not null,
 memLname nvarchar(20) not null,
 memFName nvarchar(20)  null,
 avatar image,
-memBDate Datetime not null,
+memBDate Datetime null,
 memAddress nvarchar(30) not null,
 memGender bit not null,
 memPhone varchar(10) not null,
@@ -224,4 +229,3 @@ infor nvarchar(100) null,
 amount int null,
 constraint pk_machines primary key (nameMachine),
 );
-go

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using slnGym.Layer;
 
 namespace slnGym.User_Control
 {
@@ -37,13 +38,16 @@ namespace slnGym.User_Control
             detailsConrtactUC.Location = new Point(362, 3);
             receiptUC.Location = new Point(362, 3);
         }
-
+        
         private void btAccount_Click(object sender, EventArgs e)
         {
+            AccountEmployeeUC uc = new AccountEmployeeUC();
             panelClick.BringToFront();
             panelClick.Height = btAccount.Height;
             panelClick.Top = btAccount.Top;
             accountEmployeeUC.BringToFront();
+            uc.reload(sender,e);
+            
         }
 
         private void btNNewMember_Click(object sender, EventArgs e)

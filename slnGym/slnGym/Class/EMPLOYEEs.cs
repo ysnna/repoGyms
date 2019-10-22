@@ -61,7 +61,7 @@ namespace slnGym.Class
 
         }
         //Update khach hang
-        public bool updateMembers(string ID, string group, string lname, string fname, DateTime bdate, string address,
+        public bool updateEmployee(string ID, string group, string lname, string fname, DateTime bdate, string address,
             int gender, string phone, int idcard, int salary)
         {
             SqlCommand cmd = new SqlCommand("update EMPLOYEE set employeeID=@id,groupID=@group,employeeLname=@lname,employeeFname=@fname,employeeBDate=@bdate,employeeAddress=@add," +
@@ -99,7 +99,7 @@ namespace slnGym.Class
             return dt;
         }
 
-        public DataTable getMemberbyID(string id)
+        public DataTable getEmployeebyID(string id)
         {
             SqlCommand cmd = new SqlCommand("select *from EMPLOYEE where employeeID=@ma", mydb.getConnection);
             cmd.Parameters.Add("@ma", SqlDbType.VarChar).Value = id;
@@ -108,9 +108,18 @@ namespace slnGym.Class
             da.Fill(dt);
             return dt;
         }
-        public DataTable getMemberbyGroupID(string group)
+        public DataTable getEmployeebyPhone(string id)
         {
-            SqlCommand cmd = new SqlCommand("select *from MEMBERS where groupID=@ma", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("select *from EMPLOYEE where phone=@ma", mydb.getConnection);
+            cmd.Parameters.Add("@ma", SqlDbType.VarChar).Value = id;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
+        public DataTable getEmployeebyGroupID(string group)
+        {
+            SqlCommand cmd = new SqlCommand("select *from EMPLOYEE where groupID=@ma", mydb.getConnection);
             cmd.Parameters.Add("@ma", SqlDbType.VarChar).Value = group;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();

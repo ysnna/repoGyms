@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using slnGym.Class;
+using slnGym.Layer;
 
 namespace slnGym
 {
@@ -17,10 +18,10 @@ namespace slnGym
         {
             InitializeComponent();
         }
-
+        
         LOGIN login = new LOGIN();
         LoginUC lg = new LoginUC();
-
+        
         private void Form1_Load(object sender, EventArgs e)
         {
             displayAdminUC.Location = new Point(0, 0);
@@ -37,7 +38,18 @@ namespace slnGym
 
         private void btSignIn_Click(object sender, EventArgs e)
         {
-            GLOBAL.GetUsername(loginUC.txtUsername.Text);
+            
+            string uname =null;
+            AccountBL act = new AccountBL();
+            if (act.checkPhone(loginUC.txtUsername.Text) != null)
+            {
+                uname = act.checkPhone(loginUC.txtUsername.Text).ToString();
+                GLOBAL.GetUsername(uname);
+            }
+            else
+            {
+                GLOBAL.GetUsername(loginUC.txtUsername.Text);
+            }
             if (LoginCheck() == true)
                 switch (DefineAccount())
                 {
