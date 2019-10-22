@@ -41,13 +41,17 @@ namespace slnGym.User_Control
         
         private void btAccount_Click(object sender, EventArgs e)
         {
-            AccountEmployeeUC uc = new AccountEmployeeUC();
             panelClick.BringToFront();
             panelClick.Height = btAccount.Height;
             panelClick.Top = btAccount.Top;
+            //AccountEmployeeUC account = new AccountEmployeeUC(GLOBAL.username);
+            //account.Location = new Point(362, 3);
+            //account.BringToFront();
+
             accountEmployeeUC.BringToFront();
-            uc.reload(sender,e);
-            
+            //accountEmployeeUC(GLOBAL.username);
+            //this.accountEmployeeUC(GLOBAL.username);
+            this.accountEmployeeUC.reload();
         }
 
         private void btNNewMember_Click(object sender, EventArgs e)

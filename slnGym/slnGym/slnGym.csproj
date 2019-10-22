@@ -189,6 +189,12 @@
     <Compile Include="User Control\ListMachine.Designer.cs">
       <DependentUpon>ListMachine.cs</DependentUpon>
     </Compile>
+    <Compile Include="User Control\NewEmployeeUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\NewEmployeeUC.Designer.cs">
+      <DependentUpon>NewEmployeeUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="User Control\NewMemberUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -261,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User Control\ListMachine.resx">
       <DependentUpon>ListMachine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\NewEmployeeUC.resx">
+      <DependentUpon>NewEmployeeUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Control\NewMemberUC.resx">
       <DependentUpon>NewMemberUC.cs</DependentUpon>

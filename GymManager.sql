@@ -21,7 +21,7 @@ constraint pk_username primary key (username),
 go
 insert into ACCOUNT values
 ('admin','admin','0'),
-('nv','nv','1'),
+('nv1','nv','1'),
 ('hlv','hlv','3'),
 ('kh','kh','2');
 go
@@ -55,6 +55,10 @@ employeeIDCard int not null,
 constraint pk_employee primary key (employeeID),
 foreign key(groupID) references GROUPEMPLOYEE on delete set null,
 );
+go
+
+insert into EMPLOYEE values
+('nv1','1', null, 'Le','Anh', '1999-02-14 00:00:00.000', N'Quận Bình Tân', '1','0778097405', '6500000', '023285888');   
 go
 
 --Nhóm công việc

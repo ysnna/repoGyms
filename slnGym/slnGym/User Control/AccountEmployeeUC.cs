@@ -12,10 +12,10 @@ namespace slnGym.User_Control
 {
     public partial class AccountEmployeeUC : UserControl
     {
-       
+
         public AccountEmployeeUC()
         {
-            
+
             InitializeComponent();
         }
 
@@ -30,6 +30,13 @@ namespace slnGym.User_Control
         private string _salary;
         private string _gender;
         private Image _ava;
+        private string _id;
+
+        public string EmployeeID
+        {
+            get { return _id; }
+            set { _id = value; lbID.Text = value; }
+        }
 
         public Image Ava
         {
@@ -97,34 +104,56 @@ namespace slnGym.User_Control
 
 
         #endregion
+
         private void btChangePass_Click(object sender, EventArgs e)
         {
             AddForm.ChangePassword change = new AddForm.ChangePassword();
             change.ShowDialog();
         }
-        
+
         protected void btEdit_Click(object sender, EventArgs e)
         {
             groupBoxEdit.Visible = true;
         }
-        protected void AccountEmployeeUC_Load(object sender, EventArgs e)
+
+        public void AccountEmployeeUC_Load(object sender, EventArgs e)
         {
-            
             txtPass.Enabled = false;
             groupBoxEdit.Visible = false;
-            
-            
         }
-        
-        public void reload(object sender, EventArgs e)
+
+        Class.EMPLOYEEs emp = new Class.EMPLOYEEs();
+        Class.MY_DB mydb = new Class.MY_DB();
+
+        //public AccountEmployeeUC(string id)
+        //{
+        //    //id = GLOBAL.username;
+        //    Layer.AccountBL account = new Layer.AccountBL();
+        //    account.DisplayEmp(id);
+        //}
+
+        public void reload()
         {
-            
-            AccountBL act = new AccountBL();
-            act.DisplayEmp(GLOBAL.username);
-            AccountEmployeeUC abc = new AccountEmployeeUC();
-            abc.Update();
-            
+            DataTable empDT = new DataTable();
+            empDT = emp.getEmployeebyID(GLOBAL.username);
+            if (empDT.Rows.Count > 0)
+            {
+                EmployeeID = empDT.Rows[0][0].ToString();
+                Group = empDT.Rows[0][1].ToString();
+                //empUC.Ava = empDT.Rows[0][2];
+                FName = empDT.Rows[0][3].ToString();
+                LName = empDT.Rows[0][4].ToString();
+                BDate = empDT.Rows[0][5].ToString();
+                Address = empDT.Rows[0][6].ToString();
+                Gender = empDT.Rows[0][7].ToString();
+                Phone = empDT.Rows[0][8].ToString();
+                Salary = empDT.Rows[0][9].ToString();
+                IDCard = empDT.Rows[0][10].ToString();
+            }
+            else MessageBox.Show("bug");
+            mydb.closeConnection();
         }
+
         private void picAvaEdit_Click(object sender, EventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
@@ -132,6 +161,5 @@ namespace slnGym.User_Control
             if (open.ShowDialog() == DialogResult.OK)
                 picAvaEdit.Image = Image.FromFile(open.FileName);
         }
-      
     }
 }

@@ -12,33 +12,39 @@ using System.Drawing;
 
 namespace slnGym.Layer
 {
-    class AccountBL
+    public class AccountBL
     {
         EMPLOYEEs emp = new EMPLOYEEs();
         LOGIN lg = new LOGIN();
         User_Control.AccountEmployeeUC empUC = new User_Control.AccountEmployeeUC();
-
+        MY_DB mydb = new MY_DB();
         //Hien thi thong tin cua nhan vien 
         public void DisplayEmp(string id)
         {
-                DataTable empDT = new DataTable();           
-                empDT = emp.getEmployeebyID(id);
-            //empUC.FName = empDT.Rows[0][3].ToString();
-            empUC.FName = "lolololololo";
-            empUC.LName = empDT.Rows[0][4].ToString();
+            //id = GLOBAL.username;
+            DataTable empDT = new DataTable();
+            empDT = emp.getEmployeebyID(id);
+            if (empDT.Rows.Count > 0)
+            {
+                empUC.EmployeeID = empDT.Rows[0][0].ToString();
+                empUC.Group = empDT.Rows[0][1].ToString();
+                //empUC.Ava = empDT.Rows[0][2];
+                empUC.FName = empDT.Rows[0][3].ToString();
+                empUC.LName = empDT.Rows[0][4].ToString();
                 empUC.BDate = empDT.Rows[0][5].ToString();
                 empUC.Address = empDT.Rows[0][6].ToString();
                 empUC.Gender = empDT.Rows[0][7].ToString();
                 empUC.Phone = empDT.Rows[0][8].ToString();
                 empUC.Salary = empDT.Rows[0][9].ToString();
                 empUC.IDCard = empDT.Rows[0][10].ToString();
-                
-                //Show hinh anh len picture box
-                //byte[] pic;
-                //pic = (byte[])empDT.Rows[0]["avatar"]; //Chuyen ve dang Rawformat
-                //MemoryStream picture = new MemoryStream(pic);
-                //empUC.Ava = Image.FromStream(picture);
-
+            }
+            else MessageBox.Show("bug");
+            //Show hinh anh len picture box
+            //byte[] pic;
+            //pic = (byte[])empDT.Rows[0]["avatar"]; //Chuyen ve dang Rawformat
+            //MemoryStream picture = new MemoryStream(pic);
+            //empUC.Ava = Image.FromStream(picture);
+            mydb.closeConnection();
         }
 
         //Dang nhap = sdt
@@ -54,6 +60,6 @@ namespace slnGym.Layer
             }
             else return empID;
         }
-        
+
     }
 }

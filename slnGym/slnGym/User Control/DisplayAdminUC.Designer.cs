@@ -38,6 +38,8 @@
             this.panelClick = new System.Windows.Forms.Panel();
             this.btHome = new System.Windows.Forms.Button();
             this.homeUCAdmin = new slnGym.HomeUC();
+            this.newEmployeeUC = new slnGym.User_Control.NewEmployeeUC();
+            this.btNewEmployee = new System.Windows.Forms.Button();
             this.panelAdmin.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,6 +48,7 @@
             this.panelAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panelAdmin.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.panelAdmin.Controls.Add(this.btNewEmployee);
             this.panelAdmin.Controls.Add(this.btStatistic);
             this.panelAdmin.Controls.Add(this.btReceipt);
             this.panelAdmin.Controls.Add(this.btContract);
@@ -195,6 +198,31 @@
             this.homeUCAdmin.Size = new System.Drawing.Size(1555, 1011);
             this.homeUCAdmin.TabIndex = 15;
             // 
+            // newEmployeeUC
+            // 
+            this.newEmployeeUC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.newEmployeeUC.Location = new System.Drawing.Point(365, 3);
+            this.newEmployeeUC.Name = "newEmployeeUC";
+            this.newEmployeeUC.Size = new System.Drawing.Size(1555, 1011);
+            this.newEmployeeUC.TabIndex = 16;
+            // 
+            // btNewEmployee
+            // 
+            this.btNewEmployee.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btNewEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btNewEmployee.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
+            this.btNewEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btNewEmployee.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btNewEmployee.ForeColor = System.Drawing.Color.Transparent;
+            this.btNewEmployee.Location = new System.Drawing.Point(3, 736);
+            this.btNewEmployee.Name = "btNewEmployee";
+            this.btNewEmployee.Size = new System.Drawing.Size(350, 100);
+            this.btNewEmployee.TabIndex = 10;
+            this.btNewEmployee.Text = "          New Employee";
+            this.btNewEmployee.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btNewEmployee.UseVisualStyleBackColor = true;
+            this.btNewEmployee.Click += new System.EventHandler(this.button1_Click);
+            // 
             // DisplayAdminUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -202,6 +230,7 @@
             this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.Controls.Add(this.homeUCAdmin);
             this.Controls.Add(this.panelAdmin);
+            this.Controls.Add(this.newEmployeeUC);
             this.Name = "DisplayAdminUC";
             this.Size = new System.Drawing.Size(1920, 1017);
             this.Load += new System.EventHandler(this.DisplayAdminUC_Load);
@@ -222,5 +251,7 @@
         private System.Windows.Forms.Panel panelClick;
         private System.Windows.Forms.Button btHome;
         private HomeUC homeUCAdmin;
+        private System.Windows.Forms.Button btNewEmployee;
+        private NewEmployeeUC newEmployeeUC;
     }
 }

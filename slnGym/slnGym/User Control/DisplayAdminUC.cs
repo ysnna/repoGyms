@@ -74,5 +74,13 @@ namespace slnGym.User_Control
             homeUCAdmin.BringToFront();
             
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            panelClick.BringToFront();
+            panelClick.Height = btNewEmployee.Height;
+            panelClick.Top = btNewEmployee.Top;
+            newEmployeeUC.BringToFront();
+        }
     }
 }

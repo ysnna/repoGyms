@@ -24,21 +24,20 @@ namespace slnGym
         
         private void Form1_Load(object sender, EventArgs e)
         {
+            loginUC.BringToFront();
+            menuStripKH.SendToBack();
+            btSignIn.BringToFront();
+            menuStrip.BringToFront();
             displayAdminUC.Location = new Point(0, 0);
             displayEmployeesUC.Location = new Point(0, 0);
             displayMembersUC.Location = new Point(0, 0);
             displayPTsUC.Location = new Point(0, 0);
             loginUC.Location = new Point(0, 0);
-            menuStripKH.SendToBack();
             menuStripKH.Location = new Point(-2, 0);
-            loginUC.BringToFront();
-            btSignIn.BringToFront();
-            menuStrip.BringToFront();
         }
 
         private void btSignIn_Click(object sender, EventArgs e)
         {
-            
             string uname =null;
             AccountBL act = new AccountBL();
             if (act.checkPhone(loginUC.txtUsername.Text) != null)
@@ -113,7 +112,7 @@ namespace slnGym
 
         private void displayEmployeesUC_Load(object sender, EventArgs e)
         {
-
+            //this.displayEmployeesUC
         }
 
         private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
