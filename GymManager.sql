@@ -36,7 +36,8 @@ constraint pk_groupID primary key (groupID),
 );
 go
 insert into GROUPEMPLOYEE values
-('1','Sales','Le','Anh');   --Group ID
+('1','Salesman','Nguyen','Anh'), --Group ID
+('2','Personal Trainers','Le','Danh');
 go
 --Nhân viên
 create table EMPLOYEE(

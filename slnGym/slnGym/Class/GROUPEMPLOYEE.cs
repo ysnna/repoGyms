@@ -75,6 +75,7 @@ namespace slnGym.Class
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
+            mydb.closeConnection();
             return dt;
         }
         public DataTable getGroupEmpbyID(string id)
@@ -90,6 +91,14 @@ namespace slnGym.Class
         {
             SqlCommand cmd = new SqlCommand("select *from GROUPEMPLOYEE where groupName=@ID", mydb.getConnection);
             cmd.Parameters.Add("@ID", SqlDbType.VarChar).Value = name;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
+        public DataTable getNameGroup()
+        {
+            SqlCommand cmd = new SqlCommand("select groupName from GROUPEMPLOYEE ", mydb.getConnection);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);

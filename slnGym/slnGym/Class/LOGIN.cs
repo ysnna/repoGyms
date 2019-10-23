@@ -64,6 +64,15 @@ namespace slnGym.Class
 
         }
 
+        public DataTable getAccUserID(string user)
+        {
+            SqlCommand cmd = new SqlCommand("select * from ACCOUNT where userID=@user", mydb.getConnection);
+            cmd.Parameters.Add("@user", SqlDbType.NChar).Value = user;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
         public DataTable getUserID(string user)
         {
             SqlCommand cmd = new SqlCommand("select userID from ACCOUNT where username=@user", mydb.getConnection);

@@ -5,21 +5,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
-
+using System.IO;
 namespace slnGym.Class
 {
     class EMPLOYEEs
     {
         MY_DB mydb = new MY_DB();
         //Them Khach Hang
-        public bool insertEmployee(string ID, string group, string lname, string fname, DateTime bdate, string address,
+        public bool insertEmployee(string ID, string group, MemoryStream ava, string fname, string lname, DateTime bdate, string address,
             int gender, string phone, int salary, int idcard)
         {
-            SqlCommand cmd = new SqlCommand("insert into MEMBERS(employeeID,groupID,employeeFName,employeeBDate,employeeAddress,gender,phone,salary,employeeIDCard)" +
-                "values (@id,@group,@lname,@fname,@bdate,@add,@gen,@phone,@sal,@idcard)", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("insert into MEMBERS(employeeID,groupID,avatar,employeeFName,employeeBDate,employeeAddress,gender,phone,salary,employeeIDCard)" +
+                "values (@id,@group,@ava,@lname,@fname,@bdate,@add,@gen,@phone,@sal,@idcard)", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = ID;
             cmd.Parameters.Add("@group", SqlDbType.VarChar).Value = group;
             cmd.Parameters.Add("@lname", SqlDbType.NVarChar).Value = lname;
+            cmd.Parameters.Add("@ava", SqlDbType.Image).Value = ava.ToArray() ;
+
             cmd.Parameters.Add("@fname", SqlDbType.NVarChar).Value = fname;
             cmd.Parameters.Add("@bdate", SqlDbType.DateTime).Value = bdate;
             cmd.Parameters.Add("@add", SqlDbType.NVarChar).Value = address;

@@ -41,5 +41,7 @@ namespace slnGym.User_Control
             if (open.ShowDialog() == DialogResult.OK)
                 picAvaEdit.Image = Image.FromFile(open.FileName);
         }
+
+     
     }
 }

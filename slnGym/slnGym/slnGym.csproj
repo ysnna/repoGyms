@@ -133,6 +133,7 @@
       <DependentUpon>HomeUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Layer\AccountBL.cs" />
+    <Compile Include="Layer\NewEmployeeBL.cs" />
     <Compile Include="LoginUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
