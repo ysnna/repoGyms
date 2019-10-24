@@ -15,8 +15,8 @@ namespace slnGym.User_Control
 {
     public partial class NewEmployeeUC : UserControl
     {
-       
-       
+
+
         private int GenderCheck = 0;
         void GenderChecked()
         {
@@ -25,7 +25,7 @@ namespace slnGym.User_Control
                 GenderCheck = 1;
             }
         }
-        
+
         public NewEmployeeUC()
         {
             InitializeComponent();
@@ -103,7 +103,7 @@ namespace slnGym.User_Control
         {
             disGroupID();
             disGroupname();
-            
+
             disUsername();
             displayPass();
         }
@@ -118,22 +118,22 @@ namespace slnGym.User_Control
             cbGroupName.DataSource = grEmp.getGROUPEMP();
             cbGroupName.DisplayMember = "groupName";
             cbGroupName.ValueMember = "groupID";
-            
+
         }
         void disGroupname()
-        {     
-                if (cbGroupName.Text.ToString() == "Salesman")
-                {
-                    txtGroupID.Text = "1";
-                }
-               else txtGroupID.Text = "2";
+        {
+            if (cbGroupName.Text.ToString() == "Salesman")
+            {
+                txtGroupID.Text = "1";
+            }
+            else txtGroupID.Text = "2";
         }
         void displayPass()
         {
             NewEmployeeBL newEmp = new NewEmployeeBL();
-            txtPass.Text =newEmp.SetPass();
+            txtPass.Text = newEmp.SetPass();
         }
-         void disUsername()
+        void disUsername()
         {
             NewEmployeeBL newEmp = new NewEmployeeBL();
             txtUsername.Text = newEmp.UserName();
@@ -150,12 +150,11 @@ namespace slnGym.User_Control
             string Add = txtAddress.Text.TrimEnd();
             int Gen = GenderCheck;
             string phone = txtPhone.Text.TrimEnd();
-            int IDcard = Convert.ToInt32( txtIDCard.Text.TrimEnd());
-            int sal = Convert.ToInt32( txtSalary.Text.TrimEnd());
+            int IDcard = Convert.ToInt32(txtIDCard.Text.TrimEnd());
+            int sal = Convert.ToInt32(txtSalary.Text.TrimEnd());
             MemoryStream picture = new MemoryStream();
-            picAvaEdit.Image = Image.FromStream(picture);
-            if (
-            emp.insertEmployee(empID, groupid, picture, Fname, Lname, bdate, Add, Gen, phone, sal, IDcard))
+            picAvaEdit.Image.Save(picture,picAvaEdit.Image.RawFormat);
+            if (emp.insertEmployee(empID, groupid, picture, Fname, Lname, bdate, Add, Gen, phone, sal, IDcard))
                 MessageBox.Show("okokokoko");
             else MessageBox.Show("kkkkkkk");
         }
@@ -166,6 +165,11 @@ namespace slnGym.User_Control
             open.Filter = "select image(*.jpg;*.png;*.gif)|*.jpg;*.png;*.gif";
             if (open.ShowDialog() == DialogResult.OK)
                 picAvaEdit.Image = Image.FromFile(open.FileName);
+        }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+            lbIDEmployee.Text = txtUsername.Text;
         }
     }
 }

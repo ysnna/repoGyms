@@ -33,7 +33,6 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.groupBoxThongtin = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBoxThongtin.SuspendLayout();
@@ -90,7 +89,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxThongtin.BackColor = System.Drawing.Color.Transparent;
-            this.groupBoxThongtin.Controls.Add(this.button1);
             this.groupBoxThongtin.Controls.Add(this.label4);
             this.groupBoxThongtin.Controls.Add(this.label1);
             this.groupBoxThongtin.Controls.Add(this.label2);
@@ -105,17 +103,6 @@
             this.groupBoxThongtin.TabIndex = 49;
             this.groupBoxThongtin.TabStop = false;
             this.groupBoxThongtin.Text = "Welcome";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(91, 188);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(56, 19);
-            this.button1.TabIndex = 51;
-            this.button1.Text = "aaaa";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // label4
             // 
@@ -166,6 +153,5 @@
         private System.Windows.Forms.GroupBox groupBoxThongtin;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
     }
 }

@@ -379,7 +379,7 @@
             // 
             this.cbGroupName.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbGroupName.FormattingEnabled = true;
-            this.cbGroupName.Location = new System.Drawing.Point(217, 61);
+            this.cbGroupName.Location = new System.Drawing.Point(212, 61);
             this.cbGroupName.Margin = new System.Windows.Forms.Padding(8);
             this.cbGroupName.Name = "cbGroupName";
             this.cbGroupName.Size = new System.Drawing.Size(219, 41);
@@ -399,6 +399,7 @@
             // 
             // txtSalary
             // 
+            this.txtSalary.AcceptsTab = true;
             this.txtSalary.BackColor = System.Drawing.Color.SteelBlue;
             this.txtSalary.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSalary.ForeColor = System.Drawing.Color.White;
@@ -409,12 +410,13 @@
             // 
             // txtGroupID
             // 
+            this.txtGroupID.AcceptsTab = true;
             this.txtGroupID.BackColor = System.Drawing.Color.SteelBlue;
-            this.txtGroupID.Enabled = false;
             this.txtGroupID.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGroupID.ForeColor = System.Drawing.Color.White;
             this.txtGroupID.Location = new System.Drawing.Point(212, 132);
             this.txtGroupID.Name = "txtGroupID";
+            this.txtGroupID.ReadOnly = true;
             this.txtGroupID.Size = new System.Drawing.Size(219, 44);
             this.txtGroupID.TabIndex = 84;
             // 
@@ -465,25 +467,28 @@
             // 
             // txtPass
             // 
+            this.txtPass.AcceptsTab = true;
             this.txtPass.BackColor = System.Drawing.Color.SteelBlue;
-            this.txtPass.Enabled = false;
             this.txtPass.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPass.ForeColor = System.Drawing.Color.White;
             this.txtPass.Location = new System.Drawing.Point(37, 188);
             this.txtPass.Name = "txtPass";
+            this.txtPass.ReadOnly = true;
             this.txtPass.Size = new System.Drawing.Size(235, 44);
             this.txtPass.TabIndex = 85;
             // 
             // txtUsername
             // 
+            this.txtUsername.AcceptsTab = true;
             this.txtUsername.BackColor = System.Drawing.Color.SteelBlue;
-            this.txtUsername.Enabled = false;
             this.txtUsername.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.ForeColor = System.Drawing.Color.White;
             this.txtUsername.Location = new System.Drawing.Point(37, 86);
             this.txtUsername.Name = "txtUsername";
+            this.txtUsername.ReadOnly = true;
             this.txtUsername.Size = new System.Drawing.Size(235, 44);
             this.txtUsername.TabIndex = 84;
+            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
             // label7
             // 

@@ -15,21 +15,19 @@ namespace slnGym.Class
         public bool insertEmployee(string ID, string group, MemoryStream ava, string fname, string lname, DateTime bdate, string address,
             int gender, string phone, int salary, int idcard)
         {
-            SqlCommand cmd = new SqlCommand("insert into MEMBERS(employeeID,groupID,avatar,employeeFName,employeeBDate,employeeAddress,gender,phone,salary,employeeIDCard)" +
-                "values (@id,@group,@ava,@lname,@fname,@bdate,@add,@gen,@phone,@sal,@idcard)", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("insert into MEMBERS(employeeID,groupID,avatar,employeeFName,employeeLName,employeeBDate,employeeAddress,gender,phone,salary,employeeIDCard)" +
+                "values (@id,@group,@ava,@fname,@lname,@bdate,@add,@gen,@phone,@sal,@idcard)", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = ID;
             cmd.Parameters.Add("@group", SqlDbType.VarChar).Value = group;
             cmd.Parameters.Add("@lname", SqlDbType.NVarChar).Value = lname;
-            cmd.Parameters.Add("@ava", SqlDbType.Image).Value = ava.ToArray() ;
-
+            cmd.Parameters.Add("@ava", SqlDbType.Image).Value = ava.ToArray();
             cmd.Parameters.Add("@fname", SqlDbType.NVarChar).Value = fname;
             cmd.Parameters.Add("@bdate", SqlDbType.DateTime).Value = bdate;
             cmd.Parameters.Add("@add", SqlDbType.NVarChar).Value = address;
-            cmd.Parameters.Add("@gen", SqlDbType.Int).Value = gender;
+            cmd.Parameters.Add("@gen", SqlDbType.Bit).Value = gender;
             cmd.Parameters.Add("@phone", SqlDbType.VarChar).Value = phone;
             cmd.Parameters.Add("@idcard", SqlDbType.Int).Value = idcard;
             cmd.Parameters.Add("@sal", SqlDbType.Int).Value = salary;
-
 
             mydb.openConnection();
             if (cmd.ExecuteNonQuery() == 1)
@@ -60,14 +58,12 @@ namespace slnGym.Class
                 mydb.closeConnection();
                 return false;
             }
-
         }
         //Update khach hang
         public bool updateEmployee(string ID, string group, string lname, string fname, DateTime bdate, string address,
             int gender, string phone, int idcard, int salary)
         {
-            SqlCommand cmd = new SqlCommand("update EMPLOYEE set employeeID=@id,groupID=@group,employeeLname=@lname,employeeFname=@fname,employeeBDate=@bdate,employeeAddress=@add," +
-                "gender=@gen,phone=@phone,salary=@sal,employeeIDCard=@idcard", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("update EMPLOYEE set employeeID=@id,groupID=@group,employeeFname=@fname,employeeLname=@lname,employeeBDate=@bdate,employeeAddress=@add,gender=@gen,phone=@phone,salary=@sal,employeeIDCard=@idcard", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = ID;
             cmd.Parameters.Add("@group", SqlDbType.VarChar).Value = group;
             cmd.Parameters.Add("@lname", SqlDbType.NVarChar).Value = lname;
