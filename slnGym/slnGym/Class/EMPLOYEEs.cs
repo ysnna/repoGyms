@@ -15,7 +15,7 @@ namespace slnGym.Class
         public bool insertEmployee(string ID, string group, MemoryStream ava, string fname, string lname, DateTime bdate, string address,
             int gender, string phone, int salary, int idcard)
         {
-            SqlCommand cmd = new SqlCommand("insert into MEMBERS(employeeID,groupID,avatar,employeeFName,employeeLName,employeeBDate,employeeAddress,gender,phone,salary,employeeIDCard)" +
+            SqlCommand cmd = new SqlCommand("insert into EMPLOYEE(employeeID,groupID,avatar,employeeFName,employeeLName,employeeBDate,employeeAddress,gender,phone,salary,employeeIDCard)" +
                 "values (@id,@group,@ava,@fname,@lname,@bdate,@add,@gen,@phone,@sal,@idcard)", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = ID;
             cmd.Parameters.Add("@group", SqlDbType.VarChar).Value = group;

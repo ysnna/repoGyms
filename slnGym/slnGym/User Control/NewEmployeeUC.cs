@@ -18,13 +18,7 @@ namespace slnGym.User_Control
 
 
         private int GenderCheck = 0;
-        void GenderChecked()
-        {
-            if (radioMaleEdit.Checked)
-            {
-                GenderCheck = 1;
-            }
-        }
+        
 
         public NewEmployeeUC()
         {
@@ -107,9 +101,32 @@ namespace slnGym.User_Control
             disUsername();
             displayPass();
         }
+        //Ham xu ly nut
         private void cbGroupName_TextChanged_1(object sender, EventArgs e)
         {
             disGroupname();
+        }
+        private void picAvaEdit_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "select image(*.jpg;*.png;*.gif)|*.jpg;*.png;*.gif";
+            if (open.ShowDialog() == DialogResult.OK)
+                picAvaEdit.Image = Image.FromFile(open.FileName);
+        }
+        private void btAdd_Click(object sender, EventArgs e)
+        {
+            if (addNewEmp())
+            {
+                if (addAccount())
+                    MessageBox.Show("Thêm Nhân Viên Thành Công, Có thể đăng nhập");
+                else
+                    MessageBox.Show("Thêm Nhân Viên Thành Công, Sai Đăng Nhập");
+            }
+            else MessageBox.Show("Không THêm Được Nhân Viên");
+        }
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+            lbIDEmployee.Text = txtUsername.Text;
         }
         //Xử lý hàm
         void disGroupID()
@@ -119,7 +136,7 @@ namespace slnGym.User_Control
             cbGroupName.DisplayMember = "groupName";
             cbGroupName.ValueMember = "groupID";
 
-        }
+        } //Cập nhật group ID tự động
         void disGroupname()
         {
             if (cbGroupName.Text.ToString() == "Salesman")
@@ -127,19 +144,26 @@ namespace slnGym.User_Control
                 txtGroupID.Text = "1";
             }
             else txtGroupID.Text = "2";
-        }
+        }//Cập nhật groupname tự động
         void displayPass()
         {
+            
             NewEmployeeBL newEmp = new NewEmployeeBL();
             txtPass.Text = newEmp.SetPass();
-        }
+        }//Cập nhật pass tự động
         void disUsername()
         {
             NewEmployeeBL newEmp = new NewEmployeeBL();
             txtUsername.Text = newEmp.UserName();
+        }//Cập nhật usernametự động
+        void GenderChecked()
+        {
+            if (radioMaleEdit.Checked)
+            {
+                GenderCheck = 1;
+            }
         }
-
-        private void btAdd_Click(object sender, EventArgs e)
+        bool addNewEmp()
         {
             EMPLOYEEs emp = new EMPLOYEEs();
             string groupid = txtGroupID.Text.Trim();
@@ -153,23 +177,23 @@ namespace slnGym.User_Control
             int IDcard = Convert.ToInt32(txtIDCard.Text.TrimEnd());
             int sal = Convert.ToInt32(txtSalary.Text.TrimEnd());
             MemoryStream picture = new MemoryStream();
-            picAvaEdit.Image.Save(picture,picAvaEdit.Image.RawFormat);
+            picAvaEdit.Image.Save(picture, picAvaEdit.Image.RawFormat);
             if (emp.insertEmployee(empID, groupid, picture, Fname, Lname, bdate, Add, Gen, phone, sal, IDcard))
                 MessageBox.Show("okokokoko");
-            else MessageBox.Show("kkkkkkk");
+            return true;
+           
+            
+        } // Insert nhan vien moi
+        bool addAccount() // insert empID thanh Account
+        {
+            LOGIN lg = new LOGIN();
+            string pass = txtPass.Text;
+            string username = txtUsername.Text;
+            string id = txtGroupID.Text;
+            if (lg.insertLogin(username, pass, id))
+                return true;
+            return false;
         }
 
-        private void picAvaEdit_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "select image(*.jpg;*.png;*.gif)|*.jpg;*.png;*.gif";
-            if (open.ShowDialog() == DialogResult.OK)
-                picAvaEdit.Image = Image.FromFile(open.FileName);
-        }
-
-        private void txtUsername_TextChanged(object sender, EventArgs e)
-        {
-            lbIDEmployee.Text = txtUsername.Text;
-        }
     }
 }

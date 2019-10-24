@@ -14,7 +14,7 @@ namespace slnGym.Class
         //Dang ky tai khoan
         public bool insertLogin(string user, string pass, string type)
         {
-            SqlCommand cmd = new SqlCommand("insert into LOGIN(username,passw,userID)" +
+            SqlCommand cmd = new SqlCommand("insert into ACCOUNT(username,passw,userID)" +
                 "values (@user,@pass,@type)", mydb.getConnection);
             cmd.Parameters.Add("@user", SqlDbType.VarChar).Value = user;
             cmd.Parameters.Add("@pass", SqlDbType.VarChar).Value = pass;
