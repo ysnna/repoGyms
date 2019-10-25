@@ -31,7 +31,25 @@ namespace slnGym.Class
                 return false;
             }
         }
+        public bool updatePass(string user, string passw)
+        {
+            SqlCommand cmd = new SqlCommand("update ACCOUNT set passw=@pass where username=@user", mydb.getConnection);
+            cmd.Parameters.Add("@user", SqlDbType.VarChar).Value = user;
+            cmd.Parameters.Add("@pass", SqlDbType.VarChar).Value = passw;
+           
 
+            mydb.openConnection();
+            if (cmd.ExecuteNonQuery() == 1)
+            {
+                mydb.closeConnection();
+                return true;
+            }
+            else
+            {
+                mydb.closeConnection();
+                return false;
+            }
+        }
         public bool usernameExist(string user)
         {
             SqlCommand cmd = new SqlCommand("select * from LOGIN where username =@user", mydb.getConnection);
@@ -87,6 +105,15 @@ namespace slnGym.Class
             SqlCommand cmd = new SqlCommand("select *from ACCOUNT where username=@user and passw=@pass", mydb.getConnection);
             cmd.Parameters.Add("@user", SqlDbType.NChar).Value = user;
             cmd.Parameters.Add("@pass", SqlDbType.NChar).Value = pass;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
+        public DataTable getAccountbyUser(string user)
+        {
+            SqlCommand cmd = new SqlCommand("select *from ACCOUNT where username=@user", mydb.getConnection);
+            cmd.Parameters.Add("@user", SqlDbType.NChar).Value = user;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);

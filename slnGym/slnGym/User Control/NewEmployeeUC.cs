@@ -18,7 +18,7 @@ namespace slnGym.User_Control
 
 
         private int GenderCheck = 0;
-        
+
 
         public NewEmployeeUC()
         {
@@ -115,14 +115,7 @@ namespace slnGym.User_Control
         }
         private void btAdd_Click(object sender, EventArgs e)
         {
-            if (addNewEmp())
-            {
-                if (addAccount())
-                    MessageBox.Show("Thêm Nhân Viên Thành Công, Có thể đăng nhập");
-                else
-                    MessageBox.Show("Thêm Nhân Viên Thành Công, Sai Đăng Nhập");
-            }
-            else MessageBox.Show("Không THêm Được Nhân Viên");
+            addNewEmp();
         }
         private void txtUsername_TextChanged(object sender, EventArgs e)
         {
@@ -147,7 +140,7 @@ namespace slnGym.User_Control
         }//Cập nhật groupname tự động
         void displayPass()
         {
-            
+
             NewEmployeeBL newEmp = new NewEmployeeBL();
             txtPass.Text = newEmp.SetPass();
         }//Cập nhật pass tự động
@@ -173,16 +166,61 @@ namespace slnGym.User_Control
             DateTime bdate = dateTimePickerBdate.Value;
             string Add = txtAddress.Text.TrimEnd();
             int Gen = GenderCheck;
-            string phone = txtPhone.Text.TrimEnd();
-            int IDcard = Convert.ToInt32(txtIDCard.Text.TrimEnd());
-            int sal = Convert.ToInt32(txtSalary.Text.TrimEnd());
-            MemoryStream picture = new MemoryStream();
-            picAvaEdit.Image.Save(picture, picAvaEdit.Image.RawFormat);
-            if (emp.insertEmployee(empID, groupid, picture, Fname, Lname, bdate, Add, Gen, phone, sal, IDcard))
-                MessageBox.Show("okokokoko");
-            return true;
-           
+            string phone = "";
+            if (IsNumber(txtPhone.Text) && (txtPhone.Text != null) && (txtPhone.Text).Length < 10)
+            {
+                phone = txtPhone.Text.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng nhập đúng số điện thoại");
+                return false;
+            }
+
+            int IDcard = 0;
+            try
+            {
+                if (IsNumber(txtIDCard.Text) && (txtIDCard.Text != null) && (txtIDCard.Text).Length < 10)
+                {
+                    IDcard = Convert.ToInt32(txtIDCard.Text.TrimEnd());
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập đúng CMND");
+                    return false;
+                }
+            }
+            catch (Exception) { }
+            finally {
+                MessageBox.Show("Vui Long Nhap Dung CMND");
+            };
+            int sal=0;
+            try
+            {
+                
+                if (IsNumber(txtSalary.Text) && txtSalary.Text != null)
+                {
+                    sal = Convert.ToInt32(txtSalary.Text.TrimEnd());
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập lương");
+                    return false;
+                }
+            }catch(Exception) { }
             
+            
+            if (verif())
+            {
+                MemoryStream picture = new MemoryStream();
+                picAvaEdit.Image.Save(picture, picAvaEdit.Image.RawFormat);
+                if (emp.insertEmployee(empID, groupid, picture, Fname, Lname, bdate, Add, Gen, phone, sal, IDcard)&& addAccount())
+                    MessageBox.Show("okokokoko");
+                else
+                MessageBox.Show("Please insert information!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return true;
+            }
+            return false;
         } // Insert nhan vien moi
         bool addAccount() // insert empID thanh Account
         {
@@ -195,5 +233,26 @@ namespace slnGym.User_Control
             return false;
         }
 
+        public bool IsNumber(string pValue)
+        {
+            foreach (Char c in pValue)
+            {
+                if (!Char.IsDigit(c))
+                    return false;
+            }
+            return true;
+        }
+
+        bool verif()
+        {
+            if ((txtAddress.Text.Trim() == "")
+                || (txtFname.Text.Trim() == "")
+                || (txtIDCard.Text.Trim() == "")
+                || (txtLname.Text.Trim() == "")
+                || (txtPhone.Text.Trim() == "")
+               || (txtSalary.Text.Trim() == "" || (picAvaEdit.Image == null)))
+                return false;
+            return true;
+        }
     }
 }
