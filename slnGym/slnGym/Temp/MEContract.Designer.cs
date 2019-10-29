@@ -1,13 +1,13 @@
-﻿namespace slnGym.Forms
+﻿namespace slnGym.Temp
 {
-    partial class Form1
+    partial class MEContract
     {
-        /// <summary>
+        /// <summary> 
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
+        /// <summary> 
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,49 +20,23 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Component Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.systemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.managerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.recoveryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.userLoginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabControl = new System.Windows.Forms.TabControl();
-            this.tabHome = new System.Windows.Forms.TabPage();
-            this.tabControlHome = new System.Windows.Forms.TabControl();
-            this.tabMachine = new System.Windows.Forms.TabPage();
-            this.flowLayoutMachine = new System.Windows.Forms.FlowLayoutPanel();
-            this.tabProduct = new System.Windows.Forms.TabPage();
-            this.tabService = new System.Windows.Forms.TabPage();
-            this.listServices = new System.Windows.Forms.ListView();
-            this.colIDPackage = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colNamePackage = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colCost = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.tabManage = new System.Windows.Forms.TabPage();
-            this.tabControlManager = new System.Windows.Forms.TabControl();
-            this.tabNewMember = new System.Windows.Forms.TabPage();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MEContract));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btResfresh = new System.Windows.Forms.Button();
             this.btInvoice = new System.Windows.Forms.Button();
             this.btCreateContract = new System.Windows.Forms.Button();
@@ -116,28 +90,6 @@
             this.txtPackage = new System.Windows.Forms.TextBox();
             this.dgvPackage = new System.Windows.Forms.DataGridView();
             this.picAddPackage = new System.Windows.Forms.PictureBox();
-            this.receiptUC = new slnGym.User_Control.ReceiptUC();
-            this.tabDetailsContract = new System.Windows.Forms.TabPage();
-            this.detailsConrtactUC = new slnGym.User_Control.DetailsConrtactUC();
-            this.tabMember = new System.Windows.Forms.TabPage();
-            this.memberUC1 = new slnGym.User_Control.MemberUC();
-            this.tabStatistic = new System.Windows.Forms.TabPage();
-            this.tabAccount = new System.Windows.Forms.TabPage();
-            this.accountEmployeeUC = new slnGym.User_Control.AccountEmployeeUC();
-            this.lbDateTime = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.statisticEmployeeUC1 = new slnGym.User_Control.StatisticEmployeeUC();
-            this.flowLayoutProduct = new System.Windows.Forms.FlowLayoutPanel();
-            this.menuStrip.SuspendLayout();
-            this.tabControl.SuspendLayout();
-            this.tabHome.SuspendLayout();
-            this.tabControlHome.SuspendLayout();
-            this.tabMachine.SuspendLayout();
-            this.tabProduct.SuspendLayout();
-            this.tabService.SuspendLayout();
-            this.tabManage.SuspendLayout();
-            this.tabControlManager.SuspendLayout();
-            this.tabNewMember.SuspendLayout();
             this.groupBoxEdit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAvaEdit)).BeginInit();
             this.panel4.SuspendLayout();
@@ -146,252 +98,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPackage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAddPackage)).BeginInit();
-            this.tabDetailsContract.SuspendLayout();
-            this.tabMember.SuspendLayout();
-            this.tabStatistic.SuspendLayout();
-            this.tabAccount.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // menuStrip
-            // 
-            this.menuStrip.BackColor = System.Drawing.Color.Transparent;
-            this.menuStrip.Font = new System.Drawing.Font("Sitka Display", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.systemToolStripMenuItem,
-            this.toolsToolStripMenuItem,
-            this.userLoginToolStripMenuItem});
-            this.menuStrip.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(1904, 36);
-            this.menuStrip.TabIndex = 0;
-            this.menuStrip.Text = "menuStrip1";
-            // 
-            // systemToolStripMenuItem
-            // 
-            this.systemToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.loginToolStripMenuItem,
-            this.logoutToolStripMenuItem,
-            this.exitToolStripMenuItem});
-            this.systemToolStripMenuItem.Name = "systemToolStripMenuItem";
-            this.systemToolStripMenuItem.Size = new System.Drawing.Size(110, 32);
-            this.systemToolStripMenuItem.Text = "Connection";
-            // 
-            // loginToolStripMenuItem
-            // 
-            this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(137, 32);
-            this.loginToolStripMenuItem.Text = "Login";
-            this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
-            // 
-            // logoutToolStripMenuItem
-            // 
-            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(137, 32);
-            this.logoutToolStripMenuItem.Text = "Logout";
-            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(137, 32);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // toolsToolStripMenuItem
-            // 
-            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.managerToolStripMenuItem,
-            this.helpToolStripMenuItem,
-            this.recoveryToolStripMenuItem});
-            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(64, 32);
-            this.toolsToolStripMenuItem.Text = "Tools";
-            // 
-            // managerToolStripMenuItem
-            // 
-            this.managerToolStripMenuItem.Name = "managerToolStripMenuItem";
-            this.managerToolStripMenuItem.Size = new System.Drawing.Size(198, 32);
-            this.managerToolStripMenuItem.Text = "Administration";
-            this.managerToolStripMenuItem.Click += new System.EventHandler(this.managerToolStripMenuItem_Click);
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(198, 32);
-            this.helpToolStripMenuItem.Text = "Help";
-            // 
-            // recoveryToolStripMenuItem
-            // 
-            this.recoveryToolStripMenuItem.Name = "recoveryToolStripMenuItem";
-            this.recoveryToolStripMenuItem.Size = new System.Drawing.Size(198, 32);
-            this.recoveryToolStripMenuItem.Text = "Recovery";
-            // 
-            // userLoginToolStripMenuItem
-            // 
-            this.userLoginToolStripMenuItem.Name = "userLoginToolStripMenuItem";
-            this.userLoginToolStripMenuItem.Size = new System.Drawing.Size(58, 32);
-            this.userLoginToolStripMenuItem.Text = "User";
-            // 
-            // tabControl
-            // 
-            this.tabControl.Controls.Add(this.tabHome);
-            this.tabControl.Controls.Add(this.tabManage);
-            this.tabControl.Controls.Add(this.tabAccount);
-            this.tabControl.Font = new System.Drawing.Font("Sitka Display", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl.Location = new System.Drawing.Point(0, 39);
-            this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1920, 978);
-            this.tabControl.TabIndex = 1;
-            this.tabControl.Click += new System.EventHandler(this.tabControl_Click);
-            // 
-            // tabHome
-            // 
-            this.tabHome.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.tabHome.Controls.Add(this.tabControlHome);
-            this.tabHome.Location = new System.Drawing.Point(4, 37);
-            this.tabHome.Name = "tabHome";
-            this.tabHome.Padding = new System.Windows.Forms.Padding(3);
-            this.tabHome.Size = new System.Drawing.Size(1912, 937);
-            this.tabHome.TabIndex = 0;
-            this.tabHome.Text = " Home";
-            // 
-            // tabControlHome
-            // 
-            this.tabControlHome.Controls.Add(this.tabMachine);
-            this.tabControlHome.Controls.Add(this.tabProduct);
-            this.tabControlHome.Controls.Add(this.tabService);
-            this.tabControlHome.Location = new System.Drawing.Point(-4, -2);
-            this.tabControlHome.Name = "tabControlHome";
-            this.tabControlHome.SelectedIndex = 0;
-            this.tabControlHome.Size = new System.Drawing.Size(1920, 940);
-            this.tabControlHome.TabIndex = 0;
-            // 
-            // tabMachine
-            // 
-            this.tabMachine.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.tabMachine.Controls.Add(this.flowLayoutMachine);
-            this.tabMachine.Location = new System.Drawing.Point(4, 37);
-            this.tabMachine.Name = "tabMachine";
-            this.tabMachine.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMachine.Size = new System.Drawing.Size(1912, 899);
-            this.tabMachine.TabIndex = 0;
-            this.tabMachine.Text = " Machines ";
-            // 
-            // flowLayoutMachine
-            // 
-            this.flowLayoutMachine.AutoScroll = true;
-            this.flowLayoutMachine.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.flowLayoutMachine.Location = new System.Drawing.Point(66, 56);
-            this.flowLayoutMachine.Margin = new System.Windows.Forms.Padding(2);
-            this.flowLayoutMachine.Name = "flowLayoutMachine";
-            this.flowLayoutMachine.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.flowLayoutMachine.Size = new System.Drawing.Size(1785, 782);
-            this.flowLayoutMachine.TabIndex = 52;
-            // 
-            // tabProduct
-            // 
-            this.tabProduct.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.tabProduct.Controls.Add(this.flowLayoutProduct);
-            this.tabProduct.Location = new System.Drawing.Point(4, 37);
-            this.tabProduct.Name = "tabProduct";
-            this.tabProduct.Padding = new System.Windows.Forms.Padding(3);
-            this.tabProduct.Size = new System.Drawing.Size(1912, 899);
-            this.tabProduct.TabIndex = 1;
-            this.tabProduct.Text = " Products ";
-            // 
-            // tabService
-            // 
-            this.tabService.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.tabService.Controls.Add(this.listServices);
-            this.tabService.Location = new System.Drawing.Point(4, 37);
-            this.tabService.Name = "tabService";
-            this.tabService.Size = new System.Drawing.Size(1912, 899);
-            this.tabService.TabIndex = 2;
-            this.tabService.Text = " Services ";
-            // 
-            // listServices
-            // 
-            this.listServices.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.listServices.BackgroundImageTiled = true;
-            this.listServices.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colIDPackage,
-            this.colNamePackage,
-            this.colCost,
-            this.colDescription});
-            this.listServices.Font = new System.Drawing.Font("UTM Aptima", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listServices.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.listServices.FullRowSelect = true;
-            this.listServices.GridLines = true;
-            this.listServices.HideSelection = false;
-            this.listServices.Location = new System.Drawing.Point(18, 13);
-            this.listServices.Name = "listServices";
-            this.listServices.Size = new System.Drawing.Size(1872, 943);
-            this.listServices.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.listServices.TabIndex = 1;
-            this.listServices.UseCompatibleStateImageBehavior = false;
-            this.listServices.View = System.Windows.Forms.View.Details;
-            // 
-            // colIDPackage
-            // 
-            this.colIDPackage.Text = "ID package";
-            this.colIDPackage.Width = 184;
-            // 
-            // colNamePackage
-            // 
-            this.colNamePackage.Text = "Name";
-            this.colNamePackage.Width = 275;
-            // 
-            // colCost
-            // 
-            this.colCost.Text = "Cost";
-            this.colCost.Width = 232;
-            // 
-            // colDescription
-            // 
-            this.colDescription.Text = "Description";
-            this.colDescription.Width = 1174;
-            // 
-            // tabManage
-            // 
-            this.tabManage.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.tabManage.Controls.Add(this.tabControlManager);
-            this.tabManage.Location = new System.Drawing.Point(4, 37);
-            this.tabManage.Name = "tabManage";
-            this.tabManage.Size = new System.Drawing.Size(1912, 937);
-            this.tabManage.TabIndex = 2;
-            this.tabManage.Text = " Manage ";
-            // 
-            // tabControlManager
-            // 
-            this.tabControlManager.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tabControlManager.Controls.Add(this.tabNewMember);
-            this.tabControlManager.Controls.Add(this.tabDetailsContract);
-            this.tabControlManager.Controls.Add(this.tabMember);
-            this.tabControlManager.Controls.Add(this.tabStatistic);
-            this.tabControlManager.ItemSize = new System.Drawing.Size(113, 33);
-            this.tabControlManager.Location = new System.Drawing.Point(-4, -2);
-            this.tabControlManager.Name = "tabControlManager";
-            this.tabControlManager.SelectedIndex = 0;
-            this.tabControlManager.Size = new System.Drawing.Size(1920, 946);
-            this.tabControlManager.TabIndex = 0;
-            // 
-            // tabNewMember
-            // 
-            this.tabNewMember.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.tabNewMember.Controls.Add(this.btResfresh);
-            this.tabNewMember.Controls.Add(this.btInvoice);
-            this.tabNewMember.Controls.Add(this.btCreateContract);
-            this.tabNewMember.Controls.Add(this.groupBoxEdit);
-            this.tabNewMember.Controls.Add(this.groupContracting);
-            this.tabNewMember.Controls.Add(this.groupChoospackage);
-            this.tabNewMember.Controls.Add(this.receiptUC);
-            this.tabNewMember.Location = new System.Drawing.Point(4, 37);
-            this.tabNewMember.Name = "tabNewMember";
-            this.tabNewMember.Padding = new System.Windows.Forms.Padding(3);
-            this.tabNewMember.Size = new System.Drawing.Size(1912, 905);
-            this.tabNewMember.TabIndex = 1;
-            this.tabNewMember.Text = " Contracts ";
             // 
             // btResfresh
             // 
@@ -404,12 +111,11 @@
             this.btResfresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btResfresh.Font = new System.Drawing.Font("Sitka Subheading", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btResfresh.ForeColor = System.Drawing.Color.White;
-            this.btResfresh.Location = new System.Drawing.Point(965, 675);
+            this.btResfresh.Location = new System.Drawing.Point(966, 675);
             this.btResfresh.Name = "btResfresh";
             this.btResfresh.Size = new System.Drawing.Size(88, 61);
-            this.btResfresh.TabIndex = 106;
+            this.btResfresh.TabIndex = 112;
             this.btResfresh.UseVisualStyleBackColor = false;
-            this.btResfresh.Click += new System.EventHandler(this.btResfresh_Click);
             // 
             // btInvoice
             // 
@@ -422,14 +128,13 @@
             this.btInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btInvoice.Font = new System.Drawing.Font("Sitka Subheading", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btInvoice.ForeColor = System.Drawing.Color.White;
-            this.btInvoice.Location = new System.Drawing.Point(1277, 675);
+            this.btInvoice.Location = new System.Drawing.Point(1278, 675);
             this.btInvoice.Name = "btInvoice";
             this.btInvoice.Size = new System.Drawing.Size(243, 61);
-            this.btInvoice.TabIndex = 105;
+            this.btInvoice.TabIndex = 111;
             this.btInvoice.Text = "To Invoice";
             this.btInvoice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btInvoice.UseVisualStyleBackColor = false;
-            this.btInvoice.Click += new System.EventHandler(this.btInvoice_Click);
             // 
             // btCreateContract
             // 
@@ -442,10 +147,10 @@
             this.btCreateContract.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btCreateContract.Font = new System.Drawing.Font("Sitka Subheading", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btCreateContract.ForeColor = System.Drawing.Color.White;
-            this.btCreateContract.Location = new System.Drawing.Point(1069, 675);
+            this.btCreateContract.Location = new System.Drawing.Point(1070, 675);
             this.btCreateContract.Name = "btCreateContract";
             this.btCreateContract.Size = new System.Drawing.Size(194, 61);
-            this.btCreateContract.TabIndex = 107;
+            this.btCreateContract.TabIndex = 113;
             this.btCreateContract.Text = "Create";
             this.btCreateContract.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btCreateContract.UseVisualStyleBackColor = false;
@@ -477,10 +182,10 @@
             this.groupBoxEdit.Controls.Add(this.txtIDCard);
             this.groupBoxEdit.Font = new System.Drawing.Font("Sitka Display", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxEdit.ForeColor = System.Drawing.Color.Navy;
-            this.groupBoxEdit.Location = new System.Drawing.Point(967, 18);
+            this.groupBoxEdit.Location = new System.Drawing.Point(968, 18);
             this.groupBoxEdit.Name = "groupBoxEdit";
             this.groupBoxEdit.Size = new System.Drawing.Size(903, 648);
-            this.groupBoxEdit.TabIndex = 104;
+            this.groupBoxEdit.TabIndex = 110;
             this.groupBoxEdit.TabStop = false;
             // 
             // label3
@@ -567,7 +272,6 @@
             this.picAvaEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picAvaEdit.TabIndex = 78;
             this.picAvaEdit.TabStop = false;
-            this.picAvaEdit.Click += new System.EventHandler(this.picAvaEdit_Click);
             // 
             // label9
             // 
@@ -615,7 +319,6 @@
             this.txtFname.Name = "txtFname";
             this.txtFname.Size = new System.Drawing.Size(237, 44);
             this.txtFname.TabIndex = 65;
-            this.txtFname.TextChanged += new System.EventHandler(this.txtFname_TextChanged);
             // 
             // label5
             // 
@@ -748,7 +451,6 @@
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(237, 44);
             this.txtPhone.TabIndex = 70;
-            this.txtPhone.TextChanged += new System.EventHandler(this.txtPhone_TextChanged);
             // 
             // txtLname
             // 
@@ -760,7 +462,6 @@
             this.txtLname.Name = "txtLname";
             this.txtLname.Size = new System.Drawing.Size(235, 44);
             this.txtLname.TabIndex = 66;
-            this.txtLname.TextChanged += new System.EventHandler(this.txtLname_TextChanged);
             // 
             // txtIDCard
             // 
@@ -797,10 +498,10 @@
             this.groupContracting.Controls.Add(this.label4);
             this.groupContracting.Font = new System.Drawing.Font("Sitka Banner", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupContracting.ForeColor = System.Drawing.Color.Navy;
-            this.groupContracting.Location = new System.Drawing.Point(43, 338);
+            this.groupContracting.Location = new System.Drawing.Point(44, 338);
             this.groupContracting.Name = "groupContracting";
             this.groupContracting.Size = new System.Drawing.Size(903, 536);
-            this.groupContracting.TabIndex = 103;
+            this.groupContracting.TabIndex = 109;
             this.groupContracting.TabStop = false;
             this.groupContracting.Text = "Contracting";
             // 
@@ -1033,10 +734,10 @@
             this.groupChoospackage.Controls.Add(this.picAddPackage);
             this.groupChoospackage.Font = new System.Drawing.Font("Sitka Banner", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupChoospackage.ForeColor = System.Drawing.Color.Navy;
-            this.groupChoospackage.Location = new System.Drawing.Point(43, 20);
+            this.groupChoospackage.Location = new System.Drawing.Point(44, 20);
             this.groupChoospackage.Name = "groupChoospackage";
             this.groupChoospackage.Size = new System.Drawing.Size(903, 312);
-            this.groupChoospackage.TabIndex = 102;
+            this.groupChoospackage.TabIndex = 108;
             this.groupChoospackage.TabStop = false;
             this.groupChoospackage.Text = "Choose package";
             // 
@@ -1058,36 +759,36 @@
             this.dgvPT.AllowUserToDeleteRows = false;
             this.dgvPT.AllowUserToResizeColumns = false;
             this.dgvPT.AllowUserToResizeRows = false;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPT.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPT.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPT.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dgvPT.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvPT.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Sitka Banner", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPT.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Sitka Banner", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPT.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPT.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvPT.Location = new System.Drawing.Point(482, 44);
             this.dgvPT.Name = "dgvPT";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Sitka Banner", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPT.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Sitka Banner", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPT.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPT.RowHeadersVisible = false;
             this.dgvPT.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPT.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPT.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPT.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPT.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvPT.Size = new System.Drawing.Size(403, 206);
@@ -1111,36 +812,36 @@
             this.dgvPackage.AllowUserToDeleteRows = false;
             this.dgvPackage.AllowUserToResizeColumns = false;
             this.dgvPackage.AllowUserToResizeRows = false;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPackage.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPackage.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPackage.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dgvPackage.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvPackage.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Sitka Banner", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPackage.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Sitka Banner", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPackage.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvPackage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPackage.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvPackage.Location = new System.Drawing.Point(14, 44);
             this.dgvPackage.Name = "dgvPackage";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Sitka Banner", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPackage.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Sitka Banner", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPackage.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvPackage.RowHeadersVisible = false;
             this.dgvPackage.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPackage.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPackage.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvPackage.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPackage.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvPackage.Size = new System.Drawing.Size(424, 256);
@@ -1159,154 +860,22 @@
             this.picAddPackage.TabIndex = 86;
             this.picAddPackage.TabStop = false;
             // 
-            // receiptUC
+            // MEContract
             // 
-            this.receiptUC.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.receiptUC.Location = new System.Drawing.Point(0, 0);
-            this.receiptUC.Name = "receiptUC";
-            this.receiptUC.Size = new System.Drawing.Size(1912, 987);
-            this.receiptUC.TabIndex = 0;
-            // 
-            // tabDetailsContract
-            // 
-            this.tabDetailsContract.Controls.Add(this.detailsConrtactUC);
-            this.tabDetailsContract.Location = new System.Drawing.Point(4, 37);
-            this.tabDetailsContract.Name = "tabDetailsContract";
-            this.tabDetailsContract.Size = new System.Drawing.Size(1912, 905);
-            this.tabDetailsContract.TabIndex = 2;
-            this.tabDetailsContract.Text = " Details Contract ";
-            this.tabDetailsContract.UseVisualStyleBackColor = true;
-            // 
-            // detailsConrtactUC
-            // 
-            this.detailsConrtactUC.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.detailsConrtactUC.Location = new System.Drawing.Point(0, 0);
-            this.detailsConrtactUC.Name = "detailsConrtactUC";
-            this.detailsConrtactUC.Size = new System.Drawing.Size(1912, 905);
-            this.detailsConrtactUC.TabIndex = 0;
-            // 
-            // tabMember
-            // 
-            this.tabMember.Controls.Add(this.memberUC1);
-            this.tabMember.Location = new System.Drawing.Point(4, 37);
-            this.tabMember.Name = "tabMember";
-            this.tabMember.Size = new System.Drawing.Size(1912, 905);
-            this.tabMember.TabIndex = 4;
-            this.tabMember.Text = " Members ";
-            this.tabMember.UseVisualStyleBackColor = true;
-            // 
-            // memberUC1
-            // 
-            this.memberUC1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.memberUC1.ForeColor = System.Drawing.Color.Navy;
-            this.memberUC1.Location = new System.Drawing.Point(0, 0);
-            this.memberUC1.Name = "memberUC1";
-            this.memberUC1.Size = new System.Drawing.Size(1912, 905);
-            this.memberUC1.TabIndex = 0;
-            // 
-            // tabStatistic
-            // 
-            this.tabStatistic.Controls.Add(this.statisticEmployeeUC1);
-            this.tabStatistic.Location = new System.Drawing.Point(4, 37);
-            this.tabStatistic.Name = "tabStatistic";
-            this.tabStatistic.Size = new System.Drawing.Size(1912, 905);
-            this.tabStatistic.TabIndex = 3;
-            this.tabStatistic.Text = " Statistics ";
-            this.tabStatistic.UseVisualStyleBackColor = true;
-            // 
-            // tabAccount
-            // 
-            this.tabAccount.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.tabAccount.Controls.Add(this.accountEmployeeUC);
-            this.tabAccount.Location = new System.Drawing.Point(4, 37);
-            this.tabAccount.Name = "tabAccount";
-            this.tabAccount.Size = new System.Drawing.Size(1912, 937);
-            this.tabAccount.TabIndex = 3;
-            this.tabAccount.Text = " Account ";
-            // 
-            // accountEmployeeUC
-            // 
-            this.accountEmployeeUC.Address = null;
-            this.accountEmployeeUC.AutoSize = true;
-            this.accountEmployeeUC.Ava = null;
-            this.accountEmployeeUC.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.accountEmployeeUC.BDate = null;
-            this.accountEmployeeUC.EmployeeID = null;
-            this.accountEmployeeUC.FName = null;
-            this.accountEmployeeUC.ForeColor = System.Drawing.Color.Navy;
-            this.accountEmployeeUC.Gender = null;
-            this.accountEmployeeUC.Group = null;
-            this.accountEmployeeUC.IDCard = null;
-            this.accountEmployeeUC.LName = null;
-            this.accountEmployeeUC.Location = new System.Drawing.Point(0, 0);
-            this.accountEmployeeUC.Name = "accountEmployeeUC";
-            this.accountEmployeeUC.Phone = null;
-            this.accountEmployeeUC.Salary = null;
-            this.accountEmployeeUC.Size = new System.Drawing.Size(1912, 937);
-            this.accountEmployeeUC.TabIndex = 0;
-            // 
-            // lbDateTime
-            // 
-            this.lbDateTime.AutoSize = true;
-            this.lbDateTime.BackColor = System.Drawing.Color.Transparent;
-            this.lbDateTime.Font = new System.Drawing.Font("UTM Centur", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDateTime.ForeColor = System.Drawing.Color.Crimson;
-            this.lbDateTime.Location = new System.Drawing.Point(1451, 9);
-            this.lbDateTime.Name = "lbDateTime";
-            this.lbDateTime.Size = new System.Drawing.Size(169, 40);
-            this.lbDateTime.TabIndex = 7;
-            this.lbDateTime.Text = "DateTime: ";
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // statisticEmployeeUC1
-            // 
-            this.statisticEmployeeUC1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.statisticEmployeeUC1.Location = new System.Drawing.Point(0, 0);
-            this.statisticEmployeeUC1.Name = "statisticEmployeeUC1";
-            this.statisticEmployeeUC1.Size = new System.Drawing.Size(1912, 905);
-            this.statisticEmployeeUC1.TabIndex = 0;
-            // 
-            // flowLayoutProduct
-            // 
-            this.flowLayoutProduct.AutoScroll = true;
-            this.flowLayoutProduct.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.flowLayoutProduct.Location = new System.Drawing.Point(87, 58);
-            this.flowLayoutProduct.Margin = new System.Windows.Forms.Padding(2);
-            this.flowLayoutProduct.Name = "flowLayoutProduct";
-            this.flowLayoutProduct.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.flowLayoutProduct.Size = new System.Drawing.Size(1785, 782);
-            this.flowLayoutProduct.TabIndex = 53;
-            // 
-            // Form1
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 33F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(1904, 978);
-            this.Controls.Add(this.lbDateTime);
-            this.Controls.Add(this.tabControl);
-            this.Controls.Add(this.menuStrip);
-            this.MainMenuStrip = this.menuStrip;
-            this.MaximizeBox = false;
-            this.Name = "Form1";
-            this.Text = "Gym master";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.menuStrip.ResumeLayout(false);
-            this.menuStrip.PerformLayout();
-            this.tabControl.ResumeLayout(false);
-            this.tabHome.ResumeLayout(false);
-            this.tabControlHome.ResumeLayout(false);
-            this.tabMachine.ResumeLayout(false);
-            this.tabProduct.ResumeLayout(false);
-            this.tabService.ResumeLayout(false);
-            this.tabManage.ResumeLayout(false);
-            this.tabControlManager.ResumeLayout(false);
-            this.tabNewMember.ResumeLayout(false);
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.Controls.Add(this.btResfresh);
+            this.Controls.Add(this.btInvoice);
+            this.Controls.Add(this.btCreateContract);
+            this.Controls.Add(this.groupBoxEdit);
+            this.Controls.Add(this.groupContracting);
+            this.Controls.Add(this.groupChoospackage);
+            this.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.Navy;
+            this.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.Name = "MEContract";
+            this.Size = new System.Drawing.Size(1912, 987);
             this.groupBoxEdit.ResumeLayout(false);
             this.groupBoxEdit.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAvaEdit)).EndInit();
@@ -1319,51 +888,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPackage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAddPackage)).EndInit();
-            this.tabDetailsContract.ResumeLayout(false);
-            this.tabMember.ResumeLayout(false);
-            this.tabStatistic.ResumeLayout(false);
-            this.tabAccount.ResumeLayout(false);
-            this.tabAccount.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip;
-        private System.Windows.Forms.ToolStripMenuItem systemToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem managerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.TabControl tabControl;
-        private System.Windows.Forms.TabPage tabHome;
-        private System.Windows.Forms.TabPage tabManage;
-        private System.Windows.Forms.TabControl tabControlManager;
-        private System.Windows.Forms.TabPage tabNewMember;
-        private System.Windows.Forms.TabPage tabMember;
-        private System.Windows.Forms.TabPage tabDetailsContract;
-        private System.Windows.Forms.TabPage tabStatistic;
-        private System.Windows.Forms.TabPage tabAccount;
-        private System.Windows.Forms.Label lbDateTime;
-        private System.Windows.Forms.ToolStripMenuItem userLoginToolStripMenuItem;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.TabControl tabControlHome;
-        private System.Windows.Forms.TabPage tabMachine;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutMachine;
-        private System.Windows.Forms.TabPage tabProduct;
-        private System.Windows.Forms.TabPage tabService;
-        private System.Windows.Forms.ListView listServices;
-        protected System.Windows.Forms.ColumnHeader colNamePackage;
-        protected System.Windows.Forms.ColumnHeader colCost;
-        protected System.Windows.Forms.ColumnHeader colDescription;
-        protected System.Windows.Forms.ColumnHeader colIDPackage;
-        private User_Control.DetailsConrtactUC detailsConrtactUC;
-        private User_Control.AccountEmployeeUC accountEmployeeUC;
-        private User_Control.ReceiptUC receiptUC;
         private System.Windows.Forms.Button btResfresh;
         private System.Windows.Forms.Button btInvoice;
         private System.Windows.Forms.Button btCreateContract;
@@ -1417,9 +947,5 @@
         private System.Windows.Forms.TextBox txtPackage;
         public System.Windows.Forms.DataGridView dgvPackage;
         private System.Windows.Forms.PictureBox picAddPackage;
-        private System.Windows.Forms.ToolStripMenuItem recoveryToolStripMenuItem;
-        private User_Control.MemberUC memberUC1;
-        private User_Control.StatisticEmployeeUC statisticEmployeeUC1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutProduct;
     }
 }

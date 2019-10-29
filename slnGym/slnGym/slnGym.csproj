@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0A583690-7EC1-46D6-B93B-C23EEB8B6A38}</ProjectGuid>
+    <ProjectGuid>{B7135FE5-5A95-4B04-AAE6-1F3BEA9DCA6B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>slnGym</RootNamespace>
     <AssemblyName>slnGym</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,65 +47,153 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class\ABILITIES.cs" />
-    <Compile Include="Class\CLASSROOMs.cs" />
-    <Compile Include="Class\CONTRACTs.cs" />
-    <Compile Include="Class\GLOBAL.cs" />
-    <Compile Include="Class\LOGIN.cs" />
-    <Compile Include="Class\MEMBERs.cs" />
-    <Compile Include="Class\MY_DB.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="DataObject\AddEmployee.cs" />
+    <Compile Include="DataObject\ListMachine.cs" />
+    <Compile Include="DataObject\ListProduct.cs" />
+    <Compile Include="DataObject\ListService.cs" />
+    <Compile Include="Forms\Administration.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="Forms\Administration.Designer.cs">
+      <DependentUpon>Administration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="HomeUC.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="Forms\Form2.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HomeUC.Designer.cs">
-      <DependentUpon>HomeUC.cs</DependentUpon>
+    <Compile Include="Forms\Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginUC.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="Forms\Login.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginUC.Designer.cs">
-      <DependentUpon>LoginUC.cs</DependentUpon>
+    <Compile Include="Forms\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Layer\ABILITIES.cs" />
+    <Compile Include="Layer\AccountBL.cs" />
+    <Compile Include="Layer\ADDMACHINES.cs" />
+    <Compile Include="Layer\CLASSROOMs.cs" />
+    <Compile Include="Layer\CONTRACTs.cs" />
+    <Compile Include="Layer\DETAILCONTRACT.cs" />
+    <Compile Include="Layer\DETAILRECEIPT.cs" />
+    <Compile Include="Layer\EMPLOYEEs.cs" />
+    <Compile Include="Layer\GLOBAL.cs" />
+    <Compile Include="Layer\GROUPEMPLOYEE.cs" />
+    <Compile Include="Layer\GROUPWORK.cs" />
+    <Compile Include="Layer\LOGIN.cs" />
+    <Compile Include="Layer\MEMBERs.cs" />
+    <Compile Include="Layer\NewEmployeeBL.cs" />
+    <Compile Include="Layer\PRODUCTs.cs" />
+    <Compile Include="Layer\RECEIPTs.cs" />
+    <Compile Include="Layer\SERVICEPACKs.cs" />
+    <Compile Include="Layer\WORKs.cs" />
+    <Compile Include="MY_DB.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="User Control\DisplayAdminUC.cs">
+    <Compile Include="Temp\MEContract.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Control\DisplayAdminUC.Designer.cs">
-      <DependentUpon>DisplayAdminUC.cs</DependentUpon>
+    <Compile Include="Temp\MEContract.Designer.cs">
+      <DependentUpon>MEContract.cs</DependentUpon>
     </Compile>
-    <Compile Include="User Control\DisplayEmployeesUC.cs">
+    <Compile Include="User Control\AccountEmployeeUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Control\DisplayEmployeesUC.Designer.cs">
-      <DependentUpon>DisplayEmployeesUC.cs</DependentUpon>
+    <Compile Include="User Control\AccountEmployeeUC.Designer.cs">
+      <DependentUpon>AccountEmployeeUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="User Control\DisplayMembersUC.cs">
+    <Compile Include="User Control\DetailsConrtactUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Control\DisplayMembersUC.Designer.cs">
-      <DependentUpon>DisplayMembersUC.cs</DependentUpon>
+    <Compile Include="User Control\DetailsConrtactUC.Designer.cs">
+      <DependentUpon>DetailsConrtactUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="User Control\DisplayPTsUC.cs">
+    <Compile Include="User Control\EditEmployeeUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Control\DisplayPTsUC.Designer.cs">
-      <DependentUpon>DisplayPTsUC.cs</DependentUpon>
+    <Compile Include="User Control\EditEmployeeUC.Designer.cs">
+      <DependentUpon>EditEmployeeUC.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
+    <Compile Include="User Control\ManageAccountUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\ManageAccountUC.Designer.cs">
+      <DependentUpon>ManageAccountUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\ManageContracts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\ManageContracts.Designer.cs">
+      <DependentUpon>ManageContracts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\ManageEmployeeUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\ManageEmployeeUC.Designer.cs">
+      <DependentUpon>ManageEmployeeUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\ManageMembersUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\ManageMembersUC.Designer.cs">
+      <DependentUpon>ManageMembersUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\MemberUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\MemberUC.Designer.cs">
+      <DependentUpon>MemberUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\NewEmployeeUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\NewEmployeeUC.Designer.cs">
+      <DependentUpon>NewEmployeeUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\ReceiptUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\ReceiptUC.Designer.cs">
+      <DependentUpon>ReceiptUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\StatisticEmployeeUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\StatisticEmployeeUC.Designer.cs">
+      <DependentUpon>StatisticEmployeeUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\StatisticsUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\StatisticsUC.Designer.cs">
+      <DependentUpon>StatisticsUC.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\Administration.resx">
+      <DependentUpon>Administration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HomeUC.resx">
-      <DependentUpon>HomeUC.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginUC.resx">
-      <DependentUpon>LoginUC.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -115,17 +204,44 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="User Control\DisplayAdminUC.resx">
-      <DependentUpon>DisplayAdminUC.cs</DependentUpon>
+    <EmbeddedResource Include="Temp\MEContract.resx">
+      <DependentUpon>MEContract.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Control\DisplayEmployeesUC.resx">
-      <DependentUpon>DisplayEmployeesUC.cs</DependentUpon>
+    <EmbeddedResource Include="User Control\AccountEmployeeUC.resx">
+      <DependentUpon>AccountEmployeeUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Control\DisplayMembersUC.resx">
-      <DependentUpon>DisplayMembersUC.cs</DependentUpon>
+    <EmbeddedResource Include="User Control\DetailsConrtactUC.resx">
+      <DependentUpon>DetailsConrtactUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Control\DisplayPTsUC.resx">
-      <DependentUpon>DisplayPTsUC.cs</DependentUpon>
+    <EmbeddedResource Include="User Control\EditEmployeeUC.resx">
+      <DependentUpon>EditEmployeeUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\ManageAccountUC.resx">
+      <DependentUpon>ManageAccountUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\ManageContracts.resx">
+      <DependentUpon>ManageContracts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\ManageEmployeeUC.resx">
+      <DependentUpon>ManageEmployeeUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\ManageMembersUC.resx">
+      <DependentUpon>ManageMembersUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\MemberUC.resx">
+      <DependentUpon>MemberUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\NewEmployeeUC.resx">
+      <DependentUpon>NewEmployeeUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\ReceiptUC.resx">
+      <DependentUpon>ReceiptUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\StatisticEmployeeUC.resx">
+      <DependentUpon>StatisticEmployeeUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\StatisticsUC.resx">
+      <DependentUpon>StatisticsUC.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -141,7 +257,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Form\" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
