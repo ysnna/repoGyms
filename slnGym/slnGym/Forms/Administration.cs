@@ -112,18 +112,11 @@ namespace slnGym.Forms
 
         public void loadServicePackage()
         {
-            listPackage.Items.Clear();
+            Layer.SERVICEPACKs sv = new Layer.SERVICEPACKs();
             DataTable dt = new DataTable();
             dt = sv.getSERVICE();
             int i = 0;
-            foreach (DataRow item in dt.Rows)
-            {
-                listPackage.Items.Add(item[0].ToString());
-                listPackage.Items[i].SubItems.Add(item[1].ToString());
-                listPackage.Items[i].SubItems.Add(item[2].ToString());
-                listPackage.Items[i].SubItems.Add(item[3].ToString());
-                i++;
-            }
+            dgvPackages.DataSource = dt;
         }
 
         public void loadServiceProduct()
@@ -246,17 +239,8 @@ namespace slnGym.Forms
             {
                 if (sv.updateSERVICE(id, name, cost, des)) //update k dc
                 {
-                    int i = 0;
-                    for (i = 0; i < listPackage.Items.Count; i++)
-                    {
-                        if (listPackage.Items[i].Text == id.ToString())
-                        {
-                            listPackage.Items[i].SubItems[1].Text = txtEditNamePack.Text;
-                            listPackage.Items[i].SubItems[2].Text = txtEditCostPack.Text;
-                            listPackage.Items[i].SubItems[3].Text = txtEditDescriptionPack.Text;
-                            break;
-                        }
-                    }
+                    
+ // --------------------------------------------------- Update lai datagirdview -------------------------------
                     MessageBox.Show("Successful updated", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ClearFormAddPackage();
                     return;
