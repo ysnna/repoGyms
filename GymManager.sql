@@ -35,8 +35,7 @@ go
 --Nhân viên
 create table EMPLOYEE(
 employeeID varchar(20) not null,
-groupID  varchar(20),
-avatar image,
+groupID  varchar(20) ,
 employeeFName nvarchar(30) not null,
 employeeLName nvarchar(30) null,
 employeeBDate datetime not null,
@@ -81,7 +80,6 @@ create table MEMBERS
 memID varchar(20) not null,
 memLname nvarchar(20) not null,
 memFName nvarchar(20)  null,
-avatar image,
 memBDate Datetime not null,
 memAddress nvarchar(30) not null,
 memGender bit not null,
@@ -162,7 +160,6 @@ go
 create table PRODUCTS
 (
 productID varchar(20) not null,
-picture image,
 productName nvarchar(20) not null,
 productCost int not null,
 constraint pk_product primary key (productID),
@@ -214,14 +211,3 @@ monthAverage float null,
 type nvarchar(20) null,
 note varchar(20) null,
 );
-go
-
-create table MACHINES
-(
-nameMachine nvarchar(50) not null,
-picture image,
-infor nvarchar(100) null,
-amount int null,
-constraint pk_machines primary key (nameMachine),
-);
-go

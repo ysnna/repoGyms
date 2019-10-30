@@ -184,6 +184,7 @@
             this.flowLayoutPanel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.flowLayoutPanel.Size = new System.Drawing.Size(871, 730);
             this.flowLayoutPanel.TabIndex = 51;
+            this.flowLayoutPanel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanel_MouseClick);
             // 
             // picZoomMachine
             // 

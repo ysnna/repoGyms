@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace slnGym.User_Control
 {
     public partial class ReceiptUC : UserControl
@@ -16,6 +15,12 @@ namespace slnGym.User_Control
         public ReceiptUC()
         {
             InitializeComponent();
+        }
+
+        private void btPrintInvoice_Click(object sender, EventArgs e)
+        {
+
+            this.Visible = false;
         }
 
         private void txtPaid_TextChanged(object sender, EventArgs e)
@@ -59,12 +64,6 @@ namespace slnGym.User_Control
             if (lbStatus.Text == "Paid")
                 btPrintInvoice.Enabled = true;
             else btPrintInvoice.Enabled = false;
-        }
-
-        private void btPrintInvoice_Click(object sender, EventArgs e)
-        {
-            AddForm.PrintPreview print = new AddForm.PrintPreview();
-            print.ShowDialog();
         }
     }
 }

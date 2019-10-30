@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.IO;
 
 namespace slnGym
 {
@@ -32,21 +33,9 @@ namespace slnGym
         }
 
         User_Control.ListMachine[] listMachines = new User_Control.ListMachine[5];
+        Class.ADDMACHINES add = new Class.ADDMACHINES();
 
-        private void populateItems()
-        {
-            for (int i = 0; i < listMachines.Length; i++)
-            {
-                listMachines[i] = new User_Control.ListMachine();
-                listMachines[i].Size = new Size(848, 257);
-                listMachines[i].NameMachine = "Máy chạy bộ điện";
-                listMachines[i].Amount = "10 máy";
-                listMachines[i].Info = "Đứng ở vành đai hai bên, chọn tốc độ ban đầu để khởi động. Sau đó tăng từ từ chậm rãi\nTrước khi ngừng khoảng 5 phút thì giảm tốc độ\nLưu ý: không được tắt máy đột ngột, vì khiến máy dễ hỏng và làm bạn dễ vấp ngã";
-                if (flowLayoutPanel.Controls.Count < 0)
-                    flowLayoutPanel.Controls.Clear();
-                else flowLayoutPanel.Controls.Add(listMachines[i]);
-            }
-        }
+       
 
         private void btProduct_Click(object sender, EventArgs e)
         {
@@ -61,17 +50,30 @@ namespace slnGym
         }
 
         List<Control> listControls = new List<Control>();
+        User_Control.ListMachine addList;
 
         private void btAddMachine_Click(object sender, EventArgs e)
         {
-            User_Control.ListMachine addList = new User_Control.ListMachine();
+            addList = new User_Control.ListMachine();
             addList.Size = new Size(848, 257);
             addList.NameMachine = txtName.Text;
-            addList.Amount = numericUpDown.Value.ToString() + " máy";
+            addList.Amount = numericUpDown.Value.ToString();
             addList.Info = txtInfoMachine.Text;
             addList.Picture = picZoomMachine.Image;
-            flowLayoutPanel.Controls.Add(addList);
-            refresh();
+            //addList.Tag=
+            if (verif())
+            {
+                flowLayoutPanel.Controls.Add(addList);
+                MemoryStream pic = new MemoryStream();
+                addList.Picture.Save(pic, addList.Picture.RawFormat);
+                if (add.insertMACHINE(addList.NameMachine, pic, addList.Info, Convert.ToInt32(addList.Amount)))
+                {
+                    MessageBox.Show("Add member successful", "Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    refresh();
+                }
+                else MessageBox.Show("Error");
+            }
+            else MessageBox.Show("Invalid Information");
         }
         void refresh()
         {
@@ -86,13 +88,48 @@ namespace slnGym
             //Process.Start((string)pic.Tag.ToString());
             picZoomMachine = (PictureBox)sender;
         }
-        private void btEditMachine_Click(object sender, EventArgs e)
+        
+        private void populateItems()
         {
-            AddForm.EditMachines editMachines = new AddForm.EditMachines();
-            editMachines.ShowDialog();
-
+            for (int i = 0; i < listMachines.Length; i++)
+            {
+                listMachines[i] = new User_Control.ListMachine();
+                listMachines[i].Size = new Size(848, 257);
+                listMachines[i].NameMachine = "Máy chạy bộ điện";
+                listMachines[i].Amount = "10 máy";
+                listMachines[i].Info = "Đứng ở vành đai hai bên, chọn tốc độ ban đầu để khởi động. Sau đó tăng từ từ chậm rãi\nTrước khi ngừng khoảng 5 phút thì giảm tốc độ\nLưu ý: không được tắt máy đột ngột, vì khiến máy dễ hỏng và làm bạn dễ vấp ngã";
+                listMachines[i].Tag = "item";
+                listMachines[i].Click += eventClick_Click;
+                if (flowLayoutPanel.Controls.Count < 0)
+                    flowLayoutPanel.Controls.Clear();
+                else flowLayoutPanel.Controls.Add(listMachines[i]);
+                //flowLayoutPanel.Controls[]
+            }
         }
+        public void eventClick_Click(object sender, EventArgs e)
+        {
+            if((sender as User_Control.ListMachine).Tag is "item")
+            {
+                txtInfoMachine.Text = ((sender as FlowLayoutPanel).Tag as User_Control.ListMachine).Info;
+                txtName.Text = ((sender as UserControl).Tag as User_Control.ListMachine).NameMachine;
+                numericUpDown.Value = Convert.ToInt32(((sender as UserControl).Tag as User_Control.ListMachine).Amount);
+                //picZoomMachine.Image = list.Picture;
+            }
+        }
+        public void btEditMachine_Click(object sender, EventArgs e)
+        {
+            //AddForm.EditMachines editMachines = new AddForm.EditMachines();
+            //editMachines.ShowDialog();
+            var pictureBox = (PictureBox)sender;
+            int index = flowLayoutPanel.Controls.GetChildIndex(pictureBox);
+            //User_Control.ListMachine pictureBox = (User_Control.ListMachine)sender;
 
+            //int index = (int)pictureBox.Tag;
+            // picZoomMachine.Image = pictureBox.Picture;
+            //txtName.Text = pictureBox.NameMachine;
+            // txtInfoMachine.Text = pictureBox.Info;
+            // numericUpDown.Value = Convert.ToInt32(pictureBox.Amount);
+        }
         private void btRemoveMachine_Click(object sender, EventArgs e)
         {
 
@@ -130,6 +167,19 @@ namespace slnGym
             open.Filter = "select image(*.jpg;*.png;*.gif)|*.jpg;*.png;*.gif";
             if (open.ShowDialog() == DialogResult.OK)
                 picZoomMachine.Image = Image.FromFile(open.FileName);
+        }
+        bool verif()
+        {
+            if ((addList.Name.Trim() == "")
+                || (addList.Info.Trim() == "")
+                || (addList.Picture == null))
+                return false;
+            return true;
+        }
+
+        private void flowLayoutPanel_MouseClick(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }

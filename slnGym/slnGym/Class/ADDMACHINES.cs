@@ -19,7 +19,6 @@ namespace slnGym.Class
             cmd.Parameters.Add("@pic", SqlDbType.Image).Value = pic.ToArray();
             cmd.Parameters.Add("@info", SqlDbType.NVarChar).Value = info;
             cmd.Parameters.Add("@amt", SqlDbType.Int).Value = amount;
-
             mydb.openConnection();
             if (cmd.ExecuteNonQuery() == 1)
             {
