@@ -30,14 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.systemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,6 +54,7 @@
             this.tabMachine = new System.Windows.Forms.TabPage();
             this.flowLayoutMachine = new System.Windows.Forms.FlowLayoutPanel();
             this.tabProduct = new System.Windows.Forms.TabPage();
+            this.flowLayoutProduct = new System.Windows.Forms.FlowLayoutPanel();
             this.tabService = new System.Windows.Forms.TabPage();
             this.listServices = new System.Windows.Forms.ListView();
             this.colIDPackage = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -111,23 +112,22 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupChoospackage = new System.Windows.Forms.GroupBox();
-            this.txtPT = new System.Windows.Forms.TextBox();
-            this.dgvPT = new System.Windows.Forms.DataGridView();
-            this.txtPackage = new System.Windows.Forms.TextBox();
             this.dgvPackage = new System.Windows.Forms.DataGridView();
-            this.picAddPackage = new System.Windows.Forms.PictureBox();
-            this.receiptUC = new slnGym.User_Control.ReceiptUC();
             this.tabDetailsContract = new System.Windows.Forms.TabPage();
-            this.detailsConrtactUC = new slnGym.User_Control.DetailsConrtactUC();
             this.tabMember = new System.Windows.Forms.TabPage();
-            this.memberUC1 = new slnGym.User_Control.MemberUC();
             this.tabStatistic = new System.Windows.Forms.TabPage();
             this.tabAccount = new System.Windows.Forms.TabPage();
-            this.accountEmployeeUC = new slnGym.User_Control.AccountEmployeeUC();
             this.lbDateTime = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.receiptUC = new slnGym.User_Control.ReceiptUC();
+            this.detailsConrtactUC = new slnGym.User_Control.DetailsConrtactUC();
+            this.memberUC1 = new slnGym.User_Control.MemberUC();
             this.statisticEmployeeUC1 = new slnGym.User_Control.StatisticEmployeeUC();
-            this.flowLayoutProduct = new System.Windows.Forms.FlowLayoutPanel();
+            this.accountEmployeeUC = new slnGym.User_Control.AccountEmployeeUC();
+            this.picAddPackage = new System.Windows.Forms.PictureBox();
+            this.txtPT = new System.Windows.Forms.TextBox();
+            this.txtPackage = new System.Windows.Forms.TextBox();
+            this.dgvPT = new System.Windows.Forms.DataGridView();
             this.menuStrip.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabHome.SuspendLayout();
@@ -143,13 +143,13 @@
             this.panel4.SuspendLayout();
             this.groupContracting.SuspendLayout();
             this.groupChoospackage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPackage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAddPackage)).BeginInit();
             this.tabDetailsContract.SuspendLayout();
             this.tabMember.SuspendLayout();
             this.tabStatistic.SuspendLayout();
             this.tabAccount.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picAddPackage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPT)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -299,6 +299,17 @@
             this.tabProduct.Size = new System.Drawing.Size(1912, 899);
             this.tabProduct.TabIndex = 1;
             this.tabProduct.Text = " Products ";
+            // 
+            // flowLayoutProduct
+            // 
+            this.flowLayoutProduct.AutoScroll = true;
+            this.flowLayoutProduct.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.flowLayoutProduct.Location = new System.Drawing.Point(87, 58);
+            this.flowLayoutProduct.Margin = new System.Windows.Forms.Padding(2);
+            this.flowLayoutProduct.Name = "flowLayoutProduct";
+            this.flowLayoutProduct.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.flowLayoutProduct.Size = new System.Drawing.Size(1785, 782);
+            this.flowLayoutProduct.TabIndex = 53;
             // 
             // tabService
             // 
@@ -477,7 +488,7 @@
             this.groupBoxEdit.Controls.Add(this.txtIDCard);
             this.groupBoxEdit.Font = new System.Drawing.Font("Sitka Display", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxEdit.ForeColor = System.Drawing.Color.Navy;
-            this.groupBoxEdit.Location = new System.Drawing.Point(967, 18);
+            this.groupBoxEdit.Location = new System.Drawing.Point(965, 20);
             this.groupBoxEdit.Name = "groupBoxEdit";
             this.groupBoxEdit.Size = new System.Drawing.Size(903, 648);
             this.groupBoxEdit.TabIndex = 104;
@@ -1040,132 +1051,47 @@
             this.groupChoospackage.TabStop = false;
             this.groupChoospackage.Text = "Choose package";
             // 
-            // txtPT
-            // 
-            this.txtPT.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtPT.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.txtPT.Enabled = false;
-            this.txtPT.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPT.ForeColor = System.Drawing.Color.Navy;
-            this.txtPT.Location = new System.Drawing.Point(690, 256);
-            this.txtPT.Name = "txtPT";
-            this.txtPT.Size = new System.Drawing.Size(195, 44);
-            this.txtPT.TabIndex = 88;
-            // 
-            // dgvPT
-            // 
-            this.dgvPT.AllowUserToAddRows = false;
-            this.dgvPT.AllowUserToDeleteRows = false;
-            this.dgvPT.AllowUserToResizeColumns = false;
-            this.dgvPT.AllowUserToResizeRows = false;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPT.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
-            this.dgvPT.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dgvPT.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvPT.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Sitka Banner", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPT.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
-            this.dgvPT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPT.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvPT.Location = new System.Drawing.Point(482, 44);
-            this.dgvPT.Name = "dgvPT";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Sitka Banner", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPT.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
-            this.dgvPT.RowHeadersVisible = false;
-            this.dgvPT.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPT.RowsDefaultCellStyle = dataGridViewCellStyle12;
-            this.dgvPT.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPT.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvPT.Size = new System.Drawing.Size(403, 206);
-            this.dgvPT.TabIndex = 87;
-            // 
-            // txtPackage
-            // 
-            this.txtPackage.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtPackage.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.txtPackage.Enabled = false;
-            this.txtPackage.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPackage.ForeColor = System.Drawing.Color.Navy;
-            this.txtPackage.Location = new System.Drawing.Point(482, 256);
-            this.txtPackage.Name = "txtPackage";
-            this.txtPackage.Size = new System.Drawing.Size(202, 44);
-            this.txtPackage.TabIndex = 86;
-            // 
             // dgvPackage
             // 
             this.dgvPackage.AllowUserToAddRows = false;
             this.dgvPackage.AllowUserToDeleteRows = false;
             this.dgvPackage.AllowUserToResizeColumns = false;
             this.dgvPackage.AllowUserToResizeRows = false;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPackage.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPackage.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPackage.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dgvPackage.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvPackage.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Sitka Banner", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPackage.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Sitka Banner", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPackage.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvPackage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPackage.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvPackage.Location = new System.Drawing.Point(14, 44);
             this.dgvPackage.Name = "dgvPackage";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Sitka Banner", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPackage.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Sitka Banner", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPackage.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvPackage.RowHeadersVisible = false;
             this.dgvPackage.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPackage.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPackage.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvPackage.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPackage.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvPackage.Size = new System.Drawing.Size(424, 256);
             this.dgvPackage.TabIndex = 80;
-            // 
-            // picAddPackage
-            // 
-            this.picAddPackage.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.picAddPackage.BackColor = System.Drawing.Color.Transparent;
-            this.picAddPackage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picAddPackage.BackgroundImage")));
-            this.picAddPackage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picAddPackage.Location = new System.Drawing.Point(436, 128);
-            this.picAddPackage.Name = "picAddPackage";
-            this.picAddPackage.Size = new System.Drawing.Size(54, 44);
-            this.picAddPackage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picAddPackage.TabIndex = 86;
-            this.picAddPackage.TabStop = false;
-            // 
-            // receiptUC
-            // 
-            this.receiptUC.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.receiptUC.Location = new System.Drawing.Point(0, 0);
-            this.receiptUC.Name = "receiptUC";
-            this.receiptUC.Size = new System.Drawing.Size(1912, 987);
-            this.receiptUC.TabIndex = 0;
+            this.dgvPackage.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPackage_CellContentClick);
             // 
             // tabDetailsContract
             // 
@@ -1177,14 +1103,6 @@
             this.tabDetailsContract.Text = " Details Contract ";
             this.tabDetailsContract.UseVisualStyleBackColor = true;
             // 
-            // detailsConrtactUC
-            // 
-            this.detailsConrtactUC.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.detailsConrtactUC.Location = new System.Drawing.Point(0, 0);
-            this.detailsConrtactUC.Name = "detailsConrtactUC";
-            this.detailsConrtactUC.Size = new System.Drawing.Size(1912, 905);
-            this.detailsConrtactUC.TabIndex = 0;
-            // 
             // tabMember
             // 
             this.tabMember.Controls.Add(this.memberUC1);
@@ -1194,15 +1112,6 @@
             this.tabMember.TabIndex = 4;
             this.tabMember.Text = " Members ";
             this.tabMember.UseVisualStyleBackColor = true;
-            // 
-            // memberUC1
-            // 
-            this.memberUC1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.memberUC1.ForeColor = System.Drawing.Color.Navy;
-            this.memberUC1.Location = new System.Drawing.Point(0, 0);
-            this.memberUC1.Name = "memberUC1";
-            this.memberUC1.Size = new System.Drawing.Size(1912, 905);
-            this.memberUC1.TabIndex = 0;
             // 
             // tabStatistic
             // 
@@ -1223,6 +1132,56 @@
             this.tabAccount.Size = new System.Drawing.Size(1912, 937);
             this.tabAccount.TabIndex = 3;
             this.tabAccount.Text = " Account ";
+            // 
+            // lbDateTime
+            // 
+            this.lbDateTime.AutoSize = true;
+            this.lbDateTime.BackColor = System.Drawing.Color.Transparent;
+            this.lbDateTime.Font = new System.Drawing.Font("UTM Centur", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDateTime.ForeColor = System.Drawing.Color.Crimson;
+            this.lbDateTime.Location = new System.Drawing.Point(1451, 9);
+            this.lbDateTime.Name = "lbDateTime";
+            this.lbDateTime.Size = new System.Drawing.Size(169, 40);
+            this.lbDateTime.TabIndex = 7;
+            this.lbDateTime.Text = "DateTime: ";
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // receiptUC
+            // 
+            this.receiptUC.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.receiptUC.Location = new System.Drawing.Point(0, 0);
+            this.receiptUC.Name = "receiptUC";
+            this.receiptUC.Size = new System.Drawing.Size(1912, 987);
+            this.receiptUC.TabIndex = 0;
+            // 
+            // detailsConrtactUC
+            // 
+            this.detailsConrtactUC.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.detailsConrtactUC.Location = new System.Drawing.Point(0, 0);
+            this.detailsConrtactUC.Name = "detailsConrtactUC";
+            this.detailsConrtactUC.Size = new System.Drawing.Size(1912, 905);
+            this.detailsConrtactUC.TabIndex = 0;
+            // 
+            // memberUC1
+            // 
+            this.memberUC1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.memberUC1.ForeColor = System.Drawing.Color.Navy;
+            this.memberUC1.Location = new System.Drawing.Point(0, 0);
+            this.memberUC1.Name = "memberUC1";
+            this.memberUC1.Size = new System.Drawing.Size(1912, 905);
+            this.memberUC1.TabIndex = 0;
+            // 
+            // statisticEmployeeUC1
+            // 
+            this.statisticEmployeeUC1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.statisticEmployeeUC1.Location = new System.Drawing.Point(0, 0);
+            this.statisticEmployeeUC1.Name = "statisticEmployeeUC1";
+            this.statisticEmployeeUC1.Size = new System.Drawing.Size(1912, 905);
+            this.statisticEmployeeUC1.TabIndex = 0;
             // 
             // accountEmployeeUC
             // 
@@ -1245,41 +1204,83 @@
             this.accountEmployeeUC.Size = new System.Drawing.Size(1912, 937);
             this.accountEmployeeUC.TabIndex = 0;
             // 
-            // lbDateTime
+            // picAddPackage
             // 
-            this.lbDateTime.AutoSize = true;
-            this.lbDateTime.BackColor = System.Drawing.Color.Transparent;
-            this.lbDateTime.Font = new System.Drawing.Font("UTM Centur", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDateTime.ForeColor = System.Drawing.Color.Crimson;
-            this.lbDateTime.Location = new System.Drawing.Point(1451, 9);
-            this.lbDateTime.Name = "lbDateTime";
-            this.lbDateTime.Size = new System.Drawing.Size(169, 40);
-            this.lbDateTime.TabIndex = 7;
-            this.lbDateTime.Text = "DateTime: ";
+            this.picAddPackage.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.picAddPackage.BackColor = System.Drawing.Color.Transparent;
+            this.picAddPackage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picAddPackage.BackgroundImage")));
+            this.picAddPackage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picAddPackage.Location = new System.Drawing.Point(436, 128);
+            this.picAddPackage.Name = "picAddPackage";
+            this.picAddPackage.Size = new System.Drawing.Size(54, 44);
+            this.picAddPackage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picAddPackage.TabIndex = 86;
+            this.picAddPackage.TabStop = false;
             // 
-            // timer1
+            // txtPT
             // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.txtPT.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtPT.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtPT.Enabled = false;
+            this.txtPT.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPT.ForeColor = System.Drawing.Color.Navy;
+            this.txtPT.Location = new System.Drawing.Point(690, 256);
+            this.txtPT.Name = "txtPT";
+            this.txtPT.Size = new System.Drawing.Size(195, 44);
+            this.txtPT.TabIndex = 88;
             // 
-            // statisticEmployeeUC1
+            // txtPackage
             // 
-            this.statisticEmployeeUC1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.statisticEmployeeUC1.Location = new System.Drawing.Point(0, 0);
-            this.statisticEmployeeUC1.Name = "statisticEmployeeUC1";
-            this.statisticEmployeeUC1.Size = new System.Drawing.Size(1912, 905);
-            this.statisticEmployeeUC1.TabIndex = 0;
+            this.txtPackage.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtPackage.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtPackage.Enabled = false;
+            this.txtPackage.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPackage.ForeColor = System.Drawing.Color.Navy;
+            this.txtPackage.Location = new System.Drawing.Point(482, 256);
+            this.txtPackage.Name = "txtPackage";
+            this.txtPackage.Size = new System.Drawing.Size(202, 44);
+            this.txtPackage.TabIndex = 86;
             // 
-            // flowLayoutProduct
+            // dgvPT
             // 
-            this.flowLayoutProduct.AutoScroll = true;
-            this.flowLayoutProduct.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.flowLayoutProduct.Location = new System.Drawing.Point(87, 58);
-            this.flowLayoutProduct.Margin = new System.Windows.Forms.Padding(2);
-            this.flowLayoutProduct.Name = "flowLayoutProduct";
-            this.flowLayoutProduct.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.flowLayoutProduct.Size = new System.Drawing.Size(1785, 782);
-            this.flowLayoutProduct.TabIndex = 53;
+            this.dgvPT.AllowUserToAddRows = false;
+            this.dgvPT.AllowUserToDeleteRows = false;
+            this.dgvPT.AllowUserToResizeColumns = false;
+            this.dgvPT.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPT.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvPT.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dgvPT.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvPT.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Sitka Banner", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPT.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvPT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPT.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvPT.Location = new System.Drawing.Point(482, 44);
+            this.dgvPT.Name = "dgvPT";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Sitka Banner", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPT.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvPT.RowHeadersVisible = false;
+            this.dgvPT.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPT.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvPT.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPT.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgvPT.Size = new System.Drawing.Size(403, 206);
+            this.dgvPT.TabIndex = 87;
             // 
             // Form1
             // 
@@ -1316,14 +1317,14 @@
             this.groupContracting.PerformLayout();
             this.groupChoospackage.ResumeLayout(false);
             this.groupChoospackage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPackage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAddPackage)).EndInit();
             this.tabDetailsContract.ResumeLayout(false);
             this.tabMember.ResumeLayout(false);
             this.tabStatistic.ResumeLayout(false);
             this.tabAccount.ResumeLayout(false);
             this.tabAccount.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picAddPackage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPT)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1412,14 +1413,14 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupChoospackage;
-        private System.Windows.Forms.TextBox txtPT;
-        public System.Windows.Forms.DataGridView dgvPT;
-        private System.Windows.Forms.TextBox txtPackage;
         public System.Windows.Forms.DataGridView dgvPackage;
-        private System.Windows.Forms.PictureBox picAddPackage;
         private System.Windows.Forms.ToolStripMenuItem recoveryToolStripMenuItem;
         private User_Control.MemberUC memberUC1;
         private User_Control.StatisticEmployeeUC statisticEmployeeUC1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutProduct;
+        private System.Windows.Forms.TextBox txtPT;
+        public System.Windows.Forms.DataGridView dgvPT;
+        private System.Windows.Forms.TextBox txtPackage;
+        private System.Windows.Forms.PictureBox picAddPackage;
     }
 }

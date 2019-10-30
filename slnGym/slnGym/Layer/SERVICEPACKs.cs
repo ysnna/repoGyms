@@ -71,7 +71,7 @@ namespace slnGym.Layer
         //Lay thong tin 
         public DataTable getSERVICE()
         {
-            SqlCommand cmd = new SqlCommand("select * from SERVICEPACK order by serviceID", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("select * from SERVICEPACK order by serviceID DESC", mydb.getConnection);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);

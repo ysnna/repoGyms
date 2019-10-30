@@ -37,8 +37,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabAdmin = new System.Windows.Forms.TabControl();
             this.tabAccount = new System.Windows.Forms.TabPage();
+            this.manageAccountUC = new slnGym.User_Control.ManageAccountUC();
             this.tabEmployee = new System.Windows.Forms.TabPage();
             this.manageEmployeeUC = new slnGym.User_Control.ManageEmployeeUC();
             this.tabContract = new System.Windows.Forms.TabPage();
@@ -107,14 +112,9 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtAddNamePack = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.listPackage = new System.Windows.Forms.ListView();
-            this.colIDPackage = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colNamePackage = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colCost = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabStatistic = new System.Windows.Forms.TabPage();
             this.statisticsUC = new slnGym.User_Control.StatisticsUC();
-            this.manageAccountUC = new slnGym.User_Control.ManageAccountUC();
+            this.dgvPackages = new System.Windows.Forms.DataGridView();
             this.tabAdmin.SuspendLayout();
             this.tabAccount.SuspendLayout();
             this.tabEmployee.SuspendLayout();
@@ -140,6 +140,7 @@
             this.groupBox2.SuspendLayout();
             this.groupPackage.SuspendLayout();
             this.tabStatistic.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPackages)).BeginInit();
             this.SuspendLayout();
             // 
             // tabAdmin
@@ -174,6 +175,17 @@
             this.tabAccount.Size = new System.Drawing.Size(1414, 798);
             this.tabAccount.TabIndex = 5;
             this.tabAccount.Text = " Accounts   ";
+            // 
+            // manageAccountUC
+            // 
+            this.manageAccountUC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.manageAccountUC.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.manageAccountUC.ForeColor = System.Drawing.Color.DarkGreen;
+            this.manageAccountUC.Location = new System.Drawing.Point(0, 0);
+            this.manageAccountUC.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.manageAccountUC.Name = "manageAccountUC";
+            this.manageAccountUC.Size = new System.Drawing.Size(1414, 798);
+            this.manageAccountUC.TabIndex = 0;
             // 
             // tabEmployee
             // 
@@ -899,9 +911,9 @@
             // tabPackage
             // 
             this.tabPackage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tabPackage.Controls.Add(this.dgvPackages);
             this.tabPackage.Controls.Add(this.groupBox2);
             this.tabPackage.Controls.Add(this.groupPackage);
-            this.tabPackage.Controls.Add(this.listPackage);
             this.tabPackage.Location = new System.Drawing.Point(4, 36);
             this.tabPackage.Name = "tabPackage";
             this.tabPackage.Padding = new System.Windows.Forms.Padding(3);
@@ -1176,51 +1188,6 @@
             this.label8.TabIndex = 85;
             this.label8.Text = "Name";
             // 
-            // listPackage
-            // 
-            this.listPackage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.listPackage.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.listPackage.BackgroundImageTiled = true;
-            this.listPackage.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colIDPackage,
-            this.colNamePackage,
-            this.colCost,
-            this.colDescription});
-            this.listPackage.Font = new System.Drawing.Font("UTM Aptima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listPackage.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.listPackage.FullRowSelect = true;
-            this.listPackage.GridLines = true;
-            this.listPackage.HideSelection = false;
-            this.listPackage.Location = new System.Drawing.Point(3, 3);
-            this.listPackage.Name = "listPackage";
-            this.listPackage.Size = new System.Drawing.Size(986, 756);
-            this.listPackage.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.listPackage.TabIndex = 2;
-            this.listPackage.UseCompatibleStateImageBehavior = false;
-            this.listPackage.View = System.Windows.Forms.View.Details;
-            this.listPackage.SelectedIndexChanged += new System.EventHandler(this.listPackage_SelectedIndexChanged);
-            // 
-            // colIDPackage
-            // 
-            this.colIDPackage.Text = "ID";
-            this.colIDPackage.Width = 66;
-            // 
-            // colNamePackage
-            // 
-            this.colNamePackage.Text = "Name";
-            this.colNamePackage.Width = 198;
-            // 
-            // colCost
-            // 
-            this.colCost.Text = "Cost";
-            this.colCost.Width = 164;
-            // 
-            // colDescription
-            // 
-            this.colDescription.Text = "Description";
-            this.colDescription.Width = 907;
-            // 
             // tabStatistic
             // 
             this.tabStatistic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
@@ -1241,16 +1208,48 @@
             this.statisticsUC.Size = new System.Drawing.Size(1414, 798);
             this.statisticsUC.TabIndex = 0;
             // 
-            // manageAccountUC
+            // dgvPackages
             // 
-            this.manageAccountUC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.manageAccountUC.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.manageAccountUC.ForeColor = System.Drawing.Color.DarkGreen;
-            this.manageAccountUC.Location = new System.Drawing.Point(0, 0);
-            this.manageAccountUC.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.manageAccountUC.Name = "manageAccountUC";
-            this.manageAccountUC.Size = new System.Drawing.Size(1414, 798);
-            this.manageAccountUC.TabIndex = 0;
+            this.dgvPackages.AllowUserToAddRows = false;
+            this.dgvPackages.AllowUserToDeleteRows = false;
+            this.dgvPackages.AllowUserToResizeColumns = false;
+            this.dgvPackages.AllowUserToResizeRows = false;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPackages.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvPackages.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvPackages.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvPackages.BackgroundColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPackages.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.dgvPackages.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPackages.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvPackages.Location = new System.Drawing.Point(6, 6);
+            this.dgvPackages.Name = "dgvPackages";
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPackages.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.dgvPackages.RowHeadersVisible = false;
+            this.dgvPackages.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPackages.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            this.dgvPackages.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPackages.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgvPackages.Size = new System.Drawing.Size(983, 750);
+            this.dgvPackages.TabIndex = 98;
             // 
             // Administration
             // 
@@ -1297,6 +1296,7 @@
             this.groupPackage.ResumeLayout(false);
             this.groupPackage.PerformLayout();
             this.tabStatistic.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPackages)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1314,9 +1314,6 @@
         private System.Windows.Forms.TabPage tabMachine;
         private System.Windows.Forms.TabPage tabProduct;
         private System.Windows.Forms.TabPage tabPackage;
-        protected System.Windows.Forms.ColumnHeader colIDPackage;
-        protected System.Windows.Forms.ColumnHeader colNamePackage;
-        protected System.Windows.Forms.ColumnHeader colCost;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupPackage;
         private System.Windows.Forms.TextBox txtAddDescriptionPack;
@@ -1374,12 +1371,11 @@
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.Label label48;
         public System.Windows.Forms.DataGridView dgvMachines;
-        public System.Windows.Forms.ListView listPackage;
-        public System.Windows.Forms.ColumnHeader colDescription;
         private User_Control.ManageEmployeeUC manageEmployeeUC;
         private User_Control.ManageContracts manageContracts;
         private User_Control.ManageMembersUC manageMembersUC;
         private User_Control.StatisticsUC statisticsUC;
         private User_Control.ManageAccountUC manageAccountUC;
+        public System.Windows.Forms.DataGridView dgvPackages;
     }
 }

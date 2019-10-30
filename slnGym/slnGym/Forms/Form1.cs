@@ -20,6 +20,50 @@ namespace slnGym.Forms
             InitializeComponent();
             timer1.Start();
         }
+        //Event Click & Load
+        public void createMemberLoad()
+        {
+            radioMale.Checked = true;
+        }
+
+        private void picAvaEdit_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "select image(*.jpg;*.png;*.gif)|*.jpg;*.png;*.gif";
+            if (open.ShowDialog() == DialogResult.OK)
+                picAvaEdit.Image = Image.FromFile(open.FileName);
+        }
+
+        private void txtPhone_TextChanged(object sender, EventArgs e)
+        {
+            txtUserID.Text = "@" + txtPhone.Text;
+            txtPassword.Text = txtPhone.Text;
+        }
+
+        private void txtFname_TextChanged(object sender, EventArgs e)
+        {
+            txtNamePartyMember.Text = txtLname.Text + " " + txtFname.Text;
+        }
+
+        private void txtLname_TextChanged(object sender, EventArgs e)
+        {
+            txtNamePartyMember.Text = txtLname.Text + " " + txtFname.Text;
+        }
+
+        private void dgvPackage_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+        private void btInvoice_Click(object sender, EventArgs e)
+        {
+            this.receiptUC.BringToFront();
+            this.receiptUC.Visible = true;
+        }
+
+        private void btResfresh_Click(object sender, EventArgs e)
+        {
+            RefreshUC();
+        }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -61,6 +105,7 @@ namespace slnGym.Forms
             loadMachine();
             loadProduct();
             loadServicePackage();
+            loadServicePackageDGV();
         }
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -75,6 +120,8 @@ namespace slnGym.Forms
             administration.ShowDialog();
         }
 
+
+        //ham xu ly 
         public void loadMachine()
         {
             flowLayoutMachine.Controls.Clear();
@@ -108,7 +155,6 @@ namespace slnGym.Forms
                 }
             }
         }
-
         public void loadProduct()
         {
             flowLayoutProduct.Controls.Clear();
@@ -159,18 +205,14 @@ namespace slnGym.Forms
                 i++;
             }
         }
-
-        private void btInvoice_Click(object sender, EventArgs e)
+        void loadServicePackageDGV()
         {
-            this.receiptUC.BringToFront();
-            this.receiptUC.Visible = true;
+            Layer.SERVICEPACKs sv = new Layer.SERVICEPACKs();
+            DataTable dt = new DataTable();
+            dt = sv.getSERVICE();
+            int i = 0;
+            dgvPackage.DataSource = dt;
         }
-
-        private void btResfresh_Click(object sender, EventArgs e)
-        {
-            RefreshUC();
-        }
-
         public void RefreshUC()
         {
             txtFname.Text = "";
@@ -187,34 +229,6 @@ namespace slnGym.Forms
             picAvaEdit.Image = picAvaEdit.BackgroundImage;
         }
 
-        public void createMemberLoad()
-        {
-            radioMale.Checked = true;
-        }
-
-        private void picAvaEdit_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "select image(*.jpg;*.png;*.gif)|*.jpg;*.png;*.gif";
-            if (open.ShowDialog() == DialogResult.OK)
-                picAvaEdit.Image = Image.FromFile(open.FileName);
-        }
-
-        private void txtPhone_TextChanged(object sender, EventArgs e)
-        {
-            txtUserID.Text = "@" + txtPhone.Text;
-            txtPassword.Text = txtPhone.Text;
-        }
-
-        private void txtFname_TextChanged(object sender, EventArgs e)
-        {
-            txtNamePartyMember.Text = txtLname.Text + " " + txtFname.Text;
-        }
-
-        private void txtLname_TextChanged(object sender, EventArgs e)
-        {
-            txtNamePartyMember.Text = txtLname.Text + " " + txtFname.Text;
-        }
-
+       
     }
 }
