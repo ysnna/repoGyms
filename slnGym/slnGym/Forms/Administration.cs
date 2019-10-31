@@ -13,9 +13,11 @@ namespace slnGym.Forms
 {
     public partial class Administration : Form
     {
-        public Administration()
+        Form1 f1 = new Form1();
+        public Administration(Form1 administration)
         {
-            InitializeComponent();
+            InitializeComponent(); 
+           f1 = administration;
         }
 
         Layer.SERVICEPACKs sv = new Layer.SERVICEPACKs();
@@ -62,71 +64,7 @@ namespace slnGym.Forms
             loadServiceMachine();
         }
 
-        private void picAddMachine_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "select image(*.jpg;*.png;*.gif)|*.jpg;*.png;*.gif";
-            if (open.ShowDialog() == DialogResult.OK)
-                picAddMachine.Image = Image.FromFile(open.FileName);
-        }
-
-        private void btSaveMachine_Click(object sender, EventArgs e)
-        {
-            DataTable dt = new DataTable();
-            dt = mc.getMACHINE();
-            int id = dt.Rows.Count;
-            MemoryStream pic = new MemoryStream();
-            picAddMachine.Image.Save(pic, picAddMachine.Image.RawFormat);
-            if (txtAddNameMachine.Text != null && txtAddDescriptionMachine.Text != null && picAddMachine.Image != null)//try catch image
-            {
-                //try..catch
-                if (mc.insertMACHINE(id + 1, txtAddNameMachine.Text, pic, txtAddDescriptionMachine.Text, Convert.ToInt32(numericAddMachine.Value)))
-                {
-                    loadServiceMachine();
-                    MessageBox.Show("Add to database successful", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ClearFormAddMachine();
-                }
-                else MessageBox.Show("Invalid information", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else MessageBox.Show("Please insert information", "Wanning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        }
-
-        private void btEditMachine_Click(object sender, EventArgs e)
-        {
-            DataTable dt = new DataTable();
-            dt = mc.getMACHINE();
-            int id = getIDMachine;
-            MemoryStream pic = new MemoryStream();
-            picAddMachine.Image.Save(pic, picAddMachine.Image.RawFormat);
-            if (txtAddNameMachine.Text != null && txtAddDescriptionMachine.Text != null && picAddMachine.Image != null)//try catch image
-            {
-                //try..catch
-                if (mc.updateMACHINE(id, txtAddNameMachine.Text, pic, txtAddDescriptionMachine.Text, Convert.ToInt32(numericAddMachine.Value)))
-                {
-                    loadServiceMachine();
-                    MessageBox.Show("Update to database successful", "Edited..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ClearFormAddMachine();
-                }
-                else MessageBox.Show("Invalid information", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else MessageBox.Show("Please insert information", "Wanning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        }
-
-        private void btDeleteMachine_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Are you sure you want to delete?", "Notice", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                mc.getMACHINESbyID(getIDMachine);
-                if (mc.deleteMACHINE(getIDMachine))
-                {
-                    loadServiceMachine();
-                    MessageBox.Show("Deleted");
-                    ClearFormAddMachine();
-                }
-                else MessageBox.Show("Invalid information");
-            }
-        }
-
+        #region Ham xu ly
         public void loadServicePackage()
         {
             dgvPackages.DataSource = sv.getSERVICE();
@@ -211,7 +149,10 @@ namespace slnGym.Forms
             numericAddMachine.Value = 1;
             picAddMachine.Image = null;
         }
+        #endregion
 
+
+        #region Event Click
         private void btSavePackage_Click(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
@@ -225,6 +166,7 @@ namespace slnGym.Forms
                     loadServicePackage();
                     MessageBox.Show("Add to database successful", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ClearFormAddPackage();
+                    f1.reloadDGV();
                 } 
             else MessageBox.Show("Invalid information", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -242,8 +184,10 @@ namespace slnGym.Forms
                     loadServicePackage();
                     MessageBox.Show("Deleted");
                     ClearFormAddPackage();
+                    f1.reloadDGV();
                 }
                 else MessageBox.Show("Invalid information");
+                f1.reloadDGV();
             }
         }
 
@@ -260,10 +204,12 @@ namespace slnGym.Forms
                     loadServicePackage();
                     MessageBox.Show("Update to database successful", "Edited..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ClearFormAddPackage();
+                    f1.reloadDGV();
                 }
                 else MessageBox.Show("Invalid information", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else MessageBox.Show("Please insert information", "Wanning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            f1.reloadDGV();
         }
 
         private void btAddProduct_Click(object sender, EventArgs e)
@@ -281,6 +227,7 @@ namespace slnGym.Forms
                     loadServiceProduct();
                     MessageBox.Show("Add to database successful", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ClearFormAddProduct();
+                    f1.reloadDGV();
                 }
                 else MessageBox.Show("Invalid information", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -302,6 +249,7 @@ namespace slnGym.Forms
                     loadServiceProduct();
                     MessageBox.Show("Update to database successful", "Edited..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ClearFormAddProduct();
+                    f1.reloadDGV();
                 }
                 else MessageBox.Show("Invalid information", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -318,6 +266,7 @@ namespace slnGym.Forms
                     loadServiceProduct();
                     MessageBox.Show("Deleted");
                     ClearFormAddProduct();
+                    f1.reloadDGV();
                 }
                 else MessageBox.Show("Invalid information");
             }
@@ -386,5 +335,74 @@ namespace slnGym.Forms
         {
             ClearFormAddMachine();
         }
+        private void picAddMachine_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "select image(*.jpg;*.png;*.gif)|*.jpg;*.png;*.gif";
+            if (open.ShowDialog() == DialogResult.OK)
+                picAddMachine.Image = Image.FromFile(open.FileName);
+        }
+
+        private void btSaveMachine_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = mc.getMACHINE();
+            int id = dt.Rows.Count;
+            MemoryStream pic = new MemoryStream();
+            picAddMachine.Image.Save(pic, picAddMachine.Image.RawFormat);
+            if (txtAddNameMachine.Text != null && txtAddDescriptionMachine.Text != null && picAddMachine.Image != null)//try catch image
+            {
+                //try..catch
+                if (mc.insertMACHINE(id + 1, txtAddNameMachine.Text, pic, txtAddDescriptionMachine.Text, Convert.ToInt32(numericAddMachine.Value)))
+                {
+                    loadServiceMachine();
+                    MessageBox.Show("Add to database successful", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClearFormAddMachine();
+                    f1.reloadDGV();
+                }
+                else MessageBox.Show("Invalid information", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else MessageBox.Show("Please insert information", "Wanning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void btEditMachine_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = mc.getMACHINE();
+            int id = getIDMachine;
+            MemoryStream pic = new MemoryStream();
+            picAddMachine.Image.Save(pic, picAddMachine.Image.RawFormat);
+            if (txtAddNameMachine.Text != null && txtAddDescriptionMachine.Text != null && picAddMachine.Image != null)//try catch image
+            {
+                //try..catch
+                if (mc.updateMACHINE(id, txtAddNameMachine.Text, pic, txtAddDescriptionMachine.Text, Convert.ToInt32(numericAddMachine.Value)))
+                {
+                    loadServiceMachine();
+                    MessageBox.Show("Update to database successful", "Edited..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClearFormAddMachine();
+                    f1.reloadDGV();
+                }
+                else MessageBox.Show("Invalid information", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else MessageBox.Show("Please insert information", "Wanning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void btDeleteMachine_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to delete?", "Notice", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                mc.getMACHINESbyID(getIDMachine);
+                if (mc.deleteMACHINE(getIDMachine))
+                {
+                    loadServiceMachine();
+                    MessageBox.Show("Deleted");
+                    ClearFormAddMachine();
+                    f1.reloadDGV();
+                }
+                else MessageBox.Show("Invalid information");
+            }
+        }
+
+        #endregion
     }
 }

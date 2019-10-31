@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using slnGym.Layer;
 using slnGym.DataObject;
-
 namespace slnGym.Forms
 {
     public partial class Form1 : Form
@@ -20,9 +19,7 @@ namespace slnGym.Forms
         {
             InitializeComponent();
             timer1.Start();
-            loadMachine();
-            loadProduct();
-            loadServicePackage();
+           
         }
         //Event Click & Load
         public void createMemberLoad()
@@ -56,7 +53,7 @@ namespace slnGym.Forms
 
         private void dgvPackage_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            
         }
         private void btInvoice_Click(object sender, EventArgs e)
         {
@@ -99,6 +96,7 @@ namespace slnGym.Forms
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            timer1.Enabled = false;
             lbDateTime.Text = DateTime.Now.ToString("dddd, dd MMM yyyy HH:mm:ss");
         }
 
@@ -117,7 +115,7 @@ namespace slnGym.Forms
 
         private void managerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Administration administration = new Administration();
+            Administration administration = new Administration(this);
             administration.ShowDialog();
         }
 
@@ -192,6 +190,7 @@ namespace slnGym.Forms
 
         public void loadServicePackage()
         {
+            this.Activate();
             Layer.SERVICEPACKs sv = new Layer.SERVICEPACKs();
             dgvServicePack.DataSource = sv.getSERVICE();
             dgvServicePack.RowTemplate.Height = 70;
@@ -215,5 +214,16 @@ namespace slnGym.Forms
             dateTimePickerBdate.Value = DateTime.Now;
             picAvaEdit.Image = picAvaEdit.BackgroundImage;
         }
+        public void reloadDGV()
+        {
+            
+            Layer.SERVICEPACKs sv = new Layer.SERVICEPACKs();
+            dgvPackage.DataSource = sv.getSERVICE();
+            this.loadServicePackage();
+            dgvPackage.Refresh();
+            this.Refresh();
+        }
+
+        
     }
 }
