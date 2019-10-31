@@ -6456,6 +6456,12 @@
         eHh4eHh4eHh4eHh4eHh4eHh4eHh4OnD+w3/4/wFbWT3tqCNrHgAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="gROUPWORKBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>173, 17</value>
+  </metadata>
+  <metadata name="groupWorkDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <data name="btRefreshMachine.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAA9T1JREFUeF7s
@@ -9169,4 +9175,7 @@
         dxuZtLxFWAbaT/u5AfREs3fazyWgJ5q9k/QrKPj/AU9GYpxGskcAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="gROUPWORKTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>378, 17</value>
+  </metadata>
 </root>

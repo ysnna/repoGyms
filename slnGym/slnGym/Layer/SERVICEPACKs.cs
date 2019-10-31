@@ -78,6 +78,29 @@ namespace slnGym.Layer
             mydb.closeConnection();
             return dt;
         }
+
+        public DataTable getNamePTbyPackage(string tagPT) //--tagPT = @tagPT roi add cmd.Add.Parameter vo
+        {
+            SqlCommand cmd = new SqlCommand("select EMPLOYEE.employeeID,EMPLOYEE.employeeFName,EMPLOYEE.employeeLName from EMPLOYEE," +
+                "(select idPT from Work,(select *from SERVICEPACK, GROUPWORK where SERVICEPACK.tagPT = GROUPWORK.groupWorkID) as A " +
+                "where WORK.groupWorkID = A.tagPT and tagPT =@tagpt) as B  where EMPLOYEE.employeeID = B.idPT", mydb.getConnection);
+            cmd.Parameters.Add("@tagpt", SqlDbType.VarChar).Value = tagPT;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            mydb.closeConnection();
+            return dt;
+        }
+
+        public DataTable getSERVICEforContract()
+        {
+            SqlCommand cmd = new SqlCommand("select * from SERVICEPACK order by serviceID", mydb.getConnection);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            mydb.closeConnection();
+            return dt;
+        }
         public DataTable getSERVICEbyID(int id)
         {
             SqlCommand cmd = new SqlCommand("select *from SERVICEPACK where serviceID=@ID", mydb.getConnection);

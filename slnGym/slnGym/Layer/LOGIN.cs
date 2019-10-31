@@ -89,6 +89,7 @@ namespace slnGym.Layer
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
+            mydb.closeConnection();
             return dt;
         }
         public DataTable getUserID(string user)
@@ -98,6 +99,7 @@ namespace slnGym.Layer
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
+            mydb.closeConnection();
             return dt;
         }
         public DataTable getAccount(string user, string pass)
@@ -108,6 +110,7 @@ namespace slnGym.Layer
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
+            mydb.closeConnection();
             return dt;
         }
         public DataTable getAccountbyUser(string user)
@@ -117,6 +120,7 @@ namespace slnGym.Layer
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
+            mydb.closeConnection();
             return dt;
         }
     }

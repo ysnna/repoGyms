@@ -81,6 +81,11 @@
     <Compile Include="Forms\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="GroupWorkDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GroupWorkDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Layer\ABILITIES.cs" />
     <Compile Include="Layer\AccountBL.cs" />
     <Compile Include="Layer\ADDMACHINES.cs" />
@@ -100,6 +105,11 @@
     <Compile Include="Layer\SERVICEPACKs.cs" />
     <Compile Include="Layer\WORKs.cs" />
     <Compile Include="MY_DB.cs" />
+    <Compile Include="PackageDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PackageDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Temp\MEContract.cs">
@@ -243,6 +253,28 @@
     <EmbeddedResource Include="User Control\StatisticsUC.resx">
       <DependentUpon>StatisticsUC.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="GroupWorkDataSet.xsc">
+      <DependentUpon>GroupWorkDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GroupWorkDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GroupWorkDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GroupWorkDataSet.xss">
+      <DependentUpon>GroupWorkDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PackageDataSet.xsc">
+      <DependentUpon>PackageDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PackageDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PackageDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PackageDataSet.xss">
+      <DependentUpon>PackageDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

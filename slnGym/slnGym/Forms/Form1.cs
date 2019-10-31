@@ -10,20 +10,24 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using slnGym.Layer;
 using slnGym.DataObject;
+using System.Text.RegularExpressions;
 
 namespace slnGym.Forms
 {
     public partial class Form1 : Form
     {
-        
+
         public Form1()
         {
             InitializeComponent();
             timer1.Start();
-            loadMachine();
-            loadProduct();
-            loadServicePackage();
         }
+
+        Layer.EMPLOYEEs emp = new Layer.EMPLOYEEs();
+        Layer.CONTRACTs contract = new CONTRACTs();
+        Layer.MEMBERs mem = new MEMBERs();
+        Layer.SERVICEPACKs sv = new SERVICEPACKs();
+
         //Event Click & Load
         public void createMemberLoad()
         {
@@ -40,24 +44,20 @@ namespace slnGym.Forms
 
         private void txtPhone_TextChanged(object sender, EventArgs e)
         {
-            txtUserID.Text = "@" + txtPhone.Text;
-            txtPassword.Text = txtPhone.Text;
+           // txtUserID.Text = "@" + txtPhone.Text;
         }
 
         private void txtFname_TextChanged(object sender, EventArgs e)
         {
-            txtNamePartyMember.Text = txtLname.Text + " " + txtFname.Text;
+            txtNamePartyMember.Text = txtFname.Text + " " + txtLname.Text;
         }
 
         private void txtLname_TextChanged(object sender, EventArgs e)
         {
-            txtNamePartyMember.Text = txtLname.Text + " " + txtFname.Text;
+            txtNamePartyMember.Text = txtFname.Text + " " + txtLname.Text;
+            txtPassword.Text = convertToUnSign3(txtLname.Text.Trim()).ToLower() + txtIDMember.Text;
         }
 
-        private void dgvPackage_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
         private void btInvoice_Click(object sender, EventArgs e)
         {
             this.receiptUC.BringToFront();
@@ -84,6 +84,7 @@ namespace slnGym.Forms
             {
                 this.receiptUC.Visible = false;
                 createMemberLoad();
+                loadContract();
             }
             else
             {
@@ -104,9 +105,12 @@ namespace slnGym.Forms
 
         public void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'packageDataSet.SERVICEPACK' table. You can move, or remove it, as needed.
+            this.sERVICEPACKTableAdapter.Fill(this.packageDataSet.SERVICEPACK);
             loadMachine();
             loadProduct();
             loadServicePackage();
+            loadContract();
         }
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -192,7 +196,6 @@ namespace slnGym.Forms
 
         public void loadServicePackage()
         {
-            Layer.SERVICEPACKs sv = new Layer.SERVICEPACKs();
             dgvServicePack.DataSource = sv.getSERVICE();
             dgvServicePack.RowTemplate.Height = 70;
             dgvServicePack.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
@@ -214,6 +217,63 @@ namespace slnGym.Forms
             radioMale.Checked = true;
             dateTimePickerBdate.Value = DateTime.Now;
             picAvaEdit.Image = picAvaEdit.BackgroundImage;
+        }
+
+        public void loadContract()
+        {
+            dgvPackage.RowTemplate.Height = 40;
+            dgvPackage.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgvPackage.AllowUserToAddRows = false;
+            dgvPackage.EditMode = DataGridViewEditMode.EditProgrammatically;
+            
+            DataTable empDT = new DataTable();
+            DataTable dtcontract = new DataTable();
+            DataTable dtmem = new DataTable();
+
+            txtIDSeller.Text = GLOBAL.username;
+            empDT = emp.getEmployeebyID(GLOBAL.username);
+            if (empDT.Rows.Count > 0)
+            {
+                txtNameSeller.Text = empDT.Rows[0][3].ToString() + " " + empDT.Rows[0][4].ToString();
+            }
+
+            dtcontract = contract.getCONTRACTS();
+            int countRowContract = dtcontract.Rows.Count;
+            if (countRowContract < 10)
+            {
+                txtIDContract.Text = "CONT0" + (countRowContract + 1).ToString();
+            }
+            else txtIDContract.Text = "CONT" + (countRowContract + 1).ToString();
+
+            dtmem = mem.getAllMEMBERS();
+            int countRowMember = dtmem.Rows.Count;
+            txtIDMember.Text = "kh" + (countRowMember + 1).ToString();
+            txtUserID.Text = txtIDMember.Text;
+
+        }
+
+        public void loadPTbyTag()
+        {
+            dgvPT.RowTemplate.Height = 40;
+            dgvPT.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgvPT.AllowUserToAddRows = false;
+            dgvPT.EditMode = DataGridViewEditMode.EditProgrammatically;
+        }
+
+        private void dgvPackage_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            loadPTbyTag();
+            int numrow = dgvPackage.CurrentCell.RowIndex;
+            string tag = dgvPackage.Rows[numrow].Cells[3].Value.ToString();
+            dgvPT.DataSource = sv.getNamePTbyPackage(tag);
+            txtPackage.Text= dgvPackage.Rows[numrow].Cells[1].Value.ToString();
+        }
+
+        public static string convertToUnSign3(string s)
+        {
+            Regex regex = new Regex("\\p{IsCombiningDiacriticalMarks}+");
+            string temp = s.Normalize(NormalizationForm.FormD);
+            return regex.Replace(temp, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D');
         }
     }
 }

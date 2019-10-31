@@ -82,6 +82,7 @@ namespace slnGym.Layer
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
+            mydb.closeConnection();
             return dt;
         }
         public DataTable getContractByCUSID(string id)
@@ -91,6 +92,7 @@ namespace slnGym.Layer
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
+            mydb.closeConnection();
             return dt;
         }
 
@@ -101,6 +103,7 @@ namespace slnGym.Layer
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
+            mydb.closeConnection();
             return dt;
         }
     }

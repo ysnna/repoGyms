@@ -57,9 +57,12 @@ namespace slnGym.Forms
 
         private void Administration_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'groupWorkDataSet.GROUPWORK' table. You can move, or remove it, as needed.
+            this.gROUPWORKTableAdapter.Fill(this.groupWorkDataSet.GROUPWORK);
             loadServicePackage();
             loadServiceProduct();
             loadServiceMachine();
+            loadDGVTag();
         }
 
         private void picAddMachine_Click(object sender, EventArgs e)
@@ -160,6 +163,13 @@ namespace slnGym.Forms
             pic.ImageLayout = DataGridViewImageCellLayout.Zoom;
         }
 
+        public void loadDGVTag()
+        {
+            dgvTag.RowTemplate.Height = 40;
+            dgvTag.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgvTag.AllowUserToAddRows = false;
+        }
+
         private void tabAdmin_Click(object sender, EventArgs e)
         {
             if (tabAdmin.SelectedIndex == 0)
@@ -229,7 +239,6 @@ namespace slnGym.Forms
             else MessageBox.Show("Invalid information", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else MessageBox.Show("Please insert information", "Wanning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            
         }
 
         private void btDeletePackage_Click(object sender, EventArgs e)
