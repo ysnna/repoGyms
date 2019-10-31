@@ -18,6 +18,13 @@ namespace slnGym.DataObject
         private Image _picture;
         public static int Width = 425;
         public static int Height = 425;
+        private int _id;
+
+        public int ID
+        {
+            get { return _id; }
+            set { _id = value; }
+        }
 
         public Image Picture
         {
@@ -44,8 +51,9 @@ namespace slnGym.DataObject
         }
 
         #endregion
-        public ListMachine(string name, string info, int amount, Image image)
+        public ListMachine(int id, string name, string info, int amount, Image image)
         {
+            this.ID = id;
             this.Info = info;
             this.NameMachine = name;
             this.Amount = amount;
@@ -53,6 +61,7 @@ namespace slnGym.DataObject
         }
         public ListMachine(DataRow row)
         {
+            this.ID= Convert.ToInt32(row["idMachine"]);
             this.Amount = Convert.ToInt32(row["amount"]);
             this.Info = row["infor"].ToString();
             this.NameMachine = row["nameMachine"].ToString();

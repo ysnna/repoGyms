@@ -15,10 +15,14 @@ namespace slnGym.Forms
 {
     public partial class Form1 : Form
     {
+        
         public Form1()
         {
             InitializeComponent();
             timer1.Start();
+            loadMachine();
+            loadProduct();
+            loadServicePackage();
         }
         //Event Click & Load
         public void createMemberLoad()
@@ -74,9 +78,7 @@ namespace slnGym.Forms
         {
             if (tabControl.SelectedIndex == 0)
             {
-                //loadMachine();
-                //loadProduct();
-                //this.loadServicePackage();
+
             }
             else if (tabControl.SelectedIndex == 1)
             {
@@ -100,12 +102,11 @@ namespace slnGym.Forms
             lbDateTime.Text = DateTime.Now.ToString("dddd, dd MMM yyyy HH:mm:ss");
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        public void Form1_Load(object sender, EventArgs e)
         {
             loadMachine();
             loadProduct();
             loadServicePackage();
-            loadServicePackageDGV();
         }
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -119,7 +120,6 @@ namespace slnGym.Forms
             Administration administration = new Administration();
             administration.ShowDialog();
         }
-
 
         //ham xu ly 
         public void loadMachine()
@@ -150,11 +150,12 @@ namespace slnGym.Forms
                     bt.Text = item.NameMachine;
                     bt.TextAlign = ContentAlignment.BottomCenter;
                     bt.Tag = item;
-                    flowLayoutMachine.Controls.Add(bt);
-                    flowLayoutMachine.Refresh();
+                    this.flowLayoutMachine.Controls.Add(bt);
+                    this.flowLayoutMachine.Refresh();
                 }
             }
         }
+
         public void loadProduct()
         {
             flowLayoutProduct.Controls.Clear();
@@ -191,28 +192,14 @@ namespace slnGym.Forms
 
         public void loadServicePackage()
         {
-            listServices.Items.Clear();
             Layer.SERVICEPACKs sv = new Layer.SERVICEPACKs();
-            DataTable dt = new DataTable();
-            dt = sv.getSERVICE();
-            int i = 0;
-            foreach (DataRow item in dt.Rows)
-            {
-                listServices.Items.Add(item[0].ToString());
-                listServices.Items[i].SubItems.Add(item[1].ToString());
-                listServices.Items[i].SubItems.Add(item[2].ToString());
-                listServices.Items[i].SubItems.Add(item[3].ToString());
-                i++;
-            }
+            dgvServicePack.DataSource = sv.getSERVICE();
+            dgvServicePack.RowTemplate.Height = 70;
+            dgvServicePack.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgvServicePack.AllowUserToAddRows = false;
+            dgvServicePack.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
-        void loadServicePackageDGV()
-        {
-            Layer.SERVICEPACKs sv = new Layer.SERVICEPACKs();
-            DataTable dt = new DataTable();
-            dt = sv.getSERVICE();
-            int i = 0;
-            dgvPackage.DataSource = dt;
-        }
+
         public void RefreshUC()
         {
             txtFname.Text = "";
@@ -228,7 +215,5 @@ namespace slnGym.Forms
             dateTimePickerBdate.Value = DateTime.Now;
             picAvaEdit.Image = picAvaEdit.BackgroundImage;
         }
-
-       
     }
 }

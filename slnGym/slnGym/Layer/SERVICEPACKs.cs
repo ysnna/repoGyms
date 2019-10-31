@@ -11,15 +11,15 @@ namespace slnGym.Layer
     class SERVICEPACKs
     {
         MY_DB mydb = new MY_DB();
-        public bool insertSERVICE(int id, string name, decimal cost, string note)
+        public bool insertSERVICE(int id, string name, decimal cost, string note, string tag)
         {
-            SqlCommand cmd = new SqlCommand("insert into SERVICEPACK(serviceID,serviceNAME,cost,note)" +
-                "values (@id,@name,@cost,@note)", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("insert into SERVICEPACK(serviceID,serviceNAME,cost,note, tagPT)" +
+                "values (@id,@name,@cost,@note,@tag)", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
             cmd.Parameters.Add("@name", SqlDbType.NVarChar).Value = name;
             cmd.Parameters.Add("@cost", SqlDbType.Decimal).Value = cost;
             cmd.Parameters.Add("@note", SqlDbType.NVarChar).Value = note;
-
+            cmd.Parameters.Add("@tag", SqlDbType.VarChar).Value = tag;
             mydb.openConnection();
             if (cmd.ExecuteNonQuery() == 1)
             {
@@ -48,14 +48,14 @@ namespace slnGym.Layer
                 return false;
             }
         }
-        public bool updateSERVICE(int id, string name, decimal cost, string note)
+        public bool updateSERVICE(int id, string name, decimal cost, string note, string tag)
         {
-            SqlCommand cmd = new SqlCommand("update SERVICEPACK set serviceName=@name,cost=@cost,note=@note where serviceID=@id", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("update SERVICEPACK set serviceName=@name,cost=@cost,note=@note,tagPT=@tag where serviceID=@id", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
             cmd.Parameters.Add("@name", SqlDbType.NVarChar).Value = name;
             cmd.Parameters.Add("@cost", SqlDbType.Decimal).Value = cost;
             cmd.Parameters.Add("@note", SqlDbType.NVarChar).Value = note;
-
+            cmd.Parameters.Add("@tag", SqlDbType.VarChar).Value = tag;
             mydb.openConnection();
             if (cmd.ExecuteNonQuery() == 1)
             {
@@ -71,7 +71,7 @@ namespace slnGym.Layer
         //Lay thong tin 
         public DataTable getSERVICE()
         {
-            SqlCommand cmd = new SqlCommand("select * from SERVICEPACK order by serviceID DESC", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("select * from SERVICEPACK order by serviceID", mydb.getConnection);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
