@@ -186,27 +186,28 @@ go
 
 create table MACHINES
 (
+idMachine int not null,
 nameMachine nvarchar(100) not null,
 picture image null,
-infor nvarchar(500) not null,
-amount decimal null,
-constraint pk_nameMachine primary key (nameMachine),
+infor nvarchar(500) null,
+amount int not null,
+constraint pk_idMachine primary key (idMachine),
 );
 go
 
 insert into MACHINES values
-(N'Máy tập cơ sô, cơ lưng', null, N'Để 2 tay vào 2 tay cầm của máy tập. Thực hiện kéo đến khi nào bạn cảm thấy thấm mệt', '15'),
-(N'Máy chạy bộ điện – Treadmill', null, N'Nắm vào tay cầm phía trước để giữ thăng bằng. Giảm tốc độ trước khi ngừng chạy 5 phút', '20'),
-(N'Máy đạp chân ngang có ghế tựa', null, N'Đặt 2 tay cầm sát bên hông có đồ nắm, 2 chân đặt trên thảm trước mặt, dùng sức và đạp chân về phía trước', '10'),
-(N'Xe đạp tập thể dục – Exercise Bike', null, N'Điều chỉnh chiều cao sao cho phù hợp. Sử dụng dây đai chân buộc quá chặt sẽ gây khó chịu', '8'),
-(N'Máy kéo cáp bằng thanh tạ', null, N'Đứng thẳng, 2 tay cầm lấy tay cầm. Sau đó kéo cáp từ từ lên hướng trước ngực', '15'),
-(N'Máy đu xà nâng chân – Hanging Leg Raise', null, N'Lòng bàn tay nắm lấy tay cầm của máy, khuỷu tay vuông góc. Sau đó nâng người, chân thẳng ra trước', '8'),
-(N'Máy tập cơ bụng', null, N'Đặt máy trên nền phẳng. Tựa lưng vào ghế sao cho tư thế thoải mái, phần tựa lưng của ghế ôm gọn vào phần lưng của bạn', '15'),
-(N'Máy tập cơ đùi và chân – Leg Extension Machine', null, N'Ngồi vào vị trí, đặt tay vào tay cầm 2 bên, chân để sau 2 thanh giữ. Đẩy chân từ từ về trước', '9'),
-(N'Máy kéo cap và ròng rọc', null, N'Đặt ròng rọc phía trên và thực hiện động tác Cross-over, hoặc đặt bên dưới và thực hiện động tác bên trên', '10'),
-(N'Leg Press Machine - Máy đạp chân 45 độ', null, N'Chỉnh góc 45 độ. Lưu ý khi tập máy này không được duỗi thẳng chân hoàn toàn khi tập nặng, vì có thể dẫn tới gãy chân', '7'),
-(N'Tạ đơn', null, N'Thiết kế đơn giản, nhỏ gọn với các mức khối lượng khác nhau. Bạn có thể chọn loại 5kg, 10kg, 15kg,..', '50'),
-(N'Tạ đòn', null, N'Nhỏ, gọn, có thể thay đổi trọng lượng tạ phù hợp với bài tập. Hiệu quả rất tốt cho các vùng cơ tay, vai, ngực,..', '20');
+('1',N'Máy tập cơ sô, cơ lưng', null, N'Để 2 tay vào 2 tay cầm của máy tập. Thực hiện kéo đến khi nào bạn cảm thấy thấm mệt', '15'),
+('2',N'Máy chạy bộ điện – Treadmill', null, N'Nắm vào tay cầm phía trước để giữ thăng bằng. Giảm tốc độ trước khi ngừng chạy 5 phút', '20'),
+('3',N'Máy đạp chân ngang có ghế tựa', null, N'Đặt 2 tay cầm sát bên hông có đồ nắm, 2 chân đặt trên thảm trước mặt, dùng sức và đạp chân về phía trước', '10'),
+('4',N'Xe đạp tập thể dục – Exercise Bike', null, N'Điều chỉnh chiều cao sao cho phù hợp. Sử dụng dây đai chân buộc quá chặt sẽ gây khó chịu', '8'),
+('5',N'Máy kéo cáp bằng thanh tạ', null, N'Đứng thẳng, 2 tay cầm lấy tay cầm. Sau đó kéo cáp từ từ lên hướng trước ngực', '15'),
+('6',N'Máy đu xà nâng chân – Hanging Leg Raise', null, N'Lòng bàn tay nắm lấy tay cầm của máy, khuỷu tay vuông góc. Sau đó nâng người, chân thẳng ra trước', '8'),
+('7',N'Máy tập cơ bụng', null, N'Đặt máy trên nền phẳng. Tựa lưng vào ghế sao cho tư thế thoải mái, phần tựa lưng của ghế ôm gọn vào phần lưng của bạn', '15'),
+('8',N'Máy tập cơ đùi và chân – Leg Extension Machine', null, N'Ngồi vào vị trí, đặt tay vào tay cầm 2 bên, chân để sau 2 thanh giữ. Đẩy chân từ từ về trước', '9'),
+('9',N'Máy kéo cap và ròng rọc', null, N'Đặt ròng rọc phía trên và thực hiện động tác Cross-over, hoặc đặt bên dưới và thực hiện động tác bên trên', '10'),
+('10',N'Leg Press Machine - Máy đạp chân 45 độ', null, N'Chỉnh góc 45 độ. Lưu ý khi tập máy này không được duỗi thẳng chân hoàn toàn khi tập nặng, vì có thể dẫn tới gãy chân', '7'),
+('11',N'Tạ đơn', null, N'Thiết kế đơn giản, nhỏ gọn với các mức khối lượng khác nhau. Bạn có thể chọn loại 5kg, 10kg, 15kg,..', '50'),
+('12',N'Tạ đòn', null, N'Nhỏ, gọn, có thể thay đổi trọng lượng tạ phù hợp với bài tập. Hiệu quả rất tốt cho các vùng cơ tay, vai, ngực,..', '20');
 go
 
 --Sản phẩm

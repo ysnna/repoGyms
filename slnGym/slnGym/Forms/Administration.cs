@@ -22,6 +22,14 @@ namespace slnGym.Forms
         Layer.PRODUCTs pd = new Layer.PRODUCTs();
         Layer.ADDMACHINES mc = new Layer.ADDMACHINES();
 
+        int getIDPackage = 0;
+        int getIDProduct = 0;
+        int getIDMachine = 0;
+        public void closeForm()
+        {
+            this.Dispose();
+        }
+
         private void tabAdmin_DrawItem(object sender, DrawItemEventArgs e)
         {
             Graphics g = e.Graphics;
@@ -54,13 +62,6 @@ namespace slnGym.Forms
             loadServiceMachine();
         }
 
-        private void newEmployeeUC_Load(object sender, EventArgs e)
-        {
-
-        }
-       
-        Layer.ADDMACHINES machine = new Layer.ADDMACHINES();
-
         private void picAddMachine_Click(object sender, EventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
@@ -73,50 +74,66 @@ namespace slnGym.Forms
         {
             DataTable dt = new DataTable();
             dt = mc.getMACHINE();
+            int id = dt.Rows.Count;
             MemoryStream pic = new MemoryStream();
             picAddMachine.Image.Save(pic, picAddMachine.Image.RawFormat);
-            string name = txtAddNameMachine.Text;
-            string info = txtAddDescriptionMachine.Text;
-            int amount = Convert.ToInt32(numericAddMachine.Value);
-            try
+            if (txtAddNameMachine.Text != null && txtAddDescriptionMachine.Text != null && picAddMachine.Image != null)//try catch image
             {
-                if (machine.insertMACHINE(name, pic, info, amount))
+                //try..catch
+                if (mc.insertMACHINE(id + 1, txtAddNameMachine.Text, pic, txtAddDescriptionMachine.Text, Convert.ToInt32(numericAddMachine.Value)))
                 {
                     loadServiceMachine();
-                    MessageBox.Show("Add to database is successful", "Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Add to database successful", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ClearFormAddMachine();
                 }
-                else MessageBox.Show("Bug rồi");
+                else MessageBox.Show("Invalid information", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            catch (Exception)
+            else MessageBox.Show("Please insert information", "Wanning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void btEditMachine_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = mc.getMACHINE();
+            int id = getIDMachine;
+            MemoryStream pic = new MemoryStream();
+            picAddMachine.Image.Save(pic, picAddMachine.Image.RawFormat);
+            if (txtAddNameMachine.Text != null && txtAddDescriptionMachine.Text != null && picAddMachine.Image != null)//try catch image
             {
-                MessageBox.Show("Invalid information", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //try..catch
+                if (mc.updateMACHINE(id, txtAddNameMachine.Text, pic, txtAddDescriptionMachine.Text, Convert.ToInt32(numericAddMachine.Value)))
+                {
+                    loadServiceMachine();
+                    MessageBox.Show("Update to database successful", "Edited..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClearFormAddMachine();
+                }
+                else MessageBox.Show("Invalid information", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else MessageBox.Show("Please insert information", "Wanning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
-        void ClearFormAddMachine()
+        private void btDeleteMachine_Click(object sender, EventArgs e)
         {
-            txtAddDescriptionMachine.Text = "";
-            txtAddNameMachine.Text = "";
-            numericAddMachine.Value = 1;
-            picAddMachine.Image = picAddMachine.BackgroundImage;
-        }
-
-        bool verif()
-        {
-            if ((txtAddDescriptionMachine.Text.Trim() == "") || (txtAddNameMachine.Text.Trim() == "")
-                || (picAddMachine.Image == null))
-                return false;
-            return true;
+            if (MessageBox.Show("Are you sure you want to delete?", "Notice", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                mc.getMACHINESbyID(getIDMachine);
+                if (mc.deleteMACHINE(getIDMachine))
+                {
+                    loadServiceMachine();
+                    MessageBox.Show("Deleted");
+                    ClearFormAddMachine();
+                }
+                else MessageBox.Show("Invalid information");
+            }
         }
 
         public void loadServicePackage()
         {
-            Layer.SERVICEPACKs sv = new Layer.SERVICEPACKs();
-            DataTable dt = new DataTable();
-            dt = sv.getSERVICE();
-            int i = 0;
-            dgvPackages.DataSource = dt;
+            dgvPackages.DataSource = sv.getSERVICE();
+            dgvPackages.RowTemplate.Height = 70;
+            dgvPackages.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgvPackages.AllowUserToAddRows = false;
+            dgvPackages.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
 
         public void loadServiceProduct()
@@ -139,7 +156,7 @@ namespace slnGym.Forms
             dgvMachines.AllowUserToAddRows = false;
             dgvMachines.EditMode = DataGridViewEditMode.EditProgrammatically;
             DataGridViewImageColumn pic = new DataGridViewImageColumn();
-            pic = (DataGridViewImageColumn)dgvMachines.Columns[1];
+            pic = (DataGridViewImageColumn)dgvMachines.Columns[2];
             pic.ImageLayout = DataGridViewImageCellLayout.Zoom;
         }
 
@@ -172,31 +189,12 @@ namespace slnGym.Forms
             }
         }
 
-        private void btSavePackage_Click(object sender, EventArgs e)
-        {
-            DataTable dt = new DataTable();
-            dt = sv.getSERVICE();
-            int id = dt.Rows.Count;
-            if (txtAddNamePack.Text != null && txtAddCostPack.Text != null && txtAddDescriptionPack.Text != null)
-            {
-                //try..catch
-                if (sv.insertSERVICE(id + 1, txtAddNamePack.Text, Convert.ToDecimal(txtAddCostPack.Text), txtAddDescriptionPack.Text))
-                {
-                    MessageBox.Show("Add to database successful", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ListViewItem item = new ListViewItem(new string[] { (id + 1).ToString(), txtAddNamePack.Text, txtAddCostPack.Text, txtAddDescriptionPack.Text });
-                    this.listPackage.Items.AddRange(new ListViewItem[] { item });
-                    ClearFormAddPackage();
-                }
-                else MessageBox.Show("Invalid information", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else MessageBox.Show("Please insert information", "Wanning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        }
-
         public void ClearFormAddPackage()
         {
             txtAddCostPack.Text = "";
             txtAddNamePack.Text = "";
             txtAddDescriptionPack.Text = "";
+            txtAddTagPT.Text = "";
         }
 
         public void ClearFormAddProduct()
@@ -206,60 +204,66 @@ namespace slnGym.Forms
             picAddProduct.Image = null;
         }
 
+        public void ClearFormAddMachine()
+        {
+            txtAddDescriptionMachine.Text = "";
+            txtAddNameMachine.Text = "";
+            numericAddMachine.Value = 1;
+            picAddMachine.Image = null;
+        }
+
+        private void btSavePackage_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = sv.getSERVICE();
+            int id = dt.Rows.Count;
+            if (txtAddNamePack.Text != null && txtAddCostPack.Text != null && txtAddDescriptionPack.Text != null)
+            {
+                //try..catch
+                if (sv.insertSERVICE(id + 1, txtAddNamePack.Text, Convert.ToDecimal(txtAddCostPack.Text), txtAddDescriptionPack.Text, txtAddTagPT.Text))
+                {
+                    loadServicePackage();
+                    MessageBox.Show("Add to database successful", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClearFormAddPackage();
+                } 
+            else MessageBox.Show("Invalid information", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else MessageBox.Show("Please insert information", "Wanning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            
+        }
+
         private void btDeletePackage_Click(object sender, EventArgs e)
         {
-            int id = getIDPackage;
             if (MessageBox.Show("Are you sure you want to delete?", "Notice", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                if (id == 0)
+                sv.getSERVICEbyID(getIDPackage);
+                if (sv.deleteSERVICE(getIDPackage))
                 {
-                    MessageBox.Show("Please select a package");
-                    return;
+                    loadServicePackage();
+                    MessageBox.Show("Deleted");
+                    ClearFormAddPackage();
                 }
-                foreach (ListViewItem it in listPackage.Items)
-                {
-                    if (it.Text == id.ToString())
-                    {
-                        sv.deleteSERVICE(id);
-                        it.Remove();
-                        MessageBox.Show("Deleted");
-                        return;
-                    }
-                }
+                else MessageBox.Show("Invalid information");
             }
         }
 
         private void btEditPackage_Click(object sender, EventArgs e)
         {
-            decimal cost = Convert.ToDecimal(txtEditCostPack.Text);
-            string des = txtEditDescriptionPack.Text;
-            string name = txtEditNamePack.Text;
+            DataTable dt = new DataTable();
+            dt = sv.getSERVICE();
             int id = getIDPackage;
-            if (txtEditNamePack.Text != null && txtEditCostPack.Text != null && txtEditDescriptionPack.Text != null)
+            if (txtAddNamePack.Text != null && txtAddCostPack.Text != null && txtAddDescriptionPack.Text != null)//try catch image
             {
-                if (sv.updateSERVICE(id, name, cost, des)) //update k dc
+                //try..catch
+                if (sv.updateSERVICE(id, txtAddNamePack.Text, Convert.ToDecimal(txtAddCostPack.Text), txtAddDescriptionPack.Text, txtAddTagPT.Text))
                 {
-                    
- // --------------------------------------------------- Update lai datagirdview -------------------------------
-                    MessageBox.Show("Successful updated", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    loadServicePackage();
+                    MessageBox.Show("Update to database successful", "Edited..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ClearFormAddPackage();
-                    return;
                 }
                 else MessageBox.Show("Invalid information", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else MessageBox.Show("Please insert information", "Wanning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-        }
-        int getIDPackage = 0;
-        private void listPackage_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            foreach (ListViewItem items in listPackage.SelectedItems)
-            {
-                txtEditNamePack.Text = items.SubItems[1].Text;
-                txtEditCostPack.Text = items.SubItems[2].Text;
-                txtEditDescriptionPack.Text = items.SubItems[3].Text;
-                getIDPackage = Convert.ToInt32(items.SubItems[0].Text);
-            }
         }
 
         private void btAddProduct_Click(object sender, EventArgs e)
@@ -285,32 +289,52 @@ namespace slnGym.Forms
 
         private void btEditProduct_Click(object sender, EventArgs e)
         {
-
+            DataTable dt = new DataTable();
+            dt = pd.getPRODUCTS();
+            int id = getIDProduct;
+            MemoryStream pic = new MemoryStream();
+            picAddProduct.Image.Save(pic, picAddProduct.Image.RawFormat);
+            if (txtAddNameProduct.Text != null && txtAddCostProduct.Text != null && picAddProduct.Image != null)//try catch image
+            {
+                //try..catch
+                if (pd.updatePRODUCTS(id, pic, txtAddNameProduct.Text, Convert.ToDecimal(txtAddCostProduct.Text)))
+                {
+                    loadServiceProduct();
+                    MessageBox.Show("Update to database successful", "Edited..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClearFormAddProduct();
+                }
+                else MessageBox.Show("Invalid information", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else MessageBox.Show("Please insert information", "Wanning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void btDeleteProduct_Click(object sender, EventArgs e)
         {
-            int id = getIDPackage;
             if (MessageBox.Show("Are you sure you want to delete?", "Notice", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                sv.deleteSERVICE(id);
-                MessageBox.Show("Deleted");
-                loadServicePackage();
+                pd.getPRODUCTSbyID(getIDProduct);
+                if (pd.deletePRODUCTS(getIDProduct))
+                {
+                    loadServiceProduct();
+                    MessageBox.Show("Deleted");
+                    ClearFormAddProduct();
+                }
+                else MessageBox.Show("Invalid information");
             }
         }
-        int getIDProduct = 0;
+
         private void dvgProducts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataTable dt = new DataTable();
             dt = pd.getPRODUCTS();
             int numrow = dvgProducts.CurrentCell.RowIndex;
-            txtEditCostProduct.Text = dvgProducts.Rows[numrow].Cells[3].Value.ToString();
-            txtEditNameProduct.Text = dvgProducts.Rows[numrow].Cells[2].Value.ToString();
+            txtAddCostProduct.Text = dvgProducts.Rows[numrow].Cells[3].Value.ToString();
+            txtAddNameProduct.Text = dvgProducts.Rows[numrow].Cells[2].Value.ToString();
             getIDProduct = Convert.ToInt32(dvgProducts.Rows[numrow].Cells[0].Value.ToString());
             byte[] pic;
             pic = (byte[])dt.Rows[numrow]["picture"];
             MemoryStream picedit = new MemoryStream(pic);
-            picEditProduct.Image = Image.FromStream(picedit);
+            picAddProduct.Image = Image.FromStream(picedit);
         }
 
         private void picAddProduct_Click(object sender, EventArgs e)
@@ -321,13 +345,46 @@ namespace slnGym.Forms
                 picAddProduct.Image = Image.FromFile(open.FileName);
         }
 
-        private void picEditProduct_Click(object sender, EventArgs e)
+        private void dgvPackages_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "select image(*.jpg;*.png;*.gif)|*.jpg;*.png;*.gif";
-            if (open.ShowDialog() == DialogResult.OK)
-                picEditProduct.Image = Image.FromFile(open.FileName);
+            DataTable dt = new DataTable();
+            dt = sv.getSERVICE();
+            int numrow = dgvPackages.CurrentCell.RowIndex;
+            txtAddCostPack.Text = dgvPackages.Rows[numrow].Cells[2].Value.ToString();
+            txtAddNamePack.Text = dgvPackages.Rows[numrow].Cells[1].Value.ToString();
+            txtAddDescriptionPack.Text = dgvPackages.Rows[numrow].Cells[3].Value.ToString();
+            txtAddTagPT.Text = dgvPackages.Rows[numrow].Cells[4].Value.ToString();
+            getIDPackage = Convert.ToInt32(dgvPackages.Rows[numrow].Cells[0].Value.ToString());
         }
 
+        private void dgvMachines_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = mc.getMACHINE();
+            int numrow = dgvMachines.CurrentCell.RowIndex;
+            txtAddNameMachine.Text = dgvMachines.Rows[numrow].Cells[1].Value.ToString();
+            txtAddDescriptionMachine.Text = dgvMachines.Rows[numrow].Cells[3].Value.ToString();
+            numericAddMachine.Value = Convert.ToInt32(dgvMachines.Rows[numrow].Cells[4].Value.ToString());
+            getIDMachine = Convert.ToInt32(dgvMachines.Rows[numrow].Cells[0].Value.ToString());
+            byte[] pic;
+            pic = (byte[])dt.Rows[numrow]["picture"];
+            MemoryStream picedit = new MemoryStream(pic);
+            picAddMachine.Image = Image.FromStream(picedit);
+        }
+
+        private void btRefreshMachine_Click(object sender, EventArgs e)
+        {
+            ClearFormAddPackage();
+        }
+
+        private void btRefreshProduct_Click(object sender, EventArgs e)
+        {
+            ClearFormAddProduct();
+        }
+
+        private void btRefreshMachin_Click(object sender, EventArgs e)
+        {
+            ClearFormAddMachine();
+        }
     }
 }
