@@ -81,7 +81,7 @@ namespace slnGym.Layer
 
         public DataTable getNamePTbyPackage(string tagPT) //--tagPT = @tagPT roi add cmd.Add.Parameter vo
         {
-            SqlCommand cmd = new SqlCommand("select EMPLOYEE.employeeID,EMPLOYEE.employeeFName,EMPLOYEE.employeeLName from EMPLOYEE," +
+            SqlCommand cmd = new SqlCommand("select Distinct EMPLOYEE.employeeID,EMPLOYEE.employeeFName,EMPLOYEE.employeeLName from EMPLOYEE," +
                 "(select idPT from Work,(select *from SERVICEPACK, GROUPWORK where SERVICEPACK.tagPT = GROUPWORK.groupWorkID) as A " +
                 "where WORK.groupWorkID = A.tagPT and tagPT =@tagpt) as B  where EMPLOYEE.employeeID = B.idPT", mydb.getConnection);
             cmd.Parameters.Add("@tagpt", SqlDbType.VarChar).Value = tagPT;

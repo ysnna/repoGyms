@@ -13,9 +13,11 @@ namespace slnGym.Forms
 {
     public partial class Administration : Form
     {
-        public Administration()
+        Form1 f1 = new Form1();
+        public Administration(Form1 administration)
         {
             InitializeComponent();
+            f1 = administration;
         }
 
         Layer.SERVICEPACKs sv = new Layer.SERVICEPACKs();
@@ -88,6 +90,8 @@ namespace slnGym.Forms
                     loadServiceMachine();
                     MessageBox.Show("Add to database successful", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ClearFormAddMachine();
+                    f1.reloadDGVMachines();
+                    
                 }
                 else MessageBox.Show("Invalid information", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -109,6 +113,7 @@ namespace slnGym.Forms
                     loadServiceMachine();
                     MessageBox.Show("Update to database successful", "Edited..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ClearFormAddMachine();
+                    f1.reloadDGVMachines();
                 }
                 else MessageBox.Show("Invalid information", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -125,6 +130,7 @@ namespace slnGym.Forms
                     loadServiceMachine();
                     MessageBox.Show("Deleted");
                     ClearFormAddMachine();
+                    f1.reloadDGVMachines();
                 }
                 else MessageBox.Show("Invalid information");
             }
@@ -235,6 +241,7 @@ namespace slnGym.Forms
                     loadServicePackage();
                     MessageBox.Show("Add to database successful", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ClearFormAddPackage();
+                    f1.reloadDGVPacket();
                 } 
             else MessageBox.Show("Invalid information", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -251,6 +258,7 @@ namespace slnGym.Forms
                     loadServicePackage();
                     MessageBox.Show("Deleted");
                     ClearFormAddPackage();
+                    f1.reloadDGVPacket();
                 }
                 else MessageBox.Show("Invalid information");
             }
@@ -269,6 +277,7 @@ namespace slnGym.Forms
                     loadServicePackage();
                     MessageBox.Show("Update to database successful", "Edited..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ClearFormAddPackage();
+                    f1.reloadDGVPacket();
                 }
                 else MessageBox.Show("Invalid information", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -290,6 +299,7 @@ namespace slnGym.Forms
                     loadServiceProduct();
                     MessageBox.Show("Add to database successful", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ClearFormAddProduct();
+                    f1.reloadDGVProduct();
                 }
                 else MessageBox.Show("Invalid information", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -311,6 +321,7 @@ namespace slnGym.Forms
                     loadServiceProduct();
                     MessageBox.Show("Update to database successful", "Edited..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ClearFormAddProduct();
+                    f1.reloadDGVProduct();
                 }
                 else MessageBox.Show("Invalid information", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -327,6 +338,7 @@ namespace slnGym.Forms
                     loadServiceProduct();
                     MessageBox.Show("Deleted");
                     ClearFormAddProduct();
+                    f1.reloadDGVProduct();
                 }
                 else MessageBox.Show("Invalid information");
             }

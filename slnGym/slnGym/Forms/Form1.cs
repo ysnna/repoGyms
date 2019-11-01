@@ -121,7 +121,7 @@ namespace slnGym.Forms
 
         private void managerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Administration administration = new Administration();
+            Administration administration = new Administration(this);
             administration.ShowDialog();
         }
 
@@ -274,6 +274,24 @@ namespace slnGym.Forms
             Regex regex = new Regex("\\p{IsCombiningDiacriticalMarks}+");
             string temp = s.Normalize(NormalizationForm.FormD);
             return regex.Replace(temp, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D');
+        }
+        public void reloadDGVPacket()
+        {
+            Layer.SERVICEPACKs sv = new Layer.SERVICEPACKs();
+            dgvPackage.DataSource = sv.getSERVICE();
+            this.loadServicePackage();
+            dgvPackage.Refresh();
+            this.Refresh();
+        }
+        public void reloadDGVProduct()
+        {
+            loadProduct();
+            this.Refresh();
+        }
+        public void reloadDGVMachines()
+        {
+            loadMachine();
+            this.Refresh();
         }
     }
 }
