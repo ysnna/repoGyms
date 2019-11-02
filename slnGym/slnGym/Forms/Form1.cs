@@ -30,6 +30,8 @@ namespace slnGym.Forms
         Layer.SERVICEPACKs sv = new SERVICEPACKs();
         Layer.LOGIN log = new Layer.LOGIN();
         Layer.DETAILCONTRACT detailContract = new Layer.DETAILCONTRACT();
+        Layer.RECEIPTs rc = new Layer.RECEIPTs();
+        Layer.DETAILCONTRACT dtCont = new Layer.DETAILCONTRACT();
 
         //Event Click & Load
         public void createMemberLoad()
@@ -103,19 +105,43 @@ namespace slnGym.Forms
             }
             else MessageBox.Show("Please insert information", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             #endregion
+
+            #region Create Contract
             string idCont = txtIDContract.Text;
             string empID = txtIDSeller.Text;
             string ptID = txtIDPT.Text;
             int idPack = Convert.ToInt32(txtPackage.Text);
             DateTime dateStart = datePickerStart.Value;
             DateTime dateEnd = datePickerEnd.Value;
-            string status = txtStatus.Text;
-            #region Create Contract
+            string status = "Member";
 
+            if (contract.insertCONTRACTS(idCont, id, ptID, idPack, dateStart, dateEnd, status))
+            {
+                MessageBox.Show("Added contract", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else MessageBox.Show("Added contract fail", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Error);
             #endregion
 
             #region Create DetailsContract
+            //DataTable dtReceipt = rc.getRECEIPT();
+            //string reID;
+            //if (dtReceipt.Rows.Count < 10) reID = "IVC0" + (dtReceipt.Rows.Count + 1).ToString();
+            //else reID = "IVC" + (dtReceipt.Rows.Count + 1).ToString();
+            //if (dtCont.insertDETAILCON(idCont, empID, reID))
+            //{
+            //    MessageBox.Show("Added details contract", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //}
+            //else MessageBox.Show("Added details contract fail", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+            DataTable dtReceipt = rc.getRECEIPT();
+            string reID="IVC03";
+            //if (dtReceipt.Rows.Count < 10) reID = "IVC03" + (dtReceipt.Rows.Count + 1).ToString();
+            //else reID = "IVC" + (dtReceipt.Rows.Count + 1).ToString();
+            if (dtCont.insertDETAILCON("CONT03","nv1", reID))
+            {
+                MessageBox.Show("Added details contract", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else MessageBox.Show("Added details contract fail", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Error);
             #endregion
         }
 
@@ -362,12 +388,20 @@ namespace slnGym.Forms
 
         private void datePickerStart_ValueChanged(object sender, EventArgs e)
         {
-            
+            datePickerEnd.Value = datePickerStart.Value.AddMonths(Convert.ToInt32(numericMonth.Value));
+        }
+        private void numericMonth_ValueChanged(object sender, EventArgs e)
+        {
+            datePickerEnd.Value = datePickerStart.Value.AddMonths(Convert.ToInt32(numericMonth.Value));
         }
 
-        private void datePickerEnd_ValueChanged(object sender, EventArgs e)
+        private void btCreateContract_Click(object sender, EventArgs e)
         {
-
+            if (dtCont.insertDETAILCON("CONT03", "nv1", "IVC03"))
+            {
+                MessageBox.Show("Added details contract", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else MessageBox.Show("Added details contract fail", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

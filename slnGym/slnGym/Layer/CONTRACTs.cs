@@ -11,15 +11,16 @@ namespace slnGym.Layer
     class CONTRACTs
     {
         MY_DB mydb = new MY_DB();
-        public bool insertCONTRACTS(string conID, string cusID, string packID, DateTime datesign, DateTime dateliquid, string status)
+        public bool insertCONTRACTS(string conID, string cusID, string idPT, int packID, DateTime dateS, DateTime dateE, string status)
         {
-            SqlCommand cmd = new SqlCommand("insert into CONTRACTS(contractID,cusID,servicePACK,dateSigned,dateLiquidation,conStatus)" +
-                "values (@conID,@cusID,@pack,@datesign,@dateliquid,@sta)", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("insert into CONTRACTS(contractID,cusID,ptID,servicePACK,dateStart,dateDischarge,conStatus)" +
+                "values (@conID,@cusID,@ptID,@pack,@dateS,@dateE,@sta)", mydb.getConnection);
             cmd.Parameters.Add("@conID", SqlDbType.VarChar).Value = conID;
             cmd.Parameters.Add("@cusID", SqlDbType.VarChar).Value = cusID;
-            cmd.Parameters.Add("@pack", SqlDbType.VarChar).Value = packID;
-            cmd.Parameters.Add("@datesign", SqlDbType.DateTime).Value = datesign;
-            cmd.Parameters.Add("@dateliquid", SqlDbType.DateTime).Value = dateliquid;
+            cmd.Parameters.Add("@ptID", SqlDbType.VarChar).Value = idPT;
+            cmd.Parameters.Add("@pack", SqlDbType.Int).Value = packID;
+            cmd.Parameters.Add("@dateS", SqlDbType.DateTime).Value = dateS;
+            cmd.Parameters.Add("@dateE", SqlDbType.DateTime).Value = dateE;
             cmd.Parameters.Add("@sta", SqlDbType.NVarChar).Value = status;
 
             mydb.openConnection();
@@ -37,7 +38,7 @@ namespace slnGym.Layer
 
         public bool deleteCONTRACTS(string ID)
         {
-            SqlCommand cmd = new SqlCommand("delete from CONTRACT where contractID=@id", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("delete from CONTRACTS where contractID=@id", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = ID;
             mydb.openConnection();
             if (cmd.ExecuteNonQuery() == 1)
@@ -52,15 +53,15 @@ namespace slnGym.Layer
             }
         }
 
-        public bool updateCONTRACTS(string conID, string cusID, string packID, DateTime datesign, DateTime dateliquid, string status)
+        public bool updateCONTRACTS(string conID, string cusID, string idPT, int packID, DateTime dateS, DateTime dateE, string status)
         {
-            SqlCommand cmd = new SqlCommand("update CONTRACTS set contractID=@conID,cusID=@cusID," +
-                "servicePACK=@pack,dateSigned=@datesign,dateLiquidation=@dateliquid,conStatus=@sta", mydb.getConnection);
-            cmd.Parameters.Add("@conID", SqlDbType.VarChar).Value = conID;
+            SqlCommand cmd = new SqlCommand("update CONTRACTS set cusID=@cusID,ptID=@ptID" +
+                "servicePACK=@pack,dateStart=@dateS,dateDischarge=@dateE,conStatus=@sta where contractID=@conID", mydb.getConnection);
             cmd.Parameters.Add("@cusID", SqlDbType.VarChar).Value = cusID;
-            cmd.Parameters.Add("@pack", SqlDbType.VarChar).Value = packID;
-            cmd.Parameters.Add("@datesign", SqlDbType.DateTime).Value = datesign;
-            cmd.Parameters.Add("@dateliquid", SqlDbType.DateTime).Value = dateliquid;
+            cmd.Parameters.Add("@ptID", SqlDbType.VarChar).Value = idPT;
+            cmd.Parameters.Add("@pack", SqlDbType.Int).Value = packID;
+            cmd.Parameters.Add("@dateS", SqlDbType.DateTime).Value = dateS;
+            cmd.Parameters.Add("@dateE", SqlDbType.DateTime).Value = dateE;
             cmd.Parameters.Add("@sta", SqlDbType.NVarChar).Value = status;
 
             mydb.openConnection();

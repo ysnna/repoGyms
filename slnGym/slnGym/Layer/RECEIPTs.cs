@@ -36,7 +36,7 @@ namespace slnGym.Layer
         }
         public bool updateRECEIPT(string receipt, string memID, DateTime date, DateTime time, string emp, int value)
         {
-            SqlCommand cmd = new SqlCommand("update REPCEIPT set receiptID=@id,memID=@num,receiptDate=@date,receiptTime=@time,employeeID=@emp,value=@val", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("update RECEIPT set receiptID=@id,memID=@num,receiptDate=@date,receiptTime=@time,employeeID=@emp,value=@val", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = receipt;
             cmd.Parameters.Add("@mem", SqlDbType.VarChar).Value = memID;
             cmd.Parameters.Add("@date", SqlDbType.DateTime).Value = date;
@@ -58,12 +58,21 @@ namespace slnGym.Layer
         //Lay thong tin 
         public DataTable getRECEIPTbyID(string receiptID)
         {
-            SqlCommand cmd = new SqlCommand("select *from REPCEPIT where memID = @id ", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("select *from RECEIPT where memID = @id ", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = receiptID;
-
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
+            mydb.openConnection();
+            return dt;
+        }
+        public DataTable getRECEIPT()
+        {
+            SqlCommand cmd = new SqlCommand("select *from RECEIPT ", mydb.getConnection);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            mydb.closeConnection();
             return dt;
         }
     }

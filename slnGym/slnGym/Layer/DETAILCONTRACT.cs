@@ -11,14 +11,13 @@ namespace slnGym.Layer
     class DETAILCONTRACT
     {
         MY_DB mydb = new MY_DB();
-        public bool insertDETAILCON(string conID, string empID, string workID, int val)
+        public bool insertDETAILCON(string conID, string empID, string receiptID)
         {
-            SqlCommand cmd = new SqlCommand("insert into DETAILSCONTRACT(contractID,employeeID,workID,value)" +
-                "values (@con,@emp,@work,@value)", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("insert into DETAILSCONTRACT(contID,employeeID,receiptID)" +
+                "values (@con,@emp,@work)", mydb.getConnection);
             cmd.Parameters.Add("@con", SqlDbType.VarChar).Value = conID;
             cmd.Parameters.Add("@emp", SqlDbType.VarChar).Value = empID;
-            cmd.Parameters.Add("@work", SqlDbType.VarChar).Value = workID;
-            cmd.Parameters.Add("@value", SqlDbType.Int).Value = val;
+            cmd.Parameters.Add("@work", SqlDbType.VarChar).Value = receiptID;
 
             mydb.openConnection();
             if (cmd.ExecuteNonQuery() == 1)
@@ -35,7 +34,7 @@ namespace slnGym.Layer
 
         public bool updateDETAILCON(string conID, string empID, string workID, int val)
         {
-            SqlCommand cmd = new SqlCommand("update DETAILSCONTRACT set contractID=@con,employeeID=@emp,workID=@work,value=@value", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("update DETAILSCONTRACT set contID=@con,employeeID=@emp,workID=@work,value=@value", mydb.getConnection);
             cmd.Parameters.Add("@con", SqlDbType.VarChar).Value = conID;
             cmd.Parameters.Add("@emp", SqlDbType.VarChar).Value = empID;
             cmd.Parameters.Add("@work", SqlDbType.VarChar).Value = workID;
@@ -56,7 +55,7 @@ namespace slnGym.Layer
         //Lay thong tin 
         public DataTable getDetailByConID(string conID)
         {
-            SqlCommand cmd = new SqlCommand("select *from DETAILSCONTRACT where contractID=@con ", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("select *from DETAILSCONTRACT where contID=@con ", mydb.getConnection);
             cmd.Parameters.Add("@con", SqlDbType.VarChar).Value = conID;
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);

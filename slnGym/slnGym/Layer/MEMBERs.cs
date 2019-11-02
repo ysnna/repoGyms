@@ -18,14 +18,14 @@ namespace slnGym.Layer
             SqlCommand cmd = new SqlCommand("insert into MEMBERS(memID,memLname,memFname,memBDate,memAddress,memGender,memPhone,cardID,note)" +
                 "values (@id,@lname,@fname,@bdate,@add,@gen,@phone,@idcard,@note)", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = ID;
-            cmd.Parameters.Add("@lname", SqlDbType.VarChar).Value = lname;
-            cmd.Parameters.Add("@fname", SqlDbType.VarChar).Value = fname;
+            cmd.Parameters.Add("@lname", SqlDbType.NVarChar).Value = lname;
+            cmd.Parameters.Add("@fname", SqlDbType.NVarChar).Value = fname;
             cmd.Parameters.Add("@bdate", SqlDbType.DateTime).Value = bdate;
-            cmd.Parameters.Add("@add", SqlDbType.VarChar).Value = address;
+            cmd.Parameters.Add("@add", SqlDbType.NVarChar).Value = address;
             cmd.Parameters.Add("@gen", SqlDbType.Int).Value = gender;
             cmd.Parameters.Add("@phone", SqlDbType.VarChar).Value = phone;
             cmd.Parameters.Add("@idcard", SqlDbType.Int).Value = idcard;
-            cmd.Parameters.Add("@note", SqlDbType.VarChar).Value = note;
+            cmd.Parameters.Add("@note", SqlDbType.NVarChar).Value = note;
 
             mydb.openConnection();
             if (cmd.ExecuteNonQuery() == 1)
@@ -65,14 +65,14 @@ namespace slnGym.Layer
             SqlCommand cmd = new SqlCommand("update MEMBERS set memID=@id,memLname=@lname,memFname=@fname,memBDate=@bdate,memAddress=@add," +
                 "memGender=@gen,memPhone=@phone,cardID=@idcard,note=@note", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = ID;
-            cmd.Parameters.Add("@lname", SqlDbType.VarChar).Value = lname;
-            cmd.Parameters.Add("@fname", SqlDbType.VarChar).Value = fname;
+            cmd.Parameters.Add("@lname", SqlDbType.NVarChar).Value = lname;
+            cmd.Parameters.Add("@fname", SqlDbType.NVarChar).Value = fname;
             cmd.Parameters.Add("@bdate", SqlDbType.DateTime).Value = bdate;
-            cmd.Parameters.Add("@add", SqlDbType.VarChar).Value = address;
+            cmd.Parameters.Add("@add", SqlDbType.NVarChar).Value = address;
             cmd.Parameters.Add("@gen", SqlDbType.Int).Value = gender;
             cmd.Parameters.Add("@phone", SqlDbType.VarChar).Value = phone;
             cmd.Parameters.Add("@idcard", SqlDbType.Int).Value = idcard;
-            cmd.Parameters.Add("@note", SqlDbType.VarChar).Value = note;
+            cmd.Parameters.Add("@note", SqlDbType.NVarChar).Value = note;
 
             mydb.openConnection();
             if (cmd.ExecuteNonQuery() == 1)

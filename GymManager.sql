@@ -291,11 +291,11 @@ go
 --Chi tiết hợp đồng
 create table DETAILSCONTRACT 
 (
-contractID varchar(20) not null,
+contID varchar(20) not null,
 employeeID varchar(20) null,
 receiptID varchar(20) null,
 --PK & FK --
-foreign key (contractID) references CONTRACTS,
+constraint pk_contID primary key (contID),
 foreign key (employeeID) references EMPLOYEE on delete set null,
 foreign key (receiptID) references RECEIPT on delete set null
 );

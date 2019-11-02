@@ -96,6 +96,9 @@
             this.txtLname = new System.Windows.Forms.TextBox();
             this.txtIDCard = new System.Windows.Forms.TextBox();
             this.groupContracting = new System.Windows.Forms.GroupBox();
+            this.numericMonth = new System.Windows.Forms.NumericUpDown();
+            this.dateTimeUpNext = new System.Windows.Forms.DateTimePicker();
+            this.label24 = new System.Windows.Forms.Label();
             this.datePickerEnd = new System.Windows.Forms.DateTimePicker();
             this.datePickerStart = new System.Windows.Forms.DateTimePicker();
             this.label14 = new System.Windows.Forms.Label();
@@ -107,13 +110,13 @@
             this.txtNamePartyMember = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.txtStatus = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtIDMember = new System.Windows.Forms.TextBox();
             this.txtIDContract = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
             this.groupChoospackage = new System.Windows.Forms.GroupBox();
             this.txtIDPT = new System.Windows.Forms.TextBox();
             this.txtNamePack = new System.Windows.Forms.TextBox();
@@ -131,6 +134,7 @@
             this.packageDataSet = new slnGym.PackageDataSet();
             this.picAddPackage = new System.Windows.Forms.PictureBox();
             this.receiptUC = new slnGym.User_Control.ReceiptUC();
+            this.tabRenew = new System.Windows.Forms.TabPage();
             this.tabDetailsContract = new System.Windows.Forms.TabPage();
             this.detailsConrtactUC = new slnGym.User_Control.DetailsConrtactUC();
             this.tabMember = new System.Windows.Forms.TabPage();
@@ -145,8 +149,6 @@
             this.pTTagDataSet = new slnGym.PTTagDataSet();
             this.eMPLOYEEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.eMPLOYEETableAdapter = new slnGym.PTTagDataSetTableAdapters.EMPLOYEETableAdapter();
-            this.label24 = new System.Windows.Forms.Label();
-            this.dateTimeUpNext = new System.Windows.Forms.DateTimePicker();
             this.menuStrip.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabHome.SuspendLayout();
@@ -162,6 +164,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picAvaEdit)).BeginInit();
             this.panel4.SuspendLayout();
             this.groupContracting.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericMonth)).BeginInit();
             this.groupChoospackage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPackage)).BeginInit();
@@ -394,7 +397,7 @@
             this.dgvServicePack.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvServicePack.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvServicePack.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvServicePack.Size = new System.Drawing.Size(1912, 1019);
+            this.dgvServicePack.Size = new System.Drawing.Size(1912, 1064);
             this.dgvServicePack.TabIndex = 102;
             // 
             // tabManage
@@ -411,6 +414,7 @@
             // 
             this.tabControlManager.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tabControlManager.Controls.Add(this.tabNewMember);
+            this.tabControlManager.Controls.Add(this.tabRenew);
             this.tabControlManager.Controls.Add(this.tabDetailsContract);
             this.tabControlManager.Controls.Add(this.tabMember);
             this.tabControlManager.Controls.Add(this.tabStatistic);
@@ -494,6 +498,7 @@
             this.btCreateContract.Text = "Create";
             this.btCreateContract.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btCreateContract.UseVisualStyleBackColor = false;
+            this.btCreateContract.Click += new System.EventHandler(this.btCreateContract_Click);
             // 
             // groupBoxEdit
             // 
@@ -822,6 +827,7 @@
             // 
             this.groupContracting.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupContracting.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupContracting.Controls.Add(this.numericMonth);
             this.groupContracting.Controls.Add(this.dateTimeUpNext);
             this.groupContracting.Controls.Add(this.label24);
             this.groupContracting.Controls.Add(this.datePickerEnd);
@@ -835,13 +841,13 @@
             this.groupContracting.Controls.Add(this.txtNamePartyMember);
             this.groupContracting.Controls.Add(this.label18);
             this.groupContracting.Controls.Add(this.label17);
-            this.groupContracting.Controls.Add(this.txtStatus);
             this.groupContracting.Controls.Add(this.label16);
             this.groupContracting.Controls.Add(this.label7);
             this.groupContracting.Controls.Add(this.txtIDMember);
             this.groupContracting.Controls.Add(this.txtIDContract);
             this.groupContracting.Controls.Add(this.label6);
             this.groupContracting.Controls.Add(this.label4);
+            this.groupContracting.Controls.Add(this.label25);
             this.groupContracting.Font = new System.Drawing.Font("Sitka Banner", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupContracting.ForeColor = System.Drawing.Color.Navy;
             this.groupContracting.Location = new System.Drawing.Point(43, 338);
@@ -851,19 +857,72 @@
             this.groupContracting.TabStop = false;
             this.groupContracting.Text = "Contracting";
             // 
+            // numericMonth
+            // 
+            this.numericMonth.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.numericMonth.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericMonth.ForeColor = System.Drawing.Color.Black;
+            this.numericMonth.Location = new System.Drawing.Point(639, 333);
+            this.numericMonth.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numericMonth.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericMonth.Name = "numericMonth";
+            this.numericMonth.Size = new System.Drawing.Size(83, 44);
+            this.numericMonth.TabIndex = 151;
+            this.numericMonth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericMonth.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericMonth.ValueChanged += new System.EventHandler(this.numericMonth_ValueChanged);
+            // 
+            // dateTimeUpNext
+            // 
+            this.dateTimeUpNext.CalendarForeColor = System.Drawing.Color.ForestGreen;
+            this.dateTimeUpNext.CalendarMonthBackground = System.Drawing.Color.Transparent;
+            this.dateTimeUpNext.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
+            this.dateTimeUpNext.CalendarTitleForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dateTimeUpNext.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimeUpNext.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimeUpNext.Location = new System.Drawing.Point(653, 400);
+            this.dateTimeUpNext.Name = "dateTimeUpNext";
+            this.dateTimeUpNext.Size = new System.Drawing.Size(188, 44);
+            this.dateTimeUpNext.TabIndex = 142;
+            // 
+            // label24
+            // 
+            this.label24.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.Color.Navy;
+            this.label24.Location = new System.Drawing.Point(528, 405);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(117, 37);
+            this.label24.TabIndex = 141;
+            this.label24.Text = "Up next";
+            // 
             // datePickerEnd
             // 
             this.datePickerEnd.CalendarForeColor = System.Drawing.Color.ForestGreen;
             this.datePickerEnd.CalendarMonthBackground = System.Drawing.Color.Transparent;
             this.datePickerEnd.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
             this.datePickerEnd.CalendarTitleForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.datePickerEnd.Enabled = false;
             this.datePickerEnd.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datePickerEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.datePickerEnd.Location = new System.Drawing.Point(279, 400);
+            this.datePickerEnd.MinDate = new System.DateTime(2016, 1, 1, 0, 0, 0, 0);
             this.datePickerEnd.Name = "datePickerEnd";
             this.datePickerEnd.Size = new System.Drawing.Size(188, 44);
             this.datePickerEnd.TabIndex = 140;
-            this.datePickerEnd.ValueChanged += new System.EventHandler(this.datePickerEnd_ValueChanged);
             // 
             // datePickerStart
             // 
@@ -989,19 +1048,6 @@
             this.label17.TabIndex = 94;
             this.label17.Text = "Party Member";
             // 
-            // txtStatus
-            // 
-            this.txtStatus.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtStatus.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.txtStatus.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStatus.ForeColor = System.Drawing.Color.Navy;
-            this.txtStatus.Location = new System.Drawing.Point(639, 337);
-            this.txtStatus.Multiline = true;
-            this.txtStatus.Name = "txtStatus";
-            this.txtStatus.ReadOnly = true;
-            this.txtStatus.Size = new System.Drawing.Size(202, 40);
-            this.txtStatus.TabIndex = 93;
-            // 
             // label16
             // 
             this.label16.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -1073,6 +1119,18 @@
             this.label4.Size = new System.Drawing.Size(172, 37);
             this.label4.TabIndex = 79;
             this.label4.Text = "ID Contract";
+            // 
+            // label25
+            // 
+            this.label25.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.ForeColor = System.Drawing.Color.Navy;
+            this.label25.Location = new System.Drawing.Point(728, 338);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(113, 37);
+            this.label25.TabIndex = 150;
+            this.label25.Text = "Months";
             // 
             // groupChoospackage
             // 
@@ -1341,6 +1399,15 @@
             this.receiptUC.Size = new System.Drawing.Size(1912, 987);
             this.receiptUC.TabIndex = 0;
             // 
+            // tabRenew
+            // 
+            this.tabRenew.Location = new System.Drawing.Point(4, 37);
+            this.tabRenew.Name = "tabRenew";
+            this.tabRenew.Size = new System.Drawing.Size(1912, 905);
+            this.tabRenew.TabIndex = 5;
+            this.tabRenew.Text = " Renew ";
+            this.tabRenew.UseVisualStyleBackColor = true;
+            // 
             // tabDetailsContract
             // 
             this.tabDetailsContract.Controls.Add(this.detailsConrtactUC);
@@ -1462,31 +1529,6 @@
             // 
             this.eMPLOYEETableAdapter.ClearBeforeFill = true;
             // 
-            // label24
-            // 
-            this.label24.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.Color.Navy;
-            this.label24.Location = new System.Drawing.Point(528, 405);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(117, 37);
-            this.label24.TabIndex = 141;
-            this.label24.Text = "Up next";
-            // 
-            // dateTimeUpNext
-            // 
-            this.dateTimeUpNext.CalendarForeColor = System.Drawing.Color.ForestGreen;
-            this.dateTimeUpNext.CalendarMonthBackground = System.Drawing.Color.Transparent;
-            this.dateTimeUpNext.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
-            this.dateTimeUpNext.CalendarTitleForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dateTimeUpNext.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimeUpNext.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimeUpNext.Location = new System.Drawing.Point(653, 400);
-            this.dateTimeUpNext.Name = "dateTimeUpNext";
-            this.dateTimeUpNext.Size = new System.Drawing.Size(188, 44);
-            this.dateTimeUpNext.TabIndex = 142;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1521,6 +1563,7 @@
             this.panel4.PerformLayout();
             this.groupContracting.ResumeLayout(false);
             this.groupContracting.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericMonth)).EndInit();
             this.groupChoospackage.ResumeLayout(false);
             this.groupChoospackage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPT)).EndInit();
@@ -1610,7 +1653,6 @@
         private System.Windows.Forms.TextBox txtNamePartyMember;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox txtStatus;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtIDMember;
@@ -1644,5 +1686,8 @@
         private PTTagDataSetTableAdapters.EMPLOYEETableAdapter eMPLOYEETableAdapter;
         private System.Windows.Forms.DateTimePicker dateTimeUpNext;
         private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TabPage tabRenew;
+        private System.Windows.Forms.NumericUpDown numericMonth;
     }
 }
