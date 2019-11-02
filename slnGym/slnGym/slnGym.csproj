@@ -112,6 +112,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PTTagDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PTTagDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Temp\MEContract.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -284,6 +289,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="PTTagDataSet.xsc">
+      <DependentUpon>PTTagDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PTTagDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PTTagDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PTTagDataSet.xss">
+      <DependentUpon>PTTagDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

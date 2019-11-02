@@ -58,11 +58,13 @@
             this.txtNameSeller = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.lbTimeRemaining = new System.Windows.Forms.Label();
             this.groupBoxContact.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContractToday)).BeginInit();
@@ -275,7 +277,7 @@
             this.txtIDContract.Enabled = false;
             this.txtIDContract.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIDContract.ForeColor = System.Drawing.Color.Navy;
-            this.txtIDContract.Location = new System.Drawing.Point(1462, 54);
+            this.txtIDContract.Location = new System.Drawing.Point(1451, 126);
             this.txtIDContract.Name = "txtIDContract";
             this.txtIDContract.Size = new System.Drawing.Size(110, 44);
             this.txtIDContract.TabIndex = 188;
@@ -300,7 +302,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Navy;
-            this.label4.Location = new System.Drawing.Point(1394, 56);
+            this.label4.Location = new System.Drawing.Point(1383, 128);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 37);
             this.label4.TabIndex = 187;
@@ -311,7 +313,7 @@
             this.lbDateSign.AutoSize = true;
             this.lbDateSign.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDateSign.ForeColor = System.Drawing.Color.Navy;
-            this.lbDateSign.Location = new System.Drawing.Point(1063, 124);
+            this.lbDateSign.Location = new System.Drawing.Point(1063, 129);
             this.lbDateSign.Name = "lbDateSign";
             this.lbDateSign.Size = new System.Drawing.Size(210, 36);
             this.lbDateSign.TabIndex = 186;
@@ -322,7 +324,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Navy;
-            this.label3.Location = new System.Drawing.Point(975, 124);
+            this.label3.Location = new System.Drawing.Point(975, 129);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 37);
             this.label3.TabIndex = 185;
@@ -366,17 +368,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = " Details contract";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Navy;
-            this.label8.Location = new System.Drawing.Point(174, 164);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(680, 37);
-            this.label8.TabIndex = 178;
-            this.label8.Text = "giá tiền, ghi chú, tình trạng gia hạn hay đki gói mới";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -387,6 +378,17 @@
             this.label7.Size = new System.Drawing.Size(976, 37);
             this.label7.TabIndex = 177;
             this.label7.Text = "ID, ngày kí, ngày hết hạn, gói nào, lớp nào, tình trạng còn hay hết hạn HĐ";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Navy;
+            this.label8.Location = new System.Drawing.Point(174, 164);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(680, 37);
+            this.label8.TabIndex = 178;
+            this.label8.Text = "giá tiền, ghi chú, tình trạng gia hạn hay đki gói mới";
             // 
             // dataGridView1
             // 
@@ -436,7 +438,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Navy;
-            this.label9.Location = new System.Drawing.Point(1062, 58);
+            this.label9.Location = new System.Drawing.Point(1063, 62);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(137, 36);
             this.label9.TabIndex = 196;
@@ -447,16 +449,40 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Navy;
-            this.label10.Location = new System.Drawing.Point(975, 57);
+            this.label10.Location = new System.Drawing.Point(976, 61);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(90, 37);
             this.label10.TabIndex = 195;
             this.label10.Text = "Start:";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Navy;
+            this.label11.Location = new System.Drawing.Point(1383, 61);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(167, 37);
+            this.label11.TabIndex = 197;
+            this.label11.Text = "Remaining:";
+            // 
+            // lbTimeRemaining
+            // 
+            this.lbTimeRemaining.AutoSize = true;
+            this.lbTimeRemaining.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTimeRemaining.ForeColor = System.Drawing.Color.Crimson;
+            this.lbTimeRemaining.Location = new System.Drawing.Point(1556, 62);
+            this.lbTimeRemaining.Name = "lbTimeRemaining";
+            this.lbTimeRemaining.Size = new System.Drawing.Size(210, 36);
+            this.lbTimeRemaining.TabIndex = 198;
+            this.lbTimeRemaining.Text = "Expiration date";
+            // 
             // DetailsConrtactUC
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.Controls.Add(this.lbTimeRemaining);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btDelete);
@@ -517,5 +543,7 @@
         public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lbTimeRemaining;
     }
 }

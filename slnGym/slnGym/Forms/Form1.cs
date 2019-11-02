@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using slnGym.Layer;
 using slnGym.DataObject;
 using System.Text.RegularExpressions;
+using System.IO;
 
 namespace slnGym.Forms
 {
@@ -27,6 +28,8 @@ namespace slnGym.Forms
         Layer.CONTRACTs contract = new CONTRACTs();
         Layer.MEMBERs mem = new MEMBERs();
         Layer.SERVICEPACKs sv = new SERVICEPACKs();
+        Layer.LOGIN log = new Layer.LOGIN();
+        Layer.DETAILCONTRACT detailContract = new Layer.DETAILCONTRACT();
 
         //Event Click & Load
         public void createMemberLoad()
@@ -44,7 +47,7 @@ namespace slnGym.Forms
 
         private void txtPhone_TextChanged(object sender, EventArgs e)
         {
-           // txtUserID.Text = "@" + txtPhone.Text;
+            // txtUserID.Text = "@" + txtPhone.Text;
         }
 
         private void txtFname_TextChanged(object sender, EventArgs e)
@@ -60,8 +63,60 @@ namespace slnGym.Forms
 
         private void btInvoice_Click(object sender, EventArgs e)
         {
+            CreateContract();
+            MessageBox.Show("complete");
             this.receiptUC.BringToFront();
             this.receiptUC.Visible = true;
+        }
+
+        public void CreateContract()
+        {
+
+            #region Create account
+            //try..catch
+            if (log.insertLogin(txtUserID.Text.Trim(), txtPassword.Text.Trim(), "2"))
+            {
+                MessageBox.Show("Added account", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else MessageBox.Show("Add account fail", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            #endregion
+
+            #region Create member
+            string id = txtUserID.Text;
+            string fname = txtFname.Text;
+            string lname = txtLname.Text;
+            MemoryStream pic = new MemoryStream();
+            picAvaEdit.Image.Save(pic, picAvaEdit.Image.RawFormat);
+            DateTime bdate = dateTimePickerBdate.Value;
+            string address = txtAddress.Text;
+            int gender = 0;
+            if (radioFemale.Checked == true)
+                gender = 1;
+            string phone = txtPhone.Text;
+            int idCard = Convert.ToInt32(txtIDCard.Text);
+            string note = txtNote.Text;
+            if (fname != null && lname != null && pic != null && address != null && phone != null && idCard != '\0')
+            {
+                if(mem.insertMembers(id, lname, fname, bdate, address, gender, phone, idCard, note))
+                    MessageBox.Show("Added Member", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else MessageBox.Show("Added member fail", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else MessageBox.Show("Please insert information", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            #endregion
+            string idCont = txtIDContract.Text;
+            string empID = txtIDSeller.Text;
+            string ptID = txtIDPT.Text;
+            int idPack = Convert.ToInt32(txtPackage.Text);
+            DateTime dateStart = datePickerStart.Value;
+            DateTime dateEnd = datePickerEnd.Value;
+            string status = txtStatus.Text;
+            #region Create Contract
+
+            #endregion
+
+            #region Create DetailsContract
+
+            #endregion
         }
 
         private void btResfresh_Click(object sender, EventArgs e)
@@ -105,6 +160,8 @@ namespace slnGym.Forms
 
         public void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'pTTagDataSet.EMPLOYEE' table. You can move, or remove it, as needed.
+            this.eMPLOYEETableAdapter.Fill(this.pTTagDataSet.EMPLOYEE);
             // TODO: This line of code loads data into the 'packageDataSet.SERVICEPACK' table. You can move, or remove it, as needed.
             this.sERVICEPACKTableAdapter.Fill(this.packageDataSet.SERVICEPACK);
             loadMachine();
@@ -225,7 +282,7 @@ namespace slnGym.Forms
             dgvPackage.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dgvPackage.AllowUserToAddRows = false;
             dgvPackage.EditMode = DataGridViewEditMode.EditProgrammatically;
-            
+
             DataTable empDT = new DataTable();
             DataTable dtcontract = new DataTable();
             DataTable dtmem = new DataTable();
@@ -258,6 +315,7 @@ namespace slnGym.Forms
             dgvPT.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dgvPT.AllowUserToAddRows = false;
             dgvPT.EditMode = DataGridViewEditMode.EditProgrammatically;
+
         }
 
         private void dgvPackage_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -266,7 +324,8 @@ namespace slnGym.Forms
             int numrow = dgvPackage.CurrentCell.RowIndex;
             string tag = dgvPackage.Rows[numrow].Cells[3].Value.ToString();
             dgvPT.DataSource = sv.getNamePTbyPackage(tag);
-            txtPackage.Text= dgvPackage.Rows[numrow].Cells[1].Value.ToString();
+            txtPackage.Text = dgvPackage.Rows[numrow].Cells[0].Value.ToString();
+            txtNamePack.Text = dgvPackage.Rows[numrow].Cells[1].Value.ToString();
         }
 
         public static string convertToUnSign3(string s)
@@ -292,6 +351,23 @@ namespace slnGym.Forms
         {
             loadMachine();
             this.Refresh();
+        }
+
+        private void dgvPT_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int numrow = dgvPT.CurrentCell.RowIndex;
+            txtIDPT.Text = dgvPT.Rows[numrow].Cells[0].Value.ToString();
+            txtPT.Text = dgvPT.Rows[numrow].Cells[1].Value.ToString() + ' ' + dgvPT.Rows[numrow].Cells[2].Value.ToString();
+        }
+
+        private void datePickerStart_ValueChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void datePickerEnd_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

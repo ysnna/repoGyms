@@ -37,6 +37,15 @@ insert into ACCOUNT values
 ('kh2','kh','2');
 go
 
+create table ACCOUNTLOGIN(
+username varchar(11)null,
+loginDate datetime null,
+logoutDate datetime null,
+--Primarykey--
+foreign key(username) references ACCOUNT on delete set null,
+);
+go
+
 --Nhóm nhân viên
 create table GROUPEMPLOYEE(
 groupID varchar(10) not null,
@@ -263,23 +272,6 @@ insert into CONTRACTS values
 ('CONT02','kh2','hlv5','13','2019-11-1 00:00:00.000','2019-11-15 00:00:00.000',N'Đang sử dụng');
 go
 
---Chi tiết hợp đồng
-create table DETAILSCONTRACT 
-(
-contractID varchar(20) not null,
-employeeID varchar(20) null,
-receiptID varchar(20) null,
---PK & FK --
-foreign key (contractID) references CONTRACTS,
-foreign key (employeeID) references EMPLOYEE on delete set null
-);
-go
-
-insert into DETAILSCONTRACT values
-('CONT01','nv1','IVC01'),
-('CONT02','nv2','IVC02');
-go
-
 --Hóa đơn
 create table RECEIPT
 (
@@ -294,6 +286,24 @@ go
 insert into RECEIPT values
 ('IVC01','kh1'),
 ('IVC02','kh2');
+go
+
+--Chi tiết hợp đồng
+create table DETAILSCONTRACT 
+(
+contractID varchar(20) not null,
+employeeID varchar(20) null,
+receiptID varchar(20) null,
+--PK & FK --
+foreign key (contractID) references CONTRACTS,
+foreign key (employeeID) references EMPLOYEE on delete set null,
+foreign key (receiptID) references RECEIPT on delete set null
+);
+go
+
+insert into DETAILSCONTRACT values
+('CONT01','nv1','IVC01'),
+('CONT02','nv2','IVC02');
 go
 
 create table PACKORPRODUCT
