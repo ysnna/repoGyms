@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using slnGym.Layer;
 
 namespace slnGym.User_Control
 {
@@ -16,6 +17,8 @@ namespace slnGym.User_Control
         {
             InitializeComponent();
         }
+
+        PRODUCTs pd = new PRODUCTs();
 
         private void btPrintInvoice_Click(object sender, EventArgs e)
         {
@@ -45,6 +48,7 @@ namespace slnGym.User_Control
             btPrintInvoice.Enabled = false;
             lbStatus.Text = "Non-payment";
             cbDiscount.Text = "VND";
+            loadProducts();
         }
 
         private void cbDiscount_TextChanged(object sender, EventArgs e)
@@ -64,6 +68,20 @@ namespace slnGym.User_Control
             if (lbStatus.Text == "Paid")
                 btPrintInvoice.Enabled = true;
             else btPrintInvoice.Enabled = false;
+        }
+
+        public void loadProducts()
+        {
+            dgvViewProduct.RowTemplate.Height = 40;
+            dgvViewProduct.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgvViewProduct.AllowUserToAddRows = false;
+            dgvViewProduct.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dgvViewProduct.DataSource = pd.getPRODUCTSbyIDNAMECost();
+        }
+
+        private void btCancel_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
         }
     }
 }

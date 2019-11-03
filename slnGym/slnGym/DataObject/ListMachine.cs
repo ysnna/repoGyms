@@ -65,10 +65,10 @@ namespace slnGym.DataObject
             this.Amount = Convert.ToInt32(row["amount"]);
             this.Info = row["infor"].ToString();
             this.NameMachine = row["nameMachine"].ToString();
-            byte[] picPD;
-            picPD = (byte[])row["picture"];
-            MemoryStream pic = new MemoryStream(picPD);
-            this.Picture = Image.FromStream(pic);
+            //byte[] picPD;
+            //picPD = (byte[])row["picture"];
+            //MemoryStream pic = new MemoryStream(picPD);
+            //this.Picture = Image.FromStream(pic);
         }
     }
 }

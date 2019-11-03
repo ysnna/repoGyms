@@ -79,6 +79,15 @@ namespace slnGym.Layer
             mydb.closeConnection();
             return dt;
         }
+        public DataTable getPRODUCTSbyIDNAMECost()
+        {
+            SqlCommand cmd = new SqlCommand("select productID as 'ID', productName as 'Name', productCost as 'Price' from PRODUCTS", mydb.getConnection);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            mydb.closeConnection();
+            return dt;
+        }
         public DataTable getPRODUCTSbyID(int id)
         {
             SqlCommand cmd = new SqlCommand("select *from PRODUCTS where productID=@ID", mydb.getConnection);

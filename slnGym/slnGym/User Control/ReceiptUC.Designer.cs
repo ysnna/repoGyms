@@ -33,6 +33,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReceiptUC));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtNote = new System.Windows.Forms.TextBox();
@@ -40,7 +44,6 @@
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtNameMember = new System.Windows.Forms.TextBox();
-            this.listViewProducts = new System.Windows.Forms.ListView();
             this.label19 = new System.Windows.Forms.Label();
             this.txtEmployeeID = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -85,9 +88,13 @@
             this.label21 = new System.Windows.Forms.Label();
             this.btPrintInvoice = new System.Windows.Forms.Button();
             this.label0 = new System.Windows.Forms.Label();
+            this.btCancel = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dgvViewProduct = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCheckInvoice)).BeginInit();
             this.groupPayment.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvViewProduct)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox2
@@ -179,17 +186,6 @@
             this.txtNameMember.Size = new System.Drawing.Size(280, 41);
             this.txtNameMember.TabIndex = 183;
             this.txtNameMember.Text = "Fullname";
-            // 
-            // listViewProducts
-            // 
-            this.listViewProducts.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.listViewProducts.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listViewProducts.HideSelection = false;
-            this.listViewProducts.Location = new System.Drawing.Point(39, 314);
-            this.listViewProducts.Name = "listViewProducts";
-            this.listViewProducts.Size = new System.Drawing.Size(337, 553);
-            this.listViewProducts.TabIndex = 199;
-            this.listViewProducts.UseCompatibleStateImageBehavior = false;
             // 
             // label19
             // 
@@ -758,10 +754,89 @@
             this.label0.TabIndex = 217;
             this.label0.Text = "Status:";
             // 
+            // btCancel
+            // 
+            this.btCancel.BackColor = System.Drawing.Color.Thistle;
+            this.btCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btCancel.FlatAppearance.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btCancel.FlatAppearance.BorderSize = 3;
+            this.btCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btCancel.Font = new System.Drawing.Font("Arrus-Black", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCancel.ForeColor = System.Drawing.Color.Crimson;
+            this.btCancel.Location = new System.Drawing.Point(798, 814);
+            this.btCancel.Name = "btCancel";
+            this.btCancel.Size = new System.Drawing.Size(167, 53);
+            this.btCancel.TabIndex = 222;
+            this.btCancel.Text = "CANCEL";
+            this.btCancel.UseVisualStyleBackColor = false;
+            this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.SteelBlue;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.button1.FlatAppearance.BorderSize = 3;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arrus-Black", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Crimson;
+            this.button1.Location = new System.Drawing.Point(3, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(80, 50);
+            this.button1.TabIndex = 223;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // dgvViewProduct
+            // 
+            this.dgvViewProduct.AllowUserToAddRows = false;
+            this.dgvViewProduct.AllowUserToDeleteRows = false;
+            this.dgvViewProduct.AllowUserToResizeColumns = false;
+            this.dgvViewProduct.AllowUserToResizeRows = false;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvViewProduct.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvViewProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvViewProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvViewProduct.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Sitka Banner", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvViewProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvViewProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvViewProduct.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvViewProduct.Location = new System.Drawing.Point(39, 314);
+            this.dgvViewProduct.Name = "dgvViewProduct";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Sitka Banner", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvViewProduct.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvViewProduct.RowHeadersVisible = false;
+            this.dgvViewProduct.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvViewProduct.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvViewProduct.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvViewProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgvViewProduct.Size = new System.Drawing.Size(337, 553);
+            this.dgvViewProduct.TabIndex = 224;
+            // 
             // ReceiptUC
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.Controls.Add(this.dgvViewProduct);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btCancel);
             this.Controls.Add(this.lbTimePayment);
             this.Controls.Add(this.lbStatus);
             this.Controls.Add(this.label21);
@@ -782,7 +857,6 @@
             this.Controls.Add(this.label15);
             this.Controls.Add(this.txtInvoiceNo);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.listViewProducts);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label19);
@@ -796,6 +870,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvCheckInvoice)).EndInit();
             this.groupPayment.ResumeLayout(false);
             this.groupPayment.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvViewProduct)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -810,7 +885,6 @@
         private System.Windows.Forms.TextBox txtPhoneNumber;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtNameMember;
-        private System.Windows.Forms.ListView listViewProducts;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txtEmployeeID;
         private System.Windows.Forms.Label label17;
@@ -855,5 +929,8 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button btPrintInvoice;
         private System.Windows.Forms.Label label0;
+        private System.Windows.Forms.Button btCancel;
+        private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.DataGridView dgvViewProduct;
     }
 }

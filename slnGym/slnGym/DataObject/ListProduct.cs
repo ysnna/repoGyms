@@ -29,10 +29,10 @@ namespace slnGym.DataObject
             this.Id = Convert.ToInt32(row["productID"]);
             this.Name = row["productName"].ToString();
             this.Cost = Convert.ToDecimal(row["productCost"].ToString());
-            byte[] picPD;
-            picPD = (byte[])row["picture"];
-            MemoryStream pic = new MemoryStream(picPD);
-            this.picture = Image.FromStream(pic);
+            //byte[] picPD;
+            //picPD = (byte[])row["picture"];
+            //MemoryStream pic = new MemoryStream(picPD);
+            //this.picture = Image.FromStream(pic);
         }
     }
 }

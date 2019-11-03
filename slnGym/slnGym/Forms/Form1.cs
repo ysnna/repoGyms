@@ -133,15 +133,15 @@ namespace slnGym.Forms
             //}
             //else MessageBox.Show("Added details contract fail", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            DataTable dtReceipt = rc.getRECEIPT();
-            string reID="IVC03";
-            //if (dtReceipt.Rows.Count < 10) reID = "IVC03" + (dtReceipt.Rows.Count + 1).ToString();
-            //else reID = "IVC" + (dtReceipt.Rows.Count + 1).ToString();
-            if (dtCont.insertDETAILCON("CONT03","nv1", reID))
-            {
-                MessageBox.Show("Added details contract", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else MessageBox.Show("Added details contract fail", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //DataTable dtReceipt = rc.getRECEIPT();
+            //string reID="IVC03";
+            ////if (dtReceipt.Rows.Count < 10) reID = "IVC03" + (dtReceipt.Rows.Count + 1).ToString();
+            ////else reID = "IVC" + (dtReceipt.Rows.Count + 1).ToString();
+            //if (dtCont.insertDETAILCON("CONT03","nv1", reID))
+            //{
+            //    MessageBox.Show("Added details contract", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //}
+            //else MessageBox.Show("Added details contract fail", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Error);
             #endregion
         }
 
@@ -190,6 +190,7 @@ namespace slnGym.Forms
             this.eMPLOYEETableAdapter.Fill(this.pTTagDataSet.EMPLOYEE);
             // TODO: This line of code loads data into the 'packageDataSet.SERVICEPACK' table. You can move, or remove it, as needed.
             this.sERVICEPACKTableAdapter.Fill(this.packageDataSet.SERVICEPACK);
+            datePickerEnd.Value = datePickerStart.Value.AddMonths(Convert.ToInt32(numericMonth.Value));
             loadMachine();
             loadProduct();
             loadServicePackage();
@@ -360,6 +361,7 @@ namespace slnGym.Forms
             string temp = s.Normalize(NormalizationForm.FormD);
             return regex.Replace(temp, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D');
         }
+
         public void reloadDGVPacket()
         {
             Layer.SERVICEPACKs sv = new Layer.SERVICEPACKs();
@@ -368,11 +370,13 @@ namespace slnGym.Forms
             dgvPackage.Refresh();
             this.Refresh();
         }
+
         public void reloadDGVProduct()
         {
             loadProduct();
             this.Refresh();
         }
+
         public void reloadDGVMachines()
         {
             loadMachine();
@@ -390,6 +394,7 @@ namespace slnGym.Forms
         {
             datePickerEnd.Value = datePickerStart.Value.AddMonths(Convert.ToInt32(numericMonth.Value));
         }
+
         private void numericMonth_ValueChanged(object sender, EventArgs e)
         {
             datePickerEnd.Value = datePickerStart.Value.AddMonths(Convert.ToInt32(numericMonth.Value));
@@ -397,11 +402,14 @@ namespace slnGym.Forms
 
         private void btCreateContract_Click(object sender, EventArgs e)
         {
-            if (dtCont.insertDETAILCON("CONT03", "nv1", "IVC03"))
-            {
-                MessageBox.Show("Added details contract", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else MessageBox.Show("Added details contract fail", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            receiptUC.Visible = true;
+            receiptUC.BringToFront();
+        }
+
+        private void btReset_Click(object sender, EventArgs e)
+        {
+            txtIDPT.Text = "";
+            txtPT.Text = "";
         }
     }
 }

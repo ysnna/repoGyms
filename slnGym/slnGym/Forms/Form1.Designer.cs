@@ -149,6 +149,7 @@
             this.pTTagDataSet = new slnGym.PTTagDataSet();
             this.eMPLOYEEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.eMPLOYEETableAdapter = new slnGym.PTTagDataSetTableAdapters.EMPLOYEETableAdapter();
+            this.btReset = new System.Windows.Forms.Button();
             this.menuStrip.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabHome.SuspendLayout();
@@ -397,7 +398,7 @@
             this.dgvServicePack.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvServicePack.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvServicePack.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvServicePack.Size = new System.Drawing.Size(1912, 1064);
+            this.dgvServicePack.Size = new System.Drawing.Size(1912, 1079);
             this.dgvServicePack.TabIndex = 102;
             // 
             // tabManage
@@ -1135,6 +1136,7 @@
             // groupChoospackage
             // 
             this.groupChoospackage.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupChoospackage.Controls.Add(this.btReset);
             this.groupChoospackage.Controls.Add(this.txtIDPT);
             this.groupChoospackage.Controls.Add(this.txtNamePack);
             this.groupChoospackage.Controls.Add(this.label23);
@@ -1210,7 +1212,7 @@
             this.txtPT.Location = new System.Drawing.Point(650, 256);
             this.txtPT.Name = "txtPT";
             this.txtPT.ReadOnly = true;
-            this.txtPT.Size = new System.Drawing.Size(235, 44);
+            this.txtPT.Size = new System.Drawing.Size(191, 44);
             this.txtPT.TabIndex = 88;
             // 
             // dgvPT
@@ -1529,6 +1531,24 @@
             // 
             this.eMPLOYEETableAdapter.ClearBeforeFill = true;
             // 
+            // btReset
+            // 
+            this.btReset.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btReset.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btReset.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btReset.BackgroundImage")));
+            this.btReset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btReset.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btReset.FlatAppearance.BorderSize = 3;
+            this.btReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btReset.Font = new System.Drawing.Font("Sitka Subheading", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btReset.ForeColor = System.Drawing.Color.Transparent;
+            this.btReset.Location = new System.Drawing.Point(841, 256);
+            this.btReset.Name = "btReset";
+            this.btReset.Size = new System.Drawing.Size(44, 44);
+            this.btReset.TabIndex = 108;
+            this.btReset.UseVisualStyleBackColor = false;
+            this.btReset.Click += new System.EventHandler(this.btReset_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1689,5 +1709,6 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TabPage tabRenew;
         private System.Windows.Forms.NumericUpDown numericMonth;
+        private System.Windows.Forms.Button btReset;
     }
 }
