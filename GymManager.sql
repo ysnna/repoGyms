@@ -258,7 +258,7 @@ ptID varchar(20) null,
 servicePACK int  null,
 dateStart Datetime not null,
 dateDischarge Datetime not null,
-conStatus nvarchar(20) null,		--'Còn hạn' hoặc 'Hết hạn'
+conStatus nvarchar(20) null,		--bao nhiêu ngày, vd:30
 --PK--
 constraint pk_contractID primary key (contractID),
 foreign key (cusID) references MEMBERS on delete set null,
@@ -277,6 +277,7 @@ create table RECEIPT
 (
 receiptID varchar(20) not null,
 memID varchar(20) not null,
+total decimal null,
 --PK FK--
 constraint pk_receiptID primary key (receiptID),
 foreign key (memID) references MEMBERS,
@@ -284,8 +285,8 @@ foreign key (memID) references MEMBERS,
 go
 
 insert into RECEIPT values
-('IVC01','kh1'),
-('IVC02','kh2');
+('IVC01','kh1','900000'),
+('IVC02','kh2','3750000');
 go
 
 --Chi tiết hợp đồng
@@ -330,7 +331,7 @@ idService int null, -- lưu chung package và product
 nameServices nvarchar(100) null,
 discount decimal null,
 total decimal null,
-remaining nvarchar(100) null,				---còn lại bao nhiêu ngày: (now - start) > 0 thì ghi, else null
+remain nvarchar(100) null,				---còn lại bao nhiêu ngày: (now - start) > 0 thì ghi, else null
 --PK & FK--
 foreign key (receiptID) references RECEIPT on delete set null,
 foreign key (idBrand) references PACKORPRODUCT on delete set null,
@@ -338,8 +339,8 @@ foreign key (idBrand) references PACKORPRODUCT on delete set null,
 go
 
 insert into DETAILSREPCEIPT values
-('IVC01','2019-10-25 00:00:00.000','1','6','Gym','0','900000', null),
-('IVC02','2019-11-1 00:00:00.000','1','13','Gym','0','900000', null);
+('IVC01','2019-10-25 00:00:00.000','1','6','Gym','0','900000', '30'),
+('IVC02','2019-11-1 00:00:00.000','1','13','Gym','0','900000', '30');
 go
 
 --Thống kê doanh thu theo ngày
