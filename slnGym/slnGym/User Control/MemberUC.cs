@@ -16,5 +16,10 @@ namespace slnGym.User_Control
         {
             InitializeComponent();
         }
+
+        private void dgvMembers_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

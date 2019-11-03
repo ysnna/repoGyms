@@ -67,81 +67,38 @@ namespace slnGym.Forms
         {
             CreateContract();
             MessageBox.Show("complete");
-            this.receiptUC.BringToFront();
-            this.receiptUC.Visible = true;
+            User_Control.ReceiptUC receiptUC = new User_Control.ReceiptUC() { Width = 1912, Height = 905 };
+            this.tabNewMember.Controls.Add(receiptUC);
+            receiptUC.BringToFront();
         }
 
         public void CreateContract()
         {
-
-            #region Create account
-            //try..catch
-            if (log.insertLogin(txtUserID.Text.Trim(), txtPassword.Text.Trim(), "2"))
-            {
-                MessageBox.Show("Added account", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else MessageBox.Show("Add account fail", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            #endregion
-
             #region Create member
-            string id = txtUserID.Text;
-            string fname = txtFname.Text;
-            string lname = txtLname.Text;
-            MemoryStream pic = new MemoryStream();
-            picAvaEdit.Image.Save(pic, picAvaEdit.Image.RawFormat);
-            DateTime bdate = dateTimePickerBdate.Value;
-            string address = txtAddress.Text;
-            int gender = 0;
+            GETMember.IDMember = txtUserID.Text;
+            GETMember.Password = txtPassword.Text;
+            GETMember.FName = txtFname.Text;
+            GETMember.LName = txtLname.Text;
+            GETMember.Birthday = dateTimePickerBdate.Value;
+            GETMember.Picture = picAvaEdit.Image;
+            GETMember.Address = txtAddress.Text;
+            GETMember.Gender = 0;
             if (radioFemale.Checked == true)
-                gender = 1;
-            string phone = txtPhone.Text;
-            int idCard = Convert.ToInt32(txtIDCard.Text);
-            string note = txtNote.Text;
-            if (fname != null && lname != null && pic != null && address != null && phone != null && idCard != '\0')
-            {
-                if(mem.insertMembers(id, lname, fname, bdate, address, gender, phone, idCard, note))
-                    MessageBox.Show("Added Member", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                else MessageBox.Show("Added member fail", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else MessageBox.Show("Please insert information", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                GETMember.Gender = 1;
+            GETMember.Phone = txtPhone.Text;
+            GETMember.IDCard = Convert.ToInt32(txtIDCard.Text);
+            GETMember.Note = txtNote.Text;
             #endregion
 
             #region Create Contract
-            string idCont = txtIDContract.Text;
-            string empID = txtIDSeller.Text;
-            string ptID = txtIDPT.Text;
-            int idPack = Convert.ToInt32(txtPackage.Text);
-            DateTime dateStart = datePickerStart.Value;
-            DateTime dateEnd = datePickerEnd.Value;
-            string status = "Member";
-
-            if (contract.insertCONTRACTS(idCont, id, ptID, idPack, dateStart, dateEnd, status))
-            {
-                MessageBox.Show("Added contract", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else MessageBox.Show("Added contract fail", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            #endregion
-
-            #region Create DetailsContract
-            //DataTable dtReceipt = rc.getRECEIPT();
-            //string reID;
-            //if (dtReceipt.Rows.Count < 10) reID = "IVC0" + (dtReceipt.Rows.Count + 1).ToString();
-            //else reID = "IVC" + (dtReceipt.Rows.Count + 1).ToString();
-            //if (dtCont.insertDETAILCON(idCont, empID, reID))
-            //{
-            //    MessageBox.Show("Added details contract", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //}
-            //else MessageBox.Show("Added details contract fail", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            //DataTable dtReceipt = rc.getRECEIPT();
-            //string reID="IVC03";
-            ////if (dtReceipt.Rows.Count < 10) reID = "IVC03" + (dtReceipt.Rows.Count + 1).ToString();
-            ////else reID = "IVC" + (dtReceipt.Rows.Count + 1).ToString();
-            //if (dtCont.insertDETAILCON("CONT03","nv1", reID))
-            //{
-            //    MessageBox.Show("Added details contract", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //}
-            //else MessageBox.Show("Added details contract fail", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            GETContract.IDContract = txtIDContract.Text;
+            GETContract.IDPT = txtIDPT.Text;
+            GETContract.IDPackage = Convert.ToInt32(txtPackage.Text);
+            GETContract.Start = datePickerStart.Value;
+            GETContract.End = datePickerEnd.Value;
+            TimeSpan time = GETContract.End - GETContract.Start;
+            GETContract.Remain = time.Days.ToString();
+            GETContract.Period = Convert.ToInt32(numericMonth.Value);
             #endregion
         }
 
@@ -163,7 +120,7 @@ namespace slnGym.Forms
             }
             else if (tabControl.SelectedIndex == 1)
             {
-                this.receiptUC.Visible = false;
+
                 createMemberLoad();
                 loadContract();
             }
@@ -195,6 +152,9 @@ namespace slnGym.Forms
             loadProduct();
             loadServicePackage();
             loadContract();
+            loadDetailsContract();
+            loadMembers();
+            loadStatistic();
         }
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -285,6 +245,7 @@ namespace slnGym.Forms
             dgvServicePack.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dgvServicePack.AllowUserToAddRows = false;
             dgvServicePack.EditMode = DataGridViewEditMode.EditProgrammatically;
+
         }
 
         public void RefreshUC()
@@ -295,12 +256,19 @@ namespace slnGym.Forms
             txtPhone.Text = "";
             txtAddress.Text = "";
             txtNote.Text = "";
-            txtUserID.Text = "";
+            txtNamePartyMember.Text = "";
             txtPassword.Text = "";
             radioFemale.Checked = false;
             radioMale.Checked = true;
             dateTimePickerBdate.Value = DateTime.Now;
             picAvaEdit.Image = picAvaEdit.BackgroundImage;
+            numericMonth.Value = 1;
+            datePickerStart.Value = DateTime.Now;
+            datePickerEnd.Value = datePickerStart.Value.AddMonths(Convert.ToInt32(numericMonth.Value));
+            txtPackage.Text = "";
+            txtNamePack.Text = "";
+            txtIDPT.Text = "";
+            txtPT.Text = "";
         }
 
         public void loadContract()
@@ -328,12 +296,28 @@ namespace slnGym.Forms
                 txtIDContract.Text = "CONT0" + (countRowContract + 1).ToString();
             }
             else txtIDContract.Text = "CONT" + (countRowContract + 1).ToString();
-
             dtmem = mem.getAllMEMBERS();
             int countRowMember = dtmem.Rows.Count;
             txtIDMember.Text = "kh" + (countRowMember + 1).ToString();
             txtUserID.Text = txtIDMember.Text;
+        }
 
+        public void loadDetailsContract()
+        {
+            User_Control.DetailsConrtactUC dt = new User_Control.DetailsConrtactUC() { Width = 1912, Height = 905 };
+            this.tabDetailsContract.Controls.Add(dt);
+        }
+
+        public void loadMembers()
+        {
+            User_Control.MemberUC dt = new User_Control.MemberUC() { Width = 1912, Height = 905 };
+            this.tabMember.Controls.Add(dt);
+        }
+        
+        public void loadStatistic()
+        {
+            User_Control.StatisticEmployeeUC dt = new User_Control.StatisticEmployeeUC() { Width = 1912, Height = 905 };
+            this.tabStatistic.Controls.Add(dt);
         }
 
         public void loadPTbyTag()
@@ -353,6 +337,8 @@ namespace slnGym.Forms
             dgvPT.DataSource = sv.getNamePTbyPackage(tag);
             txtPackage.Text = dgvPackage.Rows[numrow].Cells[0].Value.ToString();
             txtNamePack.Text = dgvPackage.Rows[numrow].Cells[1].Value.ToString();
+            GETContract.Price = Convert.ToDecimal(dgvPackage.Rows[numrow].Cells[2].Value);
+            GETContract.NamePackage = txtNamePack.Text;
         }
 
         public static string convertToUnSign3(string s)
@@ -402,7 +388,8 @@ namespace slnGym.Forms
 
         private void btCreateContract_Click(object sender, EventArgs e)
         {
-            receiptUC.Visible = true;
+            User_Control.ReceiptUC receiptUC = new User_Control.ReceiptUC() { Width = 1912, Height = 905 };
+            this.tabNewMember.Controls.Add(receiptUC);
             receiptUC.BringToFront();
         }
 

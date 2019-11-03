@@ -11,12 +11,17 @@ namespace slnGym.Layer
     class DETAILRECEIPT
     {
         MY_DB mydb = new MY_DB();
-        public bool insertDETAILRECEIPT(string receipt, string product)
+        public bool insertDETAILRECEIPT(string receipt, DateTime date, int idBrand, int idService, string nameService, decimal discount, decimal total)
         {
-            SqlCommand cmd = new SqlCommand("insert into DETAILSREPCEPIT(receiptID,productID)" +
-                "values (@id,@num)", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("insert into DETAILSREPCEPIT(receiptID,repceiptDate,idBrand,idService,nameServices,discount,total)" +
+                "values (@id,@date,@idBrand,@idSer,@name,@dis,@total)", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = receipt;
-            cmd.Parameters.Add("@num", SqlDbType.VarChar).Value = product;
+            cmd.Parameters.Add("@date", SqlDbType.DateTime).Value = date;
+            cmd.Parameters.Add("@idBrand", SqlDbType.Int).Value = idBrand;
+            cmd.Parameters.Add("@idSer", SqlDbType.Int).Value = idService;
+            cmd.Parameters.Add("@name", SqlDbType.NVarChar).Value = nameService;
+            cmd.Parameters.Add("@dis", SqlDbType.Decimal).Value = discount;
+            cmd.Parameters.Add("@total", SqlDbType.Decimal).Value = total;
             mydb.openConnection();
             if (cmd.ExecuteNonQuery() == 1)
             {

@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DetailsConrtactUC));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -43,8 +39,6 @@
             this.btSearch = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dgvContractToday = new System.Windows.Forms.DataGridView();
             this.btDelete = new System.Windows.Forms.Button();
             this.btShowAll = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -67,7 +61,6 @@
             this.lbTimeRemaining = new System.Windows.Forms.Label();
             this.groupBoxContact.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btSearch)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvContractToday)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -149,60 +142,6 @@
             this.textBox1.Size = new System.Drawing.Size(228, 44);
             this.textBox1.TabIndex = 88;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Navy;
-            this.label6.Location = new System.Drawing.Point(92, 350);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(230, 37);
-            this.label6.TabIndex = 178;
-            this.label6.Text = "ID, name, phone";
-            // 
-            // dgvContractToday
-            // 
-            this.dgvContractToday.AllowUserToAddRows = false;
-            this.dgvContractToday.AllowUserToDeleteRows = false;
-            this.dgvContractToday.AllowUserToResizeColumns = false;
-            this.dgvContractToday.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvContractToday.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvContractToday.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvContractToday.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvContractToday.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvContractToday.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvContractToday.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvContractToday.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvContractToday.Location = new System.Drawing.Point(35, 205);
-            this.dgvContractToday.Name = "dgvContractToday";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvContractToday.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvContractToday.RowHeadersVisible = false;
-            this.dgvContractToday.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvContractToday.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvContractToday.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvContractToday.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvContractToday.Size = new System.Drawing.Size(493, 669);
-            this.dgvContractToday.TabIndex = 177;
-            // 
             // btDelete
             // 
             this.btDelete.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -273,7 +212,7 @@
             // 
             // txtIDContract
             // 
-            this.txtIDContract.BackColor = System.Drawing.Color.PowderBlue;
+            this.txtIDContract.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.txtIDContract.Enabled = false;
             this.txtIDContract.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIDContract.ForeColor = System.Drawing.Color.Navy;
@@ -361,9 +300,9 @@
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Font = new System.Drawing.Font("Sitka Display", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Navy;
-            this.groupBox1.Location = new System.Drawing.Point(534, 186);
+            this.groupBox1.Location = new System.Drawing.Point(35, 186);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1351, 688);
+            this.groupBox1.Size = new System.Drawing.Size(1850, 688);
             this.groupBox1.TabIndex = 194;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = " Details contract";
@@ -430,7 +369,7 @@
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1339, 642);
+            this.dataGridView1.Size = new System.Drawing.Size(1838, 642);
             this.dataGridView1.TabIndex = 81;
             // 
             // label9
@@ -498,15 +437,12 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtNameSeller);
             this.Controls.Add(this.label21);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.dgvContractToday);
             this.Controls.Add(this.groupBoxContact);
             this.Name = "DetailsConrtactUC";
             this.Size = new System.Drawing.Size(1912, 905);
             this.groupBoxContact.ResumeLayout(false);
             this.groupBoxContact.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btSearch)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvContractToday)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -523,8 +459,6 @@
         private System.Windows.Forms.PictureBox btSearch;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label6;
-        public System.Windows.Forms.DataGridView dgvContractToday;
         private System.Windows.Forms.Button btDelete;
         private System.Windows.Forms.Button btShowAll;
         private System.Windows.Forms.TextBox textBox2;

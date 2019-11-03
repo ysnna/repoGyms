@@ -11,16 +11,13 @@ namespace slnGym.Layer
     class RECEIPTs
     {
         MY_DB mydb = new MY_DB();
-        public bool insertRECEIPT(string receipt, string memID, DateTime date, DateTime time, string emp, int value)
+        public bool insertRECEIPT(string receipt, string memID, decimal total)
         {
-            SqlCommand cmd = new SqlCommand("insert into RECEIPT(receiptID,memID,receiptDate,receiptTime,employeeID,value)" +
-                "values (@id,@mem,@date,@time,@empID,@val)", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("insert into RECEIPT(receiptID,memID,total)" +
+                "values (@id,@mem,@total)", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = receipt;
             cmd.Parameters.Add("@mem", SqlDbType.VarChar).Value = memID;
-            cmd.Parameters.Add("@date", SqlDbType.DateTime).Value = date;
-            cmd.Parameters.Add("@time", SqlDbType.DateTime).Value = time;
-            cmd.Parameters.Add("@empID", SqlDbType.VarChar).Value = emp;
-            cmd.Parameters.Add("@val", SqlDbType.Int).Value = value;
+            cmd.Parameters.Add("@total", SqlDbType.Decimal).Value = total;
 
             mydb.openConnection();
             if (cmd.ExecuteNonQuery() == 1)
@@ -34,15 +31,12 @@ namespace slnGym.Layer
                 return false;
             }
         }
-        public bool updateRECEIPT(string receipt, string memID, DateTime date, DateTime time, string emp, int value)
+        public bool updateRECEIPT(string receipt, string memID, decimal total)
         {
-            SqlCommand cmd = new SqlCommand("update RECEIPT set receiptID=@id,memID=@num,receiptDate=@date,receiptTime=@time,employeeID=@emp,value=@val", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("update RECEIPT set memID=@mem, total=@total where receiptID=@id", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = receipt;
             cmd.Parameters.Add("@mem", SqlDbType.VarChar).Value = memID;
-            cmd.Parameters.Add("@date", SqlDbType.DateTime).Value = date;
-            cmd.Parameters.Add("@time", SqlDbType.DateTime).Value = time;
-            cmd.Parameters.Add("@empID", SqlDbType.VarChar).Value = emp;
-            cmd.Parameters.Add("@val", SqlDbType.Int).Value = value;
+            cmd.Parameters.Add("@total", SqlDbType.Decimal).Value = total;
             mydb.openConnection();
             if (cmd.ExecuteNonQuery() == 1)
             {

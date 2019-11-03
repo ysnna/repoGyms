@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReceiptUC));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtNote = new System.Windows.Forms.TextBox();
@@ -89,12 +90,18 @@
             this.btPrintInvoice = new System.Windows.Forms.Button();
             this.label0 = new System.Windows.Forms.Label();
             this.btCancel = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.dgvViewProduct = new System.Windows.Forms.DataGridView();
+            this.idBrandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idServiceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.discountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.listReceiptBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCheckInvoice)).BeginInit();
             this.groupPayment.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvViewProduct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listReceiptBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox2
@@ -112,7 +119,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.txtNote);
             this.groupBox1.Controls.Add(this.txtGender);
             this.groupBox1.Controls.Add(this.txtPhoneNumber);
@@ -130,60 +136,60 @@
             // txtNote
             // 
             this.txtNote.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.txtNote.Enabled = false;
-            this.txtNote.Font = new System.Drawing.Font("Comic Sans MS", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNote.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNote.ForeColor = System.Drawing.Color.Navy;
             this.txtNote.Location = new System.Drawing.Point(24, 138);
             this.txtNote.Name = "txtNote";
-            this.txtNote.Size = new System.Drawing.Size(480, 41);
+            this.txtNote.ReadOnly = true;
+            this.txtNote.Size = new System.Drawing.Size(480, 44);
             this.txtNote.TabIndex = 187;
             this.txtNote.Text = "Note";
             // 
             // txtGender
             // 
             this.txtGender.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.txtGender.Enabled = false;
-            this.txtGender.Font = new System.Drawing.Font("Comic Sans MS", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGender.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGender.ForeColor = System.Drawing.Color.Navy;
             this.txtGender.Location = new System.Drawing.Point(403, 91);
             this.txtGender.Name = "txtGender";
-            this.txtGender.Size = new System.Drawing.Size(101, 41);
+            this.txtGender.ReadOnly = true;
+            this.txtGender.Size = new System.Drawing.Size(101, 44);
             this.txtGender.TabIndex = 186;
             this.txtGender.Text = "Female";
             // 
             // txtPhoneNumber
             // 
             this.txtPhoneNumber.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.txtPhoneNumber.Enabled = false;
-            this.txtPhoneNumber.Font = new System.Drawing.Font("Comic Sans MS", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhoneNumber.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhoneNumber.ForeColor = System.Drawing.Color.Navy;
             this.txtPhoneNumber.Location = new System.Drawing.Point(310, 44);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
-            this.txtPhoneNumber.Size = new System.Drawing.Size(194, 41);
+            this.txtPhoneNumber.ReadOnly = true;
+            this.txtPhoneNumber.Size = new System.Drawing.Size(194, 44);
             this.txtPhoneNumber.TabIndex = 185;
             this.txtPhoneNumber.Text = "Phone number";
             // 
             // txtAddress
             // 
             this.txtAddress.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.txtAddress.Enabled = false;
-            this.txtAddress.Font = new System.Drawing.Font("Comic Sans MS", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddress.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAddress.ForeColor = System.Drawing.Color.Navy;
             this.txtAddress.Location = new System.Drawing.Point(24, 91);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(373, 41);
+            this.txtAddress.ReadOnly = true;
+            this.txtAddress.Size = new System.Drawing.Size(373, 44);
             this.txtAddress.TabIndex = 184;
             this.txtAddress.Text = "Address";
             // 
             // txtNameMember
             // 
             this.txtNameMember.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.txtNameMember.Enabled = false;
-            this.txtNameMember.Font = new System.Drawing.Font("Comic Sans MS", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNameMember.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNameMember.ForeColor = System.Drawing.Color.Navy;
             this.txtNameMember.Location = new System.Drawing.Point(24, 44);
             this.txtNameMember.Name = "txtNameMember";
-            this.txtNameMember.Size = new System.Drawing.Size(280, 41);
+            this.txtNameMember.ReadOnly = true;
+            this.txtNameMember.Size = new System.Drawing.Size(280, 44);
             this.txtNameMember.TabIndex = 183;
             this.txtNameMember.Text = "Fullname";
             // 
@@ -201,12 +207,12 @@
             // txtEmployeeID
             // 
             this.txtEmployeeID.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.txtEmployeeID.Enabled = false;
-            this.txtEmployeeID.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmployeeID.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmployeeID.ForeColor = System.Drawing.Color.Navy;
             this.txtEmployeeID.Location = new System.Drawing.Point(775, 230);
             this.txtEmployeeID.Name = "txtEmployeeID";
-            this.txtEmployeeID.Size = new System.Drawing.Size(119, 45);
+            this.txtEmployeeID.ReadOnly = true;
+            this.txtEmployeeID.Size = new System.Drawing.Size(119, 44);
             this.txtEmployeeID.TabIndex = 207;
             this.txtEmployeeID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -224,11 +230,11 @@
             // lbDatePayment
             // 
             this.lbDatePayment.AutoSize = true;
-            this.lbDatePayment.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDatePayment.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDatePayment.ForeColor = System.Drawing.Color.Navy;
             this.lbDatePayment.Location = new System.Drawing.Point(1065, 114);
             this.lbDatePayment.Name = "lbDatePayment";
-            this.lbDatePayment.Size = new System.Drawing.Size(195, 37);
+            this.lbDatePayment.Size = new System.Drawing.Size(189, 36);
             this.lbDatePayment.TabIndex = 205;
             this.lbDatePayment.Text = "Date payment";
             // 
@@ -246,12 +252,12 @@
             // txtMemIDInvoide
             // 
             this.txtMemIDInvoide.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.txtMemIDInvoide.Enabled = false;
-            this.txtMemIDInvoide.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMemIDInvoide.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMemIDInvoide.ForeColor = System.Drawing.Color.Navy;
             this.txtMemIDInvoide.Location = new System.Drawing.Point(775, 169);
             this.txtMemIDInvoide.Name = "txtMemIDInvoide";
-            this.txtMemIDInvoide.Size = new System.Drawing.Size(119, 45);
+            this.txtMemIDInvoide.ReadOnly = true;
+            this.txtMemIDInvoide.Size = new System.Drawing.Size(119, 44);
             this.txtMemIDInvoide.TabIndex = 203;
             this.txtMemIDInvoide.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -269,12 +275,12 @@
             // txtInvoiceNo
             // 
             this.txtInvoiceNo.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.txtInvoiceNo.Enabled = false;
-            this.txtInvoiceNo.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInvoiceNo.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInvoiceNo.ForeColor = System.Drawing.Color.Navy;
             this.txtInvoiceNo.Location = new System.Drawing.Point(775, 106);
             this.txtInvoiceNo.Name = "txtInvoiceNo";
-            this.txtInvoiceNo.Size = new System.Drawing.Size(119, 45);
+            this.txtInvoiceNo.ReadOnly = true;
+            this.txtInvoiceNo.Size = new System.Drawing.Size(119, 44);
             this.txtInvoiceNo.TabIndex = 201;
             this.txtInvoiceNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -303,52 +309,60 @@
             // dgvCheckInvoice
             // 
             this.dgvCheckInvoice.AllowUserToAddRows = false;
-            this.dgvCheckInvoice.AllowUserToDeleteRows = false;
             this.dgvCheckInvoice.AllowUserToResizeColumns = false;
             this.dgvCheckInvoice.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCheckInvoice.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCheckInvoice.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle33;
             this.dgvCheckInvoice.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvCheckInvoice.AutoGenerateColumns = false;
             this.dgvCheckInvoice.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvCheckInvoice.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Sitka Banner", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCheckInvoice.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle34.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle34.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle34.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCheckInvoice.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle34;
             this.dgvCheckInvoice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCheckInvoice.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idBrandDataGridViewTextBoxColumn,
+            this.idServiceDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.discountDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn});
+            this.dgvCheckInvoice.DataSource = this.listReceiptBindingSource;
             this.dgvCheckInvoice.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvCheckInvoice.Location = new System.Drawing.Point(382, 314);
             this.dgvCheckInvoice.Name = "dgvCheckInvoice";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Sitka Banner", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCheckInvoice.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle35.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle35.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle35.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCheckInvoice.RowHeadersDefaultCellStyle = dataGridViewCellStyle35;
             this.dgvCheckInvoice.RowHeadersVisible = false;
             this.dgvCheckInvoice.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCheckInvoice.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCheckInvoice.RowsDefaultCellStyle = dataGridViewCellStyle36;
             this.dgvCheckInvoice.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCheckInvoice.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvCheckInvoice.Size = new System.Drawing.Size(974, 494);
+            this.dgvCheckInvoice.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCheckInvoice.Size = new System.Drawing.Size(974, 578);
             this.dgvCheckInvoice.TabIndex = 208;
             // 
             // label14
             // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Navy;
-            this.label14.Location = new System.Drawing.Point(1356, 97);
+            this.label14.Location = new System.Drawing.Point(1372, 97);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(501, 32);
             this.label14.TabIndex = 211;
@@ -356,20 +370,22 @@
             // 
             // txtComment
             // 
+            this.txtComment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtComment.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.txtComment.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtComment.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtComment.ForeColor = System.Drawing.Color.Navy;
-            this.txtComment.Location = new System.Drawing.Point(1362, 132);
+            this.txtComment.Location = new System.Drawing.Point(1378, 132);
             this.txtComment.Multiline = true;
             this.txtComment.Name = "txtComment";
-            this.txtComment.Size = new System.Drawing.Size(520, 114);
+            this.txtComment.ReadOnly = true;
+            this.txtComment.Size = new System.Drawing.Size(504, 114);
             this.txtComment.TabIndex = 210;
-            this.txtComment.Text = "Total payment due in ... days ";
+            this.txtComment.Text = "Total payment due in ";
             this.txtComment.WordWrap = false;
             // 
             // groupPayment
             // 
-            this.groupPayment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupPayment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupPayment.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.groupPayment.Controls.Add(this.label13);
             this.groupPayment.Controls.Add(this.btPayment);
@@ -433,11 +449,11 @@
             // txtChange
             // 
             this.txtChange.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.txtChange.Enabled = false;
             this.txtChange.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtChange.ForeColor = System.Drawing.Color.Maroon;
             this.txtChange.Location = new System.Drawing.Point(175, 440);
             this.txtChange.Name = "txtChange";
+            this.txtChange.ReadOnly = true;
             this.txtChange.Size = new System.Drawing.Size(233, 45);
             this.txtChange.TabIndex = 193;
             this.txtChange.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -490,11 +506,11 @@
             // txtTotal
             // 
             this.txtTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.txtTotal.Enabled = false;
             this.txtTotal.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotal.ForeColor = System.Drawing.Color.Maroon;
             this.txtTotal.Location = new System.Drawing.Point(175, 315);
             this.txtTotal.Name = "txtTotal";
+            this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(233, 45);
             this.txtTotal.TabIndex = 188;
             this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -530,7 +546,9 @@
             this.txtOthers.Name = "txtOthers";
             this.txtOthers.Size = new System.Drawing.Size(233, 45);
             this.txtOthers.TabIndex = 183;
+            this.txtOthers.Text = "0";
             this.txtOthers.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtOthers.TextChanged += new System.EventHandler(this.txtOthers_TextChanged);
             // 
             // txtDiscount
             // 
@@ -541,7 +559,9 @@
             this.txtDiscount.Name = "txtDiscount";
             this.txtDiscount.Size = new System.Drawing.Size(151, 45);
             this.txtDiscount.TabIndex = 182;
+            this.txtDiscount.Text = "0";
             this.txtDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtDiscount.TextChanged += new System.EventHandler(this.txtDiscount_TextChanged);
             // 
             // cbDiscount
             // 
@@ -628,11 +648,11 @@
             // txtSubTotal
             // 
             this.txtSubTotal.BackColor = System.Drawing.Color.Lavender;
-            this.txtSubTotal.Enabled = false;
             this.txtSubTotal.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSubTotal.ForeColor = System.Drawing.Color.Maroon;
             this.txtSubTotal.Location = new System.Drawing.Point(175, 58);
             this.txtSubTotal.Name = "txtSubTotal";
+            this.txtSubTotal.ReadOnly = true;
             this.txtSubTotal.Size = new System.Drawing.Size(233, 45);
             this.txtSubTotal.TabIndex = 176;
             this.txtSubTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -651,11 +671,11 @@
             // lbStartDate
             // 
             this.lbStartDate.AutoSize = true;
-            this.lbStartDate.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStartDate.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbStartDate.ForeColor = System.Drawing.Color.Navy;
             this.lbStartDate.Location = new System.Drawing.Point(1065, 173);
             this.lbStartDate.Name = "lbStartDate";
-            this.lbStartDate.Size = new System.Drawing.Size(142, 37);
+            this.lbStartDate.Size = new System.Drawing.Size(137, 36);
             this.lbStartDate.TabIndex = 214;
             this.lbStartDate.Text = "Start date";
             // 
@@ -673,11 +693,11 @@
             // lbDischarge
             // 
             this.lbDischarge.AutoSize = true;
-            this.lbDischarge.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDischarge.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDischarge.ForeColor = System.Drawing.Color.Navy;
             this.lbDischarge.Location = new System.Drawing.Point(1065, 234);
             this.lbDischarge.Name = "lbDischarge";
-            this.lbDischarge.Size = new System.Drawing.Size(211, 37);
+            this.lbDischarge.Size = new System.Drawing.Size(201, 36);
             this.lbDischarge.TabIndex = 216;
             this.lbDischarge.Text = "Discharge date";
             // 
@@ -728,6 +748,7 @@
             // 
             // btPrintInvoice
             // 
+            this.btPrintInvoice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btPrintInvoice.BackColor = System.Drawing.Color.Pink;
             this.btPrintInvoice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btPrintInvoice.FlatAppearance.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -756,6 +777,7 @@
             // 
             // btCancel
             // 
+            this.btCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btCancel.BackColor = System.Drawing.Color.Thistle;
             this.btCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btCancel.FlatAppearance.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -771,71 +793,97 @@
             this.btCancel.UseVisualStyleBackColor = false;
             this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.SteelBlue;
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.button1.FlatAppearance.BorderSize = 3;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arrus-Black", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Crimson;
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(80, 50);
-            this.button1.TabIndex = 223;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // dgvViewProduct
             // 
             this.dgvViewProduct.AllowUserToAddRows = false;
             this.dgvViewProduct.AllowUserToDeleteRows = false;
             this.dgvViewProduct.AllowUserToResizeColumns = false;
             this.dgvViewProduct.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvViewProduct.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvViewProduct.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle37;
             this.dgvViewProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvViewProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvViewProduct.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Sitka Banner", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvViewProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle38.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle38.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle38.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle38.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle38.SelectionForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvViewProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle38;
             this.dgvViewProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvViewProduct.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvViewProduct.Location = new System.Drawing.Point(39, 314);
             this.dgvViewProduct.Name = "dgvViewProduct";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Sitka Banner", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvViewProduct.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle39.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle39.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle39.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle39.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle39.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvViewProduct.RowHeadersDefaultCellStyle = dataGridViewCellStyle39;
             this.dgvViewProduct.RowHeadersVisible = false;
             this.dgvViewProduct.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvViewProduct.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle40.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvViewProduct.RowsDefaultCellStyle = dataGridViewCellStyle40;
             this.dgvViewProduct.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvViewProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvViewProduct.Size = new System.Drawing.Size(337, 553);
+            this.dgvViewProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvViewProduct.Size = new System.Drawing.Size(337, 633);
             this.dgvViewProduct.TabIndex = 224;
+            this.dgvViewProduct.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvViewProduct_CellDoubleClick);
+            // 
+            // idBrandDataGridViewTextBoxColumn
+            // 
+            this.idBrandDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.idBrandDataGridViewTextBoxColumn.DataPropertyName = "idBrand";
+            this.idBrandDataGridViewTextBoxColumn.HeaderText = "Group ID";
+            this.idBrandDataGridViewTextBoxColumn.Name = "idBrandDataGridViewTextBoxColumn";
+            this.idBrandDataGridViewTextBoxColumn.Width = 158;
+            // 
+            // idServiceDataGridViewTextBoxColumn
+            // 
+            this.idServiceDataGridViewTextBoxColumn.DataPropertyName = "idService";
+            this.idServiceDataGridViewTextBoxColumn.HeaderText = "ID Service";
+            this.idServiceDataGridViewTextBoxColumn.Name = "idServiceDataGridViewTextBoxColumn";
+            this.idServiceDataGridViewTextBoxColumn.Width = 163;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.Width = 310;
+            // 
+            // discountDataGridViewTextBoxColumn
+            // 
+            this.discountDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.discountDataGridViewTextBoxColumn.DataPropertyName = "discount";
+            this.discountDataGridViewTextBoxColumn.HeaderText = "Discount";
+            this.discountDataGridViewTextBoxColumn.Name = "discountDataGridViewTextBoxColumn";
+            this.discountDataGridViewTextBoxColumn.Width = 160;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Total";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            // 
+            // listReceiptBindingSource
+            // 
+            this.listReceiptBindingSource.DataSource = typeof(slnGym.DataObject.ListReceipt);
             // 
             // ReceiptUC
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.Controls.Add(this.dgvViewProduct);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btCancel);
             this.Controls.Add(this.lbTimePayment);
             this.Controls.Add(this.lbStatus);
@@ -848,7 +896,6 @@
             this.Controls.Add(this.label20);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.txtComment);
-            this.Controls.Add(this.dgvCheckInvoice);
             this.Controls.Add(this.txtEmployeeID);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.lbDatePayment);
@@ -860,8 +907,10 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label19);
-            this.Controls.Add(this.label18);
             this.Controls.Add(this.groupPayment);
+            this.Controls.Add(this.dgvCheckInvoice);
+            this.Controls.Add(this.label18);
+            this.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "ReceiptUC";
             this.Size = new System.Drawing.Size(1912, 987);
             this.Load += new System.EventHandler(this.ReceiptUC_Load);
@@ -871,6 +920,7 @@
             this.groupPayment.ResumeLayout(false);
             this.groupPayment.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvViewProduct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listReceiptBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -930,7 +980,12 @@
         private System.Windows.Forms.Button btPrintInvoice;
         private System.Windows.Forms.Label label0;
         private System.Windows.Forms.Button btCancel;
-        private System.Windows.Forms.Button button1;
         public System.Windows.Forms.DataGridView dgvViewProduct;
+        private System.Windows.Forms.BindingSource listReceiptBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idBrandDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idServiceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn discountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
     }
 }
