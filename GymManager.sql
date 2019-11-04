@@ -63,7 +63,7 @@ go
 --Nhân viên
 create table EMPLOYEE(
 employeeID varchar(20) not null,
-groupID  varchar(10) ,
+groupID  varchar(10),
 avatar image null,
 employeeFName nvarchar(30) not null,
 employeeLName nvarchar(30) null,
@@ -115,7 +115,7 @@ go
 create table WORK
 (
 workID varchar(20) not null,
-workName nvarchar(50) not null,
+workName nvarchar(50) null,
 idPT varchar(20) null,
 groupWorkID varchar(20) null,
 --Primarykey & FK--

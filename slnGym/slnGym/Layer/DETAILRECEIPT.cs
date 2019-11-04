@@ -13,7 +13,7 @@ namespace slnGym.Layer
         MY_DB mydb = new MY_DB();
         public bool insertDETAILRECEIPT(string receipt, DateTime date, int idBrand, int idService, string nameService, decimal discount, decimal total)
         {
-            SqlCommand cmd = new SqlCommand("insert into DETAILSREPCEPIT(receiptID,repceiptDate,idBrand,idService,nameServices,discount,total)" +
+            SqlCommand cmd = new SqlCommand("insert into DETAILSREPCEIPT(receiptID,repceiptDate,idBrand,idService,nameServices,discount,total)" +
                 "values (@id,@date,@idBrand,@idSer,@name,@dis,@total)", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = receipt;
             cmd.Parameters.Add("@date", SqlDbType.DateTime).Value = date;
