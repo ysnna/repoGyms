@@ -11,6 +11,7 @@ namespace slnGym.Layer
     class DETAILCONTRACT
     {
         MY_DB mydb = new MY_DB();
+
         public bool insertDETAILCON(string conID, string empID, string receiptID)
         {
             SqlCommand cmd = new SqlCommand("insert into DETAILSCONTRACT(contID,employeeID,receiptID)" +
@@ -81,6 +82,20 @@ namespace slnGym.Layer
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
+            return dt;
+        }
+        public DataTable getDetailConTractDGV()
+        {
+            SqlCommand cmd = new SqlCommand("select contID,cusID,serviceName, employeeID, dateStart,dateDischarge, B.receiptID, total from RECEIPT," +
+                " (select contID, serviceName, employeeID, cusID, dateStart, dateDischarge, receiptID from DETAILSCONTRACT," +
+                " (select * from SERVICEPACK, CONTRACTS" +
+                " where CONTRACTS.servicePACK = SERVICEPACK.serviceID) as A" +
+                " where DETAILSCONTRACT.contID = A.contractID) as B" +
+                " where B.receiptID = RECEIPT.receiptID", mydb.getConnection);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            mydb.closeConnection();
             return dt;
         }
     }

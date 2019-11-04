@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataObject\AddEmployee.cs" />
+    <Compile Include="DataObject\DetailContract.cs" />
     <Compile Include="DataObject\GETContract.cs" />
     <Compile Include="DataObject\GETMember.cs" />
     <Compile Include="DataObject\ListMachine.cs" />
@@ -303,6 +304,7 @@
     <None Include="PTTagDataSet.xss">
       <DependentUpon>PTTagDataSet.xsd</DependentUpon>
     </None>
+    <None Include="slnGym.DataObject.DetailContract.datasource" />
     <None Include="slnGym.DataObject.ListReceipt.datasource" />
   </ItemGroup>
   <ItemGroup>

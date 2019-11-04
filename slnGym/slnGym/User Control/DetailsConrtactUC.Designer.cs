@@ -28,41 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DetailsConrtactUC));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBoxContact = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cbTheLoai = new System.Windows.Forms.ComboBox();
             this.btSearch = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btDelete = new System.Windows.Forms.Button();
             this.btShowAll = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.btSave = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtIDContract = new System.Windows.Forms.TextBox();
-            this.btEdit = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.lbDateSign = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtNameSeller = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvDetailCon = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.lbTimeRemaining = new System.Windows.Forms.Label();
+            this.lbMemberName = new System.Windows.Forms.Label();
+            this.detailContractBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.conIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.servicePackNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateStartDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateEndDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDMemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDreceiptDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.empIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oldnewDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBoxContact.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btSearch)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetailCon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.detailContractBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxContact
@@ -138,24 +146,8 @@
             this.textBox1.ForeColor = System.Drawing.Color.Navy;
             this.textBox1.Location = new System.Drawing.Point(204, 55);
             this.textBox1.Name = "textBox1";
-            this.textBox1.PasswordChar = '*';
             this.textBox1.Size = new System.Drawing.Size(228, 44);
             this.textBox1.TabIndex = 88;
-            // 
-            // btDelete
-            // 
-            this.btDelete.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btDelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btDelete.BackgroundImage")));
-            this.btDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btDelete.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btDelete.Font = new System.Drawing.Font("Sitka Subheading", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDelete.ForeColor = System.Drawing.Color.White;
-            this.btDelete.Location = new System.Drawing.Point(1651, 155);
-            this.btDelete.Name = "btDelete";
-            this.btDelete.Size = new System.Drawing.Size(51, 45);
-            this.btDelete.TabIndex = 193;
-            this.btDelete.UseVisualStyleBackColor = false;
             // 
             // btShowAll
             // 
@@ -166,7 +158,7 @@
             this.btShowAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btShowAll.Font = new System.Drawing.Font("Sitka Subheading", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btShowAll.ForeColor = System.Drawing.Color.White;
-            this.btShowAll.Location = new System.Drawing.Point(1822, 155);
+            this.btShowAll.Location = new System.Drawing.Point(1822, 142);
             this.btShowAll.Name = "btShowAll";
             this.btShowAll.Size = new System.Drawing.Size(57, 45);
             this.btShowAll.TabIndex = 192;
@@ -180,24 +172,8 @@
             this.textBox2.ForeColor = System.Drawing.Color.Navy;
             this.textBox2.Location = new System.Drawing.Point(715, 121);
             this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(235, 44);
             this.textBox2.TabIndex = 190;
-            // 
-            // btSave
-            // 
-            this.btSave.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btSave.BackgroundImage")));
-            this.btSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btSave.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btSave.Font = new System.Drawing.Font("Sitka Subheading", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSave.ForeColor = System.Drawing.Color.White;
-            this.btSave.Location = new System.Drawing.Point(1708, 155);
-            this.btSave.Name = "btSave";
-            this.btSave.Size = new System.Drawing.Size(48, 45);
-            this.btSave.TabIndex = 191;
-            this.btSave.UseVisualStyleBackColor = false;
             // 
             // label5
             // 
@@ -210,32 +186,6 @@
             this.label5.TabIndex = 189;
             this.label5.Text = "PT name";
             // 
-            // txtIDContract
-            // 
-            this.txtIDContract.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.txtIDContract.Enabled = false;
-            this.txtIDContract.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIDContract.ForeColor = System.Drawing.Color.Navy;
-            this.txtIDContract.Location = new System.Drawing.Point(1451, 126);
-            this.txtIDContract.Name = "txtIDContract";
-            this.txtIDContract.Size = new System.Drawing.Size(110, 44);
-            this.txtIDContract.TabIndex = 188;
-            // 
-            // btEdit
-            // 
-            this.btEdit.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btEdit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btEdit.BackgroundImage")));
-            this.btEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btEdit.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btEdit.Font = new System.Drawing.Font("Sitka Subheading", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btEdit.ForeColor = System.Drawing.Color.White;
-            this.btEdit.Location = new System.Drawing.Point(1762, 155);
-            this.btEdit.Name = "btEdit";
-            this.btEdit.Size = new System.Drawing.Size(54, 45);
-            this.btEdit.TabIndex = 184;
-            this.btEdit.UseVisualStyleBackColor = false;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -243,9 +193,9 @@
             this.label4.ForeColor = System.Drawing.Color.Navy;
             this.label4.Location = new System.Drawing.Point(1383, 128);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 37);
+            this.label4.Size = new System.Drawing.Size(134, 37);
             this.label4.TabIndex = 187;
-            this.label4.Text = "ID";
+            this.label4.Text = "Member:";
             // 
             // lbDateSign
             // 
@@ -277,7 +227,6 @@
             this.txtNameSeller.ForeColor = System.Drawing.Color.Navy;
             this.txtNameSeller.Location = new System.Drawing.Point(715, 54);
             this.txtNameSeller.Name = "txtNameSeller";
-            this.txtNameSeller.PasswordChar = '*';
             this.txtNameSeller.Size = new System.Drawing.Size(235, 44);
             this.txtNameSeller.TabIndex = 182;
             // 
@@ -295,82 +244,72 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.dgvDetailCon);
             this.groupBox1.Font = new System.Drawing.Font("Sitka Display", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Navy;
-            this.groupBox1.Location = new System.Drawing.Point(35, 186);
+            this.groupBox1.Location = new System.Drawing.Point(35, 176);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1850, 688);
+            this.groupBox1.Size = new System.Drawing.Size(1850, 698);
             this.groupBox1.TabIndex = 194;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = " Details contract";
             // 
-            // label7
+            // dgvDetailCon
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Navy;
-            this.label7.Location = new System.Drawing.Point(124, 91);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(976, 37);
-            this.label7.TabIndex = 177;
-            this.label7.Text = "ID, ngày kí, ngày hết hạn, gói nào, lớp nào, tình trạng còn hay hết hạn HĐ";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Navy;
-            this.label8.Location = new System.Drawing.Point(174, 164);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(680, 37);
-            this.label8.TabIndex = 178;
-            this.label8.Text = "giá tiền, ghi chú, tình trạng gia hạn hay đki gói mới";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvDetailCon.AllowUserToAddRows = false;
+            this.dgvDetailCon.AllowUserToDeleteRows = false;
+            this.dgvDetailCon.AllowUserToResizeColumns = false;
+            this.dgvDetailCon.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDetailCon.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvDetailCon.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Sitka Display", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 40);
-            this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Sitka Display", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1838, 642);
-            this.dataGridView1.TabIndex = 81;
+            this.dgvDetailCon.AutoGenerateColumns = false;
+            this.dgvDetailCon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvDetailCon.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Sitka Display", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDetailCon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvDetailCon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDetailCon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.conIDDataGridViewTextBoxColumn,
+            this.servicePackNameDataGridViewTextBoxColumn,
+            this.dateStartDataGridViewTextBoxColumn,
+            this.dateEndDataGridViewTextBoxColumn,
+            this.iDMemDataGridViewTextBoxColumn,
+            this.stateDataGridViewTextBoxColumn,
+            this.iDreceiptDataGridViewTextBoxColumn,
+            this.empIDDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn,
+            this.oldnewDataGridViewTextBoxColumn});
+            this.dgvDetailCon.DataSource = this.detailContractBindingSource;
+            this.dgvDetailCon.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvDetailCon.Location = new System.Drawing.Point(6, 40);
+            this.dgvDetailCon.Name = "dgvDetailCon";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Sitka Display", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDetailCon.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvDetailCon.RowHeadersVisible = false;
+            this.dgvDetailCon.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDetailCon.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvDetailCon.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDetailCon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgvDetailCon.Size = new System.Drawing.Size(1838, 652);
+            this.dgvDetailCon.TabIndex = 81;
+            this.dgvDetailCon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetailCon_CellClick);
             // 
             // label9
             // 
@@ -416,22 +355,105 @@
             this.lbTimeRemaining.TabIndex = 198;
             this.lbTimeRemaining.Text = "Expiration date";
             // 
+            // lbMemberName
+            // 
+            this.lbMemberName.AutoSize = true;
+            this.lbMemberName.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMemberName.ForeColor = System.Drawing.Color.Navy;
+            this.lbMemberName.Location = new System.Drawing.Point(1556, 130);
+            this.lbMemberName.Name = "lbMemberName";
+            this.lbMemberName.Size = new System.Drawing.Size(203, 36);
+            this.lbMemberName.TabIndex = 196;
+            this.lbMemberName.Text = "Member Name";
+            // 
+            // detailContractBindingSource
+            // 
+            this.detailContractBindingSource.DataSource = typeof(slnGym.DataObject.DetailContract);
+            // 
+            // conIDDataGridViewTextBoxColumn
+            // 
+            this.conIDDataGridViewTextBoxColumn.DataPropertyName = "ConID";
+            this.conIDDataGridViewTextBoxColumn.HeaderText = "ConID";
+            this.conIDDataGridViewTextBoxColumn.Name = "conIDDataGridViewTextBoxColumn";
+            this.conIDDataGridViewTextBoxColumn.Width = 109;
+            // 
+            // servicePackNameDataGridViewTextBoxColumn
+            // 
+            this.servicePackNameDataGridViewTextBoxColumn.DataPropertyName = "servicePackName";
+            this.servicePackNameDataGridViewTextBoxColumn.HeaderText = "servicePackName";
+            this.servicePackNameDataGridViewTextBoxColumn.Name = "servicePackNameDataGridViewTextBoxColumn";
+            this.servicePackNameDataGridViewTextBoxColumn.Width = 223;
+            // 
+            // dateStartDataGridViewTextBoxColumn
+            // 
+            this.dateStartDataGridViewTextBoxColumn.DataPropertyName = "DateStart";
+            this.dateStartDataGridViewTextBoxColumn.HeaderText = "DateStart";
+            this.dateStartDataGridViewTextBoxColumn.Name = "dateStartDataGridViewTextBoxColumn";
+            this.dateStartDataGridViewTextBoxColumn.Width = 145;
+            // 
+            // dateEndDataGridViewTextBoxColumn
+            // 
+            this.dateEndDataGridViewTextBoxColumn.DataPropertyName = "DateEnd";
+            this.dateEndDataGridViewTextBoxColumn.HeaderText = "DateEnd";
+            this.dateEndDataGridViewTextBoxColumn.Name = "dateEndDataGridViewTextBoxColumn";
+            this.dateEndDataGridViewTextBoxColumn.Width = 133;
+            // 
+            // iDMemDataGridViewTextBoxColumn
+            // 
+            this.iDMemDataGridViewTextBoxColumn.DataPropertyName = "ID_Mem";
+            this.iDMemDataGridViewTextBoxColumn.HeaderText = "ID_Mem";
+            this.iDMemDataGridViewTextBoxColumn.Name = "iDMemDataGridViewTextBoxColumn";
+            this.iDMemDataGridViewTextBoxColumn.Width = 133;
+            // 
+            // stateDataGridViewTextBoxColumn
+            // 
+            this.stateDataGridViewTextBoxColumn.DataPropertyName = "State";
+            this.stateDataGridViewTextBoxColumn.HeaderText = "State";
+            this.stateDataGridViewTextBoxColumn.Name = "stateDataGridViewTextBoxColumn";
+            this.stateDataGridViewTextBoxColumn.Width = 97;
+            // 
+            // iDreceiptDataGridViewTextBoxColumn
+            // 
+            this.iDreceiptDataGridViewTextBoxColumn.DataPropertyName = "IDreceipt";
+            this.iDreceiptDataGridViewTextBoxColumn.HeaderText = "IDreceipt";
+            this.iDreceiptDataGridViewTextBoxColumn.Name = "iDreceiptDataGridViewTextBoxColumn";
+            this.iDreceiptDataGridViewTextBoxColumn.Width = 138;
+            // 
+            // empIDDataGridViewTextBoxColumn
+            // 
+            this.empIDDataGridViewTextBoxColumn.DataPropertyName = "EmpID";
+            this.empIDDataGridViewTextBoxColumn.HeaderText = "EmpID";
+            this.empIDDataGridViewTextBoxColumn.Name = "empIDDataGridViewTextBoxColumn";
+            this.empIDDataGridViewTextBoxColumn.Visible = false;
+            this.empIDDataGridViewTextBoxColumn.Width = 116;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "price";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.Width = 93;
+            // 
+            // oldnewDataGridViewTextBoxColumn
+            // 
+            this.oldnewDataGridViewTextBoxColumn.DataPropertyName = "oldnew";
+            this.oldnewDataGridViewTextBoxColumn.HeaderText = "oldnew";
+            this.oldnewDataGridViewTextBoxColumn.Name = "oldnewDataGridViewTextBoxColumn";
+            this.oldnewDataGridViewTextBoxColumn.Width = 119;
+            // 
             // DetailsConrtactUC
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.Controls.Add(this.lbTimeRemaining);
             this.Controls.Add(this.label11);
+            this.Controls.Add(this.lbMemberName);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.btDelete);
             this.Controls.Add(this.btShowAll);
-            this.Controls.Add(this.btSave);
-            this.Controls.Add(this.btEdit);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtIDContract);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lbDateSign);
             this.Controls.Add(this.label3);
@@ -440,12 +462,13 @@
             this.Controls.Add(this.groupBoxContact);
             this.Name = "DetailsConrtactUC";
             this.Size = new System.Drawing.Size(1912, 905);
+            this.Load += new System.EventHandler(this.DetailsConrtactUC_Load);
             this.groupBoxContact.ResumeLayout(false);
             this.groupBoxContact.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btSearch)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetailCon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.detailContractBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -459,25 +482,31 @@
         private System.Windows.Forms.PictureBox btSearch;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button btDelete;
         private System.Windows.Forms.Button btShowAll;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button btSave;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtIDContract;
-        private System.Windows.Forms.Button btEdit;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbDateSign;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtNameSeller;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        public System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.DataGridView dgvDetailCon;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label lbTimeRemaining;
+        private System.Windows.Forms.Label lbMemberName;
+        private System.Windows.Forms.BindingSource detailContractBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn conIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn servicePackNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateStartDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateEndDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDMemDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDreceiptDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn empIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oldnewDataGridViewTextBoxColumn;
     }
 }

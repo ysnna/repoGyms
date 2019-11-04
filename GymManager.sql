@@ -255,7 +255,7 @@ create table CONTRACTS
 contractID varchar(20) not null,
 cusID varchar(20) null,
 ptID varchar(20) null,
-servicePACK int  null,
+servicePACK int  null, -- ID packet--
 dateStart Datetime not null,
 dateDischarge Datetime not null,
 conStatus nvarchar(20) null,		--bao nhiêu ngày, vd:30
@@ -289,6 +289,9 @@ insert into RECEIPT values
 ('IVC02','kh2','3750000');
 go
 
+
+
+
 --Chi tiết hợp đồng
 create table DETAILSCONTRACT 
 (
@@ -321,14 +324,15 @@ insert into PACKORPRODUCT values
 ('2','Product');
 go
 
---Chi tiết hóa đơn
+
+--Chi tiết hóa đơn--
 create table DETAILSREPCEIPT
 (
 receiptID varchar(20)  null,
 repceiptDate Datetime not null,
-idBrand int null,
+idBrand int null,  
 idService int null, -- lưu chung package và product
-nameServices nvarchar(100) null,
+nameServices nvarchar(100) null, 
 discount decimal null,
 total decimal null,
 remain nvarchar(100) null,				---còn lại bao nhiêu ngày: (now - start) > 0 thì ghi, else null
