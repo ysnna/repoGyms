@@ -75,11 +75,12 @@ namespace slnGym.User_Control
         {
             lbStatus.Text = "Paid";
             lbTimePayment.Text = DateTime.Now.ToString();
-            //createMember();
-            //createContract();
-            //createReceipt();
-            //createDetailsContract();
-            //createDetailsReceipt();
+            createMember();
+            createContract();
+            createReceipt();
+            createDetailsContract();
+            createDetailsReceipt();
+            MessageBox.Show("Complete");
         }
 
         public void createMember()
@@ -109,7 +110,7 @@ namespace slnGym.User_Control
         public void createContract()
         {
             //try..catch
-            if (contract.insertCONTRACTS(GETContract.IDContract, GLOBAL.username, GETContract.IDPT, GETContract.IDPackage, GETContract.Start, GETContract.End, GETContract.Remain))
+            if (contract.insertCONTRACTS(GETContract.IDContract, GETMember.IDMember, GETContract.IDPT, GETContract.IDPackage, GETContract.Start, GETContract.End, GETContract.Remain))
             {
                 MessageBox.Show("Added contract", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
