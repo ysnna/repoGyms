@@ -50,6 +50,7 @@
     <Compile Include="DataObject\AddEmployee.cs" />
     <Compile Include="DataObject\GETContract.cs" />
     <Compile Include="DataObject\GETMember.cs" />
+    <Compile Include="DataObject\ListEmployee.cs" />
     <Compile Include="DataObject\ListMachine.cs" />
     <Compile Include="DataObject\ListProduct.cs" />
     <Compile Include="DataObject\ListReceipt.cs" />

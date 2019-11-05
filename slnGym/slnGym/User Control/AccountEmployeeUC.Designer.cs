@@ -103,9 +103,9 @@
             this.groupBoxEdit.Controls.Add(this.txtIDCard);
             this.groupBoxEdit.Font = new System.Drawing.Font("Sitka Display", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxEdit.ForeColor = System.Drawing.Color.Navy;
-            this.groupBoxEdit.Location = new System.Drawing.Point(491, 438);
+            this.groupBoxEdit.Location = new System.Drawing.Point(491, 417);
             this.groupBoxEdit.Name = "groupBoxEdit";
-            this.groupBoxEdit.Size = new System.Drawing.Size(942, 404);
+            this.groupBoxEdit.Size = new System.Drawing.Size(942, 515);
             this.groupBoxEdit.TabIndex = 92;
             this.groupBoxEdit.TabStop = false;
             this.groupBoxEdit.Text = "Edit";
@@ -115,9 +115,9 @@
             this.picAvaEdit.BackColor = System.Drawing.Color.Transparent;
             this.picAvaEdit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picAvaEdit.BackgroundImage")));
             this.picAvaEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picAvaEdit.Location = new System.Drawing.Point(593, 209);
+            this.picAvaEdit.Location = new System.Drawing.Point(595, 90);
             this.picAvaEdit.Name = "picAvaEdit";
-            this.picAvaEdit.Size = new System.Drawing.Size(306, 164);
+            this.picAvaEdit.Size = new System.Drawing.Size(306, 318);
             this.picAvaEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picAvaEdit.TabIndex = 78;
             this.picAvaEdit.TabStop = false;
@@ -128,7 +128,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Navy;
-            this.label5.Location = new System.Drawing.Point(586, 170);
+            this.label5.Location = new System.Drawing.Point(588, 51);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(102, 37);
             this.label5.TabIndex = 78;
@@ -139,7 +139,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.Navy;
-            this.label15.Location = new System.Drawing.Point(322, 275);
+            this.label15.Location = new System.Drawing.Point(316, 263);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(112, 37);
             this.label15.TabIndex = 77;
@@ -150,7 +150,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Navy;
-            this.label8.Location = new System.Drawing.Point(321, 170);
+            this.label8.Location = new System.Drawing.Point(315, 158);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(146, 37);
             this.label8.TabIndex = 76;
@@ -161,8 +161,9 @@
             this.txtFname.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.txtFname.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFname.ForeColor = System.Drawing.Color.Navy;
-            this.txtFname.Location = new System.Drawing.Point(55, 102);
+            this.txtFname.Location = new System.Drawing.Point(49, 90);
             this.txtFname.Name = "txtFname";
+            this.txtFname.ReadOnly = true;
             this.txtFname.Size = new System.Drawing.Size(237, 44);
             this.txtFname.TabIndex = 65;
             // 
@@ -171,7 +172,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Navy;
-            this.label10.Location = new System.Drawing.Point(49, 63);
+            this.label10.Location = new System.Drawing.Point(43, 51);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(155, 37);
             this.label10.TabIndex = 61;
@@ -182,7 +183,7 @@
             this.panel4.Controls.Add(this.radioFemaleEdit);
             this.panel4.Controls.Add(this.radioMaleEdit);
             this.panel4.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel4.Location = new System.Drawing.Point(316, 314);
+            this.panel4.Location = new System.Drawing.Point(310, 302);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(270, 59);
             this.panel4.TabIndex = 68;
@@ -218,7 +219,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Navy;
-            this.label11.Location = new System.Drawing.Point(49, 275);
+            this.label11.Location = new System.Drawing.Point(43, 263);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(98, 37);
             this.label11.TabIndex = 57;
@@ -230,7 +231,7 @@
             this.dateTimePickerBdate.CalendarTitleForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.dateTimePickerBdate.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerBdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerBdate.Location = new System.Drawing.Point(328, 210);
+            this.dateTimePickerBdate.Location = new System.Drawing.Point(322, 198);
             this.dateTimePickerBdate.Name = "dateTimePickerBdate";
             this.dateTimePickerBdate.Size = new System.Drawing.Size(235, 44);
             this.dateTimePickerBdate.TabIndex = 67;
@@ -240,7 +241,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Navy;
-            this.label12.Location = new System.Drawing.Point(586, 63);
+            this.label12.Location = new System.Drawing.Point(43, 371);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(118, 37);
             this.label12.TabIndex = 58;
@@ -251,7 +252,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Navy;
-            this.label13.Location = new System.Drawing.Point(49, 170);
+            this.label13.Location = new System.Drawing.Point(43, 158);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(123, 37);
             this.label13.TabIndex = 60;
@@ -262,10 +263,10 @@
             this.txtAddress.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.txtAddress.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAddress.ForeColor = System.Drawing.Color.Navy;
-            this.txtAddress.Location = new System.Drawing.Point(592, 103);
+            this.txtAddress.Location = new System.Drawing.Point(49, 411);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(307, 43);
+            this.txtAddress.Size = new System.Drawing.Size(508, 84);
             this.txtAddress.TabIndex = 71;
             // 
             // label20
@@ -273,7 +274,7 @@
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.Navy;
-            this.label20.Location = new System.Drawing.Point(322, 63);
+            this.label20.Location = new System.Drawing.Point(316, 51);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(149, 37);
             this.label20.TabIndex = 63;
@@ -284,7 +285,7 @@
             this.txtPhone.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.txtPhone.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhone.ForeColor = System.Drawing.Color.Navy;
-            this.txtPhone.Location = new System.Drawing.Point(55, 314);
+            this.txtPhone.Location = new System.Drawing.Point(49, 302);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(237, 44);
             this.txtPhone.TabIndex = 70;
@@ -294,8 +295,9 @@
             this.txtLname.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.txtLname.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLname.ForeColor = System.Drawing.Color.Navy;
-            this.txtLname.Location = new System.Drawing.Point(328, 102);
+            this.txtLname.Location = new System.Drawing.Point(322, 90);
             this.txtLname.Name = "txtLname";
+            this.txtLname.ReadOnly = true;
             this.txtLname.Size = new System.Drawing.Size(235, 44);
             this.txtLname.TabIndex = 66;
             // 
@@ -304,8 +306,9 @@
             this.txtIDCard.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.txtIDCard.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIDCard.ForeColor = System.Drawing.Color.Navy;
-            this.txtIDCard.Location = new System.Drawing.Point(55, 209);
+            this.txtIDCard.Location = new System.Drawing.Point(49, 197);
             this.txtIDCard.Name = "txtIDCard";
+            this.txtIDCard.ReadOnly = true;
             this.txtIDCard.Size = new System.Drawing.Size(237, 44);
             this.txtIDCard.TabIndex = 72;
             // 
@@ -579,12 +582,12 @@
             // txtPass
             // 
             this.txtPass.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.txtPass.Enabled = false;
             this.txtPass.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPass.ForeColor = System.Drawing.Color.Navy;
             this.txtPass.Location = new System.Drawing.Point(1081, 182);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
+            this.txtPass.ReadOnly = true;
             this.txtPass.Size = new System.Drawing.Size(195, 44);
             this.txtPass.TabIndex = 79;
             // 

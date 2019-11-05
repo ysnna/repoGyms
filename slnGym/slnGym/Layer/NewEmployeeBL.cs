@@ -26,15 +26,5 @@ namespace slnGym.Layer
             Random random = new Random();
             return random.Next(a, b);
         }
-        public string UserName()
-        {
-            int count = 1;
-            string username;
-            DataTable dt = new DataTable();
-            dt = emp.getAllEMPLOYEE();
-            count += dt.Rows.Count;
-            username = "nv" + count;
-            return username;
-        }
     }
 }

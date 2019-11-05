@@ -11,6 +11,7 @@ namespace slnGym.Layer
 {
     class EMPLOYEEs
     {
+        public static string EmployeeID { get; set; }
         MY_DB mydb = new MY_DB();
         //Them Khach Hang
         public bool insertEmployee(string ID, string group, MemoryStream ava, string fname, string lname, DateTime bdate, string address,
@@ -61,20 +62,15 @@ namespace slnGym.Layer
             }
         }
         //Update khach hang
-        public bool updateEmployee(string ID, string group, string lname, string fname, DateTime bdate, string address,
-            int gender, string phone, int idcard, int salary)
-        {
-            SqlCommand cmd = new SqlCommand("update EMPLOYEE set employeeID=@id,groupID=@group,employeeFname=@fname,employeeLname=@lname,employeeBDate=@bdate,employeeAddress=@add,gender=@gen,phone=@phone,salary=@sal,employeeIDCard=@idcard", mydb.getConnection);
-            cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = ID;
-            cmd.Parameters.Add("@group", SqlDbType.VarChar).Value = group;
-            cmd.Parameters.Add("@lname", SqlDbType.NVarChar).Value = lname;
-            cmd.Parameters.Add("@fname", SqlDbType.NVarChar).Value = fname;
-            cmd.Parameters.Add("@bdate", SqlDbType.DateTime).Value = bdate;
+        public bool updateEmployee(string id, MemoryStream ava, DateTime bdate, string address, int gender, string phone)
+        {//groupID=@gr,avatar=@ava,employeeFName=@fn,employeeLName=@ln,employeeBDate=@bd,employeeAddress=@add,gender=@gd,phone=@phone,salary=@sala,employeeIDCard=@idcard where employeeID=@id
+            SqlCommand cmd = new SqlCommand("update EMPLOYEE set avatar=@ava,employeeBDate=@bd,employeeAddress=@add,gender=@gd,phone=@phone where employeeID=@id", mydb.getConnection);
+            cmd.Parameters.Add("@bd", SqlDbType.DateTime).Value = bdate;
             cmd.Parameters.Add("@add", SqlDbType.NVarChar).Value = address;
-            cmd.Parameters.Add("@gen", SqlDbType.Int).Value = gender;
+            cmd.Parameters.Add("@gd", SqlDbType.Int).Value = gender;
             cmd.Parameters.Add("@phone", SqlDbType.VarChar).Value = phone;
-            cmd.Parameters.Add("@idcard", SqlDbType.Int).Value = idcard;
-            cmd.Parameters.Add("@sal", SqlDbType.Int).Value = salary;
+            cmd.Parameters.Add("@ava", SqlDbType.Image).Value = ava.ToArray();
+            cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = id;
 
             mydb.openConnection();
             if (cmd.ExecuteNonQuery() == 1)
@@ -91,10 +87,12 @@ namespace slnGym.Layer
         //Lay thong tin 
         public DataTable getAllEMPLOYEE()
         {
-            SqlCommand cmd = new SqlCommand("select *from EMPLOYEE", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("select employeeID as 'ID', groupID as 'Group', avatar as 'Avatar',employeeFname as 'FName', employeeLname as 'LName'," +
+                " employeeBdate as 'Birthday', employeeAddress as 'Address', gender as 'Female', phone as 'Phone', salary as 'Salary', employeeIDCard as 'ID Card' from EMPLOYEE", mydb.getConnection);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
+            mydb.closeConnection();
             return dt;
         }
 
@@ -105,6 +103,7 @@ namespace slnGym.Layer
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
+            mydb.closeConnection();
             return dt;
         }
         public DataTable getEmployeebyPhone(string id)
@@ -114,15 +113,29 @@ namespace slnGym.Layer
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
+            mydb.closeConnection();
             return dt;
         }
         public DataTable getEmployeebyGroupID(string group)
         {
-            SqlCommand cmd = new SqlCommand("select *from EMPLOYEE where groupID=@ma", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("select employeeID as 'ID', groupID as 'Group', avatar as 'Avatar',employeeFname as 'FName', employeeLname as 'LName',employeeBdate as 'Birthday'," +
+                "employeeAddress as 'Address', gender as 'Female', phone as 'Phone', salary as 'Salary', employeeIDCard as 'ID Card' from EMPLOYEE where groupID=@ma", mydb.getConnection);
             cmd.Parameters.Add("@ma", SqlDbType.VarChar).Value = group;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
+            mydb.closeConnection();
+            return dt;
+        }
+        public DataTable searchEmployee(string search)
+        {
+            SqlCommand cmd = new SqlCommand("select employeeID as 'ID', groupID as 'Group', avatar as 'Avatar',employeeFname as 'FName', employeeLname as 'LName',employeeBdate as 'Birthday', " +
+                "employeeAddress as 'Address', gender as 'Female', phone as 'Phone', salary as 'Salary', employeeIDCard as 'ID Card' from EMPLOYEE where Concat(employeeID, employeeFname, " +
+                "employeeLname, phone) like N'%" + search + "%' ", mydb.getConnection);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            mydb.closeConnection();
             return dt;
         }
     }

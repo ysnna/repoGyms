@@ -560,6 +560,7 @@
             this.Controls.Add(this.groupBoxEdit);
             this.Name = "EditEmployeeUC";
             this.Size = new System.Drawing.Size(1414, 798);
+            this.Load += new System.EventHandler(this.EditEmployeeUC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picAvaEdit)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

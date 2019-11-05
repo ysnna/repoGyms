@@ -126,7 +126,7 @@ namespace slnGym.Forms
             }
             else
             {
-                
+                loadAccount();
             }
         }
 
@@ -155,7 +155,7 @@ namespace slnGym.Forms
             loadDetailsContract();
             loadMembers();
             loadStatistic();
-            loadAccount();
+            
         }
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -324,6 +324,7 @@ namespace slnGym.Forms
         public void loadAccount()
         {
             User_Control.AccountEmployeeUC dt = new User_Control.AccountEmployeeUC() { Width = 1912, Height = 905 };
+            dt.reload();
             this.tabAccount.Controls.Add(dt);
         }
 

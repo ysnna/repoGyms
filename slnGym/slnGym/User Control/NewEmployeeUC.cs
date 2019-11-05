@@ -24,7 +24,7 @@ namespace slnGym.User_Control
         private void btAdd_Click(object sender, EventArgs e)
         {
             addNewEmp();
-            this.Visible = false;
+            this.Dispose();
         }
 
         private void cbGroupName_TextChanged(object sender, EventArgs e)
@@ -57,17 +57,17 @@ namespace slnGym.User_Control
             GROUPEMPLOYEE grEmp = new GROUPEMPLOYEE();
             cbGroupName.DataSource = grEmp.getGROUPEMP();
             cbGroupName.DisplayMember = "groupName";
-            cbGroupName.ValueMember = "groupID";
+            cbGroupName.ValueMember ="groupID";
 
         } //Cập nhật group ID tự động
         void disGroupname()
         {
             if (cbGroupName.Text.ToString() == "Salesman")
             {
-                txtGroupID.Text = "1";
+                txtGroupID.Text = "01";
             }
-            else txtGroupID.Text = "2";
-        }//Cập nhật groupname tự động
+            else txtGroupID.Text = "02";
+        }//Cập nhật groupID tự động
         void displayPass()
         {
             NewEmployeeBL newEmp = new NewEmployeeBL();
@@ -75,8 +75,9 @@ namespace slnGym.User_Control
         }//Cập nhật pass tự động
         void disUsername()
         {
-            NewEmployeeBL newEmp = new NewEmployeeBL();
-            txtUsername.Text = newEmp.UserName();
+            LOGIN newEmp = new LOGIN();
+            DataTable dt = newEmp.getAccUserID("1");
+            txtUsername.Text = "nv" + (dt.Rows.Count + 1).ToString();
         }//Cập nhật usernametự động
         void GenderChecked()
         {
@@ -96,7 +97,7 @@ namespace slnGym.User_Control
             string Add = txtAddress.Text.TrimEnd();
             int Gen = GenderCheck;
             string phone = "";
-            if (IsNumber(txtPhone.Text) && (txtPhone.Text != null) && (txtPhone.Text).Length < 10)
+            if (IsNumber(txtPhone.Text) && (txtPhone.Text != null) && (txtPhone.Text).Length == 10)
             {
                 phone = txtPhone.Text.ToString();
             }
@@ -109,7 +110,7 @@ namespace slnGym.User_Control
             int IDcard = 0;
             try
             {
-                if (IsNumber(txtIDCard.Text) && (txtIDCard.Text != null) && (txtIDCard.Text).Length < 10)
+                if (IsNumber(txtIDCard.Text) && (txtIDCard.Text != null) && (txtIDCard.Text).Length == 10)
                 {
                     IDcard = Convert.ToInt32(txtIDCard.Text.TrimEnd());
                 }
@@ -120,10 +121,7 @@ namespace slnGym.User_Control
                 }
             }
             catch (Exception) { }
-            finally
-            {
-                MessageBox.Show("Vui Long Nhap Dung CMND");
-            };
+           
             int sal = 0;
             try
             {
