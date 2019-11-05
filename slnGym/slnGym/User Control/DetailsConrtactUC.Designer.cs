@@ -39,33 +39,33 @@
             this.cbTheLoai = new System.Windows.Forms.ComboBox();
             this.btSearch = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.btShowAll = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtPTname = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.lbDateSign = new System.Windows.Forms.Label();
+            this.lbEndDate = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtNameSeller = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvDetailCon = new System.Windows.Forms.DataGridView();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lbStartDate = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.lbTimeRemaining = new System.Windows.Forms.Label();
             this.lbMemberName = new System.Windows.Forms.Label();
-            this.detailContractBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.conIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDMemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.servicePackNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateStartDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateEndDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDMemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDreceiptDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.empIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oldnewDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detailContractBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBoxContact.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btSearch)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -80,7 +80,7 @@
             this.groupBoxContact.Controls.Add(this.cbTheLoai);
             this.groupBoxContact.Controls.Add(this.btSearch);
             this.groupBoxContact.Controls.Add(this.label1);
-            this.groupBoxContact.Controls.Add(this.textBox1);
+            this.groupBoxContact.Controls.Add(this.txtSearch);
             this.groupBoxContact.Font = new System.Drawing.Font("Sitka Display", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxContact.ForeColor = System.Drawing.Color.Navy;
             this.groupBoxContact.Location = new System.Drawing.Point(35, 14);
@@ -138,16 +138,18 @@
             this.label1.TabIndex = 89;
             this.label1.Text = "Search";
             // 
-            // textBox1
+            // txtSearch
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.Navy;
-            this.textBox1.Location = new System.Drawing.Point(204, 55);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(228, 44);
-            this.textBox1.TabIndex = 88;
+            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearch.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtSearch.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.ForeColor = System.Drawing.Color.Navy;
+            this.txtSearch.Location = new System.Drawing.Point(204, 55);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(228, 44);
+            this.txtSearch.TabIndex = 88;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyUp);
             // 
             // btShowAll
             // 
@@ -164,16 +166,16 @@
             this.btShowAll.TabIndex = 192;
             this.btShowAll.UseVisualStyleBackColor = false;
             // 
-            // textBox2
+            // txtPTname
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox2.Enabled = false;
-            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.Navy;
-            this.textBox2.Location = new System.Drawing.Point(715, 121);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(235, 44);
-            this.textBox2.TabIndex = 190;
+            this.txtPTname.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtPTname.Enabled = false;
+            this.txtPTname.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPTname.ForeColor = System.Drawing.Color.Navy;
+            this.txtPTname.Location = new System.Drawing.Point(715, 121);
+            this.txtPTname.Name = "txtPTname";
+            this.txtPTname.Size = new System.Drawing.Size(235, 44);
+            this.txtPTname.TabIndex = 190;
             // 
             // label5
             // 
@@ -197,16 +199,16 @@
             this.label4.TabIndex = 187;
             this.label4.Text = "Member:";
             // 
-            // lbDateSign
+            // lbEndDate
             // 
-            this.lbDateSign.AutoSize = true;
-            this.lbDateSign.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDateSign.ForeColor = System.Drawing.Color.Navy;
-            this.lbDateSign.Location = new System.Drawing.Point(1063, 129);
-            this.lbDateSign.Name = "lbDateSign";
-            this.lbDateSign.Size = new System.Drawing.Size(210, 36);
-            this.lbDateSign.TabIndex = 186;
-            this.lbDateSign.Text = "Expiration date";
+            this.lbEndDate.AutoSize = true;
+            this.lbEndDate.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEndDate.ForeColor = System.Drawing.Color.Navy;
+            this.lbEndDate.Location = new System.Drawing.Point(1063, 129);
+            this.lbEndDate.Name = "lbEndDate";
+            this.lbEndDate.Size = new System.Drawing.Size(210, 36);
+            this.lbEndDate.TabIndex = 186;
+            this.lbEndDate.Text = "Expiration date";
             // 
             // label3
             // 
@@ -279,10 +281,10 @@
             this.dgvDetailCon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetailCon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.conIDDataGridViewTextBoxColumn,
+            this.iDMemDataGridViewTextBoxColumn,
             this.servicePackNameDataGridViewTextBoxColumn,
             this.dateStartDataGridViewTextBoxColumn,
             this.dateEndDataGridViewTextBoxColumn,
-            this.iDMemDataGridViewTextBoxColumn,
             this.stateDataGridViewTextBoxColumn,
             this.iDreceiptDataGridViewTextBoxColumn,
             this.empIDDataGridViewTextBoxColumn,
@@ -311,16 +313,16 @@
             this.dgvDetailCon.TabIndex = 81;
             this.dgvDetailCon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetailCon_CellClick);
             // 
-            // label9
+            // lbStartDate
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Navy;
-            this.label9.Location = new System.Drawing.Point(1063, 62);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(137, 36);
-            this.label9.TabIndex = 196;
-            this.label9.Text = "Start date";
+            this.lbStartDate.AutoSize = true;
+            this.lbStartDate.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStartDate.ForeColor = System.Drawing.Color.Navy;
+            this.lbStartDate.Location = new System.Drawing.Point(1063, 62);
+            this.lbStartDate.Name = "lbStartDate";
+            this.lbStartDate.Size = new System.Drawing.Size(137, 36);
+            this.lbStartDate.TabIndex = 196;
+            this.lbStartDate.Text = "Start date";
             // 
             // label10
             // 
@@ -366,80 +368,79 @@
             this.lbMemberName.TabIndex = 196;
             this.lbMemberName.Text = "Member Name";
             // 
-            // detailContractBindingSource
-            // 
-            this.detailContractBindingSource.DataSource = typeof(slnGym.DataObject.DetailContract);
-            // 
             // conIDDataGridViewTextBoxColumn
             // 
             this.conIDDataGridViewTextBoxColumn.DataPropertyName = "ConID";
-            this.conIDDataGridViewTextBoxColumn.HeaderText = "ConID";
+            this.conIDDataGridViewTextBoxColumn.HeaderText = "ID Contract";
             this.conIDDataGridViewTextBoxColumn.Name = "conIDDataGridViewTextBoxColumn";
-            this.conIDDataGridViewTextBoxColumn.Width = 109;
-            // 
-            // servicePackNameDataGridViewTextBoxColumn
-            // 
-            this.servicePackNameDataGridViewTextBoxColumn.DataPropertyName = "servicePackName";
-            this.servicePackNameDataGridViewTextBoxColumn.HeaderText = "servicePackName";
-            this.servicePackNameDataGridViewTextBoxColumn.Name = "servicePackNameDataGridViewTextBoxColumn";
-            this.servicePackNameDataGridViewTextBoxColumn.Width = 223;
-            // 
-            // dateStartDataGridViewTextBoxColumn
-            // 
-            this.dateStartDataGridViewTextBoxColumn.DataPropertyName = "DateStart";
-            this.dateStartDataGridViewTextBoxColumn.HeaderText = "DateStart";
-            this.dateStartDataGridViewTextBoxColumn.Name = "dateStartDataGridViewTextBoxColumn";
-            this.dateStartDataGridViewTextBoxColumn.Width = 145;
-            // 
-            // dateEndDataGridViewTextBoxColumn
-            // 
-            this.dateEndDataGridViewTextBoxColumn.DataPropertyName = "DateEnd";
-            this.dateEndDataGridViewTextBoxColumn.HeaderText = "DateEnd";
-            this.dateEndDataGridViewTextBoxColumn.Name = "dateEndDataGridViewTextBoxColumn";
-            this.dateEndDataGridViewTextBoxColumn.Width = 133;
+            this.conIDDataGridViewTextBoxColumn.Width = 165;
             // 
             // iDMemDataGridViewTextBoxColumn
             // 
             this.iDMemDataGridViewTextBoxColumn.DataPropertyName = "ID_Mem";
-            this.iDMemDataGridViewTextBoxColumn.HeaderText = "ID_Mem";
+            this.iDMemDataGridViewTextBoxColumn.HeaderText = "ID Member";
             this.iDMemDataGridViewTextBoxColumn.Name = "iDMemDataGridViewTextBoxColumn";
-            this.iDMemDataGridViewTextBoxColumn.Width = 133;
+            this.iDMemDataGridViewTextBoxColumn.Width = 160;
+            // 
+            // servicePackNameDataGridViewTextBoxColumn
+            // 
+            this.servicePackNameDataGridViewTextBoxColumn.DataPropertyName = "servicePackName";
+            this.servicePackNameDataGridViewTextBoxColumn.HeaderText = "Package Name";
+            this.servicePackNameDataGridViewTextBoxColumn.Name = "servicePackNameDataGridViewTextBoxColumn";
+            this.servicePackNameDataGridViewTextBoxColumn.Width = 193;
+            // 
+            // dateStartDataGridViewTextBoxColumn
+            // 
+            this.dateStartDataGridViewTextBoxColumn.DataPropertyName = "DateStart";
+            this.dateStartDataGridViewTextBoxColumn.HeaderText = "Start Date";
+            this.dateStartDataGridViewTextBoxColumn.Name = "dateStartDataGridViewTextBoxColumn";
+            this.dateStartDataGridViewTextBoxColumn.Width = 151;
+            // 
+            // dateEndDataGridViewTextBoxColumn
+            // 
+            this.dateEndDataGridViewTextBoxColumn.DataPropertyName = "DateEnd";
+            this.dateEndDataGridViewTextBoxColumn.HeaderText = "Expiration Date";
+            this.dateEndDataGridViewTextBoxColumn.Name = "dateEndDataGridViewTextBoxColumn";
+            this.dateEndDataGridViewTextBoxColumn.Width = 209;
             // 
             // stateDataGridViewTextBoxColumn
             // 
             this.stateDataGridViewTextBoxColumn.DataPropertyName = "State";
-            this.stateDataGridViewTextBoxColumn.HeaderText = "State";
+            this.stateDataGridViewTextBoxColumn.HeaderText = "Status";
             this.stateDataGridViewTextBoxColumn.Name = "stateDataGridViewTextBoxColumn";
-            this.stateDataGridViewTextBoxColumn.Width = 97;
+            this.stateDataGridViewTextBoxColumn.Width = 111;
             // 
             // iDreceiptDataGridViewTextBoxColumn
             // 
             this.iDreceiptDataGridViewTextBoxColumn.DataPropertyName = "IDreceipt";
-            this.iDreceiptDataGridViewTextBoxColumn.HeaderText = "IDreceipt";
+            this.iDreceiptDataGridViewTextBoxColumn.HeaderText = "ID Invoice";
             this.iDreceiptDataGridViewTextBoxColumn.Name = "iDreceiptDataGridViewTextBoxColumn";
-            this.iDreceiptDataGridViewTextBoxColumn.Width = 138;
+            this.iDreceiptDataGridViewTextBoxColumn.Width = 147;
             // 
             // empIDDataGridViewTextBoxColumn
             // 
             this.empIDDataGridViewTextBoxColumn.DataPropertyName = "EmpID";
-            this.empIDDataGridViewTextBoxColumn.HeaderText = "EmpID";
+            this.empIDDataGridViewTextBoxColumn.HeaderText = "ID Employee";
             this.empIDDataGridViewTextBoxColumn.Name = "empIDDataGridViewTextBoxColumn";
-            this.empIDDataGridViewTextBoxColumn.Visible = false;
-            this.empIDDataGridViewTextBoxColumn.Width = 116;
+            this.empIDDataGridViewTextBoxColumn.Width = 177;
             // 
             // priceDataGridViewTextBoxColumn
             // 
             this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
             this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.Width = 93;
+            this.priceDataGridViewTextBoxColumn.Width = 94;
             // 
             // oldnewDataGridViewTextBoxColumn
             // 
             this.oldnewDataGridViewTextBoxColumn.DataPropertyName = "oldnew";
-            this.oldnewDataGridViewTextBoxColumn.HeaderText = "oldnew";
+            this.oldnewDataGridViewTextBoxColumn.HeaderText = "State";
             this.oldnewDataGridViewTextBoxColumn.Name = "oldnewDataGridViewTextBoxColumn";
-            this.oldnewDataGridViewTextBoxColumn.Width = 119;
+            this.oldnewDataGridViewTextBoxColumn.Width = 97;
+            // 
+            // detailContractBindingSource
+            // 
+            this.detailContractBindingSource.DataSource = typeof(slnGym.DataObject.DetailContract);
             // 
             // DetailsConrtactUC
             // 
@@ -448,14 +449,14 @@
             this.Controls.Add(this.lbTimeRemaining);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.lbMemberName);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.lbStartDate);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btShowAll);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtPTname);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.lbDateSign);
+            this.Controls.Add(this.lbEndDate);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtNameSeller);
             this.Controls.Add(this.label21);
@@ -481,28 +482,28 @@
         private System.Windows.Forms.ComboBox cbTheLoai;
         private System.Windows.Forms.PictureBox btSearch;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btShowAll;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtPTname;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lbDateSign;
+        private System.Windows.Forms.Label lbEndDate;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtNameSeller;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.GroupBox groupBox1;
         public System.Windows.Forms.DataGridView dgvDetailCon;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lbStartDate;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label lbTimeRemaining;
         private System.Windows.Forms.Label lbMemberName;
         private System.Windows.Forms.BindingSource detailContractBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn conIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDMemDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn servicePackNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateStartDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateEndDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDMemDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn stateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDreceiptDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn empIDDataGridViewTextBoxColumn;

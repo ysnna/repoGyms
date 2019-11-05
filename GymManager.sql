@@ -346,7 +346,13 @@ insert into DETAILSREPCEIPT values
 ('IVC01','2019-10-25 00:00:00.000','1','6','Gym','0','900000', '30'),
 ('IVC02','2019-11-1 00:00:00.000','1','13','Gym','0','900000', '30');
 go
+--Truy xuất Product & Package --
+select A.receiptID, nameServices, discount,total, repceiptDate from DETAILSREPCEIPT,
+(select contractID, receiptID  from CONTRACTS,DETAILSCONTRACT
+where contID = contractID AND cusID = 'kh2') as A
+where A.receiptID=DETAILSREPCEIPT.receiptID AND idBrand ='2'
 
+go
 --Thống kê doanh thu theo ngày
 create table DAYSTATISTIC
 (

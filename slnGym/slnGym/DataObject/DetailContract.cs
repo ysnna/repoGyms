@@ -10,6 +10,7 @@ namespace slnGym.DataObject
         public string ConID { get; set; }
 
         public string ID_Mem { get; set; }
+        
         public string servicePackName { get; set; }
         public DateTime DateStart { get; set; }
         public DateTime DateEnd { get; set; }

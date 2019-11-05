@@ -86,8 +86,8 @@ namespace slnGym.Layer
         }
         public DataTable getDetailConTractDGV()
         {
-            SqlCommand cmd = new SqlCommand("select contID,cusID,serviceName, employeeID, dateStart,dateDischarge, B.receiptID, total from RECEIPT," +
-                " (select contID, serviceName, employeeID, cusID, dateStart, dateDischarge, receiptID from DETAILSCONTRACT," +
+            SqlCommand cmd = new SqlCommand("select contID,cusID,serviceName, employeeID, dateStart,dateDischarge, B.receiptID, total, ptID from RECEIPT," +
+                " (select contID, serviceName, employeeID, cusID, dateStart, dateDischarge, receiptID, ptID from DETAILSCONTRACT," +
                 " (select * from SERVICEPACK, CONTRACTS" +
                 " where CONTRACTS.servicePACK = SERVICEPACK.serviceID) as A" +
                 " where DETAILSCONTRACT.contID = A.contractID) as B" +

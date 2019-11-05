@@ -105,6 +105,7 @@ namespace slnGym.Layer
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
+            mydb.closeConnection();
             return dt;
         }
         public DataTable getEmployeebyPhone(string id)
