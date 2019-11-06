@@ -352,4 +352,4 @@ amount int null,
 total decimal null,
 statusST nvarchar(50) null,
 );
-go
+go 

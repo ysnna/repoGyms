@@ -67,6 +67,7 @@
             this.label20 = new System.Windows.Forms.Label();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtLname = new System.Windows.Forms.TextBox();
+            this.btCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picAvaEdit)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -162,6 +163,7 @@
             this.picAvaEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picAvaEdit.TabIndex = 78;
             this.picAvaEdit.TabStop = false;
+            this.picAvaEdit.Click += new System.EventHandler(this.picAvaEdit_Click);
             // 
             // groupBox1
             // 
@@ -268,6 +270,7 @@
             this.cbGroupName.Name = "cbGroupName";
             this.cbGroupName.Size = new System.Drawing.Size(219, 41);
             this.cbGroupName.TabIndex = 123;
+            this.cbGroupName.SelectedIndexChanged += new System.EventHandler(this.cbGroupName_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -550,10 +553,29 @@
             this.txtLname.Size = new System.Drawing.Size(235, 44);
             this.txtLname.TabIndex = 66;
             // 
+            // btCancel
+            // 
+            this.btCancel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btCancel.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btCancel.BackgroundImage")));
+            this.btCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btCancel.FlatAppearance.BorderColor = System.Drawing.Color.MediumSeaGreen;
+            this.btCancel.FlatAppearance.BorderSize = 3;
+            this.btCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btCancel.Font = new System.Drawing.Font("Sitka Subheading", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCancel.ForeColor = System.Drawing.Color.Wheat;
+            this.btCancel.Location = new System.Drawing.Point(1229, 599);
+            this.btCancel.Name = "btCancel";
+            this.btCancel.Size = new System.Drawing.Size(68, 57);
+            this.btCancel.TabIndex = 97;
+            this.btCancel.UseVisualStyleBackColor = false;
+            this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
+            // 
             // EditEmployeeUC
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.Controls.Add(this.btCancel);
             this.Controls.Add(this.btEdit);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
@@ -614,5 +636,6 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtLname;
+        private System.Windows.Forms.Button btCancel;
     }
 }

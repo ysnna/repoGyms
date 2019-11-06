@@ -84,6 +84,34 @@ namespace slnGym.Layer
                 return false;
             }
         }
+        public bool updateEmployeeAD(string idEmployee, string grID, MemoryStream ava, string fname, string lname, DateTime bdate, string address, int gender, string phone, int salary, string idCard)
+        {//groupID=@gr,avatar=@ava,employeeFName=@fn,employeeLName=@ln,employeeBDate=@bd,employeeAddress=@add,gender=@gd,phone=@phone,salary=@sala,employeeIDCard=@idcard where employeeID=@id
+            SqlCommand cmd = new SqlCommand("update EMPLOYEE set groupID=@gid,avatar=@ava,employeeFName=@fname,employeeLName=@lname,employeeBDate=@bdate," +
+                "employeeAddress=@add,gender=@gender,phone=@phone,salary=@salary,employeeIDCard=@idcard where employeeID=@id", mydb.getConnection);
+            cmd.Parameters.Add("@gid", SqlDbType.VarChar).Value = grID;
+            cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = idEmployee;
+            cmd.Parameters.Add("@fname", SqlDbType.NVarChar).Value = fname;
+            cmd.Parameters.Add("@lname", SqlDbType.NVarChar).Value = lname;
+            cmd.Parameters.Add("@salary", SqlDbType.Int).Value = salary;
+            cmd.Parameters.Add("@bdate", SqlDbType.DateTime).Value = bdate;
+            cmd.Parameters.Add("@add", SqlDbType.NVarChar).Value = address;
+            cmd.Parameters.Add("@gender", SqlDbType.Int).Value = gender;
+            cmd.Parameters.Add("@phone", SqlDbType.VarChar).Value = phone;
+            cmd.Parameters.Add("@ava", SqlDbType.Image).Value = ava.ToArray();
+            cmd.Parameters.Add("@idcard", SqlDbType.VarChar).Value = idCard;
+
+            mydb.openConnection();
+            if (cmd.ExecuteNonQuery() == 1)
+            {
+                mydb.closeConnection();
+                return true;
+            }
+            else
+            {
+                mydb.closeConnection();
+                return false;
+            }
+        }
         //Lay thong tin 
         public DataTable getAllEMPLOYEE()
         {
