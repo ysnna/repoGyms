@@ -57,6 +57,7 @@
     <Compile Include="DataObject\ListReceipt.cs" />
     <Compile Include="DataObject\ListService.cs" />
     <Compile Include="DataObject\MemberBL.cs" />
+    <Compile Include="DataObject\SysLog.cs" />
     <Compile Include="Forms\Administration.cs">
       <SubType>Form</SubType>
     </Compile>

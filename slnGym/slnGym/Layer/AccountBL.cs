@@ -15,35 +15,25 @@ namespace slnGym.Layer
         LOGIN lg = new LOGIN();
         User_Control.AccountEmployeeUC empUC = new User_Control.AccountEmployeeUC();
         MY_DB mydb = new MY_DB();
-        //Hien thi thong tin cua nhan vien 
-        //public void DisplayEmp(string id)
-        //{
-        //    //id = GLOBAL.username;
-        //    DataTable empDT = new DataTable();
-        //    empDT = emp.getEmployeebyID(id);
-        //    if (empDT.Rows.Count > 0)
-        //    {
-        //        empUC.EmployeeID = empDT.Rows[0][0].ToString();
-        //        empUC.Group = empDT.Rows[0][1].ToString();
-        //        //empUC.Ava = empDT.Rows[0][2];
-        //        empUC.FName = empDT.Rows[0][3].ToString();
-        //        empUC.LName = empDT.Rows[0][4].ToString();
-        //        empUC.BDate = empDT.Rows[0][5].ToString();
-        //        empUC.Address = empDT.Rows[0][6].ToString();
-        //        empUC.Gender = empDT.Rows[0][7].ToString();
-        //        empUC.Phone = empDT.Rows[0][8].ToString();
-        //        empUC.Salary = empDT.Rows[0][9].ToString();
-        //        empUC.IDCard = empDT.Rows[0][10].ToString();
-        //    }
-        //    else MessageBox.Show("bug");
-        //    //Show hinh anh len picture box
-        //    //byte[] pic;
-        //    //pic = (byte[])empDT.Rows[0]["avatar"]; //Chuyen ve dang Rawformat
-        //    //MemoryStream picture = new MemoryStream(pic);
-        //    //empUC.Ava = Image.FromStream(picture);
-        //    mydb.closeConnection();
-        //}
-
+        public bool insertAccount(string username, DateTime login, DateTime logout, string status)
+        {
+            SqlCommand cmd = new SqlCommand("insert into ACCOUNTLOGIN(username,loginDate,logoutDate,status)" + "values(@user,@login,@logout,@status)", mydb.getConnection);
+            cmd.Parameters.Add("@user", SqlDbType.VarChar).Value = username;
+            cmd.Parameters.Add("@login", SqlDbType.DateTime).Value = login;
+            cmd.Parameters.Add("@logout", SqlDbType.DateTime).Value = logout;
+            cmd.Parameters.Add("@status", SqlDbType.VarChar).Value = status;
+            mydb.openConnection();
+            if (cmd.ExecuteNonQuery() == 1)
+            {
+                mydb.closeConnection();
+                return true;
+            }
+            else
+            {
+                mydb.closeConnection();
+                return false;
+            }
+        }
         //Dang nhap = sdt
         public string checkPhone(string phone)
         {
@@ -56,6 +46,17 @@ namespace slnGym.Layer
                 return empID;
             }
             else return empID;
+        }
+        public DataTable getACCOUNTLog()
+        {
+            SqlCommand cmd = new SqlCommand("select ACCOUNTLOGIN.username as 'Username', ACCOUNT.passw as 'Password', " +
+                "loginDate as 'Date Login', logoutDate as 'Date Logout', status as 'Status'" +
+                "from ACCOUNT, ACCOUNTLOGIN where ACCOUNT.username = ACCOUNTLOGIN.username", mydb.getConnection);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            mydb.closeConnection();
+            return dt;
         }
     }
 }

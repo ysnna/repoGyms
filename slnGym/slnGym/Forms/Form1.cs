@@ -326,7 +326,7 @@ namespace slnGym.Forms
         public void loadAccount()
         {
             this.tabAccount.Controls.Add(dt);
-            dt.reload();
+            //dt.reload();
         }
 
         public void loadPTbyTag()

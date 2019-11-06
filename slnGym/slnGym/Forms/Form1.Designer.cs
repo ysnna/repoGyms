@@ -29,22 +29,32 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle53 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle54 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle55 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle57 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle58 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle59 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle60 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.systemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -143,6 +153,68 @@
             this.pTTagDataSet = new slnGym.PTTagDataSet();
             this.eMPLOYEEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.eMPLOYEETableAdapter = new slnGym.PTTagDataSetTableAdapters.EMPLOYEETableAdapter();
+            this.btRenewRefresh = new System.Windows.Forms.Button();
+            this.btRenewInvoice = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.txtNoteRenew = new System.Windows.Forms.TextBox();
+            this.txtUserIDRenew = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.txtPasswordRenew = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.picRenew = new System.Windows.Forms.PictureBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.txtFNameRenew = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.radFemaleRenew = new System.Windows.Forms.RadioButton();
+            this.radMaleRenew = new System.Windows.Forms.RadioButton();
+            this.label32 = new System.Windows.Forms.Label();
+            this.dateBirthdayRenew = new System.Windows.Forms.DateTimePicker();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.txtAddressRenew = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.txtPhoneRenew = new System.Windows.Forms.TextBox();
+            this.txtLNameRenew = new System.Windows.Forms.TextBox();
+            this.txtIDCardRenew = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.numericMonthRenew = new System.Windows.Forms.NumericUpDown();
+            this.dateEndRenew = new System.Windows.Forms.DateTimePicker();
+            this.dateStartRenew = new System.Windows.Forms.DateTimePicker();
+            this.label36 = new System.Windows.Forms.Label();
+            this.txtNameEmpRenew = new System.Windows.Forms.TextBox();
+            this.txtIDEmpIDRenew = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.txtNameMemberRenew = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.txtIDMemberRenew = new System.Windows.Forms.TextBox();
+            this.txtIDContractRenew = new System.Windows.Forms.TextBox();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btRefreshPTRenew = new System.Windows.Forms.Button();
+            this.txtIDPTRenew = new System.Windows.Forms.TextBox();
+            this.txtNamePackageRenew = new System.Windows.Forms.TextBox();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.txtNamePTRenew = new System.Windows.Forms.TextBox();
+            this.dgvPTRenew = new System.Windows.Forms.DataGridView();
+            this.txtIDPackageRenew = new System.Windows.Forms.TextBox();
+            this.dgvPackageRenew = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.menuStrip.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabHome.SuspendLayout();
@@ -165,8 +237,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.sERVICEPACKBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.packageDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAddPackage)).BeginInit();
+            this.tabRenew.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pTTagDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eMPLOYEEBindingSource)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picRenew)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericMonthRenew)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPTRenew)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPackageRenew)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -345,49 +427,49 @@
             this.dgvServicePack.AllowUserToDeleteRows = false;
             this.dgvServicePack.AllowUserToResizeColumns = false;
             this.dgvServicePack.AllowUserToResizeRows = false;
-            dataGridViewCellStyle46.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvServicePack.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle46;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvServicePack.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvServicePack.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvServicePack.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvServicePack.BackgroundColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle47.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle47.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle47.ForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle47.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle47.SelectionForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle47.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvServicePack.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle47;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvServicePack.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvServicePack.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle48.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle48.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle48.ForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle48.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle48.SelectionForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle48.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvServicePack.DefaultCellStyle = dataGridViewCellStyle48;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvServicePack.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvServicePack.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvServicePack.Location = new System.Drawing.Point(0, 0);
             this.dgvServicePack.Name = "dgvServicePack";
-            dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle49.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle49.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle49.ForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle49.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle49.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle49.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvServicePack.RowHeadersDefaultCellStyle = dataGridViewCellStyle49;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvServicePack.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvServicePack.RowHeadersVisible = false;
             this.dgvServicePack.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle50.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvServicePack.RowsDefaultCellStyle = dataGridViewCellStyle50;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvServicePack.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvServicePack.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvServicePack.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvServicePack.Size = new System.Drawing.Size(1912, 1124);
+            this.dgvServicePack.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvServicePack.Size = new System.Drawing.Size(1912, 1139);
             this.dgvServicePack.TabIndex = 102;
             // 
             // tabManage
@@ -1200,44 +1282,44 @@
             this.dgvPT.AllowUserToDeleteRows = false;
             this.dgvPT.AllowUserToResizeColumns = false;
             this.dgvPT.AllowUserToResizeRows = false;
-            dataGridViewCellStyle51.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPT.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle51;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPT.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvPT.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dgvPT.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvPT.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle52.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle52.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle52.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle52.ForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle52.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle52.SelectionForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle52.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPT.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle52;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPT.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvPT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle53.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle53.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle53.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle53.ForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle53.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle53.SelectionForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle53.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPT.DefaultCellStyle = dataGridViewCellStyle53;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPT.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvPT.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvPT.Location = new System.Drawing.Point(482, 44);
             this.dgvPT.Name = "dgvPT";
-            dataGridViewCellStyle54.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle54.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle54.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle54.ForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle54.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle54.SelectionForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle54.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPT.RowHeadersDefaultCellStyle = dataGridViewCellStyle54;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPT.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvPT.RowHeadersVisible = false;
             this.dgvPT.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle55.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle55.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPT.RowsDefaultCellStyle = dataGridViewCellStyle55;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPT.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvPT.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPT.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvPT.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -1263,20 +1345,20 @@
             this.dgvPackage.AllowUserToDeleteRows = false;
             this.dgvPackage.AllowUserToResizeColumns = false;
             this.dgvPackage.AllowUserToResizeRows = false;
-            dataGridViewCellStyle56.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPackage.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle56;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPackage.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvPackage.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dgvPackage.AutoGenerateColumns = false;
             this.dgvPackage.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvPackage.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle57.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle57.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle57.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle57.ForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle57.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle57.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle57.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPackage.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle57;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPackage.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvPackage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPackage.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.serviceIDDataGridViewTextBoxColumn,
@@ -1284,31 +1366,31 @@
             this.costDataGridViewTextBoxColumn,
             this.tagPT});
             this.dgvPackage.DataSource = this.sERVICEPACKBindingSource;
-            dataGridViewCellStyle58.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle58.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle58.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle58.ForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle58.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle58.SelectionForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle58.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPackage.DefaultCellStyle = dataGridViewCellStyle58;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPackage.DefaultCellStyle = dataGridViewCellStyle13;
             this.dgvPackage.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvPackage.Location = new System.Drawing.Point(14, 44);
             this.dgvPackage.Name = "dgvPackage";
             this.dgvPackage.ReadOnly = true;
-            dataGridViewCellStyle59.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle59.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle59.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle59.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle59.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle59.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle59.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPackage.RowHeadersDefaultCellStyle = dataGridViewCellStyle59;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPackage.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dgvPackage.RowHeadersVisible = false;
             this.dgvPackage.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle60.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle60.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPackage.RowsDefaultCellStyle = dataGridViewCellStyle60;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPackage.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvPackage.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPackage.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPackage.Size = new System.Drawing.Size(424, 206);
@@ -1374,12 +1456,17 @@
             // 
             // tabRenew
             // 
+            this.tabRenew.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.tabRenew.Controls.Add(this.btRenewRefresh);
+            this.tabRenew.Controls.Add(this.btRenewInvoice);
+            this.tabRenew.Controls.Add(this.groupBox1);
+            this.tabRenew.Controls.Add(this.groupBox2);
+            this.tabRenew.Controls.Add(this.groupBox3);
             this.tabRenew.Location = new System.Drawing.Point(4, 37);
             this.tabRenew.Name = "tabRenew";
             this.tabRenew.Size = new System.Drawing.Size(1912, 905);
             this.tabRenew.TabIndex = 5;
             this.tabRenew.Text = " Renew ";
-            this.tabRenew.UseVisualStyleBackColor = true;
             // 
             // tabDetailsContract
             // 
@@ -1452,6 +1539,906 @@
             // 
             this.eMPLOYEETableAdapter.ClearBeforeFill = true;
             // 
+            // btRenewRefresh
+            // 
+            this.btRenewRefresh.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btRenewRefresh.BackColor = System.Drawing.Color.Lavender;
+            this.btRenewRefresh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btRenewRefresh.BackgroundImage")));
+            this.btRenewRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btRenewRefresh.FlatAppearance.BorderColor = System.Drawing.Color.Navy;
+            this.btRenewRefresh.FlatAppearance.BorderSize = 3;
+            this.btRenewRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btRenewRefresh.Font = new System.Drawing.Font("Sitka Subheading", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btRenewRefresh.ForeColor = System.Drawing.Color.White;
+            this.btRenewRefresh.Location = new System.Drawing.Point(966, 680);
+            this.btRenewRefresh.Name = "btRenewRefresh";
+            this.btRenewRefresh.Size = new System.Drawing.Size(88, 61);
+            this.btRenewRefresh.TabIndex = 112;
+            this.btRenewRefresh.UseVisualStyleBackColor = false;
+            // 
+            // btRenewInvoice
+            // 
+            this.btRenewInvoice.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btRenewInvoice.BackColor = System.Drawing.Color.SteelBlue;
+            this.btRenewInvoice.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btRenewInvoice.BackgroundImage")));
+            this.btRenewInvoice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btRenewInvoice.FlatAppearance.BorderColor = System.Drawing.Color.Navy;
+            this.btRenewInvoice.FlatAppearance.BorderSize = 3;
+            this.btRenewInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btRenewInvoice.Font = new System.Drawing.Font("Sitka Subheading", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btRenewInvoice.ForeColor = System.Drawing.Color.White;
+            this.btRenewInvoice.Location = new System.Drawing.Point(1060, 680);
+            this.btRenewInvoice.Name = "btRenewInvoice";
+            this.btRenewInvoice.Size = new System.Drawing.Size(243, 61);
+            this.btRenewInvoice.TabIndex = 111;
+            this.btRenewInvoice.Text = "To Invoice";
+            this.btRenewInvoice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btRenewInvoice.UseVisualStyleBackColor = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupBox1.Controls.Add(this.label24);
+            this.groupBox1.Controls.Add(this.txtNoteRenew);
+            this.groupBox1.Controls.Add(this.txtUserIDRenew);
+            this.groupBox1.Controls.Add(this.label26);
+            this.groupBox1.Controls.Add(this.txtPasswordRenew);
+            this.groupBox1.Controls.Add(this.label27);
+            this.groupBox1.Controls.Add(this.picRenew);
+            this.groupBox1.Controls.Add(this.label28);
+            this.groupBox1.Controls.Add(this.label29);
+            this.groupBox1.Controls.Add(this.label30);
+            this.groupBox1.Controls.Add(this.txtFNameRenew);
+            this.groupBox1.Controls.Add(this.label31);
+            this.groupBox1.Controls.Add(this.panel1);
+            this.groupBox1.Controls.Add(this.label32);
+            this.groupBox1.Controls.Add(this.dateBirthdayRenew);
+            this.groupBox1.Controls.Add(this.label33);
+            this.groupBox1.Controls.Add(this.label34);
+            this.groupBox1.Controls.Add(this.txtAddressRenew);
+            this.groupBox1.Controls.Add(this.label35);
+            this.groupBox1.Controls.Add(this.txtPhoneRenew);
+            this.groupBox1.Controls.Add(this.txtLNameRenew);
+            this.groupBox1.Controls.Add(this.txtIDCardRenew);
+            this.groupBox1.Font = new System.Drawing.Font("Sitka Display", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.Navy;
+            this.groupBox1.Location = new System.Drawing.Point(966, 25);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(903, 648);
+            this.groupBox1.TabIndex = 110;
+            this.groupBox1.TabStop = false;
+            // 
+            // label24
+            // 
+            this.label24.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.Color.Navy;
+            this.label24.Location = new System.Drawing.Point(32, 489);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(77, 37);
+            this.label24.TabIndex = 83;
+            this.label24.Text = "Note";
+            // 
+            // txtNoteRenew
+            // 
+            this.txtNoteRenew.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtNoteRenew.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtNoteRenew.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNoteRenew.ForeColor = System.Drawing.Color.Navy;
+            this.txtNoteRenew.Location = new System.Drawing.Point(38, 529);
+            this.txtNoteRenew.Multiline = true;
+            this.txtNoteRenew.Name = "txtNoteRenew";
+            this.txtNoteRenew.Size = new System.Drawing.Size(493, 94);
+            this.txtNoteRenew.TabIndex = 84;
+            // 
+            // txtUserIDRenew
+            // 
+            this.txtUserIDRenew.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtUserIDRenew.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtUserIDRenew.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserIDRenew.ForeColor = System.Drawing.Color.Navy;
+            this.txtUserIDRenew.Location = new System.Drawing.Point(610, 479);
+            this.txtUserIDRenew.Name = "txtUserIDRenew";
+            this.txtUserIDRenew.ReadOnly = true;
+            this.txtUserIDRenew.Size = new System.Drawing.Size(237, 44);
+            this.txtUserIDRenew.TabIndex = 82;
+            // 
+            // label26
+            // 
+            this.label26.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.Color.Navy;
+            this.label26.Location = new System.Drawing.Point(610, 439);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(264, 37);
+            this.label26.TabIndex = 81;
+            this.label26.Text = "UserID (username)";
+            // 
+            // txtPasswordRenew
+            // 
+            this.txtPasswordRenew.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtPasswordRenew.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtPasswordRenew.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPasswordRenew.ForeColor = System.Drawing.Color.Navy;
+            this.txtPasswordRenew.Location = new System.Drawing.Point(610, 579);
+            this.txtPasswordRenew.Name = "txtPasswordRenew";
+            this.txtPasswordRenew.ReadOnly = true;
+            this.txtPasswordRenew.Size = new System.Drawing.Size(237, 44);
+            this.txtPasswordRenew.TabIndex = 80;
+            // 
+            // label27
+            // 
+            this.label27.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.Color.Navy;
+            this.label27.Location = new System.Drawing.Point(610, 540);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(139, 37);
+            this.label27.TabIndex = 79;
+            this.label27.Text = "Password";
+            // 
+            // picRenew
+            // 
+            this.picRenew.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.picRenew.BackColor = System.Drawing.Color.Transparent;
+            this.picRenew.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picRenew.BackgroundImage")));
+            this.picRenew.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picRenew.Location = new System.Drawing.Point(553, 75);
+            this.picRenew.Name = "picRenew";
+            this.picRenew.Size = new System.Drawing.Size(310, 353);
+            this.picRenew.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picRenew.TabIndex = 78;
+            this.picRenew.TabStop = false;
+            // 
+            // label28
+            // 
+            this.label28.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.ForeColor = System.Drawing.Color.Navy;
+            this.label28.Location = new System.Drawing.Point(549, 36);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(102, 37);
+            this.label28.TabIndex = 78;
+            this.label28.Text = "Avatar";
+            // 
+            // label29
+            // 
+            this.label29.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.ForeColor = System.Drawing.Color.Navy;
+            this.label29.Location = new System.Drawing.Point(289, 143);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(112, 37);
+            this.label29.TabIndex = 77;
+            this.label29.Text = "Gender";
+            // 
+            // label30
+            // 
+            this.label30.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.ForeColor = System.Drawing.Color.Navy;
+            this.label30.Location = new System.Drawing.Point(288, 247);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(146, 37);
+            this.label30.TabIndex = 76;
+            this.label30.Text = "Birth date";
+            // 
+            // txtFNameRenew
+            // 
+            this.txtFNameRenew.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtFNameRenew.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtFNameRenew.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFNameRenew.ForeColor = System.Drawing.Color.Navy;
+            this.txtFNameRenew.Location = new System.Drawing.Point(37, 75);
+            this.txtFNameRenew.Name = "txtFNameRenew";
+            this.txtFNameRenew.Size = new System.Drawing.Size(237, 44);
+            this.txtFNameRenew.TabIndex = 65;
+            // 
+            // label31
+            // 
+            this.label31.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.ForeColor = System.Drawing.Color.Navy;
+            this.label31.Location = new System.Drawing.Point(31, 36);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(155, 37);
+            this.label31.TabIndex = 61;
+            this.label31.Text = "First name";
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel1.Controls.Add(this.radFemaleRenew);
+            this.panel1.Controls.Add(this.radMaleRenew);
+            this.panel1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Location = new System.Drawing.Point(283, 182);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(247, 59);
+            this.panel1.TabIndex = 68;
+            // 
+            // radFemaleRenew
+            // 
+            this.radFemaleRenew.AutoSize = true;
+            this.radFemaleRenew.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radFemaleRenew.ForeColor = System.Drawing.Color.Navy;
+            this.radFemaleRenew.Location = new System.Drawing.Point(116, 4);
+            this.radFemaleRenew.Name = "radFemaleRenew";
+            this.radFemaleRenew.Size = new System.Drawing.Size(125, 40);
+            this.radFemaleRenew.TabIndex = 8;
+            this.radFemaleRenew.TabStop = true;
+            this.radFemaleRenew.Text = "Female";
+            this.radFemaleRenew.UseVisualStyleBackColor = true;
+            // 
+            // radMaleRenew
+            // 
+            this.radMaleRenew.AutoSize = true;
+            this.radMaleRenew.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radMaleRenew.ForeColor = System.Drawing.Color.Navy;
+            this.radMaleRenew.Location = new System.Drawing.Point(12, 3);
+            this.radMaleRenew.Name = "radMaleRenew";
+            this.radMaleRenew.Size = new System.Drawing.Size(98, 40);
+            this.radMaleRenew.TabIndex = 7;
+            this.radMaleRenew.TabStop = true;
+            this.radMaleRenew.Text = "Male";
+            this.radMaleRenew.UseVisualStyleBackColor = true;
+            // 
+            // label32
+            // 
+            this.label32.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.ForeColor = System.Drawing.Color.Navy;
+            this.label32.Location = new System.Drawing.Point(31, 248);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(203, 37);
+            this.label32.TabIndex = 57;
+            this.label32.Text = "Phone number";
+            // 
+            // dateBirthdayRenew
+            // 
+            this.dateBirthdayRenew.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dateBirthdayRenew.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
+            this.dateBirthdayRenew.CalendarTitleForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dateBirthdayRenew.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateBirthdayRenew.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateBirthdayRenew.Location = new System.Drawing.Point(295, 287);
+            this.dateBirthdayRenew.Name = "dateBirthdayRenew";
+            this.dateBirthdayRenew.Size = new System.Drawing.Size(185, 44);
+            this.dateBirthdayRenew.TabIndex = 67;
+            // 
+            // label33
+            // 
+            this.label33.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.ForeColor = System.Drawing.Color.Navy;
+            this.label33.Location = new System.Drawing.Point(31, 355);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(118, 37);
+            this.label33.TabIndex = 58;
+            this.label33.Text = "Address";
+            // 
+            // label34
+            // 
+            this.label34.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.ForeColor = System.Drawing.Color.Navy;
+            this.label34.Location = new System.Drawing.Point(31, 143);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(123, 37);
+            this.label34.TabIndex = 60;
+            this.label34.Text = "ID Card";
+            // 
+            // txtAddressRenew
+            // 
+            this.txtAddressRenew.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtAddressRenew.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtAddressRenew.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddressRenew.ForeColor = System.Drawing.Color.Navy;
+            this.txtAddressRenew.Location = new System.Drawing.Point(37, 395);
+            this.txtAddressRenew.Multiline = true;
+            this.txtAddressRenew.Name = "txtAddressRenew";
+            this.txtAddressRenew.Size = new System.Drawing.Size(492, 74);
+            this.txtAddressRenew.TabIndex = 71;
+            // 
+            // label35
+            // 
+            this.label35.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.ForeColor = System.Drawing.Color.Navy;
+            this.label35.Location = new System.Drawing.Point(289, 36);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(149, 37);
+            this.label35.TabIndex = 63;
+            this.label35.Text = "Last name";
+            // 
+            // txtPhoneRenew
+            // 
+            this.txtPhoneRenew.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtPhoneRenew.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtPhoneRenew.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhoneRenew.ForeColor = System.Drawing.Color.Navy;
+            this.txtPhoneRenew.Location = new System.Drawing.Point(37, 287);
+            this.txtPhoneRenew.Name = "txtPhoneRenew";
+            this.txtPhoneRenew.Size = new System.Drawing.Size(237, 44);
+            this.txtPhoneRenew.TabIndex = 70;
+            // 
+            // txtLNameRenew
+            // 
+            this.txtLNameRenew.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtLNameRenew.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtLNameRenew.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLNameRenew.ForeColor = System.Drawing.Color.Navy;
+            this.txtLNameRenew.Location = new System.Drawing.Point(295, 75);
+            this.txtLNameRenew.Name = "txtLNameRenew";
+            this.txtLNameRenew.Size = new System.Drawing.Size(235, 44);
+            this.txtLNameRenew.TabIndex = 66;
+            // 
+            // txtIDCardRenew
+            // 
+            this.txtIDCardRenew.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtIDCardRenew.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtIDCardRenew.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDCardRenew.ForeColor = System.Drawing.Color.Navy;
+            this.txtIDCardRenew.Location = new System.Drawing.Point(37, 182);
+            this.txtIDCardRenew.Name = "txtIDCardRenew";
+            this.txtIDCardRenew.Size = new System.Drawing.Size(237, 44);
+            this.txtIDCardRenew.TabIndex = 72;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupBox2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupBox2.Controls.Add(this.numericMonthRenew);
+            this.groupBox2.Controls.Add(this.dateEndRenew);
+            this.groupBox2.Controls.Add(this.dateStartRenew);
+            this.groupBox2.Controls.Add(this.label36);
+            this.groupBox2.Controls.Add(this.txtNameEmpRenew);
+            this.groupBox2.Controls.Add(this.txtIDEmpIDRenew);
+            this.groupBox2.Controls.Add(this.label37);
+            this.groupBox2.Controls.Add(this.label38);
+            this.groupBox2.Controls.Add(this.label39);
+            this.groupBox2.Controls.Add(this.txtNameMemberRenew);
+            this.groupBox2.Controls.Add(this.label40);
+            this.groupBox2.Controls.Add(this.label41);
+            this.groupBox2.Controls.Add(this.label42);
+            this.groupBox2.Controls.Add(this.label43);
+            this.groupBox2.Controls.Add(this.txtIDMemberRenew);
+            this.groupBox2.Controls.Add(this.txtIDContractRenew);
+            this.groupBox2.Controls.Add(this.label44);
+            this.groupBox2.Controls.Add(this.label45);
+            this.groupBox2.Controls.Add(this.label46);
+            this.groupBox2.Font = new System.Drawing.Font("Sitka Banner", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.Color.Navy;
+            this.groupBox2.Location = new System.Drawing.Point(44, 343);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(903, 536);
+            this.groupBox2.TabIndex = 109;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Contracting";
+            // 
+            // numericMonthRenew
+            // 
+            this.numericMonthRenew.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.numericMonthRenew.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericMonthRenew.ForeColor = System.Drawing.Color.Black;
+            this.numericMonthRenew.Location = new System.Drawing.Point(639, 333);
+            this.numericMonthRenew.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numericMonthRenew.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericMonthRenew.Name = "numericMonthRenew";
+            this.numericMonthRenew.Size = new System.Drawing.Size(83, 44);
+            this.numericMonthRenew.TabIndex = 151;
+            this.numericMonthRenew.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericMonthRenew.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // dateEndRenew
+            // 
+            this.dateEndRenew.CalendarForeColor = System.Drawing.Color.ForestGreen;
+            this.dateEndRenew.CalendarMonthBackground = System.Drawing.Color.Transparent;
+            this.dateEndRenew.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
+            this.dateEndRenew.CalendarTitleForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dateEndRenew.Enabled = false;
+            this.dateEndRenew.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateEndRenew.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateEndRenew.Location = new System.Drawing.Point(279, 400);
+            this.dateEndRenew.MinDate = new System.DateTime(2016, 1, 1, 0, 0, 0, 0);
+            this.dateEndRenew.Name = "dateEndRenew";
+            this.dateEndRenew.Size = new System.Drawing.Size(188, 44);
+            this.dateEndRenew.TabIndex = 140;
+            // 
+            // dateStartRenew
+            // 
+            this.dateStartRenew.CalendarForeColor = System.Drawing.Color.ForestGreen;
+            this.dateStartRenew.CalendarMonthBackground = System.Drawing.Color.Transparent;
+            this.dateStartRenew.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
+            this.dateStartRenew.CalendarTitleForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dateStartRenew.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateStartRenew.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateStartRenew.Location = new System.Drawing.Point(279, 333);
+            this.dateStartRenew.Name = "dateStartRenew";
+            this.dateStartRenew.Size = new System.Drawing.Size(188, 44);
+            this.dateStartRenew.TabIndex = 139;
+            // 
+            // label36
+            // 
+            this.label36.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.ForeColor = System.Drawing.Color.Navy;
+            this.label36.Location = new System.Drawing.Point(50, 405);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(217, 37);
+            this.label36.TabIndex = 103;
+            this.label36.Text = "Expiration date";
+            // 
+            // txtNameEmpRenew
+            // 
+            this.txtNameEmpRenew.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtNameEmpRenew.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtNameEmpRenew.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNameEmpRenew.ForeColor = System.Drawing.Color.Navy;
+            this.txtNameEmpRenew.Location = new System.Drawing.Point(279, 224);
+            this.txtNameEmpRenew.Multiline = true;
+            this.txtNameEmpRenew.Name = "txtNameEmpRenew";
+            this.txtNameEmpRenew.ReadOnly = true;
+            this.txtNameEmpRenew.Size = new System.Drawing.Size(188, 88);
+            this.txtNameEmpRenew.TabIndex = 102;
+            // 
+            // txtIDEmpIDRenew
+            // 
+            this.txtIDEmpIDRenew.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtIDEmpIDRenew.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtIDEmpIDRenew.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDEmpIDRenew.ForeColor = System.Drawing.Color.Navy;
+            this.txtIDEmpIDRenew.Location = new System.Drawing.Point(279, 154);
+            this.txtIDEmpIDRenew.Name = "txtIDEmpIDRenew";
+            this.txtIDEmpIDRenew.ReadOnly = true;
+            this.txtIDEmpIDRenew.Size = new System.Drawing.Size(188, 44);
+            this.txtIDEmpIDRenew.TabIndex = 101;
+            // 
+            // label37
+            // 
+            this.label37.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.ForeColor = System.Drawing.Color.Navy;
+            this.label37.Location = new System.Drawing.Point(50, 226);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(91, 37);
+            this.label37.TabIndex = 100;
+            this.label37.Text = "Name";
+            // 
+            // label38
+            // 
+            this.label38.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.ForeColor = System.Drawing.Color.Navy;
+            this.label38.Location = new System.Drawing.Point(50, 155);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(51, 37);
+            this.label38.TabIndex = 99;
+            this.label38.Text = "ID";
+            // 
+            // label39
+            // 
+            this.label39.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Times New Roman", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label39.Location = new System.Drawing.Point(51, 77);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(170, 36);
+            this.label39.TabIndex = 98;
+            this.label39.Text = "Party Seller";
+            // 
+            // txtNameMemberRenew
+            // 
+            this.txtNameMemberRenew.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtNameMemberRenew.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtNameMemberRenew.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNameMemberRenew.ForeColor = System.Drawing.Color.Navy;
+            this.txtNameMemberRenew.Location = new System.Drawing.Point(639, 224);
+            this.txtNameMemberRenew.Multiline = true;
+            this.txtNameMemberRenew.Name = "txtNameMemberRenew";
+            this.txtNameMemberRenew.ReadOnly = true;
+            this.txtNameMemberRenew.Size = new System.Drawing.Size(202, 88);
+            this.txtNameMemberRenew.TabIndex = 97;
+            // 
+            // label40
+            // 
+            this.label40.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.ForeColor = System.Drawing.Color.Navy;
+            this.label40.Location = new System.Drawing.Point(532, 226);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(91, 37);
+            this.label40.TabIndex = 96;
+            this.label40.Text = "Name";
+            // 
+            // label41
+            // 
+            this.label41.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Times New Roman", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label41.Location = new System.Drawing.Point(529, 77);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(202, 36);
+            this.label41.TabIndex = 94;
+            this.label41.Text = "Party Member";
+            // 
+            // label42
+            // 
+            this.label42.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label42.ForeColor = System.Drawing.Color.Navy;
+            this.label42.Location = new System.Drawing.Point(532, 337);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(103, 37);
+            this.label42.TabIndex = 92;
+            this.label42.Text = "Period";
+            // 
+            // label43
+            // 
+            this.label43.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.ForeColor = System.Drawing.Color.Navy;
+            this.label43.Location = new System.Drawing.Point(52, 338);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(142, 37);
+            this.label43.TabIndex = 88;
+            this.label43.Text = "Start date";
+            // 
+            // txtIDMemberRenew
+            // 
+            this.txtIDMemberRenew.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtIDMemberRenew.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtIDMemberRenew.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDMemberRenew.ForeColor = System.Drawing.Color.Navy;
+            this.txtIDMemberRenew.Location = new System.Drawing.Point(639, 154);
+            this.txtIDMemberRenew.Name = "txtIDMemberRenew";
+            this.txtIDMemberRenew.ReadOnly = true;
+            this.txtIDMemberRenew.Size = new System.Drawing.Size(202, 44);
+            this.txtIDMemberRenew.TabIndex = 87;
+            // 
+            // txtIDContractRenew
+            // 
+            this.txtIDContractRenew.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtIDContractRenew.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtIDContractRenew.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDContractRenew.ForeColor = System.Drawing.Color.Navy;
+            this.txtIDContractRenew.Location = new System.Drawing.Point(279, 467);
+            this.txtIDContractRenew.Name = "txtIDContractRenew";
+            this.txtIDContractRenew.ReadOnly = true;
+            this.txtIDContractRenew.Size = new System.Drawing.Size(188, 44);
+            this.txtIDContractRenew.TabIndex = 86;
+            // 
+            // label44
+            // 
+            this.label44.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label44.ForeColor = System.Drawing.Color.Navy;
+            this.label44.Location = new System.Drawing.Point(532, 161);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(51, 37);
+            this.label44.TabIndex = 80;
+            this.label44.Text = "ID";
+            // 
+            // label45
+            // 
+            this.label45.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label45.ForeColor = System.Drawing.Color.Navy;
+            this.label45.Location = new System.Drawing.Point(50, 474);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(172, 37);
+            this.label45.TabIndex = 79;
+            this.label45.Text = "ID Contract";
+            // 
+            // label46
+            // 
+            this.label46.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label46.ForeColor = System.Drawing.Color.Navy;
+            this.label46.Location = new System.Drawing.Point(728, 338);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(113, 37);
+            this.label46.TabIndex = 150;
+            this.label46.Text = "Months";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupBox3.Controls.Add(this.btRefreshPTRenew);
+            this.groupBox3.Controls.Add(this.txtIDPTRenew);
+            this.groupBox3.Controls.Add(this.txtNamePackageRenew);
+            this.groupBox3.Controls.Add(this.label47);
+            this.groupBox3.Controls.Add(this.label48);
+            this.groupBox3.Controls.Add(this.txtNamePTRenew);
+            this.groupBox3.Controls.Add(this.dgvPTRenew);
+            this.groupBox3.Controls.Add(this.txtIDPackageRenew);
+            this.groupBox3.Controls.Add(this.dgvPackageRenew);
+            this.groupBox3.Controls.Add(this.pictureBox2);
+            this.groupBox3.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.ForeColor = System.Drawing.Color.Navy;
+            this.groupBox3.Location = new System.Drawing.Point(44, 25);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(903, 312);
+            this.groupBox3.TabIndex = 108;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Choose package";
+            // 
+            // btRefreshPTRenew
+            // 
+            this.btRefreshPTRenew.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btRefreshPTRenew.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btRefreshPTRenew.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btRefreshPTRenew.BackgroundImage")));
+            this.btRefreshPTRenew.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btRefreshPTRenew.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btRefreshPTRenew.FlatAppearance.BorderSize = 3;
+            this.btRefreshPTRenew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btRefreshPTRenew.Font = new System.Drawing.Font("Sitka Subheading", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btRefreshPTRenew.ForeColor = System.Drawing.Color.Transparent;
+            this.btRefreshPTRenew.Location = new System.Drawing.Point(841, 256);
+            this.btRefreshPTRenew.Name = "btRefreshPTRenew";
+            this.btRefreshPTRenew.Size = new System.Drawing.Size(44, 44);
+            this.btRefreshPTRenew.TabIndex = 108;
+            this.btRefreshPTRenew.UseVisualStyleBackColor = false;
+            // 
+            // txtIDPTRenew
+            // 
+            this.txtIDPTRenew.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtIDPTRenew.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtIDPTRenew.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDPTRenew.ForeColor = System.Drawing.Color.Crimson;
+            this.txtIDPTRenew.Location = new System.Drawing.Point(544, 256);
+            this.txtIDPTRenew.Name = "txtIDPTRenew";
+            this.txtIDPTRenew.ReadOnly = true;
+            this.txtIDPTRenew.Size = new System.Drawing.Size(100, 44);
+            this.txtIDPTRenew.TabIndex = 104;
+            // 
+            // txtNamePackageRenew
+            // 
+            this.txtNamePackageRenew.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtNamePackageRenew.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtNamePackageRenew.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNamePackageRenew.ForeColor = System.Drawing.Color.Crimson;
+            this.txtNamePackageRenew.Location = new System.Drawing.Point(224, 256);
+            this.txtNamePackageRenew.Name = "txtNamePackageRenew";
+            this.txtNamePackageRenew.ReadOnly = true;
+            this.txtNamePackageRenew.Size = new System.Drawing.Size(214, 44);
+            this.txtNamePackageRenew.TabIndex = 103;
+            // 
+            // label47
+            // 
+            this.label47.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label47.AutoSize = true;
+            this.label47.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label47.ForeColor = System.Drawing.Color.Navy;
+            this.label47.Location = new System.Drawing.Point(484, 258);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(54, 37);
+            this.label47.TabIndex = 102;
+            this.label47.Text = "PT";
+            // 
+            // label48
+            // 
+            this.label48.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label48.AutoSize = true;
+            this.label48.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label48.ForeColor = System.Drawing.Color.Navy;
+            this.label48.Location = new System.Drawing.Point(15, 258);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(126, 37);
+            this.label48.TabIndex = 101;
+            this.label48.Text = "Package";
+            // 
+            // txtNamePTRenew
+            // 
+            this.txtNamePTRenew.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtNamePTRenew.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtNamePTRenew.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNamePTRenew.ForeColor = System.Drawing.Color.Crimson;
+            this.txtNamePTRenew.Location = new System.Drawing.Point(650, 256);
+            this.txtNamePTRenew.Name = "txtNamePTRenew";
+            this.txtNamePTRenew.ReadOnly = true;
+            this.txtNamePTRenew.Size = new System.Drawing.Size(191, 44);
+            this.txtNamePTRenew.TabIndex = 88;
+            // 
+            // dgvPTRenew
+            // 
+            this.dgvPTRenew.AllowUserToAddRows = false;
+            this.dgvPTRenew.AllowUserToDeleteRows = false;
+            this.dgvPTRenew.AllowUserToResizeColumns = false;
+            this.dgvPTRenew.AllowUserToResizeRows = false;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPTRenew.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            this.dgvPTRenew.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dgvPTRenew.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvPTRenew.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPTRenew.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            this.dgvPTRenew.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPTRenew.DefaultCellStyle = dataGridViewCellStyle18;
+            this.dgvPTRenew.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvPTRenew.Location = new System.Drawing.Point(482, 44);
+            this.dgvPTRenew.Name = "dgvPTRenew";
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPTRenew.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            this.dgvPTRenew.RowHeadersVisible = false;
+            this.dgvPTRenew.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPTRenew.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            this.dgvPTRenew.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPTRenew.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dgvPTRenew.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPTRenew.Size = new System.Drawing.Size(403, 206);
+            this.dgvPTRenew.TabIndex = 87;
+            // 
+            // txtIDPackageRenew
+            // 
+            this.txtIDPackageRenew.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtIDPackageRenew.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtIDPackageRenew.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDPackageRenew.ForeColor = System.Drawing.Color.Crimson;
+            this.txtIDPackageRenew.Location = new System.Drawing.Point(147, 256);
+            this.txtIDPackageRenew.Name = "txtIDPackageRenew";
+            this.txtIDPackageRenew.ReadOnly = true;
+            this.txtIDPackageRenew.Size = new System.Drawing.Size(71, 44);
+            this.txtIDPackageRenew.TabIndex = 86;
+            // 
+            // dgvPackageRenew
+            // 
+            this.dgvPackageRenew.AllowUserToAddRows = false;
+            this.dgvPackageRenew.AllowUserToDeleteRows = false;
+            this.dgvPackageRenew.AllowUserToResizeColumns = false;
+            this.dgvPackageRenew.AllowUserToResizeRows = false;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPackageRenew.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
+            this.dgvPackageRenew.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dgvPackageRenew.AutoGenerateColumns = false;
+            this.dgvPackageRenew.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvPackageRenew.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPackageRenew.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            this.dgvPackageRenew.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPackageRenew.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            this.dgvPackageRenew.DataSource = this.sERVICEPACKBindingSource;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPackageRenew.DefaultCellStyle = dataGridViewCellStyle23;
+            this.dgvPackageRenew.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvPackageRenew.Location = new System.Drawing.Point(14, 44);
+            this.dgvPackageRenew.Name = "dgvPackageRenew";
+            this.dgvPackageRenew.ReadOnly = true;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPackageRenew.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
+            this.dgvPackageRenew.RowHeadersVisible = false;
+            this.dgvPackageRenew.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPackageRenew.RowsDefaultCellStyle = dataGridViewCellStyle25;
+            this.dgvPackageRenew.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPackageRenew.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPackageRenew.Size = new System.Drawing.Size(424, 206);
+            this.dgvPackageRenew.TabIndex = 80;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "serviceID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 73;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "serviceNAME";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 220;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "cost";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Price";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "tagPT";
+            this.dataGridViewTextBoxColumn4.HeaderText = "tagPT";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Visible = false;
+            this.dataGridViewTextBoxColumn4.Width = 110;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(436, 128);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(54, 44);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 86;
+            this.pictureBox2.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1494,8 +2481,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.sERVICEPACKBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.packageDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAddPackage)).EndInit();
+            this.tabRenew.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pTTagDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eMPLOYEEBindingSource)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picRenew)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericMonthRenew)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPTRenew)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPackageRenew)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1606,5 +2607,67 @@
         private System.Windows.Forms.TabPage tabRenew;
         private System.Windows.Forms.NumericUpDown numericMonth;
         private System.Windows.Forms.Button btReset;
+        private System.Windows.Forms.Button btRenewRefresh;
+        private System.Windows.Forms.Button btRenewInvoice;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox txtNoteRenew;
+        private System.Windows.Forms.TextBox txtUserIDRenew;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TextBox txtPasswordRenew;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.PictureBox picRenew;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox txtFNameRenew;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RadioButton radFemaleRenew;
+        private System.Windows.Forms.RadioButton radMaleRenew;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.DateTimePicker dateBirthdayRenew;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.TextBox txtAddressRenew;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.TextBox txtPhoneRenew;
+        private System.Windows.Forms.TextBox txtLNameRenew;
+        private System.Windows.Forms.TextBox txtIDCardRenew;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.NumericUpDown numericMonthRenew;
+        private System.Windows.Forms.DateTimePicker dateEndRenew;
+        private System.Windows.Forms.DateTimePicker dateStartRenew;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.TextBox txtNameEmpRenew;
+        private System.Windows.Forms.TextBox txtIDEmpIDRenew;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.TextBox txtNameMemberRenew;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.TextBox txtIDMemberRenew;
+        private System.Windows.Forms.TextBox txtIDContractRenew;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button btRefreshPTRenew;
+        private System.Windows.Forms.TextBox txtIDPTRenew;
+        private System.Windows.Forms.TextBox txtNamePackageRenew;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.TextBox txtNamePTRenew;
+        public System.Windows.Forms.DataGridView dgvPTRenew;
+        private System.Windows.Forms.TextBox txtIDPackageRenew;
+        public System.Windows.Forms.DataGridView dgvPackageRenew;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

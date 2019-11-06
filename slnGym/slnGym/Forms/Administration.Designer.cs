@@ -49,8 +49,11 @@
             this.tabAdmin = new System.Windows.Forms.TabControl();
             this.tabAccount = new System.Windows.Forms.TabPage();
             this.tabEmployee = new System.Windows.Forms.TabPage();
+            this.manageEmployeeUC = new slnGym.User_Control.ManageEmployeeUC();
             this.tabContract = new System.Windows.Forms.TabPage();
+            this.manageContracts = new slnGym.User_Control.ManageContracts();
             this.tabMember = new System.Windows.Forms.TabPage();
+            this.manageMembersUC = new slnGym.User_Control.ManageMembersUC();
             this.tabServices = new System.Windows.Forms.TabPage();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabMachine = new System.Windows.Forms.TabPage();
@@ -83,6 +86,11 @@
             this.tabPackage = new System.Windows.Forms.TabPage();
             this.dgvPackages = new System.Windows.Forms.DataGridView();
             this.groupPackage = new System.Windows.Forms.GroupBox();
+            this.dgvTag = new System.Windows.Forms.DataGridView();
+            this.groupWorkIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupWorkNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gROUPWORKBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.groupWorkDataSet = new slnGym.GroupWorkDataSet();
             this.btRefreshMachine = new System.Windows.Forms.Button();
             this.txtAddTagPT = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -97,19 +105,9 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.tabStatistic = new System.Windows.Forms.TabPage();
-            this.manageAccountUC = new slnGym.User_Control.ManageAccountUC();
-            this.manageEmployeeUC = new slnGym.User_Control.ManageEmployeeUC();
-            this.manageContracts = new slnGym.User_Control.ManageContracts();
-            this.manageMembersUC = new slnGym.User_Control.ManageMembersUC();
             this.statisticsUC = new slnGym.User_Control.StatisticsUC();
-            this.dgvTag = new System.Windows.Forms.DataGridView();
-            this.groupWorkDataSet = new slnGym.GroupWorkDataSet();
-            this.gROUPWORKBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gROUPWORKTableAdapter = new slnGym.GroupWorkDataSetTableAdapters.GROUPWORKTableAdapter();
-            this.groupWorkNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupWorkIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabAdmin.SuspendLayout();
-            this.tabAccount.SuspendLayout();
             this.tabEmployee.SuspendLayout();
             this.tabContract.SuspendLayout();
             this.tabMember.SuspendLayout();
@@ -127,10 +125,10 @@
             this.tabPackage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPackages)).BeginInit();
             this.groupPackage.SuspendLayout();
-            this.tabStatistic.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTag)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupWorkDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gROUPWORKBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupWorkDataSet)).BeginInit();
+            this.tabStatistic.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabAdmin
@@ -157,7 +155,6 @@
             // tabAccount
             // 
             this.tabAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.tabAccount.Controls.Add(this.manageAccountUC);
             this.tabAccount.ForeColor = System.Drawing.Color.DarkGreen;
             this.tabAccount.Location = new System.Drawing.Point(104, 4);
             this.tabAccount.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
@@ -178,6 +175,14 @@
             this.tabEmployee.TabIndex = 2;
             this.tabEmployee.Text = " Employees   ";
             // 
+            // manageEmployeeUC
+            // 
+            this.manageEmployeeUC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.manageEmployeeUC.Location = new System.Drawing.Point(0, 0);
+            this.manageEmployeeUC.Name = "manageEmployeeUC";
+            this.manageEmployeeUC.Size = new System.Drawing.Size(1414, 798);
+            this.manageEmployeeUC.TabIndex = 187;
+            // 
             // tabContract
             // 
             this.tabContract.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
@@ -189,6 +194,14 @@
             this.tabContract.Size = new System.Drawing.Size(1414, 798);
             this.tabContract.TabIndex = 3;
             this.tabContract.Text = " Contracts   ";
+            // 
+            // manageContracts
+            // 
+            this.manageContracts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.manageContracts.Location = new System.Drawing.Point(0, 0);
+            this.manageContracts.Name = "manageContracts";
+            this.manageContracts.Size = new System.Drawing.Size(1414, 798);
+            this.manageContracts.TabIndex = 0;
             // 
             // tabMember
             // 
@@ -202,6 +215,14 @@
             this.tabMember.Size = new System.Drawing.Size(1414, 798);
             this.tabMember.TabIndex = 1;
             this.tabMember.Text = " Members   ";
+            // 
+            // manageMembersUC
+            // 
+            this.manageMembersUC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.manageMembersUC.Location = new System.Drawing.Point(0, 0);
+            this.manageMembersUC.Name = "manageMembersUC";
+            this.manageMembersUC.Size = new System.Drawing.Size(1414, 798);
+            this.manageMembersUC.TabIndex = 0;
             // 
             // tabServices
             // 
@@ -778,6 +799,79 @@
             this.groupPackage.TabStop = false;
             this.groupPackage.Text = "Information";
             // 
+            // dgvTag
+            // 
+            this.dgvTag.AllowUserToAddRows = false;
+            this.dgvTag.AllowUserToDeleteRows = false;
+            this.dgvTag.AllowUserToResizeColumns = false;
+            this.dgvTag.AllowUserToResizeRows = false;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTag.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            this.dgvTag.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dgvTag.AutoGenerateColumns = false;
+            this.dgvTag.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvTag.BackgroundColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Sitka Display", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.DarkGreen;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTag.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            this.dgvTag.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTag.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.groupWorkIDDataGridViewTextBoxColumn,
+            this.groupWorkNameDataGridViewTextBoxColumn});
+            this.dgvTag.DataSource = this.gROUPWORKBindingSource;
+            this.dgvTag.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvTag.Location = new System.Drawing.Point(5, 495);
+            this.dgvTag.Name = "dgvTag";
+            this.dgvTag.ReadOnly = true;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Sitka Display", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.DarkGreen;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.DarkGreen;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTag.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            this.dgvTag.RowHeadersVisible = false;
+            this.dgvTag.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTag.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            this.dgvTag.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTag.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvTag.Size = new System.Drawing.Size(403, 255);
+            this.dgvTag.TabIndex = 109;
+            // 
+            // groupWorkIDDataGridViewTextBoxColumn
+            // 
+            this.groupWorkIDDataGridViewTextBoxColumn.DataPropertyName = "groupWorkID";
+            this.groupWorkIDDataGridViewTextBoxColumn.HeaderText = "ID Group";
+            this.groupWorkIDDataGridViewTextBoxColumn.Name = "groupWorkIDDataGridViewTextBoxColumn";
+            this.groupWorkIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.groupWorkIDDataGridViewTextBoxColumn.Width = 141;
+            // 
+            // groupWorkNameDataGridViewTextBoxColumn
+            // 
+            this.groupWorkNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.groupWorkNameDataGridViewTextBoxColumn.DataPropertyName = "groupWorkName";
+            this.groupWorkNameDataGridViewTextBoxColumn.HeaderText = "Name Group";
+            this.groupWorkNameDataGridViewTextBoxColumn.Name = "groupWorkNameDataGridViewTextBoxColumn";
+            this.groupWorkNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // gROUPWORKBindingSource
+            // 
+            this.gROUPWORKBindingSource.DataMember = "GROUPWORK";
+            this.gROUPWORKBindingSource.DataSource = this.groupWorkDataSet;
+            // 
+            // groupWorkDataSet
+            // 
+            this.groupWorkDataSet.DataSetName = "GroupWorkDataSet";
+            this.groupWorkDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // btRefreshMachine
             // 
             this.btRefreshMachine.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -973,41 +1067,6 @@
             this.tabStatistic.TabIndex = 4;
             this.tabStatistic.Text = " Statistics   ";
             // 
-            // manageAccountUC
-            // 
-            this.manageAccountUC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.manageAccountUC.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.manageAccountUC.ForeColor = System.Drawing.Color.DarkGreen;
-            this.manageAccountUC.Location = new System.Drawing.Point(0, 0);
-            this.manageAccountUC.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.manageAccountUC.Name = "manageAccountUC";
-            this.manageAccountUC.Size = new System.Drawing.Size(1414, 798);
-            this.manageAccountUC.TabIndex = 0;
-            // 
-            // manageEmployeeUC
-            // 
-            this.manageEmployeeUC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.manageEmployeeUC.Location = new System.Drawing.Point(0, 0);
-            this.manageEmployeeUC.Name = "manageEmployeeUC";
-            this.manageEmployeeUC.Size = new System.Drawing.Size(1414, 798);
-            this.manageEmployeeUC.TabIndex = 187;
-            // 
-            // manageContracts
-            // 
-            this.manageContracts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.manageContracts.Location = new System.Drawing.Point(0, 0);
-            this.manageContracts.Name = "manageContracts";
-            this.manageContracts.Size = new System.Drawing.Size(1414, 798);
-            this.manageContracts.TabIndex = 0;
-            // 
-            // manageMembersUC
-            // 
-            this.manageMembersUC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.manageMembersUC.Location = new System.Drawing.Point(0, 0);
-            this.manageMembersUC.Name = "manageMembersUC";
-            this.manageMembersUC.Size = new System.Drawing.Size(1414, 798);
-            this.manageMembersUC.TabIndex = 0;
-            // 
             // statisticsUC
             // 
             this.statisticsUC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
@@ -1016,82 +1075,9 @@
             this.statisticsUC.Size = new System.Drawing.Size(1414, 798);
             this.statisticsUC.TabIndex = 0;
             // 
-            // dgvTag
-            // 
-            this.dgvTag.AllowUserToAddRows = false;
-            this.dgvTag.AllowUserToDeleteRows = false;
-            this.dgvTag.AllowUserToResizeColumns = false;
-            this.dgvTag.AllowUserToResizeRows = false;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTag.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
-            this.dgvTag.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dgvTag.AutoGenerateColumns = false;
-            this.dgvTag.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvTag.BackgroundColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Sitka Display", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.DarkGreen;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTag.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
-            this.dgvTag.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTag.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.groupWorkIDDataGridViewTextBoxColumn,
-            this.groupWorkNameDataGridViewTextBoxColumn});
-            this.dgvTag.DataSource = this.gROUPWORKBindingSource;
-            this.dgvTag.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvTag.Location = new System.Drawing.Point(5, 495);
-            this.dgvTag.Name = "dgvTag";
-            this.dgvTag.ReadOnly = true;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Sitka Display", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.DarkGreen;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.DarkGreen;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTag.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
-            this.dgvTag.RowHeadersVisible = false;
-            this.dgvTag.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTag.RowsDefaultCellStyle = dataGridViewCellStyle16;
-            this.dgvTag.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTag.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTag.Size = new System.Drawing.Size(403, 255);
-            this.dgvTag.TabIndex = 109;
-            // 
-            // groupWorkDataSet
-            // 
-            this.groupWorkDataSet.DataSetName = "GroupWorkDataSet";
-            this.groupWorkDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // gROUPWORKBindingSource
-            // 
-            this.gROUPWORKBindingSource.DataMember = "GROUPWORK";
-            this.gROUPWORKBindingSource.DataSource = this.groupWorkDataSet;
-            // 
             // gROUPWORKTableAdapter
             // 
             this.gROUPWORKTableAdapter.ClearBeforeFill = true;
-            // 
-            // groupWorkNameDataGridViewTextBoxColumn
-            // 
-            this.groupWorkNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.groupWorkNameDataGridViewTextBoxColumn.DataPropertyName = "groupWorkName";
-            this.groupWorkNameDataGridViewTextBoxColumn.HeaderText = "Name Group";
-            this.groupWorkNameDataGridViewTextBoxColumn.Name = "groupWorkNameDataGridViewTextBoxColumn";
-            this.groupWorkNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // groupWorkIDDataGridViewTextBoxColumn
-            // 
-            this.groupWorkIDDataGridViewTextBoxColumn.DataPropertyName = "groupWorkID";
-            this.groupWorkIDDataGridViewTextBoxColumn.HeaderText = "ID Group";
-            this.groupWorkIDDataGridViewTextBoxColumn.Name = "groupWorkIDDataGridViewTextBoxColumn";
-            this.groupWorkIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.groupWorkIDDataGridViewTextBoxColumn.Width = 141;
             // 
             // Administration
             // 
@@ -1108,7 +1094,6 @@
             this.Text = "Administration";
             this.Load += new System.EventHandler(this.Administration_Load);
             this.tabAdmin.ResumeLayout(false);
-            this.tabAccount.ResumeLayout(false);
             this.tabEmployee.ResumeLayout(false);
             this.tabContract.ResumeLayout(false);
             this.tabMember.ResumeLayout(false);
@@ -1129,10 +1114,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPackages)).EndInit();
             this.groupPackage.ResumeLayout(false);
             this.groupPackage.PerformLayout();
-            this.tabStatistic.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTag)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupWorkDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gROUPWORKBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupWorkDataSet)).EndInit();
+            this.tabStatistic.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1188,7 +1173,6 @@
         private User_Control.ManageContracts manageContracts;
         private User_Control.ManageMembersUC manageMembersUC;
         private User_Control.StatisticsUC statisticsUC;
-        private User_Control.ManageAccountUC manageAccountUC;
         public System.Windows.Forms.DataGridView dgvPackages;
         private System.Windows.Forms.TextBox txtAddTagPT;
         private System.Windows.Forms.Label label1;

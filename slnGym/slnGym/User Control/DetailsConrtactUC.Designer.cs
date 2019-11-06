@@ -40,7 +40,6 @@
             this.btSearch = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.btShowAll = new System.Windows.Forms.Button();
             this.txtPTname = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -49,15 +48,12 @@
             this.txtNameSeller = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.dgvDetailCon = new System.Windows.Forms.DataGridView();
             this.lbStartDate = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.lbTimeRemaining = new System.Windows.Forms.Label();
             this.lbMemberName = new System.Windows.Forms.Label();
-            this.detailContractBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.conIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDMemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.servicePackNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,6 +64,7 @@
             this.empIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oldnewDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detailContractBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBoxContact.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btSearch)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -148,37 +145,19 @@
             this.txtSearch.ForeColor = System.Drawing.Color.Navy;
             this.txtSearch.Location = new System.Drawing.Point(204, 55);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.PasswordChar = '*';
             this.txtSearch.Size = new System.Drawing.Size(228, 44);
             this.txtSearch.TabIndex = 88;
             this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyUp);
             // 
-            // btShowAll
-            // 
-            this.btShowAll.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btShowAll.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btShowAll.BackgroundImage")));
-            this.btShowAll.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btShowAll.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btShowAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btShowAll.Font = new System.Drawing.Font("Sitka Subheading", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btShowAll.ForeColor = System.Drawing.Color.White;
-            this.btShowAll.Location = new System.Drawing.Point(1822, 155);
-            this.btShowAll.Name = "btShowAll";
-            this.btShowAll.Size = new System.Drawing.Size(57, 45);
-            this.btShowAll.TabIndex = 192;
-            this.btShowAll.UseVisualStyleBackColor = false;
-            this.btShowAll.Click += new System.EventHandler(this.btShowAll_Click);
-            // 
             // txtPTname
             // 
             this.txtPTname.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.txtPTname.Enabled = false;
             this.txtPTname.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPTname.ForeColor = System.Drawing.Color.Navy;
             this.txtPTname.Location = new System.Drawing.Point(715, 121);
             this.txtPTname.Name = "txtPTname";
-            this.txtPTname.PasswordChar = '*';
-            this.txtPTname.Size = new System.Drawing.Size(235, 44);
+            this.txtPTname.ReadOnly = true;
+            this.txtPTname.Size = new System.Drawing.Size(307, 44);
             this.txtPTname.TabIndex = 190;
             // 
             // label5
@@ -197,7 +176,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Navy;
-            this.label4.Location = new System.Drawing.Point(1383, 128);
+            this.label4.Location = new System.Drawing.Point(1383, 125);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(134, 37);
             this.label4.TabIndex = 187;
@@ -208,7 +187,7 @@
             this.lbEndDate.AutoSize = true;
             this.lbEndDate.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbEndDate.ForeColor = System.Drawing.Color.Navy;
-            this.lbEndDate.Location = new System.Drawing.Point(1063, 129);
+            this.lbEndDate.Location = new System.Drawing.Point(1128, 125);
             this.lbEndDate.Name = "lbEndDate";
             this.lbEndDate.Size = new System.Drawing.Size(210, 36);
             this.lbEndDate.TabIndex = 186;
@@ -219,7 +198,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Navy;
-            this.label3.Location = new System.Drawing.Point(975, 129);
+            this.label3.Location = new System.Drawing.Point(1040, 125);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 37);
             this.label3.TabIndex = 185;
@@ -228,13 +207,12 @@
             // txtNameSeller
             // 
             this.txtNameSeller.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.txtNameSeller.Enabled = false;
             this.txtNameSeller.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNameSeller.ForeColor = System.Drawing.Color.Navy;
             this.txtNameSeller.Location = new System.Drawing.Point(715, 54);
             this.txtNameSeller.Name = "txtNameSeller";
-            this.txtNameSeller.PasswordChar = '*';
-            this.txtNameSeller.Size = new System.Drawing.Size(235, 44);
+            this.txtNameSeller.ReadOnly = true;
+            this.txtNameSeller.Size = new System.Drawing.Size(307, 44);
             this.txtNameSeller.TabIndex = 182;
             // 
             // label21
@@ -251,10 +229,8 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.dgvDetailCon);
-            this.groupBox1.Font = new System.Drawing.Font("Sitka Display", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("UVN Anh Hai", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Navy;
             this.groupBox1.Location = new System.Drawing.Point(35, 186);
             this.groupBox1.Name = "groupBox1";
@@ -262,28 +238,6 @@
             this.groupBox1.TabIndex = 194;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = " Details contract";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Navy;
-            this.label7.Location = new System.Drawing.Point(124, 91);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(976, 37);
-            this.label7.TabIndex = 177;
-            this.label7.Text = "ID, ngày kí, ngày hết hạn, gói nào, lớp nào, tình trạng còn hay hết hạn HĐ";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Navy;
-            this.label8.Location = new System.Drawing.Point(174, 164);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(680, 37);
-            this.label8.TabIndex = 178;
-            this.label8.Text = "giá tiền, ghi chú, tình trạng gia hạn hay đki gói mới";
             // 
             // dgvDetailCon
             // 
@@ -300,11 +254,11 @@
             this.dgvDetailCon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvDetailCon.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Sitka Display", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("UVN Anh Hai", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Navy;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDetailCon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDetailCon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -325,7 +279,7 @@
             this.dgvDetailCon.Name = "dgvDetailCon";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Sitka Display", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("UVN Anh Hai", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -337,7 +291,7 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDetailCon.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDetailCon.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDetailCon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgvDetailCon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetailCon.Size = new System.Drawing.Size(1838, 642);
             this.dgvDetailCon.TabIndex = 81;
             this.dgvDetailCon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetailCon_CellClick);
@@ -347,7 +301,7 @@
             this.lbStartDate.AutoSize = true;
             this.lbStartDate.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbStartDate.ForeColor = System.Drawing.Color.Navy;
-            this.lbStartDate.Location = new System.Drawing.Point(1063, 62);
+            this.lbStartDate.Location = new System.Drawing.Point(1128, 58);
             this.lbStartDate.Name = "lbStartDate";
             this.lbStartDate.Size = new System.Drawing.Size(137, 36);
             this.lbStartDate.TabIndex = 196;
@@ -358,7 +312,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Navy;
-            this.label10.Location = new System.Drawing.Point(976, 61);
+            this.label10.Location = new System.Drawing.Point(1041, 57);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(90, 37);
             this.label10.TabIndex = 195;
@@ -369,7 +323,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Navy;
-            this.label11.Location = new System.Drawing.Point(1383, 61);
+            this.label11.Location = new System.Drawing.Point(1383, 56);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(167, 37);
             this.label11.TabIndex = 197;
@@ -380,7 +334,7 @@
             this.lbTimeRemaining.AutoSize = true;
             this.lbTimeRemaining.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTimeRemaining.ForeColor = System.Drawing.Color.Crimson;
-            this.lbTimeRemaining.Location = new System.Drawing.Point(1556, 62);
+            this.lbTimeRemaining.Location = new System.Drawing.Point(1556, 57);
             this.lbTimeRemaining.Name = "lbTimeRemaining";
             this.lbTimeRemaining.Size = new System.Drawing.Size(210, 36);
             this.lbTimeRemaining.TabIndex = 198;
@@ -389,87 +343,87 @@
             // lbMemberName
             // 
             this.lbMemberName.AutoSize = true;
-            this.lbMemberName.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMemberName.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMemberName.ForeColor = System.Drawing.Color.Navy;
-            this.lbMemberName.Location = new System.Drawing.Point(1555, 129);
+            this.lbMemberName.Location = new System.Drawing.Point(1555, 125);
             this.lbMemberName.Name = "lbMemberName";
-            this.lbMemberName.Size = new System.Drawing.Size(51, 37);
+            this.lbMemberName.Size = new System.Drawing.Size(49, 36);
             this.lbMemberName.TabIndex = 199;
             this.lbMemberName.Text = "ID";
-            // 
-            // detailContractBindingSource
-            // 
-            this.detailContractBindingSource.DataSource = typeof(slnGym.DataObject.DetailContract);
             // 
             // conIDDataGridViewTextBoxColumn
             // 
             this.conIDDataGridViewTextBoxColumn.DataPropertyName = "ConID";
-            this.conIDDataGridViewTextBoxColumn.HeaderText = "ConID";
+            this.conIDDataGridViewTextBoxColumn.HeaderText = "ID Contract";
             this.conIDDataGridViewTextBoxColumn.Name = "conIDDataGridViewTextBoxColumn";
-            this.conIDDataGridViewTextBoxColumn.Width = 109;
+            this.conIDDataGridViewTextBoxColumn.Width = 191;
             // 
             // iDMemDataGridViewTextBoxColumn
             // 
             this.iDMemDataGridViewTextBoxColumn.DataPropertyName = "ID_Mem";
-            this.iDMemDataGridViewTextBoxColumn.HeaderText = "ID_Mem";
+            this.iDMemDataGridViewTextBoxColumn.HeaderText = "ID Member";
             this.iDMemDataGridViewTextBoxColumn.Name = "iDMemDataGridViewTextBoxColumn";
-            this.iDMemDataGridViewTextBoxColumn.Width = 133;
+            this.iDMemDataGridViewTextBoxColumn.Width = 188;
             // 
             // servicePackNameDataGridViewTextBoxColumn
             // 
             this.servicePackNameDataGridViewTextBoxColumn.DataPropertyName = "servicePackName";
-            this.servicePackNameDataGridViewTextBoxColumn.HeaderText = "servicePackName";
+            this.servicePackNameDataGridViewTextBoxColumn.HeaderText = "Package";
             this.servicePackNameDataGridViewTextBoxColumn.Name = "servicePackNameDataGridViewTextBoxColumn";
-            this.servicePackNameDataGridViewTextBoxColumn.Width = 223;
+            this.servicePackNameDataGridViewTextBoxColumn.Width = 142;
             // 
             // dateStartDataGridViewTextBoxColumn
             // 
             this.dateStartDataGridViewTextBoxColumn.DataPropertyName = "DateStart";
-            this.dateStartDataGridViewTextBoxColumn.HeaderText = "DateStart";
+            this.dateStartDataGridViewTextBoxColumn.HeaderText = "Start date";
             this.dateStartDataGridViewTextBoxColumn.Name = "dateStartDataGridViewTextBoxColumn";
-            this.dateStartDataGridViewTextBoxColumn.Width = 145;
+            this.dateStartDataGridViewTextBoxColumn.Width = 161;
             // 
             // dateEndDataGridViewTextBoxColumn
             // 
             this.dateEndDataGridViewTextBoxColumn.DataPropertyName = "DateEnd";
-            this.dateEndDataGridViewTextBoxColumn.HeaderText = "DateEnd";
+            this.dateEndDataGridViewTextBoxColumn.HeaderText = "Expiration date";
             this.dateEndDataGridViewTextBoxColumn.Name = "dateEndDataGridViewTextBoxColumn";
-            this.dateEndDataGridViewTextBoxColumn.Width = 133;
+            this.dateEndDataGridViewTextBoxColumn.Width = 235;
             // 
             // stateDataGridViewTextBoxColumn
             // 
             this.stateDataGridViewTextBoxColumn.DataPropertyName = "State";
-            this.stateDataGridViewTextBoxColumn.HeaderText = "State";
+            this.stateDataGridViewTextBoxColumn.HeaderText = "Status";
             this.stateDataGridViewTextBoxColumn.Name = "stateDataGridViewTextBoxColumn";
-            this.stateDataGridViewTextBoxColumn.Width = 97;
+            this.stateDataGridViewTextBoxColumn.Width = 118;
             // 
             // iDreceiptDataGridViewTextBoxColumn
             // 
             this.iDreceiptDataGridViewTextBoxColumn.DataPropertyName = "IDreceipt";
-            this.iDreceiptDataGridViewTextBoxColumn.HeaderText = "IDreceipt";
+            this.iDreceiptDataGridViewTextBoxColumn.HeaderText = "ID Invoice";
             this.iDreceiptDataGridViewTextBoxColumn.Name = "iDreceiptDataGridViewTextBoxColumn";
-            this.iDreceiptDataGridViewTextBoxColumn.Width = 138;
+            this.iDreceiptDataGridViewTextBoxColumn.Width = 176;
             // 
             // empIDDataGridViewTextBoxColumn
             // 
             this.empIDDataGridViewTextBoxColumn.DataPropertyName = "EmpID";
-            this.empIDDataGridViewTextBoxColumn.HeaderText = "EmpID";
+            this.empIDDataGridViewTextBoxColumn.HeaderText = "Employee";
             this.empIDDataGridViewTextBoxColumn.Name = "empIDDataGridViewTextBoxColumn";
-            this.empIDDataGridViewTextBoxColumn.Width = 116;
+            this.empIDDataGridViewTextBoxColumn.Width = 166;
             // 
             // priceDataGridViewTextBoxColumn
             // 
             this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Total";
             this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.Width = 93;
+            this.priceDataGridViewTextBoxColumn.Width = 110;
             // 
             // oldnewDataGridViewTextBoxColumn
             // 
+            this.oldnewDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.oldnewDataGridViewTextBoxColumn.DataPropertyName = "oldnew";
-            this.oldnewDataGridViewTextBoxColumn.HeaderText = "oldnew";
+            this.oldnewDataGridViewTextBoxColumn.HeaderText = "State";
             this.oldnewDataGridViewTextBoxColumn.Name = "oldnewDataGridViewTextBoxColumn";
-            this.oldnewDataGridViewTextBoxColumn.Width = 119;
+            // 
+            // detailContractBindingSource
+            // 
+            this.detailContractBindingSource.DataSource = typeof(slnGym.DataObject.DetailContract);
             // 
             // DetailsConrtactUC
             // 
@@ -480,7 +434,6 @@
             this.Controls.Add(this.label11);
             this.Controls.Add(this.lbStartDate);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.btShowAll);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtPTname);
             this.Controls.Add(this.label5);
@@ -497,7 +450,6 @@
             this.groupBoxContact.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btSearch)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetailCon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.detailContractBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -513,7 +465,6 @@
         private System.Windows.Forms.PictureBox btSearch;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.Button btShowAll;
         private System.Windows.Forms.TextBox txtPTname;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -522,14 +473,13 @@
         private System.Windows.Forms.TextBox txtNameSeller;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
         public System.Windows.Forms.DataGridView dgvDetailCon;
         private System.Windows.Forms.Label lbStartDate;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label lbTimeRemaining;
         private System.Windows.Forms.Label lbMemberName;
+        public System.Windows.Forms.BindingSource detailContractBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn conIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDMemDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn servicePackNameDataGridViewTextBoxColumn;
@@ -540,6 +490,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn empIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn oldnewDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource detailContractBindingSource;
     }
 }

@@ -62,6 +62,7 @@ namespace slnGym.Forms
         {
             // TODO: This line of code loads data into the 'groupWorkDataSet.GROUPWORK' table. You can move, or remove it, as needed.
             this.gROUPWORKTableAdapter.Fill(this.groupWorkDataSet.GROUPWORK);
+            loadAccount();
             loadServicePackage();
             loadServiceProduct();
             loadServiceMachine();
@@ -407,6 +408,12 @@ namespace slnGym.Forms
         private void btRefreshMachin_Click(object sender, EventArgs e)
         {
             ClearFormAddMachine();
+        }
+
+        public void loadAccount()
+        {
+            User_Control.ManageAccountUC manageAccount = new User_Control.ManageAccountUC() { Width = 1414, Height = 798 };
+            this.tabAccount.Controls.Add(manageAccount);
         }
     }
 }
