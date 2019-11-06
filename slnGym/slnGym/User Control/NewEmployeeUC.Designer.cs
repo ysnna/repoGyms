@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewEmployeeUC));
             this.groupBoxEdit = new System.Windows.Forms.GroupBox();
+            this.txtPass = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtFname = new System.Windows.Forms.TextBox();
@@ -47,6 +51,7 @@
             this.txtLname = new System.Windows.Forms.TextBox();
             this.txtIDCard = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.cbGroupName = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtSalary = new System.Windows.Forms.TextBox();
@@ -54,19 +59,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtPass = new System.Windows.Forms.TextBox();
-            this.txtUsername = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbIDEmployee = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.picAvaEdit = new System.Windows.Forms.PictureBox();
-            this.btAdd = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btAdd = new System.Windows.Forms.Button();
             this.groupBoxEdit.SuspendLayout();
             this.panel4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -102,6 +102,53 @@
             this.groupBoxEdit.Size = new System.Drawing.Size(861, 565);
             this.groupBoxEdit.TabIndex = 87;
             this.groupBoxEdit.TabStop = false;
+            // 
+            // txtPass
+            // 
+            this.txtPass.AcceptsTab = true;
+            this.txtPass.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.txtPass.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPass.ForeColor = System.Drawing.Color.White;
+            this.txtPass.Location = new System.Drawing.Point(585, 188);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.ReadOnly = true;
+            this.txtPass.Size = new System.Drawing.Size(235, 44);
+            this.txtPass.TabIndex = 89;
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.AcceptsTab = true;
+            this.txtUsername.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.txtUsername.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.ForeColor = System.Drawing.Color.White;
+            this.txtUsername.Location = new System.Drawing.Point(585, 80);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.ReadOnly = true;
+            this.txtUsername.Size = new System.Drawing.Size(235, 44);
+            this.txtUsername.TabIndex = 88;
+            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(578, 41);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(147, 37);
+            this.label7.TabIndex = 86;
+            this.label7.Text = "Username";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(578, 148);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(139, 37);
+            this.label14.TabIndex = 87;
+            this.label14.Text = "Password";
             // 
             // label15
             // 
@@ -301,6 +348,18 @@
             this.groupBox2.TabIndex = 89;
             this.groupBox2.TabStop = false;
             // 
+            // label17
+            // 
+            this.label17.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.White;
+            this.label17.Location = new System.Drawing.Point(759, 113);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(84, 36);
+            this.label17.TabIndex = 124;
+            this.label17.Text = "VND";
+            // 
             // cbGroupName
             // 
             this.cbGroupName.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -388,53 +447,6 @@
             this.label4.TabIndex = 82;
             this.label4.Text = "Salary";
             // 
-            // txtPass
-            // 
-            this.txtPass.AcceptsTab = true;
-            this.txtPass.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.txtPass.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPass.ForeColor = System.Drawing.Color.White;
-            this.txtPass.Location = new System.Drawing.Point(585, 188);
-            this.txtPass.Name = "txtPass";
-            this.txtPass.ReadOnly = true;
-            this.txtPass.Size = new System.Drawing.Size(235, 44);
-            this.txtPass.TabIndex = 89;
-            // 
-            // txtUsername
-            // 
-            this.txtUsername.AcceptsTab = true;
-            this.txtUsername.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.txtUsername.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.ForeColor = System.Drawing.Color.White;
-            this.txtUsername.Location = new System.Drawing.Point(585, 80);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.ReadOnly = true;
-            this.txtUsername.Size = new System.Drawing.Size(235, 44);
-            this.txtUsername.TabIndex = 88;
-            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(578, 41);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(147, 37);
-            this.label7.TabIndex = 86;
-            this.label7.Text = "Username";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(578, 148);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(139, 37);
-            this.label14.TabIndex = 87;
-            this.label14.Text = "Password";
-            // 
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -490,37 +502,6 @@
             this.picAvaEdit.TabStop = false;
             this.picAvaEdit.Click += new System.EventHandler(this.picAvaEdit_Click);
             // 
-            // btAdd
-            // 
-            this.btAdd.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btAdd.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btAdd.BackgroundImage")));
-            this.btAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btAdd.FlatAppearance.BorderColor = System.Drawing.Color.DarkGreen;
-            this.btAdd.FlatAppearance.BorderSize = 3;
-            this.btAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btAdd.Font = new System.Drawing.Font("Sitka Subheading", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAdd.ForeColor = System.Drawing.Color.White;
-            this.btAdd.Location = new System.Drawing.Point(1215, 595);
-            this.btAdd.Name = "btAdd";
-            this.btAdd.Size = new System.Drawing.Size(178, 61);
-            this.btAdd.TabIndex = 92;
-            this.btAdd.Text = "Create";
-            this.btAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btAdd.UseVisualStyleBackColor = false;
-            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label6.Location = new System.Drawing.Point(-333, 635);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 37);
-            this.label6.TabIndex = 82;
-            this.label6.Text = "Salary";
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -543,17 +524,36 @@
             this.label16.TabIndex = 80;
             this.label16.Text = "Group ID";
             // 
-            // label17
+            // label6
             // 
-            this.label17.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(759, 113);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(84, 36);
-            this.label17.TabIndex = 124;
-            this.label17.Text = "VND";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.DarkGreen;
+            this.label6.Location = new System.Drawing.Point(-333, 635);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(100, 37);
+            this.label6.TabIndex = 82;
+            this.label6.Text = "Salary";
+            // 
+            // btAdd
+            // 
+            this.btAdd.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btAdd.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btAdd.BackgroundImage")));
+            this.btAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btAdd.FlatAppearance.BorderColor = System.Drawing.Color.DarkGreen;
+            this.btAdd.FlatAppearance.BorderSize = 3;
+            this.btAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btAdd.Font = new System.Drawing.Font("Sitka Subheading", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAdd.ForeColor = System.Drawing.Color.White;
+            this.btAdd.Location = new System.Drawing.Point(1215, 595);
+            this.btAdd.Name = "btAdd";
+            this.btAdd.Size = new System.Drawing.Size(178, 61);
+            this.btAdd.TabIndex = 92;
+            this.btAdd.Text = "Create";
+            this.btAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btAdd.UseVisualStyleBackColor = false;
+            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
             // NewEmployeeUC
             // 

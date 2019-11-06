@@ -108,5 +108,18 @@ namespace slnGym.Layer
             mydb.closeConnection();
             return dt;
         }
+        public DataTable getPRODUCTDGV(string name)
+        {
+            SqlCommand cmd = new SqlCommand("select A.receiptID, nameServices, discount,total, repceiptDate from DETAILSREPCEIPT," +
+                " (select contractID, receiptID  from CONTRACTS, DETAILSCONTRACT " +
+                " where contID = contractID AND CONTRACTS.cusID = @ID) as A" +
+                " where A.receiptID = DETAILSREPCEIPT.receiptID AND  idBrand = '2'", mydb.getConnection);
+            cmd.Parameters.Add("@ID", SqlDbType.VarChar).Value = name;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            mydb.closeConnection();
+            return dt;
+        }
     }
 }

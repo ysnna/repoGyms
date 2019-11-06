@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataObject\AddEmployee.cs" />
+    <Compile Include="DataObject\DetailContract.cs" />
     <Compile Include="DataObject\GETContract.cs" />
     <Compile Include="DataObject\GETMember.cs" />
     <Compile Include="DataObject\ListEmployee.cs" />
@@ -55,6 +56,7 @@
     <Compile Include="DataObject\ListProduct.cs" />
     <Compile Include="DataObject\ListReceipt.cs" />
     <Compile Include="DataObject\ListService.cs" />
+    <Compile Include="DataObject\MemberBL.cs" />
     <Compile Include="Forms\Administration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +96,7 @@
     <Compile Include="Layer\AccountBL.cs" />
     <Compile Include="Layer\ADDMACHINES.cs" />
     <Compile Include="Layer\CLASSROOMs.cs" />
+    <Compile Include="Layer\ContractBL.cs" />
     <Compile Include="Layer\CONTRACTs.cs" />
     <Compile Include="Layer\DETAILCONTRACT.cs" />
     <Compile Include="Layer\DETAILRECEIPT.cs" />
@@ -304,6 +307,7 @@
     <None Include="PTTagDataSet.xss">
       <DependentUpon>PTTagDataSet.xsd</DependentUpon>
     </None>
+    <None Include="slnGym.DataObject.DetailContract.datasource" />
     <None Include="slnGym.DataObject.ListReceipt.datasource" />
   </ItemGroup>
   <ItemGroup>

@@ -121,5 +121,16 @@ namespace slnGym.Layer
             mydb.closeConnection();
             return dt;
         }
+        public DataTable getPackageDGV(string idKH)
+        {
+            SqlCommand cmd = new SqlCommand("select serviceID, serviceName, cost, dateStart, dateDischarge from SERVICEPACK, CONTRACTS" +
+                " where serviceID = servicePACK AND cusID = @id", mydb.getConnection);
+            cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = idKH;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            mydb.closeConnection();
+            return dt;
+        }
     }
 }

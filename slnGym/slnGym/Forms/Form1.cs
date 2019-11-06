@@ -32,6 +32,7 @@ namespace slnGym.Forms
         Layer.DETAILCONTRACT detailContract = new Layer.DETAILCONTRACT();
         Layer.RECEIPTs rc = new Layer.RECEIPTs();
         Layer.DETAILCONTRACT dtCont = new Layer.DETAILCONTRACT();
+        User_Control.AccountEmployeeUC dt = new User_Control.AccountEmployeeUC() { Width = 1912, Height = 905 };
 
         //Event Click & Load
         public void createMemberLoad()
@@ -132,7 +133,7 @@ namespace slnGym.Forms
 
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Login login = new Login();
+            Login login = new Login(this);
             login.ShowDialog();
         }
 
@@ -155,12 +156,13 @@ namespace slnGym.Forms
             loadDetailsContract();
             loadMembers();
             loadStatistic();
-            
+            NeedLogin();
         }
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Login login = new Login();
+            NeedLogin();
+            Login login = new Login(this);
             login.ShowDialog();
         }
 
@@ -323,9 +325,8 @@ namespace slnGym.Forms
 
         public void loadAccount()
         {
-            User_Control.AccountEmployeeUC dt = new User_Control.AccountEmployeeUC() { Width = 1912, Height = 905 };
-            dt.reload();
             this.tabAccount.Controls.Add(dt);
+            dt.reload();
         }
 
         public void loadPTbyTag()
@@ -405,6 +406,18 @@ namespace slnGym.Forms
         {
             txtIDPT.Text = "";
             txtPT.Text = "";
+        }
+
+        public void NeedLogin()
+        {
+            tabControlManager.Enabled = false;
+            this.tabAccount.Controls.Remove(dt);
+        }
+
+        public void AccessSuccess()
+        {
+            tabControlManager.Enabled = true;
+            loadAccount();
         }
     }
 }

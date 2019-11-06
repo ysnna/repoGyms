@@ -33,30 +33,29 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MemberUC));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvMembers = new System.Windows.Forms.DataGridView();
             this.btSearch = new System.Windows.Forms.PictureBox();
             this.txtSearchMembers = new System.Windows.Forms.TextBox();
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.listProductsHistory = new System.Windows.Forms.ListView();
             this.btRefreshMember = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.cbClass = new System.Windows.Forms.ComboBox();
-            this.listPackagesHistory = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dgvPackage = new System.Windows.Forms.DataGridView();
+            this.dgvProduct = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btSearch)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPackage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvMembers
@@ -128,56 +127,6 @@
             this.txtSearchMembers.Size = new System.Drawing.Size(292, 39);
             this.txtSearchMembers.TabIndex = 162;
             // 
-            // columnHeader9
-            // 
-            this.columnHeader9.Text = "Transaction history";
-            this.columnHeader9.Width = 245;
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "Cost";
-            this.columnHeader8.Width = 130;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Discount";
-            this.columnHeader7.Width = 110;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Name";
-            this.columnHeader6.Width = 156;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "No";
-            this.columnHeader5.Width = 70;
-            // 
-            // listProductsHistory
-            // 
-            this.listProductsHistory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.listProductsHistory.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.listProductsHistory.BackgroundImageTiled = true;
-            this.listProductsHistory.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader5,
-            this.columnHeader6,
-            this.columnHeader7,
-            this.columnHeader8,
-            this.columnHeader9});
-            this.listProductsHistory.Font = new System.Drawing.Font("UTM Aptima", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listProductsHistory.ForeColor = System.Drawing.Color.Navy;
-            this.listProductsHistory.FullRowSelect = true;
-            this.listProductsHistory.GridLines = true;
-            this.listProductsHistory.HideSelection = false;
-            this.listProductsHistory.Location = new System.Drawing.Point(6, 38);
-            this.listProductsHistory.Name = "listProductsHistory";
-            this.listProductsHistory.Size = new System.Drawing.Size(914, 382);
-            this.listProductsHistory.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.listProductsHistory.TabIndex = 132;
-            this.listProductsHistory.UseCompatibleStateImageBehavior = false;
-            this.listProductsHistory.View = System.Windows.Forms.View.Details;
-            // 
             // btRefreshMember
             // 
             this.btRefreshMember.BackColor = System.Drawing.Color.Transparent;
@@ -198,7 +147,7 @@
             // groupBox4
             // 
             this.groupBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.groupBox4.Controls.Add(this.listProductsHistory);
+            this.groupBox4.Controls.Add(this.dgvPackage);
             this.groupBox4.Font = new System.Drawing.Font("Sitka Display", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.Color.Navy;
             this.groupBox4.Location = new System.Drawing.Point(37, 22);
@@ -206,7 +155,7 @@
             this.groupBox4.Size = new System.Drawing.Size(931, 426);
             this.groupBox4.TabIndex = 156;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Products";
+            this.groupBox4.Text = "Packages";
             // 
             // cbClass
             // 
@@ -222,66 +171,10 @@
             this.cbClass.TabIndex = 164;
             this.cbClass.Text = "-- Select group name --";
             // 
-            // listPackagesHistory
-            // 
-            this.listPackagesHistory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.listPackagesHistory.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.listPackagesHistory.BackgroundImageTiled = true;
-            this.listPackagesHistory.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader10,
-            this.columnHeader11});
-            this.listPackagesHistory.Font = new System.Drawing.Font("UTM Aptima", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listPackagesHistory.ForeColor = System.Drawing.Color.Navy;
-            this.listPackagesHistory.FullRowSelect = true;
-            this.listPackagesHistory.GridLines = true;
-            this.listPackagesHistory.HideSelection = false;
-            this.listPackagesHistory.Location = new System.Drawing.Point(6, 38);
-            this.listPackagesHistory.Name = "listPackagesHistory";
-            this.listPackagesHistory.Size = new System.Drawing.Size(914, 383);
-            this.listPackagesHistory.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.listPackagesHistory.TabIndex = 136;
-            this.listPackagesHistory.UseCompatibleStateImageBehavior = false;
-            this.listPackagesHistory.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "No";
-            this.columnHeader1.Width = 66;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Name";
-            this.columnHeader2.Width = 154;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Discount";
-            this.columnHeader3.Width = 116;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Cost";
-            this.columnHeader4.Width = 113;
-            // 
-            // columnHeader10
-            // 
-            this.columnHeader10.Text = "Start date";
-            this.columnHeader10.Width = 225;
-            // 
-            // columnHeader11
-            // 
-            this.columnHeader11.Text = "Expiration date";
-            this.columnHeader11.Width = 233;
-            // 
             // groupBox3
             // 
             this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.groupBox3.Controls.Add(this.listPackagesHistory);
+            this.groupBox3.Controls.Add(this.dgvProduct);
             this.groupBox3.Font = new System.Drawing.Font("Sitka Display", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.Navy;
             this.groupBox3.Location = new System.Drawing.Point(37, 448);
@@ -289,7 +182,93 @@
             this.groupBox3.Size = new System.Drawing.Size(931, 427);
             this.groupBox3.TabIndex = 155;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Packages";
+            this.groupBox3.Text = "Products";
+            // 
+            // dgvPackage
+            // 
+            this.dgvPackage.AllowUserToAddRows = false;
+            this.dgvPackage.AllowUserToDeleteRows = false;
+            this.dgvPackage.AllowUserToResizeColumns = false;
+            this.dgvPackage.AllowUserToResizeRows = false;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPackage.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvPackage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvPackage.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvPackage.BackgroundColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Sitka Display", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPackage.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.dgvPackage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPackage.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvPackage.Location = new System.Drawing.Point(6, 36);
+            this.dgvPackage.Name = "dgvPackage";
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Sitka Display", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPackage.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.dgvPackage.RowHeadersVisible = false;
+            this.dgvPackage.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPackage.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            this.dgvPackage.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPackage.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgvPackage.Size = new System.Drawing.Size(914, 382);
+            this.dgvPackage.TabIndex = 166;
+            // 
+            // dgvProduct
+            // 
+            this.dgvProduct.AllowUserToAddRows = false;
+            this.dgvProduct.AllowUserToDeleteRows = false;
+            this.dgvProduct.AllowUserToResizeColumns = false;
+            this.dgvProduct.AllowUserToResizeRows = false;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProduct.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            this.dgvProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvProduct.BackgroundColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Sitka Display", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProduct.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvProduct.Location = new System.Drawing.Point(6, 37);
+            this.dgvProduct.Name = "dgvProduct";
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Sitka Display", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProduct.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            this.dgvProduct.RowHeadersVisible = false;
+            this.dgvProduct.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProduct.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            this.dgvProduct.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgvProduct.Size = new System.Drawing.Size(914, 382);
+            this.dgvProduct.TabIndex = 167;
             // 
             // MemberUC
             // 
@@ -305,10 +284,13 @@
             this.ForeColor = System.Drawing.Color.Navy;
             this.Name = "MemberUC";
             this.Size = new System.Drawing.Size(1912, 905);
+            this.Load += new System.EventHandler(this.MemberUC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btSearch)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPackage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -319,22 +301,11 @@
         public System.Windows.Forms.DataGridView dgvMembers;
         private System.Windows.Forms.PictureBox btSearch;
         private System.Windows.Forms.TextBox txtSearchMembers;
-        private System.Windows.Forms.ColumnHeader columnHeader9;
-        private System.Windows.Forms.ColumnHeader columnHeader8;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ListView listProductsHistory;
         private System.Windows.Forms.Button btRefreshMember;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.ComboBox cbClass;
-        private System.Windows.Forms.ListView listPackagesHistory;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader10;
-        private System.Windows.Forms.ColumnHeader columnHeader11;
         private System.Windows.Forms.GroupBox groupBox3;
+        public System.Windows.Forms.DataGridView dgvPackage;
+        public System.Windows.Forms.DataGridView dgvProduct;
     }
 }

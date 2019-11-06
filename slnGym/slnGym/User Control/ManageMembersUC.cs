@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using slnGym.DataObject;
 
 namespace slnGym.User_Control
 {
@@ -15,6 +16,23 @@ namespace slnGym.User_Control
         public ManageMembersUC()
         {
             InitializeComponent();
+        }
+
+        MemberBL mem = new MemberBL();
+
+        private void ManageMembersUC_Load(object sender, EventArgs e)
+        {
+            mem.loadDGVMem(dgvMembers);
+        }
+
+        private void dgvMembers_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dgvProduct.DataSource = null;
+            string index = dgvMembers.CurrentRow.Cells[0].Value.ToString();
+            //MessageBox.Show(index);
+            mem.LoadDGVPackage(dgvPackage, index);
+            mem.loadDGVProduct(dgvProduct, index);
+            mem.loadDGVPT(dgvPT, index);
         }
     }
 }

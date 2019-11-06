@@ -83,5 +83,19 @@ namespace slnGym.Layer
             da.Fill(dt);
             return dt;
         }
+        public DataTable getDetailConTractDGV()
+        {
+            SqlCommand cmd = new SqlCommand("select contID,cusID,serviceName, employeeID, dateStart,dateDischarge, B.receiptID, total, ptID from RECEIPT," +
+                " (select contID, serviceName, employeeID, cusID, dateStart, dateDischarge, receiptID, ptID from DETAILSCONTRACT," +
+                " (select * from SERVICEPACK, CONTRACTS" +
+                " where CONTRACTS.servicePACK = SERVICEPACK.serviceID) as A" +
+                " where DETAILSCONTRACT.contID = A.contractID) as B" +
+                " where B.receiptID = RECEIPT.receiptID", mydb.getConnection);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            mydb.closeConnection();
+            return dt;
+        }
     }
 }

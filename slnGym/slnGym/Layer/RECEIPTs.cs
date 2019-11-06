@@ -49,6 +49,7 @@ namespace slnGym.Layer
                 return false;
             }
         }
+
         //Lay thong tin 
         public DataTable getRECEIPTbyID(string receiptID)
         {

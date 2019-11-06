@@ -27,6 +27,7 @@ namespace slnGym.Forms
         int getIDPackage = 0;
         int getIDProduct = 0;
         int getIDMachine = 0;
+
         public void closeForm()
         {
             this.Dispose();
