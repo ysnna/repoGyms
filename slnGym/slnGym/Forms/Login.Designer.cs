@@ -49,7 +49,7 @@
             this.groupBoxThongtin.Controls.Add(this.label3);
             this.groupBoxThongtin.Controls.Add(this.txtUsername);
             this.groupBoxThongtin.Controls.Add(this.txtPassword);
-            this.groupBoxThongtin.Font = new System.Drawing.Font("UTM Aquarelle", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxThongtin.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxThongtin.ForeColor = System.Drawing.Color.White;
             this.groupBoxThongtin.Location = new System.Drawing.Point(37, 12);
             this.groupBoxThongtin.Name = "groupBoxThongtin";
@@ -76,22 +76,22 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("UTM Aptima", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(74, 97);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(161, 48);
+            this.label2.Size = new System.Drawing.Size(172, 37);
             this.label2.TabIndex = 37;
             this.label2.Text = "Username";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("UTM Aptima", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(74, 184);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(152, 48);
+            this.label3.Size = new System.Drawing.Size(166, 37);
             this.label3.TabIndex = 38;
             this.label3.Text = "Password";
             // 
@@ -128,6 +128,7 @@
             this.Controls.Add(this.groupBoxThongtin);
             this.Name = "Login";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.groupBoxThongtin.ResumeLayout(false);
             this.groupBoxThongtin.PerformLayout();
             this.ResumeLayout(false);

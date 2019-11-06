@@ -126,5 +126,19 @@ namespace slnGym.Layer
             da.Fill(dt);
             return dt;
         }
+        
+            public DataTable getPTbyMemID(string memID)
+        {
+            SqlCommand cmd = new SqlCommand("select distinct employeeID, EMPLOYEE.employeeFName +' '+EMPLOYEE.employeeLName from EMPLOYEE," +
+                " (select ptID from MEMBERS, CONTRACTS " +
+                " where cusID = @ma) as A" +
+                " where ptID = employeeID", mydb.getConnection);
+            cmd.Parameters.Add("@ma", SqlDbType.VarChar).Value = memID;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            mydb.closeConnection();
+            return dt;
+        }
     }
 }

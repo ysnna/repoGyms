@@ -133,9 +133,9 @@
             this.packageDataSet = new slnGym.PackageDataSet();
             this.picAddPackage = new System.Windows.Forms.PictureBox();
             this.tabRenew = new System.Windows.Forms.TabPage();
-            this.tabDetailsContract = new System.Windows.Forms.TabPage();
             this.tabMember = new System.Windows.Forms.TabPage();
             this.tabStatistic = new System.Windows.Forms.TabPage();
+            this.tabDetailsContract = new System.Windows.Forms.TabPage();
             this.tabAccount = new System.Windows.Forms.TabPage();
             this.lbDateTime = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -196,21 +196,21 @@
             // loginToolStripMenuItem
             // 
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(137, 32);
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(180, 32);
             this.loginToolStripMenuItem.Text = "Login";
             this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(137, 32);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(180, 32);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(137, 32);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 32);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -387,7 +387,7 @@
             this.dgvServicePack.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvServicePack.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvServicePack.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvServicePack.Size = new System.Drawing.Size(1912, 1124);
+            this.dgvServicePack.Size = new System.Drawing.Size(1912, 1139);
             this.dgvServicePack.TabIndex = 102;
             // 
             // tabManage
@@ -1381,15 +1381,6 @@
             this.tabRenew.Text = " Renew ";
             this.tabRenew.UseVisualStyleBackColor = true;
             // 
-            // tabDetailsContract
-            // 
-            this.tabDetailsContract.Location = new System.Drawing.Point(4, 37);
-            this.tabDetailsContract.Name = "tabDetailsContract";
-            this.tabDetailsContract.Size = new System.Drawing.Size(1912, 905);
-            this.tabDetailsContract.TabIndex = 2;
-            this.tabDetailsContract.Text = " Details Contract ";
-            this.tabDetailsContract.UseVisualStyleBackColor = true;
-            // 
             // tabMember
             // 
             this.tabMember.Location = new System.Drawing.Point(4, 37);
@@ -1407,6 +1398,15 @@
             this.tabStatistic.TabIndex = 3;
             this.tabStatistic.Text = " Statistics ";
             this.tabStatistic.UseVisualStyleBackColor = true;
+            // 
+            // tabDetailsContract
+            // 
+            this.tabDetailsContract.Location = new System.Drawing.Point(4, 37);
+            this.tabDetailsContract.Name = "tabDetailsContract";
+            this.tabDetailsContract.Size = new System.Drawing.Size(1912, 905);
+            this.tabDetailsContract.TabIndex = 2;
+            this.tabDetailsContract.Text = " Details Contract ";
+            this.tabDetailsContract.UseVisualStyleBackColor = true;
             // 
             // tabAccount
             // 

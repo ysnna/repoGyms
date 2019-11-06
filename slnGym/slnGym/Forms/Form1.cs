@@ -32,6 +32,7 @@ namespace slnGym.Forms
         Layer.DETAILCONTRACT detailContract = new Layer.DETAILCONTRACT();
         Layer.RECEIPTs rc = new Layer.RECEIPTs();
         Layer.DETAILCONTRACT dtCont = new Layer.DETAILCONTRACT();
+        User_Control.AccountEmployeeUC dt = new User_Control.AccountEmployeeUC() { Width = 1912, Height = 905 };
 
         //Event Click & Load
         public void createMemberLoad()
@@ -126,13 +127,13 @@ namespace slnGym.Forms
             }
             else
             {
-                
+
             }
         }
 
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Login login = new Login();
+            Login login = new Login(this);
             login.ShowDialog();
         }
 
@@ -155,19 +156,51 @@ namespace slnGym.Forms
             loadDetailsContract();
             loadMembers();
             loadStatistic();
-            loadAccount();
+            NeedLogin();
         }
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Login login = new Login();
+            NeedLogin();
+            Login login = new Login(this);
             login.ShowDialog();
+            
         }
 
         private void managerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Administration administration = new Administration(this);
             administration.ShowDialog();
+        }
+
+        private void dgvPT_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int numrow = dgvPT.CurrentCell.RowIndex;
+            txtIDPT.Text = dgvPT.Rows[numrow].Cells[0].Value.ToString();
+            txtPT.Text = dgvPT.Rows[numrow].Cells[1].Value.ToString() + ' ' + dgvPT.Rows[numrow].Cells[2].Value.ToString();
+        }
+
+        private void datePickerStart_ValueChanged(object sender, EventArgs e)
+        {
+            datePickerEnd.Value = datePickerStart.Value.AddMonths(Convert.ToInt32(numericMonth.Value));
+        }
+
+        private void numericMonth_ValueChanged(object sender, EventArgs e)
+        {
+            datePickerEnd.Value = datePickerStart.Value.AddMonths(Convert.ToInt32(numericMonth.Value));
+        }
+
+        private void btCreateContract_Click(object sender, EventArgs e)
+        {
+            User_Control.ReceiptUC receiptUC = new User_Control.ReceiptUC() { Width = 1912, Height = 905 };
+            this.tabNewMember.Controls.Add(receiptUC);
+            receiptUC.BringToFront();
+        }
+
+        private void btReset_Click(object sender, EventArgs e)
+        {
+            txtIDPT.Text = "";
+            txtPT.Text = "";
         }
 
         //ham xu ly 
@@ -314,7 +347,7 @@ namespace slnGym.Forms
             User_Control.MemberUC dt = new User_Control.MemberUC() { Width = 1912, Height = 905 };
             this.tabMember.Controls.Add(dt);
         }
-        
+
         public void loadStatistic()
         {
             User_Control.StatisticEmployeeUC dt = new User_Control.StatisticEmployeeUC() { Width = 1912, Height = 905 };
@@ -323,8 +356,8 @@ namespace slnGym.Forms
 
         public void loadAccount()
         {
-            User_Control.AccountEmployeeUC dt = new User_Control.AccountEmployeeUC() { Width = 1912, Height = 905 };
             this.tabAccount.Controls.Add(dt);
+            dt.reload();
         }
 
         public void loadPTbyTag()
@@ -376,34 +409,17 @@ namespace slnGym.Forms
             this.Refresh();
         }
 
-        private void dgvPT_CellClick(object sender, DataGridViewCellEventArgs e)
+        public void NeedLogin()
         {
-            int numrow = dgvPT.CurrentCell.RowIndex;
-            txtIDPT.Text = dgvPT.Rows[numrow].Cells[0].Value.ToString();
-            txtPT.Text = dgvPT.Rows[numrow].Cells[1].Value.ToString() + ' ' + dgvPT.Rows[numrow].Cells[2].Value.ToString();
+            tabControlManager.Enabled = false;
+            this.tabAccount.Controls.Remove(dt);
         }
-
-        private void datePickerStart_ValueChanged(object sender, EventArgs e)
+        public void AccessSuccess()
         {
-            datePickerEnd.Value = datePickerStart.Value.AddMonths(Convert.ToInt32(numericMonth.Value));
+            tabControlManager.Enabled = true ;
+            loadAccount();
+            
         }
-
-        private void numericMonth_ValueChanged(object sender, EventArgs e)
-        {
-            datePickerEnd.Value = datePickerStart.Value.AddMonths(Convert.ToInt32(numericMonth.Value));
-        }
-
-        private void btCreateContract_Click(object sender, EventArgs e)
-        {
-            User_Control.ReceiptUC receiptUC = new User_Control.ReceiptUC() { Width = 1912, Height = 905 };
-            this.tabNewMember.Controls.Add(receiptUC);
-            receiptUC.BringToFront();
-        }
-
-        private void btReset_Click(object sender, EventArgs e)
-        {
-            txtIDPT.Text = "";
-            txtPT.Text = "";
-        }
+        
     }
 }

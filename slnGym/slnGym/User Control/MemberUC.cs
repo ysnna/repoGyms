@@ -18,60 +18,23 @@ namespace slnGym.User_Control
         {
             InitializeComponent();
         }
-
+        MemberBL mem = new MemberBL();
         private void dgvMembers_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             dgvProduct.DataSource = null;
             string index = dgvMembers.CurrentRow.Cells[0].Value.ToString();
             //MessageBox.Show(index);
-            LoadDGVPackage(index);
-            loadDGVProduct(index);
+            mem.LoadDGVPackage(dgvPackage, index);
+            mem.loadDGVProduct(dgvProduct, index);
         }
 
         private void MemberUC_Load(object sender, EventArgs e)
         {
-            loadDGVMem();
+            mem.loadDGVMem(dgvMembers);
         }
 
 
         //hàm xử lý
-        void LoadDGVPackage(string idKH) //#FORMAT dgv cho đẹp
-        {
-            dgvPackage.RowTemplate.Height = 50;
-            dgvPackage.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-            dgvPackage.AllowUserToAddRows = false;
-            dgvPackage.EditMode = DataGridViewEditMode.EditProgrammatically;
-            //
-            SERVICEPACKs ser = new SERVICEPACKs();
-            DataTable dt = new DataTable();
-            dt = ser.getPackageDGV(idKH);
-            dgvPackage.DataSource = dt;
-            dgvPackage.Refresh();
-        }
-        void loadDGVProduct(string id)
-        {
-            dgvProduct.RowTemplate.Height = 50;
-            dgvProduct.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-            dgvProduct.AllowUserToAddRows = false;
-            dgvProduct.EditMode = DataGridViewEditMode.EditProgrammatically;
-            //
-            
-            PRODUCTs ser = new PRODUCTs();
-            DataTable dt = new DataTable();
-            dt = ser.getPRODUCTDGV(id);
-            dgvProduct.DataSource = dt;
-            dgvProduct.Refresh();
-        }
-        void loadDGVMem() //Format lại cột BDate của Member (#FORMAT)
-        {
-            dgvMembers.RowTemplate.Height = 50;
-            dgvMembers.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-            dgvMembers.AllowUserToAddRows = false;
-            dgvMembers.EditMode = DataGridViewEditMode.EditProgrammatically;
-            MEMBERs mem = new MEMBERs();
-            DataTable dt = new DataTable();
-            dt = mem.getAllMEMBERS();
-            dgvMembers.DataSource = dt;
-        }
+       
     }
 }

@@ -13,9 +13,11 @@ namespace slnGym.Forms
 {
     public partial class Login : Form
     {
-        public Login()
+        Form1 f1 = new Form1();
+        public Login(Form1 login)
         {
             InitializeComponent();
+            f1 = login;
         }
         private void Button1_Click(object sender, EventArgs e)
         {
@@ -30,6 +32,18 @@ namespace slnGym.Forms
 
         private void btSignIn_Click(object sender, EventArgs e)
         {
+            Log_in();
+        }
+        //Nhan dien nguoi dang nhap la Nhan Vien hay Member
+        int DefineAccount()
+        {
+            DataTable dt = new DataTable();
+            dt = login.getUserID(GLOBAL.username);
+            int id = Convert.ToInt32(dt.Rows[0][0].ToString());
+            return id;
+        }
+        void Log_in()
+        {
             string uname = null;
             AccountBL act = new AccountBL();
             if (act.checkPhone(txtUsername.Text) != null)
@@ -42,6 +56,7 @@ namespace slnGym.Forms
                 GLOBAL.GetUsername(txtUsername.Text);
             }
             if (LoginCheck() == true)
+            {
                 switch (DefineAccount())
                 {
                     case 0:
@@ -61,20 +76,13 @@ namespace slnGym.Forms
                         this.Close();
                         break;
                 }
+                f1.AccessSuccess();
+            }
             else
             {
                 MessageBox.Show("Invalid Username or Password", "Login error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        //Nhan dien nguoi dang nhap la Nhan Vien hay Member
-        int DefineAccount()
-        {
-            DataTable dt = new DataTable();
-            dt = login.getUserID(GLOBAL.username);
-            int id = Convert.ToInt32(dt.Rows[0][0].ToString());
-            return id;
-        }
-
         //Xac nhan Account
         bool LoginCheck()
         {
@@ -89,6 +97,11 @@ namespace slnGym.Forms
         {
             txtPassword.Text = "";
             txtUsername.Text = "";
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
