@@ -8,12 +8,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using slnGym.DataObject;
+using slnGym.Layer;
 
 namespace slnGym.Forms
 {
     public partial class Login : Form
     {
         Form1 f1 = new Form1();
+        AccountBL accountLog = new AccountBL();
+        LOGIN login = new LOGIN();
 
         public Login(Form1 login)
         {
@@ -29,7 +33,6 @@ namespace slnGym.Forms
             txtUsername.Text = "";
             txtPassword.Text = "";
         }
-        LOGIN login = new LOGIN();
 
         private void btSignIn_Click(object sender, EventArgs e)
         {
@@ -69,6 +72,10 @@ namespace slnGym.Forms
                         this.Close();
                         break;
                 }
+                SysLOG.DateLogin = DateTime.Now;
+                SysLOG.UserName = GLOBAL.username;
+                SysLOG.Online = true;
+                accountLog.insertAccount(SysLOG.UserName, SysLOG.DateLogin, SysLOG.DateLogout, SysLOG.Status);
                 f1.AccessSuccess();
             }
             else

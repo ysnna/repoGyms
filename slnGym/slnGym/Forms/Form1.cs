@@ -32,6 +32,7 @@ namespace slnGym.Forms
         Layer.DETAILCONTRACT detailContract = new Layer.DETAILCONTRACT();
         Layer.RECEIPTs rc = new Layer.RECEIPTs();
         Layer.DETAILCONTRACT dtCont = new Layer.DETAILCONTRACT();
+        Layer.AccountBL accountLog = new Layer.AccountBL();
         User_Control.AccountEmployeeUC dt = new User_Control.AccountEmployeeUC() { Width = 1912, Height = 905 };
 
         //Event Click & Load
@@ -162,8 +163,8 @@ namespace slnGym.Forms
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NeedLogin();
-            Login login = new Login(this);
-            login.ShowDialog();
+            SysLOG.DateLogout = DateTime.Now.ToString();
+            accountLog.updateAccount(SysLOG.UserName, SysLOG.DateLogin, SysLOG.DateLogout, SysLOG.Status);
         }
 
         private void managerToolStripMenuItem_Click(object sender, EventArgs e)

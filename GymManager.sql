@@ -40,7 +40,8 @@ go
 create table ACCOUNTLOGIN(
 username varchar(11)null,
 loginDate datetime null,
-logoutDate datetime null,
+logoutDate varchar(30) null,
+status varchar null,
 --Primarykey--
 foreign key(username) references ACCOUNT on delete set null,
 );

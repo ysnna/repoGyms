@@ -7,33 +7,34 @@ using System.Threading.Tasks;
 
 namespace slnGym.DataObject
 {
-    public class SysLog
+    public class SysLOG
     {
-        public string UserName { get; set; }
-        public string Password { get; set; }
-        public DateTime DateLogin { get; set; }
-        public DateTime? DateLogout { get; set; }
-        public string Status { get; set; }
+        public static string UserName { get; set; }
+        public static string Password { get; set; }
+        public static DateTime DateLogin { get; set; }
+        public static string DateLogout = "";
+        public static string Status = "";
+        public static bool Online = false;
 
-        public SysLog(string usrname, string password, DateTime datelogin, DateTime datelogout, string status)
+        public SysLOG(string usrname, string password, DateTime datelogin, string datelogout, string status)
         {
-            this.UserName = usrname;
-            this.Password = password;
-            this.DateLogin = datelogin;
-            this.DateLogout = datelogout;
-            this.Status = status;
+            UserName = usrname;
+            Password = password;
+            DateLogin = datelogin;
+            DateLogout = datelogout;
+            Status = status;
         }
 
-        public SysLog(DataRow row)
+        public SysLOG(DataRow row)
         {
-            this.UserName = row["username"].ToString();
-            this.Password = row["password"].ToString();
-            this.Status = row["status"].ToString();
-            this.DateLogin = Convert.ToDateTime(row["loginDate"]);
+            UserName = row["username"].ToString();
+            Password = row["password"].ToString();
+            Status = row["status"].ToString();
+            DateLogin = Convert.ToDateTime(row["loginDate"]);
             if (row["logoutDate"].ToString() != "")
-                this.DateLogout = Convert.ToDateTime(row["logoutDate"]);
+                DateLogout = row["logoutDate"].ToString();
             else
-                this.DateLogout = null;
+                DateLogout = null;
         }
     }
 }
