@@ -123,7 +123,6 @@
             this.txtUsername.ForeColor = System.Drawing.Color.White;
             this.txtUsername.Location = new System.Drawing.Point(585, 80);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.ReadOnly = true;
             this.txtUsername.Size = new System.Drawing.Size(235, 44);
             this.txtUsername.TabIndex = 88;
             this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
@@ -410,6 +409,7 @@
             this.txtGroupID.ReadOnly = true;
             this.txtGroupID.Size = new System.Drawing.Size(219, 44);
             this.txtGroupID.TabIndex = 84;
+            this.txtGroupID.TextChanged += new System.EventHandler(this.txtGroupID_TextChanged);
             // 
             // label2
             // 

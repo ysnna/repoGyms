@@ -23,7 +23,7 @@ namespace slnGym.Forms
             InitializeComponent();
             timer1.Start();
         }
-
+        #region KhaiBao Brand
         Layer.EMPLOYEEs emp = new Layer.EMPLOYEEs();
         Layer.CONTRACTs contract = new CONTRACTs();
         Layer.MEMBERs mem = new MEMBERs();
@@ -34,7 +34,7 @@ namespace slnGym.Forms
         Layer.DETAILCONTRACT dtCont = new Layer.DETAILCONTRACT();
         Layer.AccountBL accountLog = new Layer.AccountBL();
         User_Control.AccountEmployeeUC dt = new User_Control.AccountEmployeeUC() { Width = 1912, Height = 905 };
-
+        #endregion
         //Event Click & Load
         public void createMemberLoad()
         {
@@ -72,36 +72,6 @@ namespace slnGym.Forms
             User_Control.ReceiptUC receiptUC = new User_Control.ReceiptUC() { Width = 1912, Height = 905 };
             this.tabNewMember.Controls.Add(receiptUC);
             receiptUC.BringToFront();
-        }
-
-        public void CreateContract()
-        {
-            #region Create member
-            GETMember.IDMember = txtUserID.Text;
-            GETMember.Password = txtPassword.Text;
-            GETMember.FName = txtFname.Text;
-            GETMember.LName = txtLname.Text;
-            GETMember.Birthday = dateTimePickerBdate.Value;
-            GETMember.Picture = picAvaEdit.Image;
-            GETMember.Address = txtAddress.Text;
-            GETMember.Gender = 0;
-            if (radioFemale.Checked == true)
-                GETMember.Gender = 1;
-            GETMember.Phone = txtPhone.Text;
-            GETMember.IDCard = Convert.ToInt32(txtIDCard.Text);
-            GETMember.Note = txtNote.Text;
-            #endregion
-
-            #region Create Contract
-            GETContract.IDContract = txtIDContract.Text;
-            GETContract.IDPT = txtIDPT.Text;
-            GETContract.IDPackage = Convert.ToInt32(txtPackage.Text);
-            GETContract.Start = datePickerStart.Value;
-            GETContract.End = datePickerEnd.Value;
-            TimeSpan time = GETContract.End - GETContract.Start;
-            GETContract.Remain = time.Days.ToString();
-            GETContract.Period = Convert.ToInt32(numericMonth.Value);
-            #endregion
         }
 
         private void btResfresh_Click(object sender, EventArgs e)
@@ -171,6 +141,35 @@ namespace slnGym.Forms
         {
             Administration administration = new Administration(this);
             administration.ShowDialog();
+        }
+        private void dgvPT_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int numrow = dgvPT.CurrentCell.RowIndex;
+            txtIDPT.Text = dgvPT.Rows[numrow].Cells[0].Value.ToString();
+            txtPT.Text = dgvPT.Rows[numrow].Cells[1].Value.ToString() + ' ' + dgvPT.Rows[numrow].Cells[2].Value.ToString();
+        }
+
+        private void datePickerStart_ValueChanged(object sender, EventArgs e)
+        {
+            datePickerEnd.Value = datePickerStart.Value.AddMonths(Convert.ToInt32(numericMonth.Value));
+        }
+
+        private void numericMonth_ValueChanged(object sender, EventArgs e)
+        {
+            datePickerEnd.Value = datePickerStart.Value.AddMonths(Convert.ToInt32(numericMonth.Value));
+        }
+
+        private void btCreateContract_Click(object sender, EventArgs e)
+        {
+            User_Control.ReceiptUC receiptUC = new User_Control.ReceiptUC() { Width = 1912, Height = 905 };
+            this.tabNewMember.Controls.Add(receiptUC);
+            receiptUC.BringToFront();
+        }
+
+        private void btReset_Click(object sender, EventArgs e)
+        {
+            txtIDPT.Text = "";
+            txtPT.Text = "";
         }
 
         //ham xu ly 
@@ -292,19 +291,12 @@ namespace slnGym.Forms
             {
                 txtNameSeller.Text = empDT.Rows[0][3].ToString() + " " + empDT.Rows[0][4].ToString();
             }
-
-            dtcontract = contract.getCONTRACTS();
-            int countRowContract = dtcontract.Rows.Count;
-            if (countRowContract < 10)
-            {
-                txtIDContract.Text = "CONT0" + (countRowContract + 1).ToString();
-            }
-            else txtIDContract.Text = "CONT" + (countRowContract + 1).ToString();
-            dtmem = mem.getAllMEMBERS();
-            int countRowMember = dtmem.Rows.Count;
-            txtIDMember.Text = "kh" + (countRowMember + 1).ToString();
-            txtUserID.Text = txtIDMember.Text;
-        }
+            //Lấy KH và Contract ID tự động
+             ContractBL conbl = new ContractBL();
+             txtIDContract.Text= conbl.loadIDContract();
+             txtIDMember.Text = conbl.loadIDMEMBER();
+             txtUserID.Text = txtIDMember.Text;
+        }   
 
         public void loadDetailsContract()
         {
@@ -358,6 +350,50 @@ namespace slnGym.Forms
             return regex.Replace(temp, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D');
         }
 
+       
+        public void CreateContract()
+        {
+            #region Create member
+            GETMember.IDMember = txtUserID.Text;
+            GETMember.Password = txtPassword.Text;
+            GETMember.FName = txtFname.Text;
+            GETMember.LName = txtLname.Text;
+            GETMember.Birthday = dateTimePickerBdate.Value;
+            GETMember.Picture = picAvaEdit.Image;
+            GETMember.Address = txtAddress.Text;
+            GETMember.Gender = 0;
+            if (radioFemale.Checked == true)
+            GETMember.Gender = 1;
+            GETMember.Phone = txtPhone.Text;
+            GETMember.IDCard = Convert.ToInt32(txtIDCard.Text);
+            GETMember.Note = txtNote.Text;
+            #endregion
+
+            #region Create Contract
+            GETContract.IDContract = txtIDContract.Text;
+            GETContract.IDPT = txtIDPT.Text;
+            GETContract.IDPackage = Convert.ToInt32(txtPackage.Text);
+            GETContract.Start = datePickerStart.Value;
+            GETContract.End = datePickerEnd.Value;
+            TimeSpan time = GETContract.End - GETContract.Start;
+            GETContract.Remain = time.Days.ToString();
+            GETContract.Period = Convert.ToInt32(numericMonth.Value);
+            #endregion
+        }
+
+        //====== XỬ LÝ CHƯA LOGIN ======
+        public void NeedLogin()
+        {
+            tabControlManager.Enabled = false;
+            this.tabAccount.Controls.Remove(dt);
+        }
+
+        public void AccessSuccess()
+        {
+            tabControlManager.Enabled = true;
+            loadAccount();
+        }
+        //========Hàm reload DGV ======
         public void reloadDGVPacket()
         {
             Layer.SERVICEPACKs sv = new Layer.SERVICEPACKs();
@@ -377,48 +413,6 @@ namespace slnGym.Forms
         {
             loadMachine();
             this.Refresh();
-        }
-
-        private void dgvPT_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int numrow = dgvPT.CurrentCell.RowIndex;
-            txtIDPT.Text = dgvPT.Rows[numrow].Cells[0].Value.ToString();
-            txtPT.Text = dgvPT.Rows[numrow].Cells[1].Value.ToString() + ' ' + dgvPT.Rows[numrow].Cells[2].Value.ToString();
-        }
-
-        private void datePickerStart_ValueChanged(object sender, EventArgs e)
-        {
-            datePickerEnd.Value = datePickerStart.Value.AddMonths(Convert.ToInt32(numericMonth.Value));
-        }
-
-        private void numericMonth_ValueChanged(object sender, EventArgs e)
-        {
-            datePickerEnd.Value = datePickerStart.Value.AddMonths(Convert.ToInt32(numericMonth.Value));
-        }
-
-        private void btCreateContract_Click(object sender, EventArgs e)
-        {
-            User_Control.ReceiptUC receiptUC = new User_Control.ReceiptUC() { Width = 1912, Height = 905 };
-            this.tabNewMember.Controls.Add(receiptUC);
-            receiptUC.BringToFront();
-        }
-
-        private void btReset_Click(object sender, EventArgs e)
-        {
-            txtIDPT.Text = "";
-            txtPT.Text = "";
-        }
-
-        public void NeedLogin()
-        {
-            tabControlManager.Enabled = false;
-            this.tabAccount.Controls.Remove(dt);
-        }
-
-        public void AccessSuccess()
-        {
-            tabControlManager.Enabled = true;
-            loadAccount();
         }
     }
 }

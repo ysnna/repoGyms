@@ -21,20 +21,80 @@ namespace slnGym.Layer
             pass = "nv" + randomNext(100, 999).ToString();
             return pass;
         }
+        public string SetPassPT()
+        {
+            string pass;
+            pass = "hlv" + randomNext(100, 999).ToString();
+            return pass;
+        }
         public int randomNext(int a, int b)
         {
             Random random = new Random();
             return random.Next(a, b);
         }
-        public string UserName()
+        //public string UserName()
+        //{
+        //    int count = 1;
+        //    string username;
+        //    DataTable dt = new DataTable();
+        //    dt = emp.getAllEMPLOYEE();
+        //    count += dt.Rows.Count;
+        //    username = "nv" + count;
+        //    return username;
+        //} XÓA
+        public string existsEmpID(string grID)
         {
-            int count = 1;
-            string username;
             DataTable dt = new DataTable();
-            dt = emp.getAllEMPLOYEE();
-            count += dt.Rows.Count;
-            username = "nv" + count;
-            return username;
+            dt = emp.getexistID(grID);
+            string check= null;
+            int i = 1;
+            int j = 0;
+            while (i<=dt.Rows.Count && j < dt.Rows.Count)
+            {
+                    check = "nv";
+                    check += i;
+                    if (check == dt.Rows[j][0].ToString())
+                    {
+                        j++;
+                        i++;
+                    }
+                    else 
+                    return check;
+            }
+            if (i > dt.Rows.Count)
+            {
+                check = "nv";
+                check += i;
+            }
+            return check;
         }
+
+        public string existsPTID(string grID)
+        {
+            DataTable dt = new DataTable();
+            dt = emp.getexistID(grID);
+            string check = null;
+            int i = 1;
+            int j = 0;
+            while (i <= dt.Rows.Count  && j < dt.Rows.Count)
+            {
+                check = "hlv";
+                check += i;
+                if (check == dt.Rows[j][0].ToString())
+                {
+                    j++;
+                    i++;
+                }
+                else return check;
+            }
+            if (i > dt.Rows.Count)
+            {
+                check = "hlv";
+                check += i;
+            }
+            return check;
+           
+        }
+
     }
 }

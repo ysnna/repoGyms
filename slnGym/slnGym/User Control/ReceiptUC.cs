@@ -26,6 +26,7 @@ namespace slnGym.User_Control
         MEMBERs mem = new MEMBERs();
         ListReceipt listReceipt = new ListReceipt();
         LOGIN log = new LOGIN();
+        ContractBL bl = new ContractBL();
         DETAILCONTRACT detailsCont = new DETAILCONTRACT();
         DETAILRECEIPT detailsReceipt = new DETAILRECEIPT();
 
@@ -164,13 +165,7 @@ namespace slnGym.User_Control
 
         public void loadData()
         {
-            DataTable dtIDReceipt = new DataTable();
-            dtIDReceipt = inv.getRECEIPT();
-            if (dtIDReceipt.Rows.Count < 10)
-            {
-                txtInvoiceNo.Text = "IVC0" + (dtIDReceipt.Rows.Count + 1).ToString();
-            }
-            else txtInvoiceNo.Text = "IVC" + (dtIDReceipt.Rows.Count + 1).ToString();
+            txtInvoiceNo.Text = bl.loadInvoiceID();
             txtMemIDInvoide.Text = GETMember.IDMember;
             txtEmployeeID.Text = GLOBAL.username;
 

@@ -144,6 +144,16 @@ namespace slnGym.Layer
             mydb.closeConnection();
             return dt;
         }
+        public DataTable getexistID(string id)
+        {
+            SqlCommand cmd = new SqlCommand("select *from EMPLOYEE where groupID=@ma", mydb.getConnection);
+            cmd.Parameters.Add("@ma", SqlDbType.VarChar).Value = id;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            mydb.closeConnection();
+            return dt;
+        }
         public DataTable getEmployeebyGroupID(string group)
         {
             SqlCommand cmd = new SqlCommand("select employeeID as 'ID', groupID as 'Group', avatar as 'Avatar',employeeFname as 'FName', employeeLname as 'LName',employeeBdate as 'Birthday'," +
