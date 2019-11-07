@@ -53,6 +53,9 @@ namespace slnGym.Forms
             }
             if (LoginCheck() == true)
             {
+                SysLOG.DateLogin = DateTime.Now.ToString();
+                SysLOG.UserName = GLOBAL.username;
+                SysLOG.Online = true;
                 switch (DefineAccount())
                 {
                     case 0:
@@ -60,6 +63,7 @@ namespace slnGym.Forms
                         this.Close();
                         break;
                     case 1:
+                        
                         reLoadUserPassword();
                         this.Close();
                         break;
@@ -72,9 +76,6 @@ namespace slnGym.Forms
                         this.Close();
                         break;
                 }
-                SysLOG.DateLogin = DateTime.Now;
-                SysLOG.UserName = GLOBAL.username;
-                SysLOG.Online = true;
                 accountLog.insertAccount(SysLOG.UserName, SysLOG.DateLogin, SysLOG.DateLogout, SysLOG.Status);
                 f1.AccessSuccess();
             }

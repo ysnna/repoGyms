@@ -317,7 +317,7 @@ namespace slnGym.Forms
             User_Control.MemberUC dt = new User_Control.MemberUC() { Width = 1912, Height = 905 };
             this.tabMember.Controls.Add(dt);
         }
-        
+
         public void loadStatistic()
         {
             User_Control.StatisticEmployeeUC dt = new User_Control.StatisticEmployeeUC() { Width = 1912, Height = 905 };
@@ -423,12 +423,13 @@ namespace slnGym.Forms
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if(MessageBox.Show("Are you sure you want to Quit?", "System", MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
+            if (SysLOG.UserName != "")
             {
                 SysLOG.DateLogout = DateTime.Now.ToString();
                 accountLog.updateAccount(SysLOG.UserName, SysLOG.DateLogin, SysLOG.DateLogout, SysLOG.Status);
-                this.Dispose();
+                this.Close();
             }
+            this.Close();
         }
     }
 }

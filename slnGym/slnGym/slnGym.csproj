@@ -56,7 +56,6 @@
     <Compile Include="DataObject\ListProduct.cs" />
     <Compile Include="DataObject\ListReceipt.cs" />
     <Compile Include="DataObject\ListService.cs" />
-    <Compile Include="DataObject\LoginSys.cs" />
     <Compile Include="DataObject\MemberBL.cs" />
     <Compile Include="DataObject\SysLog.cs" />
     <Compile Include="Forms\Administration.cs">

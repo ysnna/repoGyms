@@ -15,11 +15,11 @@ namespace slnGym.Layer
         LOGIN lg = new LOGIN();
         User_Control.AccountEmployeeUC empUC = new User_Control.AccountEmployeeUC();
         MY_DB mydb = new MY_DB();
-        public bool insertAccount(string username, DateTime login, string logout, string status)
+        public bool insertAccount(string username, string login, string logout, string status)
         {
             SqlCommand cmd = new SqlCommand("insert into ACCOUNTLOGIN(username,loginDate,logoutDate,status)" + "values(@user,@login,@logout,@status)", mydb.getConnection);
             cmd.Parameters.Add("@user", SqlDbType.VarChar).Value = username;
-            cmd.Parameters.Add("@login", SqlDbType.DateTime).Value = login;
+            cmd.Parameters.Add("@login", SqlDbType.VarChar).Value = login;
             cmd.Parameters.Add("@logout", SqlDbType.VarChar).Value = logout;
             cmd.Parameters.Add("@status", SqlDbType.VarChar).Value = status;
             mydb.openConnection();
@@ -34,11 +34,11 @@ namespace slnGym.Layer
                 return false;
             }
         }//update CLASSROOM set classID=@id
-        public bool updateAccount(string username, DateTime login, string logout, string status)
+        public bool updateAccount(string username, string login, string logout, string status)
         {
-            SqlCommand cmd = new SqlCommand("update ACCOUNTLOGIN set loginDate=@login,logoutDate=@logout,status=@status where username=@user", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("update ACCOUNTLOGIN set logoutDate=@logout,status=@status where username=@user and loginDate=@login", mydb.getConnection);
             cmd.Parameters.Add("@user", SqlDbType.VarChar).Value = username;
-            cmd.Parameters.Add("@login", SqlDbType.DateTime).Value = login;
+            cmd.Parameters.Add("@login", SqlDbType.VarChar).Value = login;
             cmd.Parameters.Add("@logout", SqlDbType.VarChar).Value = logout;
             cmd.Parameters.Add("@status", SqlDbType.VarChar).Value = status;
             mydb.openConnection();
