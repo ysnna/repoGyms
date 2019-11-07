@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using slnGym.Layer;
 using slnGym.DataObject;
 using System.IO;
+using System.Globalization;
 
 namespace slnGym.User_Control
 {
@@ -31,8 +32,75 @@ namespace slnGym.User_Control
 
         private void btPrintInvoice_Click(object sender, EventArgs e)
         {
+            System.Drawing.Printing.PrintDocument receipt = new System.Drawing.Printing.PrintDocument();
+            printDialog1.Document = receipt;
+            receipt.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(createBill);
+            DialogResult result1 = printDialog1.ShowDialog();
+            if (result1 == DialogResult.OK)
+                receipt.Print();
+            this.Dispose();
+        }
 
-            // this.Visible = false;
+        public void createBill(Object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            double cash = double.Parse(txtTotal.Text, NumberStyles.Currency);
+            Graphics graphic = e.Graphics;
+
+            Font font = new Font("Courier New", 16);
+            float fontHeight = font.GetHeight();
+            int startX = 10;
+            int startY = 10;
+            int offset = 40;
+            graphic.DrawString("    GYM FITNESS Center", new Font("Courier New", 24), new SolidBrush(Color.Black), startX + 100, startY);
+            string top = "Item Name".PadRight(40) + "Price";
+            offset = offset + (int)fontHeight;
+            graphic.DrawString("Invoice number: " + txtInvoiceNo.Text, font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset = offset + (int)fontHeight + 5;
+            graphic.DrawString("Employee ID   : " + txtEmployeeID.Text, font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset = offset + (int)fontHeight + 5;
+            graphic.DrawString("Member        : " + txtNameMember.Text, font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset = offset + (int)fontHeight + 5;
+            graphic.DrawString("Checked out   : " + lbDatePayment.Text, font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset = offset + (int)fontHeight + 12;
+            graphic.DrawString(top, font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset = offset + (int)fontHeight;
+            graphic.DrawString("------------------------------------------------------", font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset = offset + (int)fontHeight + 5;
+
+            decimal total = Convert.ToDecimal(txtTotal.Text);
+            decimal paid = Convert.ToDecimal(txtPaid.Text);
+            decimal change = Convert.ToDecimal(txtChange.Text);
+
+            for (int i = 0; i < dgvCheckInvoice.Rows.Count; i++)
+            {
+                string name = dgvCheckInvoice.Rows[i].Cells[2].Value.ToString();
+                decimal price = Convert.ToDecimal(dgvCheckInvoice.Rows[i].Cells[4].Value);
+
+                string productLine = name.PadRight(40) + String.Format("{0:c}", price);
+                graphic.DrawString(productLine, font, new SolidBrush(Color.Black), startX, startY + offset);
+                offset = offset + (int)fontHeight + 5;
+            }
+
+            graphic.DrawString("------------------------------------------------------", font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset = offset + (int)fontHeight + 5;
+
+            graphic.DrawString("Total  ".PadRight(40) + String.Format("{0:c}", total),
+                new Font("Courier New", 16, FontStyle.Regular),
+                new SolidBrush(Color.Black), startX, startY + offset);
+            offset = offset + (int)fontHeight + 5;
+            graphic.DrawString("Payment".PadRight(40) + String.Format("{0:c}", paid),
+                new Font("Courier New", 16, FontStyle.Regular),
+                new SolidBrush(Color.Black), startX, startY + offset);
+            offset = offset + (int)fontHeight + 5;
+            graphic.DrawString("Change ".PadRight(40) + String.Format("{0:c}", change),
+                new Font("Courier New", 16, FontStyle.Regular),
+                new SolidBrush(Color.Black), startX, startY + offset);
+
+            offset = offset + 40;
+            graphic.DrawString("     Thank you for your custom", font, new SolidBrush(Color.Black), startX + 100, startY + offset);
+
+            offset = offset + 20;
+            graphic.DrawString("       Please come back soon!", font, new SolidBrush(Color.Black), startX + 100, startY + offset);
         }
 
         private void txtPaid_TextChanged(object sender, EventArgs e)
@@ -116,6 +184,7 @@ namespace slnGym.User_Control
             }
             else MessageBox.Show("Added contract fail", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
         public void createReceipt()
         {
             if (inv.insertRECEIPT(txtInvoiceNo.Text, GETMember.IDMember, Convert.ToDecimal(txtTotal.Text.Trim())))
@@ -124,6 +193,7 @@ namespace slnGym.User_Control
             }
             else MessageBox.Show("Added receipt fail", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
         public void createDetailsContract()
         {
             if (detailsCont.insertDETAILCON(GETContract.IDContract, GLOBAL.username, txtInvoiceNo.Text.Trim()))
@@ -132,6 +202,7 @@ namespace slnGym.User_Control
             }
             else MessageBox.Show("Added detail contract fail", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
         public void createDetailsReceipt()
         {
             int lenght = dgvCheckInvoice.Rows.Count;

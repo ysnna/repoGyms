@@ -420,5 +420,15 @@ namespace slnGym.Forms
             tabControlManager.Enabled = true;
             loadAccount();
         }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(MessageBox.Show("Are you sure you want to Quit?", "System", MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
+            {
+                SysLOG.DateLogout = DateTime.Now.ToString();
+                accountLog.updateAccount(SysLOG.UserName, SysLOG.DateLogin, SysLOG.DateLogout, SysLOG.Status);
+                this.Dispose();
+            }
+        }
     }
 }

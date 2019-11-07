@@ -143,16 +143,6 @@
             this.packageDataSet = new slnGym.PackageDataSet();
             this.picAddPackage = new System.Windows.Forms.PictureBox();
             this.tabRenew = new System.Windows.Forms.TabPage();
-            this.tabDetailsContract = new System.Windows.Forms.TabPage();
-            this.tabMember = new System.Windows.Forms.TabPage();
-            this.tabStatistic = new System.Windows.Forms.TabPage();
-            this.tabAccount = new System.Windows.Forms.TabPage();
-            this.lbDateTime = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.sERVICEPACKTableAdapter = new slnGym.PackageDataSetTableAdapters.SERVICEPACKTableAdapter();
-            this.pTTagDataSet = new slnGym.PTTagDataSet();
-            this.eMPLOYEEBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.eMPLOYEETableAdapter = new slnGym.PTTagDataSetTableAdapters.EMPLOYEETableAdapter();
             this.btRenewRefresh = new System.Windows.Forms.Button();
             this.btRenewInvoice = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -215,6 +205,16 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.tabDetailsContract = new System.Windows.Forms.TabPage();
+            this.tabMember = new System.Windows.Forms.TabPage();
+            this.tabStatistic = new System.Windows.Forms.TabPage();
+            this.tabAccount = new System.Windows.Forms.TabPage();
+            this.lbDateTime = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.sERVICEPACKTableAdapter = new slnGym.PackageDataSetTableAdapters.SERVICEPACKTableAdapter();
+            this.pTTagDataSet = new slnGym.PTTagDataSet();
+            this.eMPLOYEEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.eMPLOYEETableAdapter = new slnGym.PTTagDataSetTableAdapters.EMPLOYEETableAdapter();
             this.menuStrip.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabHome.SuspendLayout();
@@ -238,8 +238,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.packageDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAddPackage)).BeginInit();
             this.tabRenew.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pTTagDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eMPLOYEEBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picRenew)).BeginInit();
             this.panel1.SuspendLayout();
@@ -249,6 +247,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPTRenew)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPackageRenew)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pTTagDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eMPLOYEEBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -469,7 +469,7 @@
             this.dgvServicePack.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvServicePack.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvServicePack.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvServicePack.Size = new System.Drawing.Size(1912, 1139);
+            this.dgvServicePack.Size = new System.Drawing.Size(1912, 1154);
             this.dgvServicePack.TabIndex = 102;
             // 
             // tabManage
@@ -1468,77 +1468,6 @@
             this.tabRenew.TabIndex = 5;
             this.tabRenew.Text = " Renew ";
             // 
-            // tabDetailsContract
-            // 
-            this.tabDetailsContract.Location = new System.Drawing.Point(4, 37);
-            this.tabDetailsContract.Name = "tabDetailsContract";
-            this.tabDetailsContract.Size = new System.Drawing.Size(1912, 905);
-            this.tabDetailsContract.TabIndex = 2;
-            this.tabDetailsContract.Text = " Details Contract ";
-            this.tabDetailsContract.UseVisualStyleBackColor = true;
-            // 
-            // tabMember
-            // 
-            this.tabMember.Location = new System.Drawing.Point(4, 37);
-            this.tabMember.Name = "tabMember";
-            this.tabMember.Size = new System.Drawing.Size(1912, 905);
-            this.tabMember.TabIndex = 4;
-            this.tabMember.Text = " Members ";
-            this.tabMember.UseVisualStyleBackColor = true;
-            // 
-            // tabStatistic
-            // 
-            this.tabStatistic.Location = new System.Drawing.Point(4, 37);
-            this.tabStatistic.Name = "tabStatistic";
-            this.tabStatistic.Size = new System.Drawing.Size(1912, 905);
-            this.tabStatistic.TabIndex = 3;
-            this.tabStatistic.Text = " Statistics ";
-            this.tabStatistic.UseVisualStyleBackColor = true;
-            // 
-            // tabAccount
-            // 
-            this.tabAccount.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.tabAccount.Location = new System.Drawing.Point(4, 37);
-            this.tabAccount.Name = "tabAccount";
-            this.tabAccount.Size = new System.Drawing.Size(1912, 937);
-            this.tabAccount.TabIndex = 3;
-            this.tabAccount.Text = " Account ";
-            // 
-            // lbDateTime
-            // 
-            this.lbDateTime.AutoSize = true;
-            this.lbDateTime.BackColor = System.Drawing.Color.Transparent;
-            this.lbDateTime.Font = new System.Drawing.Font("UTM Centur", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDateTime.ForeColor = System.Drawing.Color.Crimson;
-            this.lbDateTime.Location = new System.Drawing.Point(1451, 9);
-            this.lbDateTime.Name = "lbDateTime";
-            this.lbDateTime.Size = new System.Drawing.Size(169, 40);
-            this.lbDateTime.TabIndex = 7;
-            this.lbDateTime.Text = "DateTime: ";
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // sERVICEPACKTableAdapter
-            // 
-            this.sERVICEPACKTableAdapter.ClearBeforeFill = true;
-            // 
-            // pTTagDataSet
-            // 
-            this.pTTagDataSet.DataSetName = "PTTagDataSet";
-            this.pTTagDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // eMPLOYEEBindingSource
-            // 
-            this.eMPLOYEEBindingSource.DataMember = "EMPLOYEE";
-            this.eMPLOYEEBindingSource.DataSource = this.pTTagDataSet;
-            // 
-            // eMPLOYEETableAdapter
-            // 
-            this.eMPLOYEETableAdapter.ClearBeforeFill = true;
-            // 
             // btRenewRefresh
             // 
             this.btRenewRefresh.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -2439,6 +2368,77 @@
             this.pictureBox2.TabIndex = 86;
             this.pictureBox2.TabStop = false;
             // 
+            // tabDetailsContract
+            // 
+            this.tabDetailsContract.Location = new System.Drawing.Point(4, 37);
+            this.tabDetailsContract.Name = "tabDetailsContract";
+            this.tabDetailsContract.Size = new System.Drawing.Size(1912, 905);
+            this.tabDetailsContract.TabIndex = 2;
+            this.tabDetailsContract.Text = " Details Contract ";
+            this.tabDetailsContract.UseVisualStyleBackColor = true;
+            // 
+            // tabMember
+            // 
+            this.tabMember.Location = new System.Drawing.Point(4, 37);
+            this.tabMember.Name = "tabMember";
+            this.tabMember.Size = new System.Drawing.Size(1912, 905);
+            this.tabMember.TabIndex = 4;
+            this.tabMember.Text = " Members ";
+            this.tabMember.UseVisualStyleBackColor = true;
+            // 
+            // tabStatistic
+            // 
+            this.tabStatistic.Location = new System.Drawing.Point(4, 37);
+            this.tabStatistic.Name = "tabStatistic";
+            this.tabStatistic.Size = new System.Drawing.Size(1912, 905);
+            this.tabStatistic.TabIndex = 3;
+            this.tabStatistic.Text = " Statistics ";
+            this.tabStatistic.UseVisualStyleBackColor = true;
+            // 
+            // tabAccount
+            // 
+            this.tabAccount.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.tabAccount.Location = new System.Drawing.Point(4, 37);
+            this.tabAccount.Name = "tabAccount";
+            this.tabAccount.Size = new System.Drawing.Size(1912, 937);
+            this.tabAccount.TabIndex = 3;
+            this.tabAccount.Text = " Account ";
+            // 
+            // lbDateTime
+            // 
+            this.lbDateTime.AutoSize = true;
+            this.lbDateTime.BackColor = System.Drawing.Color.Transparent;
+            this.lbDateTime.Font = new System.Drawing.Font("UTM Centur", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDateTime.ForeColor = System.Drawing.Color.Crimson;
+            this.lbDateTime.Location = new System.Drawing.Point(1451, 9);
+            this.lbDateTime.Name = "lbDateTime";
+            this.lbDateTime.Size = new System.Drawing.Size(169, 40);
+            this.lbDateTime.TabIndex = 7;
+            this.lbDateTime.Text = "DateTime: ";
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // sERVICEPACKTableAdapter
+            // 
+            this.sERVICEPACKTableAdapter.ClearBeforeFill = true;
+            // 
+            // pTTagDataSet
+            // 
+            this.pTTagDataSet.DataSetName = "PTTagDataSet";
+            this.pTTagDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // eMPLOYEEBindingSource
+            // 
+            this.eMPLOYEEBindingSource.DataMember = "EMPLOYEE";
+            this.eMPLOYEEBindingSource.DataSource = this.pTTagDataSet;
+            // 
+            // eMPLOYEETableAdapter
+            // 
+            this.eMPLOYEETableAdapter.ClearBeforeFill = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2453,6 +2453,7 @@
             this.Name = "Form1";
             this.Text = "Gym master";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
@@ -2482,8 +2483,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.packageDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAddPackage)).EndInit();
             this.tabRenew.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pTTagDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eMPLOYEEBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picRenew)).EndInit();
@@ -2497,6 +2496,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPTRenew)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPackageRenew)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pTTagDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eMPLOYEEBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
