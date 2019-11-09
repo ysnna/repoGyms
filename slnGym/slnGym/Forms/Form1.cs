@@ -11,6 +11,8 @@ using System.Windows.Forms;
 using slnGym.Layer;
 using slnGym.DataObject;
 using System.Text.RegularExpressions;
+using System.Net;
+using System.Net.Sockets;
 using System.IO;
 using System.Net.NetworkInformation;
 using System.Threading;
@@ -24,7 +26,7 @@ namespace slnGym.Forms
         {
             InitializeComponent();
             timer1.Start();
-            socket = new SocketManager();
+            //socket = new SocketManager();
         }
 
         SocketManager socket;
@@ -160,6 +162,7 @@ namespace slnGym.Forms
             // TODO: This line of code loads data into the 'packageDataSet.SERVICEPACK' table. You can move, or remove it, as needed.
             this.sERVICEPACKTableAdapter.Fill(this.packageDataSet.SERVICEPACK);
             datePickerEnd.Value = datePickerStart.Value.AddMonths(Convert.ToInt32(numericMonth.Value));
+            panelChat.Visible = false;
             loadMachine();
             loadProduct();
             loadServicePackage();
@@ -168,6 +171,7 @@ namespace slnGym.Forms
             loadMembers();
             loadStatistic();
             NeedLogin();
+            getIP();
         }
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -410,7 +414,7 @@ namespace slnGym.Forms
             this.Refresh();
         }
 
-       
+
         public void NeedLogin()
         {
             tabControlManager.Enabled = false;
@@ -447,7 +451,8 @@ namespace slnGym.Forms
         private void contactToolStripMenuItem_Click(object sender, EventArgs e)
         {
             socket.IP = GLOBAL.IPV4;
-            if(socket.ConnectServer())
+            //byte[] message = Encoding.ASCII.GetBytes("Test Server");
+            if (socket.ConnectServer())
             {
                 socket.CreateServer();
                 Thread listenThread = new Thread(() =>
@@ -483,17 +488,138 @@ namespace slnGym.Forms
 
         private void Form1_Shown(object sender, EventArgs e)
         {
-            GLOBAL.IPV4 = socket.GetLocalIPv4(NetworkInterfaceType.Wireless80211);
-            if(string.IsNullOrEmpty(GLOBAL.IPV4))
-            {
-                GLOBAL.IPV4 = socket.GetLocalIPv4(NetworkInterfaceType.Ethernet);
-            }
-            this.Text = this.Text + " (IPv4: " + GLOBAL.IPV4 + ")";
+            //GLOBAL.IPV4 = socket.GetLocalIPv4(NetworkInterfaceType.Wireless80211);
+            //if (string.IsNullOrEmpty(GLOBAL.IPV4))
+            //{
+            //    GLOBAL.IPV4 = socket.GetLocalIPv4(NetworkInterfaceType.Ethernet);
+            //}
+            //this.Text = this.Text + " (IPv4: " + GLOBAL.IPV4 + ")";
         }
         void Listen()
         {
-            string data =(string)socket.Receive();
+            string data = (string)socket.Receive();
             MessageBox.Show(data);
+        }
+
+        private void btCloseChat_Click(object sender, EventArgs e)
+        {
+            panelChat.Visible=false;
+        }
+
+        private void userLoginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tess.Text = GLOBAL.username;
+            panelChat.BringToFront();
+            panelChat.Visible = true;
+            if (GLOBAL.username == "admin")
+            {
+                serverStart();
+            }
+            else clientConnect();
+        }
+
+        private TcpClient client;
+        public StreamReader STR;
+        public StreamWriter STW;
+        public string recieve;
+        public String TextToSend;
+
+        void getIP()
+        {
+            IPAddress[] localIP = Dns.GetHostAddresses(Dns.GetHostName());
+
+            foreach (IPAddress address in localIP)
+            {
+                if (address.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    GLOBAL.IPV4 = address.ToString();
+                }
+            }
+        }
+
+        private void btSendMessage_Click(object sender, EventArgs e)
+        {
+            if (txtMessage.Text != "")
+            {
+                TextToSend = txtMessage.Text;
+                backgroundWorker2.RunWorkerAsync();
+            }
+            txtMessage.Text = "";
+        }
+        public void serverStart()
+        {
+            TcpListener listener = new TcpListener(IPAddress.Any, int.Parse(GLOBAL.Port));
+            listener.Start();
+            client = listener.AcceptTcpClient();
+            STR = new StreamReader(client.GetStream());
+            STW = new StreamWriter(client.GetStream());
+            STW.AutoFlush = true;
+
+            backgroundWorker1.RunWorkerAsync();
+            backgroundWorker2.WorkerSupportsCancellation = true;
+        }
+        public void clientConnect()
+        {
+            client = new TcpClient();
+            IPEndPoint IpEnd = new IPEndPoint(IPAddress.Parse(GLOBAL.IPV4), int.Parse(GLOBAL.Port));
+
+            try
+            {
+                client.Connect(IpEnd);
+
+                if (client.Connected)
+                {
+                    txtChatScreen.AppendText("Connected to server" + "\r\n");
+                    STW = new StreamWriter(client.GetStream());
+                    STR = new StreamReader(client.GetStream());
+                    STW.AutoFlush = true;
+                    backgroundWorker1.RunWorkerAsync();
+                    backgroundWorker2.WorkerSupportsCancellation = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            while (client.Connected)
+            {
+                try
+                {
+                    recieve = STR.ReadLine();
+                    this.txtChatScreen.Invoke(new MethodInvoker(delegate ()
+                    {
+                        txtChatScreen.AppendText("Admin: " + recieve + "\r\n");
+                    }));
+                    recieve = "";
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Server not found", "Cannot connect to server");
+                    txtMessage.ReadOnly = true;
+                    btSendMessage.Enabled = false;
+                }
+            }
+        }
+
+        private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
+        {
+            if (client.Connected)
+            {
+                STW.WriteLine(TextToSend);
+                this.txtChatScreen.Invoke(new MethodInvoker(delegate ()
+                {
+                    txtChatScreen.AppendText("NV: " + TextToSend + "\r\n");
+                }));
+            }
+            else
+            {
+                MessageBox.Show("Sending failed");
+            }
+            backgroundWorker2.CancelAsync();
         }
     }
 }
