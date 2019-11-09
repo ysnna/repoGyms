@@ -67,11 +67,18 @@ namespace slnGym.Forms
 
         private void btInvoice_Click(object sender, EventArgs e)
         {
-            CreateContract();
-            MessageBox.Show("complete");
-            User_Control.ReceiptUC receiptUC = new User_Control.ReceiptUC() { Width = 1912, Height = 905 };
-            this.tabNewMember.Controls.Add(receiptUC);
-            receiptUC.BringToFront();
+            if (verif())
+            {
+                MessageBox.Show("Please Insert More Infomation!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                CreateContract();
+                MessageBox.Show("complete");
+                User_Control.ReceiptUC receiptUC = new User_Control.ReceiptUC() { Width = 1912, Height = 905 };
+                this.tabNewMember.Controls.Add(receiptUC);
+                receiptUC.BringToFront();
+            }
         }
 
         private void btResfresh_Click(object sender, EventArgs e)
@@ -319,7 +326,7 @@ namespace slnGym.Forms
         public void loadAccount()
         {
             this.tabAccount.Controls.Add(dt);
-            //dt.reload();
+            dt.reload();
         }
 
         public void loadPTbyTag()
@@ -349,7 +356,7 @@ namespace slnGym.Forms
             string temp = s.Normalize(NormalizationForm.FormD);
             return regex.Replace(temp, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D');
         }
-
+        //Hàm tạo UC contract
        
         public void CreateContract()
         {
@@ -379,6 +386,17 @@ namespace slnGym.Forms
             GETContract.Remain = time.Days.ToString();
             GETContract.Period = Convert.ToInt32(numericMonth.Value);
             #endregion
+        }
+
+        //
+         bool verif()
+        {
+            if (txtPackage.Text != null ||
+                txtPT.Text != null ||
+                txtPhone.Text != null ||
+                txtAddress.Text != null)
+                return true;
+            else return false;
         }
 
         //====== XỬ LÝ CHƯA LOGIN ======

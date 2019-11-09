@@ -36,6 +36,42 @@ namespace slnGym.User_Control
             groupBoxEdit.Visible = true;
             loadEdit();
         }
+        private void picAvaEdit_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "select image(*.jpg;*.png;*.gif)|*.jpg;*.png;*.gif";
+            if (open.ShowDialog() == DialogResult.OK)
+                picAvaEdit.Image = Image.FromFile(open.FileName);
+        }
+
+        private void btSave_Click(object sender, EventArgs e)
+        {
+            if (verifAC())
+            {
+                MessageBox.Show("Please Insert More Infomation!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            try
+            {
+                MemoryStream pic = new MemoryStream();
+                picAvaEdit.Image.Save(pic, picAvaEdit.Image.RawFormat);
+
+
+                int gender = 1;
+                if (radioMaleEdit.Checked == true) gender = 0;
+                if (emp.updateEmployee(GLOBAL.username, pic, Convert.ToDateTime(dateTimePickerBdate.Value), txtAddress.Text, gender, txtPhone.Text))
+                {
+                    MessageBox.Show("Edited", "Edited..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.reload();
+                }
+
+                else MessageBox.Show("Edited fail", "Edited..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception E)
+            {
+                MessageBox.Show("Vui lòng nhập hình");
+            }
+        }
         Layer.EMPLOYEEs emp = new Layer.EMPLOYEEs();
         MY_DB mydb = new MY_DB();
         Layer.LOGIN log = new Layer.LOGIN();
@@ -44,7 +80,10 @@ namespace slnGym.User_Control
         {
             DataTable dt = new DataTable();
             dt = log.getAccountbyUser(GLOBAL.username);
-            txtPass.Text = dt.Rows[0][1].ToString();
+            try
+            {
+                txtPass.Text = dt.Rows[0][1].ToString();
+            }catch(Exception E) { }
             DataTable empDT = new DataTable();
             empDT = emp.getEmployeebyID(GLOBAL.username);
             
@@ -52,10 +91,10 @@ namespace slnGym.User_Control
             {
                 lbID.Text = empDT.Rows[0][0].ToString();
                 lbGroup.Text = empDT.Rows[0][1].ToString();
-                //byte[] picPD;
-                //picPD = (byte[])empDT.Rows[0][2];
-                //MemoryStream pic = new MemoryStream(picPD);
-                //this.picAva.Image = Image.FromStream(pic);
+                byte[] picPD;
+                picPD = (byte[])empDT.Rows[0][2];
+                MemoryStream pic = new MemoryStream(picPD);
+                this.picAva.Image = Image.FromStream(pic);
                 lbFname.Text = empDT.Rows[0][3].ToString();
                 lbLname.Text = empDT.Rows[0][4].ToString();
                 lbBirthday.Text = Convert.ToDateTime(empDT.Rows[0][5]).ToShortDateString();
@@ -67,12 +106,13 @@ namespace slnGym.User_Control
                 lbSalary.Text = empDT.Rows[0][9].ToString();
                 lbIDCard.Text = empDT.Rows[0][10].ToString();
             }
-            else MessageBox.Show("bug");
+           
             mydb.closeConnection();
         }
 
         public void loadEdit()
         {
+            
             txtFname.Text = lbFname.Text;
             txtLname.Text = lbLname.Text;
             txtAddress.Text = lbAddress.Text;
@@ -85,26 +125,14 @@ namespace slnGym.User_Control
             picAvaEdit.Image = picAva.Image;
         }
 
-        private void picAvaEdit_Click(object sender, EventArgs e)
+        bool verifAC()
         {
-            OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "select image(*.jpg;*.png;*.gif)|*.jpg;*.png;*.gif";
-            if (open.ShowDialog() == DialogResult.OK)
-                picAvaEdit.Image = Image.FromFile(open.FileName);
-        }
+            if (txtPhone.Text != null ||
+                txtAddress.Text != null ||
+                txtPass != null 
+                ) return true;
+            return false;
 
-        private void btSave_Click(object sender, EventArgs e)
-        {
-            MemoryStream pic = new MemoryStream();
-            picAvaEdit.Image.Save(pic, picAvaEdit.Image.RawFormat);
-            int gender = 1;
-            if (radioMaleEdit.Checked == true) gender = 0;
-            if (emp.updateEmployee(GLOBAL.username,pic,Convert.ToDateTime( dateTimePickerBdate.Value),txtAddress.Text,gender,txtPhone.Text))
-            {
-                MessageBox.Show("Edited", "Edited..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.reload();
-            }
-            else MessageBox.Show("Edited fail", "Edited..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
+        } 
     }
 }
