@@ -24,6 +24,7 @@ namespace slnGym.DataObject
             this.Cost = cost;
             this.picture = pic;
         }
+        //#Mở lại hình ảnh
         public ListProduct(DataRow row)
         {
             this.Id = Convert.ToInt32(row["productID"]);

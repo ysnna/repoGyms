@@ -12,6 +12,8 @@ using slnGym.Layer;
 using slnGym.DataObject;
 using System.Text.RegularExpressions;
 using System.IO;
+using System.Net.NetworkInformation;
+using System.Threading;
 
 namespace slnGym.Forms
 {
@@ -22,8 +24,10 @@ namespace slnGym.Forms
         {
             InitializeComponent();
             timer1.Start();
+            socket = new SocketManager();
         }
 
+        SocketManager socket;
         Layer.EMPLOYEEs emp = new Layer.EMPLOYEEs();
         Layer.CONTRACTs contract = new CONTRACTs();
         Layer.MEMBERs mem = new MEMBERs();
@@ -67,41 +71,18 @@ namespace slnGym.Forms
 
         private void btInvoice_Click(object sender, EventArgs e)
         {
-            CreateContract();
-            MessageBox.Show("complete");
-            User_Control.ReceiptUC receiptUC = new User_Control.ReceiptUC() { Width = 1912, Height = 905 };
-            this.tabNewMember.Controls.Add(receiptUC);
-            receiptUC.BringToFront();
-        }
-
-        public void CreateContract()
-        {
-            #region Create member
-            GETMember.IDMember = txtUserID.Text;
-            GETMember.Password = txtPassword.Text;
-            GETMember.FName = txtFname.Text;
-            GETMember.LName = txtLname.Text;
-            GETMember.Birthday = dateTimePickerBdate.Value;
-            GETMember.Picture = picAvaEdit.Image;
-            GETMember.Address = txtAddress.Text;
-            GETMember.Gender = 0;
-            if (radioFemale.Checked == true)
-                GETMember.Gender = 1;
-            GETMember.Phone = txtPhone.Text;
-            GETMember.IDCard = Convert.ToInt32(txtIDCard.Text);
-            GETMember.Note = txtNote.Text;
-            #endregion
-
-            #region Create Contract
-            GETContract.IDContract = txtIDContract.Text;
-            GETContract.IDPT = txtIDPT.Text;
-            GETContract.IDPackage = Convert.ToInt32(txtPackage.Text);
-            GETContract.Start = datePickerStart.Value;
-            GETContract.End = datePickerEnd.Value;
-            TimeSpan time = GETContract.End - GETContract.Start;
-            GETContract.Remain = time.Days.ToString();
-            GETContract.Period = Convert.ToInt32(numericMonth.Value);
-            #endregion
+            if (!verif())
+            {
+                MessageBox.Show("Please Insert More Infomation!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                CreateContract();
+                MessageBox.Show("complete");
+                User_Control.ReceiptUC receiptUC = new User_Control.ReceiptUC() { Width = 1912, Height = 905 };
+                this.tabNewMember.Controls.Add(receiptUC);
+                receiptUC.BringToFront();
+            }
         }
 
         private void btResfresh_Click(object sender, EventArgs e)
@@ -112,6 +93,35 @@ namespace slnGym.Forms
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        private void dgvPT_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int numrow = dgvPT.CurrentCell.RowIndex;
+            txtIDPT.Text = dgvPT.Rows[numrow].Cells[0].Value.ToString();
+            txtPT.Text = dgvPT.Rows[numrow].Cells[1].Value.ToString() + ' ' + dgvPT.Rows[numrow].Cells[2].Value.ToString();
+        }
+
+        private void datePickerStart_ValueChanged(object sender, EventArgs e)
+        {
+            datePickerEnd.Value = datePickerStart.Value.AddMonths(Convert.ToInt32(numericMonth.Value));
+        }
+
+        private void numericMonth_ValueChanged(object sender, EventArgs e)
+        {
+            datePickerEnd.Value = datePickerStart.Value.AddMonths(Convert.ToInt32(numericMonth.Value));
+        }
+
+        private void btCreateContract_Click(object sender, EventArgs e)
+        {
+            User_Control.ReceiptUC receiptUC = new User_Control.ReceiptUC() { Width = 1912, Height = 905 };
+            this.tabNewMember.Controls.Add(receiptUC);
+            receiptUC.BringToFront();
+        }
+
+        private void btReset_Click(object sender, EventArgs e)
+        {
+            txtIDPT.Text = "";
+            txtPT.Text = "";
         }
 
         private void tabControl_Click(object sender, EventArgs e)
@@ -128,7 +138,7 @@ namespace slnGym.Forms
             }
             else
             {
-                loadAccount();
+                //loadAccount();
             }
         }
 
@@ -173,7 +183,7 @@ namespace slnGym.Forms
             administration.ShowDialog();
         }
 
-        //ham xu ly 
+        //HÀM XỬ LÝ
         public void loadMachine()
         {
             flowLayoutMachine.Controls.Clear();
@@ -283,28 +293,49 @@ namespace slnGym.Forms
             dgvPackage.EditMode = DataGridViewEditMode.EditProgrammatically;
 
             DataTable empDT = new DataTable();
-            DataTable dtcontract = new DataTable();
-            DataTable dtmem = new DataTable();
-
             txtIDSeller.Text = GLOBAL.username;
             empDT = emp.getEmployeebyID(GLOBAL.username);
             if (empDT.Rows.Count > 0)
             {
                 txtNameSeller.Text = empDT.Rows[0][3].ToString() + " " + empDT.Rows[0][4].ToString();
             }
-
-            dtcontract = contract.getCONTRACTS();
-            int countRowContract = dtcontract.Rows.Count;
-            if (countRowContract < 10)
-            {
-                txtIDContract.Text = "CONT0" + (countRowContract + 1).ToString();
-            }
-            else txtIDContract.Text = "CONT" + (countRowContract + 1).ToString();
-            dtmem = mem.getAllMEMBERS();
-            int countRowMember = dtmem.Rows.Count;
-            txtIDMember.Text = "kh" + (countRowMember + 1).ToString();
+            //Lấy KH và Contract ID tự động
+            ContractBL conbl = new ContractBL();
+            txtIDContract.Text = conbl.loadIDContract();
+            txtIDMember.Text = conbl.loadIDMEMBER();
             txtUserID.Text = txtIDMember.Text;
+
         }
+        public void CreateContract()
+        {
+            #region Create member
+            GETMember.IDMember = txtUserID.Text;
+            GETMember.Password = txtPassword.Text;
+            GETMember.FName = txtFname.Text;
+            GETMember.LName = txtLname.Text;
+            GETMember.Birthday = dateTimePickerBdate.Value;
+            GETMember.Picture = picAvaEdit.Image;
+            GETMember.Address = txtAddress.Text;
+            GETMember.Gender = 0;
+            if (radioFemale.Checked == true)
+                GETMember.Gender = 1;
+            GETMember.Phone = txtPhone.Text;
+            GETMember.IDCard = Convert.ToInt32(txtIDCard.Text);
+            GETMember.Note = txtNote.Text;
+            #endregion
+
+            #region Create Contract
+            GETContract.IDContract = txtIDContract.Text;
+            GETContract.IDPT = txtIDPT.Text;
+            GETContract.IDPackage = Convert.ToInt32(txtPackage.Text);
+            GETContract.Start = datePickerStart.Value;
+            GETContract.End = datePickerEnd.Value;
+            TimeSpan time = GETContract.End - GETContract.Start;
+            GETContract.Remain = time.Days.ToString();
+            GETContract.Period = Convert.ToInt32(numericMonth.Value);
+            #endregion
+        }
+
 
         public void loadDetailsContract()
         {
@@ -327,7 +358,7 @@ namespace slnGym.Forms
         public void loadAccount()
         {
             this.tabAccount.Controls.Add(dt);
-            //dt.reload();
+            dt.reload();
         }
 
         public void loadPTbyTag()
@@ -379,36 +410,7 @@ namespace slnGym.Forms
             this.Refresh();
         }
 
-        private void dgvPT_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int numrow = dgvPT.CurrentCell.RowIndex;
-            txtIDPT.Text = dgvPT.Rows[numrow].Cells[0].Value.ToString();
-            txtPT.Text = dgvPT.Rows[numrow].Cells[1].Value.ToString() + ' ' + dgvPT.Rows[numrow].Cells[2].Value.ToString();
-        }
-
-        private void datePickerStart_ValueChanged(object sender, EventArgs e)
-        {
-            datePickerEnd.Value = datePickerStart.Value.AddMonths(Convert.ToInt32(numericMonth.Value));
-        }
-
-        private void numericMonth_ValueChanged(object sender, EventArgs e)
-        {
-            datePickerEnd.Value = datePickerStart.Value.AddMonths(Convert.ToInt32(numericMonth.Value));
-        }
-
-        private void btCreateContract_Click(object sender, EventArgs e)
-        {
-            User_Control.ReceiptUC receiptUC = new User_Control.ReceiptUC() { Width = 1912, Height = 905 };
-            this.tabNewMember.Controls.Add(receiptUC);
-            receiptUC.BringToFront();
-        }
-
-        private void btReset_Click(object sender, EventArgs e)
-        {
-            txtIDPT.Text = "";
-            txtPT.Text = "";
-        }
-
+       
         public void NeedLogin()
         {
             tabControlManager.Enabled = false;
@@ -419,17 +421,79 @@ namespace slnGym.Forms
         {
             tabControlManager.Enabled = true;
             loadAccount();
+            loadContract();
         }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        //private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        //{
+        //    if (SysLOG.UserName != "")
+        //    {
+        //        SysLOG.DateLogout = DateTime.Now.ToString();
+        //        accountLog.updateAccount(SysLOG.UserName, SysLOG.DateLogin, SysLOG.DateLogout, SysLOG.Status);
+        //        this.Close();
+        //    }
+        //    this.Close();
+        //}
+        bool verif()
         {
-            if (SysLOG.UserName != "")
+            if (txtPackage.Text != null ||
+                txtPT.Text != null ||
+                txtPhone.Text != null ||
+                txtAddress.Text != null)
+                return true;
+            else return false;
+        }
+
+        private void contactToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            socket.IP = GLOBAL.IPV4;
+            if(socket.ConnectServer())
             {
-                SysLOG.DateLogout = DateTime.Now.ToString();
-                accountLog.updateAccount(SysLOG.UserName, SysLOG.DateLogin, SysLOG.DateLogout, SysLOG.Status);
-                this.Close();
+                socket.CreateServer();
+                Thread listenThread = new Thread(() =>
+                {
+                    while (true)
+                    {
+                        Thread.Sleep(500);
+                        try
+                        {
+                            Listen();
+                            break;
+                        }
+                        catch
+                        {
+
+                        }
+                    }
+                });
+                listenThread.IsBackground = true;
+                listenThread.Start();
             }
-            this.Close();
+            else
+            {
+                Thread listenThread = new Thread(() =>
+                {
+                    Listen();
+                });
+                listenThread.IsBackground = true;
+                listenThread.Start();
+                socket.Send("Thông tin từ client");
+            }
+        }
+
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+            GLOBAL.IPV4 = socket.GetLocalIPv4(NetworkInterfaceType.Wireless80211);
+            if(string.IsNullOrEmpty(GLOBAL.IPV4))
+            {
+                GLOBAL.IPV4 = socket.GetLocalIPv4(NetworkInterfaceType.Ethernet);
+            }
+            this.Text = this.Text + " (IPv4: " + GLOBAL.IPV4 + ")";
+        }
+        void Listen()
+        {
+            string data =(string)socket.Receive();
+            MessageBox.Show(data);
         }
     }
 }

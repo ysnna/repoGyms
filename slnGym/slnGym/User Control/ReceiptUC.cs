@@ -29,6 +29,57 @@ namespace slnGym.User_Control
         LOGIN log = new LOGIN();
         DETAILCONTRACT detailsCont = new DETAILCONTRACT();
         DETAILRECEIPT detailsReceipt = new DETAILRECEIPT();
+        STATISTICS statistic = new STATISTICS();
+        ContractBL bl = new ContractBL();
+        // ============Load & Event
+        private void btCancel_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void dgvViewProduct_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = dgvViewProduct.CurrentCell.RowIndex;
+            listReceipt = new ListReceipt();
+            listReceipt.idBrand = 2;
+            listReceipt.idService = Convert.ToInt32(dgvViewProduct.Rows[index].Cells[0].Value);
+            listReceipt.name = dgvViewProduct.Rows[index].Cells[1].Value.ToString();
+            listReceipt.price = Convert.ToDecimal(dgvViewProduct.Rows[index].Cells[2].Value);
+            listReceiptBindingSource.Add(listReceipt);
+            txtOthers.Text = (Convert.ToDecimal(txtOthers.Text.Trim()) + listReceipt.price).ToString();
+        }
+
+        private void txtOthers_TextChanged(object sender, EventArgs e)
+        {
+            if (txtDiscount.Text != "0")
+            {
+                if (cbDiscount.Text == "%")
+                {
+                    txtTotal.Text = (Convert.ToDecimal(txtOthers.Text.Trim()) + Convert.ToDecimal(txtSubTotal.Text.Trim()) + (100 * Convert.ToDecimal(txtDiscount.Text.Trim()))).ToString();
+                }
+                else
+                {
+                    txtTotal.Text = (Convert.ToDecimal(txtOthers.Text.Trim()) + Convert.ToDecimal(txtSubTotal.Text.Trim()) + Convert.ToDecimal(txtDiscount.Text.Trim())).ToString();
+                }
+            }
+            else txtTotal.Text = (Convert.ToDecimal(txtOthers.Text.Trim()) + Convert.ToDecimal(txtSubTotal.Text.Trim())).ToString();
+        }
+
+        private void txtDiscount_TextChanged(object sender, EventArgs e)
+        {
+            if (txtDiscount.Text != "0")
+            {
+                if (cbDiscount.Text == "%")
+                {
+                    txtTotal.Text = (Convert.ToDecimal(txtOthers.Text.Trim()) + Convert.ToDecimal(txtSubTotal.Text.Trim()) + (100 * Convert.ToDecimal(txtDiscount.Text.Trim()))).ToString();
+                }
+                else
+                {
+                    txtTotal.Text = (Convert.ToDecimal(txtOthers.Text.Trim()) + Convert.ToDecimal(txtSubTotal.Text.Trim()) + Convert.ToDecimal(txtDiscount.Text.Trim())).ToString();
+                }
+            }
+            else txtTotal.Text = (Convert.ToDecimal(txtOthers.Text.Trim()) + Convert.ToDecimal(txtSubTotal.Text.Trim())).ToString();
+        }
 
         private void btPrintInvoice_Click(object sender, EventArgs e)
         {
@@ -40,6 +91,44 @@ namespace slnGym.User_Control
                 receipt.Print();
             this.Dispose();
         }
+
+        private void txtPaid_TextChanged(object sender, EventArgs e)
+        {
+            txtChange.Text = "";
+            btPayment.Enabled = false;
+            if (IsNumeric(txtPaid.Text) == true && double.Parse(txtPaid.Text) >= double.Parse(txtTotal.Text))
+            {
+                double changed;
+                changed = Convert.ToDouble(txtPaid.Text.Trim()) - Convert.ToDouble(txtTotal.Text.Trim());
+                txtChange.Text = changed.ToString();
+                btPayment.Enabled = true;
+            }
+        }
+
+        
+
+        private void ReceiptUC_Load(object sender, EventArgs e)
+        {
+            btPayment.Enabled = false;
+            btPrintInvoice.Enabled = false;
+            lbStatus.Text = "Non-payment";
+            cbDiscount.Text = "VND";
+            txtSubTotal.Text = GETContract.Price.ToString();
+            txtTotal.Text = txtSubTotal.Text;
+            loadProducts();
+            loadData();
+            loadDetails();
+
+        }
+
+        private void cbDiscount_TextChanged(object sender, EventArgs e)
+        {
+            if (cbDiscount.Text == "%")
+                lbDiscount.Visible = false;
+            else lbDiscount.Visible = true;
+        }
+        
+        //==========Hàm xử lý
 
         public void createBill(Object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
@@ -102,43 +191,6 @@ namespace slnGym.User_Control
             offset = offset + 20;
             graphic.DrawString("       Please come back soon!", font, new SolidBrush(Color.Black), startX + 100, startY + offset);
         }
-
-        private void txtPaid_TextChanged(object sender, EventArgs e)
-        {
-            txtChange.Text = "";
-            btPayment.Enabled = false;
-            if (IsNumeric(txtPaid.Text) == true && double.Parse(txtPaid.Text) >= double.Parse(txtTotal.Text))
-            {
-                double changed;
-                changed = Convert.ToDouble(txtPaid.Text.Trim()) - Convert.ToDouble(txtTotal.Text.Trim());
-                txtChange.Text = changed.ToString();
-                btPayment.Enabled = true;
-            }
-        }
-
-        public bool IsNumeric(string val) => double.TryParse(val, out double result);
-
-        private void ReceiptUC_Load(object sender, EventArgs e)
-        {
-            btPayment.Enabled = false;
-            btPrintInvoice.Enabled = false;
-            lbStatus.Text = "Non-payment";
-            cbDiscount.Text = "VND";
-            txtSubTotal.Text = GETContract.Price.ToString();
-            txtTotal.Text = txtSubTotal.Text;
-            loadProducts();
-            loadData();
-            loadDetails();
-
-        }
-
-        private void cbDiscount_TextChanged(object sender, EventArgs e)
-        {
-            if (cbDiscount.Text == "%")
-                lbDiscount.Visible = false;
-            else lbDiscount.Visible = true;
-        }
-
         private void btPayment_Click(object sender, EventArgs e)
         {
             lbStatus.Text = "Paid";
@@ -149,8 +201,24 @@ namespace slnGym.User_Control
             createDetailsContract();
             createDetailsReceipt();
             MessageBox.Show("Complete");
+
         }
 
+        public void updateStatistic()
+        {
+            int lenght = dgvCheckInvoice.Rows.Count;
+            DataTable dataPackage = new DataTable();
+            dataPackage = statistic.getDaySTATISTIC(Convert.ToDateTime(DateTime.Now.ToShortDateString()), "Package");
+            DataTable dataProduct = statistic.getDaySTATISTIC(Convert.ToDateTime(DateTime.Now.ToShortDateString()), "Product");
+            if (lenght == 1) //chi có package
+            {
+                if (dataPackage.Rows.Count == 0) //chưa có ngày này
+                {
+                   // statistic.insertSTATISTIC(Convert.ToDateTime(DateTime.Now.ToShortDateString()),"Package",1, );
+                }
+            }
+        }
+        public bool IsNumeric(string val) => double.TryParse(val, out double result);
         public void createMember()
         {
             #region Create account
@@ -213,7 +281,7 @@ namespace slnGym.User_Control
                 string name = dgvCheckInvoice.Rows[i].Cells[2].Value.ToString();
                 decimal discount = Convert.ToDecimal(dgvCheckInvoice.Rows[i].Cells[3].Value);
                 decimal total = Convert.ToDecimal(dgvCheckInvoice.Rows[i].Cells[4].Value);
-                detailsReceipt.insertDETAILRECEIPT(txtInvoiceNo.Text, Convert.ToDateTime(lbTimePayment.Text), idBrand, idSer, name, discount, total);
+                detailsReceipt.insertDETAILRECEIPT(txtInvoiceNo.Text,Convert.ToDateTime(Convert.ToDateTime(lbTimePayment.Text).ToShortDateString()), idBrand, idSer, name, discount, total);
             }
         }
 
@@ -235,13 +303,7 @@ namespace slnGym.User_Control
 
         public void loadData()
         {
-            DataTable dtIDReceipt = new DataTable();
-            dtIDReceipt = inv.getRECEIPT();
-            if (dtIDReceipt.Rows.Count < 10)
-            {
-                txtInvoiceNo.Text = "IVC0" + (dtIDReceipt.Rows.Count + 1).ToString();
-            }
-            else txtInvoiceNo.Text = "IVC" + (dtIDReceipt.Rows.Count + 1).ToString();
+            txtInvoiceNo.Text = bl.loadInvoiceID();
             txtMemIDInvoide.Text = GETMember.IDMember;
             txtEmployeeID.Text = GLOBAL.username;
 
@@ -280,53 +342,6 @@ namespace slnGym.User_Control
             listReceiptBindingSource.Add(listReceipt);
         }
 
-        private void btCancel_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
-
-        private void dgvViewProduct_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int index = dgvViewProduct.CurrentCell.RowIndex;
-            listReceipt = new ListReceipt();
-            listReceipt.idBrand = 2;
-            listReceipt.idService = Convert.ToInt32(dgvViewProduct.Rows[index].Cells[0].Value);
-            listReceipt.name = dgvViewProduct.Rows[index].Cells[1].Value.ToString();
-            listReceipt.price = Convert.ToDecimal(dgvViewProduct.Rows[index].Cells[2].Value);
-            listReceiptBindingSource.Add(listReceipt);
-            txtOthers.Text = (Convert.ToDecimal(txtOthers.Text.Trim()) + listReceipt.price).ToString();
-        }
-
-        private void txtOthers_TextChanged(object sender, EventArgs e)
-        {
-            if (txtDiscount.Text != "0")
-            {
-                if (cbDiscount.Text == "%")
-                {
-                    txtTotal.Text = (Convert.ToDecimal(txtOthers.Text.Trim()) + Convert.ToDecimal(txtSubTotal.Text.Trim()) + (100 * Convert.ToDecimal(txtDiscount.Text.Trim()))).ToString();
-                }
-                else
-                {
-                    txtTotal.Text = (Convert.ToDecimal(txtOthers.Text.Trim()) + Convert.ToDecimal(txtSubTotal.Text.Trim()) + Convert.ToDecimal(txtDiscount.Text.Trim())).ToString();
-                }
-            }
-            else txtTotal.Text = (Convert.ToDecimal(txtOthers.Text.Trim()) + Convert.ToDecimal(txtSubTotal.Text.Trim())).ToString();
-        }
-
-        private void txtDiscount_TextChanged(object sender, EventArgs e)
-        {
-            if (txtDiscount.Text != "0")
-            {
-                if (cbDiscount.Text == "%")
-                {
-                    txtTotal.Text = (Convert.ToDecimal(txtOthers.Text.Trim()) + Convert.ToDecimal(txtSubTotal.Text.Trim()) + (100 * Convert.ToDecimal(txtDiscount.Text.Trim()))).ToString();
-                }
-                else
-                {
-                    txtTotal.Text = (Convert.ToDecimal(txtOthers.Text.Trim()) + Convert.ToDecimal(txtSubTotal.Text.Trim()) + Convert.ToDecimal(txtDiscount.Text.Trim())).ToString();
-                }
-            }
-            else txtTotal.Text = (Convert.ToDecimal(txtOthers.Text.Trim()) + Convert.ToDecimal(txtSubTotal.Text.Trim())).ToString();
-        }
+       
     }
 }

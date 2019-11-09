@@ -410,6 +410,7 @@
             this.txtGroupID.ReadOnly = true;
             this.txtGroupID.Size = new System.Drawing.Size(219, 44);
             this.txtGroupID.TabIndex = 84;
+            this.txtGroupID.TextChanged += new System.EventHandler(this.txtGroupID_TextChanged);
             // 
             // label2
             // 

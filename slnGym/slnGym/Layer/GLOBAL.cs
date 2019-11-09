@@ -9,6 +9,7 @@ namespace slnGym
     static class GLOBAL
     {
         //Lấy ID khách hàng
+        public static string IPV4 = "IPv4";            //"192.168.43.252";
         public static string IDKH = "";
         public static string getID(string id)
         {

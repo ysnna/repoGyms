@@ -70,10 +70,10 @@ namespace slnGym.User_Control
             EMPLOYEEs.EmployeeID = id;
             string group = dgvListEmployee.Rows[index].Cells[1].Value.ToString();
             
-            byte[] picPD;
-            picPD = (byte[])dtemp.Rows[index][2];
-            MemoryStream pic = new MemoryStream(picPD);
-            this.picAva.Image = Image.FromStream(pic);
+            //byte[] picPD;
+            //picPD = (byte[])dtemp.Rows[index][2];
+            //MemoryStream pic = new MemoryStream(picPD);
+            //this.picAva.Image = Image.FromStream(pic);
         }
 
         private void btRefresh_Click(object sender, EventArgs e)

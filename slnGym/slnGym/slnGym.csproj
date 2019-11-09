@@ -57,6 +57,8 @@
     <Compile Include="DataObject\ListReceipt.cs" />
     <Compile Include="DataObject\ListService.cs" />
     <Compile Include="DataObject\MemberBL.cs" />
+    <Compile Include="DataObject\SocketManager.cs" />
+    <Compile Include="DataObject\Statistic.cs" />
     <Compile Include="DataObject\SysLog.cs" />
     <Compile Include="Forms\Administration.cs">
       <SubType>Form</SubType>
@@ -111,6 +113,7 @@
     <Compile Include="Layer\PRODUCTs.cs" />
     <Compile Include="Layer\RECEIPTs.cs" />
     <Compile Include="Layer\SERVICEPACKs.cs" />
+    <Compile Include="Layer\STATISTICS.cs" />
     <Compile Include="Layer\WORKs.cs" />
     <Compile Include="MY_DB.cs" />
     <Compile Include="PackageDataSet.Designer.cs">
@@ -310,6 +313,7 @@
     </None>
     <None Include="slnGym.DataObject.DetailContract.datasource" />
     <None Include="slnGym.DataObject.ListReceipt.datasource" />
+    <None Include="slnGym.DataObject.Statistic.datasource" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

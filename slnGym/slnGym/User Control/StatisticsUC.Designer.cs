@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StatisticsUC));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btCreateChart = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.dateTo = new System.Windows.Forms.DateTimePicker();
@@ -62,14 +63,20 @@
             this.lbMonthAVG = new System.Windows.Forms.Label();
             this.label64 = new System.Windows.Forms.Label();
             this.label60 = new System.Windows.Forms.Label();
-            this.label47 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
+            this.statisticBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.chartStatistic)).BeginInit();
             this.groupBox9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericYearAVG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericMonthAVG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStatistic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statisticBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btCreateChart
@@ -88,6 +95,7 @@
             this.btCreateChart.Size = new System.Drawing.Size(95, 60);
             this.btCreateChart.TabIndex = 203;
             this.btCreateChart.UseVisualStyleBackColor = false;
+            this.btCreateChart.Click += new System.EventHandler(this.btCreateChart_Click);
             // 
             // textBox2
             // 
@@ -151,16 +159,16 @@
             // 
             // chartStatistic
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartStatistic.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartStatistic.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chartStatistic.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartStatistic.Legends.Add(legend2);
             this.chartStatistic.Location = new System.Drawing.Point(790, 271);
             this.chartStatistic.Name = "chartStatistic";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartStatistic.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartStatistic.Series.Add(series2);
             this.chartStatistic.Size = new System.Drawing.Size(612, 485);
             this.chartStatistic.TabIndex = 198;
             this.chartStatistic.Text = "chart";
@@ -385,38 +393,46 @@
             this.dgvStatistic.AllowUserToDeleteRows = false;
             this.dgvStatistic.AllowUserToResizeColumns = false;
             this.dgvStatistic.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvStatistic.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvStatistic.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvStatistic.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvStatistic.AutoGenerateColumns = false;
             this.dgvStatistic.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvStatistic.BackgroundColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Sitka Display", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvStatistic.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Sitka Display", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvStatistic.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvStatistic.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStatistic.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dateDataGridViewTextBoxColumn,
+            this.groupDataGridViewTextBoxColumn,
+            this.amountDataGridViewTextBoxColumn,
+            this.totalDataGridViewTextBoxColumn,
+            this.statusDataGridViewTextBoxColumn});
+            this.dgvStatistic.DataSource = this.statisticBindingSource;
             this.dgvStatistic.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvStatistic.Location = new System.Drawing.Point(12, 108);
             this.dgvStatistic.Name = "dgvStatistic";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Sitka Display", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvStatistic.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Sitka Display", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvStatistic.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvStatistic.RowHeadersVisible = false;
             this.dgvStatistic.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvStatistic.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvStatistic.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvStatistic.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvStatistic.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvStatistic.Size = new System.Drawing.Size(768, 648);
@@ -470,18 +486,6 @@
             this.label60.TabIndex = 208;
             this.label60.Text = "Average Monthly:";
             // 
-            // label47
-            // 
-            this.label47.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label47.AutoSize = true;
-            this.label47.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label47.ForeColor = System.Drawing.Color.Green;
-            this.label47.Location = new System.Drawing.Point(83, 174);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(455, 31);
-            this.label47.TabIndex = 209;
-            this.label47.Text = "date, brand, amount, total (VND), status";
-            // 
             // label43
             // 
             this.label43.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -506,6 +510,45 @@
             this.label42.TabIndex = 206;
             this.label42.Text = "From";
             // 
+            // statisticBindingSource
+            // 
+            this.statisticBindingSource.DataSource = typeof(slnGym.DataObject.Statistic);
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.Width = 83;
+            // 
+            // groupDataGridViewTextBoxColumn
+            // 
+            this.groupDataGridViewTextBoxColumn.DataPropertyName = "Group";
+            this.groupDataGridViewTextBoxColumn.HeaderText = "Group";
+            this.groupDataGridViewTextBoxColumn.Name = "groupDataGridViewTextBoxColumn";
+            this.groupDataGridViewTextBoxColumn.Width = 99;
+            // 
+            // amountDataGridViewTextBoxColumn
+            // 
+            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
+            this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
+            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
+            this.amountDataGridViewTextBoxColumn.Width = 115;
+            // 
+            // totalDataGridViewTextBoxColumn
+            // 
+            this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
+            this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
+            this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
+            this.totalDataGridViewTextBoxColumn.Width = 86;
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.Width = 98;
+            // 
             // StatisticsUC
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -514,7 +557,6 @@
             this.Controls.Add(this.lbMonthAVG);
             this.Controls.Add(this.label64);
             this.Controls.Add(this.label60);
-            this.Controls.Add(this.label47);
             this.Controls.Add(this.label43);
             this.Controls.Add(this.label42);
             this.Controls.Add(this.dgvStatistic);
@@ -527,12 +569,14 @@
             this.Controls.Add(this.groupBox9);
             this.Name = "StatisticsUC";
             this.Size = new System.Drawing.Size(1414, 798);
+            this.Load += new System.EventHandler(this.StatisticsUC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chartStatistic)).EndInit();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericYearAVG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericMonthAVG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStatistic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statisticBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -566,8 +610,13 @@
         private System.Windows.Forms.Label lbMonthAVG;
         private System.Windows.Forms.Label label64;
         private System.Windows.Forms.Label label60;
-        private System.Windows.Forms.Label label47;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn groupDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource statisticBindingSource;
     }
 }

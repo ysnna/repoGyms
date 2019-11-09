@@ -23,18 +23,18 @@ go
 
 insert into ACCOUNT values
 ('admin','admin','0'),
-('nv1','nv','1'),
-('nv2','nv','1'),
-('nv3','nv','1'),
-('hlv1','hlv','3'),
-('hlv2','hlv','3'),
-('hlv3','hlv','3'),
-('hlv4','hlv','3'),
-('hlv5','hlv','3'),
-('hlv6','hlv','3'),
-('hlv7','hlv','3'),
-('kh1','kh','2'),
-('kh2','kh','2');
+('NV01','nv','1'),
+('NV02','nv','1'),
+('NV03','nv','1'),
+('HLV01','hlv','3'),
+('HLV02','hlv','3'),
+('HLV03','hlv','3'),
+('HLV04','hlv','3'),
+('HLV05','hlv','3'),
+('HLV06','hlv','3'),
+('HLV07','hlv','3'),
+('KH01','kh','2'),
+('KH02','kh','2');
 go
 
 create table ACCOUNTLOGIN(
@@ -82,16 +82,16 @@ foreign key(groupID) references GROUPEMPLOYEE on delete set null,
 go
 
 insert into EMPLOYEE values
-('nv1','01', null, N'Nguyên',N'Anh', '1999-02-14 00:00:00.000', N'Thị xã Ninh Hòa, Nha Trang', '1','0778097405', '10000000', '023285888'),
-('nv2','01', null, N'Lê Hồng',N'Danh', '1999-05-20 00:00:00.000', N'Huyện Hoa Lư, Ninh Bình', '0','0779726379', '12000000', '023263762'),
-('nv3','01', null, N'Nguyễn Hùng',N'Duy', '1997-07-12 00:00:00.000', N'Huyện Long Thành, Đồng Nai', '0','0841256920', '10000000', '023857639'),
-('hlv1','02', null, N'Ngô Trí',N'Đức', '1995-01-07 00:00:00.000', N'Quận Hoàn Kiếm, Hà Nội', '0','094543691', '11000000', '077908232'),
-('hlv2','02', null, N'Đinh Ngọc',N'Nhi', '1998-03-11 00:00:00.000', N'Huyện Châu Thành, Bến Tre', '1','0912241303', '12000000', '077001464'),
-('hlv3','02', null, N'Võ Thành',N'Văn', '1996-05-24 00:00:00.000', N'Huyện Cù Lao Dung, Sóc Trăng', '0','0943222740', '10000000', '023409962'),
-('hlv4','02', null, N'Bùi Minh',N'Trung', '1999-02-09 00:00:00.000', N'Thị xã Phú Mỹ, Bà Rịa - Vũng Tàu', '0','0910362941', '12000000', '023776484'),
-('hlv5','02', null, N'Phan',N'Sơn', '1995-09-17 00:00:00.000', N'Quận Thanh Xuân, Hà Nội', '0','0955862959', '11000000', '023800221'),
-('hlv6','02', null, N'Lê Kim',N'Đỉnh', '1998-12-30 00:00:00.000', N'Huyện Đắk Glei, Kon Tum', '0','0785484327', '10000000', '077966363'),
-('hlv7','02', null, N'Nguyên',N'Vương', '1997-08-29 00:00:00.000', N'Thị xã Hương Thủy, Thừa Thiên - Huế', '0','0868660035', '10000000', '077602089');
+('NV01','01', null, N'Nguyên',N'Anh', '1999-02-14 00:00:00.000', N'Thị xã Ninh Hòa, Nha Trang', '1','0778097405', '10000000', '023285888'),
+('NV02','01', null, N'Lê Hồng',N'Danh', '1999-05-20 00:00:00.000', N'Huyện Hoa Lư, Ninh Bình', '0','0779726379', '12000000', '023263762'),
+('NV03','01', null, N'Nguyễn Hùng',N'Duy', '1997-07-12 00:00:00.000', N'Huyện Long Thành, Đồng Nai', '0','0841256920', '10000000', '023857639'),
+('HLV01','02', null, N'Ngô Trí',N'Đức', '1995-01-07 00:00:00.000', N'Quận Hoàn Kiếm, Hà Nội', '0','094543691', '11000000', '077908232'),
+('HLV02','02', null, N'Đinh Ngọc',N'Nhi', '1998-03-11 00:00:00.000', N'Huyện Châu Thành, Bến Tre', '1','0912241303', '12000000', '077001464'),
+('HLV03','02', null, N'Võ Thành',N'Văn', '1996-05-24 00:00:00.000', N'Huyện Cù Lao Dung, Sóc Trăng', '0','0943222740', '10000000', '023409962'),
+('HLV04','02', null, N'Bùi Minh',N'Trung', '1999-02-09 00:00:00.000', N'Thị xã Phú Mỹ, Bà Rịa - Vũng Tàu', '0','0910362941', '12000000', '023776484'),
+('HLV05','02', null, N'Phan',N'Sơn', '1995-09-17 00:00:00.000', N'Quận Thanh Xuân, Hà Nội', '0','0955862959', '11000000', '023800221'),
+('HLV06','02', null, N'Lê Kim',N'Đỉnh', '1998-12-30 00:00:00.000', N'Huyện Đắk Glei, Kon Tum', '0','0785484327', '10000000', '077966363'),
+('HLV07','02', null, N'Nguyên',N'Vương', '1997-08-29 00:00:00.000', N'Thị xã Hương Thủy, Thừa Thiên - Huế', '0','0868660035', '10000000', '077602089');
 go
 
 --Nhóm công việc
@@ -127,15 +127,15 @@ foreign key (idPT) references EMPLOYEE on delete set null
 go
 
 insert into WORK values
-('WK01', 'PT Yoga','hlv2','A'),
-('WK02','PT Gym','hlv1','B'),
-('WK03','PT Gym','hlv3','B'),
-('WK04','Dancer','hlv2','C'),
-('WK05','Dancer','hlv4','C'),
-('WK06','PT Boxing','hlv5','D'),
-('WK07','PT Fitness','hlv7','E'),
-('WK08','PT Fitkid','hlv6','E'),
-('WK09','PT Lesmill','hlv1','E');
+('WK01', 'PT Yoga','HLV02','A'),
+('WK02','PT Gym','HLV01','B'),
+('WK03','PT Gym','HLV03','B'),
+('WK04','Dancer','HLV02','C'),
+('WK05','Dancer','HLV04','C'),
+('WK06','PT Boxing','HLV05','D'),
+('WK07','PT Fitness','HLV07','E'),
+('WK08','PT Fitkid','HLV06','E'),
+('WK09','PT Lesmill','HLV01','E');
 go
 
 --Khách hàng
@@ -158,8 +158,8 @@ constraint ck_cardID unique (cardID),
 go
 
 insert into MEMBERS values
-('kh1',N'Trần Gia',N'Hân', null, '1998-12-08 00:00:00.000', N'Huyện Phú Quý, Phan Thiết', '1','0863612503','077412207',null),
-('kh2',N'Nguyễn Thành',N'Tâm', null, '1996-08-29 00:00:00.000', N'Huyện Trảng Bàng, Tây Ninh', '0','0960558964','023755802',null);
+('KH01',N'Trần Gia',N'Hân', null, '1998-12-08 00:00:00.000', N'Huyện Phú Quý, Phan Thiết', '1','0863612503','077412207',null),
+('KH02',N'Nguyễn Thành',N'Tâm', null, '1996-08-29 00:00:00.000', N'Huyện Trảng Bàng, Tây Ninh', '0','0960558964','023755802',null);
 go
 
 --Gói dịch vụ
@@ -269,8 +269,8 @@ foreign key (servicePACK) references SERVICEPACK on delete set null,
 go
 
 insert into CONTRACTS values
-('CONT01','kh1','hlv1','6','2019-10-25 00:00:00.000','2019-11-25 00:00:00.000',N'Đang sử dụng'),
-('CONT02','kh2','hlv5','13','2019-11-1 00:00:00.000','2019-11-15 00:00:00.000',N'Đang sử dụng');
+('CONT01','KH01','HLV01','6','2019-10-25 00:00:00.000','2019-11-25 00:00:00.000',N'Đang sử dụng'),
+('CONT02','KH02','HLV05','13','2019-11-1 00:00:00.000','2019-11-15 00:00:00.000',N'Đang sử dụng');
 go
 
 --Hóa đơn
@@ -286,8 +286,8 @@ foreign key (memID) references MEMBERS,
 go
 
 insert into RECEIPT values
-('IVC01','kh1','900000'),
-('IVC02','kh2','3750000');
+('IVC01','KH01','900000'),
+('IVC02','KH02','3750000');
 go
 
 --Chi tiết hợp đồng
@@ -304,8 +304,8 @@ foreign key (receiptID) references RECEIPT on delete set null
 go
 
 insert into DETAILSCONTRACT values
-('CONT01','nv1','IVC01'),
-('CONT02','nv2','IVC02');
+('CONT01','NV01','IVC01'),
+('CONT02','NV02','IVC02');
 go
 
 create table PACKORPRODUCT

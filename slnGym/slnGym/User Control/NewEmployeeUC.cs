@@ -20,7 +20,7 @@ namespace slnGym.User_Control
         }
 
         private int GenderCheck = 0;
-
+        //Load & Event
         private void btAdd_Click(object sender, EventArgs e)
         {
             addNewEmp();
@@ -31,13 +31,17 @@ namespace slnGym.User_Control
         {
             disGroupname();
         }
-
+        private void txtGroupID_TextChanged(object sender, EventArgs e)
+        {
+            disUsername();
+            displayPass();
+        }
         private void NewEmployeeUC_Load(object sender, EventArgs e)
         {
             disGroupID();
             disGroupname();
-            disUsername();
-            displayPass();
+            //disUsername();
+            //displayPass();
         }
 
         private void picAvaEdit_Click(object sender, EventArgs e)
@@ -52,6 +56,7 @@ namespace slnGym.User_Control
         {
             lbIDEmployee.Text = txtUsername.Text;
         }
+        //Hàm xử lý
         void disGroupID()
         {
             GROUPEMPLOYEE grEmp = new GROUPEMPLOYEE();
@@ -71,13 +76,23 @@ namespace slnGym.User_Control
         void displayPass()
         {
             NewEmployeeBL newEmp = new NewEmployeeBL();
-            txtPass.Text = newEmp.SetPass();
+            if (txtGroupID.Text == "01")
+            {
+                txtPass.Text = newEmp.SetPass();
+            }
+            else txtPass.Text = newEmp.SetPassPT();
         }//Cập nhật pass tự động
         void disUsername()
         {
             LOGIN newEmp = new LOGIN();
-            DataTable dt = newEmp.getAccUserID("1");
-            txtUsername.Text = "nv" + (dt.Rows.Count + 1).ToString();
+
+            NewEmployeeBL newID = new NewEmployeeBL();
+            //txtUsername.Text = "nv" + (dt.Rows.Count + 1).ToString();
+            if (txtGroupID.Text == "01")
+            {
+                txtUsername.Text = newID.existsEmpID(txtGroupID.Text);
+            }
+            else txtUsername.Text = newID.existsPTID(txtGroupID.Text);
         }//Cập nhật usernametự động
         void GenderChecked()
         {
@@ -181,5 +196,7 @@ namespace slnGym.User_Control
                 return false;
             return true;
         }
+
+       
     }
 }
