@@ -223,7 +223,7 @@ namespace slnGym.User_Control
         {
             #region Create account
             //try..catch
-            if (log.insertLogin(GETMember.IDMember, GETMember.Password, "2"))
+            if (log.insertLogin(GETMember.IDMember, GETMember.Password, "5"))
             {
                 MessageBox.Show("Added account", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -235,7 +235,7 @@ namespace slnGym.User_Control
             GETMember.Picture.Save(pic, GETMember.Picture.RawFormat);
             if (GETMember.FName != null && GETMember.LName != null && pic != null && GETMember.Address != null && GETMember.Phone != null && GETMember.IDCard != '\0')
             {
-                if (mem.insertMembers(GETMember.IDMember, GETMember.LName, GETMember.FName, GETMember.Birthday, GETMember.Address, GETMember.Gender, GETMember.Phone, GETMember.IDCard, GETMember.Note))
+                if (mem.insertMembers(GETMember.IDMember, GETMember.LName, GETMember.FName, GETMember.Birthday, GETMember.Address, GETMember.Gender, GETMember.Phone, GETMember.IDCard, "Chờ duyệt"))
                     MessageBox.Show("Added Member", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else MessageBox.Show("Added member fail", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

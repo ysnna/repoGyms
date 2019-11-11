@@ -113,13 +113,6 @@ namespace slnGym.Forms
             datePickerEnd.Value = datePickerStart.Value.AddMonths(Convert.ToInt32(numericMonth.Value));
         }
 
-        private void btCreateContract_Click(object sender, EventArgs e)
-        {
-            User_Control.ReceiptUC receiptUC = new User_Control.ReceiptUC() { Width = 1912, Height = 905 };
-            this.tabNewMember.Controls.Add(receiptUC);
-            receiptUC.BringToFront();
-        }
-
         private void btReset_Click(object sender, EventArgs e)
         {
             txtIDPT.Text = "";
@@ -263,7 +256,7 @@ namespace slnGym.Forms
             dgvServicePack.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dgvServicePack.AllowUserToAddRows = false;
             dgvServicePack.EditMode = DataGridViewEditMode.EditProgrammatically;
-
+            dgvServicePack.Columns[3].AutoSizeMode= DataGridViewAutoSizeColumnMode.Fill;
         }
 
         public void RefreshUC()

@@ -71,7 +71,7 @@ namespace slnGym.Layer
         //Lay thong tin 
         public DataTable getSERVICE()
         {
-            SqlCommand cmd = new SqlCommand("select * from SERVICEPACK order by serviceID", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("select serviceID as 'ID',serviceNAME as 'Name',cost as 'Price',note as 'Description', tagPT as 'Tag' from SERVICEPACK order by serviceID", mydb.getConnection);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -123,7 +123,7 @@ namespace slnGym.Layer
         }
         public DataTable getPackageDGV(string idKH)
         {
-            SqlCommand cmd = new SqlCommand("select serviceID, serviceName, cost, dateStart, dateDischarge from SERVICEPACK, CONTRACTS" +
+            SqlCommand cmd = new SqlCommand("select serviceID as 'ID', serviceName as 'Name', cost as 'Price', dateStart as 'Date start', dateDischarge as 'Date expiration' from SERVICEPACK, CONTRACTS" +
                 " where serviceID = servicePACK AND cusID = @id", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = idKH;
             SqlDataAdapter da = new SqlDataAdapter(cmd);

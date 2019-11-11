@@ -19,6 +19,6 @@ namespace slnGym.DataObject
         public static Image Picture { get; set; }
         public static string Phone { get; set; }
         public static string Address { get; set; }
-        public static string Note { get; set; }
+        public static string Note = "Chờ duyệt";
     }
 }

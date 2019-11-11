@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using slnGym.DataObject;
+using slnGym.Layer;
 
 namespace slnGym.User_Control
 {
@@ -19,10 +20,36 @@ namespace slnGym.User_Control
         }
 
         MemberBL mem = new MemberBL();
+        MEMBERs member = new MEMBERs();
+        LOGIN log = new LOGIN();
+        string getID="";
 
         private void ManageMembersUC_Load(object sender, EventArgs e)
         {
-            mem.loadDGVMem(dgvMembers);
+            loadDGVMem();
+        }
+        public void loadDGVMem() //Format lại cột BDate của Member (#FORMAT)
+        {
+            dgvMembers.RowTemplate.Height = 50;
+            dgvMembers.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgvMembers.AllowUserToAddRows = false;
+            dgvMembers.EditMode = DataGridViewEditMode.EditProgrammatically;
+            
+            MEMBERs mem = new MEMBERs();
+            DataTable dt = new DataTable();
+            dt = mem.getAllMEMBERS();
+            dgvMembers.DataSource = dt;
+            //foreach (DataGridViewRow row in dgvMembers.Rows)
+            //{
+            //    if (row.Cells["note"].Value.ToString() == "Chờ duyệt")
+            //    {
+            //        row.DefaultCellStyle.BackColor = Color.Khaki;
+            //    }
+            //    else
+            //    {
+            //        row.DefaultCellStyle.BackColor = Color.MediumSeaGreen;
+            //    }
+            //}
         }
 
         private void dgvMembers_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -33,6 +60,18 @@ namespace slnGym.User_Control
             mem.LoadDGVPackage(dgvPackage, index);
             mem.loadDGVProduct(dgvProduct, index);
             mem.loadDGVPT(dgvPT, index);
+            getID = index;
+        }
+
+        private void btCreateContract_Click(object sender, EventArgs e)
+        {
+            if (getID != "")
+            {
+                member.updateAccpuntMember(getID, "Đã duyệt");
+                log.updateAccount(getID, 2);
+                MessageBox.Show("Approved");
+                loadDGVMem();
+            }
         }
     }
 }

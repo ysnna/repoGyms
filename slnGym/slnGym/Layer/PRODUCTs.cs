@@ -110,7 +110,7 @@ namespace slnGym.Layer
         }
         public DataTable getPRODUCTDGV(string name)
         {
-            SqlCommand cmd = new SqlCommand("select A.receiptID, nameServices, discount,total, repceiptDate from DETAILSREPCEIPT," +
+            SqlCommand cmd = new SqlCommand("select A.receiptID as 'ID', nameServices as 'Name', discount as 'Discount',total as 'Total', repceiptDate as 'Date payment' from DETAILSREPCEIPT," +
                 " (select contractID, receiptID  from CONTRACTS, DETAILSCONTRACT " +
                 " where contID = contractID AND CONTRACTS.cusID = @ID) as A" +
                 " where A.receiptID = DETAILSREPCEIPT.receiptID AND  idBrand = '2'", mydb.getConnection);
