@@ -23,6 +23,7 @@ namespace slnGym.DataObject
             try
             {
                 client.Connect(iep);
+                //client.Send(package);
                 return true;
             }
             catch
@@ -40,7 +41,7 @@ namespace slnGym.DataObject
             server = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
             server.Bind(iep);
-            server.Listen(10); //đợi 10s
+            server.Listen(1000); //đợi 10s
 
             Thread acceptClient = new Thread(() =>      //tạo luồng cho chương trình
             {
@@ -52,8 +53,9 @@ namespace slnGym.DataObject
         #endregion
 
         #region Both
+        //IPAddress IP = IPAddress.Parse("192.168.43.252");
         public string IP = "192.168.43.252";
-        public int PORT = 1433;
+        public int PORT = 5588;
         public const int BUFFER = 1024;
         public bool isServer = true;
 

@@ -86,10 +86,29 @@ namespace slnGym.Layer
                 return false;
             }
         }
+        public bool updateAccpuntMember(string ID, string note)
+        {
+            SqlCommand cmd = new SqlCommand("update MEMBERS set note=@note where memID=@id", mydb.getConnection);
+            cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = ID;
+            cmd.Parameters.Add("@note", SqlDbType.NVarChar).Value = note;
+
+            mydb.openConnection();
+            if (cmd.ExecuteNonQuery() == 1)
+            {
+                mydb.closeConnection();
+                return true;
+            }
+            else
+            {
+                mydb.closeConnection();
+                return false;
+            }
+        }
         //Lay thong tin 
         public DataTable getAllMEMBERS()
         {
-            SqlCommand cmd = new SqlCommand("select *from MEMBERS", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("select memID as 'ID',memLname as 'FName',memFname as 'LName',memBDate as 'Birthday'," +
+                "memAddress as 'Address',memGender as 'Female',memPhone as 'Phone',cardID as 'ID card',note as 'Status' from MEMBERS", mydb.getConnection);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);

@@ -79,7 +79,6 @@
             this.tabNewMember = new System.Windows.Forms.TabPage();
             this.btResfresh = new System.Windows.Forms.Button();
             this.btInvoice = new System.Windows.Forms.Button();
-            this.btCreateContract = new System.Windows.Forms.Button();
             this.groupBoxEdit = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtNote = new System.Windows.Forms.TextBox();
@@ -209,12 +208,25 @@
             this.tabMember = new System.Windows.Forms.TabPage();
             this.tabStatistic = new System.Windows.Forms.TabPage();
             this.tabAccount = new System.Windows.Forms.TabPage();
+            this.tabMess = new System.Windows.Forms.TabPage();
             this.lbDateTime = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.sERVICEPACKTableAdapter = new slnGym.PackageDataSetTableAdapters.SERVICEPACKTableAdapter();
             this.pTTagDataSet = new slnGym.PTTagDataSet();
             this.eMPLOYEEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.eMPLOYEETableAdapter = new slnGym.PTTagDataSetTableAdapters.EMPLOYEETableAdapter();
+            this.panelChat = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
+            this.btSendMessage = new System.Windows.Forms.Button();
+            this.btCloseChat = new System.Windows.Forms.Button();
+            this.btCancel = new System.Windows.Forms.Button();
+            this.txtMessage = new System.Windows.Forms.TextBox();
+            this.txtChatScreen = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.tess = new System.Windows.Forms.TextBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.menuStrip.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabHome.SuspendLayout();
@@ -249,6 +261,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pTTagDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eMPLOYEEBindingSource)).BeginInit();
+            this.panelChat.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -261,7 +274,7 @@
             this.userLoginToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(1904, 36);
+            this.menuStrip.Size = new System.Drawing.Size(1611, 36);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -278,21 +291,21 @@
             // loginToolStripMenuItem
             // 
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(180, 32);
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(137, 32);
             this.loginToolStripMenuItem.Text = "Login";
             this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(180, 32);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(137, 32);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 32);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(137, 32);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -331,12 +344,14 @@
             this.userLoginToolStripMenuItem.Name = "userLoginToolStripMenuItem";
             this.userLoginToolStripMenuItem.Size = new System.Drawing.Size(58, 32);
             this.userLoginToolStripMenuItem.Text = "User";
+            this.userLoginToolStripMenuItem.Click += new System.EventHandler(this.userLoginToolStripMenuItem_Click);
             // 
             // tabControl
             // 
             this.tabControl.Controls.Add(this.tabHome);
             this.tabControl.Controls.Add(this.tabManage);
             this.tabControl.Controls.Add(this.tabAccount);
+            this.tabControl.Controls.Add(this.tabMess);
             this.tabControl.Font = new System.Drawing.Font("Sitka Display", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl.Location = new System.Drawing.Point(0, 39);
             this.tabControl.Name = "tabControl";
@@ -470,7 +485,7 @@
             this.dgvServicePack.RowsDefaultCellStyle = dataGridViewCellStyle30;
             this.dgvServicePack.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvServicePack.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvServicePack.Size = new System.Drawing.Size(1912, 1169);
+            this.dgvServicePack.Size = new System.Drawing.Size(1912, 1214);
             this.dgvServicePack.TabIndex = 102;
             // 
             // tabManage
@@ -503,7 +518,6 @@
             this.tabNewMember.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.tabNewMember.Controls.Add(this.btResfresh);
             this.tabNewMember.Controls.Add(this.btInvoice);
-            this.tabNewMember.Controls.Add(this.btCreateContract);
             this.tabNewMember.Controls.Add(this.groupBoxEdit);
             this.tabNewMember.Controls.Add(this.groupContracting);
             this.tabNewMember.Controls.Add(this.groupChoospackage);
@@ -525,9 +539,9 @@
             this.btResfresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btResfresh.Font = new System.Drawing.Font("Sitka Subheading", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btResfresh.ForeColor = System.Drawing.Color.White;
-            this.btResfresh.Location = new System.Drawing.Point(965, 675);
+            this.btResfresh.Location = new System.Drawing.Point(965, 674);
             this.btResfresh.Name = "btResfresh";
-            this.btResfresh.Size = new System.Drawing.Size(88, 61);
+            this.btResfresh.Size = new System.Drawing.Size(88, 62);
             this.btResfresh.TabIndex = 106;
             this.btResfresh.UseVisualStyleBackColor = false;
             this.btResfresh.Click += new System.EventHandler(this.btResfresh_Click);
@@ -543,7 +557,7 @@
             this.btInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btInvoice.Font = new System.Drawing.Font("Sitka Subheading", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btInvoice.ForeColor = System.Drawing.Color.White;
-            this.btInvoice.Location = new System.Drawing.Point(1277, 675);
+            this.btInvoice.Location = new System.Drawing.Point(1059, 674);
             this.btInvoice.Name = "btInvoice";
             this.btInvoice.Size = new System.Drawing.Size(243, 61);
             this.btInvoice.TabIndex = 105;
@@ -551,26 +565,6 @@
             this.btInvoice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btInvoice.UseVisualStyleBackColor = false;
             this.btInvoice.Click += new System.EventHandler(this.btInvoice_Click);
-            // 
-            // btCreateContract
-            // 
-            this.btCreateContract.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btCreateContract.BackColor = System.Drawing.Color.SteelBlue;
-            this.btCreateContract.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btCreateContract.BackgroundImage")));
-            this.btCreateContract.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btCreateContract.FlatAppearance.BorderColor = System.Drawing.Color.Navy;
-            this.btCreateContract.FlatAppearance.BorderSize = 3;
-            this.btCreateContract.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btCreateContract.Font = new System.Drawing.Font("Sitka Subheading", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCreateContract.ForeColor = System.Drawing.Color.White;
-            this.btCreateContract.Location = new System.Drawing.Point(1069, 675);
-            this.btCreateContract.Name = "btCreateContract";
-            this.btCreateContract.Size = new System.Drawing.Size(194, 61);
-            this.btCreateContract.TabIndex = 107;
-            this.btCreateContract.Text = "Create";
-            this.btCreateContract.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btCreateContract.UseVisualStyleBackColor = false;
-            this.btCreateContract.Click += new System.EventHandler(this.btCreateContract_Click);
             // 
             // groupBoxEdit
             // 
@@ -2405,6 +2399,15 @@
             this.tabAccount.TabIndex = 3;
             this.tabAccount.Text = " Account ";
             // 
+            // tabMess
+            // 
+            this.tabMess.Location = new System.Drawing.Point(4, 37);
+            this.tabMess.Name = "tabMess";
+            this.tabMess.Size = new System.Drawing.Size(1912, 937);
+            this.tabMess.TabIndex = 4;
+            this.tabMess.Text = " Messages ";
+            this.tabMess.UseVisualStyleBackColor = true;
+            // 
             // lbDateTime
             // 
             this.lbDateTime.AutoSize = true;
@@ -2440,15 +2443,193 @@
             // 
             this.eMPLOYEETableAdapter.ClearBeforeFill = true;
             // 
+            // panelChat
+            // 
+            this.panelChat.BackColor = System.Drawing.Color.MistyRose;
+            this.panelChat.Controls.Add(this.button5);
+            this.panelChat.Controls.Add(this.btSendMessage);
+            this.panelChat.Controls.Add(this.btCloseChat);
+            this.panelChat.Controls.Add(this.btCancel);
+            this.panelChat.Controls.Add(this.txtMessage);
+            this.panelChat.Controls.Add(this.txtChatScreen);
+            this.panelChat.Controls.Add(this.button2);
+            this.panelChat.Controls.Add(this.button3);
+            this.panelChat.Font = new System.Drawing.Font("UVN Anh Hai", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelChat.Location = new System.Drawing.Point(181, 32);
+            this.panelChat.Name = "panelChat";
+            this.panelChat.Size = new System.Drawing.Size(519, 494);
+            this.panelChat.TabIndex = 197;
+            // 
+            // button5
+            // 
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button5.BackColor = System.Drawing.Color.DarkSalmon;
+            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button5.Enabled = false;
+            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.DarkSalmon;
+            this.button5.FlatAppearance.BorderSize = 3;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Arrus-Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.Crimson;
+            this.button5.Location = new System.Drawing.Point(9, 7);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(59, 44);
+            this.button5.TabIndex = 228;
+            this.button5.Text = " Group chat";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // btSendMessage
+            // 
+            this.btSendMessage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btSendMessage.BackColor = System.Drawing.Color.DarkSalmon;
+            this.btSendMessage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btSendMessage.BackgroundImage")));
+            this.btSendMessage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btSendMessage.FlatAppearance.BorderColor = System.Drawing.Color.DarkSalmon;
+            this.btSendMessage.FlatAppearance.BorderSize = 3;
+            this.btSendMessage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btSendMessage.Font = new System.Drawing.Font("Arrus-Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSendMessage.ForeColor = System.Drawing.Color.Crimson;
+            this.btSendMessage.Location = new System.Drawing.Point(463, 443);
+            this.btSendMessage.Name = "btSendMessage";
+            this.btSendMessage.Size = new System.Drawing.Size(48, 45);
+            this.btSendMessage.TabIndex = 227;
+            this.btSendMessage.Text = " Group chat";
+            this.btSendMessage.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btSendMessage.UseVisualStyleBackColor = false;
+            this.btSendMessage.Click += new System.EventHandler(this.btSendMessage_Click);
+            // 
+            // btCloseChat
+            // 
+            this.btCloseChat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btCloseChat.BackColor = System.Drawing.Color.DarkSalmon;
+            this.btCloseChat.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btCloseChat.BackgroundImage")));
+            this.btCloseChat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btCloseChat.FlatAppearance.BorderColor = System.Drawing.Color.DarkSalmon;
+            this.btCloseChat.FlatAppearance.BorderSize = 3;
+            this.btCloseChat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btCloseChat.Font = new System.Drawing.Font("Arrus-Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCloseChat.ForeColor = System.Drawing.Color.Crimson;
+            this.btCloseChat.Location = new System.Drawing.Point(465, 6);
+            this.btCloseChat.Name = "btCloseChat";
+            this.btCloseChat.Size = new System.Drawing.Size(48, 45);
+            this.btCloseChat.TabIndex = 224;
+            this.btCloseChat.Text = " Group chat";
+            this.btCloseChat.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btCloseChat.UseVisualStyleBackColor = false;
+            this.btCloseChat.Click += new System.EventHandler(this.btCloseChat_Click);
+            // 
+            // btCancel
+            // 
+            this.btCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btCancel.BackColor = System.Drawing.Color.DarkSalmon;
+            this.btCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btCancel.Enabled = false;
+            this.btCancel.FlatAppearance.BorderColor = System.Drawing.Color.DarkSalmon;
+            this.btCancel.FlatAppearance.BorderSize = 3;
+            this.btCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btCancel.Font = new System.Drawing.Font("Arrus-Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btCancel.Location = new System.Drawing.Point(3, 3);
+            this.btCancel.Name = "btCancel";
+            this.btCancel.Size = new System.Drawing.Size(513, 51);
+            this.btCancel.TabIndex = 223;
+            this.btCancel.Text = "       Group chat";
+            this.btCancel.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btCancel.UseVisualStyleBackColor = false;
+            // 
+            // txtMessage
+            // 
+            this.txtMessage.BackColor = System.Drawing.Color.SeaShell;
+            this.txtMessage.Font = new System.Drawing.Font("UVN Anh Hai", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMessage.ForeColor = System.Drawing.Color.Crimson;
+            this.txtMessage.Location = new System.Drawing.Point(9, 447);
+            this.txtMessage.Multiline = true;
+            this.txtMessage.Name = "txtMessage";
+            this.txtMessage.Size = new System.Drawing.Size(451, 40);
+            this.txtMessage.TabIndex = 191;
+            // 
+            // txtChatScreen
+            // 
+            this.txtChatScreen.AcceptsTab = true;
+            this.txtChatScreen.BackColor = System.Drawing.Color.SeaShell;
+            this.txtChatScreen.Font = new System.Drawing.Font("UVN Anh Hai", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtChatScreen.ForeColor = System.Drawing.Color.Crimson;
+            this.txtChatScreen.Location = new System.Drawing.Point(9, 55);
+            this.txtChatScreen.Multiline = true;
+            this.txtChatScreen.Name = "txtChatScreen";
+            this.txtChatScreen.ReadOnly = true;
+            this.txtChatScreen.Size = new System.Drawing.Size(502, 387);
+            this.txtChatScreen.TabIndex = 190;
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.BackColor = System.Drawing.Color.DarkSalmon;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.DarkSalmon;
+            this.button2.FlatAppearance.BorderSize = 3;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Arrus-Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Crimson;
+            this.button2.Location = new System.Drawing.Point(3, 51);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(513, 395);
+            this.button2.TabIndex = 225;
+            this.button2.Text = " Group chat";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.BackColor = System.Drawing.Color.DarkSalmon;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.DarkSalmon;
+            this.button3.FlatAppearance.BorderSize = 3;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Arrus-Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.Crimson;
+            this.button3.Location = new System.Drawing.Point(3, 443);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(513, 48);
+            this.button3.TabIndex = 226;
+            this.button3.Text = " Group chat";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // tess
+            // 
+            this.tess.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.tess.Font = new System.Drawing.Font("UVN Anh Hai", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tess.ForeColor = System.Drawing.Color.Navy;
+            this.tess.Location = new System.Drawing.Point(790, 0);
+            this.tess.Name = "tess";
+            this.tess.ReadOnly = true;
+            this.tess.Size = new System.Drawing.Size(222, 40);
+            this.tess.TabIndex = 188;
+            this.tess.Text = "Fullname";
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            // 
+            // backgroundWorker2
+            // 
+            this.backgroundWorker2.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker2_DoWork);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(1904, 978);
+            this.ClientSize = new System.Drawing.Size(1611, 905);
+            this.Controls.Add(this.tess);
             this.Controls.Add(this.lbDateTime);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.menuStrip);
+            this.Controls.Add(this.panelChat);
             this.MainMenuStrip = this.menuStrip;
             this.MaximizeBox = false;
             this.Name = "Form1";
@@ -2499,6 +2680,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pTTagDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eMPLOYEEBindingSource)).EndInit();
+            this.panelChat.ResumeLayout(false);
+            this.panelChat.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2536,7 +2719,6 @@
         private User_Control.ReceiptUC receiptUC;
         private System.Windows.Forms.Button btResfresh;
         private System.Windows.Forms.Button btInvoice;
-        private System.Windows.Forms.Button btCreateContract;
         private System.Windows.Forms.GroupBox groupBoxEdit;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtNote;
@@ -2671,5 +2853,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.TabPage tabMess;
+        private System.Windows.Forms.Panel panelChat;
+        private System.Windows.Forms.TextBox txtMessage;
+        private System.Windows.Forms.TextBox txtChatScreen;
+        private System.Windows.Forms.TextBox tess;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btSendMessage;
+        private System.Windows.Forms.Button btCloseChat;
+        private System.Windows.Forms.Button btCancel;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
     }
 }

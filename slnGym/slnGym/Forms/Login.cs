@@ -75,6 +75,9 @@ namespace slnGym.Forms
                         reLoadUserPassword();
                         this.Close();
                         break;
+                    case 5:
+                        MessageBox.Show("Not approve");
+                        return;
                 }
                 accountLog.insertAccount(SysLOG.UserName, SysLOG.DateLogin, SysLOG.DateLogout, SysLOG.Status);
                 f1.AccessSuccess();

@@ -13,19 +13,7 @@ namespace slnGym.DataObject
 {
     public class MemberBL
     {
-        public void loadDGVMem(DataGridView dgv) //Format lại cột BDate của Member (#FORMAT)
-        {
-
-            dgv.RowTemplate.Height = 50;
-            dgv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-            dgv.AllowUserToAddRows = false;
-            dgv.EditMode = DataGridViewEditMode.EditProgrammatically;
-            MEMBERs mem = new MEMBERs();
-            DataTable dt = new DataTable();
-            dt = mem.getAllMEMBERS();
-            dgv.DataSource = dt;
-        }
-        public void LoadDGVPackage(DataGridView dgv, string idKH) //#FORMAT dgv cho đẹp
+        public void LoadDGVPackage(DataGridView dgv, string idKH) 
         {
             dgv.RowTemplate.Height = 50;
             dgv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
@@ -44,7 +32,6 @@ namespace slnGym.DataObject
             dgv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dgv.AllowUserToAddRows = false;
             dgv.EditMode = DataGridViewEditMode.EditProgrammatically;
-            //
 
             PRODUCTs ser = new PRODUCTs();
             DataTable dt = new DataTable();
@@ -58,7 +45,6 @@ namespace slnGym.DataObject
             dgv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dgv.AllowUserToAddRows = false;
             dgv.EditMode = DataGridViewEditMode.EditProgrammatically;
-            //
 
             EMPLOYEEs ser = new EMPLOYEEs();
             DataTable dt = new DataTable();

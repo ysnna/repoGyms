@@ -50,6 +50,25 @@ namespace slnGym.Layer
                 return false;
             }
         }
+        public bool updateAccount(string user, int userid)
+        {
+            SqlCommand cmd = new SqlCommand("update ACCOUNT set userID=@uID where username=@user", mydb.getConnection);
+            cmd.Parameters.Add("@user", SqlDbType.VarChar).Value = user;
+            cmd.Parameters.Add("@uID", SqlDbType.Int).Value = userid;
+
+
+            mydb.openConnection();
+            if (cmd.ExecuteNonQuery() == 1)
+            {
+                mydb.closeConnection();
+                return true;
+            }
+            else
+            {
+                mydb.closeConnection();
+                return false;
+            }
+        }
         public bool usernameExist(string user)
         {
             SqlCommand cmd = new SqlCommand("select * from LOGIN where username =@user", mydb.getConnection);
