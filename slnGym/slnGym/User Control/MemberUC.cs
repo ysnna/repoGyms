@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using slnGym.DataObject;
 using slnGym.Layer;
+using slnGym.Forms;
 
 namespace slnGym.User_Control
 {
@@ -20,22 +21,58 @@ namespace slnGym.User_Control
         }
 
         MemberBL mem = new MemberBL();
+        MEMBERs getmem = new MEMBERs();
+
+        public object EditMembers { get; private set; }
 
         private void dgvMembers_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             dgvProduct.DataSource = null;
             string index = dgvMembers.CurrentRow.Cells[0].Value.ToString();
+            
             //MessageBox.Show(index);
             mem.LoadDGVPackage(dgvPackage, index);
             mem.loadDGVProduct(dgvProduct, index);
         }
-        public void loadDGVMem() 
+       
+        private void MemberUC_Load(object sender, EventArgs e)
+        {
+            loadDGVMem();
+        }
+
+        private void btRefreshMember_Click(object sender, EventArgs e)
+        {
+            loadDGVMem();
+        }
+
+        private void btEditMachine_Click(object sender, EventArgs e)
+        {
+            EditMemberUC editMember = new EditMemberUC();
+            editMember.ShowDialog();
+        }
+
+        private void dgvMembers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string index = dgvMembers.CurrentRow.Cells[0].Value.ToString();
+            DataTable dt = new DataTable();
+            dt = getmem.getMemberbyID(index);
+            GetEditMember.FName = dt.Rows[0][1].ToString();
+            GetEditMember.LName = dt.Rows[0][2].ToString();
+            GetEditMember.Address = dt.Rows[0][5].ToString();
+            GetEditMember.Birthday = Convert.ToDateTime( dt.Rows[0][4].ToString());
+            GetEditMember.IDCard = dt.Rows[0][8].ToString();
+            GetEditMember.Phone = dt.Rows[0][7].ToString();
+            GetEditMember.Gender = Convert.ToInt32( dt.Rows[0][6]);
+            GetEditMember.IDMember = index;
+
+        }
+        public void loadDGVMem()
         {
             dgvMembers.RowTemplate.Height = 50;
             dgvMembers.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dgvMembers.AllowUserToAddRows = false;
             dgvMembers.EditMode = DataGridViewEditMode.EditProgrammatically;
-            
+
             MEMBERs mem = new MEMBERs();
             DataTable dt = new DataTable();
             dt = mem.getAllMEMBERS();
@@ -51,15 +88,6 @@ namespace slnGym.User_Control
             //        row.DefaultCellStyle.BackColor = Color.MediumSeaGreen;
             //    }
             //}
-        }
-        private void MemberUC_Load(object sender, EventArgs e)
-        {
-            loadDGVMem();
-        }
-
-        private void btRefreshMember_Click(object sender, EventArgs e)
-        {
-            loadDGVMem();
         }
     }
 }

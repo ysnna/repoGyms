@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using slnGym.DataObject;
 using slnGym.Layer;
-
+using slnGym.Forms;
 namespace slnGym.User_Control
 {
     public partial class ManageMembersUC : UserControl
@@ -22,12 +22,40 @@ namespace slnGym.User_Control
         MemberBL mem = new MemberBL();
         MEMBERs member = new MEMBERs();
         LOGIN log = new LOGIN();
+        TempBL temp = new TempBL();
         string getID="";
-
+        private void dgvMembers_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dgvProduct.DataSource = null;
+            string index = dgvMembers.CurrentRow.Cells[0].Value.ToString();
+            //MessageBox.Show(index);
+            mem.LoadDGVPackage(dgvPackage, index);
+            mem.loadDGVProduct(dgvProduct, index);
+            mem.loadDGVPT(dgvPT, index);
+            getID = index;
+        }
+        private void btRefreshMember_Click(object sender, EventArgs e)
+        {
+            loadDGVMem();
+            checkTEMP();
+        }
+        private void btCreateContract_Click(object sender, EventArgs e)
+        {
+            if (getID != "")
+            {
+                member.updateAccpuntMember(getID, "Đã duyệt");
+                log.updateAccount(getID, 2);
+                MessageBox.Show("Approved");
+                loadDGVMem();
+            }
+        }
         private void ManageMembersUC_Load(object sender, EventArgs e)
         {
             loadDGVMem();
+            checkTEMP();
         }
+
+        //Ham xu ly
         public void loadDGVMem() //Format lại cột BDate của Member (#FORMAT)
         {
             dgvMembers.RowTemplate.Height = 50;
@@ -52,26 +80,21 @@ namespace slnGym.User_Control
             //}
         }
 
-        private void dgvMembers_CellClick(object sender, DataGridViewCellEventArgs e)
+       
+
+        void checkTEMP()
         {
-            dgvProduct.DataSource = null;
-            string index = dgvMembers.CurrentRow.Cells[0].Value.ToString();
-            //MessageBox.Show(index);
-            mem.LoadDGVPackage(dgvPackage, index);
-            mem.loadDGVProduct(dgvProduct, index);
-            mem.loadDGVPT(dgvPT, index);
-            getID = index;
+            if (temp.existCheck())
+            {
+                btnMessage.Text = "Request (" + temp.RequestCount()+")" ;
+            }
+
         }
 
-        private void btCreateContract_Click(object sender, EventArgs e)
+        private void btnMessage_Click(object sender, EventArgs e)
         {
-            if (getID != "")
-            {
-                member.updateAccpuntMember(getID, "Đã duyệt");
-                log.updateAccount(getID, 2);
-                MessageBox.Show("Approved");
-                loadDGVMem();
-            }
+            EditByAdmin edit = new EditByAdmin();
+            edit.ShowDialog();
         }
     }
 }

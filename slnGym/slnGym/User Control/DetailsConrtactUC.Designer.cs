@@ -423,7 +423,7 @@
             // 
             // detailContractBindingSource
             // 
-            this.detailContractBindingSource.DataSource = typeof(slnGym.DataObject.DetailContract);
+            //this.detailContractBindingSource.DataSource = typeof(slnGym.DataObject.DetailContract);
             // 
             // DetailsConrtactUC
             // 

@@ -53,6 +53,7 @@
     <Compile Include="DataObject\AddEmployee.cs" />
     <Compile Include="DataObject\DetailContract.cs" />
     <Compile Include="DataObject\GETContract.cs" />
+    <Compile Include="DataObject\GetEditMember.cs" />
     <Compile Include="DataObject\GETMember.cs" />
     <Compile Include="DataObject\ListEmployee.cs" />
     <Compile Include="DataObject\ListMachine.cs" />
@@ -75,17 +76,23 @@
     <Compile Include="Forms\ChangePassword.Designer.cs">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\EditByAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditByAdmin.Designer.cs">
+      <DependentUpon>EditByAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Form2.cs">
+    <Compile Include="Forms\EditMembers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="Forms\EditMembers.Designer.cs">
+      <DependentUpon>EditMembers.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Login.cs">
       <SubType>Form</SubType>
@@ -117,6 +124,7 @@
     <Compile Include="Layer\RECEIPTs.cs" />
     <Compile Include="Layer\SERVICEPACKs.cs" />
     <Compile Include="Layer\STATISTICS.cs" />
+    <Compile Include="Layer\TempBL.cs" />
     <Compile Include="Layer\WORKs.cs" />
     <Compile Include="MY_DB.cs" />
     <Compile Include="PackageDataSet.Designer.cs">
@@ -215,11 +223,14 @@
     <EmbeddedResource Include="Forms\ChangePassword.resx">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditByAdmin.resx">
+      <DependentUpon>EditByAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\EditMembers.resx">
+      <DependentUpon>EditMembers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -232,6 +243,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Temp\MEContract.resx">
       <DependentUpon>MEContract.cs</DependentUpon>

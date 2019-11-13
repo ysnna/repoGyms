@@ -10,8 +10,8 @@ namespace slnGym
 {
     class MY_DB
     {
-        //SqlConnection conn = new SqlConnection(@"Data Source=192.168.43.252,1433;Initial Catalog=GYMManager;Persist Security Info=True;User ID=ysnna;Password=123456");
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-RRRHOP4\RRRHOP4;Initial Catalog=GYMManager;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=192.168.43.252,1433;Initial Catalog=GYMManager;Persist Security Info=True;User ID=ysnna;Password=123456");
+        //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-RRRHOP4\RRRHOP4;Initial Catalog=GYMManager;Integrated Security=True");
 
         public SqlConnection getConnection
         {

@@ -49,6 +49,7 @@
             this.dgvPackage = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvProduct = new System.Windows.Forms.DataGridView();
+            this.btEditMachine = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btSearch)).BeginInit();
             this.groupBox4.SuspendLayout();
@@ -100,6 +101,7 @@
             this.dgvMembers.Size = new System.Drawing.Size(961, 767);
             this.dgvMembers.TabIndex = 163;
             this.dgvMembers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMembers_CellClick);
+            this.dgvMembers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMembers_CellContentClick);
             // 
             // btSearch
             // 
@@ -255,16 +257,35 @@
             this.dgvProduct.Size = new System.Drawing.Size(863, 382);
             this.dgvProduct.TabIndex = 167;
             // 
+            // btEditMachine
+            // 
+            this.btEditMachine.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btEditMachine.BackColor = System.Drawing.Color.Transparent;
+            this.btEditMachine.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btEditMachine.BackgroundImage")));
+            this.btEditMachine.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btEditMachine.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btEditMachine.FlatAppearance.BorderSize = 3;
+            this.btEditMachine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btEditMachine.Font = new System.Drawing.Font("Sitka Subheading", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btEditMachine.ForeColor = System.Drawing.Color.Wheat;
+            this.btEditMachine.Location = new System.Drawing.Point(1489, 58);
+            this.btEditMachine.Name = "btEditMachine";
+            this.btEditMachine.Size = new System.Drawing.Size(47, 41);
+            this.btEditMachine.TabIndex = 164;
+            this.btEditMachine.UseVisualStyleBackColor = false;
+            this.btEditMachine.Click += new System.EventHandler(this.btEditMachine_Click);
+            // 
             // MemberUC
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.Controls.Add(this.dgvMembers);
+            this.Controls.Add(this.btEditMachine);
             this.Controls.Add(this.btSearch);
             this.Controls.Add(this.txtSearchMembers);
             this.Controls.Add(this.btRefreshMember);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.dgvMembers);
             this.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Navy;
             this.Name = "MemberUC";
@@ -291,5 +312,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         public System.Windows.Forms.DataGridView dgvPackage;
         public System.Windows.Forms.DataGridView dgvProduct;
+        private System.Windows.Forms.Button btEditMachine;
     }
 }
