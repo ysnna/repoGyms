@@ -165,6 +165,8 @@ namespace slnGym.Forms
             loadStatistic();
             NeedLogin();
             getIP();
+            logoutToolStripMenuItem.Visible = false;
+            managerToolStripMenuItem.Enabled = false;
         }
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -172,6 +174,8 @@ namespace slnGym.Forms
             NeedLogin();
             SysLOG.DateLogout = DateTime.Now.ToString();
             accountLog.updateAccount(SysLOG.UserName, SysLOG.DateLogin, SysLOG.DateLogout, SysLOG.Status);
+            loginToolStripMenuItem.Visible = true;
+            managerToolStripMenuItem.Enabled = true; ;
         }
 
         private void managerToolStripMenuItem_Click(object sender, EventArgs e)

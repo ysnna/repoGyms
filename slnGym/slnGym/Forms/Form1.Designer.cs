@@ -291,21 +291,21 @@
             // loginToolStripMenuItem
             // 
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(137, 32);
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(180, 32);
             this.loginToolStripMenuItem.Text = "Login";
             this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(137, 32);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(180, 32);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(137, 32);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 32);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -485,7 +485,7 @@
             this.dgvServicePack.RowsDefaultCellStyle = dataGridViewCellStyle30;
             this.dgvServicePack.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvServicePack.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvServicePack.Size = new System.Drawing.Size(1912, 1214);
+            this.dgvServicePack.Size = new System.Drawing.Size(1912, 1229);
             this.dgvServicePack.TabIndex = 102;
             // 
             // tabManage
@@ -1184,7 +1184,7 @@
             this.groupChoospackage.Controls.Add(this.txtPackage);
             this.groupChoospackage.Controls.Add(this.dgvPackage);
             this.groupChoospackage.Controls.Add(this.picAddPackage);
-            this.groupChoospackage.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupChoospackage.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupChoospackage.ForeColor = System.Drawing.Color.Navy;
             this.groupChoospackage.Location = new System.Drawing.Point(43, 20);
             this.groupChoospackage.Name = "groupChoospackage";
@@ -1284,7 +1284,7 @@
             this.dgvPT.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle32.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle32.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle32.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle32.ForeColor = System.Drawing.Color.Navy;
             dataGridViewCellStyle32.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle32.SelectionForeColor = System.Drawing.Color.Navy;
@@ -1293,7 +1293,7 @@
             this.dgvPT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle33.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle33.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle33.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle33.ForeColor = System.Drawing.Color.Navy;
             dataGridViewCellStyle33.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle33.SelectionForeColor = System.Drawing.Color.Navy;
@@ -1304,7 +1304,7 @@
             this.dgvPT.Name = "dgvPT";
             dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle34.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle34.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle34.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle34.ForeColor = System.Drawing.Color.Navy;
             dataGridViewCellStyle34.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle34.SelectionForeColor = System.Drawing.Color.Navy;
@@ -1348,7 +1348,7 @@
             this.dgvPackage.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle37.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle37.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle37.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle37.ForeColor = System.Drawing.Color.Navy;
             dataGridViewCellStyle37.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle37.SelectionForeColor = System.Drawing.Color.Navy;
@@ -1363,7 +1363,7 @@
             this.dgvPackage.DataSource = this.sERVICEPACKBindingSource;
             dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle38.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle38.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle38.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle38.ForeColor = System.Drawing.Color.Navy;
             dataGridViewCellStyle38.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle38.SelectionForeColor = System.Drawing.Color.Navy;
@@ -1375,7 +1375,7 @@
             this.dgvPackage.ReadOnly = true;
             dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle39.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle39.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle39.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle39.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle39.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle39.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -1398,7 +1398,7 @@
             this.serviceIDDataGridViewTextBoxColumn.HeaderText = "ID";
             this.serviceIDDataGridViewTextBoxColumn.Name = "serviceIDDataGridViewTextBoxColumn";
             this.serviceIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.serviceIDDataGridViewTextBoxColumn.Width = 73;
+            this.serviceIDDataGridViewTextBoxColumn.Width = 67;
             // 
             // serviceNAMEDataGridViewTextBoxColumn
             // 
@@ -2111,7 +2111,7 @@
             this.groupBox3.Controls.Add(this.txtIDPackageRenew);
             this.groupBox3.Controls.Add(this.dgvPackageRenew);
             this.groupBox3.Controls.Add(this.pictureBox2);
-            this.groupBox3.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.Navy;
             this.groupBox3.Location = new System.Drawing.Point(44, 25);
             this.groupBox3.Name = "groupBox3";
@@ -2210,7 +2210,7 @@
             this.dgvPTRenew.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle42.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle42.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle42.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle42.ForeColor = System.Drawing.Color.Navy;
             dataGridViewCellStyle42.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle42.SelectionForeColor = System.Drawing.Color.Navy;
@@ -2219,7 +2219,7 @@
             this.dgvPTRenew.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle43.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle43.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle43.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle43.ForeColor = System.Drawing.Color.Navy;
             dataGridViewCellStyle43.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle43.SelectionForeColor = System.Drawing.Color.Navy;
@@ -2230,7 +2230,7 @@
             this.dgvPTRenew.Name = "dgvPTRenew";
             dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle44.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle44.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle44.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle44.ForeColor = System.Drawing.Color.Navy;
             dataGridViewCellStyle44.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle44.SelectionForeColor = System.Drawing.Color.Navy;
@@ -2273,7 +2273,7 @@
             this.dgvPackageRenew.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle47.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle47.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle47.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle47.ForeColor = System.Drawing.Color.Navy;
             dataGridViewCellStyle47.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle47.SelectionForeColor = System.Drawing.Color.Navy;
@@ -2288,7 +2288,7 @@
             this.dgvPackageRenew.DataSource = this.sERVICEPACKBindingSource;
             dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle48.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle48.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle48.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle48.ForeColor = System.Drawing.Color.Navy;
             dataGridViewCellStyle48.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle48.SelectionForeColor = System.Drawing.Color.Navy;
@@ -2300,7 +2300,7 @@
             this.dgvPackageRenew.ReadOnly = true;
             dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle49.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle49.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle49.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle49.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle49.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle49.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -2322,7 +2322,7 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "ID";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 73;
+            this.dataGridViewTextBoxColumn1.Width = 67;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -2412,11 +2412,11 @@
             // 
             this.lbDateTime.AutoSize = true;
             this.lbDateTime.BackColor = System.Drawing.Color.Transparent;
-            this.lbDateTime.Font = new System.Drawing.Font("UTM Centur", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDateTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDateTime.ForeColor = System.Drawing.Color.Crimson;
             this.lbDateTime.Location = new System.Drawing.Point(1451, 9);
             this.lbDateTime.Name = "lbDateTime";
-            this.lbDateTime.Size = new System.Drawing.Size(169, 40);
+            this.lbDateTime.Size = new System.Drawing.Size(157, 31);
             this.lbDateTime.TabIndex = 7;
             this.lbDateTime.Text = "DateTime: ";
             // 
@@ -2454,7 +2454,7 @@
             this.panelChat.Controls.Add(this.txtChatScreen);
             this.panelChat.Controls.Add(this.button2);
             this.panelChat.Controls.Add(this.button3);
-            this.panelChat.Font = new System.Drawing.Font("UVN Anh Hai", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelChat.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelChat.Location = new System.Drawing.Point(181, 32);
             this.panelChat.Name = "panelChat";
             this.panelChat.Size = new System.Drawing.Size(519, 494);
@@ -2470,7 +2470,7 @@
             this.button5.FlatAppearance.BorderColor = System.Drawing.Color.DarkSalmon;
             this.button5.FlatAppearance.BorderSize = 3;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Arrus-Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.Crimson;
             this.button5.Location = new System.Drawing.Point(9, 7);
             this.button5.Name = "button5";
@@ -2489,7 +2489,7 @@
             this.btSendMessage.FlatAppearance.BorderColor = System.Drawing.Color.DarkSalmon;
             this.btSendMessage.FlatAppearance.BorderSize = 3;
             this.btSendMessage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btSendMessage.Font = new System.Drawing.Font("Arrus-Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSendMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btSendMessage.ForeColor = System.Drawing.Color.Crimson;
             this.btSendMessage.Location = new System.Drawing.Point(463, 443);
             this.btSendMessage.Name = "btSendMessage";
@@ -2509,7 +2509,7 @@
             this.btCloseChat.FlatAppearance.BorderColor = System.Drawing.Color.DarkSalmon;
             this.btCloseChat.FlatAppearance.BorderSize = 3;
             this.btCloseChat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btCloseChat.Font = new System.Drawing.Font("Arrus-Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCloseChat.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btCloseChat.ForeColor = System.Drawing.Color.Crimson;
             this.btCloseChat.Location = new System.Drawing.Point(465, 6);
             this.btCloseChat.Name = "btCloseChat";
@@ -2529,7 +2529,7 @@
             this.btCancel.FlatAppearance.BorderColor = System.Drawing.Color.DarkSalmon;
             this.btCancel.FlatAppearance.BorderSize = 3;
             this.btCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btCancel.Font = new System.Drawing.Font("Arrus-Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btCancel.Location = new System.Drawing.Point(3, 3);
             this.btCancel.Name = "btCancel";
@@ -2542,7 +2542,7 @@
             // txtMessage
             // 
             this.txtMessage.BackColor = System.Drawing.Color.SeaShell;
-            this.txtMessage.Font = new System.Drawing.Font("UVN Anh Hai", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMessage.ForeColor = System.Drawing.Color.Crimson;
             this.txtMessage.Location = new System.Drawing.Point(9, 447);
             this.txtMessage.Multiline = true;
@@ -2554,7 +2554,7 @@
             // 
             this.txtChatScreen.AcceptsTab = true;
             this.txtChatScreen.BackColor = System.Drawing.Color.SeaShell;
-            this.txtChatScreen.Font = new System.Drawing.Font("UVN Anh Hai", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtChatScreen.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtChatScreen.ForeColor = System.Drawing.Color.Crimson;
             this.txtChatScreen.Location = new System.Drawing.Point(9, 55);
             this.txtChatScreen.Multiline = true;
@@ -2571,7 +2571,7 @@
             this.button2.FlatAppearance.BorderColor = System.Drawing.Color.DarkSalmon;
             this.button2.FlatAppearance.BorderSize = 3;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arrus-Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.Crimson;
             this.button2.Location = new System.Drawing.Point(3, 51);
             this.button2.Name = "button2";
@@ -2589,7 +2589,7 @@
             this.button3.FlatAppearance.BorderColor = System.Drawing.Color.DarkSalmon;
             this.button3.FlatAppearance.BorderSize = 3;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Arrus-Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.Crimson;
             this.button3.Location = new System.Drawing.Point(3, 443);
             this.button3.Name = "button3";
@@ -2602,12 +2602,12 @@
             // tess
             // 
             this.tess.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.tess.Font = new System.Drawing.Font("UVN Anh Hai", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tess.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tess.ForeColor = System.Drawing.Color.Navy;
             this.tess.Location = new System.Drawing.Point(790, 0);
             this.tess.Name = "tess";
             this.tess.ReadOnly = true;
-            this.tess.Size = new System.Drawing.Size(222, 40);
+            this.tess.Size = new System.Drawing.Size(222, 35);
             this.tess.TabIndex = 188;
             this.tess.Text = "Fullname";
             // 
@@ -2691,11 +2691,8 @@
 
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem systemToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem managerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tabHome;
@@ -2866,5 +2863,8 @@
         private System.Windows.Forms.Button button3;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
+        public System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem managerToolStripMenuItem;
     }
 }

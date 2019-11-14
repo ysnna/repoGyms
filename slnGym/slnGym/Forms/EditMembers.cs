@@ -59,7 +59,7 @@ namespace slnGym.Forms
             {
                 gender = 1;
             }
-            string note = "";
+            string note = "Chờ duyệt";
             MemoryStream picture = new MemoryStream();
             picAvaEdit.Image.Save(picture, picAvaEdit.Image.RawFormat);
             string id = GetEditMember.IDMember;
@@ -71,6 +71,7 @@ namespace slnGym.Forms
             DateTime Bdate = dateTimePickerBdate.Value;
             if (mem.insertTemporary(id, Lname, Fname, picture ,Bdate, add, gender, phone, IDcard, note))
             {
+                mem.updateMembers(id, Lname, Fname, Bdate, add, gender, phone, IDcard, note);
                 MessageBox.Show("Your request has been sent");
             }
         }

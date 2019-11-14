@@ -62,8 +62,8 @@ namespace slnGym.Layer
         public bool updateMembers(string ID, string lname, string fname, DateTime bdate, string address,
             int gender, string phone, int idcard, string note)
         {
-            SqlCommand cmd = new SqlCommand("update MEMBERS set memID=@id,memLname=@lname,memFname=@fname,memBDate=@bdate,memAddress=@add," +
-                "memGender=@gen,memPhone=@phone,cardID=@idcard,note=@note", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("update MEMBERS set memLname=@lname,memFname=@fname,memBDate=@bdate,memAddress=@add," +
+                "memGender=@gen,memPhone=@phone,cardID=@idcard,note=@note where  memID=@id", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = ID;
             cmd.Parameters.Add("@lname", SqlDbType.NVarChar).Value = lname;
             cmd.Parameters.Add("@fname", SqlDbType.NVarChar).Value = fname;
@@ -167,6 +167,23 @@ namespace slnGym.Layer
             }
         }
 
+        public bool deleteTEMP(string ID)
+        {
+            SqlCommand cmd = new SqlCommand("DELETE from TEMP where ID=@ID",mydb.getConnection);
+            cmd.Parameters.Add("@ID", SqlDbType.VarChar).Value = ID;
+            mydb.openConnection();
+            if (cmd.ExecuteNonQuery() == 1)
+            {
+                mydb.closeConnection();
+                return true;
+            }
+            else
+            {
+                mydb.closeConnection();
+                return false;
+            }
+        }
+
         public DataTable getTEMP()
         {
             SqlCommand cmd = new SqlCommand("select *from TEMP", mydb.getConnection);
@@ -177,5 +194,6 @@ namespace slnGym.Layer
             mydb.closeConnection();
             return dt;
         }
+
     }
 }

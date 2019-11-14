@@ -37,6 +37,8 @@ namespace slnGym.Forms
         private void btSignIn_Click(object sender, EventArgs e)
         {
             Log_in();
+            f1.loginToolStripMenuItem.Visible = false;
+            f1.logoutToolStripMenuItem.Visible = true;
         }
         public void Log_in()
         {
@@ -60,19 +62,23 @@ namespace slnGym.Forms
                 {
                     case 0:
                         reLoadUserPassword();
+                        f1.managerToolStripMenuItem.Enabled = true;
                         this.Close();
                         break;
                     case 1:
                         
                         reLoadUserPassword();
+                        f1.managerToolStripMenuItem.Enabled = false;
                         this.Close();
                         break;
                     case 2:
                         reLoadUserPassword();
+                        f1.managerToolStripMenuItem.Enabled = false;
                         this.Close();
                         break;
                     case 3:
                         reLoadUserPassword();
+                        f1.managerToolStripMenuItem.Enabled = false;
                         this.Close();
                         break;
                     case 5:
