@@ -70,7 +70,7 @@ namespace slnGym.Layer
         {
             SqlCommand cmd = new SqlCommand("select ACCOUNTLOGIN.username as 'Username', ACCOUNT.passw as 'Password', " +
                 "loginDate as 'Date Login', logoutDate as 'Date Logout', status as 'Status'" +
-                "from ACCOUNT, ACCOUNTLOGIN where ACCOUNT.username = ACCOUNTLOGIN.username", mydb.getConnection);
+                "from ACCOUNT, ACCOUNTLOGIN where ACCOUNT.username = ACCOUNTLOGIN.username order by loginDate desc", mydb.getConnection);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);

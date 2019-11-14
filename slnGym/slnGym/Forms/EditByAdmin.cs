@@ -22,7 +22,7 @@ namespace slnGym.Forms
         MEMBERs mem = new MEMBERs();
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            notApprove();
+            this.Close();
         }
 
         private void btnAccept_Click(object sender, EventArgs e)
@@ -63,37 +63,37 @@ namespace slnGym.Forms
         {
             if (lbFname.Text != dgvMembers.CurrentRow.Cells[1].ToString())
             {
-                lbFname.ForeColor = Color.Red;
+                lbFname.ForeColor = Color.Firebrick;
             }
             else lbFname.ForeColor = Color.Black;
             //
             if (lbLname.Text != dgvMembers.CurrentRow.Cells[2].ToString())
             {
-                lbLname.ForeColor = Color.Red;
+                lbLname.ForeColor = Color.Firebrick;
             }
             else lbLname.ForeColor = Color.Black;
             //
             if (lbBirthday.Text != dgvMembers.CurrentRow.Cells[4].ToString())
             {
-                lbBirthday.ForeColor = Color.Red;
+                lbBirthday.ForeColor = Color.Firebrick;
             }
             else lbBirthday.ForeColor = Color.Black;
             //
             if (lbPhone.Text != dgvMembers.CurrentRow.Cells[7].ToString())
             {
-                lbPhone.ForeColor = Color.Red;
+                lbPhone.ForeColor = Color.Firebrick;
             }
             else lbPhone.ForeColor = Color.Black;
             //
             if (lbIDCard.Text != dgvMembers.CurrentRow.Cells[8].ToString())
             {
-                lbIDCard.ForeColor = Color.Red;
+                lbIDCard.ForeColor = Color.Firebrick;
             }
             else lbIDCard.ForeColor = Color.Black;
             //
             if (lbAddress.Text != dgvMembers.CurrentRow.Cells[5].ToString())
             {
-                lbAddress.ForeColor = Color.Red;
+                lbAddress.ForeColor = Color.Firebrick;
             }
             else lbAddress.ForeColor = Color.Black;
         }
@@ -132,6 +132,12 @@ namespace slnGym.Forms
                 mem.deleteTEMP(index);
             }
             else MessageBox.Show("Đã có lỗi trong quá trình xử lý, vui lòng thử lại");
+        }
+
+        private void btCancel_Click(object sender, EventArgs e)
+        {
+            notApprove();
+            this.Close();
         }
     } 
 }

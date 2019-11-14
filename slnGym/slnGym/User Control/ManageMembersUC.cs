@@ -86,7 +86,7 @@ namespace slnGym.User_Control
         {
             if (temp.existCheck())
             {
-                btnMessage.Text = "Request (" + temp.RequestCount()+")" ;
+                btnMessage.Text = temp.RequestCount().ToString();
             }
 
         }

@@ -47,7 +47,7 @@ namespace slnGym.User_Control
             txtPass.Text = dt.Rows[0][1].ToString();
             DataTable empDT = new DataTable();
             empDT = emp.getEmployeebyID(GLOBAL.username);
-            
+
             if (empDT.Rows.Count > 0)
             {
                 lbID.Text = empDT.Rows[0][0].ToString();
@@ -67,7 +67,10 @@ namespace slnGym.User_Control
                 lbSalary.Text = empDT.Rows[0][9].ToString();
                 lbIDCard.Text = empDT.Rows[0][10].ToString();
             }
-            else MessageBox.Show("bug");
+            else
+            {
+               // MessageBox.Show(GLOBAL.username);
+            }
             mydb.closeConnection();
         }
 

@@ -94,6 +94,11 @@ namespace slnGym.Forms
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if(GLOBAL.username!="")
+            {
+                SysLOG.DateLogout = DateTime.Now.ToString();
+                accountLog.updateAccount(SysLOG.UserName, SysLOG.DateLogin, SysLOG.DateLogout, SysLOG.Status);
+            }
             this.Close();
         }
         private void dgvPT_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -162,7 +167,7 @@ namespace slnGym.Forms
             loadContract();
             loadDetailsContract();
             loadMembers();
-            loadStatistic();
+            //loadStatistic();
             NeedLogin();
             getIP();
             logoutToolStripMenuItem.Visible = false;
@@ -256,11 +261,11 @@ namespace slnGym.Forms
         public void loadServicePackage()
         {
             dgvServicePack.DataSource = sv.getSERVICE();
-            dgvServicePack.RowTemplate.Height = 70;
+            dgvServicePack.RowTemplate.Height = 60;
             dgvServicePack.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dgvServicePack.AllowUserToAddRows = false;
             dgvServicePack.EditMode = DataGridViewEditMode.EditProgrammatically;
-            dgvServicePack.Columns[3].AutoSizeMode= DataGridViewAutoSizeColumnMode.Fill;
+            dgvServicePack.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         public void RefreshUC()
@@ -352,8 +357,8 @@ namespace slnGym.Forms
 
         public void loadStatistic()
         {
-            User_Control.StatisticEmployeeUC dt = new User_Control.StatisticEmployeeUC() { Width = 1912, Height = 905 };
-            this.tabStatistic.Controls.Add(dt);
+            //User_Control.StatisticEmployeeUC dt = new User_Control.StatisticEmployeeUC() { Width = 1912, Height = 905 };
+            //this.tabStatistic.Controls.Add(dt);
         }
 
         public void loadAccount()
@@ -421,7 +426,8 @@ namespace slnGym.Forms
         public void AccessSuccess()
         {
             tabControlManager.Enabled = true;
-            loadAccount();
+            if (GLOBAL.username != "admin")
+                loadAccount();
             loadContract();
         }
 
@@ -447,40 +453,40 @@ namespace slnGym.Forms
 
         private void contactToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            socket.IP = GLOBAL.IPV4;
+            //socket.IP = GLOBAL.IPV4;
             //byte[] message = Encoding.ASCII.GetBytes("Test Server");
-            if (socket.ConnectServer())
-            {
-                socket.CreateServer();
-                Thread listenThread = new Thread(() =>
-                {
-                    while (true)
-                    {
-                        Thread.Sleep(500);
-                        try
-                        {
-                            Listen();
-                            break;
-                        }
-                        catch
-                        {
+            //if (socket.ConnectServer())
+            //{
+            //    socket.CreateServer();
+            //    Thread listenThread = new Thread(() =>
+            //    {
+            //        while (true)
+            //        {
+            //            Thread.Sleep(500);
+            //            try
+            //            {
+            //                Listen();
+            //                break;
+            //            }
+            //            catch
+            //            {
 
-                        }
-                    }
-                });
-                listenThread.IsBackground = true;
-                listenThread.Start();
-            }
-            else
-            {
-                Thread listenThread = new Thread(() =>
-                {
-                    Listen();
-                });
-                listenThread.IsBackground = true;
-                listenThread.Start();
-                socket.Send("Thông tin từ client");
-            }
+            //            }
+            //        }
+            //    });
+            //    listenThread.IsBackground = true;
+            //    listenThread.Start();
+            //}
+            //else
+            //{
+            //    Thread listenThread = new Thread(() =>
+            //    {
+            //        Listen();
+            //    });
+            //    listenThread.IsBackground = true;
+            //    listenThread.Start();
+            //    socket.Send("Thông tin từ client");
+            //}
         }
 
         private void Form1_Shown(object sender, EventArgs e)
@@ -500,7 +506,7 @@ namespace slnGym.Forms
 
         private void btCloseChat_Click(object sender, EventArgs e)
         {
-            panelChat.Visible=false;
+            panelChat.Visible = false;
         }
 
         private void userLoginToolStripMenuItem_Click(object sender, EventArgs e)
@@ -617,6 +623,16 @@ namespace slnGym.Forms
                 MessageBox.Show("Sending failed");
             }
             backgroundWorker2.CancelAsync();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            if (GLOBAL.username != "")
+            {
+                SysLOG.DateLogout = DateTime.Now.ToString();
+                accountLog.updateAccount(SysLOG.UserName, SysLOG.DateLogin, SysLOG.DateLogout, SysLOG.Status);
+            }
+            this.Close();
         }
     }
 }

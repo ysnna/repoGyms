@@ -77,7 +77,7 @@
             this.btRefreshMember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btRefreshMember.Font = new System.Drawing.Font("Sitka Subheading", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btRefreshMember.ForeColor = System.Drawing.Color.White;
-            this.btRefreshMember.Location = new System.Drawing.Point(1068, 14);
+            this.btRefreshMember.Location = new System.Drawing.Point(573, 14);
             this.btRefreshMember.Name = "btRefreshMember";
             this.btRefreshMember.Size = new System.Drawing.Size(39, 39);
             this.btRefreshMember.TabIndex = 143;
@@ -203,7 +203,7 @@
             this.btSearch.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.btSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btSearch.BackgroundImage")));
             this.btSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btSearch.Location = new System.Drawing.Point(1363, 16);
+            this.btSearch.Location = new System.Drawing.Point(525, 16);
             this.btSearch.Name = "btSearch";
             this.btSearch.Size = new System.Drawing.Size(39, 35);
             this.btSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -216,7 +216,7 @@
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.Green;
-            this.label22.Location = new System.Drawing.Point(21, 150);
+            this.label22.Location = new System.Drawing.Point(22, 59);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(93, 27);
             this.label22.TabIndex = 150;
@@ -229,7 +229,7 @@
             this.txtMember.BackColor = System.Drawing.Color.Honeydew;
             this.txtMember.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMember.ForeColor = System.Drawing.Color.DarkGreen;
-            this.txtMember.Location = new System.Drawing.Point(17, 180);
+            this.txtMember.Location = new System.Drawing.Point(17, 89);
             this.txtMember.Name = "txtMember";
             this.txtMember.ReadOnly = true;
             this.txtMember.Size = new System.Drawing.Size(252, 35);
@@ -241,7 +241,7 @@
             this.txtSearchMembers.BackColor = System.Drawing.Color.MintCream;
             this.txtSearchMembers.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchMembers.ForeColor = System.Drawing.Color.DarkGreen;
-            this.txtSearchMembers.Location = new System.Drawing.Point(1113, 14);
+            this.txtSearchMembers.Location = new System.Drawing.Point(275, 14);
             this.txtSearchMembers.Name = "txtSearchMembers";
             this.txtSearchMembers.PasswordChar = '*';
             this.txtSearchMembers.Size = new System.Drawing.Size(292, 39);
@@ -270,7 +270,7 @@
             this.dgvMembers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvMembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMembers.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvMembers.Location = new System.Drawing.Point(280, 59);
+            this.dgvMembers.Location = new System.Drawing.Point(275, 59);
             this.dgvMembers.Name = "dgvMembers";
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
@@ -287,7 +287,7 @@
             this.dgvMembers.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvMembers.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvMembers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvMembers.Size = new System.Drawing.Size(1125, 434);
+            this.dgvMembers.Size = new System.Drawing.Size(1130, 434);
             this.dgvMembers.TabIndex = 153;
             this.dgvMembers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMembers_CellClick);
             // 
@@ -314,7 +314,7 @@
             this.dgvPT.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dgvPT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPT.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvPT.Location = new System.Drawing.Point(17, 221);
+            this.dgvPT.Location = new System.Drawing.Point(17, 130);
             this.dgvPT.Name = "dgvPT";
             dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
@@ -331,46 +331,44 @@
             this.dgvPT.RowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dgvPT.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPT.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvPT.Size = new System.Drawing.Size(252, 272);
+            this.dgvPT.Size = new System.Drawing.Size(252, 363);
             this.dgvPT.TabIndex = 156;
             // 
             // btCreateContract
             // 
             this.btCreateContract.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btCreateContract.BackColor = System.Drawing.Color.SteelBlue;
-            this.btCreateContract.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btCreateContract.BackgroundImage")));
+            this.btCreateContract.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btCreateContract.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btCreateContract.FlatAppearance.BorderColor = System.Drawing.Color.Navy;
+            this.btCreateContract.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btCreateContract.FlatAppearance.BorderSize = 3;
             this.btCreateContract.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btCreateContract.Font = new System.Drawing.Font("Sitka Subheading", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCreateContract.ForeColor = System.Drawing.Color.White;
-            this.btCreateContract.Location = new System.Drawing.Point(76, 59);
+            this.btCreateContract.Font = new System.Drawing.Font("Sitka Banner", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCreateContract.ForeColor = System.Drawing.Color.SeaGreen;
+            this.btCreateContract.Location = new System.Drawing.Point(1268, 8);
             this.btCreateContract.Name = "btCreateContract";
-            this.btCreateContract.Size = new System.Drawing.Size(193, 55);
+            this.btCreateContract.Size = new System.Drawing.Size(137, 55);
             this.btCreateContract.TabIndex = 157;
             this.btCreateContract.Text = "Approved";
-            this.btCreateContract.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btCreateContract.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btCreateContract.UseVisualStyleBackColor = false;
             this.btCreateContract.Click += new System.EventHandler(this.btCreateContract_Click);
             // 
             // btnMessage
             // 
             this.btnMessage.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnMessage.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnMessage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMessage.BackgroundImage")));
             this.btnMessage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMessage.FlatAppearance.BorderColor = System.Drawing.Color.Navy;
+            this.btnMessage.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnMessage.FlatAppearance.BorderSize = 3;
             this.btnMessage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMessage.Font = new System.Drawing.Font("Sitka Subheading", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMessage.ForeColor = System.Drawing.Color.White;
-            this.btnMessage.Location = new System.Drawing.Point(869, 3);
+            this.btnMessage.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMessage.ForeColor = System.Drawing.Color.Snow;
+            this.btnMessage.Location = new System.Drawing.Point(206, 8);
             this.btnMessage.Name = "btnMessage";
-            this.btnMessage.Size = new System.Drawing.Size(193, 55);
+            this.btnMessage.Size = new System.Drawing.Size(63, 55);
             this.btnMessage.TabIndex = 158;
-            this.btnMessage.Text = "Approved";
-            this.btnMessage.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnMessage.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.btnMessage.UseVisualStyleBackColor = false;
             this.btnMessage.Click += new System.EventHandler(this.btnMessage_Click);
             // 
@@ -379,16 +377,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.Controls.Add(this.btnMessage);
-            this.Controls.Add(this.btCreateContract);
             this.Controls.Add(this.dgvPT);
-            this.Controls.Add(this.dgvMembers);
             this.Controls.Add(this.txtMember);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.btSearch);
             this.Controls.Add(this.btRefreshMember);
+            this.Controls.Add(this.txtSearchMembers);
+            this.Controls.Add(this.dgvMembers);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.txtSearchMembers);
+            this.Controls.Add(this.btCreateContract);
             this.Name = "ManageMembersUC";
             this.Size = new System.Drawing.Size(1414, 798);
             this.Load += new System.EventHandler(this.ManageMembersUC_Load);
