@@ -180,7 +180,7 @@ namespace slnGym.Forms
             SysLOG.DateLogout = DateTime.Now.ToString();
             accountLog.updateAccount(SysLOG.UserName, SysLOG.DateLogin, SysLOG.DateLogout, SysLOG.Status);
             loginToolStripMenuItem.Visible = true;
-            managerToolStripMenuItem.Enabled = true; ;
+            managerToolStripMenuItem.Enabled = true;
         }
 
         private void managerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -305,6 +305,7 @@ namespace slnGym.Forms
             {
                 txtNameSeller.Text = empDT.Rows[0][3].ToString() + " " + empDT.Rows[0][4].ToString();
             }
+            else txtNameSeller.Text = "Admin";
             //Lấy KH và Contract ID tự động
             ContractBL conbl = new ContractBL();
             txtIDContract.Text = conbl.loadIDContract();
@@ -373,7 +374,6 @@ namespace slnGym.Forms
             dgvPT.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dgvPT.AllowUserToAddRows = false;
             dgvPT.EditMode = DataGridViewEditMode.EditProgrammatically;
-
         }
 
         private void dgvPackage_CellClick(object sender, DataGridViewCellEventArgs e)

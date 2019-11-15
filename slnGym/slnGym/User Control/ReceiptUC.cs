@@ -186,10 +186,10 @@ namespace slnGym.User_Control
                 new SolidBrush(Color.Black), startX, startY + offset);
 
             offset = offset + 40;
-            graphic.DrawString("     Thank you for your custom", font, new SolidBrush(Color.Black), startX + 100, startY + offset);
+            graphic.DrawString("     Thank you. See you again soon", font, new SolidBrush(Color.Black), startX + 100, startY + offset);
 
             offset = offset + 20;
-            graphic.DrawString("       Please come back soon!", font, new SolidBrush(Color.Black), startX + 100, startY + offset);
+            graphic.DrawString("        Have a wonderful day!", font, new SolidBrush(Color.Black), startX + 100, startY + offset);
         }
         private void btPayment_Click(object sender, EventArgs e)
         {

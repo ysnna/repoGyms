@@ -263,14 +263,14 @@
             this.btEditMachine.BackColor = System.Drawing.Color.Transparent;
             this.btEditMachine.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btEditMachine.BackgroundImage")));
             this.btEditMachine.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btEditMachine.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btEditMachine.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btEditMachine.FlatAppearance.BorderSize = 3;
             this.btEditMachine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btEditMachine.Font = new System.Drawing.Font("Sitka Subheading", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btEditMachine.ForeColor = System.Drawing.Color.Wheat;
-            this.btEditMachine.Location = new System.Drawing.Point(1489, 58);
+            this.btEditMachine.Location = new System.Drawing.Point(1482, 50);
             this.btEditMachine.Name = "btEditMachine";
-            this.btEditMachine.Size = new System.Drawing.Size(47, 41);
+            this.btEditMachine.Size = new System.Drawing.Size(54, 43);
             this.btEditMachine.TabIndex = 164;
             this.btEditMachine.UseVisualStyleBackColor = false;
             this.btEditMachine.Click += new System.EventHandler(this.btEditMachine_Click);
