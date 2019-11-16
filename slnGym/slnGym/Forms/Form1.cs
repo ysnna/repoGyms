@@ -299,7 +299,7 @@ namespace slnGym.Forms
             dgvPackage.EditMode = DataGridViewEditMode.EditProgrammatically;
 
             DataTable empDT = new DataTable();
-            txtIDSeller.Text = GLOBAL.username;
+            txtIDSeller.Text = GLOBAL.username.ToUpper();
             empDT = emp.getEmployeebyID(GLOBAL.username);
             if (empDT.Rows.Count > 0)
             {

@@ -44,6 +44,7 @@ namespace slnGym.User_Control
             listReceipt.idBrand = 2;
             listReceipt.idService = Convert.ToInt32(dgvViewProduct.Rows[index].Cells[0].Value);
             listReceipt.name = dgvViewProduct.Rows[index].Cells[1].Value.ToString();
+            listReceipt.period = 1;
             listReceipt.price = Convert.ToDecimal(dgvViewProduct.Rows[index].Cells[2].Value);
             listReceiptBindingSource.Add(listReceipt);
             txtOthers.Text = (Convert.ToDecimal(txtOthers.Text.Trim()) + listReceipt.price).ToString();
@@ -105,7 +106,7 @@ namespace slnGym.User_Control
             }
         }
 
-        
+
 
         private void ReceiptUC_Load(object sender, EventArgs e)
         {
@@ -113,7 +114,7 @@ namespace slnGym.User_Control
             btPrintInvoice.Enabled = false;
             lbStatus.Text = "Non-payment";
             cbDiscount.Text = "VND";
-            txtSubTotal.Text = GETContract.Price.ToString();
+            txtSubTotal.Text = (GETContract.Price * GETContract.Period).ToString();
             txtTotal.Text = txtSubTotal.Text;
             loadProducts();
             loadData();
@@ -127,7 +128,7 @@ namespace slnGym.User_Control
                 lbDiscount.Visible = false;
             else lbDiscount.Visible = true;
         }
-        
+
         //==========Hàm xử lý
 
         public void createBill(Object sender, System.Drawing.Printing.PrintPageEventArgs e)
@@ -140,8 +141,8 @@ namespace slnGym.User_Control
             int startX = 10;
             int startY = 10;
             int offset = 40;
-            graphic.DrawString("    GYM FITNESS Center", new Font("Courier New", 24), new SolidBrush(Color.Black), startX + 100, startY);
-            string top = "Item Name".PadRight(40) + "Price";
+            graphic.DrawString("       GYM FITNESS Center", new Font("Courier New", 24), new SolidBrush(Color.Black), startX + 100, startY);
+            string top = "Item Name".PadRight(35) + "Quantity".PadRight(10) + "Price";
             offset = offset + (int)fontHeight;
             graphic.DrawString("Invoice number: " + txtInvoiceNo.Text, font, new SolidBrush(Color.Black), startX, startY + offset);
             offset = offset + (int)fontHeight + 5;
@@ -150,10 +151,10 @@ namespace slnGym.User_Control
             graphic.DrawString("Member        : " + txtNameMember.Text, font, new SolidBrush(Color.Black), startX, startY + offset);
             offset = offset + (int)fontHeight + 5;
             graphic.DrawString("Checked out   : " + lbDatePayment.Text, font, new SolidBrush(Color.Black), startX, startY + offset);
-            offset = offset + (int)fontHeight + 12;
+            offset = offset + (int)fontHeight + 20;
             graphic.DrawString(top, font, new SolidBrush(Color.Black), startX, startY + offset);
             offset = offset + (int)fontHeight;
-            graphic.DrawString("------------------------------------------------------", font, new SolidBrush(Color.Black), startX, startY + offset);
+            graphic.DrawString("------------------------------------------------------------", font, new SolidBrush(Color.Black), startX, startY + offset);
             offset = offset + (int)fontHeight + 5;
 
             decimal total = Convert.ToDecimal(txtTotal.Text);
@@ -163,33 +164,34 @@ namespace slnGym.User_Control
             for (int i = 0; i < dgvCheckInvoice.Rows.Count; i++)
             {
                 string name = dgvCheckInvoice.Rows[i].Cells[2].Value.ToString();
+                string quantity = dgvCheckInvoice.Rows[i].Cells[3].Value.ToString();
                 decimal price = Convert.ToDecimal(dgvCheckInvoice.Rows[i].Cells[4].Value);
 
-                string productLine = name.PadRight(40) + String.Format("{0:c}", price);
+                string productLine = name.PadRight(35) + quantity.PadRight(10) + String.Format("{0:c}", price);
                 graphic.DrawString(productLine, font, new SolidBrush(Color.Black), startX, startY + offset);
                 offset = offset + (int)fontHeight + 5;
             }
 
-            graphic.DrawString("------------------------------------------------------", font, new SolidBrush(Color.Black), startX, startY + offset);
+            graphic.DrawString("------------------------------------------------------------", font, new SolidBrush(Color.Black), startX, startY + offset);
             offset = offset + (int)fontHeight + 5;
 
-            graphic.DrawString("Total  ".PadRight(40) + String.Format("{0:c}", total),
+            graphic.DrawString("Total  ".PadRight(45) + String.Format("{0:c}", total),
                 new Font("Courier New", 16, FontStyle.Regular),
                 new SolidBrush(Color.Black), startX, startY + offset);
             offset = offset + (int)fontHeight + 5;
-            graphic.DrawString("Payment".PadRight(40) + String.Format("{0:c}", paid),
+            graphic.DrawString("Payment".PadRight(45) + String.Format("{0:c}", paid),
                 new Font("Courier New", 16, FontStyle.Regular),
                 new SolidBrush(Color.Black), startX, startY + offset);
             offset = offset + (int)fontHeight + 5;
-            graphic.DrawString("Change ".PadRight(40) + String.Format("{0:c}", change),
+            graphic.DrawString("Change ".PadRight(45) + String.Format("{0:c}", change),
                 new Font("Courier New", 16, FontStyle.Regular),
                 new SolidBrush(Color.Black), startX, startY + offset);
 
             offset = offset + 40;
-            graphic.DrawString("     Thank you. See you again soon", font, new SolidBrush(Color.Black), startX + 100, startY + offset);
+            graphic.DrawString("          Thank you. See you again soon", font, new SolidBrush(Color.Black), startX + 100, startY + offset);
 
             offset = offset + 20;
-            graphic.DrawString("        Have a wonderful day!", font, new SolidBrush(Color.Black), startX + 100, startY + offset);
+            graphic.DrawString("             Have a wonderful day!", font, new SolidBrush(Color.Black), startX + 100, startY + offset);
         }
         private void btPayment_Click(object sender, EventArgs e)
         {
@@ -201,7 +203,6 @@ namespace slnGym.User_Control
             createDetailsContract();
             createDetailsReceipt();
             MessageBox.Show("Complete");
-
         }
 
         public void updateStatistic()
@@ -214,7 +215,7 @@ namespace slnGym.User_Control
             {
                 if (dataPackage.Rows.Count == 0) //chưa có ngày này
                 {
-                   // statistic.insertSTATISTIC(Convert.ToDateTime(DateTime.Now.ToShortDateString()),"Package",1, );
+                    // statistic.insertSTATISTIC(Convert.ToDateTime(DateTime.Now.ToShortDateString()),"Package",1, );
                 }
             }
         }
@@ -279,9 +280,9 @@ namespace slnGym.User_Control
                 int idBrand = Convert.ToInt32(dgvCheckInvoice.Rows[i].Cells[0].Value);
                 int idSer = Convert.ToInt32(dgvCheckInvoice.Rows[i].Cells[1].Value);
                 string name = dgvCheckInvoice.Rows[i].Cells[2].Value.ToString();
-                decimal discount = Convert.ToDecimal(dgvCheckInvoice.Rows[i].Cells[3].Value);
+                int period = Convert.ToInt32(dgvCheckInvoice.Rows[i].Cells[3].Value);
                 decimal total = Convert.ToDecimal(dgvCheckInvoice.Rows[i].Cells[4].Value);
-                detailsReceipt.insertDETAILRECEIPT(txtInvoiceNo.Text,Convert.ToDateTime(Convert.ToDateTime(lbTimePayment.Text).ToShortDateString()), idBrand, idSer, name, discount, total);
+                detailsReceipt.insertDETAILRECEIPT(txtInvoiceNo.Text, Convert.ToDateTime(Convert.ToDateTime(lbTimePayment.Text).ToShortDateString()), idBrand, idSer, name, period, total);
             }
         }
 
@@ -305,7 +306,7 @@ namespace slnGym.User_Control
         {
             txtInvoiceNo.Text = bl.loadInvoiceID();
             txtMemIDInvoide.Text = GETMember.IDMember;
-            txtEmployeeID.Text = GLOBAL.username;
+            txtEmployeeID.Text = GLOBAL.username.ToUpper();
 
             //DataTable dtContract = new DataTable();
             //dtContract = contract.getContractByCUSID(GETMember.IDMember.Trim());
@@ -337,11 +338,26 @@ namespace slnGym.User_Control
             listReceipt.idBrand = 1;
             listReceipt.idService = GETContract.IDPackage;
             listReceipt.name = GETContract.NamePackage;
-            listReceipt.discount = 0;
-            listReceipt.price = GETContract.Price;
+            listReceipt.period = GETContract.Period;
+            listReceipt.price = GETContract.Price * GETContract.Period;
             listReceiptBindingSource.Add(listReceipt);
         }
 
-       
+        private void dgvCheckInvoice_DoubleClick(object sender, EventArgs e)
+        {
+            int index = dgvCheckInvoice.CurrentCell.RowIndex;
+            //listReceipt = new ListReceipt();
+            //listReceipt.idBrand = 2;
+            //listReceipt.idService = Convert.ToInt32(dgvViewProduct.Rows[index].Cells[0].Value);
+            //listReceipt.name = dgvViewProduct.Rows[index].Cells[1].Value.ToString();
+            //listReceipt.period = 1;
+            //listReceipt.price = Convert.ToDecimal(dgvViewProduct.Rows[index].Cells[2].Value);
+            txtOthers.Text = (Convert.ToDecimal(txtOthers.Text.Trim()) - Convert.ToDecimal(dgvCheckInvoice.Rows[index].Cells[4].Value)).ToString();
+            //listReceiptBindingSource.Remove(listReceipt);
+            if (dgvCheckInvoice.SelectedRows.Count > 0)
+            {
+                dgvCheckInvoice.Rows.RemoveAt(dgvCheckInvoice.CurrentRow.Index);
+            }
+        }
     }
 }

@@ -12,7 +12,7 @@ namespace slnGym.DataObject
         public int idBrand { set; get; } //idBrand
         public int idService { set; get; }
         public string name { set; get; }
-        public decimal discount { set; get; }
+        public int period { set; get; }
         public decimal price { set; get; }
     }
 }

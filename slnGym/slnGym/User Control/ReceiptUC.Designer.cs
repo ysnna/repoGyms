@@ -56,12 +56,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.dgvCheckInvoice = new System.Windows.Forms.DataGridView();
-            this.idBrandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idServiceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.discountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.listReceiptBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label14 = new System.Windows.Forms.Label();
             this.txtComment = new System.Windows.Forms.TextBox();
             this.groupPayment = new System.Windows.Forms.GroupBox();
@@ -98,11 +92,17 @@
             this.btCancel = new System.Windows.Forms.Button();
             this.dgvViewProduct = new System.Windows.Forms.DataGridView();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.idBrandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idServiceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.periodDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.listReceiptBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCheckInvoice)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listReceiptBindingSource)).BeginInit();
             this.groupPayment.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvViewProduct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listReceiptBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox2
@@ -333,7 +333,7 @@
             this.idBrandDataGridViewTextBoxColumn,
             this.idServiceDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn,
-            this.discountDataGridViewTextBoxColumn,
+            this.periodDataGridViewTextBoxColumn,
             this.priceDataGridViewTextBoxColumn});
             this.dgvCheckInvoice.DataSource = this.listReceiptBindingSource;
             this.dgvCheckInvoice.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
@@ -356,48 +356,7 @@
             this.dgvCheckInvoice.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCheckInvoice.Size = new System.Drawing.Size(974, 578);
             this.dgvCheckInvoice.TabIndex = 208;
-            // 
-            // idBrandDataGridViewTextBoxColumn
-            // 
-            this.idBrandDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.idBrandDataGridViewTextBoxColumn.DataPropertyName = "idBrand";
-            this.idBrandDataGridViewTextBoxColumn.HeaderText = "Group ID";
-            this.idBrandDataGridViewTextBoxColumn.Name = "idBrandDataGridViewTextBoxColumn";
-            this.idBrandDataGridViewTextBoxColumn.Width = 158;
-            // 
-            // idServiceDataGridViewTextBoxColumn
-            // 
-            this.idServiceDataGridViewTextBoxColumn.DataPropertyName = "idService";
-            this.idServiceDataGridViewTextBoxColumn.HeaderText = "ID Service";
-            this.idServiceDataGridViewTextBoxColumn.Name = "idServiceDataGridViewTextBoxColumn";
-            this.idServiceDataGridViewTextBoxColumn.Width = 163;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.Width = 310;
-            // 
-            // discountDataGridViewTextBoxColumn
-            // 
-            this.discountDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.discountDataGridViewTextBoxColumn.DataPropertyName = "discount";
-            this.discountDataGridViewTextBoxColumn.HeaderText = "Discount";
-            this.discountDataGridViewTextBoxColumn.Name = "discountDataGridViewTextBoxColumn";
-            this.discountDataGridViewTextBoxColumn.Width = 160;
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Total";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            // 
-            // listReceiptBindingSource
-            // 
-            this.listReceiptBindingSource.DataSource = typeof(slnGym.DataObject.ListReceipt);
+            this.dgvCheckInvoice.DoubleClick += new System.EventHandler(this.dgvCheckInvoice_DoubleClick);
             // 
             // label14
             // 
@@ -884,6 +843,45 @@
             // 
             this.printDialog1.UseEXDialog = true;
             // 
+            // idBrandDataGridViewTextBoxColumn
+            // 
+            this.idBrandDataGridViewTextBoxColumn.DataPropertyName = "idBrand";
+            this.idBrandDataGridViewTextBoxColumn.HeaderText = "Group ID";
+            this.idBrandDataGridViewTextBoxColumn.Name = "idBrandDataGridViewTextBoxColumn";
+            this.idBrandDataGridViewTextBoxColumn.Width = 149;
+            // 
+            // idServiceDataGridViewTextBoxColumn
+            // 
+            this.idServiceDataGridViewTextBoxColumn.DataPropertyName = "idService";
+            this.idServiceDataGridViewTextBoxColumn.HeaderText = "ID Service";
+            this.idServiceDataGridViewTextBoxColumn.Name = "idServiceDataGridViewTextBoxColumn";
+            this.idServiceDataGridViewTextBoxColumn.Width = 163;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // periodDataGridViewTextBoxColumn
+            // 
+            this.periodDataGridViewTextBoxColumn.DataPropertyName = "period";
+            this.periodDataGridViewTextBoxColumn.HeaderText = "Quantity";
+            this.periodDataGridViewTextBoxColumn.Name = "periodDataGridViewTextBoxColumn";
+            this.periodDataGridViewTextBoxColumn.Width = 137;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.Width = 98;
+            // 
+            // listReceiptBindingSource
+            // 
+            this.listReceiptBindingSource.DataSource = typeof(slnGym.DataObject.ListReceipt);
+            // 
             // ReceiptUC
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -922,10 +920,10 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCheckInvoice)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listReceiptBindingSource)).EndInit();
             this.groupPayment.ResumeLayout(false);
             this.groupPayment.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvViewProduct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listReceiptBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -986,12 +984,12 @@
         private System.Windows.Forms.Label label0;
         private System.Windows.Forms.Button btCancel;
         public System.Windows.Forms.DataGridView dgvViewProduct;
-        private System.Windows.Forms.BindingSource listReceiptBindingSource;
+        private System.Windows.Forms.PrintDialog printDialog1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idBrandDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idServiceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn discountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn periodDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.PrintDialog printDialog1;
+        private System.Windows.Forms.BindingSource listReceiptBindingSource;
     }
 }

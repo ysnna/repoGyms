@@ -322,6 +322,9 @@ insert into PACKORPRODUCT values
 ('2','Product');
 go
 
+use GYMManager
+go
+
 --Chi tiết hóa đơn
 create table DETAILSREPCEIPT
 (
@@ -330,7 +333,7 @@ repceiptDate Datetime not null,
 idBrand int null,
 idService int null, -- lưu chung package và product
 nameServices nvarchar(100) null,
-discount decimal null,
+period int null,
 total decimal null,
 remain nvarchar(100) null,				---còn lại bao nhiêu ngày: (now - start) > 0 thì ghi, else null
 --PK & FK--
@@ -340,8 +343,8 @@ foreign key (idBrand) references PACKORPRODUCT on delete set null,
 go
 
 insert into DETAILSREPCEIPT values
-('IVC01','2019-10-25 00:00:00.000','1','6','Gym','0','900000', '30'),
-('IVC02','2019-11-1 00:00:00.000','1','13','Gym','0','900000', '30');
+('IVC01','2019-10-25 00:00:00.000','1','6','Gym','1','900000', '30'),
+('IVC02','2019-11-1 00:00:00.000','1','13','Gym','1','900000', '30');
 go
 
 --Thống kê doanh thu theo ngày
