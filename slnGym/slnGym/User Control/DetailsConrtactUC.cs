@@ -74,7 +74,14 @@ namespace slnGym.User_Control
                 }
                 else dc.State = "HẾT HẠN";
                 dc.oldnew = "null";
-                detailContractBindingSource.Add(dc);
+                try
+                {
+                    detailContractBindingSource.Add(dc);
+                }
+                catch
+                {
+
+                }
                 i++;
             }
         }

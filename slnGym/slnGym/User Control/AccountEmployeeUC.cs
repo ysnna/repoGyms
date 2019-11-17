@@ -22,7 +22,7 @@ namespace slnGym.User_Control
         private void AccountEmployeeUC_Load(object sender, EventArgs e)
         {
             groupBoxEdit.Visible = false;
-            
+
         }
 
         private void btChangePass_Click(object sender, EventArgs e)
@@ -33,8 +33,13 @@ namespace slnGym.User_Control
 
         private void btEdit_Click(object sender, EventArgs e)
         {
-            groupBoxEdit.Visible = true;
-            loadEdit();
+            if (groupBoxEdit.Visible == true)
+                groupBoxEdit.Visible = false;
+            else
+            {
+                groupBoxEdit.Visible = true;
+                loadEdit();
+            }
         }
         Layer.EMPLOYEEs emp = new Layer.EMPLOYEEs();
         MY_DB mydb = new MY_DB();
@@ -52,10 +57,17 @@ namespace slnGym.User_Control
             {
                 lbID.Text = empDT.Rows[0][0].ToString();
                 lbGroup.Text = empDT.Rows[0][1].ToString();
-                //byte[] picPD;
-                //picPD = (byte[])empDT.Rows[0][2];
-                //MemoryStream pic = new MemoryStream(picPD);
-                //this.picAva.Image = Image.FromStream(pic);
+                try
+                {
+                    byte[] picPD;
+                    picPD = (byte[])empDT.Rows[0][2];
+                    MemoryStream pic = new MemoryStream(picPD);
+                    this.picAva.Image = Image.FromStream(pic);
+                }
+                catch
+                {
+                    MessageBox.Show("Vui lòng cập nhật đủ thông tin cá nhân", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
                 lbFname.Text = empDT.Rows[0][3].ToString();
                 lbLname.Text = empDT.Rows[0][4].ToString();
                 lbBirthday.Text = Convert.ToDateTime(empDT.Rows[0][5]).ToShortDateString();
@@ -69,7 +81,7 @@ namespace slnGym.User_Control
             }
             else
             {
-               // MessageBox.Show(GLOBAL.username);
+                // MessageBox.Show(GLOBAL.username);
             }
             mydb.closeConnection();
         }
@@ -102,7 +114,7 @@ namespace slnGym.User_Control
             picAvaEdit.Image.Save(pic, picAvaEdit.Image.RawFormat);
             int gender = 1;
             if (radioMaleEdit.Checked == true) gender = 0;
-            if (emp.updateEmployee(GLOBAL.username,pic,Convert.ToDateTime( dateTimePickerBdate.Value),txtAddress.Text,gender,txtPhone.Text))
+            if (emp.updateEmployee(GLOBAL.username, pic, Convert.ToDateTime(dateTimePickerBdate.Value), txtAddress.Text, gender, txtPhone.Text))
             {
                 MessageBox.Show("Edited", "Edited..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.reload();

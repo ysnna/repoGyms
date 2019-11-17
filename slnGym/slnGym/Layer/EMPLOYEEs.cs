@@ -85,7 +85,7 @@ namespace slnGym.Layer
             }
         }
         public bool updateEmployeeAD(string idEmployee, string grID, MemoryStream ava, string fname, string lname, DateTime bdate, string address, int gender, string phone, int salary, string idCard)
-        {//groupID=@gr,avatar=@ava,employeeFName=@fn,employeeLName=@ln,employeeBDate=@bd,employeeAddress=@add,gender=@gd,phone=@phone,salary=@sala,employeeIDCard=@idcard where employeeID=@id
+        {
             SqlCommand cmd = new SqlCommand("update EMPLOYEE set groupID=@gid,avatar=@ava,employeeFName=@fname,employeeLName=@lname,employeeBDate=@bdate," +
                 "employeeAddress=@add,gender=@gender,phone=@phone,salary=@salary,employeeIDCard=@idcard where employeeID=@id", mydb.getConnection);
             cmd.Parameters.Add("@gid", SqlDbType.VarChar).Value = grID;
@@ -168,7 +168,7 @@ namespace slnGym.Layer
         }
         public DataTable getPTbyMemID(string memID)
         {
-            SqlCommand cmd = new SqlCommand("select distinct employeeID, EMPLOYEE.employeeFName +' '+EMPLOYEE.employeeLName from EMPLOYEE," +
+            SqlCommand cmd = new SqlCommand("select distinct employeeID as 'ID', EMPLOYEE.employeeFName +' '+EMPLOYEE.employeeLName as 'Name' from EMPLOYEE," +
                 " (select ptID from MEMBERS, CONTRACTS " +
                 " where cusID = @ma) as A" +
                 " where ptID = employeeID", mydb.getConnection);

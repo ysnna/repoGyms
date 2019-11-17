@@ -32,17 +32,23 @@ namespace slnGym.Forms
         }
         public void loadInfo()
         {
-            txtFname.Text = GetEditMember.FName;
-            txtLname.Text = GetEditMember.LName;
-            txtIDCard.Text = GetEditMember.IDCard;
-            txtPhone.Text = GetEditMember.Phone;
-            txtAddress.Text = GetEditMember.Address;
-            GetEditMember.Birthday = dateTimePickerBdate.Value;
-            if (GetEditMember.Gender == 1)
+            try
             {
-                radioMaleEdit.Checked = true;
+                txtFname.Text = GetEditMember.FName;
+                txtLname.Text = GetEditMember.LName;
+                txtIDCard.Text = GetEditMember.IDCard;
+                txtPhone.Text = GetEditMember.Phone;
+                txtAddress.Text = GetEditMember.Address;
+                lbID.Text = GetEditMember.IDMember;
+                dateTimePickerBdate.Value = GetEditMember.Birthday;
+                picAvaEdit.Image = GetEditMember.Picture;
+                if (GetEditMember.Gender == 1)
+                {
+                    radioMaleEdit.Checked = true;
+                }
+                else radioFemaleEdit.Checked = true;
             }
-            else radioFemaleEdit.Checked = true;
+            catch { }
         }
         private void picAvaEdit_Click(object sender, EventArgs e)
         {
@@ -60,6 +66,7 @@ namespace slnGym.Forms
                 gender = 1;
             }
             string note = "Chờ duyệt";
+            
             MemoryStream picture = new MemoryStream();
             picAvaEdit.Image.Save(picture, picAvaEdit.Image.RawFormat);
             string id = GetEditMember.IDMember;
@@ -71,8 +78,9 @@ namespace slnGym.Forms
             DateTime Bdate = dateTimePickerBdate.Value;
             if (mem.insertTemporary(id, Lname, Fname, picture ,Bdate, add, gender, phone, IDcard, note))
             {
-                mem.updateMembers(id, Lname, Fname, Bdate, add, gender, phone, IDcard, note);
+               // mem.updateMembers(id, Lname, Fname, Bdate, add, gender, phone, IDcard, note);
                 MessageBox.Show("Your request has been sent");
+                this.Close();
             }
         }
     }

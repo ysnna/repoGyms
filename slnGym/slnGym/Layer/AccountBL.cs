@@ -68,7 +68,7 @@ namespace slnGym.Layer
         }
         public DataTable getACCOUNTLog()
         {
-            SqlCommand cmd = new SqlCommand("select ACCOUNTLOGIN.username as 'Username', ACCOUNT.passw as 'Password', " +
+            SqlCommand cmd = new SqlCommand("select ACCOUNTLOGIN.username as 'Username', " +
                 "loginDate as 'Date Login', logoutDate as 'Date Logout', status as 'Status'" +
                 "from ACCOUNT, ACCOUNTLOGIN where ACCOUNT.username = ACCOUNTLOGIN.username order by loginDate desc", mydb.getConnection);
             SqlDataAdapter da = new SqlDataAdapter(cmd);

@@ -12,14 +12,15 @@ namespace slnGym.Layer
     {
         MY_DB mydb = new MY_DB();
         //Them Khach Hang
-        public bool insertMembers(string ID, string lname, string fname, DateTime bdate, string address,
+        public bool insertMembers(string ID, string lname, string fname, MemoryStream pic, DateTime bdate, string address,
             int gender, string phone, int idcard, string note)
         {
-            SqlCommand cmd = new SqlCommand("insert into MEMBERS(memID,memLname,memFname,memBDate,memAddress,memGender,memPhone,cardID,note)" +
-                "values (@id,@lname,@fname,@bdate,@add,@gen,@phone,@idcard,@note)", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("insert into MEMBERS(memID,memLname,memFname,avatar,memBDate,memAddress,memGender,memPhone,cardID,note)" +
+                "values (@id,@lname,@fname,@ava,@bdate,@add,@gen,@phone,@idcard,@note)", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = ID;
             cmd.Parameters.Add("@lname", SqlDbType.NVarChar).Value = lname;
             cmd.Parameters.Add("@fname", SqlDbType.NVarChar).Value = fname;
+            cmd.Parameters.Add("@ava", SqlDbType.Image).Value = pic.ToArray();
             cmd.Parameters.Add("@bdate", SqlDbType.DateTime).Value = bdate;
             cmd.Parameters.Add("@add", SqlDbType.NVarChar).Value = address;
             cmd.Parameters.Add("@gen", SqlDbType.Int).Value = gender;
@@ -59,14 +60,14 @@ namespace slnGym.Layer
 
         }
         //Update khach hang
-        public bool updateMembers(string ID, string lname, string fname, DateTime bdate, string address,
+        public bool updateMembers(string ID, string lname, string fname, MemoryStream pic, DateTime bdate, string address,
             int gender, string phone, int idcard, string note)
-        {
-            SqlCommand cmd = new SqlCommand("update MEMBERS set memLname=@lname,memFname=@fname,memBDate=@bdate,memAddress=@add," +
-                "memGender=@gen,memPhone=@phone,cardID=@idcard,note=@note where  memID=@id", mydb.getConnection);
+        {//(memID,memLname,memFname,avatar,memBDate,memAddress,memGender,memPhone,cardID,note
+            SqlCommand cmd = new SqlCommand("update MEMBERS set memLname=@lname,memFname=@fname,avatar=@ava,memBDate=@bdate,memAddress=@add,memGender=@gen,memPhone=@phone,cardID=@idcard,note=@note where memID=@id", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = ID;
             cmd.Parameters.Add("@lname", SqlDbType.NVarChar).Value = lname;
             cmd.Parameters.Add("@fname", SqlDbType.NVarChar).Value = fname;
+            cmd.Parameters.Add("@ava", SqlDbType.Image).Value = pic.ToArray();
             cmd.Parameters.Add("@bdate", SqlDbType.DateTime).Value = bdate;
             cmd.Parameters.Add("@add", SqlDbType.NVarChar).Value = address;
             cmd.Parameters.Add("@gen", SqlDbType.Int).Value = gender;
@@ -107,7 +108,7 @@ namespace slnGym.Layer
         //Lay thong tin 
         public DataTable getAllMEMBERS()
         {
-            SqlCommand cmd = new SqlCommand("select memID as 'ID',memLname as 'FName',memFname as 'LName',memBDate as 'Birthday'," +
+            SqlCommand cmd = new SqlCommand("select memID as 'ID',memFname as 'FName',memLname as 'LName', avatar as 'Avatar', memBDate as 'Birthday'," +
                 "memAddress as 'Address',memGender as 'Female',memPhone as 'Phone',cardID as 'ID card',note as 'Status' from MEMBERS", mydb.getConnection);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -195,5 +196,16 @@ namespace slnGym.Layer
             return dt;
         }
 
+        public DataTable searchEmployee(string search)
+        {
+            SqlCommand cmd = new SqlCommand("select memID as 'ID',memFname as 'FName',memLname as 'LName', avatar as 'Avatar', memBDate as 'Birthday'," +
+                "memAddress as 'Address',memGender as 'Female',memPhone as 'Phone',cardID as 'ID card',note as 'Status' from MEMBERS where Concat(memID, memFname, " +
+                "memlname, memaddress) like N'%" + search + "%' ", mydb.getConnection);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            mydb.closeConnection();
+            return dt;
+        }
     }
 }

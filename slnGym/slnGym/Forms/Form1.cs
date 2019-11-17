@@ -511,14 +511,14 @@ namespace slnGym.Forms
 
         private void userLoginToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            tess.Text = GLOBAL.username;
-            panelChat.BringToFront();
-            panelChat.Visible = true;
-            if (GLOBAL.username == "admin")
-            {
-                serverStart();
-            }
-            else clientConnect();
+            //tess.Text = GLOBAL.username;
+            //panelChat.BringToFront();
+            //panelChat.Visible = true;
+            //if (GLOBAL.username == "admin")
+            //{
+            //    serverStart();
+            //}
+            //else clientConnect();
         }
 
         private TcpClient client;

@@ -34,9 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.groupBoxContact = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cbTheLoai = new System.Windows.Forms.ComboBox();
             this.btSearch = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -54,64 +51,22 @@
             this.label11 = new System.Windows.Forms.Label();
             this.lbTimeRemaining = new System.Windows.Forms.Label();
             this.lbMemberName = new System.Windows.Forms.Label();
-            this.conIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDMemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.servicePackNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateStartDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateEndDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDreceiptDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.empIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oldnewDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.detailContractBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.groupBoxContact.SuspendLayout();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.btSearch)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetailCon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detailContractBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // groupBoxContact
-            // 
-            this.groupBoxContact.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxContact.Controls.Add(this.label2);
-            this.groupBoxContact.Controls.Add(this.cbTheLoai);
-            this.groupBoxContact.Controls.Add(this.btSearch);
-            this.groupBoxContact.Controls.Add(this.label1);
-            this.groupBoxContact.Controls.Add(this.txtSearch);
-            this.groupBoxContact.Font = new System.Drawing.Font("Sitka Display", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxContact.ForeColor = System.Drawing.Color.Navy;
-            this.groupBoxContact.Location = new System.Drawing.Point(35, 14);
-            this.groupBoxContact.Name = "groupBoxContact";
-            this.groupBoxContact.Size = new System.Drawing.Size(493, 186);
-            this.groupBoxContact.TabIndex = 77;
-            this.groupBoxContact.TabStop = false;
-            this.groupBoxContact.Text = "Recently";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Navy;
-            this.label2.Location = new System.Drawing.Point(57, 114);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 37);
-            this.label2.TabIndex = 175;
-            this.label2.Text = "Package";
-            // 
-            // cbTheLoai
-            // 
-            this.cbTheLoai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbTheLoai.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.cbTheLoai.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTheLoai.ForeColor = System.Drawing.Color.Navy;
-            this.cbTheLoai.FormattingEnabled = true;
-            this.cbTheLoai.Location = new System.Drawing.Point(204, 110);
-            this.cbTheLoai.Margin = new System.Windows.Forms.Padding(8);
-            this.cbTheLoai.Name = "cbTheLoai";
-            this.cbTheLoai.Size = new System.Drawing.Size(228, 41);
-            this.cbTheLoai.TabIndex = 174;
             // 
             // btSearch
             // 
@@ -119,7 +74,7 @@
             this.btSearch.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btSearch.BackgroundImage")));
             this.btSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btSearch.Location = new System.Drawing.Point(386, 59);
+            this.btSearch.Location = new System.Drawing.Point(414, 58);
             this.btSearch.Name = "btSearch";
             this.btSearch.Size = new System.Drawing.Size(43, 37);
             this.btSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -131,7 +86,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Navy;
-            this.label1.Location = new System.Drawing.Point(57, 62);
+            this.label1.Location = new System.Drawing.Point(85, 61);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 37);
             this.label1.TabIndex = 89;
@@ -143,9 +98,9 @@
             this.txtSearch.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.txtSearch.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.ForeColor = System.Drawing.Color.Navy;
-            this.txtSearch.Location = new System.Drawing.Point(204, 55);
+            this.txtSearch.Location = new System.Drawing.Point(195, 54);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(228, 44);
+            this.txtSearch.Size = new System.Drawing.Size(265, 44);
             this.txtSearch.TabIndex = 88;
             this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyUp);
             // 
@@ -263,16 +218,16 @@
             this.dgvDetailCon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDetailCon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetailCon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.conIDDataGridViewTextBoxColumn,
-            this.iDMemDataGridViewTextBoxColumn,
-            this.servicePackNameDataGridViewTextBoxColumn,
-            this.dateStartDataGridViewTextBoxColumn,
-            this.dateEndDataGridViewTextBoxColumn,
-            this.stateDataGridViewTextBoxColumn,
-            this.iDreceiptDataGridViewTextBoxColumn,
-            this.empIDDataGridViewTextBoxColumn,
-            this.priceDataGridViewTextBoxColumn,
-            this.oldnewDataGridViewTextBoxColumn});
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10});
             this.dgvDetailCon.DataSource = this.detailContractBindingSource;
             this.dgvDetailCon.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvDetailCon.Location = new System.Drawing.Point(6, 40);
@@ -336,9 +291,9 @@
             this.lbTimeRemaining.ForeColor = System.Drawing.Color.Crimson;
             this.lbTimeRemaining.Location = new System.Drawing.Point(1556, 57);
             this.lbTimeRemaining.Name = "lbTimeRemaining";
-            this.lbTimeRemaining.Size = new System.Drawing.Size(210, 36);
+            this.lbTimeRemaining.Size = new System.Drawing.Size(167, 36);
             this.lbTimeRemaining.TabIndex = 198;
-            this.lbTimeRemaining.Text = "Expiration date";
+            this.lbTimeRemaining.Text = "                   ";
             // 
             // lbMemberName
             // 
@@ -351,86 +306,89 @@
             this.lbMemberName.TabIndex = 199;
             this.lbMemberName.Text = "ID";
             // 
-            // conIDDataGridViewTextBoxColumn
-            // 
-            this.conIDDataGridViewTextBoxColumn.DataPropertyName = "ConID";
-            this.conIDDataGridViewTextBoxColumn.HeaderText = "ID Contract";
-            this.conIDDataGridViewTextBoxColumn.Name = "conIDDataGridViewTextBoxColumn";
-            this.conIDDataGridViewTextBoxColumn.Width = 191;
-            // 
-            // iDMemDataGridViewTextBoxColumn
-            // 
-            this.iDMemDataGridViewTextBoxColumn.DataPropertyName = "ID_Mem";
-            this.iDMemDataGridViewTextBoxColumn.HeaderText = "ID Member";
-            this.iDMemDataGridViewTextBoxColumn.Name = "iDMemDataGridViewTextBoxColumn";
-            this.iDMemDataGridViewTextBoxColumn.Width = 188;
-            // 
-            // servicePackNameDataGridViewTextBoxColumn
-            // 
-            this.servicePackNameDataGridViewTextBoxColumn.DataPropertyName = "servicePackName";
-            this.servicePackNameDataGridViewTextBoxColumn.HeaderText = "Package";
-            this.servicePackNameDataGridViewTextBoxColumn.Name = "servicePackNameDataGridViewTextBoxColumn";
-            this.servicePackNameDataGridViewTextBoxColumn.Width = 142;
-            // 
-            // dateStartDataGridViewTextBoxColumn
-            // 
-            this.dateStartDataGridViewTextBoxColumn.DataPropertyName = "DateStart";
-            this.dateStartDataGridViewTextBoxColumn.HeaderText = "Start date";
-            this.dateStartDataGridViewTextBoxColumn.Name = "dateStartDataGridViewTextBoxColumn";
-            this.dateStartDataGridViewTextBoxColumn.Width = 161;
-            // 
-            // dateEndDataGridViewTextBoxColumn
-            // 
-            this.dateEndDataGridViewTextBoxColumn.DataPropertyName = "DateEnd";
-            this.dateEndDataGridViewTextBoxColumn.HeaderText = "Expiration date";
-            this.dateEndDataGridViewTextBoxColumn.Name = "dateEndDataGridViewTextBoxColumn";
-            this.dateEndDataGridViewTextBoxColumn.Width = 235;
-            // 
-            // stateDataGridViewTextBoxColumn
-            // 
-            this.stateDataGridViewTextBoxColumn.DataPropertyName = "State";
-            this.stateDataGridViewTextBoxColumn.HeaderText = "Status";
-            this.stateDataGridViewTextBoxColumn.Name = "stateDataGridViewTextBoxColumn";
-            this.stateDataGridViewTextBoxColumn.Width = 118;
-            // 
-            // iDreceiptDataGridViewTextBoxColumn
-            // 
-            this.iDreceiptDataGridViewTextBoxColumn.DataPropertyName = "IDreceipt";
-            this.iDreceiptDataGridViewTextBoxColumn.HeaderText = "ID Invoice";
-            this.iDreceiptDataGridViewTextBoxColumn.Name = "iDreceiptDataGridViewTextBoxColumn";
-            this.iDreceiptDataGridViewTextBoxColumn.Width = 176;
-            // 
-            // empIDDataGridViewTextBoxColumn
-            // 
-            this.empIDDataGridViewTextBoxColumn.DataPropertyName = "EmpID";
-            this.empIDDataGridViewTextBoxColumn.HeaderText = "Employee";
-            this.empIDDataGridViewTextBoxColumn.Name = "empIDDataGridViewTextBoxColumn";
-            this.empIDDataGridViewTextBoxColumn.Width = 166;
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Total";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.Width = 110;
-            // 
-            // oldnewDataGridViewTextBoxColumn
-            // 
-            this.oldnewDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.oldnewDataGridViewTextBoxColumn.DataPropertyName = "oldnew";
-            this.oldnewDataGridViewTextBoxColumn.HeaderText = "State";
-            this.oldnewDataGridViewTextBoxColumn.Name = "oldnewDataGridViewTextBoxColumn";
-            // 
             // detailContractBindingSource
             // 
-            //this.detailContractBindingSource.DataSource = typeof(slnGym.DataObject.DetailContract);
+            this.detailContractBindingSource.DataSource = typeof(slnGym.DataObject.DetailContract);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ConID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ConID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 127;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "ID_Mem";
+            this.dataGridViewTextBoxColumn2.HeaderText = "ID_Mem";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 156;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "servicePackName";
+            this.dataGridViewTextBoxColumn3.HeaderText = "servicePackName";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 261;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "DateStart";
+            this.dataGridViewTextBoxColumn4.HeaderText = "DateStart";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 161;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "DateEnd";
+            this.dataGridViewTextBoxColumn5.HeaderText = "DateEnd";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 153;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "State";
+            this.dataGridViewTextBoxColumn6.HeaderText = "State";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Width = 104;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "IDreceipt";
+            this.dataGridViewTextBoxColumn7.HeaderText = "IDreceipt";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Width = 161;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "EmpID";
+            this.dataGridViewTextBoxColumn8.HeaderText = "EmpID";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.Width = 136;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "price";
+            this.dataGridViewTextBoxColumn9.HeaderText = "price";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Width = 104;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "oldnew";
+            this.dataGridViewTextBoxColumn10.HeaderText = "oldnew";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.Width = 133;
             // 
             // DetailsConrtactUC
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.Controls.Add(this.btSearch);
             this.Controls.Add(this.lbMemberName);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lbTimeRemaining);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.lbStartDate);
             this.Controls.Add(this.label10);
@@ -442,12 +400,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtNameSeller);
             this.Controls.Add(this.label21);
-            this.Controls.Add(this.groupBoxContact);
             this.Name = "DetailsConrtactUC";
             this.Size = new System.Drawing.Size(1912, 905);
             this.Load += new System.EventHandler(this.DetailsConrtactUC_Load);
-            this.groupBoxContact.ResumeLayout(false);
-            this.groupBoxContact.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btSearch)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetailCon)).EndInit();
@@ -458,10 +413,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBoxContact;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cbTheLoai;
         private System.Windows.Forms.PictureBox btSearch;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtSearch;
@@ -479,7 +430,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label lbTimeRemaining;
         private System.Windows.Forms.Label lbMemberName;
-        public System.Windows.Forms.BindingSource detailContractBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn conIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDMemDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn servicePackNameDataGridViewTextBoxColumn;
@@ -490,5 +440,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn empIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn oldnewDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.BindingSource detailContractBindingSource;
     }
 }

@@ -33,6 +33,8 @@ namespace slnGym.Forms
         private void EditByAdmin_Load(object sender, EventArgs e)
         {
             temp.loadDGVTEMP(dgvMembers);
+            btCancel.Enabled = false;
+            btnAccept.Enabled = false;
         }
 
         private void dgvMembers_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -52,11 +54,9 @@ namespace slnGym.Forms
             else lbGender.Text = "Male";
             lbPhone.Text = dt.Rows[0][7].ToString();
             lbIDCard.Text = dt.Rows[0][8].ToString();
-            hightlight();
-            //byte[] picPD;
-            //picPD = (byte[])dt.Rows[0][3];
-            //MemoryStream pic = new MemoryStream(picPD);
-            //this.picAvaEdit.Image = Image.FromStream(pic);
+            btCancel.Enabled = true;
+            btnAccept.Enabled = true;
+            //hightlight();
         }
 
         void hightlight()
@@ -97,47 +97,39 @@ namespace slnGym.Forms
             }
             else lbAddress.ForeColor = Color.Black;
         }
+
         void Approve()
         {
             string note = "Đã duyệt";
             string index = dgvMembers.CurrentRow.Cells[0].Value.ToString();
             string fname = dgvMembers.CurrentRow.Cells[1].Value.ToString();
             string lname = dgvMembers.CurrentRow.Cells[2].Value.ToString();
+            byte[] picPD;
+            picPD = (byte[])dgvMembers.CurrentRow.Cells[3].Value;
+            MemoryStream pic = new MemoryStream(picPD);
             DateTime bdate = Convert.ToDateTime(dgvMembers.CurrentRow.Cells[4].Value);
             string add = dgvMembers.CurrentRow.Cells[5].Value.ToString();
             string phone = dgvMembers.CurrentRow.Cells[7].Value.ToString();
             int idcard = Convert.ToInt32(dgvMembers.CurrentRow.Cells[8].Value);
             int gender = Convert.ToInt32(dgvMembers.CurrentRow.Cells[6].Value);
-            if (mem.updateMembers(index, lname, fname, bdate, add, gender, phone, idcard, note))
+            if (mem.updateMembers(index, fname, lname, pic, bdate, add, gender, phone, idcard, note))
             {
-                MessageBox.Show("Đã duyệt thành công");
                 mem.deleteTEMP(index);
+                MessageBox.Show("Đã duyệt thành công");
+                temp.loadDGVTEMP(dgvMembers);
             }
             else MessageBox.Show("Đã có lỗi trong quá trình xử lý, vui lòng thử lại");
         }
         void notApprove()
         {
-            string note = "Từ Chối";
             string index = dgvMembers.CurrentRow.Cells[0].Value.ToString();
-            string fname = dgvMembers.CurrentRow.Cells[1].Value.ToString();
-            string lname = dgvMembers.CurrentRow.Cells[2].Value.ToString();
-            DateTime bdate = Convert.ToDateTime(dgvMembers.CurrentRow.Cells[4].Value);
-            string add = dgvMembers.CurrentRow.Cells[5].Value.ToString();
-            string phone = dgvMembers.CurrentRow.Cells[7].Value.ToString();
-            int idcard = Convert.ToInt32(dgvMembers.CurrentRow.Cells[8].Value);
-            int gender = Convert.ToInt32(dgvMembers.CurrentRow.Cells[6].Value);
-            if (mem.updateMembers(index, lname, fname, bdate, add, gender, phone, idcard, note))
-            {
-                MessageBox.Show("Đã duyệt thành công");
-                mem.deleteTEMP(index);
-            }
-            else MessageBox.Show("Đã có lỗi trong quá trình xử lý, vui lòng thử lại");
+            mem.deleteTEMP(index);
+            temp.loadDGVTEMP(dgvMembers);
         }
 
         private void btCancel_Click(object sender, EventArgs e)
         {
             notApprove();
-            this.Close();
         }
-    } 
+    }
 }

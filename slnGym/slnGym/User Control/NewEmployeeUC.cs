@@ -170,7 +170,7 @@ namespace slnGym.User_Control
             string pass = txtPass.Text;
             string username = txtUsername.Text;
             string id = txtGroupID.Text;
-            if (lg.insertLogin(username, pass, id))
+            if (lg.insertLogin(username, pass, id,null))
                 return true;
             return false;
         }

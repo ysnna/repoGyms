@@ -12,13 +12,14 @@ namespace slnGym.Layer
     {
         MY_DB mydb = new MY_DB();
         //Dang ky tai khoan
-        public bool insertLogin(string user, string pass, string type)
+        public bool insertLogin(string user, string pass, string type, string state)
         {
-            SqlCommand cmd = new SqlCommand("insert into ACCOUNT(username,passw,userID)" +
-                "values (@user,@pass,@type)", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("insert into ACCOUNT(username,passw,userID,state)" +
+                "values (@user,@pass,@type,@state)", mydb.getConnection);
             cmd.Parameters.Add("@user", SqlDbType.VarChar).Value = user;
             cmd.Parameters.Add("@pass", SqlDbType.VarChar).Value = pass;
             cmd.Parameters.Add("@type", SqlDbType.Int).Value = type;
+            cmd.Parameters.Add("@state", SqlDbType.VarChar).Value = state;
             mydb.openConnection();
             if (cmd.ExecuteNonQuery() == 1)
             {
@@ -50,12 +51,12 @@ namespace slnGym.Layer
                 return false;
             }
         }
-        public bool updateAccount(string user, int userid)
+        public bool updateAccount(string user, int userid, string state)
         {
-            SqlCommand cmd = new SqlCommand("update ACCOUNT set userID=@uID where username=@user", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("update ACCOUNT set userID=@uID, state=@state where username=@user", mydb.getConnection);
             cmd.Parameters.Add("@user", SqlDbType.VarChar).Value = user;
             cmd.Parameters.Add("@uID", SqlDbType.Int).Value = userid;
-
+            cmd.Parameters.Add("@state", SqlDbType.VarChar).Value = state;
 
             mydb.openConnection();
             if (cmd.ExecuteNonQuery() == 1)
@@ -98,9 +99,16 @@ namespace slnGym.Layer
                 mydb.closeConnection();
                 return false;
             }
-
         }
-
+        public DataTable getListAccount()
+        {
+            SqlCommand cmd = new SqlCommand("select username as 'Username', passw as 'Password', state as 'State' from ACCOUNT", mydb.getConnection);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            mydb.closeConnection();
+            return dt;
+        }
         public DataTable getAccUserID(string user)
         {
             SqlCommand cmd = new SqlCommand("select * from ACCOUNT where userID=@user", mydb.getConnection);

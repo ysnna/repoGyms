@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using slnGym.DataObject;
 using slnGym.Layer;
 using slnGym.Forms;
+using System.IO;
 
 namespace slnGym.User_Control
 {
@@ -28,15 +29,37 @@ namespace slnGym.User_Control
         private void dgvMembers_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             dgvProduct.DataSource = null;
-            string index = dgvMembers.CurrentRow.Cells[0].Value.ToString();
+            string inde = dgvMembers.CurrentRow.Cells[0].Value.ToString();
             
             //MessageBox.Show(index);
-            mem.LoadDGVPackage(dgvPackage, index);
-            mem.loadDGVProduct(dgvProduct, index);
+            mem.LoadDGVPackage(dgvPackage, inde);
+            mem.loadDGVProduct(dgvProduct, inde);
+            btEditMachine.Enabled = true;
+
+            string index = dgvMembers.CurrentRow.Cells[0].Value.ToString();
+            DataTable dt = new DataTable();
+            dt = getmem.getMemberbyID(index);
+            GetEditMember.FName = dt.Rows[0][1].ToString();
+            GetEditMember.LName = dt.Rows[0][2].ToString();
+            GetEditMember.Address = dt.Rows[0][5].ToString();
+            GetEditMember.Birthday = Convert.ToDateTime(dt.Rows[0][4].ToString());
+            GetEditMember.IDCard = dt.Rows[0][8].ToString();
+            GetEditMember.Phone = dt.Rows[0][7].ToString();
+            GetEditMember.Gender = Convert.ToInt32(dt.Rows[0][6]);
+            GetEditMember.IDMember = index;
+            try
+            {
+                byte[] picPD;
+                picPD = (byte[])dt.Rows[0][3];
+                MemoryStream pic = new MemoryStream(picPD);
+                GetEditMember.Picture = Image.FromStream(pic);
+            }
+            catch { }
         }
        
         private void MemberUC_Load(object sender, EventArgs e)
         {
+            btEditMachine.Enabled = false;
             loadDGVMem();
         }
 
@@ -64,7 +87,15 @@ namespace slnGym.User_Control
             GetEditMember.Phone = dt.Rows[0][7].ToString();
             GetEditMember.Gender = Convert.ToInt32( dt.Rows[0][6]);
             GetEditMember.IDMember = index;
-
+            try
+            {
+                byte[] picPD;
+                picPD = (byte[])dt.Rows[0][3];
+                MemoryStream pic = new MemoryStream(picPD);
+                GetEditMember.Picture = Image.FromStream(pic);
+            } 
+            catch { }
+            btEditMachine.Enabled = true;
         }
         public void loadDGVMem()
         {
@@ -77,6 +108,9 @@ namespace slnGym.User_Control
             DataTable dt = new DataTable();
             dt = mem.getAllMEMBERS();
             dgvMembers.DataSource = dt;
+            DataGridViewImageColumn pic = new DataGridViewImageColumn();
+            pic = (DataGridViewImageColumn)dgvMembers.Columns[3];
+            pic.ImageLayout = DataGridViewImageCellLayout.Zoom;
             //foreach (DataGridViewRow row in dgvMembers.Rows)
             //{
             //    if (row.Cells["note"].Value.ToString() == "Chờ duyệt")
@@ -88,6 +122,11 @@ namespace slnGym.User_Control
             //        row.DefaultCellStyle.BackColor = Color.MediumSeaGreen;
             //    }
             //}
+        }
+
+        private void txtSearchMembers_KeyUp(object sender, KeyEventArgs e)
+        {
+            dgvMembers.DataSource = getmem.searchEmployee(txtSearchMembers.Text);
         }
     }
 }

@@ -106,8 +106,6 @@ namespace slnGym.User_Control
             }
         }
 
-
-
         private void ReceiptUC_Load(object sender, EventArgs e)
         {
             btPayment.Enabled = false;
@@ -193,6 +191,7 @@ namespace slnGym.User_Control
             offset = offset + 20;
             graphic.DrawString("             Have a wonderful day!", font, new SolidBrush(Color.Black), startX + 100, startY + offset);
         }
+
         private void btPayment_Click(object sender, EventArgs e)
         {
             lbStatus.Text = "Paid";
@@ -224,7 +223,7 @@ namespace slnGym.User_Control
         {
             #region Create account
             //try..catch
-            if (log.insertLogin(GETMember.IDMember, GETMember.Password, "5"))
+            if (log.insertLogin(GETMember.IDMember, GETMember.Password, "5","Blocked"))
             {
                 MessageBox.Show("Added account", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -236,7 +235,7 @@ namespace slnGym.User_Control
             GETMember.Picture.Save(pic, GETMember.Picture.RawFormat);
             if (GETMember.FName != null && GETMember.LName != null && pic != null && GETMember.Address != null && GETMember.Phone != null && GETMember.IDCard != '\0')
             {
-                if (mem.insertMembers(GETMember.IDMember, GETMember.LName, GETMember.FName, GETMember.Birthday, GETMember.Address, GETMember.Gender, GETMember.Phone, GETMember.IDCard, "Chờ duyệt"))
+                if (mem.insertMembers(GETMember.IDMember, GETMember.LName, GETMember.FName, pic, GETMember.Birthday, GETMember.Address, GETMember.Gender, GETMember.Phone, GETMember.IDCard, "Chờ duyệt"))
                     MessageBox.Show("Added Member", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else MessageBox.Show("Added member fail", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

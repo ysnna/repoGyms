@@ -54,7 +54,7 @@ namespace slnGym.Layer
         public DataTable getSTATISTIC(int id)
         {
             SqlCommand cmd = new SqlCommand("select repceiptDate as 'Date', idBrand as 'ID', count (total) as 'Amount', SUM(total) as 'Total' from DETAILSREPCEIPT " +
-                "where idBrand =@id group by idBrand, repceiptDate", mydb.getConnection);
+                "where idBrand =@id group by idBrand, repceiptDate order by Date desc", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();

@@ -16,6 +16,7 @@ create table ACCOUNT(
 username varchar(11) not null,
 passw varchar(20) not null,
 userID int not null,
+state varchar(20) null,
 --Primarykey--
 constraint pk_username primary key (username),
 );
@@ -357,3 +358,16 @@ total decimal null,
 statusST nvarchar(50) null,
 );
 go 
+
+select contID,cusID,serviceName, employeeID, dateStart,dateDischarge, B.receiptID, total, ptID from RECEIPT,
+(select contID, serviceName, employeeID, cusID, dateStart, dateDischarge, receiptID, ptID from DETAILSCONTRACT,
+(select * from SERVICEPACK, CONTRACTS where CONTRACTS.servicePACK = SERVICEPACK.serviceID) as A 
+where DETAILSCONTRACT.contID = A.contractID) as B 
+where B.receiptID = RECEIPT.receiptID
+
+use GYMManager
+go
+
+select repceiptDate as 'Date', idBrand as 'ID', count (total) as 'Amount', SUM(total) as 'Total' 
+from DETAILSREPCEIPT where idBrand = '1'
+group by idBrand, repceiptDate order by Date desc
