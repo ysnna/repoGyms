@@ -290,21 +290,21 @@
             // loginToolStripMenuItem
             // 
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(180, 32);
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(137, 32);
             this.loginToolStripMenuItem.Text = "Login";
             this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(180, 32);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(137, 32);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 32);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(137, 32);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -483,7 +483,7 @@
             this.dgvServicePack.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvServicePack.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvServicePack.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvServicePack.Size = new System.Drawing.Size(1912, 921);
+            this.dgvServicePack.Size = new System.Drawing.Size(1912, 936);
             this.dgvServicePack.TabIndex = 103;
             // 
             // tabManage
@@ -628,7 +628,6 @@
             this.txtUserID.ForeColor = System.Drawing.Color.Navy;
             this.txtUserID.Location = new System.Drawing.Point(610, 479);
             this.txtUserID.Name = "txtUserID";
-            this.txtUserID.ReadOnly = true;
             this.txtUserID.Size = new System.Drawing.Size(237, 44);
             this.txtUserID.TabIndex = 82;
             // 
@@ -951,7 +950,6 @@
             this.datePickerEnd.CalendarMonthBackground = System.Drawing.Color.Transparent;
             this.datePickerEnd.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
             this.datePickerEnd.CalendarTitleForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.datePickerEnd.Enabled = false;
             this.datePickerEnd.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datePickerEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.datePickerEnd.Location = new System.Drawing.Point(279, 400);
@@ -1116,7 +1114,6 @@
             this.txtIDMember.ForeColor = System.Drawing.Color.Navy;
             this.txtIDMember.Location = new System.Drawing.Point(639, 154);
             this.txtIDMember.Name = "txtIDMember";
-            this.txtIDMember.ReadOnly = true;
             this.txtIDMember.Size = new System.Drawing.Size(202, 44);
             this.txtIDMember.TabIndex = 87;
             // 
@@ -1128,7 +1125,6 @@
             this.txtIDContract.ForeColor = System.Drawing.Color.Navy;
             this.txtIDContract.Location = new System.Drawing.Point(279, 467);
             this.txtIDContract.Name = "txtIDContract";
-            this.txtIDContract.ReadOnly = true;
             this.txtIDContract.Size = new System.Drawing.Size(188, 44);
             this.txtIDContract.TabIndex = 86;
             // 

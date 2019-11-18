@@ -23,19 +23,19 @@ constraint pk_username primary key (username),
 go
 
 insert into ACCOUNT values
-('admin','admin','0'),
-('NV01','nv','1'),
-('NV02','nv','1'),
-('NV03','nv','1'),
-('HLV01','hlv','3'),
-('HLV02','hlv','3'),
-('HLV03','hlv','3'),
-('HLV04','hlv','3'),
-('HLV05','hlv','3'),
-('HLV06','hlv','3'),
-('HLV07','hlv','3'),
-('KH01','kh','2'),
-('KH02','kh','2');
+('admin','admin','0',null),
+('NV01','nv','1',null),
+('NV02','nv','1',null),
+('NV03','nv','1',null),
+('HLV01','hlv','3',null),
+('HLV02','hlv','3',null),
+('HLV03','hlv','3',null),
+('HLV04','hlv','3',null),
+('HLV05','hlv','3',null),
+('HLV06','hlv','3',null),
+('HLV07','hlv','3',null),
+('KH01','kh','2',null),
+('KH02','kh','2',null);
 go
 
 create table ACCOUNTLOGIN(
@@ -344,8 +344,8 @@ foreign key (idBrand) references PACKORPRODUCT on delete set null,
 go
 
 insert into DETAILSREPCEIPT values
-('IVC01','2019-10-25 00:00:00.000','1','6','Gym','1','900000', '30'),
-('IVC02','2019-11-1 00:00:00.000','1','13','Gym','1','900000', '30');
+('IVC01','2019-10-25 00:00:00.000','1','6','Gym','1','900000', null),
+('IVC02','2019-11-1 00:00:00.000','1','13','Gym','1','900000', null);
 go
 
 --Thống kê doanh thu theo ngày

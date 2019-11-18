@@ -46,12 +46,12 @@
             this.label21 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvDetailCon = new System.Windows.Forms.DataGridView();
+            this.detailContractBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lbStartDate = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.lbTimeRemaining = new System.Windows.Forms.Label();
             this.lbMemberName = new System.Windows.Forms.Label();
-            this.detailContractBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -251,6 +251,10 @@
             this.dgvDetailCon.TabIndex = 81;
             this.dgvDetailCon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetailCon_CellClick);
             // 
+            // detailContractBindingSource
+            // 
+            this.detailContractBindingSource.DataSource = typeof(slnGym.DataObject.DetailContract);
+            // 
             // lbStartDate
             // 
             this.lbStartDate.AutoSize = true;
@@ -306,44 +310,40 @@
             this.lbMemberName.TabIndex = 199;
             this.lbMemberName.Text = "ID";
             // 
-            // detailContractBindingSource
-            // 
-            this.detailContractBindingSource.DataSource = typeof(slnGym.DataObject.DetailContract);
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "ConID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ConID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Contract ID";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 127;
+            this.dataGridViewTextBoxColumn1.Width = 191;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "ID_Mem";
-            this.dataGridViewTextBoxColumn2.HeaderText = "ID_Mem";
+            this.dataGridViewTextBoxColumn2.HeaderText = "ID Member";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 156;
+            this.dataGridViewTextBoxColumn2.Width = 188;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "servicePackName";
-            this.dataGridViewTextBoxColumn3.HeaderText = "servicePackName";
+            this.dataGridViewTextBoxColumn3.HeaderText = "ID Package";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 261;
+            this.dataGridViewTextBoxColumn3.Width = 183;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "DateStart";
-            this.dataGridViewTextBoxColumn4.HeaderText = "DateStart";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Start date";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.Width = 161;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "DateEnd";
-            this.dataGridViewTextBoxColumn5.HeaderText = "DateEnd";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Expiration date";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 153;
+            this.dataGridViewTextBoxColumn5.Width = 235;
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -355,30 +355,30 @@
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "IDreceipt";
-            this.dataGridViewTextBoxColumn7.HeaderText = "IDreceipt";
+            this.dataGridViewTextBoxColumn7.HeaderText = "ID Receipt";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 161;
+            this.dataGridViewTextBoxColumn7.Width = 177;
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "EmpID";
-            this.dataGridViewTextBoxColumn8.HeaderText = "EmpID";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Employee";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.Width = 136;
+            this.dataGridViewTextBoxColumn8.Width = 166;
             // 
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "price";
-            this.dataGridViewTextBoxColumn9.HeaderText = "price";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Total";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Width = 104;
+            this.dataGridViewTextBoxColumn9.Width = 110;
             // 
             // dataGridViewTextBoxColumn10
             // 
+            this.dataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn10.DataPropertyName = "oldnew";
-            this.dataGridViewTextBoxColumn10.HeaderText = "oldnew";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Status";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.Width = 133;
             // 
             // DetailsConrtactUC
             // 
@@ -440,6 +440,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn empIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn oldnewDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource detailContractBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -450,6 +451,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.BindingSource detailContractBindingSource;
     }
 }
