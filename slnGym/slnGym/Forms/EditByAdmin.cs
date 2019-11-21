@@ -44,7 +44,7 @@ namespace slnGym.Forms
             dt = temp.loadInfoOld(index);
             lbFname.Text = dt.Rows[0][1].ToString();
             lbLname.Text = dt.Rows[0][2].ToString();
-            lbBirthday.Text = dt.Rows[0][4].ToString();
+            lbBirthday.Text =Convert.ToDateTime(dt.Rows[0][4].ToString()).ToString();
             lbAddress.Text = dt.Rows[0][5].ToString();
 
             if (dt.Rows[0][6].ToString() == "True")

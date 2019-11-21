@@ -55,6 +55,7 @@
     <Compile Include="DataObject\GETContract.cs" />
     <Compile Include="DataObject\GetEditMember.cs" />
     <Compile Include="DataObject\GETMember.cs" />
+    <Compile Include="DataObject\ListContract.cs" />
     <Compile Include="DataObject\ListEmployee.cs" />
     <Compile Include="DataObject\ListMachine.cs" />
     <Compile Include="DataObject\ListProduct.cs" />
@@ -328,6 +329,7 @@
       <DependentUpon>PTTagDataSet.xsd</DependentUpon>
     </None>
     <None Include="slnGym.DataObject.DetailContract.datasource" />
+    <None Include="slnGym.DataObject.ListContract.datasource" />
     <None Include="slnGym.DataObject.ListReceipt.datasource" />
     <None Include="slnGym.DataObject.Statistic.datasource" />
   </ItemGroup>

@@ -74,7 +74,7 @@ employeeAddress nvarchar(100) not null,
 gender bit not null,
 phone varchar(11),
 salary int not null,
-employeeIDCard int not null,
+employeeIDCard int null,
 --Primarykey and FK--
 constraint pk_employee primary key (employeeID),
 foreign key(groupID) references GROUPEMPLOYEE on delete set null,
@@ -93,6 +93,17 @@ insert into EMPLOYEE values
 ('HLV05','02', null, N'Phan',N'Sơn', '1995-09-17 00:00:00.000', N'Quận Thanh Xuân, Hà Nội', '0','0955862959', '11000000', '023800221'),
 ('HLV06','02', null, N'Lê Kim',N'Đỉnh', '1998-12-30 00:00:00.000', N'Huyện Đắk Glei, Kon Tum', '0','0785484327', '10000000', '077966363'),
 ('HLV07','02', null, N'Nguyên',N'Vương', '1997-08-29 00:00:00.000', N'Thị xã Hương Thủy, Thừa Thiên - Huế', '0','0868660035', '10000000', '077602089');
+go
+
+create table INFOPT(
+ID varchar(20) null,
+literacy nvarchar(200) null,	--trường
+exp nvarchar(200) null,			--kinh nghiệm bao nhiêu năm, ở những đâu?
+certificate nvarchar(200) null,	--chứng chỉ gì
+achievements nvarchar(200) null,--có đạt giải thưởng gì không
+--Primarykey and FK--
+foreign key(ID) references EMPLOYEE on delete set null,
+);
 go
 
 --Nhóm công việc
@@ -155,6 +166,22 @@ note nvarchar(100) null,
 --FK & PK --
 constraint pk_MEMBERS primary key (memID),
 constraint ck_cardID unique (cardID),
+);
+go
+
+create table TEMP
+(
+ID varchar(20) not null,
+FName nvarchar(50)  null,
+Lname nvarchar(50) not null,
+avatar image null,
+BDate Datetime not null,
+Address nvarchar(100) not null,
+Gender bit not null,
+Phone varchar(11) not null,
+cardID int not null,
+note nvarchar(100) null,
+--FK & PK --
 );
 go
 
@@ -256,22 +283,18 @@ create table CONTRACTS
 (
 contractID varchar(20) not null,
 cusID varchar(20) null,
-ptID varchar(20) null,
-servicePACK int  null,
-dateStart Datetime not null,
-dateDischarge Datetime not null,
+employeeID varchar(20) null,
 conStatus nvarchar(20) null,		--bao nhiêu ngày, vd:30
 --PK--
 constraint pk_contractID primary key (contractID),
+foreign key (employeeID) references EMPLOYEE on delete set null,
 foreign key (cusID) references MEMBERS on delete set null,
-foreign key (ptID) references EMPLOYEE on delete set null,
-foreign key (servicePACK) references SERVICEPACK on delete set null,
 );
 go
 
 insert into CONTRACTS values
-('CONT01','KH01','HLV01','6','2019-10-25 00:00:00.000','2019-11-25 00:00:00.000',N'Đang sử dụng'),
-('CONT02','KH02','HLV05','13','2019-11-1 00:00:00.000','2019-11-15 00:00:00.000',N'Đang sử dụng');
+('CONT01','KH01','NV01',null),
+('CONT02','KH02','NV02',null);
 go
 
 --Hóa đơn
@@ -294,19 +317,24 @@ go
 --Chi tiết hợp đồng
 create table DETAILSCONTRACT 
 (
-contID varchar(20) not null,
-employeeID varchar(20) null,
+contID varchar(20) null,
 receiptID varchar(20) null,
+ptID varchar(20) null,
+servicePACK int  null,
+dateStart Datetime not null,
+dateDischarge Datetime not null,
+status nvarchar(100) null,
 --PK & FK --
-constraint pk_contID primary key (contID),
-foreign key (employeeID) references EMPLOYEE on delete set null,
-foreign key (receiptID) references RECEIPT on delete set null
+foreign key (contID) references CONTRACTS on delete set null,
+foreign key (ptID) references EMPLOYEE on delete set null,
+foreign key (receiptID) references RECEIPT on delete set null,
+foreign key (servicePACK) references SERVICEPACK on delete set null,
 );
 go
 
 insert into DETAILSCONTRACT values
-('CONT01','NV01','IVC01'),
-('CONT02','NV02','IVC02');
+('CONT01','IVC01','HLV01','6','2019-10-25 00:00:00.000','2019-11-25 00:00:00.000',null),
+('CONT02','IVC02','HLV05','13','2019-11-1 00:00:00.000','2019-11-15 00:00:00.000',null);
 go
 
 create table PACKORPRODUCT
