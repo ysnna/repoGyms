@@ -214,6 +214,7 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBoxCheckMember = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.numericRenew = new System.Windows.Forms.NumericUpDown();
             this.dateEndRenew = new System.Windows.Forms.DateTimePicker();
             this.dateStartRenew = new System.Windows.Forms.DateTimePicker();
@@ -224,33 +225,22 @@
             this.btSearch = new System.Windows.Forms.PictureBox();
             this.txtSearchContract = new System.Windows.Forms.TextBox();
             this.dgvSearchMember = new System.Windows.Forms.DataGridView();
-            this.tabPackage = new System.Windows.Forms.TabPage();
-            this.tabDetailsContract = new System.Windows.Forms.TabPage();
-            this.tabMember = new System.Windows.Forms.TabPage();
-            this.tabAccount = new System.Windows.Forms.TabPage();
-            this.lbDateTime = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.sERVICEPACKTableAdapter = new slnGym.PackageDataSetTableAdapters.SERVICEPACKTableAdapter();
-            this.pTTagDataSet = new slnGym.PTTagDataSet();
-            this.eMPLOYEEBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.eMPLOYEETableAdapter = new slnGym.PTTagDataSetTableAdapters.EMPLOYEETableAdapter();
-            this.panelChat = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.btSendMessage = new System.Windows.Forms.Button();
-            this.btCloseChat = new System.Windows.Forms.Button();
-            this.btCancel = new System.Windows.Forms.Button();
-            this.txtMessage = new System.Windows.Forms.TextBox();
-            this.txtChatScreen = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
-            this.tess = new System.Windows.Forms.TextBox();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.groupBoxRenew = new System.Windows.Forms.GroupBox();
             this.btInvoiceRenew = new System.Windows.Forms.Button();
             this.dgvRenew = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.tabPackage = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label35 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -276,18 +266,31 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.label46 = new System.Windows.Forms.Label();
-            this.label47 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.tabDetailsContract = new System.Windows.Forms.TabPage();
+            this.tabMember = new System.Windows.Forms.TabPage();
+            this.tabAccount = new System.Windows.Forms.TabPage();
+            this.lbDateTime = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.sERVICEPACKTableAdapter = new slnGym.PackageDataSetTableAdapters.SERVICEPACKTableAdapter();
+            this.pTTagDataSet = new slnGym.PTTagDataSet();
+            this.eMPLOYEEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.eMPLOYEETableAdapter = new slnGym.PTTagDataSetTableAdapters.EMPLOYEETableAdapter();
+            this.panelChat = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
+            this.btSendMessage = new System.Windows.Forms.Button();
+            this.btCloseChat = new System.Windows.Forms.Button();
+            this.btCancel = new System.Windows.Forms.Button();
+            this.txtMessage = new System.Windows.Forms.TextBox();
+            this.txtChatScreen = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            this.tess = new System.Windows.Forms.TextBox();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.label48 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.menuStrip.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabHome.SuspendLayout();
@@ -324,20 +327,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchContract)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchMember)).BeginInit();
-            this.tabPackage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pTTagDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eMPLOYEEBindingSource)).BeginInit();
-            this.panelChat.SuspendLayout();
             this.groupBoxRenew.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRenew)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.tabPackage.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pTTagDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eMPLOYEEBindingSource)).BeginInit();
+            this.panelChat.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -560,7 +563,7 @@
             this.dgvServicePack.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvServicePack.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvServicePack.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvServicePack.Size = new System.Drawing.Size(1912, 996);
+            this.dgvServicePack.Size = new System.Drawing.Size(1912, 1026);
             this.dgvServicePack.TabIndex = 103;
             // 
             // tabManage
@@ -2130,7 +2133,7 @@
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Visible = false;
-            this.dataGridViewTextBoxColumn4.Width = 110;
+            this.dataGridViewTextBoxColumn4.Width = 102;
             // 
             // pictureBox1
             // 
@@ -2167,6 +2170,19 @@
             this.groupBoxCheckMember.TabIndex = 103;
             this.groupBoxCheckMember.TabStop = false;
             this.groupBoxCheckMember.Text = "Checking";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.comboBox1.Font = new System.Drawing.Font("UVN Anh Hai", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Renew",
+            "New package"});
+            this.comboBox1.Location = new System.Drawing.Point(233, 40);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(149, 40);
+            this.comboBox1.TabIndex = 163;
             // 
             // numericRenew
             // 
@@ -2389,16 +2405,675 @@
             this.dgvSearchMember.Size = new System.Drawing.Size(363, 408);
             this.dgvSearchMember.TabIndex = 87;
             // 
+            // groupBoxRenew
+            // 
+            this.groupBoxRenew.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupBoxRenew.Controls.Add(this.btInvoiceRenew);
+            this.groupBoxRenew.Controls.Add(this.dgvRenew);
+            this.groupBoxRenew.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxRenew.ForeColor = System.Drawing.Color.Navy;
+            this.groupBoxRenew.Location = new System.Drawing.Point(34, 538);
+            this.groupBoxRenew.Name = "groupBoxRenew";
+            this.groupBoxRenew.Size = new System.Drawing.Size(936, 354);
+            this.groupBoxRenew.TabIndex = 163;
+            this.groupBoxRenew.TabStop = false;
+            // 
+            // btInvoiceRenew
+            // 
+            this.btInvoiceRenew.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btInvoiceRenew.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btInvoiceRenew.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btInvoiceRenew.BackgroundImage")));
+            this.btInvoiceRenew.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btInvoiceRenew.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btInvoiceRenew.FlatAppearance.BorderSize = 3;
+            this.btInvoiceRenew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btInvoiceRenew.Font = new System.Drawing.Font("Sitka Subheading", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btInvoiceRenew.ForeColor = System.Drawing.Color.White;
+            this.btInvoiceRenew.Location = new System.Drawing.Point(856, 284);
+            this.btInvoiceRenew.Name = "btInvoiceRenew";
+            this.btInvoiceRenew.Size = new System.Drawing.Size(65, 56);
+            this.btInvoiceRenew.TabIndex = 159;
+            this.btInvoiceRenew.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btInvoiceRenew.UseVisualStyleBackColor = false;
+            // 
+            // dgvRenew
+            // 
+            this.dgvRenew.AllowUserToAddRows = false;
+            this.dgvRenew.AllowUserToDeleteRows = false;
+            this.dgvRenew.AllowUserToResizeColumns = false;
+            this.dgvRenew.AllowUserToResizeRows = false;
+            dataGridViewCellStyle46.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRenew.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle46;
+            this.dgvRenew.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dgvRenew.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvRenew.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle47.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle47.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle47.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle47.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle47.SelectionForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle47.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRenew.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle47;
+            this.dgvRenew.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle48.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle48.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle48.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle48.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle48.SelectionForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle48.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRenew.DefaultCellStyle = dataGridViewCellStyle48;
+            this.dgvRenew.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvRenew.Location = new System.Drawing.Point(19, 38);
+            this.dgvRenew.Name = "dgvRenew";
+            dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle49.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle49.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle49.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle49.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle49.SelectionForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle49.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRenew.RowHeadersDefaultCellStyle = dataGridViewCellStyle49;
+            this.dgvRenew.RowHeadersVisible = false;
+            this.dgvRenew.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle50.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRenew.RowsDefaultCellStyle = dataGridViewCellStyle50;
+            this.dgvRenew.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRenew.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dgvRenew.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvRenew.Size = new System.Drawing.Size(902, 240);
+            this.dgvRenew.TabIndex = 158;
+            // 
             // tabPackage
             // 
             this.tabPackage.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.tabPackage.Controls.Add(this.groupBox2);
             this.tabPackage.Controls.Add(this.groupBox1);
+            this.tabPackage.Controls.Add(this.button4);
             this.tabPackage.Location = new System.Drawing.Point(4, 37);
             this.tabPackage.Name = "tabPackage";
             this.tabPackage.Size = new System.Drawing.Size(1912, 905);
             this.tabPackage.TabIndex = 7;
             this.tabPackage.Text = " Package ";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.pictureBox3);
+            this.groupBox2.Controls.Add(this.textBox9);
+            this.groupBox2.Controls.Add(this.dataGridView2);
+            this.groupBox2.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.Color.Navy;
+            this.groupBox2.Location = new System.Drawing.Point(941, 12);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(936, 388);
+            this.groupBox2.TabIndex = 106;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Checking";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.comboBox2.Font = new System.Drawing.Font("UVN Anh Hai", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Renew",
+            "New package"});
+            this.comboBox2.Location = new System.Drawing.Point(582, 649);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(188, 40);
+            this.comboBox2.TabIndex = 163;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.numericUpDown1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown1.ForeColor = System.Drawing.Color.Black;
+            this.numericUpDown1.Location = new System.Drawing.Point(446, 651);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(83, 39);
+            this.numericUpDown1.TabIndex = 162;
+            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.CalendarFont = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker2.CalendarForeColor = System.Drawing.Color.ForestGreen;
+            this.dateTimePicker2.CalendarMonthBackground = System.Drawing.Color.Transparent;
+            this.dateTimePicker2.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
+            this.dateTimePicker2.CalendarTitleForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dateTimePicker2.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.Location = new System.Drawing.Point(226, 711);
+            this.dateTimePicker2.MinDate = new System.DateTime(2016, 1, 1, 0, 0, 0, 0);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(188, 39);
+            this.dateTimePicker2.TabIndex = 160;
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.CalendarFont = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker3.CalendarForeColor = System.Drawing.Color.ForestGreen;
+            this.dateTimePicker3.CalendarMonthBackground = System.Drawing.Color.Transparent;
+            this.dateTimePicker3.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
+            this.dateTimePicker3.CalendarTitleForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dateTimePicker3.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker3.Location = new System.Drawing.Point(226, 651);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(188, 39);
+            this.dateTimePicker3.TabIndex = 159;
+            // 
+            // label46
+            // 
+            this.label46.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label46.ForeColor = System.Drawing.Color.Navy;
+            this.label46.Location = new System.Drawing.Point(31, 717);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(182, 31);
+            this.label46.TabIndex = 158;
+            this.label46.Text = "Expiration date";
+            // 
+            // label47
+            // 
+            this.label47.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label47.AutoSize = true;
+            this.label47.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label47.ForeColor = System.Drawing.Color.Navy;
+            this.label47.Location = new System.Drawing.Point(31, 658);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(119, 31);
+            this.label47.TabIndex = 157;
+            this.label47.Text = "Start date";
+            // 
+            // button4
+            // 
+            this.button4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button4.Location = new System.Drawing.Point(1023, 709);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(127, 53);
+            this.button4.TabIndex = 106;
+            this.button4.Text = "Renew";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            dataGridViewCellStyle51.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle51;
+            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle52.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle52.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle52.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle52.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle52.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle52.SelectionForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle52.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle52;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle53.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle53.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle53.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle53.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle53.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle53.SelectionForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle53.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle53;
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridView1.Location = new System.Drawing.Point(386, 94);
+            this.dataGridView1.Name = "dataGridView1";
+            dataGridViewCellStyle54.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle54.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle54.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle54.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle54.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle54.SelectionForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle54.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle54;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle55.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle55.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle55;
+            this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(533, 171);
+            this.dataGridView1.TabIndex = 155;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox3.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox3.Location = new System.Drawing.Point(183, 51);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(39, 35);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 153;
+            this.pictureBox3.TabStop = false;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox9.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textBox9.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox9.ForeColor = System.Drawing.Color.DarkGreen;
+            this.textBox9.Location = new System.Drawing.Point(17, 49);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.PasswordChar = '*';
+            this.textBox9.Size = new System.Drawing.Size(208, 39);
+            this.textBox9.TabIndex = 154;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AllowUserToResizeColumns = false;
+            this.dataGridView2.AllowUserToResizeRows = false;
+            dataGridViewCellStyle56.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle56;
+            this.dataGridView2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle57.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle57.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle57.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle57.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle57.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle57.SelectionForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle57.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle57;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle58.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle58.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle58.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle58.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle58.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle58.SelectionForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle58.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle58;
+            this.dataGridView2.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridView2.Location = new System.Drawing.Point(17, 94);
+            this.dataGridView2.Name = "dataGridView2";
+            dataGridViewCellStyle59.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle59.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle59.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle59.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle59.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle59.SelectionForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle59.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle59;
+            this.dataGridView2.RowHeadersVisible = false;
+            this.dataGridView2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle60.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle60.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle60;
+            this.dataGridView2.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(363, 276);
+            this.dataGridView2.TabIndex = 87;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupBox1.Controls.Add(this.button7);
+            this.groupBox1.Controls.Add(this.numericUpDown1);
+            this.groupBox1.Controls.Add(this.button6);
+            this.groupBox1.Controls.Add(this.dateTimePicker2);
+            this.groupBox1.Controls.Add(this.dateTimePicker3);
+            this.groupBox1.Controls.Add(this.label48);
+            this.groupBox1.Controls.Add(this.label46);
+            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.label47);
+            this.groupBox1.Controls.Add(this.label35);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.label36);
+            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.label37);
+            this.groupBox1.Controls.Add(this.pictureBox2);
+            this.groupBox1.Controls.Add(this.label38);
+            this.groupBox1.Controls.Add(this.label39);
+            this.groupBox1.Controls.Add(this.label40);
+            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.label41);
+            this.groupBox1.Controls.Add(this.panel1);
+            this.groupBox1.Controls.Add(this.label42);
+            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.label43);
+            this.groupBox1.Controls.Add(this.label44);
+            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.label45);
+            this.groupBox1.Controls.Add(this.textBox6);
+            this.groupBox1.Controls.Add(this.textBox7);
+            this.groupBox1.Controls.Add(this.textBox8);
+            this.groupBox1.Font = new System.Drawing.Font("Sitka Display", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.Navy;
+            this.groupBox1.Location = new System.Drawing.Point(22, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(903, 827);
+            this.groupBox1.TabIndex = 105;
+            this.groupBox1.TabStop = false;
+            // 
+            // label35
+            // 
+            this.label35.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.ForeColor = System.Drawing.Color.Navy;
+            this.label35.Location = new System.Drawing.Point(31, 451);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(67, 31);
+            this.label35.TabIndex = 83;
+            this.label35.Text = "Note";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.Navy;
+            this.textBox1.Location = new System.Drawing.Point(37, 491);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(493, 94);
+            this.textBox1.TabIndex = 84;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.ForeColor = System.Drawing.Color.Navy;
+            this.textBox2.Location = new System.Drawing.Point(582, 451);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(237, 44);
+            this.textBox2.TabIndex = 82;
+            // 
+            // label36
+            // 
+            this.label36.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.ForeColor = System.Drawing.Color.Navy;
+            this.label36.Location = new System.Drawing.Point(582, 411);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(139, 31);
+            this.label36.TabIndex = 81;
+            this.label36.Text = "ID Member";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.textBox3.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.ForeColor = System.Drawing.Color.Navy;
+            this.textBox3.Location = new System.Drawing.Point(582, 541);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(237, 44);
+            this.textBox3.TabIndex = 80;
+            // 
+            // label37
+            // 
+            this.label37.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.ForeColor = System.Drawing.Color.Navy;
+            this.label37.Location = new System.Drawing.Point(582, 502);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(117, 31);
+            this.label37.TabIndex = 79;
+            this.label37.Text = "Password";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(567, 75);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(296, 322);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 78;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label38
+            // 
+            this.label38.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.ForeColor = System.Drawing.Color.Navy;
+            this.label38.Location = new System.Drawing.Point(549, 36);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(84, 31);
+            this.label38.TabIndex = 78;
+            this.label38.Text = "Avatar";
+            // 
+            // label39
+            // 
+            this.label39.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.ForeColor = System.Drawing.Color.Navy;
+            this.label39.Location = new System.Drawing.Point(289, 134);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(94, 31);
+            this.label39.TabIndex = 77;
+            this.label39.Text = "Gender";
+            // 
+            // label40
+            // 
+            this.label40.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.ForeColor = System.Drawing.Color.Navy;
+            this.label40.Location = new System.Drawing.Point(288, 231);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(123, 31);
+            this.label40.TabIndex = 76;
+            this.label40.Text = "Birth date";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textBox4.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.ForeColor = System.Drawing.Color.Navy;
+            this.textBox4.Location = new System.Drawing.Point(37, 75);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(237, 44);
+            this.textBox4.TabIndex = 65;
+            // 
+            // label41
+            // 
+            this.label41.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.ForeColor = System.Drawing.Color.Navy;
+            this.label41.Location = new System.Drawing.Point(31, 36);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(128, 31);
+            this.label41.TabIndex = 61;
+            this.label41.Text = "First name";
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel1.Controls.Add(this.radioButton1);
+            this.panel1.Controls.Add(this.radioButton2);
+            this.panel1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Location = new System.Drawing.Point(283, 173);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(247, 44);
+            this.panel1.TabIndex = 68;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton1.ForeColor = System.Drawing.Color.Navy;
+            this.radioButton1.Location = new System.Drawing.Point(116, 4);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(117, 37);
+            this.radioButton1.TabIndex = 8;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Female";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton2.ForeColor = System.Drawing.Color.Navy;
+            this.radioButton2.Location = new System.Drawing.Point(12, 3);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(92, 37);
+            this.radioButton2.TabIndex = 7;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Male";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // label42
+            // 
+            this.label42.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label42.ForeColor = System.Drawing.Color.Navy;
+            this.label42.Location = new System.Drawing.Point(31, 232);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(173, 31);
+            this.label42.TabIndex = 57;
+            this.label42.Text = "Phone number";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dateTimePicker1.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
+            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dateTimePicker1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(295, 271);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(185, 44);
+            this.dateTimePicker1.TabIndex = 67;
+            // 
+            // label43
+            // 
+            this.label43.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.ForeColor = System.Drawing.Color.Navy;
+            this.label43.Location = new System.Drawing.Point(31, 329);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(102, 31);
+            this.label43.TabIndex = 58;
+            this.label43.Text = "Address";
+            // 
+            // label44
+            // 
+            this.label44.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label44.ForeColor = System.Drawing.Color.Navy;
+            this.label44.Location = new System.Drawing.Point(31, 134);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(101, 31);
+            this.label44.TabIndex = 60;
+            this.label44.Text = "ID Card";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox5.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textBox5.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.ForeColor = System.Drawing.Color.Navy;
+            this.textBox5.Location = new System.Drawing.Point(37, 369);
+            this.textBox5.Multiline = true;
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(492, 74);
+            this.textBox5.TabIndex = 71;
+            // 
+            // label45
+            // 
+            this.label45.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label45.ForeColor = System.Drawing.Color.Navy;
+            this.label45.Location = new System.Drawing.Point(289, 36);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(125, 31);
+            this.label45.TabIndex = 63;
+            this.label45.Text = "Last name";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox6.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textBox6.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.ForeColor = System.Drawing.Color.Navy;
+            this.textBox6.Location = new System.Drawing.Point(37, 271);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(237, 44);
+            this.textBox6.TabIndex = 70;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox7.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textBox7.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox7.ForeColor = System.Drawing.Color.Navy;
+            this.textBox7.Location = new System.Drawing.Point(295, 75);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(235, 44);
+            this.textBox7.TabIndex = 66;
+            // 
+            // textBox8
+            // 
+            this.textBox8.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox8.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textBox8.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox8.ForeColor = System.Drawing.Color.Navy;
+            this.textBox8.Location = new System.Drawing.Point(37, 173);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(237, 44);
+            this.textBox8.TabIndex = 72;
             // 
             // tabDetailsContract
             // 
@@ -2658,674 +3333,53 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // groupBoxRenew
-            // 
-            this.groupBoxRenew.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.groupBoxRenew.Controls.Add(this.btInvoiceRenew);
-            this.groupBoxRenew.Controls.Add(this.dgvRenew);
-            this.groupBoxRenew.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxRenew.ForeColor = System.Drawing.Color.Navy;
-            this.groupBoxRenew.Location = new System.Drawing.Point(34, 538);
-            this.groupBoxRenew.Name = "groupBoxRenew";
-            this.groupBoxRenew.Size = new System.Drawing.Size(936, 354);
-            this.groupBoxRenew.TabIndex = 163;
-            this.groupBoxRenew.TabStop = false;
-            // 
-            // btInvoiceRenew
-            // 
-            this.btInvoiceRenew.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btInvoiceRenew.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btInvoiceRenew.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btInvoiceRenew.BackgroundImage")));
-            this.btInvoiceRenew.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btInvoiceRenew.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btInvoiceRenew.FlatAppearance.BorderSize = 3;
-            this.btInvoiceRenew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btInvoiceRenew.Font = new System.Drawing.Font("Sitka Subheading", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btInvoiceRenew.ForeColor = System.Drawing.Color.White;
-            this.btInvoiceRenew.Location = new System.Drawing.Point(856, 284);
-            this.btInvoiceRenew.Name = "btInvoiceRenew";
-            this.btInvoiceRenew.Size = new System.Drawing.Size(65, 56);
-            this.btInvoiceRenew.TabIndex = 159;
-            this.btInvoiceRenew.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btInvoiceRenew.UseVisualStyleBackColor = false;
-            // 
-            // dgvRenew
-            // 
-            this.dgvRenew.AllowUserToAddRows = false;
-            this.dgvRenew.AllowUserToDeleteRows = false;
-            this.dgvRenew.AllowUserToResizeColumns = false;
-            this.dgvRenew.AllowUserToResizeRows = false;
-            dataGridViewCellStyle46.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRenew.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle46;
-            this.dgvRenew.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dgvRenew.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvRenew.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle47.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle47.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle47.ForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle47.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle47.SelectionForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle47.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRenew.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle47;
-            this.dgvRenew.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle48.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle48.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle48.ForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle48.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle48.SelectionForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle48.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRenew.DefaultCellStyle = dataGridViewCellStyle48;
-            this.dgvRenew.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvRenew.Location = new System.Drawing.Point(19, 38);
-            this.dgvRenew.Name = "dgvRenew";
-            dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle49.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle49.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle49.ForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle49.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle49.SelectionForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle49.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRenew.RowHeadersDefaultCellStyle = dataGridViewCellStyle49;
-            this.dgvRenew.RowHeadersVisible = false;
-            this.dgvRenew.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle50.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRenew.RowsDefaultCellStyle = dataGridViewCellStyle50;
-            this.dgvRenew.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRenew.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dgvRenew.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRenew.Size = new System.Drawing.Size(902, 240);
-            this.dgvRenew.TabIndex = 158;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.comboBox1.Font = new System.Drawing.Font("UVN Anh Hai", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Renew",
-            "New package"});
-            this.comboBox1.Location = new System.Drawing.Point(233, 40);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(149, 40);
-            this.comboBox1.TabIndex = 163;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.groupBox1.Controls.Add(this.label35);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.label36);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.label37);
-            this.groupBox1.Controls.Add(this.pictureBox2);
-            this.groupBox1.Controls.Add(this.label38);
-            this.groupBox1.Controls.Add(this.label39);
-            this.groupBox1.Controls.Add(this.label40);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.label41);
-            this.groupBox1.Controls.Add(this.panel1);
-            this.groupBox1.Controls.Add(this.label42);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.label43);
-            this.groupBox1.Controls.Add(this.label44);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.label45);
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.textBox7);
-            this.groupBox1.Controls.Add(this.textBox8);
-            this.groupBox1.Font = new System.Drawing.Font("Sitka Display", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.Navy;
-            this.groupBox1.Location = new System.Drawing.Point(22, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(903, 599);
-            this.groupBox1.TabIndex = 105;
-            this.groupBox1.TabStop = false;
-            // 
-            // label35
-            // 
-            this.label35.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.ForeColor = System.Drawing.Color.Navy;
-            this.label35.Location = new System.Drawing.Point(31, 451);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(67, 31);
-            this.label35.TabIndex = 83;
-            this.label35.Text = "Note";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.Navy;
-            this.textBox1.Location = new System.Drawing.Point(37, 491);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(493, 94);
-            this.textBox1.TabIndex = 84;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.Navy;
-            this.textBox2.Location = new System.Drawing.Point(596, 441);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(237, 44);
-            this.textBox2.TabIndex = 82;
-            // 
-            // label36
-            // 
-            this.label36.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.ForeColor = System.Drawing.Color.Navy;
-            this.label36.Location = new System.Drawing.Point(596, 401);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(219, 31);
-            this.label36.TabIndex = 81;
-            this.label36.Text = "UserID (username)";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.textBox3.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.Color.Navy;
-            this.textBox3.Location = new System.Drawing.Point(596, 541);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(237, 44);
-            this.textBox3.TabIndex = 80;
-            // 
-            // label37
-            // 
-            this.label37.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.ForeColor = System.Drawing.Color.Navy;
-            this.label37.Location = new System.Drawing.Point(596, 502);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(117, 31);
-            this.label37.TabIndex = 79;
-            this.label37.Text = "Password";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(567, 75);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(296, 322);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 78;
-            this.pictureBox2.TabStop = false;
-            // 
-            // label38
-            // 
-            this.label38.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.ForeColor = System.Drawing.Color.Navy;
-            this.label38.Location = new System.Drawing.Point(549, 36);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(84, 31);
-            this.label38.TabIndex = 78;
-            this.label38.Text = "Avatar";
-            // 
-            // label39
-            // 
-            this.label39.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label39.AutoSize = true;
-            this.label39.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.ForeColor = System.Drawing.Color.Navy;
-            this.label39.Location = new System.Drawing.Point(289, 134);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(94, 31);
-            this.label39.TabIndex = 77;
-            this.label39.Text = "Gender";
-            // 
-            // label40
-            // 
-            this.label40.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label40.AutoSize = true;
-            this.label40.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.ForeColor = System.Drawing.Color.Navy;
-            this.label40.Location = new System.Drawing.Point(288, 231);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(123, 31);
-            this.label40.TabIndex = 76;
-            this.label40.Text = "Birth date";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox4.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.ForeColor = System.Drawing.Color.Navy;
-            this.textBox4.Location = new System.Drawing.Point(37, 75);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(237, 44);
-            this.textBox4.TabIndex = 65;
-            // 
-            // label41
-            // 
-            this.label41.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.ForeColor = System.Drawing.Color.Navy;
-            this.label41.Location = new System.Drawing.Point(31, 36);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(128, 31);
-            this.label41.TabIndex = 61;
-            this.label41.Text = "First name";
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel1.Controls.Add(this.radioButton1);
-            this.panel1.Controls.Add(this.radioButton2);
-            this.panel1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(283, 173);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(247, 44);
-            this.panel1.TabIndex = 68;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.ForeColor = System.Drawing.Color.Navy;
-            this.radioButton1.Location = new System.Drawing.Point(116, 4);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(117, 37);
-            this.radioButton1.TabIndex = 8;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Female";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.ForeColor = System.Drawing.Color.Navy;
-            this.radioButton2.Location = new System.Drawing.Point(12, 3);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(92, 37);
-            this.radioButton2.TabIndex = 7;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Male";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // label42
-            // 
-            this.label42.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.ForeColor = System.Drawing.Color.Navy;
-            this.label42.Location = new System.Drawing.Point(31, 232);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(173, 31);
-            this.label42.TabIndex = 57;
-            this.label42.Text = "Phone number";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dateTimePicker1.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
-            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dateTimePicker1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(295, 271);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(185, 44);
-            this.dateTimePicker1.TabIndex = 67;
-            // 
-            // label43
-            // 
-            this.label43.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label43.AutoSize = true;
-            this.label43.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.ForeColor = System.Drawing.Color.Navy;
-            this.label43.Location = new System.Drawing.Point(31, 329);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(102, 31);
-            this.label43.TabIndex = 58;
-            this.label43.Text = "Address";
-            // 
-            // label44
-            // 
-            this.label44.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label44.AutoSize = true;
-            this.label44.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label44.ForeColor = System.Drawing.Color.Navy;
-            this.label44.Location = new System.Drawing.Point(31, 134);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(101, 31);
-            this.label44.TabIndex = 60;
-            this.label44.Text = "ID Card";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox5.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox5.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.ForeColor = System.Drawing.Color.Navy;
-            this.textBox5.Location = new System.Drawing.Point(37, 369);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(492, 74);
-            this.textBox5.TabIndex = 71;
-            // 
-            // label45
-            // 
-            this.label45.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label45.AutoSize = true;
-            this.label45.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label45.ForeColor = System.Drawing.Color.Navy;
-            this.label45.Location = new System.Drawing.Point(289, 36);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(125, 31);
-            this.label45.TabIndex = 63;
-            this.label45.Text = "Last name";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox6.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox6.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.ForeColor = System.Drawing.Color.Navy;
-            this.textBox6.Location = new System.Drawing.Point(37, 271);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(237, 44);
-            this.textBox6.TabIndex = 70;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox7.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox7.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.ForeColor = System.Drawing.Color.Navy;
-            this.textBox7.Location = new System.Drawing.Point(295, 75);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(235, 44);
-            this.textBox7.TabIndex = 66;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox8.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox8.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.ForeColor = System.Drawing.Color.Navy;
-            this.textBox8.Location = new System.Drawing.Point(37, 173);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(237, 44);
-            this.textBox8.TabIndex = 72;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.groupBox2.Controls.Add(this.comboBox2);
-            this.groupBox2.Controls.Add(this.numericUpDown1);
-            this.groupBox2.Controls.Add(this.dateTimePicker2);
-            this.groupBox2.Controls.Add(this.dateTimePicker3);
-            this.groupBox2.Controls.Add(this.label46);
-            this.groupBox2.Controls.Add(this.label47);
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Controls.Add(this.pictureBox3);
-            this.groupBox2.Controls.Add(this.textBox9);
-            this.groupBox2.Controls.Add(this.dataGridView2);
-            this.groupBox2.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.Color.Navy;
-            this.groupBox2.Location = new System.Drawing.Point(941, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(936, 388);
-            this.groupBox2.TabIndex = 106;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Checking";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.comboBox2.Font = new System.Drawing.Font("UVN Anh Hai", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Renew",
-            "New package"});
-            this.comboBox2.Location = new System.Drawing.Point(231, 49);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(149, 40);
-            this.comboBox2.TabIndex = 163;
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.numericUpDown1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.ForeColor = System.Drawing.Color.Black;
-            this.numericUpDown1.Location = new System.Drawing.Point(782, 271);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(83, 39);
-            this.numericUpDown1.TabIndex = 162;
-            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numericUpDown1.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.CalendarFont = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.CalendarForeColor = System.Drawing.Color.ForestGreen;
-            this.dateTimePicker2.CalendarMonthBackground = System.Drawing.Color.Transparent;
-            this.dateTimePicker2.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
-            this.dateTimePicker2.CalendarTitleForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dateTimePicker2.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(579, 331);
-            this.dateTimePicker2.MinDate = new System.DateTime(2016, 1, 1, 0, 0, 0, 0);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(188, 39);
-            this.dateTimePicker2.TabIndex = 160;
-            // 
-            // dateTimePicker3
-            // 
-            this.dateTimePicker3.CalendarFont = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker3.CalendarForeColor = System.Drawing.Color.ForestGreen;
-            this.dateTimePicker3.CalendarMonthBackground = System.Drawing.Color.Transparent;
-            this.dateTimePicker3.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
-            this.dateTimePicker3.CalendarTitleForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dateTimePicker3.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(579, 271);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(188, 39);
-            this.dateTimePicker3.TabIndex = 159;
-            // 
-            // label46
-            // 
-            this.label46.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label46.AutoSize = true;
-            this.label46.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label46.ForeColor = System.Drawing.Color.Navy;
-            this.label46.Location = new System.Drawing.Point(391, 337);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(182, 31);
-            this.label46.TabIndex = 158;
-            this.label46.Text = "Expiration date";
-            // 
-            // label47
-            // 
-            this.label47.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label47.AutoSize = true;
-            this.label47.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label47.ForeColor = System.Drawing.Color.Navy;
-            this.label47.Location = new System.Drawing.Point(391, 278);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(119, 31);
-            this.label47.TabIndex = 157;
-            this.label47.Text = "Start date";
-            // 
-            // button4
-            // 
-            this.button4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button4.Location = new System.Drawing.Point(782, 317);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(127, 53);
-            this.button4.TabIndex = 106;
-            this.button4.Text = "Renew";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle51.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle51;
-            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle52.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle52.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle52.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle52.ForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle52.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle52.SelectionForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle52.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle52;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle53.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle53.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle53.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle53.ForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle53.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle53.SelectionForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle53.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle53;
-            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView1.Location = new System.Drawing.Point(386, 94);
-            this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle54.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle54.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle54.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle54.ForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle54.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle54.SelectionForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle54.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle54;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle55.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle55.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle55;
-            this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(533, 171);
-            this.dataGridView1.TabIndex = 155;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox3.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox3.Location = new System.Drawing.Point(183, 51);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(39, 35);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 153;
-            this.pictureBox3.TabStop = false;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox9.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox9.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.ForeColor = System.Drawing.Color.DarkGreen;
-            this.textBox9.Location = new System.Drawing.Point(17, 49);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.PasswordChar = '*';
-            this.textBox9.Size = new System.Drawing.Size(208, 39);
-            this.textBox9.TabIndex = 154;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AllowUserToResizeColumns = false;
-            this.dataGridView2.AllowUserToResizeRows = false;
-            dataGridViewCellStyle56.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle56;
-            this.dataGridView2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle57.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle57.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle57.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle57.ForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle57.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle57.SelectionForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle57.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle57;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle58.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle58.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle58.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle58.ForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle58.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle58.SelectionForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle58.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle58;
-            this.dataGridView2.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView2.Location = new System.Drawing.Point(17, 94);
-            this.dataGridView2.Name = "dataGridView2";
-            dataGridViewCellStyle59.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle59.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle59.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle59.ForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle59.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle59.SelectionForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle59.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle59;
-            this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle60.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle60.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle60;
-            this.dataGridView2.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(363, 276);
-            this.dataGridView2.TabIndex = 87;
+            // label48
+            // 
+            this.label48.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label48.AutoSize = true;
+            this.label48.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label48.ForeColor = System.Drawing.Color.Navy;
+            this.label48.Location = new System.Drawing.Point(22, 597);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(869, 31);
+            this.label48.TabIndex = 164;
+            this.label48.Text = "---------------------------------------------------------------------------------" +
+    "--------------";
+            // 
+            // button6
+            // 
+            this.button6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button6.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button6.FlatAppearance.BorderSize = 3;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Sitka Subheading", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.Location = new System.Drawing.Point(808, 711);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(69, 57);
+            this.button6.TabIndex = 165;
+            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button6.UseVisualStyleBackColor = false;
+            // 
+            // button7
+            // 
+            this.button7.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button7.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
+            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button7.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button7.FlatAppearance.BorderSize = 3;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Sitka Subheading", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.ForeColor = System.Drawing.Color.White;
+            this.button7.Location = new System.Drawing.Point(808, 638);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(69, 61);
+            this.button7.TabIndex = 166;
+            this.button7.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
@@ -3390,24 +3444,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchContract)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchMember)).EndInit();
-            this.tabPackage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pTTagDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eMPLOYEEBindingSource)).EndInit();
-            this.panelChat.ResumeLayout(false);
-            this.panelChat.PerformLayout();
             this.groupBoxRenew.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRenew)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.tabPackage.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pTTagDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eMPLOYEEBindingSource)).EndInit();
+            this.panelChat.ResumeLayout(false);
+            this.panelChat.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3618,5 +3672,8 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.TextBox textBox9;
         public System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Label label48;
     }
 }
