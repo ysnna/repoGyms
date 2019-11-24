@@ -193,6 +193,11 @@
             this.label33 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.dgvNewContract = new System.Windows.Forms.DataGridView();
+            this.idPTDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idPackageDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateStartDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDischargeDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numericNew = new System.Windows.Forms.NumericUpDown();
             this.dateEndNew = new System.Windows.Forms.DateTimePicker();
             this.dateStartNew = new System.Windows.Forms.DateTimePicker();
@@ -228,6 +233,11 @@
             this.groupBoxRenew = new System.Windows.Forms.GroupBox();
             this.btInvoiceRenew = new System.Windows.Forms.Button();
             this.dgvRenew = new System.Windows.Forms.DataGridView();
+            this.idPTDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idPackageDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateStartDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDischargeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPackage = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -563,7 +573,7 @@
             this.dgvServicePack.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvServicePack.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvServicePack.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvServicePack.Size = new System.Drawing.Size(1912, 1071);
+            this.dgvServicePack.Size = new System.Drawing.Size(1912, 1266);
             this.dgvServicePack.TabIndex = 103;
             // 
             // tabManage
@@ -1684,7 +1694,7 @@
             this.groupBoxNewContract.Controls.Add(this.pictureBox1);
             this.groupBoxNewContract.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxNewContract.ForeColor = System.Drawing.Color.Navy;
-            this.groupBoxNewContract.Location = new System.Drawing.Point(976, 32);
+            this.groupBoxNewContract.Location = new System.Drawing.Point(962, 29);
             this.groupBoxNewContract.Name = "groupBoxNewContract";
             this.groupBoxNewContract.Size = new System.Drawing.Size(919, 860);
             this.groupBoxNewContract.TabIndex = 104;
@@ -1708,6 +1718,7 @@
             this.btAddNewPackage.Text = "Add package";
             this.btAddNewPackage.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btAddNewPackage.UseVisualStyleBackColor = false;
+            this.btAddNewPackage.Click += new System.EventHandler(this.btAddNewPackage_Click);
             // 
             // btInvoiceNewContract
             // 
@@ -1726,6 +1737,7 @@
             this.btInvoiceNewContract.TabIndex = 163;
             this.btInvoiceNewContract.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btInvoiceNewContract.UseVisualStyleBackColor = false;
+            this.btInvoiceNewContract.Click += new System.EventHandler(this.btInvoiceNewContract_Click);
             // 
             // txtIsMember
             // 
@@ -1782,6 +1794,7 @@
             dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvNewContract.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
             this.dgvNewContract.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dgvNewContract.AutoGenerateColumns = false;
             this.dgvNewContract.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvNewContract.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1793,6 +1806,13 @@
             dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvNewContract.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
             this.dgvNewContract.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNewContract.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idPTDataGridViewTextBoxColumn2,
+            this.idPackageDataGridViewTextBoxColumn2,
+            this.dateStartDataGridViewTextBoxColumn2,
+            this.dateDischargeDataGridViewTextBoxColumn2,
+            this.statusDataGridViewTextBoxColumn2});
+            this.dgvNewContract.DataSource = this.listContractBindingSource;
             dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             dataGridViewCellStyle23.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1822,6 +1842,42 @@
             this.dgvNewContract.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvNewContract.Size = new System.Drawing.Size(893, 159);
             this.dgvNewContract.TabIndex = 158;
+            this.dgvNewContract.DoubleClick += new System.EventHandler(this.dgvNewContract_DoubleClick);
+            // 
+            // idPTDataGridViewTextBoxColumn2
+            // 
+            this.idPTDataGridViewTextBoxColumn2.DataPropertyName = "idPT";
+            this.idPTDataGridViewTextBoxColumn2.HeaderText = "ID PT";
+            this.idPTDataGridViewTextBoxColumn2.Name = "idPTDataGridViewTextBoxColumn2";
+            this.idPTDataGridViewTextBoxColumn2.Width = 104;
+            // 
+            // idPackageDataGridViewTextBoxColumn2
+            // 
+            this.idPackageDataGridViewTextBoxColumn2.DataPropertyName = "idPackage";
+            this.idPackageDataGridViewTextBoxColumn2.HeaderText = "ID Package";
+            this.idPackageDataGridViewTextBoxColumn2.Name = "idPackageDataGridViewTextBoxColumn2";
+            this.idPackageDataGridViewTextBoxColumn2.Width = 161;
+            // 
+            // dateStartDataGridViewTextBoxColumn2
+            // 
+            this.dateStartDataGridViewTextBoxColumn2.DataPropertyName = "dateStart";
+            this.dateStartDataGridViewTextBoxColumn2.HeaderText = "Date Start";
+            this.dateStartDataGridViewTextBoxColumn2.Name = "dateStartDataGridViewTextBoxColumn2";
+            this.dateStartDataGridViewTextBoxColumn2.Width = 149;
+            // 
+            // dateDischargeDataGridViewTextBoxColumn2
+            // 
+            this.dateDischargeDataGridViewTextBoxColumn2.DataPropertyName = "dateDischarge";
+            this.dateDischargeDataGridViewTextBoxColumn2.HeaderText = "Date Expiration";
+            this.dateDischargeDataGridViewTextBoxColumn2.Name = "dateDischargeDataGridViewTextBoxColumn2";
+            this.dateDischargeDataGridViewTextBoxColumn2.Width = 212;
+            // 
+            // statusDataGridViewTextBoxColumn2
+            // 
+            this.statusDataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.statusDataGridViewTextBoxColumn2.DataPropertyName = "status";
+            this.statusDataGridViewTextBoxColumn2.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn2.Name = "statusDataGridViewTextBoxColumn2";
             // 
             // numericNew
             // 
@@ -1848,6 +1904,7 @@
             0,
             0,
             0});
+            this.numericNew.ValueChanged += new System.EventHandler(this.numericNew_ValueChanged);
             // 
             // dateEndNew
             // 
@@ -1875,6 +1932,7 @@
             this.dateStartNew.Name = "dateStartNew";
             this.dateStartNew.Size = new System.Drawing.Size(188, 39);
             this.dateStartNew.TabIndex = 155;
+            this.dateStartNew.ValueChanged += new System.EventHandler(this.dateStartNew_ValueChanged);
             // 
             // label27
             // 
@@ -2033,6 +2091,7 @@
             this.dgvPTNewContract.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPTNewContract.Size = new System.Drawing.Size(420, 361);
             this.dgvPTNewContract.TabIndex = 87;
+            this.dgvPTNewContract.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPTNewContract_CellClick);
             // 
             // txtIDPackageNewContract
             // 
@@ -2102,6 +2161,7 @@
             this.dgvPackageNewContract.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPackageNewContract.Size = new System.Drawing.Size(424, 361);
             this.dgvPackageNewContract.TabIndex = 80;
+            this.dgvPackageNewContract.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPackageNewContract_CellClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -2166,7 +2226,7 @@
             this.groupBoxCheckMember.Controls.Add(this.dgvSearchMember);
             this.groupBoxCheckMember.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxCheckMember.ForeColor = System.Drawing.Color.Navy;
-            this.groupBoxCheckMember.Location = new System.Drawing.Point(34, 32);
+            this.groupBoxCheckMember.Location = new System.Drawing.Point(20, 29);
             this.groupBoxCheckMember.Name = "groupBoxCheckMember";
             this.groupBoxCheckMember.Size = new System.Drawing.Size(936, 514);
             this.groupBoxCheckMember.TabIndex = 103;
@@ -2181,10 +2241,11 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Renew",
             "New package"});
-            this.comboBox1.Location = new System.Drawing.Point(233, 40);
+            this.comboBox1.Location = new System.Drawing.Point(388, 40);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(149, 40);
+            this.comboBox1.Size = new System.Drawing.Size(276, 40);
             this.comboBox1.TabIndex = 163;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // numericRenew
             // 
@@ -2211,6 +2272,7 @@
             0,
             0,
             0});
+            this.numericRenew.ValueChanged += new System.EventHandler(this.numericRenew_ValueChanged);
             // 
             // dateEndRenew
             // 
@@ -2240,6 +2302,7 @@
             this.dateStartRenew.Name = "dateStartRenew";
             this.dateStartRenew.Size = new System.Drawing.Size(188, 39);
             this.dateStartRenew.TabIndex = 159;
+            this.dateStartRenew.ValueChanged += new System.EventHandler(this.dateStartRenew_ValueChanged);
             // 
             // label31
             // 
@@ -2281,6 +2344,7 @@
             this.btAddRenew.Text = "Renew";
             this.btAddRenew.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btAddRenew.UseVisualStyleBackColor = false;
+            this.btAddRenew.Click += new System.EventHandler(this.btAddRenew_Click);
             // 
             // dgvSearchContract
             // 
@@ -2311,7 +2375,7 @@
             dataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvSearchContract.DefaultCellStyle = dataGridViewCellStyle38;
             this.dgvSearchContract.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvSearchContract.Location = new System.Drawing.Point(388, 92);
+            this.dgvSearchContract.Location = new System.Drawing.Point(388, 85);
             this.dgvSearchContract.Name = "dgvSearchContract";
             dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle39.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -2329,8 +2393,9 @@
             this.dgvSearchContract.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvSearchContract.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvSearchContract.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSearchContract.Size = new System.Drawing.Size(533, 291);
+            this.dgvSearchContract.Size = new System.Drawing.Size(533, 298);
             this.dgvSearchContract.TabIndex = 155;
+            this.dgvSearchContract.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSearchContract_CellClick);
             // 
             // btSearch
             // 
@@ -2353,9 +2418,9 @@
             this.txtSearchContract.ForeColor = System.Drawing.Color.DarkGreen;
             this.txtSearchContract.Location = new System.Drawing.Point(19, 40);
             this.txtSearchContract.Name = "txtSearchContract";
-            this.txtSearchContract.PasswordChar = '*';
             this.txtSearchContract.Size = new System.Drawing.Size(208, 39);
             this.txtSearchContract.TabIndex = 154;
+            this.txtSearchContract.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearchContract_KeyUp);
             // 
             // dgvSearchMember
             // 
@@ -2406,6 +2471,7 @@
             this.dgvSearchMember.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSearchMember.Size = new System.Drawing.Size(363, 408);
             this.dgvSearchMember.TabIndex = 87;
+            this.dgvSearchMember.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSearchMember_CellClick);
             // 
             // groupBoxRenew
             // 
@@ -2414,7 +2480,7 @@
             this.groupBoxRenew.Controls.Add(this.dgvRenew);
             this.groupBoxRenew.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxRenew.ForeColor = System.Drawing.Color.Navy;
-            this.groupBoxRenew.Location = new System.Drawing.Point(34, 538);
+            this.groupBoxRenew.Location = new System.Drawing.Point(20, 535);
             this.groupBoxRenew.Name = "groupBoxRenew";
             this.groupBoxRenew.Size = new System.Drawing.Size(936, 354);
             this.groupBoxRenew.TabIndex = 163;
@@ -2437,6 +2503,7 @@
             this.btInvoiceRenew.TabIndex = 159;
             this.btInvoiceRenew.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btInvoiceRenew.UseVisualStyleBackColor = false;
+            this.btInvoiceRenew.Click += new System.EventHandler(this.btInvoiceRenew_Click);
             // 
             // dgvRenew
             // 
@@ -2447,6 +2514,7 @@
             dataGridViewCellStyle46.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvRenew.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle46;
             this.dgvRenew.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dgvRenew.AutoGenerateColumns = false;
             this.dgvRenew.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvRenew.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -2458,6 +2526,13 @@
             dataGridViewCellStyle47.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvRenew.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle47;
             this.dgvRenew.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRenew.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idPTDataGridViewTextBoxColumn1,
+            this.idPackageDataGridViewTextBoxColumn1,
+            this.dateStartDataGridViewTextBoxColumn1,
+            this.dateDischargeDataGridViewTextBoxColumn1,
+            this.statusDataGridViewTextBoxColumn1});
+            this.dgvRenew.DataSource = this.listContractBindingSource;
             dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle48.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             dataGridViewCellStyle48.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2487,6 +2562,42 @@
             this.dgvRenew.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRenew.Size = new System.Drawing.Size(902, 240);
             this.dgvRenew.TabIndex = 158;
+            this.dgvRenew.DoubleClick += new System.EventHandler(this.dgvRenew_DoubleClick);
+            // 
+            // idPTDataGridViewTextBoxColumn1
+            // 
+            this.idPTDataGridViewTextBoxColumn1.DataPropertyName = "idPT";
+            this.idPTDataGridViewTextBoxColumn1.HeaderText = "ID PT";
+            this.idPTDataGridViewTextBoxColumn1.Name = "idPTDataGridViewTextBoxColumn1";
+            this.idPTDataGridViewTextBoxColumn1.Width = 116;
+            // 
+            // idPackageDataGridViewTextBoxColumn1
+            // 
+            this.idPackageDataGridViewTextBoxColumn1.DataPropertyName = "idPackage";
+            this.idPackageDataGridViewTextBoxColumn1.HeaderText = "ID Package";
+            this.idPackageDataGridViewTextBoxColumn1.Name = "idPackageDataGridViewTextBoxColumn1";
+            this.idPackageDataGridViewTextBoxColumn1.Width = 173;
+            // 
+            // dateStartDataGridViewTextBoxColumn1
+            // 
+            this.dateStartDataGridViewTextBoxColumn1.DataPropertyName = "dateStart";
+            this.dateStartDataGridViewTextBoxColumn1.HeaderText = "Date Start";
+            this.dateStartDataGridViewTextBoxColumn1.Name = "dateStartDataGridViewTextBoxColumn1";
+            this.dateStartDataGridViewTextBoxColumn1.Width = 158;
+            // 
+            // dateDischargeDataGridViewTextBoxColumn1
+            // 
+            this.dateDischargeDataGridViewTextBoxColumn1.DataPropertyName = "dateDischarge";
+            this.dateDischargeDataGridViewTextBoxColumn1.HeaderText = "Date Expiration";
+            this.dateDischargeDataGridViewTextBoxColumn1.Name = "dateDischargeDataGridViewTextBoxColumn1";
+            this.dateDischargeDataGridViewTextBoxColumn1.Width = 227;
+            // 
+            // statusDataGridViewTextBoxColumn1
+            // 
+            this.statusDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.statusDataGridViewTextBoxColumn1.DataPropertyName = "status";
+            this.statusDataGridViewTextBoxColumn1.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn1.Name = "statusDataGridViewTextBoxColumn1";
             // 
             // tabPackage
             // 
@@ -3677,5 +3788,15 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idPTDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idPackageDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateStartDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDischargeDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idPTDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idPackageDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateStartDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDischargeDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn1;
     }
 }
