@@ -8,10 +8,14 @@ namespace slnGym.DataObject
 {
     class ListContract
     {
-        public int idPT { set; get; } 
+        public string idPT { set; get; } 
         public int idPackage { set; get; }
-        public string dateStart { set; get; }
-        public int dateDischarge { set; get; }
-        public decimal status { set; get; }
+        public string namePackage { get; set; }
+        public DateTime dateStart { set; get; }
+        public DateTime dateDischarge { set; get; }
+        public string status { set; get; }
+        public int period { get; set; }
+        public decimal price { get; set; }
+        
     }
 }

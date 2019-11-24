@@ -31,6 +31,7 @@ namespace slnGym.User_Control
         DETAILRECEIPT detailsReceipt = new DETAILRECEIPT();
         STATISTICS statistic = new STATISTICS();
         ContractBL bl = new ContractBL();
+
         // ============Load & Event
         private void btCancel_Click(object sender, EventArgs e)
         {
@@ -112,8 +113,6 @@ namespace slnGym.User_Control
             btPrintInvoice.Enabled = false;
             lbStatus.Text = "Non-payment";
             cbDiscount.Text = "VND";
-            txtSubTotal.Text = (GETContract.Price * GETContract.Period).ToString();
-            txtTotal.Text = txtSubTotal.Text;
             loadProducts();
             loadData();
             loadDetails();
@@ -218,12 +217,14 @@ namespace slnGym.User_Control
                 }
             }
         }
+
         public bool IsNumeric(string val) => double.TryParse(val, out double result);
+
         public void createMember()
         {
             #region Create account
             //try..catch
-            if (log.insertLogin(GETMember.IDMember, GETMember.Password, "5","Blocked"))
+            if (log.insertLogin(GETMember.IDMember, GETMember.Password, "5", "Blocked"))
             {
                 MessageBox.Show("Added account", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -333,30 +334,60 @@ namespace slnGym.User_Control
             dgvCheckInvoice.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dgvCheckInvoice.AllowUserToAddRows = false;
             dgvCheckInvoice.EditMode = DataGridViewEditMode.EditProgrammatically;
-
-            listReceipt.idBrand = 1;
-            listReceipt.idService = GETContract.IDPackage;
-            listReceipt.name = GETContract.NamePackage;
-            listReceipt.period = GETContract.Period;
-            listReceipt.price = GETContract.Price * GETContract.Period;
-            listReceiptBindingSource.Add(listReceipt);
+            int lenght = GETContract.listContracts.Count;
+            decimal total = 0;
+            for (int i = 0; i < lenght; i++)
+            {
+                listReceipt = new ListReceipt();
+                listReceipt.idBrand = 1;
+                listReceipt.idService = GETContract.listContracts[i].idPackage;
+                listReceipt.name = GETContract.listContracts[i].namePackage;
+                listReceipt.period = GETContract.listContracts[i].period;
+                listReceipt.price = GETContract.listContracts[i].price * GETContract.listContracts[i].period;
+                listReceiptBindingSource.Add(listReceipt);
+                total += listReceipt.price;
+            }
+            txtSubTotal.Text = total.ToString();
+            txtTotal.Text = txtSubTotal.Text;
         }
 
         private void dgvCheckInvoice_DoubleClick(object sender, EventArgs e)
         {
             int index = dgvCheckInvoice.CurrentCell.RowIndex;
-            //listReceipt = new ListReceipt();
-            //listReceipt.idBrand = 2;
-            //listReceipt.idService = Convert.ToInt32(dgvViewProduct.Rows[index].Cells[0].Value);
-            //listReceipt.name = dgvViewProduct.Rows[index].Cells[1].Value.ToString();
-            //listReceipt.period = 1;
-            //listReceipt.price = Convert.ToDecimal(dgvViewProduct.Rows[index].Cells[2].Value);
-            txtOthers.Text = (Convert.ToDecimal(txtOthers.Text.Trim()) - Convert.ToDecimal(dgvCheckInvoice.Rows[index].Cells[4].Value)).ToString();
-            //listReceiptBindingSource.Remove(listReceipt);
+            int getIDgroup = Convert.ToInt32(dgvCheckInvoice.Rows[index].Cells[0].Value);
+            if (getIDgroup == 1)
+            {
+                txtSubTotal.Text = (Convert.ToDecimal(txtSubTotal.Text.Trim()) - Convert.ToDecimal(dgvCheckInvoice.Rows[index].Cells[4].Value)).ToString();
+            }
+            else if (getIDgroup == 2)
+            {
+                txtOthers.Text = (Convert.ToDecimal(txtOthers.Text.Trim()) - Convert.ToDecimal(dgvCheckInvoice.Rows[index].Cells[4].Value)).ToString();
+            }
+            else
+            {
+
+            }
+
             if (dgvCheckInvoice.SelectedRows.Count > 0)
             {
                 dgvCheckInvoice.Rows.RemoveAt(dgvCheckInvoice.CurrentRow.Index);
             }
+        }
+
+        private void txtSubTotal_TextChanged(object sender, EventArgs e)
+        {
+            if (txtDiscount.Text != "0")
+            {
+                if (cbDiscount.Text == "%")
+                {
+                    txtTotal.Text = (Convert.ToDecimal(txtOthers.Text.Trim()) + Convert.ToDecimal(txtSubTotal.Text.Trim()) + (100 * Convert.ToDecimal(txtDiscount.Text.Trim()))).ToString();
+                }
+                else
+                {
+                    txtTotal.Text = (Convert.ToDecimal(txtOthers.Text.Trim()) + Convert.ToDecimal(txtSubTotal.Text.Trim()) + Convert.ToDecimal(txtDiscount.Text.Trim())).ToString();
+                }
+            }
+            else txtTotal.Text = (Convert.ToDecimal(txtOthers.Text.Trim()) + Convert.ToDecimal(txtSubTotal.Text.Trim())).ToString();
         }
     }
 }

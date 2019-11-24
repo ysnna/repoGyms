@@ -87,6 +87,7 @@ namespace slnGym.Layer
                 return false;
             }
         }
+
         public bool updateAccpuntMember(string ID, string note)
         {
             SqlCommand cmd = new SqlCommand("update MEMBERS set note=@note where memID=@id", mydb.getConnection);
@@ -188,7 +189,6 @@ namespace slnGym.Layer
         public DataTable getTEMP()
         {
             SqlCommand cmd = new SqlCommand("select *from TEMP", mydb.getConnection);
-     
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -201,6 +201,27 @@ namespace slnGym.Layer
             SqlCommand cmd = new SqlCommand("select memID as 'ID',memFname as 'FName',memLname as 'LName', avatar as 'Avatar', memBDate as 'Birthday'," +
                 "memAddress as 'Address',memGender as 'Female',memPhone as 'Phone',cardID as 'ID card',note as 'Status' from MEMBERS where Concat(memID, memFname, " +
                 "memlname, memaddress) like N'%" + search + "%' ", mydb.getConnection);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            mydb.closeConnection();
+            return dt;
+        }
+
+        public DataTable getRenewMember()
+        {
+            SqlCommand cmd = new SqlCommand("select memID as 'ID',memFname as 'FName',memLname as 'LName' from MEMBERS", mydb.getConnection);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            mydb.closeConnection();
+            return dt;
+        }
+
+        public DataTable searchRenewMember(string search)
+        {
+            SqlCommand cmd = new SqlCommand("select memID as 'ID',memFname as 'FName',memLname as 'LName' from MEMBERS where Concat(memID, memFname, " +
+                "memlname) like N'%" + search + "%' ", mydb.getConnection);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);

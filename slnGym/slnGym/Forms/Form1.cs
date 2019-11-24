@@ -39,6 +39,8 @@ namespace slnGym.Forms
         Layer.RECEIPTs rc = new Layer.RECEIPTs();
         Layer.DETAILCONTRACT dtCont = new Layer.DETAILCONTRACT();
         Layer.AccountBL accountLog = new Layer.AccountBL();
+        ListContract listContract = new ListContract();
+        List<ListContract> getListContract = new List<ListContract>();
         User_Control.AccountEmployeeUC dt = new User_Control.AccountEmployeeUC() { Width = 1912, Height = 905 };
 
         //Event Click & Load
@@ -90,17 +92,20 @@ namespace slnGym.Forms
         private void btResfresh_Click(object sender, EventArgs e)
         {
             RefreshUC();
+            getListContract.Clear();
+            listContractBindingSource.Clear();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(GLOBAL.username!="")
+            if (GLOBAL.username != "")
             {
                 SysLOG.DateLogout = DateTime.Now.ToString();
                 accountLog.updateAccount(SysLOG.UserName, SysLOG.DateLogin, SysLOG.DateLogout, SysLOG.Status);
             }
             this.Close();
         }
+
         private void dgvPT_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int numrow = dgvPT.CurrentCell.RowIndex;
@@ -135,6 +140,8 @@ namespace slnGym.Forms
 
                 createMemberLoad();
                 loadContract();
+                groupBoxNewContract.Visible = false;
+                groupBoxRenew.Visible = false;
             }
             else
             {
@@ -161,12 +168,18 @@ namespace slnGym.Forms
             this.sERVICEPACKTableAdapter.Fill(this.packageDataSet.SERVICEPACK);
             datePickerEnd.Value = datePickerStart.Value.AddMonths(Convert.ToInt32(numericMonth.Value));
             panelChat.Visible = false;
+            //home
             loadMachine();
             loadProduct();
             loadServicePackage();
+            //contract
             loadContract();
             loadDetailsContract();
             loadMembers();
+            //renew
+            loadMemberToRenew();
+            loadPackageToRenew();
+
             //loadStatistic();
             NeedLogin();
             getIP();
@@ -311,8 +324,24 @@ namespace slnGym.Forms
             txtIDContract.Text = conbl.loadIDContract();
             txtIDMember.Text = conbl.loadIDMEMBER();
             txtUserID.Text = txtIDMember.Text;
-
         }
+
+        private void btAdd_Click(object sender, EventArgs e)
+        {
+            loadListContract();
+            listContract = new ListContract();
+            listContract.idPT = txtIDPT.Text;
+            listContract.idPackage = Convert.ToInt32(txtPackage.Text);
+            listContract.namePackage = txtNamePack.Text;
+            listContract.dateStart = Convert.ToDateTime(datePickerStart.Value);
+            listContract.dateDischarge = Convert.ToDateTime(datePickerEnd.Value);
+            listContract.status = numericMonth.Value.ToString() + " Month(s)";
+            listContract.period = Convert.ToInt32(numericMonth.Value);
+            listContract.price = GETContract.Price;
+            getListContract.Add(listContract);
+            listContractBindingSource.Add(listContract);
+        }
+
         public void CreateContract()
         {
             #region Create member
@@ -333,13 +362,14 @@ namespace slnGym.Forms
 
             #region Create Contract
             GETContract.IDContract = txtIDContract.Text;
-            GETContract.IDPT = txtIDPT.Text;
-            GETContract.IDPackage = Convert.ToInt32(txtPackage.Text);
-            GETContract.Start = datePickerStart.Value;
-            GETContract.End = datePickerEnd.Value;
-            TimeSpan time = GETContract.End - GETContract.Start;
-            GETContract.Remain = time.Days.ToString();
-            GETContract.Period = Convert.ToInt32(numericMonth.Value);
+            GETContract.listContracts = getListContract;
+            //GETContract.IDPT = txtIDPT.Text;
+            //GETContract.IDPackage = Convert.ToInt32(txtPackage.Text);
+            //GETContract.Start = datePickerStart.Value;
+            //GETContract.End = datePickerEnd.Value;
+            //TimeSpan time = GETContract.End - GETContract.Start;
+            //GETContract.Remain = time.Days.ToString();
+            //GETContract.Period = Convert.ToInt32(numericMonth.Value);
             #endregion
         }
 
@@ -374,6 +404,14 @@ namespace slnGym.Forms
             dgvPT.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dgvPT.AllowUserToAddRows = false;
             dgvPT.EditMode = DataGridViewEditMode.EditProgrammatically;
+        }
+
+        public void loadListContract()
+        {
+            dgvListContract.RowTemplate.Height = 40;
+            dgvListContract.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgvListContract.AllowUserToAddRows = false;
+            dgvListContract.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
 
         private void dgvPackage_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -416,7 +454,6 @@ namespace slnGym.Forms
             this.Refresh();
         }
 
-
         public void NeedLogin()
         {
             tabControlManager.Enabled = false;
@@ -431,16 +468,6 @@ namespace slnGym.Forms
             loadContract();
         }
 
-        //private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        //{
-        //    if (SysLOG.UserName != "")
-        //    {
-        //        SysLOG.DateLogout = DateTime.Now.ToString();
-        //        accountLog.updateAccount(SysLOG.UserName, SysLOG.DateLogin, SysLOG.DateLogout, SysLOG.Status);
-        //        this.Close();
-        //    }
-        //    this.Close();
-        //}
         bool verif()
         {
             if (txtPackage.Text != null ||
@@ -498,6 +525,7 @@ namespace slnGym.Forms
             //}
             //this.Text = this.Text + " (IPv4: " + GLOBAL.IPV4 + ")";
         }
+
         void Listen()
         {
             string data = (string)socket.Receive();
@@ -549,6 +577,7 @@ namespace slnGym.Forms
             }
             txtMessage.Text = "";
         }
+
         public void serverStart()
         {
             TcpListener listener = new TcpListener(IPAddress.Any, int.Parse(GLOBAL.Port));
@@ -561,6 +590,7 @@ namespace slnGym.Forms
             backgroundWorker1.RunWorkerAsync();
             backgroundWorker2.WorkerSupportsCancellation = true;
         }
+
         public void clientConnect()
         {
             client = new TcpClient();
@@ -635,5 +665,199 @@ namespace slnGym.Forms
             this.Close();
         }
 
+        private void dgvListContract_DoubleClick(object sender, EventArgs e)
+        {
+            int index = dgvListContract.CurrentCell.RowIndex;
+            if (dgvListContract.SelectedRows.Count > 0)
+            {
+                dgvListContract.Rows.RemoveAt(dgvListContract.CurrentRow.Index);
+                getListContract.Remove(listContract);
+            }
+        }
+
+        public void loadDVG(DataGridView dataGridView)
+        {
+            dataGridView.RowTemplate.Height = 40;
+            dataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dataGridView.AllowUserToAddRows = false;
+            dataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
+        }
+
+        public void loadMemberToRenew()
+        {
+            loadDVG(dgvSearchMember);
+            dgvSearchMember.DataSource = mem.getRenewMember();
+        }
+
+        public void loadPackageToRenew()
+        {
+            dgvPackageNewContract.RowTemplate.Height = 40;
+            dgvPackageNewContract.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgvPackageNewContract.AllowUserToAddRows = false;
+            dgvPackageNewContract.EditMode = DataGridViewEditMode.EditProgrammatically;
+        }
+
+        private void txtSearchContract_KeyUp(object sender, KeyEventArgs e)
+        {
+            dgvSearchMember.DataSource = mem.searchRenewMember(txtSearchContract.Text);
+        }
+
+        private void dgvSearchMember_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = dgvSearchMember.CurrentCell.RowIndex;
+            GETMember.IDMember = dgvSearchMember.Rows[index].Cells[0].Value.ToString();
+            txtIsMember.Text = GETMember.IDMember;
+            ContractBL conbl = new ContractBL();
+            txtIsContract.Text = conbl.loadIDContract();
+        }
+
+        private void dgvSearchContract_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvRenew_DoubleClick(object sender, EventArgs e)
+        {
+            int index = dgvRenew.CurrentCell.RowIndex;
+            if (dgvRenew.SelectedRows.Count > 0)
+            {
+                dgvRenew.Rows.RemoveAt(dgvRenew.CurrentRow.Index);
+                getListContract.Remove(listContract);
+            }
+        }
+
+        private void btAddRenew_Click(object sender, EventArgs e)
+        {
+            loadDVG(dgvRenew);
+            //listContract = new ListContract();
+            //listContract.idPT = txtIDPT.Text;
+            //listContract.idPackage = Convert.ToInt32(txtPackage.Text);
+            //listContract.namePackage = txtNamePack.Text;
+            //listContract.dateStart = Convert.ToDateTime(datePickerStart.Value);
+            //listContract.dateDischarge = Convert.ToDateTime(datePickerEnd.Value);
+            //listContract.status = numericMonth.Value.ToString() + " Month(s)";
+            //listContract.period = Convert.ToInt32(numericMonth.Value);
+            //listContract.price = GETContract.Price;
+
+            getListContract.Add(listContract);
+            listContractBindingSource.Add(listContract);
+        }
+
+        private void numericRenew_ValueChanged(object sender, EventArgs e)
+        {
+            dateEndRenew.Value = dateStartRenew.Value.AddMonths(Convert.ToInt32(numericRenew.Value));
+        }
+
+        private void dateStartRenew_ValueChanged(object sender, EventArgs e)
+        {
+            dateEndRenew.Value = dateStartRenew.Value.AddMonths(Convert.ToInt32(numericRenew.Value));
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.Text == "Renew")
+            {
+                groupBoxRenew.Visible = true;
+                groupBoxNewContract.Visible = false;
+            }
+            else
+            {
+                groupBoxNewContract.Visible = true;
+                groupBoxRenew.Visible = false;
+            }
+            getListContract.Clear();
+            listContractBindingSource.Clear();
+        }
+
+        private void btInvoiceRenew_Click(object sender, EventArgs e)
+        {
+            if (GETContract.IDContract == "" || GETMember.IDMember == "")
+            {
+                MessageBox.Show("Please choose a package you want to renew!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                CreateContract();
+                MessageBox.Show("complete");
+                User_Control.ReceiptUC receiptUC = new User_Control.ReceiptUC() { Width = 1912, Height = 905 };
+                this.tabRenew.Controls.Add(receiptUC);
+                receiptUC.BringToFront();
+            }
+        }
+
+        private void dgvPackageNewContract_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dgvPTNewContract.RowTemplate.Height = 40;
+            dgvPTNewContract.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgvPTNewContract.AllowUserToAddRows = false;
+            dgvPTNewContract.EditMode = DataGridViewEditMode.EditProgrammatically;
+
+            int numrow = dgvPackageNewContract.CurrentCell.RowIndex;
+            string tag = dgvPackageNewContract.Rows[numrow].Cells[3].Value.ToString();
+            dgvPTNewContract.DataSource = sv.getNamePTbyPackage(tag);
+            txtIDPackageNewContract.Text = dgvPackageNewContract.Rows[numrow].Cells[0].Value.ToString();
+            txtNamePackageNewContract.Text = dgvPackageNewContract.Rows[numrow].Cells[1].Value.ToString();
+            GETContract.Price = Convert.ToDecimal(dgvPackageNewContract.Rows[numrow].Cells[2].Value);
+            GETContract.NamePackage = txtNamePackageNewContract.Text;
+        }
+
+        private void dgvPTNewContract_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int numrow = dgvPTNewContract.CurrentCell.RowIndex;
+            txtIDPTNewContract.Text = dgvPTNewContract.Rows[numrow].Cells[0].Value.ToString();
+            txtNamePTNewContract.Text = dgvPTNewContract.Rows[numrow].Cells[1].Value.ToString() + ' ' + dgvPTNewContract.Rows[numrow].Cells[2].Value.ToString();
+        }
+
+        private void numericNew_ValueChanged(object sender, EventArgs e)
+        {
+            dateEndNew.Value = dateStartNew.Value.AddMonths(Convert.ToInt32(numericNew.Value));
+        }
+
+        private void dateStartNew_ValueChanged(object sender, EventArgs e)
+        {
+            dateEndNew.Value = dateStartNew.Value.AddMonths(Convert.ToInt32(numericNew.Value));
+        }
+
+        private void btAddNewPackage_Click(object sender, EventArgs e)
+        {
+            loadDVG(dgvNewContract);
+            listContract = new ListContract();
+            listContract.idPT = txtIDPTNewContract.Text;
+            listContract.idPackage = Convert.ToInt32(txtIDPackageNewContract.Text);
+            listContract.namePackage = txtNamePackageNewContract.Text;
+            listContract.dateStart = Convert.ToDateTime(dateStartNew.Value);
+            listContract.dateDischarge = Convert.ToDateTime(dateEndNew.Value);
+            listContract.status = numericNew.Value.ToString() + " Month(s)";
+            listContract.period = Convert.ToInt32(numericNew.Value);
+            listContract.price = GETContract.Price;
+            getListContract.Add(listContract);
+            listContractBindingSource.Add(listContract);
+        }
+
+        private void dgvNewContract_DoubleClick(object sender, EventArgs e)
+        {
+            int index = dgvNewContract.CurrentCell.RowIndex;
+            if (dgvNewContract.SelectedRows.Count > 0)
+            {
+                dgvNewContract.Rows.RemoveAt(dgvNewContract.CurrentRow.Index);
+                getListContract.Remove(listContract);
+            }
+        }
+
+        private void btInvoiceNewContract_Click(object sender, EventArgs e)
+        {
+            if (txtIsContract.Text == "" || txtIsMember.Text == "")
+            {
+                MessageBox.Show("Please fill ID member and ID contract", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                CreateContract();
+                MessageBox.Show("complete");
+                User_Control.ReceiptUC receiptUC = new User_Control.ReceiptUC() { Width = 1912, Height = 905 };
+                this.tabRenew.Controls.Add(receiptUC);
+                receiptUC.BringToFront();
+            }
+        }
     }
 }
