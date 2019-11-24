@@ -2942,7 +2942,7 @@
         VkV9AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="button1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btAdd.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAzQtJREFUeF7s
         /Qd0HNeV/QvPm0+fn+Vv1vztCfbzmidGkUQGiUwCTGACCWYCJAJBgDmLOYskSFEixUxKVPDI1tgeh7HH

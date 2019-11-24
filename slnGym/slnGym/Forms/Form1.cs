@@ -39,6 +39,8 @@ namespace slnGym.Forms
         Layer.RECEIPTs rc = new Layer.RECEIPTs();
         Layer.DETAILCONTRACT dtCont = new Layer.DETAILCONTRACT();
         Layer.AccountBL accountLog = new Layer.AccountBL();
+        ListContract listContract = new ListContract();
+        List<ListContract> getListContract = new List<ListContract>();
         User_Control.AccountEmployeeUC dt = new User_Control.AccountEmployeeUC() { Width = 1912, Height = 905 };
 
         //Event Click & Load
@@ -94,13 +96,14 @@ namespace slnGym.Forms
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(GLOBAL.username!="")
+            if (GLOBAL.username != "")
             {
                 SysLOG.DateLogout = DateTime.Now.ToString();
                 accountLog.updateAccount(SysLOG.UserName, SysLOG.DateLogin, SysLOG.DateLogout, SysLOG.Status);
             }
             this.Close();
         }
+
         private void dgvPT_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int numrow = dgvPT.CurrentCell.RowIndex;
@@ -313,6 +316,23 @@ namespace slnGym.Forms
             txtUserID.Text = txtIDMember.Text;
 
         }
+
+        private void btAdd_Click(object sender, EventArgs e)
+        {
+            loadListContract();
+            listContract = new ListContract();
+            listContract.idPT = txtIDPT.Text;
+            listContract.idPackage = Convert.ToInt32(txtPackage.Text);
+            listContract.namePackage = txtNamePack.Text;
+            listContract.dateStart = Convert.ToDateTime(datePickerStart.Value);
+            listContract.dateDischarge = Convert.ToDateTime(datePickerEnd.Value);
+            listContract.status = numericMonth.Value.ToString() + " Month(s)";
+            listContract.period = Convert.ToInt32(numericMonth.Value);
+            listContract.price = GETContract.Price;
+            getListContract.Add(listContract);
+            listContractBindingSource.Add(listContract);
+        }
+
         public void CreateContract()
         {
             #region Create member
@@ -333,13 +353,14 @@ namespace slnGym.Forms
 
             #region Create Contract
             GETContract.IDContract = txtIDContract.Text;
-            GETContract.IDPT = txtIDPT.Text;
-            GETContract.IDPackage = Convert.ToInt32(txtPackage.Text);
-            GETContract.Start = datePickerStart.Value;
-            GETContract.End = datePickerEnd.Value;
-            TimeSpan time = GETContract.End - GETContract.Start;
-            GETContract.Remain = time.Days.ToString();
-            GETContract.Period = Convert.ToInt32(numericMonth.Value);
+            GETContract.listContracts = getListContract;
+            //GETContract.IDPT = txtIDPT.Text;
+            //GETContract.IDPackage = Convert.ToInt32(txtPackage.Text);
+            //GETContract.Start = datePickerStart.Value;
+            //GETContract.End = datePickerEnd.Value;
+            //TimeSpan time = GETContract.End - GETContract.Start;
+            //GETContract.Remain = time.Days.ToString();
+            //GETContract.Period = Convert.ToInt32(numericMonth.Value);
             #endregion
         }
 
@@ -374,6 +395,14 @@ namespace slnGym.Forms
             dgvPT.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dgvPT.AllowUserToAddRows = false;
             dgvPT.EditMode = DataGridViewEditMode.EditProgrammatically;
+        }
+
+        public void loadListContract()
+        {
+            dgvListContract.RowTemplate.Height = 40;
+            dgvListContract.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgvListContract.AllowUserToAddRows = false;
+            dgvListContract.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
 
         private void dgvPackage_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -416,7 +445,6 @@ namespace slnGym.Forms
             this.Refresh();
         }
 
-
         public void NeedLogin()
         {
             tabControlManager.Enabled = false;
@@ -431,16 +459,6 @@ namespace slnGym.Forms
             loadContract();
         }
 
-        //private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        //{
-        //    if (SysLOG.UserName != "")
-        //    {
-        //        SysLOG.DateLogout = DateTime.Now.ToString();
-        //        accountLog.updateAccount(SysLOG.UserName, SysLOG.DateLogin, SysLOG.DateLogout, SysLOG.Status);
-        //        this.Close();
-        //    }
-        //    this.Close();
-        //}
         bool verif()
         {
             if (txtPackage.Text != null ||
@@ -549,6 +567,7 @@ namespace slnGym.Forms
             }
             txtMessage.Text = "";
         }
+
         public void serverStart()
         {
             TcpListener listener = new TcpListener(IPAddress.Any, int.Parse(GLOBAL.Port));
@@ -561,6 +580,7 @@ namespace slnGym.Forms
             backgroundWorker1.RunWorkerAsync();
             backgroundWorker2.WorkerSupportsCancellation = true;
         }
+
         public void clientConnect()
         {
             client = new TcpClient();
@@ -635,5 +655,14 @@ namespace slnGym.Forms
             this.Close();
         }
 
+        private void dgvListContract_DoubleClick(object sender, EventArgs e)
+        {
+            int index = dgvListContract.CurrentCell.RowIndex;
+            if (dgvListContract.SelectedRows.Count > 0)
+            {
+                dgvListContract.Rows.RemoveAt(dgvListContract.CurrentRow.Index);
+                getListContract.Remove(listContract);
+            }
+        }
     }
 }

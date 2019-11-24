@@ -147,7 +147,7 @@
             this.txtLname = new System.Windows.Forms.TextBox();
             this.txtIDCard = new System.Windows.Forms.TextBox();
             this.groupContracting = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btAdd = new System.Windows.Forms.Button();
             this.numericMonth = new System.Windows.Forms.NumericUpDown();
             this.datePickerEnd = new System.Windows.Forms.DateTimePicker();
             this.datePickerStart = new System.Windows.Forms.DateTimePicker();
@@ -230,18 +230,20 @@
             this.dgvRenew = new System.Windows.Forms.DataGridView();
             this.tabPackage = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.label46 = new System.Windows.Forms.Label();
-            this.label47 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.button6 = new System.Windows.Forms.Button();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label47 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -266,6 +268,7 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.tabDetailsContract = new System.Windows.Forms.TabPage();
             this.tabMember = new System.Windows.Forms.TabPage();
             this.tabAccount = new System.Windows.Forms.TabPage();
@@ -288,9 +291,6 @@
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.tess = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.label48 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.menuStrip.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabHome.SuspendLayout();
@@ -331,11 +331,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvRenew)).BeginInit();
             this.tabPackage.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pTTagDataSet)).BeginInit();
@@ -563,7 +563,7 @@
             this.dgvServicePack.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvServicePack.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvServicePack.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvServicePack.Size = new System.Drawing.Size(1912, 1026);
+            this.dgvServicePack.Size = new System.Drawing.Size(1912, 1071);
             this.dgvServicePack.TabIndex = 103;
             // 
             // tabManage
@@ -665,6 +665,7 @@
             this.dgvListContract.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListContract.Size = new System.Drawing.Size(832, 190);
             this.dgvListContract.TabIndex = 107;
+            this.dgvListContract.DoubleClick += new System.EventHandler(this.dgvListContract_DoubleClick);
             // 
             // idPTDataGridViewTextBoxColumn
             // 
@@ -1068,7 +1069,7 @@
             // 
             this.groupContracting.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupContracting.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.groupContracting.Controls.Add(this.button1);
+            this.groupContracting.Controls.Add(this.btAdd);
             this.groupContracting.Controls.Add(this.numericMonth);
             this.groupContracting.Controls.Add(this.datePickerEnd);
             this.groupContracting.Controls.Add(this.datePickerStart);
@@ -1097,23 +1098,24 @@
             this.groupContracting.TabStop = false;
             this.groupContracting.Text = "Contracting";
             // 
-            // button1
+            // btAdd
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button1.FlatAppearance.BorderSize = 3;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Sitka Subheading", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(735, 400);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(135, 122);
-            this.button1.TabIndex = 152;
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btAdd.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btAdd.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btAdd.BackgroundImage")));
+            this.btAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btAdd.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btAdd.FlatAppearance.BorderSize = 3;
+            this.btAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btAdd.Font = new System.Drawing.Font("Sitka Subheading", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAdd.ForeColor = System.Drawing.Color.White;
+            this.btAdd.Location = new System.Drawing.Point(735, 400);
+            this.btAdd.Name = "btAdd";
+            this.btAdd.Size = new System.Drawing.Size(135, 122);
+            this.btAdd.TabIndex = 152;
+            this.btAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btAdd.UseVisualStyleBackColor = false;
+            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
             // numericMonth
             // 
@@ -2514,115 +2516,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Checking";
             // 
-            // comboBox2
-            // 
-            this.comboBox2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.comboBox2.Font = new System.Drawing.Font("UVN Anh Hai", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Renew",
-            "New package"});
-            this.comboBox2.Location = new System.Drawing.Point(582, 649);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(188, 40);
-            this.comboBox2.TabIndex = 163;
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.numericUpDown1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.ForeColor = System.Drawing.Color.Black;
-            this.numericUpDown1.Location = new System.Drawing.Point(446, 651);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(83, 39);
-            this.numericUpDown1.TabIndex = 162;
-            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numericUpDown1.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.CalendarFont = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.CalendarForeColor = System.Drawing.Color.ForestGreen;
-            this.dateTimePicker2.CalendarMonthBackground = System.Drawing.Color.Transparent;
-            this.dateTimePicker2.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
-            this.dateTimePicker2.CalendarTitleForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dateTimePicker2.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(226, 711);
-            this.dateTimePicker2.MinDate = new System.DateTime(2016, 1, 1, 0, 0, 0, 0);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(188, 39);
-            this.dateTimePicker2.TabIndex = 160;
-            // 
-            // dateTimePicker3
-            // 
-            this.dateTimePicker3.CalendarFont = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker3.CalendarForeColor = System.Drawing.Color.ForestGreen;
-            this.dateTimePicker3.CalendarMonthBackground = System.Drawing.Color.Transparent;
-            this.dateTimePicker3.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
-            this.dateTimePicker3.CalendarTitleForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dateTimePicker3.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(226, 651);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(188, 39);
-            this.dateTimePicker3.TabIndex = 159;
-            // 
-            // label46
-            // 
-            this.label46.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label46.AutoSize = true;
-            this.label46.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label46.ForeColor = System.Drawing.Color.Navy;
-            this.label46.Location = new System.Drawing.Point(31, 717);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(182, 31);
-            this.label46.TabIndex = 158;
-            this.label46.Text = "Expiration date";
-            // 
-            // label47
-            // 
-            this.label47.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label47.AutoSize = true;
-            this.label47.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label47.ForeColor = System.Drawing.Color.Navy;
-            this.label47.Location = new System.Drawing.Point(31, 658);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(119, 31);
-            this.label47.TabIndex = 157;
-            this.label47.Text = "Start date";
-            // 
-            // button4
-            // 
-            this.button4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button4.Location = new System.Drawing.Point(1023, 709);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(127, 53);
-            this.button4.TabIndex = 106;
-            this.button4.Text = "Renew";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button4.UseVisualStyleBackColor = false;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -2789,6 +2682,146 @@
             this.groupBox1.Size = new System.Drawing.Size(903, 827);
             this.groupBox1.TabIndex = 105;
             this.groupBox1.TabStop = false;
+            // 
+            // button7
+            // 
+            this.button7.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button7.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
+            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button7.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button7.FlatAppearance.BorderSize = 3;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Sitka Subheading", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.ForeColor = System.Drawing.Color.White;
+            this.button7.Location = new System.Drawing.Point(808, 638);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(69, 61);
+            this.button7.TabIndex = 166;
+            this.button7.UseVisualStyleBackColor = false;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.numericUpDown1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown1.ForeColor = System.Drawing.Color.Black;
+            this.numericUpDown1.Location = new System.Drawing.Point(446, 651);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(83, 39);
+            this.numericUpDown1.TabIndex = 162;
+            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // button6
+            // 
+            this.button6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button6.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button6.FlatAppearance.BorderSize = 3;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Sitka Subheading", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.Location = new System.Drawing.Point(808, 711);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(69, 57);
+            this.button6.TabIndex = 165;
+            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button6.UseVisualStyleBackColor = false;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.CalendarFont = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker2.CalendarForeColor = System.Drawing.Color.ForestGreen;
+            this.dateTimePicker2.CalendarMonthBackground = System.Drawing.Color.Transparent;
+            this.dateTimePicker2.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
+            this.dateTimePicker2.CalendarTitleForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dateTimePicker2.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.Location = new System.Drawing.Point(226, 711);
+            this.dateTimePicker2.MinDate = new System.DateTime(2016, 1, 1, 0, 0, 0, 0);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(188, 39);
+            this.dateTimePicker2.TabIndex = 160;
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.CalendarFont = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker3.CalendarForeColor = System.Drawing.Color.ForestGreen;
+            this.dateTimePicker3.CalendarMonthBackground = System.Drawing.Color.Transparent;
+            this.dateTimePicker3.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
+            this.dateTimePicker3.CalendarTitleForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dateTimePicker3.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker3.Location = new System.Drawing.Point(226, 651);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(188, 39);
+            this.dateTimePicker3.TabIndex = 159;
+            // 
+            // label48
+            // 
+            this.label48.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label48.AutoSize = true;
+            this.label48.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label48.ForeColor = System.Drawing.Color.Navy;
+            this.label48.Location = new System.Drawing.Point(22, 597);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(869, 31);
+            this.label48.TabIndex = 164;
+            this.label48.Text = "---------------------------------------------------------------------------------" +
+    "--------------";
+            // 
+            // label46
+            // 
+            this.label46.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label46.ForeColor = System.Drawing.Color.Navy;
+            this.label46.Location = new System.Drawing.Point(31, 717);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(182, 31);
+            this.label46.TabIndex = 158;
+            this.label46.Text = "Expiration date";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.comboBox2.Font = new System.Drawing.Font("UVN Anh Hai", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Renew",
+            "New package"});
+            this.comboBox2.Location = new System.Drawing.Point(582, 649);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(188, 40);
+            this.comboBox2.TabIndex = 163;
+            // 
+            // label47
+            // 
+            this.label47.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label47.AutoSize = true;
+            this.label47.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label47.ForeColor = System.Drawing.Color.Navy;
+            this.label47.Location = new System.Drawing.Point(31, 658);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(119, 31);
+            this.label47.TabIndex = 157;
+            this.label47.Text = "Start date";
             // 
             // label35
             // 
@@ -3075,6 +3108,23 @@
             this.textBox8.Size = new System.Drawing.Size(237, 44);
             this.textBox8.TabIndex = 72;
             // 
+            // button4
+            // 
+            this.button4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button4.Location = new System.Drawing.Point(1023, 709);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(127, 53);
+            this.button4.TabIndex = 106;
+            this.button4.Text = "Renew";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button4.UseVisualStyleBackColor = false;
+            // 
             // tabDetailsContract
             // 
             this.tabDetailsContract.Location = new System.Drawing.Point(4, 37);
@@ -3333,54 +3383,6 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // label48
-            // 
-            this.label48.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label48.AutoSize = true;
-            this.label48.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label48.ForeColor = System.Drawing.Color.Navy;
-            this.label48.Location = new System.Drawing.Point(22, 597);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(869, 31);
-            this.label48.TabIndex = 164;
-            this.label48.Text = "---------------------------------------------------------------------------------" +
-    "--------------";
-            // 
-            // button6
-            // 
-            this.button6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button6.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button6.FlatAppearance.BorderSize = 3;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Sitka Subheading", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(808, 711);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(69, 57);
-            this.button6.TabIndex = 165;
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button6.UseVisualStyleBackColor = false;
-            // 
-            // button7
-            // 
-            this.button7.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button7.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button7.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button7.FlatAppearance.BorderSize = 3;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Sitka Subheading", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(808, 638);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(69, 61);
-            this.button7.TabIndex = 166;
-            this.button7.UseVisualStyleBackColor = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3449,12 +3451,12 @@
             this.tabPackage.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -3584,7 +3586,7 @@
         public System.Windows.Forms.DataGridView dgvServicePack;
         private System.Windows.Forms.TabPage tabRenew;
         public System.Windows.Forms.DataGridView dgvListContract;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btAdd;
         private System.Windows.Forms.BindingSource listContractBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idPTDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idPackageDataGridViewTextBoxColumn;

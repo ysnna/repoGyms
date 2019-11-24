@@ -18,5 +18,6 @@ namespace slnGym.DataObject
         public static string IDPT { get; set; }
         public static string NamePT { get; set; }
         public static string Remain { get; set; }
+        public static List<ListContract> listContracts { get; set; }
     }
 }

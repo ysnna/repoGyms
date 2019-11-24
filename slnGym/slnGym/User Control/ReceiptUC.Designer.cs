@@ -697,6 +697,7 @@
             this.txtSubTotal.Size = new System.Drawing.Size(233, 45);
             this.txtSubTotal.TabIndex = 176;
             this.txtSubTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtSubTotal.TextChanged += new System.EventHandler(this.txtSubTotal_TextChanged);
             // 
             // label7
             // 
