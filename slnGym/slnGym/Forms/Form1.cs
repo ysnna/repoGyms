@@ -167,6 +167,8 @@ namespace slnGym.Forms
             // TODO: This line of code loads data into the 'packageDataSet.SERVICEPACK' table. You can move, or remove it, as needed.
             this.sERVICEPACKTableAdapter.Fill(this.packageDataSet.SERVICEPACK);
             datePickerEnd.Value = datePickerStart.Value.AddMonths(Convert.ToInt32(numericMonth.Value));
+            dateEndRenew.Value = dateStartRenew.Value.AddMonths(Convert.ToInt32(numericRenew.Value));
+            dateEndNew.Value = dateStartNew.Value.AddMonths(Convert.ToInt32(numericNew.Value));
             panelChat.Visible = false;
             //home
             loadMachine();
@@ -179,7 +181,6 @@ namespace slnGym.Forms
             //renew
             loadMemberToRenew();
             loadPackageToRenew();
-
             //loadStatistic();
             NeedLogin();
             getIP();
@@ -363,16 +364,8 @@ namespace slnGym.Forms
             #region Create Contract
             GETContract.IDContract = txtIDContract.Text;
             GETContract.listContracts = getListContract;
-            //GETContract.IDPT = txtIDPT.Text;
-            //GETContract.IDPackage = Convert.ToInt32(txtPackage.Text);
-            //GETContract.Start = datePickerStart.Value;
-            //GETContract.End = datePickerEnd.Value;
-            //TimeSpan time = GETContract.End - GETContract.Start;
-            //GETContract.Remain = time.Days.ToString();
-            //GETContract.Period = Convert.ToInt32(numericMonth.Value);
             #endregion
         }
-
 
         public void loadDetailsContract()
         {
@@ -697,6 +690,17 @@ namespace slnGym.Forms
             dgvPackageNewContract.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
 
+        public void getInfoMember()
+        {
+            DataTable dt = mem.getMemberbyID(GETMember.IDMember);
+            GETMember.FName = dt.Rows[0][1].ToString();
+            GETMember.LName = dt.Rows[0][2].ToString();
+            GETMember.Address = dt.Rows[0][5].ToString();
+            GETMember.Gender = Convert.ToInt32(dt.Rows[0][6]);
+            GETMember.Phone = dt.Rows[0][7].ToString();
+            GETMember.Note = dt.Rows[0][9].ToString();
+        }
+
         private void txtSearchContract_KeyUp(object sender, KeyEventArgs e)
         {
             dgvSearchMember.DataSource = mem.searchRenewMember(txtSearchContract.Text);
@@ -709,11 +713,20 @@ namespace slnGym.Forms
             txtIsMember.Text = GETMember.IDMember;
             ContractBL conbl = new ContractBL();
             txtIsContract.Text = conbl.loadIDContract();
+            loadDVG(dgvSearchContract);
+            dgvSearchContract.DataSource = mem.getRenewMemberByID(GETMember.IDMember);
         }
 
         private void dgvSearchContract_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            int index = dgvSearchContract.CurrentCell.RowIndex;
+            GETContract.IDContract = dgvSearchContract.Rows[index].Cells[0].Value.ToString();
+            GETContract.IDPT = dgvSearchContract.Rows[index].Cells[1].Value.ToString();
+            GETContract.IDPackage = Convert.ToInt32(dgvSearchContract.Rows[index].Cells[2].Value);
+            GETContract.NamePackage = dgvSearchContract.Rows[index].Cells[3].Value.ToString();
+            GETContract.Price = Convert.ToDecimal(dgvSearchContract.Rows[index].Cells[6].Value);
+            GETContract.Start = Convert.ToDateTime(dateStartRenew.Value);
+            GETContract.End = Convert.ToDateTime(dateEndRenew.Value);
         }
 
         private void dgvRenew_DoubleClick(object sender, EventArgs e)
@@ -729,16 +742,15 @@ namespace slnGym.Forms
         private void btAddRenew_Click(object sender, EventArgs e)
         {
             loadDVG(dgvRenew);
-            //listContract = new ListContract();
-            //listContract.idPT = txtIDPT.Text;
-            //listContract.idPackage = Convert.ToInt32(txtPackage.Text);
-            //listContract.namePackage = txtNamePack.Text;
-            //listContract.dateStart = Convert.ToDateTime(datePickerStart.Value);
-            //listContract.dateDischarge = Convert.ToDateTime(datePickerEnd.Value);
-            //listContract.status = numericMonth.Value.ToString() + " Month(s)";
-            //listContract.period = Convert.ToInt32(numericMonth.Value);
-            //listContract.price = GETContract.Price;
-
+            listContract = new ListContract();
+            listContract.idPT = GETContract.IDPT;
+            listContract.idPackage = GETContract.IDPackage;
+            listContract.namePackage = GETContract.NamePackage;
+            listContract.dateStart = GETContract.Start;
+            listContract.dateDischarge = GETContract.End;
+            listContract.status = numericRenew.Value.ToString() + " Month(s)";
+            listContract.period = Convert.ToInt32(numericRenew.Value);
+            listContract.price = GETContract.Price;
             getListContract.Add(listContract);
             listContractBindingSource.Add(listContract);
         }
@@ -777,7 +789,8 @@ namespace slnGym.Forms
             }
             else
             {
-                CreateContract();
+                GETContract.listContracts = getListContract;
+                getInfoMember();
                 MessageBox.Show("complete");
                 User_Control.ReceiptUC receiptUC = new User_Control.ReceiptUC() { Width = 1912, Height = 905 };
                 this.tabRenew.Controls.Add(receiptUC);
@@ -830,6 +843,8 @@ namespace slnGym.Forms
             listContract.status = numericNew.Value.ToString() + " Month(s)";
             listContract.period = Convert.ToInt32(numericNew.Value);
             listContract.price = GETContract.Price;
+            GETContract.Start= Convert.ToDateTime(dateStartNew.Value);
+            GETContract.End= Convert.ToDateTime(dateEndNew.Value);
             getListContract.Add(listContract);
             listContractBindingSource.Add(listContract);
         }
@@ -852,7 +867,9 @@ namespace slnGym.Forms
             }
             else
             {
-                CreateContract();
+                GETContract.IDContract = txtIsContract.Text;
+                GETContract.listContracts = getListContract;
+                getInfoMember();
                 MessageBox.Show("complete");
                 User_Control.ReceiptUC receiptUC = new User_Control.ReceiptUC() { Width = 1912, Height = 905 };
                 this.tabRenew.Controls.Add(receiptUC);

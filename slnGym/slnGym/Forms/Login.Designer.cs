@@ -127,6 +127,7 @@
             this.ClientSize = new System.Drawing.Size(691, 432);
             this.Controls.Add(this.groupBoxThongtin);
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.groupBoxThongtin.ResumeLayout(false);
             this.groupBoxThongtin.PerformLayout();

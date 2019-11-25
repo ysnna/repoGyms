@@ -228,5 +228,16 @@ namespace slnGym.Layer
             mydb.closeConnection();
             return dt;
         }
+
+        public DataTable getRenewMemberByID(string search)
+        {
+            SqlCommand cmd = new SqlCommand("select contID as 'ID', ptID as 'PT', servicePACK as 'Package', serviceNAME as 'Name', dateStart as 'Date start', dateDischarge as 'Date Expiration', cost as 'Price', status as 'Status' from CONTRACTS, DETAILSCONTRACT, SERVICEPACK where serviceID=servicePACK and contractID=contID and cusID=@cusID", mydb.getConnection);
+            cmd.Parameters.Add("@cusID", SqlDbType.VarChar).Value = search;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            mydb.closeConnection();
+            return dt;
+        }
     }
 }
