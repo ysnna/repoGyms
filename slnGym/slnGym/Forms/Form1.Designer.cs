@@ -573,7 +573,7 @@
             this.dgvServicePack.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvServicePack.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvServicePack.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvServicePack.Size = new System.Drawing.Size(1912, 1266);
+            this.dgvServicePack.Size = new System.Drawing.Size(1912, 1281);
             this.dgvServicePack.TabIndex = 103;
             // 
             // tabManage
@@ -2391,7 +2391,6 @@
             dataGridViewCellStyle40.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvSearchContract.RowsDefaultCellStyle = dataGridViewCellStyle40;
             this.dgvSearchContract.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSearchContract.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvSearchContract.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSearchContract.Size = new System.Drawing.Size(533, 298);
             this.dgvSearchContract.TabIndex = 155;
