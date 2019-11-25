@@ -19,12 +19,7 @@ namespace slnGym.User_Control
             InitializeComponent();
         }
 
-        private void btShowAll_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvDetailCon_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvDetailsContract_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             displayInfo();
         }
@@ -44,10 +39,10 @@ namespace slnGym.User_Control
         //Hàm xử lý hiển thị phía trên DGV
         public void loadDGV() // Vẽ màu vô đây nha (#FORMAT)
         {
-            dgvDetailCon.RowTemplate.Height = 50;
-            dgvDetailCon.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-            dgvDetailCon.AllowUserToAddRows = false;
-            dgvDetailCon.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dgvDetailsContract.RowTemplate.Height = 50;
+            dgvDetailsContract.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgvDetailsContract.AllowUserToAddRows = false;
+            dgvDetailsContract.EditMode = DataGridViewEditMode.EditProgrammatically;
             //Hàm xử lý Databinding
             DetailContract dc;
             DataTable dt = new DataTable();
@@ -88,7 +83,7 @@ namespace slnGym.User_Control
         string getEmpID()
         {
             string empID = null;
-            empID = dgvDetailCon.CurrentRow.Cells[7].Value.ToString();
+            empID = dgvDetailsContract.CurrentRow.Cells[7].Value.ToString();
             return empID;
         }
 
@@ -105,7 +100,7 @@ namespace slnGym.User_Control
         {
             CONTRACTs con = new CONTRACTs();
             string ptID = null;
-            ptID = dgvDetailCon.CurrentRow.Cells[1].Value.ToString();
+            ptID = dgvDetailsContract.CurrentRow.Cells[1].Value.ToString();
             DataTable dt = new DataTable();
             dt = con.getContractByCUSID(ptID);
             ptID = dt.Rows[0][2].ToString();
@@ -117,7 +112,7 @@ namespace slnGym.User_Control
             CONTRACTs con = new CONTRACTs();
             MEMBERs mem = new MEMBERs();
             string memID = null;
-            memID = dgvDetailCon.CurrentRow.Cells[1].Value.ToString();
+            memID = dgvDetailsContract.CurrentRow.Cells[1].Value.ToString();
             DataTable dt = new DataTable();
             dt = mem.getMemberbyID(memID);
             memName = dt.Rows[0][1].ToString() + " " + dt.Rows[0][2].ToString();
@@ -128,8 +123,8 @@ namespace slnGym.User_Control
             txtNameSeller.Text = disEmpName(getEmpID());
             txtPTname.Text = disEmpName(getPTID());
             lbMemberName.Text = getMemName();
-            lbStartDate.Text = Convert.ToDateTime(dgvDetailCon.CurrentRow.Cells[3].Value).ToShortDateString();
-            lbEndDate.Text = Convert.ToDateTime(dgvDetailCon.CurrentRow.Cells[4].Value).ToShortDateString();
+            lbStartDate.Text = Convert.ToDateTime(dgvDetailsContract.CurrentRow.Cells[3].Value).ToShortDateString();
+            lbEndDate.Text = Convert.ToDateTime(dgvDetailsContract.CurrentRow.Cells[4].Value).ToShortDateString();
             disTime();
         }
 
@@ -146,10 +141,10 @@ namespace slnGym.User_Control
         {
             string searchValue = txtSearch.Text.ToUpper();
 
-            dgvDetailCon.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvDetailsContract.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             try
             {
-                foreach (DataGridViewRow row in dgvDetailCon.Rows)
+                foreach (DataGridViewRow row in dgvDetailsContract.Rows)
                 {
                     if (row.Cells[0].Value.ToString().Equals(searchValue))
                     {
@@ -172,10 +167,10 @@ namespace slnGym.User_Control
         {
             string searchValue = txtSearch.Text.ToLower();
             int flag = 0;
-            dgvDetailCon.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvDetailsContract.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             try
             {
-                foreach (DataGridViewRow row in dgvDetailCon.Rows)
+                foreach (DataGridViewRow row in dgvDetailsContract.Rows)
                 {
                     if (row.Cells[1].Value.ToString().Equals(searchValue))
                     {

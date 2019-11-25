@@ -116,7 +116,6 @@ namespace slnGym.User_Control
             loadProducts();
             loadData();
             loadDetails();
-
         }
 
         private void cbDiscount_TextChanged(object sender, EventArgs e)
@@ -195,11 +194,27 @@ namespace slnGym.User_Control
         {
             lbStatus.Text = "Paid";
             lbTimePayment.Text = DateTime.Now.ToString();
-            createMember();
-            createContract();
-            createReceipt();
-            createDetailsContract();
-            createDetailsReceipt();
+            if (GETContract.ISRENEW == "renew")
+            {
+                createReceipt();
+                createDetailsContract();
+                createDetailsReceipt();
+            }
+            else if (GETContract.ISRENEW == "addnew")
+            {
+                createContract();
+                createReceipt();
+                createDetailsContract();
+                createDetailsReceipt();
+            }
+            else //new
+            {
+                createMember();
+                createContract();
+                createReceipt();
+                createDetailsContract();
+                createDetailsReceipt();
+            }
             MessageBox.Show("Complete");
         }
 
@@ -247,7 +262,7 @@ namespace slnGym.User_Control
         public void createContract()
         {
             //try..catch
-            if (contract.insertCONTRACTS(GETContract.IDContract, GETMember.IDMember, GETContract.IDPT, GETContract.IDPackage, GETContract.Start, GETContract.End, GETContract.Remain))
+            if (contract.insertCONTRACTS(GETContract.IDContract, GETMember.IDMember, GLOBAL.username, ""))
             {
                 MessageBox.Show("Added contract", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -265,11 +280,11 @@ namespace slnGym.User_Control
 
         public void createDetailsContract()
         {
-            if (detailsCont.insertDETAILCON(GETContract.IDContract, GLOBAL.username, txtInvoiceNo.Text.Trim()))
+            int lenght = GETContract.listContracts.Count;
+            for (int i = 0; i < lenght; i++)
             {
-                MessageBox.Show("Added detail contract", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                detailsCont.insertDETAILCON(GETContract.IDContract, txtInvoiceNo.Text.Trim(), GETContract.listContracts[i].idPT, GETContract.listContracts[i].idPackage, GETContract.listContracts[i].dateStart, GETContract.listContracts[i].dateDischarge, GETContract.listContracts[i].status);
             }
-            else MessageBox.Show("Added detail contract fail", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         public void createDetailsReceipt()
@@ -307,17 +322,7 @@ namespace slnGym.User_Control
             txtInvoiceNo.Text = bl.loadInvoiceID();
             txtMemIDInvoide.Text = GETMember.IDMember;
             txtEmployeeID.Text = GLOBAL.username.ToUpper();
-
-            //DataTable dtContract = new DataTable();
-            //dtContract = contract.getContractByCUSID(GETMember.IDMember.Trim());
-            lbStartDate.Text = GETContract.Start.ToString();
-            lbDischarge.Text = GETContract.End.ToString();
             lbDatePayment.Text = DateTime.Now.ToString();
-            TimeSpan time = GETContract.End - GETContract.Start;
-            txtComment.Text = txtComment.Text + time.Days.ToString() + " days";
-
-            //DataTable dtMember = new DataTable();
-            //dtMember = mem.getMemberbyID(GETMember.IDMember.Trim());
             txtNameMember.Text = GETMember.FName + " " + GETMember.LName;
             txtPhoneNumber.Text = GETMember.Phone;
             txtAddress.Text = GETMember.Address;
@@ -363,7 +368,7 @@ namespace slnGym.User_Control
             {
                 txtOthers.Text = (Convert.ToDecimal(txtOthers.Text.Trim()) - Convert.ToDecimal(dgvCheckInvoice.Rows[index].Cells[4].Value)).ToString();
             }
-            else
+            else //gói phổ thông
             {
 
             }
@@ -371,6 +376,7 @@ namespace slnGym.User_Control
             if (dgvCheckInvoice.SelectedRows.Count > 0)
             {
                 dgvCheckInvoice.Rows.RemoveAt(dgvCheckInvoice.CurrentRow.Index);
+                //GETContract.listContracts.RemoveAt(index);
             }
         }
 
@@ -388,6 +394,19 @@ namespace slnGym.User_Control
                 }
             }
             else txtTotal.Text = (Convert.ToDecimal(txtOthers.Text.Trim()) + Convert.ToDecimal(txtSubTotal.Text.Trim())).ToString();
+        }
+
+        private void dgvCheckInvoice_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //int index = dgvCheckInvoice.CurrentCell.RowIndex;
+            //int getIDgroup = Convert.ToInt32(dgvCheckInvoice.Rows[index].Cells[0].Value);
+            //if (index <= GETContract.listContracts.Count)
+            //{
+            //    lbStartDate.Text = GETContract.listContracts[index].dateStart.ToString();
+            //    lbDischarge.Text = GETContract.listContracts[index].dateDischarge.ToString();
+            //    TimeSpan time = GETContract.listContracts[index].dateDischarge - GETContract.listContracts[index].dateStart;
+            //    txtComment.Text = "Total payment due in " + time.Days.ToString() + " days";
+            //}
         }
     }
 }

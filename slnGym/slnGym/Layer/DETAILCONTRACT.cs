@@ -11,13 +11,17 @@ namespace slnGym.Layer
     class DETAILCONTRACT
     {
         MY_DB mydb = new MY_DB();
-        public bool insertDETAILCON(string conID, string empID, string receiptID)
+        public bool insertDETAILCON(string conID, string receiptID, string ptID, int idPackage, DateTime start, DateTime end, string status)
         {
-            SqlCommand cmd = new SqlCommand("insert into DETAILSCONTRACT(contID,employeeID,receiptID)" +
-                "values (@con,@emp,@work)", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("insert into DETAILSCONTRACT(contID,receiptID,ptID,servicePACK,dateStart,dateDischarge,status)" +
+                "values (@con,@rep,@pt,@pack,@start,@end,@status)", mydb.getConnection);
             cmd.Parameters.Add("@con", SqlDbType.VarChar).Value = conID;
-            cmd.Parameters.Add("@emp", SqlDbType.VarChar).Value = empID;
-            cmd.Parameters.Add("@work", SqlDbType.VarChar).Value = receiptID;
+            cmd.Parameters.Add("@rep", SqlDbType.VarChar).Value = receiptID;
+            cmd.Parameters.Add("@pt", SqlDbType.VarChar).Value = ptID;
+            cmd.Parameters.Add("@pack", SqlDbType.Int).Value = idPackage;
+            cmd.Parameters.Add("@start", SqlDbType.DateTime).Value = start;
+            cmd.Parameters.Add("@end", SqlDbType.DateTime).Value = end;
+            cmd.Parameters.Add("@status", SqlDbType.NVarChar).Value = status;
 
             mydb.openConnection();
             if (cmd.ExecuteNonQuery() == 1)
@@ -32,26 +36,6 @@ namespace slnGym.Layer
             }
         }
 
-        public bool updateDETAILCON(string conID, string empID, string workID, int val)
-        {
-            SqlCommand cmd = new SqlCommand("update DETAILSCONTRACT set contID=@con,employeeID=@emp,workID=@work,value=@value", mydb.getConnection);
-            cmd.Parameters.Add("@con", SqlDbType.VarChar).Value = conID;
-            cmd.Parameters.Add("@emp", SqlDbType.VarChar).Value = empID;
-            cmd.Parameters.Add("@work", SqlDbType.VarChar).Value = workID;
-            cmd.Parameters.Add("@value", SqlDbType.Int).Value = val;
-
-            mydb.openConnection();
-            if (cmd.ExecuteNonQuery() == 1)
-            {
-                mydb.closeConnection();
-                return true;
-            }
-            else
-            {
-                mydb.closeConnection();
-                return false;
-            }
-        }
         //Lay thong tin 
         public DataTable getDetailByConID(string conID)
         {
@@ -73,16 +57,7 @@ namespace slnGym.Layer
             da.Fill(dt);
             return dt;
         }
-        public DataTable getDetailByWorkID(string work)
-        {
-            SqlCommand cmd = new SqlCommand("select *from DETAILSCONTRACT where workID=@con", mydb.getConnection);
-            cmd.Parameters.Add("@con", SqlDbType.VarChar).Value = work;
 
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            return dt;
-        }
         public DataTable getDetailConTractDGV()
         {
             SqlCommand cmd = new SqlCommand("select contID,cusID,serviceName, employeeID, dateStart,dateDischarge, B.receiptID, total, ptID from RECEIPT," +

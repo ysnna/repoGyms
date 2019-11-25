@@ -356,6 +356,7 @@
             this.dgvCheckInvoice.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCheckInvoice.Size = new System.Drawing.Size(974, 578);
             this.dgvCheckInvoice.TabIndex = 208;
+            this.dgvCheckInvoice.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCheckInvoice_CellClick);
             this.dgvCheckInvoice.DoubleClick += new System.EventHandler(this.dgvCheckInvoice_DoubleClick);
             // 
             // idBrandDataGridViewTextBoxColumn

@@ -82,6 +82,7 @@ namespace slnGym.Forms
             else
             {
                 CreateContract();
+                GETContract.ISRENEW = "new";
                 MessageBox.Show("complete");
                 User_Control.ReceiptUC receiptUC = new User_Control.ReceiptUC() { Width = 1912, Height = 905 };
                 this.tabNewMember.Controls.Add(receiptUC);
@@ -169,6 +170,7 @@ namespace slnGym.Forms
             datePickerEnd.Value = datePickerStart.Value.AddMonths(Convert.ToInt32(numericMonth.Value));
             dateEndRenew.Value = dateStartRenew.Value.AddMonths(Convert.ToInt32(numericRenew.Value));
             dateEndNew.Value = dateStartNew.Value.AddMonths(Convert.ToInt32(numericNew.Value));
+            dateEndCommon.Value = dateStartCommon.Value.AddMonths(Convert.ToInt32(numericCommon.Value));
             panelChat.Visible = false;
             //home
             loadMachine();
@@ -181,6 +183,8 @@ namespace slnGym.Forms
             //renew
             loadMemberToRenew();
             loadPackageToRenew();
+            //common
+            loadMemberToCommon();
             //loadStatistic();
             NeedLogin();
             getIP();
@@ -771,11 +775,13 @@ namespace slnGym.Forms
             {
                 groupBoxRenew.Visible = true;
                 groupBoxNewContract.Visible = false;
+                GETContract.ISRENEW = "renew";
             }
             else
             {
                 groupBoxNewContract.Visible = true;
                 groupBoxRenew.Visible = false;
+                GETContract.ISRENEW = "addnew";
             }
             getListContract.Clear();
             listContractBindingSource.Clear();
@@ -875,6 +881,69 @@ namespace slnGym.Forms
                 this.tabRenew.Controls.Add(receiptUC);
                 receiptUC.BringToFront();
             }
+        }
+
+        private void txtCheckComon_KeyUp(object sender, KeyEventArgs e)
+        {
+            dgvMemberComon.DataSource = mem.searchRenewMember(txtCheckComon.Text);
+        }
+
+        public void loadMemberToCommon()
+        {
+            loadDVG(dgvMemberComon);
+            dgvMemberComon.DataSource = mem.getRenewMember();
+        }
+
+        private void comboPackage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateStartCommon_ValueChanged(object sender, EventArgs e)
+        {
+            dateEndCommon.Value = dateStartCommon.Value.AddMonths(Convert.ToInt32(numericCommon.Value));
+        }
+
+        private void numericCommon_ValueChanged(object sender, EventArgs e)
+        {
+            dateEndCommon.Value = dateStartCommon.Value.AddMonths(Convert.ToInt32(numericCommon.Value));
+        }
+
+        private void dateEndCommon_ValueChanged(object sender, EventArgs e)
+        {
+            dateStartCommon.Value = dateEndCommon.Value.AddMonths(Convert.ToInt32(numericCommon.Value)*(-1));
+        }
+
+        private void btRefreshCommon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btToInvoiceCommon_Click(object sender, EventArgs e)
+        {
+            //if (txtIsContract.Text == "" || txtIsMember.Text == "")
+            //{
+            //    MessageBox.Show("Please fill information", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
+            //else
+            //{
+            //    GETContract.IDContract = txtIsContract.Text;
+            //    GETContract.listContracts = getListContract;
+            //    getInfoMember();
+            //    MessageBox.Show("complete");
+            //    User_Control.ReceiptUC receiptUC = new User_Control.ReceiptUC() { Width = 1912, Height = 905 };
+            //    this.tabPackage.Controls.Add(receiptUC);
+            //    receiptUC.BringToFront();
+            //}
+        }
+
+        private void dgvMemberComon_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = dgvMemberComon.CurrentCell.RowIndex;
+            GETMember.IDMember = dgvMemberComon.Rows[index].Cells[0].Value.ToString();
+            txtIDMemberCommon.Text = GETMember.IDMember;
+            loadDVG(dgvPackageComon);
+            //dgvPackageComon.DataSource = mem.getRenewMemberByID(GETMember.IDMember);
         }
     }
 }
