@@ -10707,7 +10707,7 @@
         k/A4yHMc/wYf/+c//wcyzWGpmwS7lgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="button7.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btRefreshCommon.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAA9T1JREFUeF7s
         fQmYHFXZtbjjpwYRBRVcAFf4CTM9ISyZBQJJZrony8x0V1X3JIZVAZUtIZMAEv1U3P1cQBFBZCcEkMxM
@@ -11759,7 +11759,7 @@
         /XwE3gR8bEyh36pV/w961E9GVuOVSAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="button6.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btToInvoiceCommon.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAlgAAAJYCAYAAAC+ZpjcAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAA8
         QQAAPEEBhbFi+wAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAARdEVYdFRpdGxl
@@ -13069,7 +13069,7 @@
         Ft9cKZYL/D1OFv9H/CfxW+Jz4jj2nZRSqjrOP/v/tf/w3xPwe4gAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="pictureBox2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="picAvatarCommon.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAyAAAAJYCAYAAACadoJwAAAABGdBTUEAALGPC/xhBQAAaXpJREFUeF7t
         3Ql4VOXZ+P8fJJgECUrAQBDCGggJWwgkZAEGQgLZFzIheybLzJklgbAk7KB2kVZtq3VptbVWra3dW2tr

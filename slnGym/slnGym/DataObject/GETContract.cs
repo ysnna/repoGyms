@@ -19,5 +19,6 @@ namespace slnGym.DataObject
         public static string NamePT { get; set; }
         public static string Remain { get; set; }
         public static List<ListContract> listContracts { get; set; }
+        public static string ISRENEW { get; set; } //renew, addnew, new
     }
 }
