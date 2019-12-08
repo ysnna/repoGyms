@@ -20,7 +20,7 @@ namespace slnGym.Forms
         {
             InitializeComponent();
         }
-        MEMBERs mem = new MEMBERs();
+       
         private void Form2_Load(object sender, EventArgs e)
         {
             loadInfo();
@@ -30,6 +30,7 @@ namespace slnGym.Forms
         {
             this.Close();
         }
+
         public void loadInfo()
         {
             try
@@ -50,6 +51,7 @@ namespace slnGym.Forms
             }
             catch { }
         }
+
         private void picAvaEdit_Click(object sender, EventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
@@ -76,12 +78,10 @@ namespace slnGym.Forms
             string phone = txtPhone.Text;
             string add = txtAddress.Text;
             DateTime Bdate = dateTimePickerBdate.Value;
-            if (mem.insertTemporary(id, Lname, Fname, picture ,Bdate, add, gender, phone, IDcard, note))
-            {
-               // mem.updateMembers(id, Lname, Fname, Bdate, add, gender, phone, IDcard, note);
-                MessageBox.Show("Your request has been sent");
-                this.Close();
-            }
+
+            ///
+            ///insert member
+            ///
         }
     }
 }

@@ -21,24 +21,20 @@ namespace slnGym.User_Control
             InitializeComponent();
         }
 
-        MemberBL mem = new MemberBL();
-        MEMBERs getmem = new MEMBERs();
-
         public object EditMembers { get; private set; }
 
         private void dgvMembers_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             dgvProduct.DataSource = null;
             string inde = dgvMembers.CurrentRow.Cells[0].Value.ToString();
-            
-            //MessageBox.Show(index);
-            mem.LoadDGVPackage(dgvPackage, inde);
-            mem.loadDGVProduct(dgvProduct, inde);
             btEditMachine.Enabled = true;
-
             string index = dgvMembers.CurrentRow.Cells[0].Value.ToString();
             DataTable dt = new DataTable();
-            dt = getmem.getMemberbyID(index);
+            /// <summary> 
+            /// GET LẠI DÒNG DƯỚI
+            /// </summary>
+            
+            //dt = getmem.getMemberbyID(index);
             GetEditMember.FName = dt.Rows[0][1].ToString();
             GetEditMember.LName = dt.Rows[0][2].ToString();
             GetEditMember.Address = dt.Rows[0][5].ToString();
@@ -78,7 +74,11 @@ namespace slnGym.User_Control
         {
             string index = dgvMembers.CurrentRow.Cells[0].Value.ToString();
             DataTable dt = new DataTable();
-            dt = getmem.getMemberbyID(index);
+            /// <summary> 
+            /// GET LẠI DÒNG DƯỚI
+            /// </summary>
+            
+            //dt = getmem.getMemberbyID(index); 
             GetEditMember.FName = dt.Rows[0][1].ToString();
             GetEditMember.LName = dt.Rows[0][2].ToString();
             GetEditMember.Address = dt.Rows[0][5].ToString();
@@ -104,10 +104,6 @@ namespace slnGym.User_Control
             dgvMembers.AllowUserToAddRows = false;
             dgvMembers.EditMode = DataGridViewEditMode.EditProgrammatically;
 
-            MEMBERs mem = new MEMBERs();
-            DataTable dt = new DataTable();
-            dt = mem.getAllMEMBERS();
-            dgvMembers.DataSource = dt;
             DataGridViewImageColumn pic = new DataGridViewImageColumn();
             pic = (DataGridViewImageColumn)dgvMembers.Columns[3];
             pic.ImageLayout = DataGridViewImageCellLayout.Zoom;
@@ -126,7 +122,7 @@ namespace slnGym.User_Control
 
         private void txtSearchMembers_KeyUp(object sender, KeyEventArgs e)
         {
-            dgvMembers.DataSource = getmem.searchEmployee(txtSearchMembers.Text);
+            
         }
     }
 }

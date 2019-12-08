@@ -14,15 +14,12 @@ namespace slnGym.Forms
     public partial class Administration : Form
     {
         Form1 f1 = new Form1();
+
         public Administration(Form1 administration)
         {
             InitializeComponent();
             f1 = administration;
         }
-
-        Layer.SERVICEPACKs sv = new Layer.SERVICEPACKs();
-        Layer.PRODUCTs pd = new Layer.PRODUCTs();
-        Layer.ADDMACHINES mc = new Layer.ADDMACHINES();
 
         int getIDPackage = 0;
         int getIDProduct = 0;
@@ -60,8 +57,6 @@ namespace slnGym.Forms
 
         private void Administration_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'groupWorkDataSet.GROUPWORK' table. You can move, or remove it, as needed.
-            this.gROUPWORKTableAdapter.Fill(this.groupWorkDataSet.GROUPWORK);
             loadAccount();
             loadServicePackage();
             loadServiceProduct();
@@ -79,21 +74,20 @@ namespace slnGym.Forms
 
         private void btSaveMachine_Click(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            dt = mc.getMACHINE();
-            int id = dt.Rows.Count;
+            ///
+            ///
+            ///
             MemoryStream pic = new MemoryStream();
             picAddMachine.Image.Save(pic, picAddMachine.Image.RawFormat);
             if (txtAddNameMachine.Text != null && txtAddDescriptionMachine.Text != null && picAddMachine.Image != null)//try catch image
             {
                 //try..catch
-                if (mc.insertMACHINE(id + 1, txtAddNameMachine.Text, pic, txtAddDescriptionMachine.Text, Convert.ToInt32(numericAddMachine.Value)))
+                if (/* insert được*/ 1 == 2)
                 {
                     loadServiceMachine();
                     MessageBox.Show("Add to database successful", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ClearFormAddMachine();
                     f1.reloadDGVMachines();
-                    
                 }
                 else MessageBox.Show("Invalid information", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -102,15 +96,15 @@ namespace slnGym.Forms
 
         private void btEditMachine_Click(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            dt = mc.getMACHINE();
-            int id = getIDMachine;
+            ///
+            ///
+            ///
             MemoryStream pic = new MemoryStream();
             picAddMachine.Image.Save(pic, picAddMachine.Image.RawFormat);
             if (txtAddNameMachine.Text != null && txtAddDescriptionMachine.Text != null && picAddMachine.Image != null)//try catch image
             {
                 //try..catch
-                if (mc.updateMACHINE(id, txtAddNameMachine.Text, pic, txtAddDescriptionMachine.Text, Convert.ToInt32(numericAddMachine.Value)))
+                if ((/* insert được*/ 1 == 2))
                 {
                     loadServiceMachine();
                     MessageBox.Show("Update to database successful", "Edited..", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -126,8 +120,10 @@ namespace slnGym.Forms
         {
             if (MessageBox.Show("Are you sure you want to delete?", "Notice", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                mc.getMACHINESbyID(getIDMachine);
-                if (mc.deleteMACHINE(getIDMachine))
+                ///
+                ///mc.getMACHINESbyID(getIDMachine);
+                ///
+                if ((/* insert được*/ 1 == 2))
                 {
                     loadServiceMachine();
                     MessageBox.Show("Deleted");
@@ -140,7 +136,9 @@ namespace slnGym.Forms
 
         public void loadServicePackage()
         {
-            dgvPackages.DataSource = sv.getSERVICE();
+            ///
+            ///
+            ///
             dgvPackages.RowTemplate.Height = 70;
             dgvPackages.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dgvPackages.AllowUserToAddRows = false;
@@ -149,7 +147,9 @@ namespace slnGym.Forms
 
         public void loadServiceProduct()
         {
-            dvgProducts.DataSource = pd.getPRODUCTS();
+            ///
+            ///
+            ///
             dvgProducts.RowTemplate.Height = 70;
             dvgProducts.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dvgProducts.AllowUserToAddRows = false;
@@ -161,7 +161,9 @@ namespace slnGym.Forms
 
         public void loadServiceMachine()
         {
-            dgvMachines.DataSource = mc.getMACHINE();
+            ///
+            ///
+            ///
             dgvMachines.RowTemplate.Height = 70;
             dgvMachines.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dgvMachines.AllowUserToAddRows = false;
@@ -232,20 +234,21 @@ namespace slnGym.Forms
 
         private void btSavePackage_Click(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            dt = sv.getSERVICE();
-            int id = dt.Rows.Count;
+            ///
+            ///
+            ///
+
             if (txtAddNamePack.Text != null && txtAddCostPack.Text != null && txtAddDescriptionPack.Text != null)
             {
                 //try..catch
-                if (sv.insertSERVICE(id + 1, txtAddNamePack.Text, Convert.ToDecimal(txtAddCostPack.Text), txtAddDescriptionPack.Text, txtAddTagPT.Text))
+                if ((/* insert được*/ 1 == 2))
                 {
                     loadServicePackage();
                     MessageBox.Show("Add to database successful", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ClearFormAddPackage();
                     f1.reloadDGVPacket();
-                } 
-            else MessageBox.Show("Invalid information", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else MessageBox.Show("Invalid information", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else MessageBox.Show("Please insert information", "Wanning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
@@ -254,8 +257,11 @@ namespace slnGym.Forms
         {
             if (MessageBox.Show("Are you sure you want to delete?", "Notice", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                sv.getSERVICEbyID(getIDPackage);
-                if (sv.deleteSERVICE(getIDPackage))
+                ///
+                ///sv.getSERVICEbyID(getIDPackage);
+                ///
+
+                if ((/* insert được*/ 1 == 2))
                 {
                     loadServicePackage();
                     MessageBox.Show("Deleted");
@@ -268,13 +274,14 @@ namespace slnGym.Forms
 
         private void btEditPackage_Click(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            dt = sv.getSERVICE();
-            int id = getIDPackage;
+            ///
+            ///
+            ///
+
             if (txtAddNamePack.Text != null && txtAddCostPack.Text != null && txtAddDescriptionPack.Text != null)//try catch image
             {
                 //try..catch
-                if (sv.updateSERVICE(id, txtAddNamePack.Text, Convert.ToDecimal(txtAddCostPack.Text), txtAddDescriptionPack.Text, txtAddTagPT.Text))
+                if ((/* insert được*/ 1 == 2))
                 {
                     loadServicePackage();
                     MessageBox.Show("Update to database successful", "Edited..", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -288,15 +295,16 @@ namespace slnGym.Forms
 
         private void btAddProduct_Click(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            dt = pd.getPRODUCTS();
-            int id = dt.Rows.Count;
+            ///
+            ///
+            //
+
             MemoryStream pic = new MemoryStream();
             picAddProduct.Image.Save(pic, picAddProduct.Image.RawFormat);
             if (txtAddNameProduct.Text != null && txtAddCostProduct.Text != null && picAddProduct.Image != null)//try catch image
             {
                 //try..catch
-                if (pd.insertPRODUCTS(id + 1, txtAddNameProduct.Text, Convert.ToDecimal(txtAddCostProduct.Text), pic))
+                if ((/* insert được*/ 1 == 2))
                 {
                     loadServiceProduct();
                     MessageBox.Show("Add to database successful", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -310,15 +318,16 @@ namespace slnGym.Forms
 
         private void btEditProduct_Click(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            dt = pd.getPRODUCTS();
-            int id = getIDProduct;
+            ///
+            ///
+            ///
+
             MemoryStream pic = new MemoryStream();
             picAddProduct.Image.Save(pic, picAddProduct.Image.RawFormat);
             if (txtAddNameProduct.Text != null && txtAddCostProduct.Text != null && picAddProduct.Image != null)//try catch image
             {
                 //try..catch
-                if (pd.updatePRODUCTS(id, pic, txtAddNameProduct.Text, Convert.ToDecimal(txtAddCostProduct.Text)))
+                if ((/* insert được*/ 1 == 2))
                 {
                     loadServiceProduct();
                     MessageBox.Show("Update to database successful", "Edited..", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -334,8 +343,11 @@ namespace slnGym.Forms
         {
             if (MessageBox.Show("Are you sure you want to delete?", "Notice", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                pd.getPRODUCTSbyID(getIDProduct);
-                if (pd.deletePRODUCTS(getIDProduct))
+                /// pd.getPRODUCTSbyID(getIDProduct);
+                /// ///
+                /// 
+
+                if ((/* insert được*/ 1 == 2))
                 {
                     loadServiceProduct();
                     MessageBox.Show("Deleted");
@@ -348,16 +360,17 @@ namespace slnGym.Forms
 
         private void dvgProducts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataTable dt = new DataTable();
-            dt = pd.getPRODUCTS();
+            ///
+            ///
+            ///
             int numrow = dvgProducts.CurrentCell.RowIndex;
             txtAddCostProduct.Text = dvgProducts.Rows[numrow].Cells[3].Value.ToString();
             txtAddNameProduct.Text = dvgProducts.Rows[numrow].Cells[2].Value.ToString();
             getIDProduct = Convert.ToInt32(dvgProducts.Rows[numrow].Cells[0].Value.ToString());
-            byte[] pic;
+            /*byte[] pic;
             pic = (byte[])dt.Rows[numrow]["picture"];
             MemoryStream picedit = new MemoryStream(pic);
-            picAddProduct.Image = Image.FromStream(picedit);
+            picAddProduct.Image = Image.FromStream(picedit);*/
         }
 
         private void picAddProduct_Click(object sender, EventArgs e)
@@ -370,8 +383,9 @@ namespace slnGym.Forms
 
         private void dgvPackages_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataTable dt = new DataTable();
-            dt = sv.getSERVICE();
+            ///
+            ///
+            ///
             int numrow = dgvPackages.CurrentCell.RowIndex;
             txtAddCostPack.Text = dgvPackages.Rows[numrow].Cells[2].Value.ToString();
             txtAddNamePack.Text = dgvPackages.Rows[numrow].Cells[1].Value.ToString();
@@ -382,17 +396,18 @@ namespace slnGym.Forms
 
         private void dgvMachines_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataTable dt = new DataTable();
-            dt = mc.getMACHINE();
+            ///
+            ///
+            ///
             int numrow = dgvMachines.CurrentCell.RowIndex;
             txtAddNameMachine.Text = dgvMachines.Rows[numrow].Cells[1].Value.ToString();
             txtAddDescriptionMachine.Text = dgvMachines.Rows[numrow].Cells[3].Value.ToString();
             numericAddMachine.Value = Convert.ToInt32(dgvMachines.Rows[numrow].Cells[4].Value.ToString());
             getIDMachine = Convert.ToInt32(dgvMachines.Rows[numrow].Cells[0].Value.ToString());
-            byte[] pic;
+            /*byte[] pic;
             pic = (byte[])dt.Rows[numrow]["picture"];
             MemoryStream picedit = new MemoryStream(pic);
-            picAddMachine.Image = Image.FromStream(picedit);
+            picAddMachine.Image = Image.FromStream(picedit);*/
         }
 
         private void btRefreshMachine_Click(object sender, EventArgs e)

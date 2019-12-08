@@ -19,13 +19,9 @@ namespace slnGym.User_Control
             InitializeComponent();
         }
 
-        EMPLOYEEs employee = new EMPLOYEEs();
-        LOGIN log = new LOGIN();
-
         private void btCreate_Click(object sender, EventArgs e)
         {
             NewEmployeeUC dt = new NewEmployeeUC() { Width = 1414, Height = 798 };
-            //dt.reload();
             this.Controls.Add(dt);
             dt.BringToFront();
         }
@@ -43,7 +39,6 @@ namespace slnGym.User_Control
         }
         public void loadEmloyee()
         {
-            dgvListEmployee.DataSource = employee.getAllEMPLOYEE();
             dgvListEmployee.RowTemplate.Height = 40;
             dgvListEmployee.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dgvListEmployee.AllowUserToAddRows = false;
@@ -63,54 +58,21 @@ namespace slnGym.User_Control
             pict = (DataGridViewImageColumn)dgvListEmployee.Columns[2];
             pict.ImageLayout = DataGridViewImageCellLayout.Zoom;
 
-            DataTable dtemp = searchGroup();
-            int index = dgvListEmployee.CurrentCell.RowIndex;
-            string id = dgvListEmployee.Rows[index].Cells[0].Value.ToString();
-            lbUsername.Text = id;
-            //byte[] picPD;
-            //picPD = (byte[])dgvListEmployee.Rows[index].Cells[2].Value;
-            //MemoryStream pic = new MemoryStream(picPD);
-            //this.picAva.Image = Image.FromStream(pic);
-            EMPLOYEEs.EmployeeID = id;
-            string group = dgvListEmployee.Rows[index].Cells[1].Value.ToString();
         }
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
             cbGroupName.Text = "";
-            DataTable dt = searchGroup();
-            dgvListEmployee.DataSource = dt;
         }
 
         private void cbGroupName_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DataTable dt = searchGroup();
-            dgvListEmployee.DataSource = dt;
-        }
-        
-        public DataTable searchGroup()
-        {
-            DataTable dt = new DataTable();
-            if (cbGroupName.Text == "Salesman")
-            {
-                dt = employee.getEmployeebyGroupID("01");
-            }
-            else if(cbGroupName.Text == "Personal Trainer")
-            {
-                dt = employee.getEmployeebyGroupID("02");
-            }
-            else
-            {
-                dt = employee.getAllEMPLOYEE();
-            }
-            picAva.Image = picAva.BackgroundImage;
-            lbUsername.Text = "Username";
-            return dt;
+            
         }
 
         private void txtSearch_KeyUp(object sender, KeyEventArgs e)
         {
-            dgvListEmployee.DataSource = employee.searchEmployee(txtSearch.Text);
+
         }
     }
 }

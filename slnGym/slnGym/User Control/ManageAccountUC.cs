@@ -18,33 +18,35 @@ namespace slnGym.User_Control
             InitializeComponent();
         }
 
-        AccountBL account = new AccountBL();
-        LOGIN log = new LOGIN();
         private void ManageAccountUC_Load(object sender, EventArgs e)
         {
             loadAccountLog();
             loadListAccount();
             btBlock.Enabled = false;
         }
+
         public void loadAccountLog()
         {
-            dgvAccount.DataSource = account.getACCOUNTLog();
+            //dgvAccount.DataSource = account.getACCOUNTLog();
             dgvAccount.RowTemplate.Height = 50;
             dgvAccount.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dgvAccount.AllowUserToAddRows = false;
             dgvAccount.EditMode = DataGridViewEditMode.EditProgrammatically;
             dgvAccount.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
+
         public void loadListAccount()
         {
-            dgvListAccount.DataSource = log.getListAccount();
+            //dgvListAccount.DataSource = log.getListAccount();
             dgvListAccount.RowTemplate.Height = 50;
             dgvListAccount.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dgvListAccount.AllowUserToAddRows = false;
             dgvListAccount.EditMode = DataGridViewEditMode.EditProgrammatically;
             dgvListAccount.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
+
         string getUser;
+
         private void dgvAccount_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btBlock.Enabled = true;

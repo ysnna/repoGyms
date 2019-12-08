@@ -41,12 +41,15 @@ namespace slnGym.User_Control
                 loadEdit();
             }
         }
+
         Layer.EMPLOYEEs emp = new Layer.EMPLOYEEs();
         MY_DB mydb = new MY_DB();
         Layer.LOGIN log = new Layer.LOGIN();
 
         public void reload()
         {
+            #region CLOSE
+            /*
             DataTable dt = new DataTable();
             dt = log.getAccountbyUser(GLOBAL.username);
             txtPass.Text = dt.Rows[0][1].ToString();
@@ -83,7 +86,9 @@ namespace slnGym.User_Control
             {
                 // MessageBox.Show(GLOBAL.username);
             }
-            mydb.closeConnection();
+            mydb.closeConnection();*/
+            #endregion
+
         }
 
         public void loadEdit()
@@ -114,12 +119,15 @@ namespace slnGym.User_Control
             picAvaEdit.Image.Save(pic, picAvaEdit.Image.RawFormat);
             int gender = 1;
             if (radioMaleEdit.Checked == true) gender = 0;
-            if (emp.updateEmployee(GLOBAL.username, pic, Convert.ToDateTime(dateTimePickerBdate.Value), txtAddress.Text, gender, txtPhone.Text))
+
+            #region CLOSE
+            /*if (emp.updateEmployee(GLOBAL.username, pic, Convert.ToDateTime(dateTimePickerBdate.Value), txtAddress.Text, gender, txtPhone.Text))
             {
                 MessageBox.Show("Edited", "Edited..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.reload();
             }
-            else MessageBox.Show("Edited fail", "Edited..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else MessageBox.Show("Edited fail", "Edited..", MessageBoxButtons.OK, MessageBoxIcon.Error);*/
+            #endregion
         }
     }
 }
