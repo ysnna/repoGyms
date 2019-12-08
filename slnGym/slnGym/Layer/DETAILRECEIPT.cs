@@ -11,10 +11,10 @@ namespace slnGym.Layer
     class DETAILRECEIPT
     {
         MY_DB mydb = new MY_DB();
-        public bool insertDETAILRECEIPT(string receipt, DateTime date, int idBrand, int idService, string nameService, int period, decimal total)
+        public bool insertDETAILRECEIPT(string receipt, DateTime date, int idBrand, int idService, string nameService, int period, decimal total, string remain)
         {
-            SqlCommand cmd = new SqlCommand("insert into DETAILSREPCEIPT(receiptID,repceiptDate,idBrand,idService,nameServices,period,total)" +
-                "values (@id,@date,@idBrand,@idSer,@name,@dis,@total)", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("insert into DETAILSREPCEIPT(receiptID,repceiptDate,idBrand,idService,nameServices,period,total,remain)" +
+                "values (@id,@date,@idBrand,@idSer,@name,@dis,@total,@remain)", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = receipt;
             cmd.Parameters.Add("@date", SqlDbType.DateTime).Value = date;
             cmd.Parameters.Add("@idBrand", SqlDbType.Int).Value = idBrand;
@@ -22,6 +22,7 @@ namespace slnGym.Layer
             cmd.Parameters.Add("@name", SqlDbType.NVarChar).Value = nameService;
             cmd.Parameters.Add("@dis", SqlDbType.Int).Value = period;
             cmd.Parameters.Add("@total", SqlDbType.Decimal).Value = total;
+            cmd.Parameters.Add("@remain", SqlDbType.NVarChar).Value = remain;
             mydb.openConnection();
             if (cmd.ExecuteNonQuery() == 1)
             {

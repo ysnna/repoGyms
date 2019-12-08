@@ -169,8 +169,8 @@ namespace slnGym.Layer
         public DataTable getPTbyMemID(string memID)
         {
             SqlCommand cmd = new SqlCommand("select distinct employeeID as 'ID', EMPLOYEE.employeeFName +' '+EMPLOYEE.employeeLName as 'Name' from EMPLOYEE," +
-                " (select ptID from MEMBERS, CONTRACTS " +
-                " where cusID = @ma) as A" +
+                " (select ptID from CONTRACTS, DETAILSCONTRACT" +
+                " where cusID = @ma and contractID = contID) as A" +
                 " where ptID = employeeID", mydb.getConnection);
             cmd.Parameters.Add("@ma", SqlDbType.VarChar).Value = memID;
             SqlDataAdapter da = new SqlDataAdapter(cmd);

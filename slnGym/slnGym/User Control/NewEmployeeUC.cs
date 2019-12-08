@@ -101,7 +101,7 @@ namespace slnGym.User_Control
                 GenderCheck = 1;
             }
         }
-        bool addNewEmp()
+        void addNewEmp()
         {
             EMPLOYEEs emp = new EMPLOYEEs();
             string groupid = txtGroupID.Text.Trim();
@@ -119,7 +119,6 @@ namespace slnGym.User_Control
             else
             {
                 MessageBox.Show("Vui lòng nhập đúng số điện thoại");
-                return false;
             }
 
             int IDcard = 0;
@@ -132,7 +131,7 @@ namespace slnGym.User_Control
                 else
                 {
                     MessageBox.Show("Vui lòng nhập đúng CMND");
-                    return false;
+
                 }
             }
             catch (Exception) { }
@@ -146,23 +145,31 @@ namespace slnGym.User_Control
                 }
                 else
                 {
-                    MessageBox.Show("Vui lòng nhập lương");
-                    return false;
+                    MessageBox.Show("Please insert the Salary");
+
                 }
             }
             catch (Exception) { }
 
             if (verif())
             {
-                MemoryStream picture = new MemoryStream();
-                picAvaEdit.Image.Save(picture, picAvaEdit.Image.RawFormat);
+               
+                    MemoryStream picture = new MemoryStream();
+                try
+                {
+                    picAvaEdit.Image.Save(picture, picAvaEdit.Image.RawFormat);
+                }
+                catch(Exception Exc)
+                {
+                    MessageBox.Show("Please insert an Avatar");
+                }
                 if (emp.insertEmployee(empID, groupid, picture, Fname, Lname, bdate, Add, Gen, phone, sal, IDcard) && addAccount())
-                    MessageBox.Show("okokokoko");
+                    MessageBox.Show("New Employee has been Created!");
                 else
                     MessageBox.Show("Please insert information!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return true;
+              
             }
-            return false;
+            
         } // Insert nhan vien moi
         bool addAccount() // insert empID thanh Account
         {
@@ -187,16 +194,19 @@ namespace slnGym.User_Control
 
         bool verif()
         {
-            if ((txtAddress.Text.Trim() == "")
-                || (txtFname.Text.Trim() == "")
-                || (txtIDCard.Text.Trim() == "")
-                || (txtLname.Text.Trim() == "")
-                || (txtPhone.Text.Trim() == "")
-               || (txtSalary.Text.Trim() == "" || (picAvaEdit.Image == null)))
+            if (txtAddress.Text.Trim() == ""
+                || txtFname.Text.Trim() == ""
+                || txtIDCard.Text.Trim() == ""
+                || txtLname.Text.Trim() == ""
+                || txtPhone.Text.Trim() == ""
+               || txtSalary.Text.Trim() == ""  )
                 return false;
             return true;
         }
 
-       
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

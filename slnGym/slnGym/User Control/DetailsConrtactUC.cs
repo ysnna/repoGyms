@@ -22,8 +22,23 @@ namespace slnGym.User_Control
         private void dgvDetailsContract_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             displayInfo();
+            disTime();
+            
         }
+        private void dgvContracts_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string index = dgvContracts.CurrentRow.Cells[0].Value.ToString();
+            designDGV(dgvDetailsContract);
+            loadDGVDetails(index);
+            //TimeSpan Day = DateTime.Now - dgvDetailsContract.CurrentRow.Cells[].Value;
+            //if (Day.Days > 0)
+            //{
+            //   .State = "Còn hạn";
+            //}
+            //else dc.State = "Hết hạn";
+            
 
+        }
         private void DetailsConrtactUC_Load(object sender, EventArgs e)
         {
             loadDGV();
@@ -31,59 +46,14 @@ namespace slnGym.User_Control
 
         private void txtSearch_KeyUp(object sender, KeyEventArgs e)
         {
-            if (!searchMemID())
-            {
-                searchConID();
-            }
+         
         }
         //Hàm xử lý hiển thị phía trên DGV
-        public void loadDGV() // Vẽ màu vô đây nha (#FORMAT)
-        {
-            dgvDetailsContract.RowTemplate.Height = 50;
-            dgvDetailsContract.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-            dgvDetailsContract.AllowUserToAddRows = false;
-            dgvDetailsContract.EditMode = DataGridViewEditMode.EditProgrammatically;
-            //Hàm xử lý Databinding
-            DetailContract dc;
-            DataTable dt = new DataTable();
-            DETAILCONTRACT db = new DETAILCONTRACT();
-            dt = db.getDetailConTractDGV();
-            int i = 0;
-            while (i < dt.Rows.Count)
-            {
-                dc = new DetailContract();
-                dc.ConID = dt.Rows[i][0].ToString();
-                dc.servicePackName = dt.Rows[i][2].ToString();
-                dc.DateStart = Convert.ToDateTime(dt.Rows[i][4]);
-                dc.DateEnd = Convert.ToDateTime(dt.Rows[i][5]);
-                dc.IDreceipt = dt.Rows[i][6].ToString();
-                dc.price = Convert.ToDecimal(dt.Rows[i][7]);
-                dc.ID_Mem = dt.Rows[i][1].ToString();
-                dc.EmpID = dt.Rows[i][3].ToString();
-                TimeSpan time = DateTime.Now - dc.DateEnd;
-                if (time.Days < 0)
-                {
-                    dc.State = "CÒN HẠN";
-                    //DataGridView row = dgvDetailCon.Rows[i];
-                    //dgvDetailCon.Rows.Cells[4].Style.BackColor = Color.Tomato;
-                }
-                else dc.State = "HẾT HẠN";
-                dc.oldnew = "null";
-                try
-                {
-                    detailContractBindingSource.Add(dc);
-                }
-                catch
-                {
-
-                }
-                i++;
-            }
-        }
+       
         string getEmpID()
         {
             string empID = null;
-            empID = dgvDetailsContract.CurrentRow.Cells[7].Value.ToString();
+            empID = dgvContracts.CurrentRow.Cells[3].Value.ToString();
             return empID;
         }
 
@@ -96,23 +66,13 @@ namespace slnGym.User_Control
             empName = dt.Rows[0][3].ToString() + " " + dt.Rows[0][4].ToString();
             return empName;
         }
-        string getPTID()
-        {
-            CONTRACTs con = new CONTRACTs();
-            string ptID = null;
-            ptID = dgvDetailsContract.CurrentRow.Cells[1].Value.ToString();
-            DataTable dt = new DataTable();
-            dt = con.getContractByCUSID(ptID);
-            ptID = dt.Rows[0][2].ToString();
-            return ptID;
-        }
+   
         string getMemName()
         {
             string memName = null;
-            CONTRACTs con = new CONTRACTs();
             MEMBERs mem = new MEMBERs();
             string memID = null;
-            memID = dgvDetailsContract.CurrentRow.Cells[1].Value.ToString();
+            memID = dgvContracts.CurrentRow.Cells[1].Value.ToString();
             DataTable dt = new DataTable();
             dt = mem.getMemberbyID(memID);
             memName = dt.Rows[0][1].ToString() + " " + dt.Rows[0][2].ToString();
@@ -121,11 +81,11 @@ namespace slnGym.User_Control
         void displayInfo()
         {
             txtNameSeller.Text = disEmpName(getEmpID());
-            txtPTname.Text = disEmpName(getPTID());
+            //txtPTname.Text = disEmpName(getPTID());
             lbMemberName.Text = getMemName();
-            lbStartDate.Text = Convert.ToDateTime(dgvDetailsContract.CurrentRow.Cells[3].Value).ToShortDateString();
-            lbEndDate.Text = Convert.ToDateTime(dgvDetailsContract.CurrentRow.Cells[4].Value).ToShortDateString();
-            disTime();
+            lbStartDate.Text = Convert.ToDateTime(dgvDetailsContract.CurrentRow.Cells[1].Value).ToShortDateString();
+            lbEndDate.Text = Convert.ToDateTime(dgvDetailsContract.CurrentRow.Cells[2].Value).ToShortDateString();
+            
         }
 
         void disTime()
@@ -137,37 +97,52 @@ namespace slnGym.User_Control
             }
             else lbTimeRemaining.Text = "Expirated";
         }
-        void searchConID()
+       
+        public void loadDGV() // Vẽ màu vô đây nha (#FORMAT)
         {
-            string searchValue = txtSearch.Text.ToUpper();
+            designDGV(dgvContracts);
+            //Hàm xử lý Databinding
+            DetailContract dc;
+            DataTable dt = new DataTable();
+            DETAILCONTRACT db = new DETAILCONTRACT();
+            dt = db.getDetailConTractDGV();
+            int i = 0;
+            while (i < dt.Rows.Count)
+            {
+                dc = new DetailContract();
+                dc.ConID = dt.Rows[i][0].ToString();
+                dc.ID_Mem = dt.Rows[i][1].ToString();
 
-            dgvDetailsContract.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            try
-            {
-                foreach (DataGridViewRow row in dgvDetailsContract.Rows)
+                dc.IDreceipt = dt.Rows[i][2].ToString();
+                dc.EmpID = dt.Rows[i][3].ToString().ToUpper();
+
+                try
                 {
-                    if (row.Cells[0].Value.ToString().Equals(searchValue))
-                    {
-                        row.Selected = true;
-                        break;
-                    }
-                    else
-                    {
-                        row.Selected = false;
-                    }
+                    detailContractBindingSource.Add(dc);
                 }
-            }
-            catch (Exception exc)
-            {
-                MessageBox.Show(exc.Message);
+                catch
+                {
+
+                }
+                i++;
             }
         }
+        void loadDGVDetails(string conID)
+        {
+            designDGV(dgvDetailsContract);            
+            DataTable dt = new DataTable();
+            DETAILCONTRACT db = new DETAILCONTRACT();
+            dt = db.getDetailByConID(conID);
+            dgvDetailsContract.DataSource = dt;
+            dgvDetailsContract.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+        }
         //Search
+
         bool searchMemID()
         {
-            string searchValue = txtSearch.Text.ToLower();
+            string searchValue = txtSearch.Text.ToUpper();
             int flag = 0;
-            dgvDetailsContract.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvContracts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             try
             {
                 foreach (DataGridViewRow row in dgvDetailsContract.Rows)
@@ -193,6 +168,23 @@ namespace slnGym.User_Control
                 return false;
             }
             return true;
+        }
+        void searchConID()
+        {
+            string searchValue = txtSearch.Text.ToUpper();
+
+        }
+        void designDGV(DataGridView dgv)
+        {
+            dgv.RowTemplate.Height = 50;
+            dgv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgv.AllowUserToAddRows = false;
+            dgv.EditMode = DataGridViewEditMode.EditProgrammatically;
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

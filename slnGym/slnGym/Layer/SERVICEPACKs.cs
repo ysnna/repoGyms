@@ -123,8 +123,10 @@ namespace slnGym.Layer
         }
         public DataTable getPackageDGV(string idKH)
         {
-            SqlCommand cmd = new SqlCommand("select serviceID as 'ID', serviceName as 'Name', cost as 'Price', dateStart as 'Date start', dateDischarge as 'Date expiration' from SERVICEPACK, CONTRACTS" +
-                " where serviceID = servicePACK AND cusID = @id", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("select A.contractID, serviceNAME, A.dateStart,A.dateDischarge from SERVICEPACK, " +
+                " (select contractID, DETAILSCONTRACT.servicePACK, dateStart, dateDischarge from CONTRACTS, DETAILSCONTRACT" +
+                " where cusID = @id AND contractID = contID) as A" +
+                " where serviceID = A.servicePACK", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = idKH;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();

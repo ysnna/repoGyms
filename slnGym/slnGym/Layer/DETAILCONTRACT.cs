@@ -39,7 +39,10 @@ namespace slnGym.Layer
         //Lay thong tin 
         public DataTable getDetailByConID(string conID)
         {
-            SqlCommand cmd = new SqlCommand("select *from DETAILSCONTRACT where contID=@con ", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("select servicePACK,serviceNAME ,dateStart,dateDischarge, total,status from SERVICEPACK," +
+                " (select DISTINCT servicePACK, dateStart,dateDischarge, total,status  from DETAILSCONTRACT,DETAILSREPCEIPT" +
+                " where contID=@con AND DETAILSREPCEIPT.receiptID = DETAILSCONTRACT.receiptID) as A" +
+                " where A.servicePACK = serviceID ", mydb.getConnection);
             cmd.Parameters.Add("@con", SqlDbType.VarChar).Value = conID;
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -58,14 +61,24 @@ namespace slnGym.Layer
             return dt;
         }
 
+        //public DataTable getContractsID( string search)
+        //{
+        //    SqlCommand cmd = new SqlCommand("select contractID as 'Contract', cusID as 'Member', RECEIPT.receiptID as 'Receipt', employeeID as 'Employee' from CONTRACTS, RECEIPT where cusID = memID AND Concat(contID, cusID, " +
+        //        " ) like N'%" + search + "%'  ", mydb.getConnection);
+           
+
+        //    SqlDataAdapter da = new SqlDataAdapter(cmd);
+        //    DataTable dt = new DataTable();
+        //    da.Fill(dt);
+        //    mydb.closeConnection();
+        //    return dt;
+        //}
+
         public DataTable getDetailConTractDGV()
         {
-            SqlCommand cmd = new SqlCommand("select contID,cusID,serviceName, employeeID, dateStart,dateDischarge, B.receiptID, total, ptID from RECEIPT," +
-                " (select contID, serviceName, employeeID, cusID, dateStart, dateDischarge, receiptID, ptID from DETAILSCONTRACT," +
-                " (select * from SERVICEPACK, CONTRACTS" +
-                " where CONTRACTS.servicePACK = SERVICEPACK.serviceID) as A" +
-                " where DETAILSCONTRACT.contID = A.contractID) as B" +
-                " where B.receiptID = RECEIPT.receiptID", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand(" " +
+                " select DISTINCT contractID, cusID, RECEIPT.receiptID, employeeID from CONTRACTS, RECEIPT" +
+                " where cusID = memID; ", mydb.getConnection);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);

@@ -129,10 +129,11 @@ namespace slnGym.Layer
             return dt;
         }
 
-        public DataTable getMemberbyPhone(int phone)
+        public DataTable getMemberbyPackage(string IDMember)
         {
-            SqlCommand cmd = new SqlCommand("select *from MEMBERS where memPhone=@ma", mydb.getConnection);
-            cmd.Parameters.Add("@ma", SqlDbType.Int).Value = phone;
+            SqlCommand cmd = new SqlCommand("select idBrand as 'Group',idService as 'Package', nameServices as 'Name', period as 'Period', DETAILSREPCEIPT.total from RECEIPT, DETAILSREPCEIPT " +
+                "where RECEIPT.receiptID= DETAILSREPCEIPT.receiptID and memID = @mem", mydb.getConnection);
+            cmd.Parameters.Add("@mem", SqlDbType.VarChar).Value = IDMember;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -228,7 +229,17 @@ namespace slnGym.Layer
             mydb.closeConnection();
             return dt;
         }
-
+        public DataTable searchMember(string search)
+        {
+            SqlCommand cmd = new SqlCommand("select memID as 'ID',memFname as 'FName',memLname as 'LName', avatar as 'Avatar', memBDate as 'Birthday'," +
+                "memAddress as 'Address',memGender as 'Female',memPhone as 'Phone',cardID as 'ID card',note as 'Status' from MEMBERS where Concat(memID, memFname, " +
+                "memlname) like N'%" + search + "%' ", mydb.getConnection);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            mydb.closeConnection();
+            return dt;
+        }
         public DataTable getRenewMemberByID(string search)
         {
             SqlCommand cmd = new SqlCommand("select contID as 'ID', ptID as 'PT', servicePACK as 'Package', serviceNAME as 'Name', dateStart as 'Date start', dateDischarge as 'Date Expiration', cost as 'Price', status as 'Status' from CONTRACTS, DETAILSCONTRACT, SERVICEPACK where serviceID=servicePACK and contractID=contID and cusID=@cusID", mydb.getConnection);

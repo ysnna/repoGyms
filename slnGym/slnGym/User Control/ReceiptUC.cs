@@ -207,12 +207,28 @@ namespace slnGym.User_Control
                 createDetailsContract();
                 createDetailsReceipt();
             }
-            else //new
+            else if (GETContract.ISRENEW == "new")
             {
                 createMember();
                 createContract();
                 createReceipt();
                 createDetailsContract();
+                createDetailsReceipt();
+            }
+            else if (GETContract.ISRENEW == "recommon")
+            {
+                createReceipt();
+                createDetailsReceipt();
+            }
+            else if (GETContract.ISRENEW == "buypackages")
+            {
+                createMember();
+                createReceipt();
+                createDetailsReceipt();
+            }
+            else //buyproducts
+            {
+                createReceipt();
                 createDetailsReceipt();
             }
             MessageBox.Show("Complete");
@@ -297,7 +313,11 @@ namespace slnGym.User_Control
                 string name = dgvCheckInvoice.Rows[i].Cells[2].Value.ToString();
                 int period = Convert.ToInt32(dgvCheckInvoice.Rows[i].Cells[3].Value);
                 decimal total = Convert.ToDecimal(dgvCheckInvoice.Rows[i].Cells[4].Value);
-                detailsReceipt.insertDETAILRECEIPT(txtInvoiceNo.Text, Convert.ToDateTime(Convert.ToDateTime(lbTimePayment.Text).ToShortDateString()), idBrand, idSer, name, period, total);
+                if (GETContract.ISRENEW == "recommon" || GETContract.ISRENEW == "buypackages")
+                {
+                    detailsReceipt.insertDETAILRECEIPT(txtInvoiceNo.Text, Convert.ToDateTime(Convert.ToDateTime(lbTimePayment.Text).ToShortDateString()), idBrand, idSer, name, period, total, GETContract.Start.ToString());
+                }
+                else detailsReceipt.insertDETAILRECEIPT(txtInvoiceNo.Text, Convert.ToDateTime(Convert.ToDateTime(lbTimePayment.Text).ToShortDateString()), idBrand, idSer, name, period, total, "");
             }
         }
 
@@ -339,19 +359,39 @@ namespace slnGym.User_Control
             dgvCheckInvoice.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dgvCheckInvoice.AllowUserToAddRows = false;
             dgvCheckInvoice.EditMode = DataGridViewEditMode.EditProgrammatically;
-            int lenght = GETContract.listContracts.Count;
             decimal total = 0;
-            for (int i = 0; i < lenght; i++)
+            if (GETContract.ISRENEW == "recommon" || GETContract.ISRENEW == "buypackages")
             {
                 listReceipt = new ListReceipt();
-                listReceipt.idBrand = 1;
-                listReceipt.idService = GETContract.listContracts[i].idPackage;
-                listReceipt.name = GETContract.listContracts[i].namePackage;
-                listReceipt.period = GETContract.listContracts[i].period;
-                listReceipt.price = GETContract.listContracts[i].price * GETContract.listContracts[i].period;
+                listReceipt.idBrand = 3;
+                listReceipt.idService = 18;
+                listReceipt.name = "Package common";
+                listReceipt.period = GETContract.Period;
+                listReceipt.price = 600000 * GETContract.Period;
                 listReceiptBindingSource.Add(listReceipt);
-                total += listReceipt.price;
+                total = listReceipt.price;
             }
+            else if (GETContract.ISRENEW == "renew" || GETContract.ISRENEW == "addnew" || GETContract.ISRENEW == "new")
+            {
+                int lenght = 0;
+                if (GETContract.listContracts.Count > 0)
+                {
+                    lenght = GETContract.listContracts.Count;
+                }
+                for (int i = 0; i < lenght; i++)
+                {
+                    listReceipt = new ListReceipt();
+                    listReceipt.idBrand = 1;
+                    listReceipt.idService = GETContract.listContracts[i].idPackage;
+                    listReceipt.name = GETContract.listContracts[i].namePackage;
+                    listReceipt.period = GETContract.listContracts[i].period;
+                    listReceipt.price = GETContract.listContracts[i].price * GETContract.listContracts[i].period;
+                    listReceiptBindingSource.Add(listReceipt);
+                    total += listReceipt.price;
+                }
+            }
+            else
+            { }
             txtSubTotal.Text = total.ToString();
             txtTotal.Text = txtSubTotal.Text;
         }

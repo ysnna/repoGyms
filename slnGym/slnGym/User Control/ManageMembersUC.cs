@@ -98,5 +98,11 @@ namespace slnGym.User_Control
             EditByAdmin edit = new EditByAdmin();
             edit.ShowDialog();
         }
+
+        private void txtSearchMembers_KeyUp(object sender, KeyEventArgs e)
+        {
+            MEMBERs mem = new MEMBERs();
+            dgvMembers.DataSource = mem.searchMember(txtSearchMembers.Text);
+        }
     }
 }

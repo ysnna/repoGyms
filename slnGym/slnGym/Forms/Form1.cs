@@ -75,19 +75,7 @@ namespace slnGym.Forms
 
         private void btInvoice_Click(object sender, EventArgs e)
         {
-            if (!verif())
-            {
-                MessageBox.Show("Please Insert More Infomation!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                CreateContract();
-                GETContract.ISRENEW = "new";
-                MessageBox.Show("complete");
-                User_Control.ReceiptUC receiptUC = new User_Control.ReceiptUC() { Width = 1912, Height = 905 };
-                this.tabNewMember.Controls.Add(receiptUC);
-                receiptUC.BringToFront();
-            }
+            btInvoikeCheck();
         }
 
         private void btResfresh_Click(object sender, EventArgs e)
@@ -195,9 +183,14 @@ namespace slnGym.Forms
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NeedLogin();
+            refreshCommon();
+            RefreshUC();
+            getListContract.Clear();
+            listContractBindingSource.Clear();
             SysLOG.DateLogout = DateTime.Now.ToString();
             accountLog.updateAccount(SysLOG.UserName, SysLOG.DateLogin, SysLOG.DateLogout, SysLOG.Status);
             loginToolStripMenuItem.Visible = true;
+            logoutToolStripMenuItem.Visible = false;
             managerToolStripMenuItem.Enabled = true;
         }
 
@@ -333,41 +326,64 @@ namespace slnGym.Forms
 
         private void btAdd_Click(object sender, EventArgs e)
         {
-            loadListContract();
-            listContract = new ListContract();
-            listContract.idPT = txtIDPT.Text;
-            listContract.idPackage = Convert.ToInt32(txtPackage.Text);
-            listContract.namePackage = txtNamePack.Text;
-            listContract.dateStart = Convert.ToDateTime(datePickerStart.Value);
-            listContract.dateDischarge = Convert.ToDateTime(datePickerEnd.Value);
-            listContract.status = numericMonth.Value.ToString() + " Month(s)";
-            listContract.period = Convert.ToInt32(numericMonth.Value);
-            listContract.price = GETContract.Price;
-            getListContract.Add(listContract);
-            listContractBindingSource.Add(listContract);
+            try
+            {
+                loadListContract();
+                listContract = new ListContract();
+                listContract.idPT = txtIDPT.Text;
+                listContract.idPackage = Convert.ToInt32(txtPackage.Text);
+                listContract.namePackage = txtNamePack.Text;
+                listContract.dateStart = Convert.ToDateTime(datePickerStart.Value);
+                listContract.dateDischarge = Convert.ToDateTime(datePickerEnd.Value);
+                listContract.status = numericMonth.Value.ToString() + " Month(s)";
+                listContract.period = Convert.ToInt32(numericMonth.Value);
+                listContract.price = GETContract.Price;
+                getListContract.Add(listContract);
+                listContractBindingSource.Add(listContract);
+            }
+            catch (Exception E)
+            {
+                MessageBox.Show("Vui Long Nhap Thông Tin Huấn Luyện Viên! ");
+            }
+            finally
+            {
+
+
+            }
         }
 
         public void CreateContract()
         {
-            #region Create member
-            GETMember.IDMember = txtUserID.Text;
-            GETMember.Password = txtPassword.Text;
-            GETMember.FName = txtFname.Text;
-            GETMember.LName = txtLname.Text;
-            GETMember.Birthday = dateTimePickerBdate.Value;
-            GETMember.Picture = picAvaEdit.Image;
-            GETMember.Address = txtAddress.Text;
-            GETMember.Gender = 0;
-            if (radioFemale.Checked == true)
-                GETMember.Gender = 1;
-            GETMember.Phone = txtPhone.Text;
-            GETMember.IDCard = Convert.ToInt32(txtIDCard.Text);
-            GETMember.Note = txtNote.Text;
-            #endregion
 
-            #region Create Contract
-            GETContract.IDContract = txtIDContract.Text;
-            GETContract.listContracts = getListContract;
+            #region Create member
+            if (!verif())
+            {
+                GETMember.IDMember = txtUserID.Text;
+                GETMember.Password = txtPassword.Text;
+                GETMember.FName = txtFname.Text;
+                GETMember.LName = txtLname.Text;
+                GETMember.Birthday = dateTimePickerBdate.Value;
+                GETMember.Picture = picAvaEdit.Image;
+                GETMember.Address = txtAddress.Text;
+                GETMember.Gender = 0;
+                if (radioFemale.Checked == true)
+                    GETMember.Gender = 1;
+                GETMember.Phone = txtPhone.Text;
+                if (txtIDCard.Text != null)
+                {
+                    GETMember.IDCard = Convert.ToInt32(txtIDCard.Text);
+                }
+                else GETMember.IDCard = 0;
+                GETMember.Note = txtNote.Text;
+
+                #endregion
+
+                #region Create Contract
+                GETContract.IDContract = txtIDContract.Text;
+                GETContract.listContracts = getListContract;
+            }
+            
+            
             #endregion
         }
 
@@ -467,12 +483,22 @@ namespace slnGym.Forms
 
         bool verif()
         {
-            if (txtPackage.Text != null ||
-                txtPT.Text != null ||
-                txtPhone.Text != null ||
-                txtAddress.Text != null)
+            try
+            {
+                MemoryStream picture = new MemoryStream();
+                picAvaEdit.Image.Save(picture, picAvaEdit.Image.RawFormat);
+            }
+            catch (Exception Ex)
+            {
                 return true;
-            else return false;
+            }
+            
+            if (txtFname.Text.Trim() == "" || txtLname.Text.Trim() == "" ||
+                txtIDCard.Text.Trim() == "" || txtPhone.Text.Trim() == "" ||
+                txtAddress.Text.Trim() == "" )
+                return true;
+            else 
+                return false;
         }
 
         private void contactToolStripMenuItem_Click(object sender, EventArgs e)
@@ -849,8 +875,8 @@ namespace slnGym.Forms
             listContract.status = numericNew.Value.ToString() + " Month(s)";
             listContract.period = Convert.ToInt32(numericNew.Value);
             listContract.price = GETContract.Price;
-            GETContract.Start= Convert.ToDateTime(dateStartNew.Value);
-            GETContract.End= Convert.ToDateTime(dateEndNew.Value);
+            GETContract.Start = Convert.ToDateTime(dateStartNew.Value);
+            GETContract.End = Convert.ToDateTime(dateEndNew.Value);
             getListContract.Add(listContract);
             listContractBindingSource.Add(listContract);
         }
@@ -894,9 +920,38 @@ namespace slnGym.Forms
             dgvMemberComon.DataSource = mem.getRenewMember();
         }
 
+        bool verifCommon()
+        {
+            if (txtFNameMemberCommon.Text.Trim() == "" || txtLNameCommon.Text.Trim() == null || txtIDCardCommon.Text.Trim() == null ||
+                txtPhoneCommon.Text.Trim() == "" || txtAddressCommon.Text.Trim() == null)
+                return false;
+            else return true ;
+        }
+
         private void comboPackage_SelectedIndexChanged(object sender, EventArgs e)
         {
+            getListContract.Clear();
+            listContractBindingSource.Clear();
 
+            if (comboPackage.Text == "Renew")
+            {
+                GETContract.Start = Convert.ToDateTime(dateStartCommon.Value);
+                GETContract.Period = Convert.ToInt32(numericCommon.Value);
+                GETContract.ISRENEW = "recommon";
+                groupBoxCheckComon.Visible = true;
+            }
+            else if (comboPackage.Text == "Buy packages")
+            {
+                GETContract.Start = Convert.ToDateTime(dateStartCommon.Value);
+                GETContract.Period = Convert.ToInt32(numericCommon.Value);
+                GETContract.ISRENEW = "buypackages";
+                groupBoxCheckComon.Visible = false;
+            }
+            else
+            {
+                GETContract.ISRENEW = "buyproducts";
+                groupBoxCheckComon.Visible = true;
+            }
         }
 
         private void dateStartCommon_ValueChanged(object sender, EventArgs e)
@@ -911,30 +966,41 @@ namespace slnGym.Forms
 
         private void dateEndCommon_ValueChanged(object sender, EventArgs e)
         {
-            dateStartCommon.Value = dateEndCommon.Value.AddMonths(Convert.ToInt32(numericCommon.Value)*(-1));
+            dateStartCommon.Value = dateEndCommon.Value.AddMonths(Convert.ToInt32(numericCommon.Value) * (-1));
         }
 
         private void btRefreshCommon_Click(object sender, EventArgs e)
         {
-
+            refreshCommon();
         }
-
+        
         private void btToInvoiceCommon_Click(object sender, EventArgs e)
         {
-            //if (txtIsContract.Text == "" || txtIsMember.Text == "")
-            //{
-            //    MessageBox.Show("Please fill information", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
-            //else
-            //{
-            //    GETContract.IDContract = txtIsContract.Text;
-            //    GETContract.listContracts = getListContract;
-            //    getInfoMember();
-            //    MessageBox.Show("complete");
-            //    User_Control.ReceiptUC receiptUC = new User_Control.ReceiptUC() { Width = 1912, Height = 905 };
-            //    this.tabPackage.Controls.Add(receiptUC);
-            //    receiptUC.BringToFront();
-            //}
+            try
+            {
+                MemoryStream picture = new MemoryStream();
+                picAvatarCommon.Image.Save(picture, picAvatarCommon.Image.RawFormat);
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show("Vui lòng nhập hình ảnh!");
+            }
+             if (!IsNumber(txtPhoneCommon.Text) || !IsNumber(txtIDCardCommon.Text))
+            {
+                MessageBox.Show("Please Insert Numberic!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if(!verifCommon())
+            {
+                MessageBox.Show("Please fill information", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                getInfoMember();
+                MessageBox.Show("complete");
+                User_Control.ReceiptUC receiptUC = new User_Control.ReceiptUC() { Width = 1912, Height = 905 };
+                this.tabPackage.Controls.Add(receiptUC);
+                receiptUC.BringToFront();
+            }
         }
 
         private void dgvMemberComon_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -943,7 +1009,97 @@ namespace slnGym.Forms
             GETMember.IDMember = dgvMemberComon.Rows[index].Cells[0].Value.ToString();
             txtIDMemberCommon.Text = GETMember.IDMember;
             loadDVG(dgvPackageComon);
-            //dgvPackageComon.DataSource = mem.getRenewMemberByID(GETMember.IDMember);
+            dgvPackageComon.DataSource = mem.getMemberbyPackage(GETMember.IDMember);
+
+            DataTable dt = mem.getMemberbyID(GETMember.IDMember);
+            txtFNameMemberCommon.Text = dt.Rows[0][1].ToString();
+            txtLNameCommon.Text = dt.Rows[0][2].ToString();
+            txtIDCardCommon.Text = dt.Rows[0][8].ToString();
+            int gender = Convert.ToInt32(dt.Rows[0][6]);
+            if (gender == 1)
+            {
+                radioFemaleCommon.Checked = true;
+            }
+            radioMaleCommon.Checked = true;
+            txtPhoneCommon.Text = dt.Rows[0][7].ToString();
+            txtNoteCommon.Text = dt.Rows[0][9].ToString();
+            dateTimeBirthdayCommon.Value = Convert.ToDateTime(dt.Rows[0][4]);
+            txtAddressCommon.Text = dt.Rows[0][5].ToString();
+            try
+            {
+                byte[] picPD;
+                picPD = (byte[])dt.Rows[0][3];
+                MemoryStream pic = new MemoryStream(picPD);
+                this.picAvatarCommon.Image = Image.FromStream(pic);
+            }
+            catch
+            { }
+        }
+
+        private void txtLNameCommon_TextChanged(object sender, EventArgs e)
+        {
+            txtPasswordCommon.Text = convertToUnSign3(txtLNameCommon.Text.Trim()).ToLower() + txtIDMemberCommon.Text;
+        }
+
+        private void picAvatarCommon_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "select image(*.jpg;*.png;*.gif)|*.jpg;*.png;*.gif";
+            if (open.ShowDialog() == DialogResult.OK)
+                picAvatarCommon.Image = Image.FromFile(open.FileName);
+        }
+        public bool IsNumber(string pValue)
+        {
+            foreach (Char c in pValue)
+            {
+                if (!Char.IsDigit(c))
+                    return false;
+            }
+            return true;
+        }
+        void btInvoikeCheck()
+        {
+            if (txtNamePack.Text.Trim() == "" || txtPT.Text.Trim() == "")
+            {
+                MessageBox.Show("Please choose your Package", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (!IsNumber(txtPhone.Text) || !IsNumber(txtIDCard.Text))
+            {
+                MessageBox.Show("Please Insert Numberic!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (verif() == true)
+            {
+                MessageBox.Show("Please Insert More Infomation!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show("completeasdsasd");
+                CreateContract();
+                GETContract.ISRENEW = "new";
+                User_Control.ReceiptUC receiptUC = new User_Control.ReceiptUC() { Width = 1912, Height = 905 };
+                this.tabNewMember.Controls.Add(receiptUC);
+                receiptUC.BringToFront();
+            }
+        }
+        void refreshCommon()
+        {
+            txtFNameMemberCommon.Text = "";
+            txtLNameCommon.Text = "";
+            txtIDCardCommon.Text = "";
+            radioMaleCommon.Checked = true;
+            txtPhoneCommon.Text = "";
+            txtNoteCommon.Text = "";
+            dateTimeBirthdayCommon.Value = DateTime.Now;
+            txtAddressCommon.Text = "";
+            picAvatarCommon.Image = picAvatarCommon.BackgroundImage;
+            dateStartCommon.Value = DateTime.Now;
+            numericCommon.Value = 1;
+            dateEndCommon.Value = dateStartCommon.Value.AddMonths(Convert.ToInt32(numericCommon.Value));
+            comboPackage.Text = "---Select category---";
+            txtPasswordCommon.Text = "";
+            txtIDMemberCommon.Text = "";
+            getListContract.Clear();
+            listContractBindingSource.Clear();
         }
     }
 }
