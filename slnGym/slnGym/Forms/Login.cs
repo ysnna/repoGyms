@@ -15,7 +15,7 @@ namespace slnGym.Forms
     public partial class Login : Form
     {
         Form1 f1 = new Form1();
-
+        MY_DB mydb = new MY_DB();
         public Login(Form1 login)
         {
             InitializeComponent();
@@ -35,6 +35,8 @@ namespace slnGym.Forms
 
         private void btSignIn_Click(object sender, EventArgs e)
         {
+            GLOBAL.username = txtUsername.Text;
+            
             Log_in();
             f1.loginToolStripMenuItem.Visible = false;
             f1.logoutToolStripMenuItem.Visible = true;
@@ -86,10 +88,9 @@ namespace slnGym.Forms
         //Nhan dien nguoi dang nhap la Nhan Vien hay Member
         int DefineAccount()
         {
+            string sql = @"select * from functGetAccountID('"+GLOBAL.username+"')";
             DataTable dt = new DataTable();
-            ///
-            ///dt = login.getUserID(GLOBAL.username);
-            ///
+            dt = mydb.createTable(sql);
             int id = Convert.ToInt32(dt.Rows[0][0].ToString());
             return id;
         }
@@ -97,10 +98,8 @@ namespace slnGym.Forms
         //Xac nhan Account
         bool LoginCheck()
         {
-            DataTable dt = new DataTable();
-            ///
-            ///dt = login.getAccount(GLOBAL.username, txtPassword.Text);
-            ///
+            string sql = @"EXEC sp_proLOADAccount";
+            DataTable dt = mydb.createTable(sql);            
             if (dt.Rows.Count > 0)
                 return true;
             return false;

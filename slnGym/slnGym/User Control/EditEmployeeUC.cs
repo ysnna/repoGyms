@@ -18,17 +18,24 @@ namespace slnGym.User_Control
         {
             InitializeComponent();
         }
-
+        MY_DB mydb = new MY_DB();
         private void btEdit_Click(object sender, EventArgs e)
         {
+            string gender = "Male";
+            if (radioFemaleEdit.Checked == true)
+            {
+                gender = "Female";
+            }
             MemoryStream pic = new MemoryStream();
             picAvaEdit.Image.Save(pic, picAvaEdit.Image.RawFormat);
-           
+            string sql = @"exec proUPEMP '" + EMPLOYEEs.EmployeeID + "','" + txtGroupID.Text + "', '" + pic.ToArray() + "', N'" + txtFname.Text + "',N'" + txtLname.Text + "', '" + dateTimePickerBdate.Value + "', N'" + txtAddress.Text + "', '" + gender + "','" + txtPhone.Text + "', '" + Convert.ToInt32(txtSalary.Text) + "', '" + txtIDCard.Text + "'";
+            mydb.executeQuery(sql);
             this.Dispose();
         }
 
         private void EditEmployeeUC_Load(object sender, EventArgs e)
         {
+            updateEmployee();
             loadGroupEmployee();
         }
 
@@ -60,6 +67,45 @@ namespace slnGym.User_Control
                 txtGroupID.Text = "01";
             }
             else txtGroupID.Text = "02";
+        }
+        //Ham
+        EMPLOYEEs employee = new EMPLOYEEs();
+        LOGIN log = new LOGIN();
+        public void updateEmployee()
+        {
+            DataTable dt = new DataTable();
+            dt = employee.getEmployeebyID(EMPLOYEEs.EmployeeID);
+            lbIDEmployee.Text = EMPLOYEEs.EmployeeID;
+            txtFname.Text = dt.Rows[0][3].ToString();
+            txtLname.Text = dt.Rows[0][4].ToString();
+            txtIDCard.Text = dt.Rows[0][10].ToString();
+            dateTimePickerBdate.Value = Convert.ToDateTime(dt.Rows[0][5].ToString());
+            txtPhone.Text = dt.Rows[0][8].ToString();
+            txtAddress.Text = dt.Rows[0][6].ToString();
+            txtSalary.Text = dt.Rows[0][9].ToString();
+            txtUsername.Text = EMPLOYEEs.EmployeeID;
+            DataTable data = log.getAccountbyUser(EMPLOYEEs.EmployeeID);
+            txtPass.Text = data.Rows[0][1].ToString();
+            string gr = dt.Rows[0][1].ToString();
+            // MessageBox.Show(gr.ToString());
+            if (gr == "01")
+            {
+                cbGroupName.Text = "Salesman";
+                txtGroupID.Text = "01";
+            }
+            else
+            {
+                txtGroupID.Text = "02";
+                cbGroupName.Text = "Personal Trainer";
+            }
+           string gender = dt.Rows[0][7].ToString();
+            if (gender == "Female")
+                radioFemaleEdit.Checked = true;
+            else radioMaleEdit.Checked = true;
+            //byte[] picPD;
+            //picPD = (byte[])dt.Rows[0][2];
+            //MemoryStream pic = new MemoryStream(picPD);
+            //this.picAvaEdit.Image = Image.FromStream(pic);
         }
     }
 }

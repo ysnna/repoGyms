@@ -142,7 +142,7 @@ namespace slnGym.Layer
         }
         public DataTable getAccountbyUser(string user)
         {
-            SqlCommand cmd = new SqlCommand("select *from ACCOUNT where username=@user", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("select *from tblACCOUNT where username=@user", mydb.getConnection);
             cmd.Parameters.Add("@user", SqlDbType.NVarChar).Value = user;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();

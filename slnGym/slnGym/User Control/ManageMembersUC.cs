@@ -18,7 +18,8 @@ namespace slnGym.User_Control
         {
             InitializeComponent();
         }
-
+        MY_DB mydb = new MY_DB();
+        string sql = "";
         string getID = "";
 
         private void dgvMembers_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -48,14 +49,17 @@ namespace slnGym.User_Control
 
         public void loadDGVMem() //Format lại cột BDate của Member (#FORMAT)
         {
+            sql = @"EXEC proLOADMem";
+            DataTable dt = mydb.createTable(sql);
+            dgvMembers.DataSource = dt;
             dgvMembers.RowTemplate.Height = 50;
             dgvMembers.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dgvMembers.AllowUserToAddRows = false;
             dgvMembers.EditMode = DataGridViewEditMode.EditProgrammatically;
            
-            DataGridViewImageColumn pic = new DataGridViewImageColumn();
-            pic = (DataGridViewImageColumn)dgvMembers.Columns[3];
-            pic.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            //DataGridViewImageColumn pic = new DataGridViewImageColumn();
+            //pic = (DataGridViewImageColumn)dgvMembers.Columns[3];
+            //pic.ImageLayout = DataGridViewImageCellLayout.Zoom;
             //foreach (DataGridViewRow row in dgvMembers.Rows)
             //{
             //    if (row.Cells["note"].Value.ToString() == "Chờ duyệt")

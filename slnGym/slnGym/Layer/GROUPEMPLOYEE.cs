@@ -71,7 +71,7 @@ namespace slnGym.Layer
         //Lay thong tin 
         public DataTable getGROUPEMP()
         {
-            SqlCommand cmd = new SqlCommand("select *from GROUPEMPLOYEE ", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("select *from tblGROUPEMPLOYEE ", mydb.getConnection);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -80,7 +80,7 @@ namespace slnGym.Layer
         }
         public DataTable getGroupEmpbyID(string id)
         {
-            SqlCommand cmd = new SqlCommand("select *from GROUPEMPLOYEE where groupID=@ID", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("select *from tblGROUPEMPLOYEE where groupID=@ID", mydb.getConnection);
             cmd.Parameters.Add("@ID", SqlDbType.VarChar).Value = id;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -89,7 +89,7 @@ namespace slnGym.Layer
         }
         public DataTable getGroupEmpbyName(string name)
         {
-            SqlCommand cmd = new SqlCommand("select *from GROUPEMPLOYEE where groupName=@ID", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("select *from tblGROUPEMPLOYEE where groupName=@ID", mydb.getConnection);
             cmd.Parameters.Add("@ID", SqlDbType.VarChar).Value = name;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -98,7 +98,7 @@ namespace slnGym.Layer
         }
         public DataTable getNameGroup()
         {
-            SqlCommand cmd = new SqlCommand("select groupName from GROUPEMPLOYEE ", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("select groupName from tblGROUPEMPLOYEE ", mydb.getConnection);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);

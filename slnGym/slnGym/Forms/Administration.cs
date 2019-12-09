@@ -14,7 +14,8 @@ namespace slnGym.Forms
     public partial class Administration : Form
     {
         Form1 f1 = new Form1();
-
+        String sql;
+        MY_DB mydb = new MY_DB();
         public Administration(Form1 administration)
         {
             InitializeComponent();
@@ -139,6 +140,9 @@ namespace slnGym.Forms
             ///
             ///
             ///
+            sql = @"EXEC proLOADService";
+            DataTable dt = mydb.createTable(sql);
+            dgvPackages.DataSource = dt;
             dgvPackages.RowTemplate.Height = 70;
             dgvPackages.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dgvPackages.AllowUserToAddRows = false;
@@ -150,6 +154,9 @@ namespace slnGym.Forms
             ///
             ///
             ///
+            sql = @"EXEC proLOADProduct";
+            DataTable dt = mydb.createTable(sql);
+            dvgProducts.DataSource = dt;
             dvgProducts.RowTemplate.Height = 70;
             dvgProducts.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dvgProducts.AllowUserToAddRows = false;
@@ -164,13 +171,16 @@ namespace slnGym.Forms
             ///
             ///
             ///
+            sql = @"EXEC proLOADMachines";
+            DataTable dt = mydb.createTable(sql);
+            dgvMachines.DataSource = dt;
             dgvMachines.RowTemplate.Height = 70;
             dgvMachines.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dgvMachines.AllowUserToAddRows = false;
             dgvMachines.EditMode = DataGridViewEditMode.EditProgrammatically;
-            DataGridViewImageColumn pic = new DataGridViewImageColumn();
-            pic = (DataGridViewImageColumn)dgvMachines.Columns[2];
-            pic.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            //DataGridViewImageColumn pic = new DataGridViewImageColumn();
+            //pic = (DataGridViewImageColumn)dgvMachines.Columns[2];
+            //pic.ImageLayout = DataGridViewImageCellLayout.Zoom;
         }
 
         public void loadDGVTag()

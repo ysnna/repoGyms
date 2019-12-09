@@ -24,10 +24,13 @@ namespace slnGym.User_Control
             loadListAccount();
             btBlock.Enabled = false;
         }
-
+        MY_DB mydb = new MY_DB();
+        
         public void loadAccountLog()
         {
-            //dgvAccount.DataSource = account.getACCOUNTLog();
+            string sql = @"EXEC sp_LOADChecklogin";
+            DataTable dt = mydb.createTable(sql);
+            dgvAccount.DataSource = dt;
             dgvAccount.RowTemplate.Height = 50;
             dgvAccount.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dgvAccount.AllowUserToAddRows = false;
@@ -37,7 +40,9 @@ namespace slnGym.User_Control
 
         public void loadListAccount()
         {
-            //dgvListAccount.DataSource = log.getListAccount();
+            string sql = @"EXEC sp_proLOADAccount";
+            DataTable dt = mydb.createTable(sql);
+            dgvListAccount.DataSource = dt;
             dgvListAccount.RowTemplate.Height = 50;
             dgvListAccount.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dgvListAccount.AllowUserToAddRows = false;
@@ -71,6 +76,13 @@ namespace slnGym.User_Control
         {
             btBlock.Enabled = true;
             getUser = dgvListAccount.CurrentRow.Cells[0].Value.ToString();
+        }
+        void design(DataGridView dgv)
+        {
+            dgv.RowTemplate.Height = 50;
+            dgv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgv.AllowUserToAddRows = false;
+            dgv.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
     }
 }
