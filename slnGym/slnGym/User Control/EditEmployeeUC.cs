@@ -26,11 +26,19 @@ namespace slnGym.User_Control
             {
                 gender = "Female";
             }
-            MemoryStream pic = new MemoryStream();
-            picAvaEdit.Image.Save(pic, picAvaEdit.Image.RawFormat);
-            string sql = @"exec proUPEMP '" + EMPLOYEEs.EmployeeID + "','" + txtGroupID.Text + "', '" + pic.ToArray() + "', N'" + txtFname.Text + "',N'" + txtLname.Text + "', '" + dateTimePickerBdate.Value + "', N'" + txtAddress.Text + "', '" + gender + "','" + txtPhone.Text + "', '" + Convert.ToInt32(txtSalary.Text) + "', '" + txtIDCard.Text + "'";
-            mydb.executeQuery(sql);
-            this.Dispose();
+            try
+            {
+                MemoryStream pic = new MemoryStream();
+                picAvaEdit.Image.Save(pic, picAvaEdit.Image.RawFormat);
+                string sql = @"exec proUPEMP '" + EMPLOYEEs.EmployeeID + "','" + txtGroupID.Text + "', '" + pic.ToArray() + "', N'" + txtFname.Text + "',N'" + txtLname.Text + "', '" + dateTimePickerBdate.Value + "', N'" + txtAddress.Text + "', '" + gender + "','" + txtPhone.Text + "', '" + Convert.ToInt32(txtSalary.Text) + "', '" + txtIDCard.Text + "'";
+                mydb.executeQuery(sql);
+                this.Dispose();
+            }
+            catch(Exception E)
+            {
+                MessageBox.Show("Vui lòng thêm hình ảnh");
+            }
+            
         }
 
         private void EditEmployeeUC_Load(object sender, EventArgs e)
@@ -75,6 +83,10 @@ namespace slnGym.User_Control
         {
             DataTable dt = new DataTable();
             dt = employee.getEmployeebyID(EMPLOYEEs.EmployeeID);
+            //byte[] picPD;
+            //picPD = (byte[])dt.Rows[0][2];
+            //MemoryStream pic = new MemoryStream(picPD);
+            //this.picAvaEdit.Image = Image.FromStream(pic);
             lbIDEmployee.Text = EMPLOYEEs.EmployeeID;
             txtFname.Text = dt.Rows[0][3].ToString();
             txtLname.Text = dt.Rows[0][4].ToString();
@@ -102,10 +114,7 @@ namespace slnGym.User_Control
             if (gender == "Female")
                 radioFemaleEdit.Checked = true;
             else radioMaleEdit.Checked = true;
-            //byte[] picPD;
-            //picPD = (byte[])dt.Rows[0][2];
-            //MemoryStream pic = new MemoryStream(picPD);
-            //this.picAvaEdit.Image = Image.FromStream(pic);
+            
         }
     }
 }

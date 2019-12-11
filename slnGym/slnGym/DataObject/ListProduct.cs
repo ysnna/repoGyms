@@ -17,7 +17,7 @@ namespace slnGym.DataObject
         public Image picture { get; set; }
         public static int Width = 425;
         public static int Height = 425;
-        public ListProduct(int id, string name, decimal cost, Image pic)
+        public ListProduct(int id, Image pic, string name, decimal cost )
         {
             this.Id = id;
             this.Name = name;
@@ -27,13 +27,14 @@ namespace slnGym.DataObject
         //#Mở lại hình ảnh
         public ListProduct(DataRow row)
         {
-            this.Id = Convert.ToInt32(row["productID"]);
-            this.Name = row["productName"].ToString();
-            this.Cost = Convert.ToDecimal(row["productCost"].ToString());
-            byte[] picPD;
-            picPD = (byte[])row["picture"];
-            MemoryStream pic = new MemoryStream(picPD);
-            this.picture = Image.FromStream(pic);
+            this.Id = Convert.ToInt32(row["proID"]);
+            this.Name = row["proName"].ToString();
+            this.Cost = Convert.ToDecimal(row["proCost"].ToString());
+
+            //byte[] picPD;
+            //picPD = (byte[])row["picture"];
+            //MemoryStream pic = new MemoryStream(picPD);
+            //this.picture = Image.FromStream(pic);
         }
     }
 }

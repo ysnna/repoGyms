@@ -194,23 +194,78 @@ namespace slnGym.Forms
         {
             flowLayoutMachine.Controls.Clear();
             List<ListMachine> listMachines = new List<ListMachine>();
-            ///
-            ///
-            ////
+            string sql = @"EXEC proLOADMachines";
+            DataTable dt = mydb.createTable(sql);
+            if (dt.Rows.Count > 0)
+            {
+                foreach (DataRow item in dt.Rows)
+                {
+                    ListMachine machine = new ListMachine(item);
+                    listMachines.Add(machine);
+                }
+                foreach (ListMachine item in listMachines)
+                {
+                    Button bt = new Button() { Width = ListMachine.Width, Height = ListMachine.Height };
+                    bt.Font = new Font("Times New Roman", 22F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+                    bt.ForeColor = Color.Navy;
+                    bt.BackColor = flowLayoutMachine.BackColor;
+                    bt.BackgroundImage = item.Picture;
+                    bt.BackgroundImageLayout = ImageLayout.Zoom;
+                    bt.FlatAppearance.BorderColor = Color.Navy;
+                    bt.FlatAppearance.BorderSize = 5;
+                    bt.FlatStyle = FlatStyle.Flat;
+                    bt.Text = item.NameMachine;
+                    bt.TextAlign = ContentAlignment.BottomCenter;
+                    bt.Tag = item;
+                    this.flowLayoutMachine.Controls.Add(bt);
+                    this.flowLayoutMachine.Refresh();
+                }
+            }
         }
-
+        MY_DB mydb = new MY_DB();
         public void loadProduct()
         {
             flowLayoutProduct.Controls.Clear();
             List<ListProduct> listProducts = new List<ListProduct>();
-            
+            string sql = @"EXEC proLOADProduct";
+            DataTable dt = mydb.createTable(sql);
+            if (dt.Rows.Count > 0)
+            {
+                foreach (DataRow item in dt.Rows)
+                {
+                    ListProduct product = new ListProduct(item);
+                    listProducts.Add(product);
+                }
+                foreach (ListProduct item in listProducts)
+                {
+                    Button bt = new Button() { Width = ListProduct.Width, Height = ListProduct.Height };
+                    bt.Font = new Font("Times New Roman", 22F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+                    bt.ForeColor = Color.Navy;
+                    bt.BackColor = flowLayoutProduct.BackColor;
+                    bt.BackgroundImage = item.picture;
+                    bt.BackgroundImageLayout = ImageLayout.Zoom;
+                    bt.FlatAppearance.BorderColor = Color.Navy;
+                    bt.FlatAppearance.BorderSize = 5;
+                    bt.FlatStyle = FlatStyle.Flat;
+                    bt.Text = item.Name;
+                    bt.TextAlign = ContentAlignment.BottomCenter;
+                    bt.Tag = item;
+                    flowLayoutProduct.Controls.Add(bt);
+                    flowLayoutProduct.Refresh();
+                }
+            }
+  
         }
+
+    
 
         public void loadServicePackage()
         {
-            ///
-            ///
-            ///
+            flowLayoutProduct.Controls.Clear();
+            List<ListProduct> listProducts = new List<ListProduct>();
+            string sql = @"EXEC proLOADService";
+            DataTable dt = mydb.createTable(sql);
+            dgvServicePack.DataSource = dt;
             dgvServicePack.RowTemplate.Height = 60;
             dgvServicePack.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dgvServicePack.AllowUserToAddRows = false;
@@ -851,6 +906,11 @@ namespace slnGym.Forms
             txtIDMemberCommon.Text = "";
             getListContract.Clear();
             listContractBindingSource.Clear();
+        }
+
+        private void flowLayoutProduct_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -130,7 +130,7 @@ namespace slnGym.Layer
                 j = 9;
                 while (i <= dtcontract.Rows.Count && j < dtcontract.Rows.Count)
                 {
-                    Texti = "HLV";
+                    Texti = "NV";
                     Texti += i;
                     if (Texti == dtcontract.Rows[j][0].ToString())
                     {

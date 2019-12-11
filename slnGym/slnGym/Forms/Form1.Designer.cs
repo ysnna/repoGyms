@@ -113,12 +113,6 @@
             this.tabControlManager = new System.Windows.Forms.TabControl();
             this.tabNewMember = new System.Windows.Forms.TabPage();
             this.dgvListContract = new System.Windows.Forms.DataGridView();
-            this.idPTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idPackageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateStartDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDischargeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.listContractBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btResfresh = new System.Windows.Forms.Button();
             this.btInvoice = new System.Windows.Forms.Button();
             this.groupBoxEdit = new System.Windows.Forms.GroupBox();
@@ -188,11 +182,6 @@
             this.label33 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.dgvNewContract = new System.Windows.Forms.DataGridView();
-            this.idPTDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idPackageDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateStartDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDischargeDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numericNew = new System.Windows.Forms.NumericUpDown();
             this.dateEndNew = new System.Windows.Forms.DateTimePicker();
             this.dateStartNew = new System.Windows.Forms.DateTimePicker();
@@ -225,11 +214,6 @@
             this.groupBoxRenew = new System.Windows.Forms.GroupBox();
             this.btInvoiceRenew = new System.Windows.Forms.Button();
             this.dgvRenew = new System.Windows.Forms.DataGridView();
-            this.idPTDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idPackageDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateStartDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDischargeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPackage = new System.Windows.Forms.TabPage();
             this.groupBoxCheckComon = new System.Windows.Forms.GroupBox();
             this.dgvPackageComon = new System.Windows.Forms.DataGridView();
@@ -279,6 +263,22 @@
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.tess = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.idPTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idPackageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateStartDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDischargeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.listContractBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idPTDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idPackageDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateStartDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDischargeDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idPTDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idPackageDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateStartDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDischargeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabHome.SuspendLayout();
@@ -291,7 +291,6 @@
             this.tabControlManager.SuspendLayout();
             this.tabNewMember.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListContract)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listContractBindingSource)).BeginInit();
             this.groupBoxEdit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAvaEdit)).BeginInit();
             this.panel4.SuspendLayout();
@@ -324,6 +323,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericCommon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAvatarCommon)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listContractBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -484,6 +484,7 @@
             this.flowLayoutProduct.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.flowLayoutProduct.Size = new System.Drawing.Size(1824, 895);
             this.flowLayoutProduct.TabIndex = 53;
+            this.flowLayoutProduct.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutProduct_Paint);
             // 
             // tabService
             // 
@@ -544,7 +545,7 @@
             this.dgvServicePack.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvServicePack.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvServicePack.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvServicePack.Size = new System.Drawing.Size(1912, 1371);
+            this.dgvServicePack.Size = new System.Drawing.Size(1912, 1401);
             this.dgvServicePack.TabIndex = 103;
             // 
             // tabManage
@@ -581,7 +582,7 @@
             this.tabNewMember.Controls.Add(this.groupBoxEdit);
             this.tabNewMember.Controls.Add(this.groupContracting);
             this.tabNewMember.Controls.Add(this.groupChoospackage);
-            this.tabNewMember.Font = new System.Drawing.Font("UVN Anh Hai", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabNewMember.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabNewMember.Location = new System.Drawing.Point(4, 37);
             this.tabNewMember.Name = "tabNewMember";
             this.tabNewMember.Padding = new System.Windows.Forms.Padding(3);
@@ -603,7 +604,7 @@
             this.dgvListContract.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("UVN Anh Hai", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Navy;
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Navy;
@@ -619,7 +620,7 @@
             this.dgvListContract.DataSource = this.listContractBindingSource;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("UVN Anh Hai", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Navy;
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Navy;
@@ -630,7 +631,7 @@
             this.dgvListContract.Name = "dgvListContract";
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("UVN Anh Hai", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Navy;
             dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Navy;
@@ -647,45 +648,6 @@
             this.dgvListContract.Size = new System.Drawing.Size(832, 190);
             this.dgvListContract.TabIndex = 107;
             this.dgvListContract.DoubleClick += new System.EventHandler(this.dgvListContract_DoubleClick);
-            // 
-            // idPTDataGridViewTextBoxColumn
-            // 
-            this.idPTDataGridViewTextBoxColumn.DataPropertyName = "idPT";
-            this.idPTDataGridViewTextBoxColumn.HeaderText = "ID PT";
-            this.idPTDataGridViewTextBoxColumn.Name = "idPTDataGridViewTextBoxColumn";
-            this.idPTDataGridViewTextBoxColumn.Width = 106;
-            // 
-            // idPackageDataGridViewTextBoxColumn
-            // 
-            this.idPackageDataGridViewTextBoxColumn.DataPropertyName = "idPackage";
-            this.idPackageDataGridViewTextBoxColumn.HeaderText = "ID Package";
-            this.idPackageDataGridViewTextBoxColumn.Name = "idPackageDataGridViewTextBoxColumn";
-            this.idPackageDataGridViewTextBoxColumn.Width = 158;
-            // 
-            // dateStartDataGridViewTextBoxColumn
-            // 
-            this.dateStartDataGridViewTextBoxColumn.DataPropertyName = "dateStart";
-            this.dateStartDataGridViewTextBoxColumn.HeaderText = "Date Start";
-            this.dateStartDataGridViewTextBoxColumn.Name = "dateStartDataGridViewTextBoxColumn";
-            this.dateStartDataGridViewTextBoxColumn.Width = 144;
-            // 
-            // dateDischargeDataGridViewTextBoxColumn
-            // 
-            this.dateDischargeDataGridViewTextBoxColumn.DataPropertyName = "dateDischarge";
-            this.dateDischargeDataGridViewTextBoxColumn.HeaderText = "Date Expiration";
-            this.dateDischargeDataGridViewTextBoxColumn.Name = "dateDischargeDataGridViewTextBoxColumn";
-            this.dateDischargeDataGridViewTextBoxColumn.Width = 204;
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            // 
-            // listContractBindingSource
-            // 
-            this.listContractBindingSource.DataSource = typeof(slnGym.DataObject.ListContract);
             // 
             // btResfresh
             // 
@@ -1070,7 +1032,7 @@
             this.groupContracting.Controls.Add(this.label6);
             this.groupContracting.Controls.Add(this.label4);
             this.groupContracting.Controls.Add(this.label25);
-            this.groupContracting.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupContracting.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupContracting.ForeColor = System.Drawing.Color.Navy;
             this.groupContracting.Location = new System.Drawing.Point(43, 338);
             this.groupContracting.Name = "groupContracting";
@@ -1358,7 +1320,7 @@
             this.groupChoospackage.Controls.Add(this.txtPackage);
             this.groupChoospackage.Controls.Add(this.dgvPackage);
             this.groupChoospackage.Controls.Add(this.picAddPackage);
-            this.groupChoospackage.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupChoospackage.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupChoospackage.ForeColor = System.Drawing.Color.Navy;
             this.groupChoospackage.Location = new System.Drawing.Point(43, 20);
             this.groupChoospackage.Name = "groupChoospackage";
@@ -1458,7 +1420,7 @@
             this.dgvPT.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Navy;
             dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Navy;
@@ -1467,7 +1429,7 @@
             this.dgvPT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Navy;
             dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Navy;
@@ -1478,7 +1440,7 @@
             this.dgvPT.Name = "dgvPT";
             dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Navy;
             dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Navy;
@@ -1521,7 +1483,7 @@
             this.dgvPackage.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Navy;
             dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.Navy;
@@ -1532,7 +1494,7 @@
             this.tagPT});
             dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Navy;
             dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Navy;
@@ -1544,7 +1506,7 @@
             this.dgvPackage.ReadOnly = true;
             dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -1568,7 +1530,7 @@
             this.tagPT.Name = "tagPT";
             this.tagPT.ReadOnly = true;
             this.tagPT.Visible = false;
-            this.tagPT.Width = 110;
+            this.tagPT.Width = 93;
             // 
             // picAddPackage
             // 
@@ -1589,7 +1551,7 @@
             this.tabRenew.Controls.Add(this.groupBoxNewContract);
             this.tabRenew.Controls.Add(this.groupBoxCheckMember);
             this.tabRenew.Controls.Add(this.groupBoxRenew);
-            this.tabRenew.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabRenew.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabRenew.ForeColor = System.Drawing.Color.Navy;
             this.tabRenew.Location = new System.Drawing.Point(4, 37);
             this.tabRenew.Name = "tabRenew";
@@ -1640,7 +1602,7 @@
             this.btAddNewPackage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btAddNewPackage.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btAddNewPackage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btAddNewPackage.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAddNewPackage.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btAddNewPackage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btAddNewPackage.Location = new System.Drawing.Point(614, 790);
             this.btAddNewPackage.Name = "btAddNewPackage";
@@ -1774,41 +1736,6 @@
             this.dgvNewContract.Size = new System.Drawing.Size(893, 159);
             this.dgvNewContract.TabIndex = 158;
             this.dgvNewContract.DoubleClick += new System.EventHandler(this.dgvNewContract_DoubleClick);
-            // 
-            // idPTDataGridViewTextBoxColumn2
-            // 
-            this.idPTDataGridViewTextBoxColumn2.DataPropertyName = "idPT";
-            this.idPTDataGridViewTextBoxColumn2.HeaderText = "ID PT";
-            this.idPTDataGridViewTextBoxColumn2.Name = "idPTDataGridViewTextBoxColumn2";
-            this.idPTDataGridViewTextBoxColumn2.Width = 104;
-            // 
-            // idPackageDataGridViewTextBoxColumn2
-            // 
-            this.idPackageDataGridViewTextBoxColumn2.DataPropertyName = "idPackage";
-            this.idPackageDataGridViewTextBoxColumn2.HeaderText = "ID Package";
-            this.idPackageDataGridViewTextBoxColumn2.Name = "idPackageDataGridViewTextBoxColumn2";
-            this.idPackageDataGridViewTextBoxColumn2.Width = 161;
-            // 
-            // dateStartDataGridViewTextBoxColumn2
-            // 
-            this.dateStartDataGridViewTextBoxColumn2.DataPropertyName = "dateStart";
-            this.dateStartDataGridViewTextBoxColumn2.HeaderText = "Date Start";
-            this.dateStartDataGridViewTextBoxColumn2.Name = "dateStartDataGridViewTextBoxColumn2";
-            this.dateStartDataGridViewTextBoxColumn2.Width = 149;
-            // 
-            // dateDischargeDataGridViewTextBoxColumn2
-            // 
-            this.dateDischargeDataGridViewTextBoxColumn2.DataPropertyName = "dateDischarge";
-            this.dateDischargeDataGridViewTextBoxColumn2.HeaderText = "Date Expiration";
-            this.dateDischargeDataGridViewTextBoxColumn2.Name = "dateDischargeDataGridViewTextBoxColumn2";
-            this.dateDischargeDataGridViewTextBoxColumn2.Width = 212;
-            // 
-            // statusDataGridViewTextBoxColumn2
-            // 
-            this.statusDataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.statusDataGridViewTextBoxColumn2.DataPropertyName = "status";
-            this.statusDataGridViewTextBoxColumn2.HeaderText = "Status";
-            this.statusDataGridViewTextBoxColumn2.Name = "statusDataGridViewTextBoxColumn2";
             // 
             // numericNew
             // 
@@ -2096,7 +2023,7 @@
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Visible = false;
-            this.dataGridViewTextBoxColumn4.Width = 102;
+            this.dataGridViewTextBoxColumn4.Width = 83;
             // 
             // pictureBox1
             // 
@@ -2125,7 +2052,7 @@
             this.groupBoxCheckMember.Controls.Add(this.btSearch);
             this.groupBoxCheckMember.Controls.Add(this.txtSearchContract);
             this.groupBoxCheckMember.Controls.Add(this.dgvSearchMember);
-            this.groupBoxCheckMember.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxCheckMember.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxCheckMember.ForeColor = System.Drawing.Color.Navy;
             this.groupBoxCheckMember.Location = new System.Drawing.Point(20, 29);
             this.groupBoxCheckMember.Name = "groupBoxCheckMember";
@@ -2137,14 +2064,14 @@
             // comboBox1
             // 
             this.comboBox1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.comboBox1.Font = new System.Drawing.Font("UVN Anh Hai", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Renew",
             "New package"});
             this.comboBox1.Location = new System.Drawing.Point(388, 40);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(276, 40);
+            this.comboBox1.Size = new System.Drawing.Size(276, 37);
             this.comboBox1.TabIndex = 163;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -2236,7 +2163,7 @@
             this.btAddRenew.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btAddRenew.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btAddRenew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btAddRenew.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAddRenew.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btAddRenew.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btAddRenew.Location = new System.Drawing.Point(794, 447);
             this.btAddRenew.Name = "btAddRenew";
@@ -2260,7 +2187,7 @@
             this.dgvSearchContract.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle37.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle37.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle37.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle37.ForeColor = System.Drawing.Color.Navy;
             dataGridViewCellStyle37.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle37.SelectionForeColor = System.Drawing.Color.Navy;
@@ -2269,7 +2196,7 @@
             this.dgvSearchContract.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle38.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle38.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle38.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle38.ForeColor = System.Drawing.Color.Navy;
             dataGridViewCellStyle38.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle38.SelectionForeColor = System.Drawing.Color.Navy;
@@ -2280,7 +2207,7 @@
             this.dgvSearchContract.Name = "dgvSearchContract";
             dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle39.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle39.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle39.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle39.ForeColor = System.Drawing.Color.Navy;
             dataGridViewCellStyle39.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle39.SelectionForeColor = System.Drawing.Color.Navy;
@@ -2335,7 +2262,7 @@
             this.dgvSearchMember.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle42.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle42.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle42.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle42.ForeColor = System.Drawing.Color.Navy;
             dataGridViewCellStyle42.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle42.SelectionForeColor = System.Drawing.Color.Navy;
@@ -2344,7 +2271,7 @@
             this.dgvSearchMember.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle43.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle43.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle43.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle43.ForeColor = System.Drawing.Color.Navy;
             dataGridViewCellStyle43.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle43.SelectionForeColor = System.Drawing.Color.Navy;
@@ -2355,7 +2282,7 @@
             this.dgvSearchMember.Name = "dgvSearchMember";
             dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle44.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle44.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle44.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle44.ForeColor = System.Drawing.Color.Navy;
             dataGridViewCellStyle44.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle44.SelectionForeColor = System.Drawing.Color.Navy;
@@ -2377,7 +2304,7 @@
             this.groupBoxRenew.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBoxRenew.Controls.Add(this.btInvoiceRenew);
             this.groupBoxRenew.Controls.Add(this.dgvRenew);
-            this.groupBoxRenew.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxRenew.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxRenew.ForeColor = System.Drawing.Color.Navy;
             this.groupBoxRenew.Location = new System.Drawing.Point(20, 535);
             this.groupBoxRenew.Name = "groupBoxRenew";
@@ -2418,7 +2345,7 @@
             this.dgvRenew.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle47.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle47.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle47.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle47.ForeColor = System.Drawing.Color.Navy;
             dataGridViewCellStyle47.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle47.SelectionForeColor = System.Drawing.Color.Navy;
@@ -2434,7 +2361,7 @@
             this.dgvRenew.DataSource = this.listContractBindingSource;
             dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle48.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle48.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle48.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle48.ForeColor = System.Drawing.Color.Navy;
             dataGridViewCellStyle48.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle48.SelectionForeColor = System.Drawing.Color.Navy;
@@ -2445,7 +2372,7 @@
             this.dgvRenew.Name = "dgvRenew";
             dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle49.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle49.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle49.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle49.ForeColor = System.Drawing.Color.Navy;
             dataGridViewCellStyle49.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle49.SelectionForeColor = System.Drawing.Color.Navy;
@@ -2462,41 +2389,6 @@
             this.dgvRenew.Size = new System.Drawing.Size(902, 240);
             this.dgvRenew.TabIndex = 158;
             this.dgvRenew.DoubleClick += new System.EventHandler(this.dgvRenew_DoubleClick);
-            // 
-            // idPTDataGridViewTextBoxColumn1
-            // 
-            this.idPTDataGridViewTextBoxColumn1.DataPropertyName = "idPT";
-            this.idPTDataGridViewTextBoxColumn1.HeaderText = "ID PT";
-            this.idPTDataGridViewTextBoxColumn1.Name = "idPTDataGridViewTextBoxColumn1";
-            this.idPTDataGridViewTextBoxColumn1.Width = 116;
-            // 
-            // idPackageDataGridViewTextBoxColumn1
-            // 
-            this.idPackageDataGridViewTextBoxColumn1.DataPropertyName = "idPackage";
-            this.idPackageDataGridViewTextBoxColumn1.HeaderText = "ID Package";
-            this.idPackageDataGridViewTextBoxColumn1.Name = "idPackageDataGridViewTextBoxColumn1";
-            this.idPackageDataGridViewTextBoxColumn1.Width = 173;
-            // 
-            // dateStartDataGridViewTextBoxColumn1
-            // 
-            this.dateStartDataGridViewTextBoxColumn1.DataPropertyName = "dateStart";
-            this.dateStartDataGridViewTextBoxColumn1.HeaderText = "Date Start";
-            this.dateStartDataGridViewTextBoxColumn1.Name = "dateStartDataGridViewTextBoxColumn1";
-            this.dateStartDataGridViewTextBoxColumn1.Width = 158;
-            // 
-            // dateDischargeDataGridViewTextBoxColumn1
-            // 
-            this.dateDischargeDataGridViewTextBoxColumn1.DataPropertyName = "dateDischarge";
-            this.dateDischargeDataGridViewTextBoxColumn1.HeaderText = "Date Expiration";
-            this.dateDischargeDataGridViewTextBoxColumn1.Name = "dateDischargeDataGridViewTextBoxColumn1";
-            this.dateDischargeDataGridViewTextBoxColumn1.Width = 227;
-            // 
-            // statusDataGridViewTextBoxColumn1
-            // 
-            this.statusDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.statusDataGridViewTextBoxColumn1.DataPropertyName = "status";
-            this.statusDataGridViewTextBoxColumn1.HeaderText = "Status";
-            this.statusDataGridViewTextBoxColumn1.Name = "statusDataGridViewTextBoxColumn1";
             // 
             // tabPackage
             // 
@@ -2517,7 +2409,7 @@
             this.groupBoxCheckComon.Controls.Add(this.pictureBox3);
             this.groupBoxCheckComon.Controls.Add(this.txtCheckComon);
             this.groupBoxCheckComon.Controls.Add(this.dgvMemberComon);
-            this.groupBoxCheckComon.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxCheckComon.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxCheckComon.ForeColor = System.Drawing.Color.Navy;
             this.groupBoxCheckComon.Location = new System.Drawing.Point(941, 12);
             this.groupBoxCheckComon.Name = "groupBoxCheckComon";
@@ -2540,7 +2432,7 @@
             this.dgvPackageComon.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             dataGridViewCellStyle52.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle52.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle52.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle52.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle52.ForeColor = System.Drawing.Color.Navy;
             dataGridViewCellStyle52.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle52.SelectionForeColor = System.Drawing.Color.Navy;
@@ -2549,7 +2441,7 @@
             this.dgvPackageComon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle53.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle53.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle53.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle53.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle53.ForeColor = System.Drawing.Color.Navy;
             dataGridViewCellStyle53.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle53.SelectionForeColor = System.Drawing.Color.Navy;
@@ -2560,7 +2452,7 @@
             this.dgvPackageComon.Name = "dgvPackageComon";
             dataGridViewCellStyle54.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle54.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle54.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle54.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle54.ForeColor = System.Drawing.Color.Navy;
             dataGridViewCellStyle54.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle54.SelectionForeColor = System.Drawing.Color.Navy;
@@ -2616,7 +2508,7 @@
             this.dgvMemberComon.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             dataGridViewCellStyle57.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle57.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle57.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle57.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle57.ForeColor = System.Drawing.Color.Navy;
             dataGridViewCellStyle57.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle57.SelectionForeColor = System.Drawing.Color.Navy;
@@ -2625,7 +2517,7 @@
             this.dgvMemberComon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle58.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle58.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle58.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle58.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle58.ForeColor = System.Drawing.Color.Navy;
             dataGridViewCellStyle58.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle58.SelectionForeColor = System.Drawing.Color.Navy;
@@ -2636,7 +2528,7 @@
             this.dgvMemberComon.Name = "dgvMemberComon";
             dataGridViewCellStyle59.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle59.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle59.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle59.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle59.ForeColor = System.Drawing.Color.Navy;
             dataGridViewCellStyle59.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle59.SelectionForeColor = System.Drawing.Color.Navy;
@@ -2657,7 +2549,7 @@
             // comboPackage
             // 
             this.comboPackage.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.comboPackage.Font = new System.Drawing.Font("UVN Anh Hai", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboPackage.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboPackage.ForeColor = System.Drawing.Color.Firebrick;
             this.comboPackage.FormattingEnabled = true;
             this.comboPackage.Items.AddRange(new object[] {
@@ -2666,7 +2558,7 @@
             "Renew"});
             this.comboPackage.Location = new System.Drawing.Point(43, 37);
             this.comboPackage.Name = "comboPackage";
-            this.comboPackage.Size = new System.Drawing.Size(228, 40);
+            this.comboPackage.Size = new System.Drawing.Size(228, 37);
             this.comboPackage.TabIndex = 163;
             this.comboPackage.Text = "---Select category---";
             this.comboPackage.SelectedIndexChanged += new System.EventHandler(this.comboPackage_SelectedIndexChanged);
@@ -3162,11 +3054,11 @@
             // 
             this.lbDateTime.AutoSize = true;
             this.lbDateTime.BackColor = System.Drawing.Color.Transparent;
-            this.lbDateTime.Font = new System.Drawing.Font("UVN Anh Hai", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDateTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDateTime.ForeColor = System.Drawing.Color.Crimson;
             this.lbDateTime.Location = new System.Drawing.Point(1463, 9);
             this.lbDateTime.Name = "lbDateTime";
-            this.lbDateTime.Size = new System.Drawing.Size(36, 36);
+            this.lbDateTime.Size = new System.Drawing.Size(38, 31);
             this.lbDateTime.TabIndex = 7;
             this.lbDateTime.Text = "   ";
             // 
@@ -3207,6 +3099,115 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // idPTDataGridViewTextBoxColumn
+            // 
+            this.idPTDataGridViewTextBoxColumn.DataPropertyName = "idPT";
+            this.idPTDataGridViewTextBoxColumn.HeaderText = "ID PT";
+            this.idPTDataGridViewTextBoxColumn.Name = "idPTDataGridViewTextBoxColumn";
+            this.idPTDataGridViewTextBoxColumn.Width = 99;
+            // 
+            // idPackageDataGridViewTextBoxColumn
+            // 
+            this.idPackageDataGridViewTextBoxColumn.DataPropertyName = "idPackage";
+            this.idPackageDataGridViewTextBoxColumn.HeaderText = "ID Package";
+            this.idPackageDataGridViewTextBoxColumn.Name = "idPackageDataGridViewTextBoxColumn";
+            this.idPackageDataGridViewTextBoxColumn.Width = 161;
+            // 
+            // dateStartDataGridViewTextBoxColumn
+            // 
+            this.dateStartDataGridViewTextBoxColumn.DataPropertyName = "dateStart";
+            this.dateStartDataGridViewTextBoxColumn.HeaderText = "Date Start";
+            this.dateStartDataGridViewTextBoxColumn.Name = "dateStartDataGridViewTextBoxColumn";
+            this.dateStartDataGridViewTextBoxColumn.Width = 143;
+            // 
+            // dateDischargeDataGridViewTextBoxColumn
+            // 
+            this.dateDischargeDataGridViewTextBoxColumn.DataPropertyName = "dateDischarge";
+            this.dateDischargeDataGridViewTextBoxColumn.HeaderText = "Date Expiration";
+            this.dateDischargeDataGridViewTextBoxColumn.Name = "dateDischargeDataGridViewTextBoxColumn";
+            this.dateDischargeDataGridViewTextBoxColumn.Width = 201;
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            // 
+            // listContractBindingSource
+            // 
+            this.listContractBindingSource.DataSource = typeof(slnGym.DataObject.ListContract);
+            // 
+            // idPTDataGridViewTextBoxColumn2
+            // 
+            this.idPTDataGridViewTextBoxColumn2.DataPropertyName = "idPT";
+            this.idPTDataGridViewTextBoxColumn2.HeaderText = "ID PT";
+            this.idPTDataGridViewTextBoxColumn2.Name = "idPTDataGridViewTextBoxColumn2";
+            this.idPTDataGridViewTextBoxColumn2.Width = 104;
+            // 
+            // idPackageDataGridViewTextBoxColumn2
+            // 
+            this.idPackageDataGridViewTextBoxColumn2.DataPropertyName = "idPackage";
+            this.idPackageDataGridViewTextBoxColumn2.HeaderText = "ID Package";
+            this.idPackageDataGridViewTextBoxColumn2.Name = "idPackageDataGridViewTextBoxColumn2";
+            this.idPackageDataGridViewTextBoxColumn2.Width = 161;
+            // 
+            // dateStartDataGridViewTextBoxColumn2
+            // 
+            this.dateStartDataGridViewTextBoxColumn2.DataPropertyName = "dateStart";
+            this.dateStartDataGridViewTextBoxColumn2.HeaderText = "Date Start";
+            this.dateStartDataGridViewTextBoxColumn2.Name = "dateStartDataGridViewTextBoxColumn2";
+            this.dateStartDataGridViewTextBoxColumn2.Width = 149;
+            // 
+            // dateDischargeDataGridViewTextBoxColumn2
+            // 
+            this.dateDischargeDataGridViewTextBoxColumn2.DataPropertyName = "dateDischarge";
+            this.dateDischargeDataGridViewTextBoxColumn2.HeaderText = "Date Expiration";
+            this.dateDischargeDataGridViewTextBoxColumn2.Name = "dateDischargeDataGridViewTextBoxColumn2";
+            this.dateDischargeDataGridViewTextBoxColumn2.Width = 212;
+            // 
+            // statusDataGridViewTextBoxColumn2
+            // 
+            this.statusDataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.statusDataGridViewTextBoxColumn2.DataPropertyName = "status";
+            this.statusDataGridViewTextBoxColumn2.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn2.Name = "statusDataGridViewTextBoxColumn2";
+            // 
+            // idPTDataGridViewTextBoxColumn1
+            // 
+            this.idPTDataGridViewTextBoxColumn1.DataPropertyName = "idPT";
+            this.idPTDataGridViewTextBoxColumn1.HeaderText = "ID PT";
+            this.idPTDataGridViewTextBoxColumn1.Name = "idPTDataGridViewTextBoxColumn1";
+            this.idPTDataGridViewTextBoxColumn1.Width = 109;
+            // 
+            // idPackageDataGridViewTextBoxColumn1
+            // 
+            this.idPackageDataGridViewTextBoxColumn1.DataPropertyName = "idPackage";
+            this.idPackageDataGridViewTextBoxColumn1.HeaderText = "ID Package";
+            this.idPackageDataGridViewTextBoxColumn1.Name = "idPackageDataGridViewTextBoxColumn1";
+            this.idPackageDataGridViewTextBoxColumn1.Width = 180;
+            // 
+            // dateStartDataGridViewTextBoxColumn1
+            // 
+            this.dateStartDataGridViewTextBoxColumn1.DataPropertyName = "dateStart";
+            this.dateStartDataGridViewTextBoxColumn1.HeaderText = "Date Start";
+            this.dateStartDataGridViewTextBoxColumn1.Name = "dateStartDataGridViewTextBoxColumn1";
+            this.dateStartDataGridViewTextBoxColumn1.Width = 162;
+            // 
+            // dateDischargeDataGridViewTextBoxColumn1
+            // 
+            this.dateDischargeDataGridViewTextBoxColumn1.DataPropertyName = "dateDischarge";
+            this.dateDischargeDataGridViewTextBoxColumn1.HeaderText = "Date Expiration";
+            this.dateDischargeDataGridViewTextBoxColumn1.Name = "dateDischargeDataGridViewTextBoxColumn1";
+            this.dateDischargeDataGridViewTextBoxColumn1.Width = 224;
+            // 
+            // statusDataGridViewTextBoxColumn1
+            // 
+            this.statusDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.statusDataGridViewTextBoxColumn1.DataPropertyName = "status";
+            this.statusDataGridViewTextBoxColumn1.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn1.Name = "statusDataGridViewTextBoxColumn1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3238,7 +3239,6 @@
             this.tabControlManager.ResumeLayout(false);
             this.tabNewMember.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListContract)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listContractBindingSource)).EndInit();
             this.groupBoxEdit.ResumeLayout(false);
             this.groupBoxEdit.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAvaEdit)).EndInit();
@@ -3280,6 +3280,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picAvatarCommon)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listContractBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

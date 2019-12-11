@@ -54,6 +54,7 @@ namespace slnGym.User_Control
 
             int index = dgvListEmployee.CurrentCell.RowIndex;
             string id = dgvListEmployee.Rows[index].Cells[0].Value.ToString();
+
             //byte[] picPD;
             //picPD = (byte[])dgvListEmployee.Rows[index].Cells[2].Value;
             //MemoryStream pic = new MemoryStream(picPD);
