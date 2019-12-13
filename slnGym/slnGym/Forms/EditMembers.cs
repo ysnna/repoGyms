@@ -20,7 +20,7 @@ namespace slnGym.Forms
         {
             InitializeComponent();
         }
-       
+        MEMBERs mem = new MEMBERs();
         private void Form2_Load(object sender, EventArgs e)
         {
             loadInfo();
@@ -30,7 +30,6 @@ namespace slnGym.Forms
         {
             this.Close();
         }
-
         public void loadInfo()
         {
             try
@@ -43,7 +42,7 @@ namespace slnGym.Forms
                 lbID.Text = GetEditMember.IDMember;
                 dateTimePickerBdate.Value = GetEditMember.Birthday;
                 picAvaEdit.Image = GetEditMember.Picture;
-                if (GetEditMember.Gender == 1)
+                if (GetEditMember.Gender == "Male")
                 {
                     radioMaleEdit.Checked = true;
                 }
@@ -51,7 +50,6 @@ namespace slnGym.Forms
             }
             catch { }
         }
-
         private void picAvaEdit_Click(object sender, EventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
@@ -62,10 +60,10 @@ namespace slnGym.Forms
 
         private void btEdit_Click(object sender, EventArgs e)
         {
-            int gender = 0;
+            string gender = "Female";
             if (radioMaleEdit.Checked)
             {
-                gender = 1;
+                gender = "Male";
             }
             string note = "Chờ duyệt";
             
@@ -78,10 +76,12 @@ namespace slnGym.Forms
             string phone = txtPhone.Text;
             string add = txtAddress.Text;
             DateTime Bdate = dateTimePickerBdate.Value;
-
-            ///
-            ///insert member
-            ///
+            if (mem.insertTemporary(id, Lname, Fname, picture ,Bdate, add, gender, phone, IDcard, note))
+            {
+               // mem.updateMembers(id, Lname, Fname, Bdate, add, gender, phone, IDcard, note);
+                MessageBox.Show("Your request has been sent");
+                this.Close();
+            }
         }
     }
 }

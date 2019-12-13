@@ -15,18 +15,18 @@ namespace slnGym.Forms
     public partial class Login : Form
     {
         Form1 f1 = new Form1();
+        AccountBL accountLog = new AccountBL();
+        LOGIN login = new LOGIN();
 
         public Login(Form1 login)
         {
             InitializeComponent();
             f1 = login;
         }
-
         private void Button1_Click(object sender, EventArgs e)
         {
             MessageBox.Show(this.txtUsername.Text.ToString());
         }
-
         private void LoginUC_Load(object sender, EventArgs e)
         {
             txtUsername.Text = "";
@@ -41,6 +41,17 @@ namespace slnGym.Forms
         }
         public void Log_in()
         {
+            string uname = null;
+            AccountBL act = new AccountBL();
+            if (act.checkPhone(txtUsername.Text) != null)
+            {
+                uname = act.checkPhone(txtUsername.Text).ToString();
+                GLOBAL.GetUsername(uname);
+            }
+            else
+            {
+                GLOBAL.GetUsername(txtUsername.Text);
+            }
             if (LoginCheck() == true)
             {
                 SysLOG.DateLogin = DateTime.Now.ToString();
@@ -73,9 +84,7 @@ namespace slnGym.Forms
                         MessageBox.Show("Not approve");
                         return;
                 }
-                ///
-                ///insert account
-                ///
+                accountLog.insertAccount(SysLOG.UserName, SysLOG.DateLogin, SysLOG.DateLogout, SysLOG.Status);
                 f1.AccessSuccess();
             }
             else
@@ -87,9 +96,7 @@ namespace slnGym.Forms
         int DefineAccount()
         {
             DataTable dt = new DataTable();
-            ///
-            ///dt = login.getUserID(GLOBAL.username);
-            ///
+            dt = login.getUserID(GLOBAL.username);
             int id = Convert.ToInt32(dt.Rows[0][0].ToString());
             return id;
         }
@@ -98,9 +105,7 @@ namespace slnGym.Forms
         bool LoginCheck()
         {
             DataTable dt = new DataTable();
-            ///
-            ///dt = login.getAccount(GLOBAL.username, txtPassword.Text);
-            ///
+            dt = login.getAccount(GLOBAL.username, txtPassword.Text);
             if (dt.Rows.Count > 0)
                 return true;
             return false;

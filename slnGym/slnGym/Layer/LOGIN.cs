@@ -14,7 +14,7 @@ namespace slnGym.Layer
         //Dang ky tai khoan
         public bool insertLogin(string user, string pass, string type, string state)
         {
-            SqlCommand cmd = new SqlCommand("insert into ACCOUNT(username,passw,userID,state)" +
+            SqlCommand cmd = new SqlCommand("insert into tblACCOUNT(username,passw,userID,state)" +
                 "values (@user,@pass,@type,@state)", mydb.getConnection);
             cmd.Parameters.Add("@user", SqlDbType.VarChar).Value = user;
             cmd.Parameters.Add("@pass", SqlDbType.VarChar).Value = pass;
@@ -34,7 +34,7 @@ namespace slnGym.Layer
         }
         public bool updatePass(string user, string passw)
         {
-            SqlCommand cmd = new SqlCommand("update ACCOUNT set passw=@pass where username=@user", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("update tblACCOUNT set passw=@pass where username=@user", mydb.getConnection);
             cmd.Parameters.Add("@user", SqlDbType.VarChar).Value = user;
             cmd.Parameters.Add("@pass", SqlDbType.VarChar).Value = passw;
 
@@ -53,7 +53,7 @@ namespace slnGym.Layer
         }
         public bool updateAccount(string user, int userid, string state)
         {
-            SqlCommand cmd = new SqlCommand("update ACCOUNT set userID=@uID, state=@state where username=@user", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("update tblACCOUNT set userID=@uID, state=@state where username=@user", mydb.getConnection);
             cmd.Parameters.Add("@user", SqlDbType.VarChar).Value = user;
             cmd.Parameters.Add("@uID", SqlDbType.Int).Value = userid;
             cmd.Parameters.Add("@state", SqlDbType.VarChar).Value = state;
@@ -70,58 +70,21 @@ namespace slnGym.Layer
                 return false;
             }
         }
-        public bool usernameExist(string user)
-        {
-            SqlCommand cmd = new SqlCommand("select * from LOGIN where username =@user", mydb.getConnection);
-
-            cmd.Parameters.Add("@user", SqlDbType.NChar).Value = user;
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            if (dt.Rows.Count > 0)
-            {
-                return true;
-            }
-            return false;
-        }
-        public bool deleteAccount(string ID)
-        {
-            SqlCommand cmd = new SqlCommand("delete from ACCOUNT where username=@id", mydb.getConnection);
-            cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = ID;
-            mydb.openConnection();
-            if (cmd.ExecuteNonQuery() == 1)
-            {
-                mydb.closeConnection();
-                return true;
-            }
-            else
-            {
-                mydb.closeConnection();
-                return false;
-            }
-        }
+     
+    
         public DataTable getListAccount()
         {
-            SqlCommand cmd = new SqlCommand("select username as 'Username', passw as 'Password', state as 'State' from ACCOUNT", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("select username as 'Username', passw as 'Password', state as 'State' from tblACCOUNT", mydb.getConnection);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
             mydb.closeConnection();
             return dt;
         }
-        public DataTable getAccUserID(string user)
-        {
-            SqlCommand cmd = new SqlCommand("select * from ACCOUNT where userID=@user", mydb.getConnection);
-            cmd.Parameters.Add("@user", SqlDbType.VarChar).Value = user;
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            mydb.closeConnection();
-            return dt;
-        }
+
         public DataTable getUserID(string user)
         {
-            SqlCommand cmd = new SqlCommand("select userID from ACCOUNT where username=@user", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("select userID from tblACCOUNT where username=@user", mydb.getConnection);
             cmd.Parameters.Add("@user", SqlDbType.NVarChar).Value = user;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -131,7 +94,7 @@ namespace slnGym.Layer
         }
         public DataTable getAccount(string user, string pass)
         {
-            SqlCommand cmd = new SqlCommand("select *from ACCOUNT where username=@user and passw=@pass", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("select *from tblACCOUNT where username=@user and passw=@pass", mydb.getConnection);
             cmd.Parameters.Add("@user", SqlDbType.NChar).Value = user;
             cmd.Parameters.Add("@pass", SqlDbType.NChar).Value = pass;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -142,7 +105,7 @@ namespace slnGym.Layer
         }
         public DataTable getAccountbyUser(string user)
         {
-            SqlCommand cmd = new SqlCommand("select *from ACCOUNT where username=@user", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("select *from tblACCOUNT where username=@user", mydb.getConnection);
             cmd.Parameters.Add("@user", SqlDbType.NVarChar).Value = user;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();

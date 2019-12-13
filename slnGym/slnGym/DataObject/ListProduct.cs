@@ -27,9 +27,9 @@ namespace slnGym.DataObject
         //#Mở lại hình ảnh
         public ListProduct(DataRow row)
         {
-            this.Id = Convert.ToInt32(row["productID"]);
-            this.Name = row["productName"].ToString();
-            this.Cost = Convert.ToDecimal(row["productCost"].ToString());
+            this.Id = Convert.ToInt32(row["proID"]);
+            this.Name = row["proName"].ToString();
+            this.Cost = Convert.ToDecimal(row["proCost"].ToString());
             byte[] picPD;
             picPD = (byte[])row["picture"];
             MemoryStream pic = new MemoryStream(picPD);

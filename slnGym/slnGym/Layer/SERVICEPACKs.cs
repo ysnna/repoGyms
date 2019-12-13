@@ -13,7 +13,7 @@ namespace slnGym.Layer
         MY_DB mydb = new MY_DB();
         public bool insertSERVICE(int id, string name, decimal cost, string note, string tag)
         {
-            SqlCommand cmd = new SqlCommand("insert into SERVICEPACK(serviceID,serviceNAME,cost,note, tagPT)" +
+            SqlCommand cmd = new SqlCommand("insert into tblSERVICEPACK(serID,serNAME,cost,note, tagPT)" +
                 "values (@id,@name,@cost,@note,@tag)", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
             cmd.Parameters.Add("@name", SqlDbType.NVarChar).Value = name;
@@ -34,7 +34,7 @@ namespace slnGym.Layer
         }
         public bool deleteSERVICE(int ID)
         {
-            SqlCommand cmd = new SqlCommand("delete from SERVICEPACK where serviceID=@id", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("delete from tblSERVICEPACK where serID=@id", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.Int).Value = ID;
             mydb.openConnection();
             if (cmd.ExecuteNonQuery() == 1)
@@ -50,7 +50,7 @@ namespace slnGym.Layer
         }
         public bool updateSERVICE(int id, string name, decimal cost, string note, string tag)
         {
-            SqlCommand cmd = new SqlCommand("update SERVICEPACK set serviceName=@name,cost=@cost,note=@note,tagPT=@tag where serviceID=@id", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("update tblSERVICEPACK set serName=@name,cost=@cost,note=@note,tagPT=@tag where serID=@id", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
             cmd.Parameters.Add("@name", SqlDbType.NVarChar).Value = name;
             cmd.Parameters.Add("@cost", SqlDbType.Decimal).Value = cost;
@@ -71,7 +71,7 @@ namespace slnGym.Layer
         //Lay thong tin 
         public DataTable getSERVICE()
         {
-            SqlCommand cmd = new SqlCommand("select serviceID as 'ID',serviceNAME as 'Name',cost as 'Price',note as 'Description', tagPT as 'Tag' from SERVICEPACK order by serviceID", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("select serID as 'ID',serNAME as 'Name',cost as 'Price',note as 'Description', tagPT as 'Tag' from tblSERVICEPACK order by serID", mydb.getConnection);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -81,20 +81,10 @@ namespace slnGym.Layer
 
         public DataTable getNamePTbyPackage(string tagPT) //--tagPT = @tagPT roi add cmd.Add.Parameter vo
         {
-            SqlCommand cmd = new SqlCommand("select Distinct EMPLOYEE.employeeID as 'ID  ',EMPLOYEE.employeeFName as 'First name',EMPLOYEE.employeeLName as 'Last name' from EMPLOYEE," +
-                "(select idPT from Work,(select *from SERVICEPACK, GROUPWORK where SERVICEPACK.tagPT = GROUPWORK.groupWorkID) as A " +
-                "where WORK.groupWorkID = A.tagPT and tagPT =@tagpt) as B  where EMPLOYEE.employeeID = B.idPT", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("select Distinct tblEMPLOYEE.empID as 'ID  ',tblEMPLOYEE.empFName as 'First name', tblEMPLOYEE.empLName as 'Last name' from tblEMPLOYEE," +
+                "(select idPT from tblWork,(select *from tblSERVICEPACK, tblGROUPWORK where tblSERVICEPACK.tagPT = tblGROUPWORK.grWorkID) as A " +
+                "where tblWORK.groupWorkID = A.tagPT and tagPT =@tagpt) as B  where tblEMPLOYEE.empID = B.idPT", mydb.getConnection);
             cmd.Parameters.Add("@tagpt", SqlDbType.VarChar).Value = tagPT;
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            mydb.closeConnection();
-            return dt;
-        }
-
-        public DataTable getSERVICEforContract()
-        {
-            SqlCommand cmd = new SqlCommand("select * from SERVICEPACK order by serviceID", mydb.getConnection);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -103,7 +93,7 @@ namespace slnGym.Layer
         }
         public DataTable getSERVICEbyID(int id)
         {
-            SqlCommand cmd = new SqlCommand("select *from SERVICEPACK where serviceID=@ID", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("select *from tblSERVICEPACK where serID=@ID", mydb.getConnection);
             cmd.Parameters.Add("@ID", SqlDbType.Int).Value = id;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -111,22 +101,13 @@ namespace slnGym.Layer
             mydb.closeConnection();
             return dt;
         }
-        public DataTable getSERVICEbyName(string name)
-        {
-            SqlCommand cmd = new SqlCommand("select *from SERVICEPACK where serviceName=@ID", mydb.getConnection);
-            cmd.Parameters.Add("@ID", SqlDbType.VarChar).Value = name;
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            mydb.closeConnection();
-            return dt;
-        }
+        
         public DataTable getPackageDGV(string idKH)
         {
-            SqlCommand cmd = new SqlCommand("select A.contractID, serviceNAME, A.dateStart,A.dateDischarge from SERVICEPACK, " +
-                " (select contractID, DETAILSCONTRACT.servicePACK, dateStart, dateDischarge from CONTRACTS, DETAILSCONTRACT" +
-                " where cusID = @id AND contractID = contID) as A" +
-                " where serviceID = A.servicePACK", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("select A.contID as 'ID', serNAME as 'Name', A.dateStart as 'Date Start',A.dateDischarge as 'Date Discharge' from tblSERVICEPACK, " +
+                " (select contID, tblDETAILSCONTRACT.servicePACK, dateStart, dateDischarge from tblCONTRACTS, tblDETAILSCONTRACT" +
+                " where cusID = @id AND contID = cont_ID) as A" +
+                " where serID = A.servicePACK", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = idKH;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();

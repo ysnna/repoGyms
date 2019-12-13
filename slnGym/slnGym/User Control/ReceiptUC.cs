@@ -21,8 +21,18 @@ namespace slnGym.User_Control
             InitializeComponent();
         }
 
+        PRODUCTs pd = new PRODUCTs();
+        RECEIPTs inv = new RECEIPTs();
+        CONTRACTs contract = new CONTRACTs();
+        MEMBERs mem = new MEMBERs();
         ListReceipt listReceipt = new ListReceipt();
+        LOGIN log = new LOGIN();
+        DETAILCONTRACT detailsCont = new DETAILCONTRACT();
+        DETAILRECEIPT detailsReceipt = new DETAILRECEIPT();
+        STATISTICS statistic = new STATISTICS();
+        ContractBL bl = new ContractBL();
 
+        // ============Load & Event
         private void btCancel_Click(object sender, EventArgs e)
         {
             this.Dispose();
@@ -114,6 +124,8 @@ namespace slnGym.User_Control
                 lbDiscount.Visible = false;
             else lbDiscount.Visible = true;
         }
+
+        //==========Hàm xử lý
 
         public void createBill(Object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
@@ -222,31 +234,78 @@ namespace slnGym.User_Control
             MessageBox.Show("Complete");
         }
 
+      
+
         public bool IsNumeric(string val) => double.TryParse(val, out double result);
 
         public void createMember()
         {
+            #region Create account
+            //try..catch
+            if (log.insertLogin(GETMember.IDMember, GETMember.Password, "5", "Blocked"))
+            {
+                MessageBox.Show("Added account", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else MessageBox.Show("Add account fail", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            #endregion
 
+            #region Create member
+            MemoryStream pic = new MemoryStream();
+            GETMember.Picture.Save(pic, GETMember.Picture.RawFormat);
+            if (GETMember.FName != null && GETMember.LName != null && pic != null && GETMember.Address != null && GETMember.Phone != null && GETMember.IDCard != '\0')
+            {
+                if (mem.insertMembers(GETMember.IDMember, GETMember.LName, GETMember.FName, pic, GETMember.Birthday, GETMember.Address, GETMember.Gender, GETMember.Phone, GETMember.IDCard, "Chờ duyệt"))
+                    MessageBox.Show("Added Member", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else MessageBox.Show("Added member fail", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else MessageBox.Show("Please insert information", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            #endregion
         }
 
         public void createContract()
         {
-            
+            //try..catch
+            if (contract.insertCONTRACTS(GETContract.IDContract, GETMember.IDMember, GLOBAL.username, ""))
+            {
+                MessageBox.Show("Added contract", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else MessageBox.Show("Added contract fail", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         public void createReceipt()
         {
-            
+            if (inv.insertRECEIPT(txtInvoiceNo.Text, GETMember.IDMember, Convert.ToDecimal(txtTotal.Text.Trim())))
+            {
+                MessageBox.Show("Added receipt", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else MessageBox.Show("Added receipt fail", "Added..", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         public void createDetailsContract()
         {
-           
+            int lenght = GETContract.listContracts.Count;
+            for (int i = 0; i < lenght; i++)
+            {
+                detailsCont.insertDETAILCON(GETContract.IDContract, txtInvoiceNo.Text.Trim(), GETContract.listContracts[i].idPT, GETContract.listContracts[i].idPackage, GETContract.listContracts[i].dateStart, GETContract.listContracts[i].dateDischarge, GETContract.listContracts[i].status);
+            }
         }
 
         public void createDetailsReceipt()
         {
-           
+            int lenght = dgvCheckInvoice.Rows.Count;
+            for (int i = 0; i < lenght; i++)
+            {
+                int idBrand = Convert.ToInt32(dgvCheckInvoice.Rows[i].Cells[0].Value);
+                int idSer = Convert.ToInt32(dgvCheckInvoice.Rows[i].Cells[1].Value);
+                string name = dgvCheckInvoice.Rows[i].Cells[2].Value.ToString();
+                int period = Convert.ToInt32(dgvCheckInvoice.Rows[i].Cells[3].Value);
+                decimal total = Convert.ToDecimal(dgvCheckInvoice.Rows[i].Cells[4].Value);
+                if (GETContract.ISRENEW == "recommon" || GETContract.ISRENEW == "buypackages")
+                {
+                    detailsReceipt.insertDETAILRECEIPT(txtInvoiceNo.Text, Convert.ToDateTime(Convert.ToDateTime(lbTimePayment.Text).ToShortDateString()), idBrand, idSer, name, period, total, GETContract.Start.ToString());
+                }
+                else detailsReceipt.insertDETAILRECEIPT(txtInvoiceNo.Text, Convert.ToDateTime(Convert.ToDateTime(lbTimePayment.Text).ToShortDateString()), idBrand, idSer, name, period, total, "");
+            }
         }
 
         private void lbStatus_TextChanged(object sender, EventArgs e)
@@ -262,20 +321,20 @@ namespace slnGym.User_Control
             dgvViewProduct.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dgvViewProduct.AllowUserToAddRows = false;
             dgvViewProduct.EditMode = DataGridViewEditMode.EditProgrammatically;
-            ///
+            dgvViewProduct.DataSource = pd.getPRODUCTSbyIDNAMECost();
         }
 
         public void loadData()
         {
-            ////
+            txtInvoiceNo.Text = bl.loadInvoiceID();
             txtMemIDInvoide.Text = GETMember.IDMember;
             txtEmployeeID.Text = GLOBAL.username.ToUpper();
             lbDatePayment.Text = DateTime.Now.ToString();
             txtNameMember.Text = GETMember.FName + " " + GETMember.LName;
             txtPhoneNumber.Text = GETMember.Phone;
             txtAddress.Text = GETMember.Address;
-            int gender = Convert.ToInt32(GETMember.Gender);
-            if (gender == 1)
+           string gender = GETMember.Gender;
+            if (gender == "Female")
                 txtGender.Text = "Nữ";
             else txtGender.Text = "Nam";
             txtNote.Text = GETMember.Note;
@@ -366,7 +425,15 @@ namespace slnGym.User_Control
 
         private void dgvCheckInvoice_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            //int index = dgvCheckInvoice.CurrentCell.RowIndex;
+            //int getIDgroup = Convert.ToInt32(dgvCheckInvoice.Rows[index].Cells[0].Value);
+            //if (index <= GETContract.listContracts.Count)
+            //{
+            //    lbStartDate.Text = GETContract.listContracts[index].dateStart.ToString();
+            //    lbDischarge.Text = GETContract.listContracts[index].dateDischarge.ToString();
+            //    TimeSpan time = GETContract.listContracts[index].dateDischarge - GETContract.listContracts[index].dateStart;
+            //    txtComment.Text = "Total payment due in " + time.Days.ToString() + " days";
+            //}
         }
     }
 }

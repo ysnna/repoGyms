@@ -17,7 +17,7 @@ namespace slnGym.Layer
         MY_DB mydb = new MY_DB();
         public bool insertAccount(string username, string login, string logout, string status)
         {
-            SqlCommand cmd = new SqlCommand("insert into ACCOUNTLOGIN(username,loginDate,logoutDate,status)" + "values(@user,@login,@logout,@status)", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("insert into tblCHECKLOGIN(usr,loginDate,logoutDate,status)" + "values(@user,@login,@logout,@status)", mydb.getConnection);
             cmd.Parameters.Add("@user", SqlDbType.VarChar).Value = username;
             cmd.Parameters.Add("@login", SqlDbType.VarChar).Value = login;
             cmd.Parameters.Add("@logout", SqlDbType.VarChar).Value = logout;
@@ -36,7 +36,7 @@ namespace slnGym.Layer
         }//update CLASSROOM set classID=@id
         public bool updateAccount(string username, string login, string logout, string status)
         {
-            SqlCommand cmd = new SqlCommand("update ACCOUNTLOGIN set logoutDate=@logout,status=@status where username=@user and loginDate=@login", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("update tblCHECKLOGIN set logoutDate=@logout,status=@status where usr=@user and loginDate=@login", mydb.getConnection);
             cmd.Parameters.Add("@user", SqlDbType.VarChar).Value = username;
             cmd.Parameters.Add("@login", SqlDbType.VarChar).Value = login;
             cmd.Parameters.Add("@logout", SqlDbType.VarChar).Value = logout;
@@ -68,9 +68,9 @@ namespace slnGym.Layer
         }
         public DataTable getACCOUNTLog()
         {
-            SqlCommand cmd = new SqlCommand("select ACCOUNTLOGIN.username as 'Username', " +
+            SqlCommand cmd = new SqlCommand("select tblCHECKLOGIN.usr as 'Username', " +
                 "loginDate as 'Date Login', logoutDate as 'Date Logout', status as 'Status'" +
-                "from ACCOUNT, ACCOUNTLOGIN where ACCOUNT.username = ACCOUNTLOGIN.username order by loginDate desc", mydb.getConnection);
+                "from tblACCOUNT, tblCHECKLOGIN where tblACCOUNT.username = tblCHECKLOGIN.usr order by loginDate desc", mydb.getConnection);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);

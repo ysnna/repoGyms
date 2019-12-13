@@ -13,7 +13,7 @@ namespace slnGym.DataObject
         public static string Password { get; set; }
         public static string FName { get; set; }
         public static string LName { get; set; }
-        public static int Gender { get; set; }
+        public static string Gender { get; set; }
         public static int IDCard { get; set; }
         public static DateTime Birthday { get; set; }
         public static Image Picture { get; set; }

@@ -26,8 +26,19 @@ namespace slnGym.Forms
         {
             InitializeComponent();
             timer1.Start();
+            //socket = new SocketManager();
         }
 
+        SocketManager socket;
+        Layer.EMPLOYEEs emp = new Layer.EMPLOYEEs();
+        Layer.CONTRACTs contract = new CONTRACTs();
+        Layer.MEMBERs mem = new MEMBERs();
+        Layer.SERVICEPACKs sv = new SERVICEPACKs();
+        Layer.LOGIN log = new Layer.LOGIN();
+        Layer.DETAILCONTRACT detailContract = new Layer.DETAILCONTRACT();
+        Layer.RECEIPTs rc = new Layer.RECEIPTs();
+        Layer.DETAILCONTRACT dtCont = new Layer.DETAILCONTRACT();
+        Layer.AccountBL accountLog = new Layer.AccountBL();
         ListContract listContract = new ListContract();
         List<ListContract> getListContract = new List<ListContract>();
         User_Control.AccountEmployeeUC dt = new User_Control.AccountEmployeeUC() { Width = 1912, Height = 905 };
@@ -79,9 +90,7 @@ namespace slnGym.Forms
             if (GLOBAL.username != "")
             {
                 SysLOG.DateLogout = DateTime.Now.ToString();
-                ///
-                ///accountLog.updateAccount(SysLOG.UserName, SysLOG.DateLogin, SysLOG.DateLogout, SysLOG.Status);
-                ///
+                accountLog.updateAccount(SysLOG.UserName, SysLOG.DateLogin, SysLOG.DateLogout, SysLOG.Status);
             }
             this.Close();
         }
@@ -142,15 +151,27 @@ namespace slnGym.Forms
 
         public void Form1_Load(object sender, EventArgs e)
         {
+            //// TODO: This line of code loads data into the 'dBMSMembers.tblMEMBERS' table. You can move, or remove it, as needed.
+            //this.tblMEMBERSTableAdapter.Fill(this.dBMSMembers.tblMEMBERS);
+            //// TODO: This line of code loads data into the 'dBMSServicePack.tblSERVICEPACK' table. You can move, or remove it, as needed.
+            this.tblSERVICEPACKTableAdapter.Fill(this.dBMSServicePack.tblSERVICEPACK);
             datePickerEnd.Value = datePickerStart.Value.AddMonths(Convert.ToInt32(numericMonth.Value));
             dateEndRenew.Value = dateStartRenew.Value.AddMonths(Convert.ToInt32(numericRenew.Value));
             dateEndNew.Value = dateStartNew.Value.AddMonths(Convert.ToInt32(numericNew.Value));
             dateEndCommon.Value = dateStartCommon.Value.AddMonths(Convert.ToInt32(numericCommon.Value));
-           
+            panelChat.Visible = false;
+            loadMember();
             //home
             loadMachine();
             loadProduct();
-            loadServicePackage();
+
+            
+            dgvServicePack.RowTemplate.Height = 60;
+            dgvServicePack.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgvServicePack.AllowUserToAddRows = false;
+            dgvServicePack.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dgvServicePack.DataSource = sv.getSERVICE();
+
             //contract
             loadContract();
             loadDetailsContract();
@@ -162,9 +183,16 @@ namespace slnGym.Forms
             loadMemberToCommon();
             //loadStatistic();
             NeedLogin();
-
+            getIP();
             logoutToolStripMenuItem.Visible = false;
             managerToolStripMenuItem.Enabled = false;
+            
+        }
+        void loadMember()
+        {
+            DataTable dt = new DataTable();
+            dgvSearchMember.DataSource= mem.getMemberF1();
+            dgvMemberComon.DataSource = mem.getMemberF1();
         }
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -175,9 +203,7 @@ namespace slnGym.Forms
             getListContract.Clear();
             listContractBindingSource.Clear();
             SysLOG.DateLogout = DateTime.Now.ToString();
-            ///accountLog.updateAccount(SysLOG.UserName, SysLOG.DateLogin, SysLOG.DateLogout, SysLOG.Status);
-            ///
-            ///
+            accountLog.updateAccount(SysLOG.UserName, SysLOG.DateLogin, SysLOG.DateLogout, SysLOG.Status);
             loginToolStripMenuItem.Visible = true;
             logoutToolStripMenuItem.Visible = false;
             managerToolStripMenuItem.Enabled = true;
@@ -194,28 +220,85 @@ namespace slnGym.Forms
         {
             flowLayoutMachine.Controls.Clear();
             List<ListMachine> listMachines = new List<ListMachine>();
-            ///
-            ///
-            ////
+            ADDMACHINES mc = new ADDMACHINES();
+            DataTable dt = new DataTable();
+            dt = mc.getMACHINE();
+            if (dt.Rows.Count > 0)
+            {
+                foreach (DataRow item in dt.Rows)
+                {
+                    ListMachine machine = new ListMachine(item);
+                    listMachines.Add(machine);
+                }
+                foreach (ListMachine item in listMachines)
+                {
+                    Button bt = new Button() { Width = ListMachine.Width, Height = ListMachine.Height };
+                    bt.Font = new Font("Times New Roman", 22F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+                    bt.ForeColor = Color.Navy;
+                    bt.BackColor = flowLayoutMachine.BackColor;
+                    bt.BackgroundImage = item.Picture;
+                    bt.BackgroundImageLayout = ImageLayout.Zoom;
+                    bt.FlatAppearance.BorderColor = Color.Navy;
+                    bt.FlatAppearance.BorderSize = 5;
+                    bt.FlatStyle = FlatStyle.Flat;
+                    bt.Text = item.NameMachine;
+                    bt.TextAlign = ContentAlignment.BottomCenter;
+                    bt.Tag = item;
+                    this.flowLayoutMachine.Controls.Add(bt);
+                    this.flowLayoutMachine.Refresh();
+                }
+            }
         }
 
         public void loadProduct()
         {
             flowLayoutProduct.Controls.Clear();
             List<ListProduct> listProducts = new List<ListProduct>();
-            
+            PRODUCTs pd = new PRODUCTs();
+            DataTable dt = new DataTable();
+            dt = pd.getPRODUCTS();
+            if (dt.Rows.Count > 0)
+            {
+                foreach (DataRow item in dt.Rows)
+                {
+                    ListProduct product = new ListProduct(item);
+                    listProducts.Add(product);
+                }
+                foreach (ListProduct item in listProducts)
+                {
+                    Button bt = new Button() { Width = ListProduct.Width, Height = ListProduct.Height };
+                    bt.Font = new Font("Times New Roman", 22F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+                    bt.ForeColor = Color.Navy;
+                    bt.BackColor = flowLayoutProduct.BackColor;
+                    bt.BackgroundImage = item.picture;
+                    bt.BackgroundImageLayout = ImageLayout.Zoom;
+                    bt.FlatAppearance.BorderColor = Color.Navy;
+                    bt.FlatAppearance.BorderSize = 5;
+                    bt.FlatStyle = FlatStyle.Flat;
+                    bt.Text = item.Name;
+                    bt.TextAlign = ContentAlignment.BottomCenter;
+                    bt.Tag = item;
+                    flowLayoutProduct.Controls.Add(bt);
+                    flowLayoutProduct.Refresh();
+                }
+            }
+        }
+
+        public void loadInFoPT()
+        {
+            dgvInforPT.RowTemplate.Height = 40;
+            dgvInforPT.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgvInforPT.AllowUserToAddRows = false;
+            dgvInforPT.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
 
         public void loadServicePackage()
         {
-            ///
-            ///
-            ///
+            dgvServicePack.DataSource = sv.getSERVICE();
             dgvServicePack.RowTemplate.Height = 60;
             dgvServicePack.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dgvServicePack.AllowUserToAddRows = false;
             dgvServicePack.EditMode = DataGridViewEditMode.EditProgrammatically;
-            ////dgvServicePack.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         public void RefreshUC()
@@ -248,15 +331,18 @@ namespace slnGym.Forms
             dgvPackage.AllowUserToAddRows = false;
             dgvPackage.EditMode = DataGridViewEditMode.EditProgrammatically;
 
+            DataTable empDT = new DataTable();
             txtIDSeller.Text = GLOBAL.username.ToUpper();
-            ///
-            ///
-            ///
-            ////else txtNameSeller.Text = "Admin";
-            ///
-            ///Lấy KH và Contract ID tự động
-            ///
-            ///
+            empDT = emp.getEmployeebyID(GLOBAL.username);
+            if (empDT.Rows.Count > 0)
+            {
+                txtNameSeller.Text = empDT.Rows[0][3].ToString() + " " + empDT.Rows[0][4].ToString();
+            }
+            else txtNameSeller.Text = "Admin";
+            //Lấy KH và Contract ID tự động
+            ContractBL conbl = new ContractBL();
+            txtIDContract.Text = conbl.loadIDContract();
+            txtIDMember.Text = conbl.loadIDMEMBER();
             txtUserID.Text = txtIDMember.Text;
         }
 
@@ -290,9 +376,10 @@ namespace slnGym.Forms
 
         public void CreateContract()
         {
+
+            #region Create member
             if (!verif())
             {
-                #region Create member
                 GETMember.IDMember = txtUserID.Text;
                 GETMember.Password = txtPassword.Text;
                 GETMember.FName = txtFname.Text;
@@ -300,9 +387,9 @@ namespace slnGym.Forms
                 GETMember.Birthday = dateTimePickerBdate.Value;
                 GETMember.Picture = picAvaEdit.Image;
                 GETMember.Address = txtAddress.Text;
-                GETMember.Gender = 0;
+                GETMember.Gender = "Male";
                 if (radioFemale.Checked == true)
-                    GETMember.Gender = 1;
+                    GETMember.Gender = "Female";
                 GETMember.Phone = txtPhone.Text;
                 if (txtIDCard.Text != null)
                 {
@@ -310,13 +397,16 @@ namespace slnGym.Forms
                 }
                 else GETMember.IDCard = 0;
                 GETMember.Note = txtNote.Text;
+
                 #endregion
 
                 #region Create Contract
                 GETContract.IDContract = txtIDContract.Text;
                 GETContract.listContracts = getListContract;
-                #endregion
             }
+            
+            
+            #endregion
         }
 
         public void loadDetailsContract()
@@ -363,10 +453,8 @@ namespace slnGym.Forms
         {
             loadPTbyTag();
             int numrow = dgvPackage.CurrentCell.RowIndex;
-            string tag = dgvPackage.Rows[numrow].Cells[3].Value.ToString();
-            ///
-            ////dgvPT.DataSource = sv.getNamePTbyPackage(tag);
-            ///
+            string tag = dgvPackage.Rows[numrow].Cells[4].Value.ToString();
+            dgvPT.DataSource = sv.getNamePTbyPackage(tag);
             txtPackage.Text = dgvPackage.Rows[numrow].Cells[0].Value.ToString();
             txtNamePack.Text = dgvPackage.Rows[numrow].Cells[1].Value.ToString();
             GETContract.Price = Convert.ToDecimal(dgvPackage.Rows[numrow].Cells[2].Value);
@@ -382,10 +470,8 @@ namespace slnGym.Forms
 
         public void reloadDGVPacket()
         {
-            ///
-            ///
-            ///
-
+            Layer.SERVICEPACKs sv = new Layer.SERVICEPACKs();
+            dgvPackage.DataSource = sv.getSERVICE();
             this.loadServicePackage();
             dgvPackage.Refresh();
             this.Refresh();
@@ -437,14 +523,173 @@ namespace slnGym.Forms
                 return false;
         }
 
+        private void contactToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //socket.IP = GLOBAL.IPV4;
+            //byte[] message = Encoding.ASCII.GetBytes("Test Server");
+            //if (socket.ConnectServer())
+            //{
+            //    socket.CreateServer();
+            //    Thread listenThread = new Thread(() =>
+            //    {
+            //        while (true)
+            //        {
+            //            Thread.Sleep(500);
+            //            try
+            //            {
+            //                Listen();
+            //                break;
+            //            }
+            //            catch
+            //            {
+
+            //            }
+            //        }
+            //    });
+            //    listenThread.IsBackground = true;
+            //    listenThread.Start();
+            //}
+            //else
+            //{
+            //    Thread listenThread = new Thread(() =>
+            //    {
+            //        Listen();
+            //    });
+            //    listenThread.IsBackground = true;
+            //    listenThread.Start();
+            //    socket.Send("Thông tin từ client");
+            //}
+        }
+
+        private void btCloseChat_Click(object sender, EventArgs e)
+        {
+            panelChat.Visible = false;
+        }
+
+        private void userLoginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //tess.Text = GLOBAL.username;
+            //panelChat.BringToFront();
+            //panelChat.Visible = true;
+            //if (GLOBAL.username == "admin")
+            //{
+            //    serverStart();
+            //}
+            //else clientConnect();
+        }
+
+        private TcpClient client;
+        public StreamReader STR;
+        public StreamWriter STW;
+        public string recieve;
+        public String TextToSend;
+
+        void getIP()
+        {
+            IPAddress[] localIP = Dns.GetHostAddresses(Dns.GetHostName());
+
+            foreach (IPAddress address in localIP)
+            {
+                if (address.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    GLOBAL.IPV4 = address.ToString();
+                }
+            }
+        }
+
+        private void btSendMessage_Click(object sender, EventArgs e)
+        {
+            if (txtMessage.Text != "")
+            {
+                TextToSend = txtMessage.Text;
+                backgroundWorker2.RunWorkerAsync();
+            }
+            txtMessage.Text = "";
+        }
+
+        public void serverStart()
+        {
+            TcpListener listener = new TcpListener(IPAddress.Any, int.Parse(GLOBAL.Port));
+            listener.Start();
+            client = listener.AcceptTcpClient();
+            STR = new StreamReader(client.GetStream());
+            STW = new StreamWriter(client.GetStream());
+            STW.AutoFlush = true;
+
+            backgroundWorker1.RunWorkerAsync();
+            backgroundWorker2.WorkerSupportsCancellation = true;
+        }
+
+        public void clientConnect()
+        {
+            client = new TcpClient();
+            IPEndPoint IpEnd = new IPEndPoint(IPAddress.Parse(GLOBAL.IPV4), int.Parse(GLOBAL.Port));
+
+            try
+            {
+                client.Connect(IpEnd);
+
+                if (client.Connected)
+                {
+                    txtChatScreen.AppendText("Connected to server" + "\r\n");
+                    STW = new StreamWriter(client.GetStream());
+                    STR = new StreamReader(client.GetStream());
+                    STW.AutoFlush = true;
+                    backgroundWorker1.RunWorkerAsync();
+                    backgroundWorker2.WorkerSupportsCancellation = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            while (client.Connected)
+            {
+                try
+                {
+                    recieve = STR.ReadLine();
+                    this.txtChatScreen.Invoke(new MethodInvoker(delegate ()
+                    {
+                        txtChatScreen.AppendText("Admin: " + recieve + "\r\n");
+                    }));
+                    recieve = "";
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Server not found", "Cannot connect to server");
+                    txtMessage.ReadOnly = true;
+                    btSendMessage.Enabled = false;
+                }
+            }
+        }
+
+        private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
+        {
+            if (client.Connected)
+            {
+                STW.WriteLine(TextToSend);
+                this.txtChatScreen.Invoke(new MethodInvoker(delegate ()
+                {
+                    txtChatScreen.AppendText("NV: " + TextToSend + "\r\n");
+                }));
+            }
+            else
+            {
+                MessageBox.Show("Sending failed");
+            }
+            backgroundWorker2.CancelAsync();
+        }
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
             if (GLOBAL.username != "")
             {
                 SysLOG.DateLogout = DateTime.Now.ToString();
-                ///
-                ///accountLog.updateAccount(SysLOG.UserName, SysLOG.DateLogin, SysLOG.DateLogout, SysLOG.Status);
-                ///
+                accountLog.updateAccount(SysLOG.UserName, SysLOG.DateLogin, SysLOG.DateLogout, SysLOG.Status);
             }
             this.Close();
         }
@@ -470,9 +715,7 @@ namespace slnGym.Forms
         public void loadMemberToRenew()
         {
             loadDVG(dgvSearchMember);
-            ///
-            ///dgvSearchMember.DataSource = mem.getRenewMember();
-            ///
+            dgvSearchMember.DataSource = mem.getRenewMember();
         }
 
         public void loadPackageToRenew()
@@ -485,15 +728,18 @@ namespace slnGym.Forms
 
         public void getInfoMember()
         {
-            ///
-            ////DataTable dt = mem.getMemberbyID(GETMember.IDMember);
-            ///
+            DataTable dt = mem.getMemberbyID(GETMember.IDMember);
+            GETMember.FName = dt.Rows[0][1].ToString();
+            GETMember.LName = dt.Rows[0][2].ToString();
+            GETMember.Address = dt.Rows[0][5].ToString();
+            GETMember.Gender = dt.Rows[0][6].ToString();
+            GETMember.Phone = dt.Rows[0][7].ToString();
+            GETMember.Note = dt.Rows[0][9].ToString();
         }
 
         private void txtSearchContract_KeyUp(object sender, KeyEventArgs e)
         {
-            ////dgvSearchMember.DataSource = mem.searchRenewMember(txtSearchContract.Text);
-            ///
+            dgvSearchMember.DataSource = mem.searchRenewMember(txtSearchContract.Text);
         }
 
         private void dgvSearchMember_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -501,13 +747,10 @@ namespace slnGym.Forms
             int index = dgvSearchMember.CurrentCell.RowIndex;
             GETMember.IDMember = dgvSearchMember.Rows[index].Cells[0].Value.ToString();
             txtIsMember.Text = GETMember.IDMember;
-            ///
-            ///
-            ///
+            ContractBL conbl = new ContractBL();
+            txtIsContract.Text = conbl.loadIDContract();
             loadDVG(dgvSearchContract);
-            ///
-            ////dgvSearchContract.DataSource = mem.getRenewMemberByID(GETMember.IDMember);
-            ///
+            dgvSearchContract.DataSource = mem.getRenewMemberByID(GETMember.IDMember);
         }
 
         private void dgvSearchContract_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -601,10 +844,8 @@ namespace slnGym.Forms
             dgvPTNewContract.EditMode = DataGridViewEditMode.EditProgrammatically;
 
             int numrow = dgvPackageNewContract.CurrentCell.RowIndex;
-            string tag = dgvPackageNewContract.Rows[numrow].Cells[3].Value.ToString();
-            ///
-            ////dgvPTNewContract.DataSource = sv.getNamePTbyPackage(tag);
-            ///
+            string tag = dgvPackageNewContract.Rows[numrow].Cells[4].Value.ToString();
+            dgvPTNewContract.DataSource = sv.getNamePTbyPackage(tag);
             txtIDPackageNewContract.Text = dgvPackageNewContract.Rows[numrow].Cells[0].Value.ToString();
             txtNamePackageNewContract.Text = dgvPackageNewContract.Rows[numrow].Cells[1].Value.ToString();
             GETContract.Price = Convert.ToDecimal(dgvPackageNewContract.Rows[numrow].Cells[2].Value);
@@ -676,17 +917,13 @@ namespace slnGym.Forms
 
         private void txtCheckComon_KeyUp(object sender, KeyEventArgs e)
         {
-            ///
-            ////dgvMemberComon.DataSource = mem.searchRenewMember(txtCheckComon.Text);
-            ///
+            dgvMemberComon.DataSource = mem.searchRenewMember(txtCheckComon.Text);
         }
 
         public void loadMemberToCommon()
         {
             loadDVG(dgvMemberComon);
-            ///
-            ////dgvMemberComon.DataSource = mem.getRenewMember();
-            ///
+            dgvMemberComon.DataSource = mem.getRenewMember();
         }
 
         bool verifCommon()
@@ -778,10 +1015,31 @@ namespace slnGym.Forms
             GETMember.IDMember = dgvMemberComon.Rows[index].Cells[0].Value.ToString();
             txtIDMemberCommon.Text = GETMember.IDMember;
             loadDVG(dgvPackageComon);
+            dgvPackageComon.DataSource = mem.getMemberbyPackage(GETMember.IDMember);
 
-            ///
-            ////dgvPackageComon.DataSource = mem.getMemberbyPackage(GETMember.IDMember);
-            ///
+            DataTable dt = mem.getMemberbyID(GETMember.IDMember);
+            txtFNameMemberCommon.Text = dt.Rows[0][1].ToString();
+            txtLNameCommon.Text = dt.Rows[0][2].ToString();
+            txtIDCardCommon.Text = dt.Rows[0][8].ToString();
+            string gender =dt.Rows[0][6].ToString();
+            if (gender == "Female")
+            {
+                radioFemaleCommon.Checked = true;
+            }
+            radioMaleCommon.Checked = true;
+            txtPhoneCommon.Text = dt.Rows[0][7].ToString();
+            txtNoteCommon.Text = dt.Rows[0][9].ToString();
+            dateTimeBirthdayCommon.Value = Convert.ToDateTime(dt.Rows[0][4]);
+            txtAddressCommon.Text = dt.Rows[0][5].ToString();
+            try
+            {
+                byte[] picPD;
+                picPD = (byte[])dt.Rows[0][3];
+                MemoryStream pic = new MemoryStream(picPD);
+                this.picAvatarCommon.Image = Image.FromStream(pic);
+            }
+            catch
+            { }
         }
 
         private void txtLNameCommon_TextChanged(object sender, EventArgs e)
@@ -851,6 +1109,39 @@ namespace slnGym.Forms
             txtIDMemberCommon.Text = "";
             getListContract.Clear();
             listContractBindingSource.Clear();
+        }
+
+        private void dgvServicePack_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            loadInFoPT();
+            int index = dgvServicePack.CurrentCell.RowIndex;
+            string tag = dgvPackage.Rows[index].Cells[4].Value.ToString();
+            dgvInforPT.DataSource = sv.getNamePTbyPackage(tag);
+        }
+
+        private void dgvInforPT_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = dgvInforPT.CurrentCell.RowIndex;
+            string idPT = dgvInforPT.Rows[index].Cells[0].Value.ToString();
+            DataTable dt = emp.getEmployeebyID(idPT);
+            if (dt.Rows.Count > 0)
+            {
+                byte[] pic;
+                pic = (byte[])dt.Rows[0][2];
+                MemoryStream picedit = new MemoryStream(pic);
+                picAva.Image = Image.FromStream(picedit);
+                lbName.Text = dt.Rows[0][3].ToString() + " " + dt.Rows[0][4].ToString();
+                lbGender.Text = dt.Rows[0][7].ToString();
+                lbBdate.Text =Convert.ToDateTime(dt.Rows[0][5]).ToShortDateString();
+            }
+            DataTable data = emp.getPTbyID(idPT);
+            if (data.Rows.Count > 0)
+            {
+                tbLiteracy.Text = data.Rows[0][1].ToString();
+                lbExperience.Text = data.Rows[0][2].ToString();
+                tbCertificate.Text = data.Rows[0][3].ToString();
+                lbAchievements.Text = data.Rows[0][4].ToString();
+            }
         }
     }
 }

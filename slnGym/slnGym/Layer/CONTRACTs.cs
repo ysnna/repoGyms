@@ -13,7 +13,7 @@ namespace slnGym.Layer
         MY_DB mydb = new MY_DB();
         public bool insertCONTRACTS(string conID, string cusID, string emloyeeID, string status)
         {
-            SqlCommand cmd = new SqlCommand("insert into CONTRACTS(contractID,cusID,employeeID,conStatus)" +
+            SqlCommand cmd = new SqlCommand("insert into tblCONTRACTS(contID,cusID,empID,conStatus)" +
                 "values (@conID,@cusID,@emID,@sta)", mydb.getConnection);
             cmd.Parameters.Add("@conID", SqlDbType.VarChar).Value = conID;
             cmd.Parameters.Add("@cusID", SqlDbType.VarChar).Value = cusID;
@@ -35,7 +35,7 @@ namespace slnGym.Layer
 
         public bool deleteCONTRACTS(string ID)
         {
-            SqlCommand cmd = new SqlCommand("delete from CONTRACTS where contractID=@id", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("delete from tblCONTRACTS where contD=@id", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = ID;
             mydb.openConnection();
             if (cmd.ExecuteNonQuery() == 1)
@@ -52,7 +52,7 @@ namespace slnGym.Layer
         //Lay thong tin 
         public DataTable getCONTRACTS()
         {
-            SqlCommand cmd = new SqlCommand("select *from CONTRACTS ", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("select *from tblCONTRACTS ", mydb.getConnection);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -62,7 +62,7 @@ namespace slnGym.Layer
 
         public DataTable getContractByCUSID(string id)
         {
-            SqlCommand cmd = new SqlCommand("select *from CONTRACTS where cusID=@id ", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("select *from tblCONTRACTS where cusID=@id ", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = id;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();

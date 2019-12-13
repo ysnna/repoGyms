@@ -50,13 +50,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataObject\AddEmployee.cs" />
     <Compile Include="DataObject\DetailContract.cs" />
     <Compile Include="DataObject\GETContract.cs" />
     <Compile Include="DataObject\GetEditMember.cs" />
     <Compile Include="DataObject\GETMember.cs" />
     <Compile Include="DataObject\ListContract.cs" />
-    <Compile Include="DataObject\ListEmployee.cs" />
     <Compile Include="DataObject\ListMachine.cs" />
     <Compile Include="DataObject\ListProduct.cs" />
     <Compile Include="DataObject\ListReceipt.cs" />
@@ -65,6 +63,31 @@
     <Compile Include="DataObject\SocketManager.cs" />
     <Compile Include="DataObject\Statistic.cs" />
     <Compile Include="DataObject\SysLog.cs" />
+    <Compile Include="DBMSDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBMSDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DBMSEmployee.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBMSEmployee.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DBMSMember.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBMSMember.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DBMSMembers.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBMSMembers.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DBMSServicePack.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBMSServicePack.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Administration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,10 +129,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GroupWorkDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Layer\ABILITIES.cs" />
     <Compile Include="Layer\AccountBL.cs" />
     <Compile Include="Layer\ADDMACHINES.cs" />
-    <Compile Include="Layer\CLASSROOMs.cs" />
     <Compile Include="Layer\ContractBL.cs" />
     <Compile Include="Layer\CONTRACTs.cs" />
     <Compile Include="Layer\DETAILCONTRACT.cs" />
@@ -126,7 +147,6 @@
     <Compile Include="Layer\SERVICEPACKs.cs" />
     <Compile Include="Layer\STATISTICS.cs" />
     <Compile Include="Layer\TempBL.cs" />
-    <Compile Include="Layer\WORKs.cs" />
     <Compile Include="MY_DB.cs" />
     <Compile Include="PackageDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -285,6 +305,61 @@
     <EmbeddedResource Include="User Control\StatisticsUC.resx">
       <DependentUpon>StatisticsUC.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DBMSDataSet.xsc">
+      <DependentUpon>DBMSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DBMSDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBMSDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBMSDataSet.xss">
+      <DependentUpon>DBMSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DBMSEmployee.xsc">
+      <DependentUpon>DBMSEmployee.xsd</DependentUpon>
+    </None>
+    <None Include="DBMSEmployee.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBMSEmployee.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBMSEmployee.xss">
+      <DependentUpon>DBMSEmployee.xsd</DependentUpon>
+    </None>
+    <None Include="DBMSMember.xsc">
+      <DependentUpon>DBMSMember.xsd</DependentUpon>
+    </None>
+    <None Include="DBMSMember.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBMSMember.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBMSMember.xss">
+      <DependentUpon>DBMSMember.xsd</DependentUpon>
+    </None>
+    <None Include="DBMSMembers.xsc">
+      <DependentUpon>DBMSMembers.xsd</DependentUpon>
+    </None>
+    <None Include="DBMSMembers.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBMSMembers.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBMSMembers.xss">
+      <DependentUpon>DBMSMembers.xsd</DependentUpon>
+    </None>
+    <None Include="DBMSServicePack.xsc">
+      <DependentUpon>DBMSServicePack.xsd</DependentUpon>
+    </None>
+    <None Include="DBMSServicePack.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBMSServicePack.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBMSServicePack.xss">
+      <DependentUpon>DBMSServicePack.xsd</DependentUpon>
+    </None>
     <None Include="GroupWorkDataSet.xsc">
       <DependentUpon>GroupWorkDataSet.xsd</DependentUpon>
     </None>

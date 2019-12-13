@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageEmployeeUC));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btCreate = new System.Windows.Forms.Button();
             this.btEdit = new System.Windows.Forms.Button();
             this.btRefresh = new System.Windows.Forms.Button();
@@ -43,9 +44,14 @@
             this.dgvListEmployee = new System.Windows.Forms.DataGridView();
             this.btSearch = new System.Windows.Forms.PictureBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.dBMSEmployee = new slnGym.DBMSEmployee();
+            this.tblEMPLOYEEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tblEMPLOYEETableAdapter = new slnGym.DBMSEmployeeTableAdapters.tblEMPLOYEETableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.picAva)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btSearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBMSEmployee)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblEMPLOYEEBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btCreate
@@ -154,36 +160,36 @@
             this.dgvListEmployee.AllowUserToDeleteRows = false;
             this.dgvListEmployee.AllowUserToResizeColumns = false;
             this.dgvListEmployee.AllowUserToResizeRows = false;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListEmployee.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListEmployee.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvListEmployee.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dgvListEmployee.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvListEmployee.BackgroundColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Sitka Display", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListEmployee.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Sitka Display", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListEmployee.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvListEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListEmployee.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvListEmployee.Location = new System.Drawing.Point(18, 16);
             this.dgvListEmployee.Name = "dgvListEmployee";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Sitka Display", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListEmployee.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Sitka Display", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListEmployee.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvListEmployee.RowHeadersVisible = false;
             this.dgvListEmployee.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListEmployee.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListEmployee.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvListEmployee.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvListEmployee.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListEmployee.Size = new System.Drawing.Size(888, 765);
@@ -215,6 +221,20 @@
             this.txtSearch.TabIndex = 192;
             this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyUp);
             // 
+            // dBMSEmployee
+            // 
+            this.dBMSEmployee.DataSetName = "DBMSEmployee";
+            this.dBMSEmployee.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tblEMPLOYEEBindingSource
+            // 
+            this.tblEMPLOYEEBindingSource.DataMember = "tblEMPLOYEE";
+            this.tblEMPLOYEEBindingSource.DataSource = this.dBMSEmployee;
+            // 
+            // tblEMPLOYEETableAdapter
+            // 
+            this.tblEMPLOYEETableAdapter.ClearBeforeFill = true;
+            // 
             // ManageEmployeeUC
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -235,6 +255,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picAva)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListEmployee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btSearch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBMSEmployee)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblEMPLOYEEBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,5 +274,8 @@
         public System.Windows.Forms.DataGridView dgvListEmployee;
         private System.Windows.Forms.PictureBox btSearch;
         private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.BindingSource tblEMPLOYEEBindingSource;
+        private DBMSEmployee dBMSEmployee;
+        private DBMSEmployeeTableAdapters.tblEMPLOYEETableAdapter tblEMPLOYEETableAdapter;
     }
 }

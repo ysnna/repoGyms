@@ -61,10 +61,10 @@ namespace slnGym.DataObject
         }
         public ListMachine(DataRow row)
         {
-            this.ID= Convert.ToInt32(row["idMachine"]);
+            this.ID= Convert.ToInt32(row["macID"]);
             this.Amount = Convert.ToInt32(row["amount"]);
             this.Info = row["infor"].ToString();
-            this.NameMachine = row["nameMachine"].ToString();
+            this.NameMachine = row["macName"].ToString();
             byte[] picPD;
             picPD = (byte[])row["picture"];
             MemoryStream pic = new MemoryStream(picPD);

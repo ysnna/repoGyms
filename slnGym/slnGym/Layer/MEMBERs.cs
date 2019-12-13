@@ -13,9 +13,9 @@ namespace slnGym.Layer
         MY_DB mydb = new MY_DB();
         //Them Khach Hang
         public bool insertMembers(string ID, string lname, string fname, MemoryStream pic, DateTime bdate, string address,
-            int gender, string phone, int idcard, string note)
+            string gender, string phone, int idcard, string note)
         {
-            SqlCommand cmd = new SqlCommand("insert into MEMBERS(memID,memLname,memFname,avatar,memBDate,memAddress,memGender,memPhone,cardID,note)" +
+            SqlCommand cmd = new SqlCommand("insert into tblMEMBERS(memID,memLname,memFname,avatar,memBDate,memAddress,memGender,memPhone,cardID,note)" +
                 "values (@id,@lname,@fname,@ava,@bdate,@add,@gen,@phone,@idcard,@note)", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = ID;
             cmd.Parameters.Add("@lname", SqlDbType.NVarChar).Value = lname;
@@ -23,7 +23,7 @@ namespace slnGym.Layer
             cmd.Parameters.Add("@ava", SqlDbType.Image).Value = pic.ToArray();
             cmd.Parameters.Add("@bdate", SqlDbType.DateTime).Value = bdate;
             cmd.Parameters.Add("@add", SqlDbType.NVarChar).Value = address;
-            cmd.Parameters.Add("@gen", SqlDbType.Int).Value = gender;
+            cmd.Parameters.Add("@gen", SqlDbType.VarChar).Value = gender;
             cmd.Parameters.Add("@phone", SqlDbType.VarChar).Value = phone;
             cmd.Parameters.Add("@idcard", SqlDbType.Int).Value = idcard;
             cmd.Parameters.Add("@note", SqlDbType.NVarChar).Value = note;
@@ -61,16 +61,17 @@ namespace slnGym.Layer
         }
         //Update khach hang
         public bool updateMembers(string ID, string lname, string fname, MemoryStream pic, DateTime bdate, string address,
-            int gender, string phone, int idcard, string note)
+            string gender, string phone, int idcard, string note)
         {//(memID,memLname,memFname,avatar,memBDate,memAddress,memGender,memPhone,cardID,note
-            SqlCommand cmd = new SqlCommand("update MEMBERS set memLname=@lname,memFname=@fname,avatar=@ava,memBDate=@bdate,memAddress=@add,memGender=@gen,memPhone=@phone,cardID=@idcard,note=@note where memID=@id", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("update tblMEMBERS set memFName=@fname,memLname=@lname," +
+                "avatar=@ava,memBDate=@bdate,memAddress=@add,memGender=@gen,memPhone=@phone,cardID=@idcard,note=@note where memID=@id", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = ID;
             cmd.Parameters.Add("@lname", SqlDbType.NVarChar).Value = lname;
             cmd.Parameters.Add("@fname", SqlDbType.NVarChar).Value = fname;
             cmd.Parameters.Add("@ava", SqlDbType.Image).Value = pic.ToArray();
             cmd.Parameters.Add("@bdate", SqlDbType.DateTime).Value = bdate;
             cmd.Parameters.Add("@add", SqlDbType.NVarChar).Value = address;
-            cmd.Parameters.Add("@gen", SqlDbType.Int).Value = gender;
+            cmd.Parameters.Add("@gen", SqlDbType.VarChar).Value = gender;
             cmd.Parameters.Add("@phone", SqlDbType.VarChar).Value = phone;
             cmd.Parameters.Add("@idcard", SqlDbType.Int).Value = idcard;
             cmd.Parameters.Add("@note", SqlDbType.NVarChar).Value = note;
@@ -87,10 +88,9 @@ namespace slnGym.Layer
                 return false;
             }
         }
-
-        public bool updateAccpuntMember(string ID, string note)
+            public bool updateAccpuntMember(string ID, string note)
         {
-            SqlCommand cmd = new SqlCommand("update MEMBERS set note=@note where memID=@id", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("update tblMEMBERS set note=@note where memID=@id", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = ID;
             cmd.Parameters.Add("@note", SqlDbType.NVarChar).Value = note;
 
@@ -110,7 +110,7 @@ namespace slnGym.Layer
         public DataTable getAllMEMBERS()
         {
             SqlCommand cmd = new SqlCommand("select memID as 'ID',memFname as 'FName',memLname as 'LName', avatar as 'Avatar', memBDate as 'Birthday'," +
-                "memAddress as 'Address',memGender as 'Female',memPhone as 'Phone',cardID as 'ID card',note as 'Status' from MEMBERS", mydb.getConnection);
+                "memAddress as 'Address',memGender as 'Female',memPhone as 'Phone',cardID as 'ID card',note as 'Status' from tblMEMBERS", mydb.getConnection);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -120,7 +120,7 @@ namespace slnGym.Layer
 
         public DataTable getMemberbyID(string id)
         {
-            SqlCommand cmd = new SqlCommand("select *from MEMBERS where memID=@ma", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("select *from tblMEMBERS where memID=@ma", mydb.getConnection);
             cmd.Parameters.Add("@ma", SqlDbType.VarChar).Value = id;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -131,8 +131,8 @@ namespace slnGym.Layer
 
         public DataTable getMemberbyPackage(string IDMember)
         {
-            SqlCommand cmd = new SqlCommand("select idBrand as 'Group',idService as 'Package', nameServices as 'Name', period as 'Period', DETAILSREPCEIPT.total from RECEIPT, DETAILSREPCEIPT " +
-                "where RECEIPT.receiptID= DETAILSREPCEIPT.receiptID and memID = @mem", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("select idBrand as 'Group',idService as 'Package', nameServices as 'Name', period as 'Period', tblDETAILSRECEIPT.total from tblRECEIPT, tblDETAILSRECEIPT " +
+                "where tblRECEIPT.receipt_ID= tblDETAILSRECEIPT.receiptID and mem_ID = @mem", mydb.getConnection);
             cmd.Parameters.Add("@mem", SqlDbType.VarChar).Value = IDMember;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -142,9 +142,9 @@ namespace slnGym.Layer
         }
         //Sua doi thong tin cua khach hang duoc admin duyet m   
         public bool insertTemporary(string ID, string lname, string fname,MemoryStream ava, DateTime bdate, string address,
-            int gender, string phone, int idcard, string note)
+            string gender, string phone, int idcard, string note)
         {
-            SqlCommand cmd = new SqlCommand("insert into TEMP(ID,FName,LName,avatar,BDate,Address,Gender,Phone,cardID,note)" +
+            SqlCommand cmd = new SqlCommand("insert into tblTEMP(ID,FName,LName,avatar,BDate,Address,Gender,Phone,cardID,note)" +
                 "values (@id,@fname,@lname,@ava,@bdate,@add,@gen,@phone,@idcard,@note)", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = ID;
             cmd.Parameters.Add("@lname", SqlDbType.NVarChar).Value = lname;
@@ -152,7 +152,7 @@ namespace slnGym.Layer
             cmd.Parameters.Add("@bdate", SqlDbType.DateTime).Value = bdate;
             cmd.Parameters.Add("@add", SqlDbType.NVarChar).Value = address;
             cmd.Parameters.Add("@ava", SqlDbType.Image).Value = ava.ToArray();
-            cmd.Parameters.Add("@gen", SqlDbType.Int).Value = gender;
+            cmd.Parameters.Add("@gen", SqlDbType.VarChar).Value = gender;
             cmd.Parameters.Add("@phone", SqlDbType.VarChar).Value = phone;
             cmd.Parameters.Add("@idcard", SqlDbType.Int).Value = idcard;
             cmd.Parameters.Add("@note", SqlDbType.NVarChar).Value = note;
@@ -172,7 +172,7 @@ namespace slnGym.Layer
 
         public bool deleteTEMP(string ID)
         {
-            SqlCommand cmd = new SqlCommand("DELETE from TEMP where ID=@ID",mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("DELETE from tblTEMP where ID=@ID",mydb.getConnection);
             cmd.Parameters.Add("@ID", SqlDbType.VarChar).Value = ID;
             mydb.openConnection();
             if (cmd.ExecuteNonQuery() == 1)
@@ -189,7 +189,7 @@ namespace slnGym.Layer
 
         public DataTable getTEMP()
         {
-            SqlCommand cmd = new SqlCommand("select *from TEMP", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("select *from tblTEMP", mydb.getConnection);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -200,7 +200,7 @@ namespace slnGym.Layer
         public DataTable searchEmployee(string search)
         {
             SqlCommand cmd = new SqlCommand("select memID as 'ID',memFname as 'FName',memLname as 'LName', avatar as 'Avatar', memBDate as 'Birthday'," +
-                "memAddress as 'Address',memGender as 'Female',memPhone as 'Phone',cardID as 'ID card',note as 'Status' from MEMBERS where Concat(memID, memFname, " +
+                "memAddress as 'Address',memGender as 'Female',memPhone as 'Phone',cardID as 'ID card',note as 'Status' from tblMEMBERS where Concat(memID, memFname, " +
                 "memlname, memaddress) like N'%" + search + "%' ", mydb.getConnection);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -211,7 +211,7 @@ namespace slnGym.Layer
 
         public DataTable getRenewMember()
         {
-            SqlCommand cmd = new SqlCommand("select memID as 'ID',memFname as 'FName',memLname as 'LName' from MEMBERS", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("select memID as 'ID',memFname as 'FName',memLname as 'LName' from tblMEMBERS", mydb.getConnection);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -221,7 +221,7 @@ namespace slnGym.Layer
 
         public DataTable searchRenewMember(string search)
         {
-            SqlCommand cmd = new SqlCommand("select memID as 'ID',memFname as 'FName',memLname as 'LName' from MEMBERS where Concat(memID, memFname, " +
+            SqlCommand cmd = new SqlCommand("select memID as 'ID',memFname as 'FName',memLname as 'LName' from tblMEMBERS where Concat(memID, memFname, " +
                 "memlname) like N'%" + search + "%' ", mydb.getConnection);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -232,7 +232,7 @@ namespace slnGym.Layer
         public DataTable searchMember(string search)
         {
             SqlCommand cmd = new SqlCommand("select memID as 'ID',memFname as 'FName',memLname as 'LName', avatar as 'Avatar', memBDate as 'Birthday'," +
-                "memAddress as 'Address',memGender as 'Female',memPhone as 'Phone',cardID as 'ID card',note as 'Status' from MEMBERS where Concat(memID, memFname, " +
+                "memAddress as 'Address',memGender as 'Female',memPhone as 'Phone',cardID as 'ID card',note as 'Status' from tblMEMBERS where Concat(memID, memFname, " +
                 "memlname) like N'%" + search + "%' ", mydb.getConnection);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -242,8 +242,17 @@ namespace slnGym.Layer
         }
         public DataTable getRenewMemberByID(string search)
         {
-            SqlCommand cmd = new SqlCommand("select contID as 'ID', ptID as 'PT', servicePACK as 'Package', serviceNAME as 'Name', dateStart as 'Date start', dateDischarge as 'Date Expiration', cost as 'Price', status as 'Status' from CONTRACTS, DETAILSCONTRACT, SERVICEPACK where serviceID=servicePACK and contractID=contID and cusID=@cusID", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("select contID as 'ID', ptID as 'PT', servicePACK as 'Package', serNAME as 'Name', dateStart as 'Date start', dateDischarge as 'Date Expiration', cost as 'Price', status as 'Status' from tblCONTRACTS, tblDETAILSCONTRACT, tblSERVICEPACK where serID=servicePACK and contID=cont_ID and cusID=@cusID", mydb.getConnection);
             cmd.Parameters.Add("@cusID", SqlDbType.VarChar).Value = search;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            mydb.closeConnection();
+            return dt;
+        }
+        public DataTable getMemberF1()
+        {
+            SqlCommand cmd = new SqlCommand("select memID as 'ID',memFname as 'FName',memLname as 'LName' from tblMEMBERS ", mydb.getConnection);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);

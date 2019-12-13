@@ -22,7 +22,7 @@ namespace slnGym.Forms
         {
             this.Close();
         }
-
+        LOGIN lg = new LOGIN();
         private void btSave_Click(object sender, EventArgs e)
         {
             if (!confirmPass())
@@ -34,7 +34,6 @@ namespace slnGym.Forms
             }
 
         }
-
         bool confirmPass()
         {
             if (txtOldPassword.Text != CheckPass())
@@ -43,12 +42,19 @@ namespace slnGym.Forms
             }
             return true;
         }
-
         public string CheckPass()
         {
-            return null;
+            string cpass;
+            cpass = getPass().Rows[0]["passw"].ToString();
+            return cpass;
         }
+        DataTable getPass()
+        {
 
+            DataTable dt = new DataTable();
+            dt = lg.getAccountbyUser(GLOBAL.username);
+            return dt;
+        }
         void ChangePass()
         {
             string pass = txtNewPassword.Text;
@@ -58,9 +64,7 @@ namespace slnGym.Forms
             {
                 if (txtOldPassword.Text == CheckPass())
                 {
-                    ///update pass
-                    ///
-                    ///
+                    lg.updatePass(GLOBAL.username, pass);
                     MessageBox.Show("Your Password was Changed", "InFo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }

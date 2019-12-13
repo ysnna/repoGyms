@@ -13,7 +13,7 @@ namespace slnGym.Layer
         MY_DB mydb = new MY_DB();
         public bool insertRECEIPT(string receipt, string memID, decimal total)
         {
-            SqlCommand cmd = new SqlCommand("insert into RECEIPT(receiptID,memID,total)" +
+            SqlCommand cmd = new SqlCommand("insert into tblRECEIPT(receipt_ID,mem_ID,total)" +
                 "values (@id,@mem,@total)", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = receipt;
             cmd.Parameters.Add("@mem", SqlDbType.VarChar).Value = memID;
@@ -33,7 +33,7 @@ namespace slnGym.Layer
         }
         public bool updateRECEIPT(string receipt, string memID, decimal total)
         {
-            SqlCommand cmd = new SqlCommand("update RECEIPT set memID=@mem, total=@total where receiptID=@id", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("update tblRECEIPT set mem_ID=@mem, total=@total where receipt_ID=@id", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = receipt;
             cmd.Parameters.Add("@mem", SqlDbType.VarChar).Value = memID;
             cmd.Parameters.Add("@total", SqlDbType.Decimal).Value = total;
@@ -53,7 +53,7 @@ namespace slnGym.Layer
         //Lay thong tin 
         public DataTable getRECEIPTbyID(string receiptID)
         {
-            SqlCommand cmd = new SqlCommand("select *from RECEIPT where memID = @id ", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("select *from tblRECEIPT where mem_ID = @id ", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = receiptID;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -63,7 +63,7 @@ namespace slnGym.Layer
         }
         public DataTable getRECEIPT()
         {
-            SqlCommand cmd = new SqlCommand("select *from RECEIPT ", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("select *from tblRECEIPT ", mydb.getConnection);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);

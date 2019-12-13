@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Administration));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -86,6 +87,10 @@
             this.dgvPackages = new System.Windows.Forms.DataGridView();
             this.groupPackage = new System.Windows.Forms.GroupBox();
             this.dgvTag = new System.Windows.Forms.DataGridView();
+            this.groupWorkIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupWorkNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gROUPWORKBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.groupWorkDataSet = new slnGym.GroupWorkDataSet();
             this.btRefreshMachine = new System.Windows.Forms.Button();
             this.txtAddTagPT = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -101,6 +106,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.tabStatistic = new System.Windows.Forms.TabPage();
             this.statisticsUC = new slnGym.User_Control.StatisticsUC();
+            this.gROUPWORKTableAdapter = new slnGym.GroupWorkDataSetTableAdapters.GROUPWORKTableAdapter();
             this.tabAdmin.SuspendLayout();
             this.tabEmployee.SuspendLayout();
             this.tabContract.SuspendLayout();
@@ -120,6 +126,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPackages)).BeginInit();
             this.groupPackage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTag)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gROUPWORKBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupWorkDataSet)).BeginInit();
             this.tabStatistic.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -800,6 +808,7 @@
             dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvTag.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvTag.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dgvTag.AutoGenerateColumns = false;
             this.dgvTag.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvTag.BackgroundColor = System.Drawing.SystemColors.InactiveBorder;
             dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -811,6 +820,10 @@
             dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvTag.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dgvTag.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTag.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.groupWorkIDDataGridViewTextBoxColumn,
+            this.groupWorkNameDataGridViewTextBoxColumn});
+            this.dgvTag.DataSource = this.gROUPWORKBindingSource;
             this.dgvTag.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvTag.Location = new System.Drawing.Point(5, 495);
             this.dgvTag.Name = "dgvTag";
@@ -832,6 +845,32 @@
             this.dgvTag.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTag.Size = new System.Drawing.Size(403, 255);
             this.dgvTag.TabIndex = 109;
+            // 
+            // groupWorkIDDataGridViewTextBoxColumn
+            // 
+            this.groupWorkIDDataGridViewTextBoxColumn.DataPropertyName = "groupWorkID";
+            this.groupWorkIDDataGridViewTextBoxColumn.HeaderText = "ID Group";
+            this.groupWorkIDDataGridViewTextBoxColumn.Name = "groupWorkIDDataGridViewTextBoxColumn";
+            this.groupWorkIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.groupWorkIDDataGridViewTextBoxColumn.Width = 141;
+            // 
+            // groupWorkNameDataGridViewTextBoxColumn
+            // 
+            this.groupWorkNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.groupWorkNameDataGridViewTextBoxColumn.DataPropertyName = "groupWorkName";
+            this.groupWorkNameDataGridViewTextBoxColumn.HeaderText = "Name Group";
+            this.groupWorkNameDataGridViewTextBoxColumn.Name = "groupWorkNameDataGridViewTextBoxColumn";
+            this.groupWorkNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // gROUPWORKBindingSource
+            // 
+            this.gROUPWORKBindingSource.DataMember = "GROUPWORK";
+            this.gROUPWORKBindingSource.DataSource = this.groupWorkDataSet;
+            // 
+            // groupWorkDataSet
+            // 
+            this.groupWorkDataSet.DataSetName = "GroupWorkDataSet";
+            this.groupWorkDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btRefreshMachine
             // 
@@ -1036,6 +1075,10 @@
             this.statisticsUC.Size = new System.Drawing.Size(1414, 798);
             this.statisticsUC.TabIndex = 0;
             // 
+            // gROUPWORKTableAdapter
+            // 
+            this.gROUPWORKTableAdapter.ClearBeforeFill = true;
+            // 
             // Administration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 35F);
@@ -1072,6 +1115,8 @@
             this.groupPackage.ResumeLayout(false);
             this.groupPackage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTag)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gROUPWORKBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupWorkDataSet)).EndInit();
             this.tabStatistic.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -1135,5 +1180,10 @@
         private System.Windows.Forms.Button btRefreshProduct;
         private System.Windows.Forms.Button btRefreshMachin;
         public System.Windows.Forms.DataGridView dgvTag;
+        private GroupWorkDataSet groupWorkDataSet;
+        private System.Windows.Forms.BindingSource gROUPWORKBindingSource;
+        private GroupWorkDataSetTableAdapters.GROUPWORKTableAdapter gROUPWORKTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn groupWorkIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn groupWorkNameDataGridViewTextBoxColumn;
     }
 }

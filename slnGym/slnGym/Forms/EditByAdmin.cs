@@ -18,7 +18,8 @@ namespace slnGym.Forms
         {
             InitializeComponent();
         }
-
+        TempBL temp = new TempBL();
+        MEMBERs mem = new MEMBERs();
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -31,10 +32,7 @@ namespace slnGym.Forms
 
         private void EditByAdmin_Load(object sender, EventArgs e)
         {
-            ///
-            ///load 
-            ///
-
+            temp.loadDGVTEMP(dgvMembers);
             btCancel.Enabled = false;
             btnAccept.Enabled = false;
         }
@@ -43,21 +41,17 @@ namespace slnGym.Forms
         {
             string index = dgvMembers.CurrentRow.Cells[0].Value.ToString();
             DataTable dt = new DataTable();
-
-            ///
-            ///dt = temp.loadInfoOld(index);
-            ///
-
+            dt = temp.loadInfoOld(index);
             lbFname.Text = dt.Rows[0][1].ToString();
             lbLname.Text = dt.Rows[0][2].ToString();
-            lbBirthday.Text =Convert.ToDateTime(dt.Rows[0][4].ToString()).ToString();
+            lbBirthday.Text =Convert.ToDateTime(dt.Rows[0][4]).ToShortDateString();
             lbAddress.Text = dt.Rows[0][5].ToString();
 
-            if (dt.Rows[0][6].ToString() == "True")
+            if (dt.Rows[0][6].ToString() == "Female")
             {
-                lbGender.Text = "Female";
+                lbGender.Text = "Nữ";
             }
-            else lbGender.Text = "Male";
+            else lbGender.Text = "Nam";
             lbPhone.Text = dt.Rows[0][7].ToString();
             lbIDCard.Text = dt.Rows[0][8].ToString();
             btCancel.Enabled = true;
@@ -113,23 +107,24 @@ namespace slnGym.Forms
             byte[] picPD;
             picPD = (byte[])dgvMembers.CurrentRow.Cells[3].Value;
             MemoryStream pic = new MemoryStream(picPD);
-            DateTime bdate = Convert.ToDateTime(dgvMembers.CurrentRow.Cells[4].Value);
+            DateTime bdate = Convert.ToDateTime(dgvMembers.CurrentRow.Cells[4].Value.ToString());
             string add = dgvMembers.CurrentRow.Cells[5].Value.ToString();
             string phone = dgvMembers.CurrentRow.Cells[7].Value.ToString();
             int idcard = Convert.ToInt32(dgvMembers.CurrentRow.Cells[8].Value);
-            int gender = Convert.ToInt32(dgvMembers.CurrentRow.Cells[6].Value);
-
-            ///
-            ///update
-            ///
-
+            string gender = dgvMembers.CurrentRow.Cells[6].Value.ToString();
+            if (mem.updateMembers(index, lname, fname, pic, bdate, add, gender, phone, idcard, note))
+            {
+                mem.deleteTEMP(index);
+                MessageBox.Show("Đã duyệt thành công");
+                temp.loadDGVTEMP(dgvMembers);
+            }
+            else MessageBox.Show("Đã có lỗi trong quá trình xử lý, vui lòng thử lại");
         }
         void notApprove()
         {
             string index = dgvMembers.CurrentRow.Cells[0].Value.ToString();
-            ///
-            ///
-            ///
+            mem.deleteTEMP(index);
+            temp.loadDGVTEMP(dgvMembers);
         }
 
         private void btCancel_Click(object sender, EventArgs e)

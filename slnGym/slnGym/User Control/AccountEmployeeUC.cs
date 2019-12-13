@@ -41,15 +41,12 @@ namespace slnGym.User_Control
                 loadEdit();
             }
         }
-
         Layer.EMPLOYEEs emp = new Layer.EMPLOYEEs();
         MY_DB mydb = new MY_DB();
         Layer.LOGIN log = new Layer.LOGIN();
 
         public void reload()
         {
-            #region CLOSE
-            /*
             DataTable dt = new DataTable();
             dt = log.getAccountbyUser(GLOBAL.username);
             txtPass.Text = dt.Rows[0][1].ToString();
@@ -75,7 +72,7 @@ namespace slnGym.User_Control
                 lbLname.Text = empDT.Rows[0][4].ToString();
                 lbBirthday.Text = Convert.ToDateTime(empDT.Rows[0][5]).ToShortDateString();
                 lbAddress.Text = empDT.Rows[0][6].ToString();
-                if (Convert.ToInt32(empDT.Rows[0][7]) == 1)
+                if (empDT.Rows[0][7].ToString() == "Female")
                     lbGender.Text = "Nữ";
                 else lbGender.Text = "Nam";
                 lbPhone.Text = empDT.Rows[0][8].ToString();
@@ -86,9 +83,7 @@ namespace slnGym.User_Control
             {
                 // MessageBox.Show(GLOBAL.username);
             }
-            mydb.closeConnection();*/
-            #endregion
-
+            mydb.closeConnection();
         }
 
         public void loadEdit()
@@ -117,17 +112,14 @@ namespace slnGym.User_Control
         {
             MemoryStream pic = new MemoryStream();
             picAvaEdit.Image.Save(pic, picAvaEdit.Image.RawFormat);
-            int gender = 1;
-            if (radioMaleEdit.Checked == true) gender = 0;
-
-            #region CLOSE
-            /*if (emp.updateEmployee(GLOBAL.username, pic, Convert.ToDateTime(dateTimePickerBdate.Value), txtAddress.Text, gender, txtPhone.Text))
+            string gender = "Female";
+            if (radioMaleEdit.Checked == true) gender = "Male";
+            if (emp.updateEmployee(GLOBAL.username, pic, Convert.ToDateTime(dateTimePickerBdate.Value), txtAddress.Text, gender, txtPhone.Text))
             {
                 MessageBox.Show("Edited", "Edited..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.reload();
             }
-            else MessageBox.Show("Edited fail", "Edited..", MessageBoxButtons.OK, MessageBoxIcon.Error);*/
-            #endregion
+            else MessageBox.Show("Edited fail", "Edited..", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

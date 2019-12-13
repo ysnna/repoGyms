@@ -13,7 +13,7 @@ namespace slnGym.Layer
         MY_DB mydb = new MY_DB();
         public bool insertDETAILRECEIPT(string receipt, DateTime date, int idBrand, int idService, string nameService, int period, decimal total, string remain)
         {
-            SqlCommand cmd = new SqlCommand("insert into DETAILSREPCEIPT(receiptID,repceiptDate,idBrand,idService,nameServices,period,total,remain)" +
+            SqlCommand cmd = new SqlCommand("insert into tblDETAILSRECEIPT(receiptID,receiptDate,idBrand,idService,nameServices,period,total,remain)" +
                 "values (@id,@date,@idBrand,@idSer,@name,@dis,@total,@remain)", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = receipt;
             cmd.Parameters.Add("@date", SqlDbType.DateTime).Value = date;
@@ -35,33 +35,8 @@ namespace slnGym.Layer
                 return false;
             }
         }
-        public bool updateDETAILRECEIPT(string id, string product)
-        {
-            SqlCommand cmd = new SqlCommand("update DETAILSREPCEPIT set receiptID=@id,productID=@num", mydb.getConnection);
-            cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = id;
-            cmd.Parameters.Add("@num", SqlDbType.VarChar).Value = product;
-            mydb.openConnection();
-            if (cmd.ExecuteNonQuery() == 1)
-            {
-                mydb.closeConnection();
-                return true;
-            }
-            else
-            {
-                mydb.closeConnection();
-                return false;
-            }
-        }
+        
         //Lay thong tin 
-        public DataTable getDETAILRECEIPTbyReceiptID(string receiptID)
-        {
-            SqlCommand cmd = new SqlCommand("select *from DETAILSREPCEPIT where receiptID = @id ", mydb.getConnection);
-            cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = receiptID;
-
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            return dt;
-        }
+        
     }
 }

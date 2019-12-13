@@ -13,7 +13,7 @@ namespace slnGym.Layer
         MY_DB mydb = new MY_DB();
         public bool insertDETAILCON(string conID, string receiptID, string ptID, int idPackage, DateTime start, DateTime end, string status)
         {
-            SqlCommand cmd = new SqlCommand("insert into DETAILSCONTRACT(contID,receiptID,ptID,servicePACK,dateStart,dateDischarge,status)" +
+            SqlCommand cmd = new SqlCommand("insert into tblDETAILSCONTRACT(cont_ID,receipt_ID,ptID,servicePACK,dateStart,dateDischarge,status)" +
                 "values (@con,@rep,@pt,@pack,@start,@end,@status)", mydb.getConnection);
             cmd.Parameters.Add("@con", SqlDbType.VarChar).Value = conID;
             cmd.Parameters.Add("@rep", SqlDbType.VarChar).Value = receiptID;
@@ -39,10 +39,10 @@ namespace slnGym.Layer
         //Lay thong tin 
         public DataTable getDetailByConID(string conID)
         {
-            SqlCommand cmd = new SqlCommand("select servicePACK,serviceNAME ,dateStart,dateDischarge, total,status from SERVICEPACK," +
-                " (select DISTINCT servicePACK, dateStart,dateDischarge, total,status  from DETAILSCONTRACT,DETAILSREPCEIPT" +
-                " where contID=@con AND DETAILSREPCEIPT.receiptID = DETAILSCONTRACT.receiptID) as A" +
-                " where A.servicePACK = serviceID ", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("select servicePACK,serNAME ,dateStart,dateDischarge, total,status from tblSERVICEPACK," +
+                " (select DISTINCT servicePACK, dateStart,dateDischarge, total,status  from tblDETAILSCONTRACT,tblDETAILSRECEIPT" +
+                " where cont_ID=@con AND tblDETAILSRECEIPT.receiptID = tblDETAILSCONTRACT.receipt_ID) as A" +
+                " where A.servicePACK = serID ", mydb.getConnection);
             cmd.Parameters.Add("@con", SqlDbType.VarChar).Value = conID;
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -52,7 +52,7 @@ namespace slnGym.Layer
         }
         public DataTable getDetailByEmpID(string emp)
         {
-            SqlCommand cmd = new SqlCommand("select *from DETAILSCONTRACT where employeeID=@emp ", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("select *from tblDETAILSCONTRACT where employeeID=@emp ", mydb.getConnection);
             cmd.Parameters.Add("@emp", SqlDbType.VarChar).Value = emp;
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -77,8 +77,8 @@ namespace slnGym.Layer
         public DataTable getDetailConTractDGV()
         {
             SqlCommand cmd = new SqlCommand(" " +
-                " select DISTINCT contractID, cusID, RECEIPT.receiptID, employeeID from CONTRACTS, RECEIPT" +
-                " where cusID = memID; ", mydb.getConnection);
+                " select DISTINCT contID, cusID, tblRECEIPT.receipt_ID, empID from tblCONTRACTS, tblRECEIPT" +
+                " where cusID = mem_ID; ", mydb.getConnection);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);

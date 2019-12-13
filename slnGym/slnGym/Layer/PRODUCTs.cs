@@ -14,7 +14,7 @@ namespace slnGym.Layer
         MY_DB mydb = new MY_DB();
         public bool insertPRODUCTS(int id, string name, decimal cost, MemoryStream pic)
         {
-            SqlCommand cmd = new SqlCommand("insert into PRODUCTS(productID,picture,productName,productCost)" +
+            SqlCommand cmd = new SqlCommand("insert into tblPRODUCTS(proID,picture,proName,proCost)" +
                 "values (@id,@pic,@name,@cost)", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
             cmd.Parameters.Add("@pic", SqlDbType.Image).Value = pic.ToArray();
@@ -35,7 +35,7 @@ namespace slnGym.Layer
         }
         public bool deletePRODUCTS(int ID)
         {
-            SqlCommand cmd = new SqlCommand("delete from PRODUCTS where productID=@id", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("delete from tblPRODUCTS where proID=@id", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.Int).Value = ID;
             mydb.openConnection();
             if (cmd.ExecuteNonQuery() == 1)
@@ -52,7 +52,7 @@ namespace slnGym.Layer
         }
         public bool updatePRODUCTS(int id, MemoryStream pic, string name, decimal cost)
         {
-            SqlCommand cmd = new SqlCommand("update PRODUCTS set picture=@pic,productName=@name,productCost=@cost where productID=@id", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("update tblPRODUCTS set picture=@pic,proName=@name,proCost=@cost where proID=@id", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
             cmd.Parameters.Add("@name", SqlDbType.NVarChar).Value = name;
             cmd.Parameters.Add("@cost", SqlDbType.Decimal).Value = cost;
@@ -72,7 +72,7 @@ namespace slnGym.Layer
         //Lay thong tin 
         public DataTable getPRODUCTS()
         {
-            SqlCommand cmd = new SqlCommand("select *from PRODUCTS", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("select *from tblPRODUCTS", mydb.getConnection);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -81,7 +81,7 @@ namespace slnGym.Layer
         }
         public DataTable getPRODUCTSbyIDNAMECost()
         {
-            SqlCommand cmd = new SqlCommand("select productID as 'ID', productName as 'Name', productCost as 'Price' from PRODUCTS", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("select proID as 'ID', proName as 'Name', proCost as 'Price' from tblPRODUCTS", mydb.getConnection);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -90,7 +90,7 @@ namespace slnGym.Layer
         }
         public DataTable getPRODUCTSbyID(int id)
         {
-            SqlCommand cmd = new SqlCommand("select *from PRODUCTS where productID=@ID", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("select *from tblPRODUCTS where proID=@ID", mydb.getConnection);
             cmd.Parameters.Add("@ID", SqlDbType.Int).Value = id;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -100,7 +100,7 @@ namespace slnGym.Layer
         }
         public DataTable getPRODUCTbyName(string name)
         {
-            SqlCommand cmd = new SqlCommand("select *from PRODUCTS where productName=@ID", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("select *from tblPRODUCTS where prodName=@ID", mydb.getConnection);
             cmd.Parameters.Add("@ID", SqlDbType.VarChar).Value = name;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -110,10 +110,10 @@ namespace slnGym.Layer
         }
         public DataTable getPRODUCTDGV(string name)
         {
-            SqlCommand cmd = new SqlCommand("select A.receiptID as 'ID', nameServices as 'Name', period as 'Quantity',total as 'Total', repceiptDate as 'Date payment' from DETAILSREPCEIPT," +
-                " (select contractID, receiptID  from CONTRACTS, DETAILSCONTRACT " +
-                " where contID = contractID AND CONTRACTS.cusID = @ID) as A" +
-                " where A.receiptID = DETAILSREPCEIPT.receiptID AND  idBrand = '2'", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("select A.receipt_ID as 'ID', nameServices as 'Name', period as 'Quantity',total as 'Total', receiptDate as 'Date payment' from tblDETAILSRECEIPT," +
+                " (select cont_ID, receipt_ID  from tblCONTRACTS, tblDETAILSCONTRACT " +
+                " where contID = cont_ID AND tblCONTRACTS.cusID = @ID) as A" +
+                " where A.receipt_ID = tblDETAILSRECEIPT.receiptID AND  idBrand = '2'", mydb.getConnection);
             cmd.Parameters.Add("@ID", SqlDbType.VarChar).Value = name;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();

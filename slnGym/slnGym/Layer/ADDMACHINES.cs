@@ -14,7 +14,7 @@ namespace slnGym.Layer
         MY_DB mydb = new MY_DB();
         public bool insertMACHINE(int id, string name, MemoryStream pic, string info, int amount)
         {
-            SqlCommand cmd = new SqlCommand("insert into MACHINES(idMachine,nameMachine,picture,infor,amount)" + "values(@id,@name,@pic,@info,@amt)", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("insert into tblMACHINES(macID,macName,picture,infor,amount)" + "values(@id,@name,@pic,@info,@amt)", mydb.getConnection);
             cmd.Parameters.Add("@name", SqlDbType.NVarChar).Value = name;
             cmd.Parameters.Add("@pic", SqlDbType.Image).Value = pic.ToArray();
             cmd.Parameters.Add("@info", SqlDbType.NVarChar).Value = info;
@@ -34,7 +34,7 @@ namespace slnGym.Layer
         }
         public bool updateMACHINE(int id, string name, MemoryStream pic, string info, int amount)
         {
-            SqlCommand cmd = new SqlCommand("update MACHINES set nameMachine=@name, picture=@pic, infor=@info, amount=@amt where idMachine=@id", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("update tblMACHINES set macName=@name, picture=@pic, infor=@info, amount=@amt where macID=@id", mydb.getConnection);
             cmd.Parameters.Add("@name", SqlDbType.NVarChar).Value = name;
             cmd.Parameters.Add("@pic", SqlDbType.Image).Value = pic.ToArray();
             cmd.Parameters.Add("@info", SqlDbType.NVarChar).Value = info;
@@ -54,7 +54,7 @@ namespace slnGym.Layer
         }
         public bool deleteMACHINE(int id)
         {
-            SqlCommand cmd = new SqlCommand("delete from MACHINES where idMachine=@id", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("delete from tblMACHINES where macID=@id", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
             mydb.openConnection();
             if (cmd.ExecuteNonQuery() == 1)
@@ -70,7 +70,7 @@ namespace slnGym.Layer
         }
         public DataTable getMACHINE()
         {
-            SqlCommand cmd = new SqlCommand("select *from MACHINES", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("select *from tblMACHINES", mydb.getConnection);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -79,7 +79,7 @@ namespace slnGym.Layer
         }
         public DataTable getMACHINESbyID(int id)
         {
-            SqlCommand cmd = new SqlCommand("select *from MACHINES where idMachine=@id", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("select *from tblMACHINES where macID=@id", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
