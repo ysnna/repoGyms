@@ -57,11 +57,11 @@ namespace slnGym.User_Control
             {
                 if (cbDiscount.Text == "%")
                 {
-                    txtTotal.Text = (Convert.ToDecimal(txtOthers.Text.Trim()) + Convert.ToDecimal(txtSubTotal.Text.Trim()) + (100 * Convert.ToDecimal(txtDiscount.Text.Trim()))).ToString();
+                    txtTotal.Text = (Convert.ToDecimal(txtOthers.Text.Trim()) + Convert.ToDecimal(txtSubTotal.Text.Trim()) - (100 * Convert.ToDecimal(txtDiscount.Text.Trim()))).ToString();
                 }
                 else
                 {
-                    txtTotal.Text = (Convert.ToDecimal(txtOthers.Text.Trim()) + Convert.ToDecimal(txtSubTotal.Text.Trim()) + Convert.ToDecimal(txtDiscount.Text.Trim())).ToString();
+                    txtTotal.Text = (Convert.ToDecimal(txtOthers.Text.Trim()) + Convert.ToDecimal(txtSubTotal.Text.Trim()) - Convert.ToDecimal(txtDiscount.Text.Trim())).ToString();
                 }
             }
             else txtTotal.Text = (Convert.ToDecimal(txtOthers.Text.Trim()) + Convert.ToDecimal(txtSubTotal.Text.Trim())).ToString();
@@ -73,11 +73,11 @@ namespace slnGym.User_Control
             {
                 if (cbDiscount.Text == "%")
                 {
-                    txtTotal.Text = (Convert.ToDecimal(txtOthers.Text.Trim()) + Convert.ToDecimal(txtSubTotal.Text.Trim()) + (100 * Convert.ToDecimal(txtDiscount.Text.Trim()))).ToString();
+                    txtTotal.Text = (Convert.ToDecimal(txtOthers.Text.Trim()) + Convert.ToDecimal(txtSubTotal.Text.Trim()) - (100 * Convert.ToDecimal(txtDiscount.Text.Trim()))).ToString();
                 }
                 else
                 {
-                    txtTotal.Text = (Convert.ToDecimal(txtOthers.Text.Trim()) + Convert.ToDecimal(txtSubTotal.Text.Trim()) + Convert.ToDecimal(txtDiscount.Text.Trim())).ToString();
+                    txtTotal.Text = (Convert.ToDecimal(txtOthers.Text.Trim()) + Convert.ToDecimal(txtSubTotal.Text.Trim()) - Convert.ToDecimal(txtDiscount.Text.Trim())).ToString();
                 }
             }
             else txtTotal.Text = (Convert.ToDecimal(txtOthers.Text.Trim()) + Convert.ToDecimal(txtSubTotal.Text.Trim())).ToString();
@@ -425,15 +425,20 @@ namespace slnGym.User_Control
 
         private void dgvCheckInvoice_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //int index = dgvCheckInvoice.CurrentCell.RowIndex;
-            //int getIDgroup = Convert.ToInt32(dgvCheckInvoice.Rows[index].Cells[0].Value);
-            //if (index <= GETContract.listContracts.Count)
-            //{
-            //    lbStartDate.Text = GETContract.listContracts[index].dateStart.ToString();
-            //    lbDischarge.Text = GETContract.listContracts[index].dateDischarge.ToString();
-            //    TimeSpan time = GETContract.listContracts[index].dateDischarge - GETContract.listContracts[index].dateStart;
-            //    txtComment.Text = "Total payment due in " + time.Days.ToString() + " days";
-            //}
+            int index = Convert.ToInt32( dgvCheckInvoice.CurrentRow.Cells[1].Value.ToString());
+            int i = 0;
+            while (i < GETContract.listContracts.Count)
+            {
+                if (index == GETContract.listContracts[i].idPackage)
+                {
+                    lbStartDate.Text = GETContract.listContracts[i].dateStart.ToString();
+                    lbDischarge.Text = GETContract.listContracts[i].dateDischarge.ToString();
+                    return;
+                    //TimeSpan time = GETContract.listContracts[i].dateDischarge - GETContract.listContracts[i].dateStart;
+                    //txtComment.Text = "Total payment due in " + time.Days.ToString() + " days";
+                }
+                i++;
+            }
         }
     }
 }

@@ -88,7 +88,7 @@ namespace slnGym.Layer
                 return false;
             }
         }
-            public bool updateAccpuntMember(string ID, string note)
+        public bool updateAccpuntMember(string ID, string note)
         {
             SqlCommand cmd = new SqlCommand("update tblMEMBERS set note=@note where memID=@id", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = ID;
@@ -141,7 +141,7 @@ namespace slnGym.Layer
             return dt;
         }
         //Sua doi thong tin cua khach hang duoc admin duyet m   
-        public bool insertTemporary(string ID, string lname, string fname,MemoryStream ava, DateTime bdate, string address,
+        public bool insertTemporary(string ID, string lname, string fname, MemoryStream ava, DateTime bdate, string address,
             string gender, string phone, int idcard, string note)
         {
             SqlCommand cmd = new SqlCommand("insert into tblTEMP(ID,FName,LName,avatar,BDate,Address,Gender,Phone,cardID,note)" +
@@ -172,7 +172,7 @@ namespace slnGym.Layer
 
         public bool deleteTEMP(string ID)
         {
-            SqlCommand cmd = new SqlCommand("DELETE from tblTEMP where ID=@ID",mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("DELETE from tblTEMP where ID=@ID", mydb.getConnection);
             cmd.Parameters.Add("@ID", SqlDbType.VarChar).Value = ID;
             mydb.openConnection();
             if (cmd.ExecuteNonQuery() == 1)
@@ -229,6 +229,7 @@ namespace slnGym.Layer
             mydb.closeConnection();
             return dt;
         }
+
         public DataTable searchMember(string search)
         {
             SqlCommand cmd = new SqlCommand("select memID as 'ID',memFname as 'FName',memLname as 'LName', avatar as 'Avatar', memBDate as 'Birthday'," +
@@ -240,6 +241,7 @@ namespace slnGym.Layer
             mydb.closeConnection();
             return dt;
         }
+
         public DataTable getRenewMemberByID(string search)
         {
             SqlCommand cmd = new SqlCommand("select contID as 'ID', ptID as 'PT', servicePACK as 'Package', serNAME as 'Name', dateStart as 'Date start', dateDischarge as 'Date Expiration', cost as 'Price', status as 'Status' from tblCONTRACTS, tblDETAILSCONTRACT, tblSERVICEPACK where serID=servicePACK and contID=cont_ID and cusID=@cusID", mydb.getConnection);
@@ -250,6 +252,7 @@ namespace slnGym.Layer
             mydb.closeConnection();
             return dt;
         }
+
         public DataTable getMemberF1()
         {
             SqlCommand cmd = new SqlCommand("select memID as 'ID',memFname as 'FName',memLname as 'LName' from tblMEMBERS ", mydb.getConnection);

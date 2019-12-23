@@ -57,7 +57,7 @@
             this.groupBoxContract.Controls.Add(this.label21);
             this.groupBoxContract.Font = new System.Drawing.Font("Sitka Display", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxContract.ForeColor = System.Drawing.Color.White;
-            this.groupBoxContract.Location = new System.Drawing.Point(1139, 6);
+            this.groupBoxContract.Location = new System.Drawing.Point(579, 6);
             this.groupBoxContract.Name = "groupBoxContract";
             this.groupBoxContract.Size = new System.Drawing.Size(264, 787);
             this.groupBoxContract.TabIndex = 93;
@@ -135,7 +135,7 @@
             this.groupBoxContact.ForeColor = System.Drawing.Color.DarkGreen;
             this.groupBoxContact.Location = new System.Drawing.Point(11, 6);
             this.groupBoxContact.Name = "groupBoxContact";
-            this.groupBoxContact.Size = new System.Drawing.Size(1122, 787);
+            this.groupBoxContact.Size = new System.Drawing.Size(562, 787);
             this.groupBoxContact.TabIndex = 92;
             this.groupBoxContact.TabStop = false;
             this.groupBoxContact.Text = "Contracts";
@@ -180,7 +180,7 @@
             this.dgvContracts.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvContracts.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvContracts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvContracts.Size = new System.Drawing.Size(1110, 743);
+            this.dgvContracts.Size = new System.Drawing.Size(550, 743);
             this.dgvContracts.TabIndex = 82;
             this.dgvContracts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvContracts_CellClick);
             // 

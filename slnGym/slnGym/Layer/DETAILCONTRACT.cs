@@ -39,8 +39,8 @@ namespace slnGym.Layer
         //Lay thong tin 
         public DataTable getDetailByConID(string conID)
         {
-            SqlCommand cmd = new SqlCommand("select servicePACK,serNAME ,dateStart,dateDischarge, total,status from tblSERVICEPACK," +
-                " (select DISTINCT servicePACK, dateStart,dateDischarge, total,status  from tblDETAILSCONTRACT,tblDETAILSRECEIPT" +
+            SqlCommand cmd = new SqlCommand("select servicePACK as 'Package',serNAME as 'Name',dateStart as 'Date Start', dateDischarge as 'Date Discharge', status as 'State' from tblSERVICEPACK," +
+                " (select DISTINCT servicePACK, dateStart,dateDischarge, status  from tblDETAILSCONTRACT,tblDETAILSRECEIPT" +
                 " where cont_ID=@con AND tblDETAILSRECEIPT.receiptID = tblDETAILSCONTRACT.receipt_ID) as A" +
                 " where A.servicePACK = serID ", mydb.getConnection);
             cmd.Parameters.Add("@con", SqlDbType.VarChar).Value = conID;

@@ -1081,7 +1081,7 @@ namespace slnGym.Forms
             }
             else
             {
-                MessageBox.Show("completeasdsasd");
+                MessageBox.Show("Complete");
                 CreateContract();
                 GETContract.ISRENEW = "new";
                 User_Control.ReceiptUC receiptUC = new User_Control.ReceiptUC() { Width = 1912, Height = 905 };
